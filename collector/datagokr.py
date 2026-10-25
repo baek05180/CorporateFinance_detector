@@ -1,6 +1,8 @@
 """공공데이터포털 금융위원회_채권기본정보 클라이언트 (사모 회사채용)."""
+import re
 import time
 import logging
+from urllib.parse import unquote
 
 import requests
 
@@ -13,11 +15,18 @@ class DataGoKrError(Exception):
     pass
 
 
+def redact(text):
+    """오류 메시지에 인증키가 섞여 공개 저장소에 남지 않도록 지운다."""
+    return re.sub(r"(serviceKey=)[^&\s]+", r"\1***", str(text))
+
+
 class BondInfoClient:
     def __init__(self, service_key=None, session=None):
-        self.key = service_key or config.DATA_GO_KR_KEY
-        if not self.key:
+        key = (service_key or config.DATA_GO_KR_KEY or "").strip()
+        if not key:
             raise DataGoKrError("DATA_GO_KR_KEY 환경변수가 비어 있습니다.")
+        # Encoding 키(%2B 등)를 넣어도 동작하도록 한 번 풀어준다 (requests가 다시 인코딩함)
+        self.key = unquote(key) if "%" in key else key
         self.session = session or requests.Session()
         self.calls = 0
 
@@ -32,8 +41,9 @@ class BondInfoClient:
                 self.calls += 1
                 if r.text.lstrip().startswith("<"):
                     # 인증 오류 등은 json 요청이어도 XML로 온다
-                    raise DataGoKrError(f"XML 오류 응답: {r.text[:300]}")
-                r.raise_for_status()
+                    raise DataGoKrError(f"XML 오류 응답(HTTP {r.status_code}): {redact(r.text[:300])}")
+                if r.status_code >= 400:
+                    raise DataGoKrError(f"HTTP {r.status_code}: {redact(r.text[:300])}")
                 data = r.json()
                 break
             except DataGoKrError:
@@ -42,7 +52,7 @@ class BondInfoClient:
                 last_err = e
                 time.sleep(2 * (attempt + 1))
         else:
-            raise DataGoKrError(f"채권기본정보 호출 실패: {last_err}")
+            raise DataGoKrError(f"채권기본정보 호출 실패: {redact(last_err)}")
 
         resp = data.get("response", data)
         header = resp.get("header", {})

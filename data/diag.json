@@ -2,7 +2,6 @@
  "offer_methods": {},
  "private_bond_kinds": {},
  "private_bond_status": {
-  "error": "채권기본정보 호출 실패: 403 Client Error: Forbidden for url: https://apis.data.go.kr/1160100/GetBondIssuInfoService_V2/getBondBasiInfo_V2?serviceKey=yiXeBd10zfx8O47n16LWh0%252BAAvkK3quFm9%252FAsLBHXhHxHnQaAJ0ApIbKBR1qo8U3JIvivWsnVSLCXM4gcUhAhw%253D%253D&resultType=json&numOfRows=1000&pageNo=1&basDt=20261023",
-  "run": "2026-10-25T18:23+09:00"
+  "error": "(인증키가 포함돼 삭제함) HTTP 403"
  }
 }

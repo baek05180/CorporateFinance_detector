@@ -13,7 +13,7 @@ from datetime import date, timedelta
 
 from . import config, normalize
 from .dart import DartClient, DartQuotaExceeded
-from .datagokr import BondInfoClient, DataGoKrError
+from .datagokr import BondInfoClient, DataGoKrError, redact
 from .store import Store, now_kst
 
 log = logging.getLogger("collector")
@@ -199,7 +199,7 @@ def main(argv=None):
             collect_private_bonds(store, mode)
         except DataGoKrError as e:
             log.error("사모채 수집 실패: %s", e)
-            store.diag["private_bond_status"]["error"] = str(e)[:500]
+            store.diag["private_bond_status"]["error"] = redact(e)[:500]
 
     wrote = store.save(mode)
     summary = f"mode={args.mode} 신규 {len(store.added)}건 · DART 호출 {dart.calls}회 · 파일 변경={'예' if wrote else '아니오'}"
