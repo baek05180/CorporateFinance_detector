@@ -244,7 +244,7 @@ footer p{margin:4px 0}
         ['금리', r => pct(r.coupon, 3), 'r'],
         ['만기', r => md(r.maturity)],
         ['보증', r => esc(r.guarantee || '-')],
-        ['주관·인수', r => esc(r.lead || r.underwriter || '-')],
+        ['업종', r => `<span class="muted">${esc(r.industry || '-')}</span>`],
       ],
       note: '출처 금융위원회 채권기본정보(한국예탁결제원) · 모집방법 = 사모·CBO기초사모(P-CBO 태그) · 금융채·ABS·단기물·주식연계채권 제외 · 발행 다음 영업일 반영',
     },
