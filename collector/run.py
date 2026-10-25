@@ -123,6 +123,7 @@ def collect_private_bonds(store, mode):
         client = BondInfoClient()
     except DataGoKrError as e:
         log.warning("사모채 수집 건너뜀: %s", e)
+        store.diag.setdefault("private_bond_status", {})["error"] = f"건너뜀: {e}"
         return 0
     today = now_kst().date()
     cutoff = (today - timedelta(days=config.BOND_ISSUE_LOOKBACK_DAYS)).isoformat()
@@ -136,6 +137,7 @@ def collect_private_bonds(store, mode):
         if d.weekday() >= 5:
             continue
         items = client.bonds_for_basdt(ymd(d))
+        store.diag.setdefault("private_bond_status", {})["basDt_" + ymd(d)] = len(items)
         if not items:
             continue
         days_done += 1
@@ -192,10 +194,12 @@ def main(argv=None):
         log.error("OpenDART 일일 한도 초과: %s (지금까지 받은 데이터는 저장)", e)
 
     if mode == "daily":
+        store.diag["private_bond_status"] = {"run": now_kst().isoformat(timespec="minutes")}
         try:
             collect_private_bonds(store, mode)
         except DataGoKrError as e:
             log.error("사모채 수집 실패: %s", e)
+            store.diag["private_bond_status"]["error"] = str(e)[:500]
 
     wrote = store.save(mode)
     summary = f"mode={args.mode} 신규 {len(store.added)}건 · DART 호출 {dart.calls}회 · 파일 변경={'예' if wrote else '아니오'}"
