@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__SITE_NAME__ · 자본시장 발행 공시</title>
+<meta name="description" content="메자닌(CB·BW·EB), 유상증자, 일반 회사채(공모·사모) 발행 공시를 한눈에">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --bg:#f6f5f2; --panel:#ffffff; --ink:#16181d; --ink-2:#4b5059; --ink-3:#8a8f98;
+  --line:#e6e3dd; --line-2:#f0eee9; --accent:#1f4fd8; --accent-soft:#e8eefc;
+  --pos:#c2410c; --neg:#1d4ed8; --new:#d9480f; --new-soft:#fff1e8;
+  --pub:#0f766e; --pub-soft:#e6f4f1; --pvt:#6d28d9; --pvt-soft:#f1ebfd;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#111317; --panel:#181b20; --ink:#eceef1; --ink-2:#b5bac3; --ink-3:#7c828c;
+    --line:#2a2e35; --line-2:#22252b; --accent:#7aa2ff; --accent-soft:#1d2740;
+    --new:#ff8a4c; --new-soft:#33211a; --pub:#4fd1c5; --pub-soft:#16302d; --pvt:#b69cff; --pvt-soft:#261f3d;
+  }
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg); color:var(--ink); font-family:"Pretendard Variable",Pretendard,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  font-size:14px; line-height:1.5; -webkit-font-smoothing:antialiased; font-feature-settings:"tnum"}
+a{color:inherit}
+.wrap{max-width:1180px; margin:0 auto; padding:0 16px}
+
+/* header */
+header{border-bottom:1px solid var(--line); background:var(--panel)}
+.top{display:flex; align-items:center; gap:16px; height:56px}
+.brand{font-weight:800; letter-spacing:.02em; font-size:16px}
+.brand small{font-weight:600; color:var(--ink-3); font-size:11px; margin-left:6px; letter-spacing:.08em}
+.stamp{margin-left:auto; color:var(--ink-3); font-size:12px; text-align:right}
+.stamp b{color:var(--ink-2); font-weight:600}
+
+/* kpis */
+.kpis{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:10px; overflow:hidden; margin:20px 0 8px}
+.kpi{background:var(--panel); padding:14px 16px; cursor:pointer; text-align:left; border:0; font:inherit; color:inherit}
+.kpi:hover{background:var(--line-2)}
+.kpi .l{font-size:12px; color:var(--ink-3)}
+.kpi .v{font-size:22px; font-weight:700; margin-top:2px; letter-spacing:-.01em}
+.kpi .s{font-size:12px; color:var(--ink-2)}
+.period-note{font-size:12px; color:var(--ink-3); margin-bottom:18px}
+
+/* tabs + filters */
+.bar{display:flex; flex-wrap:wrap; align-items:center; gap:8px 16px; border-bottom:1px solid var(--line); margin-bottom:0}
+.tabs{display:flex; gap:2px; overflow-x:auto; scrollbar-width:none}
+.tab{appearance:none; border:0; background:none; font:inherit; color:var(--ink-3); font-weight:600; padding:10px 12px; border-bottom:2px solid transparent; cursor:pointer; white-space:nowrap}
+.tab[aria-selected=true]{color:var(--ink); border-color:var(--ink)}
+.tab .n{font-weight:500; color:var(--ink-3); margin-left:4px; font-size:12px}
+.filters{display:flex; gap:8px; align-items:center; margin-left:auto; padding:6px 0; flex-wrap:wrap}
+select,input[type=search]{font:inherit; font-size:13px; color:var(--ink); background:var(--panel); border:1px solid var(--line); border-radius:7px; padding:6px 10px; height:32px}
+input[type=search]{width:180px}
+.chips{display:flex; gap:4px}
+.chip{font:inherit; font-size:12px; font-weight:600; border:1px solid var(--line); background:var(--panel); color:var(--ink-2); border-radius:999px; padding:4px 10px; cursor:pointer}
+.chip[aria-pressed=true]{background:var(--ink); color:var(--panel); border-color:var(--ink)}
+
+/* table */
+.panel{background:var(--panel); border:1px solid var(--line); border-top:0; border-radius:0 0 10px 10px}
+.scroll{overflow-x:auto}
+table{width:100%; border-collapse:collapse; min-width:860px}
+th,td{padding:9px 12px; text-align:left; white-space:nowrap; border-bottom:1px solid var(--line-2)}
+th{font-size:12px; font-weight:600; color:var(--ink-3); background:var(--panel); position:sticky; top:0}
+td.r,th.r{text-align:right}
+td.num{font-variant-numeric:tabular-nums}
+tbody tr:hover{background:var(--line-2)}
+.co{font-weight:600}
+.co a{text-decoration:none}
+.co a:hover{text-decoration:underline}
+.mk{display:inline-block; font-size:10px; font-weight:700; color:var(--ink-3); border:1px solid var(--line); border-radius:4px; padding:0 4px; margin-left:6px; vertical-align:1px}
+.badge{display:inline-block; font-size:11px; font-weight:700; border-radius:4px; padding:1px 6px}
+.b-new{color:var(--new); background:var(--new-soft); margin-left:6px}
+.b-amd{color:var(--ink-3); border:1px solid var(--line); margin-left:6px; font-weight:600}
+.b-pub{color:var(--pub); background:var(--pub-soft)}
+.b-pvt{color:var(--pvt); background:var(--pvt-soft)}
+.type{font-family:var(--mono); font-size:12px; font-weight:700}
+.muted{color:var(--ink-3)}
+.dart{font-size:12px; color:var(--accent); text-decoration:none}
+.dart:hover{text-decoration:underline}
+.empty{padding:48px 16px; text-align:center; color:var(--ink-3)}
+.foot-note{padding:10px 12px; font-size:12px; color:var(--ink-3); border-top:1px solid var(--line-2)}
+
+footer{color:var(--ink-3); font-size:12px; padding:28px 0 40px}
+footer p{margin:4px 0}
+
+@media (max-width:760px){
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .kpi .v{font-size:19px}
+  .filters{margin-left:0; width:100%}
+  input[type=search]{flex:1; width:auto}
+  .stamp{font-size:11px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap top">
+    <div class="brand">__SITE_NAME__<small>BETA</small></div>
+    <div class="stamp" id="stamp"></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="kpis" id="kpis" aria-label="최근 2주 요약"></section>
+  <div class="period-note">최근 2주 기준 · 메자닌·유상증자는 이사회 결의일, 공모채는 청약일, 사모채는 발행일</div>
+
+  <div class="bar">
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <div class="filters">
+      <div class="chips" id="chips"></div>
+      <select id="period" aria-label="기간">
+        <option value="14">최근 2주</option>
+        <option value="30" selected>최근 1개월</option>
+        <option value="90">최근 3개월</option>
+        <option value="0">전체</option>
+      </select>
+      <input type="search" id="q" placeholder="회사명 검색" aria-label="회사명 검색">
+    </div>
+  </div>
+  <div class="panel">
+    <div class="scroll"><table><thead id="thead"></thead><tbody id="tbody"></tbody></table></div>
+    <div class="foot-note" id="note"></div>
+  </div>
+</main>
+
+<footer class="wrap">
+  <p>출처: 금융감독원 DART(OpenDART) · 금융위원회 채권기본정보(공공데이터포털, 한국예탁결제원 제공)</p>
+  <p>이 사이트의 정보는 공시를 자동으로 정리한 것으로 오류가 있을 수 있으며 투자 권유가 아닙니다. 정확한 내용은 공시 원문을 확인하세요.</p>
+</footer>
+
+<script id="payload" type="application/json">__DATA__</script>
+<script>
+(() => {
+  const DB = JSON.parse(document.getElementById('payload').textContent);
+  const rows = DB.rows || [];
+  const kstDate = ms => new Intl.DateTimeFormat('sv-SE', {timeZone: 'Asia/Seoul'}).format(new Date(ms)); // YYYY-MM-DD
+  const todayIso = kstDate(Date.now());
+
+  // ── 포맷 ──
+  const won = v => {
+    if (v == null) return '<span class="muted">-</span>';
+    if (Math.abs(v) >= 1e8) {
+      const e = v / 1e8;
+      return (e >= 100 ? Math.round(e).toLocaleString('ko-KR') : (Math.round(e * 10) / 10).toLocaleString('ko-KR')) + '억';
+    }
+    return Math.round(v / 1e4).toLocaleString('ko-KR') + '만';
+  };
+  const int = v => v == null ? '<span class="muted">-</span>' : Number(v).toLocaleString('ko-KR');
+  const pct = (v, d = 2) => v == null ? '<span class="muted">-</span>' : (+v).toFixed(d).replace(/\.?0+$/, '') + '%';
+  const md = s => s ? s.slice(2).replace(/-/g, '.') : '<span class="muted">-</span>';   // 2026-10-20 → 26.10.20
+  const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const MK = {Y: '유', K: '코', N: '넥'};
+  const daysAgo = n => kstDate(Date.now() - n * 86400000);
+
+  const isNew = r => (r.captured_by === 'watch' && !r.confirmed) || (r.first_seen || '').slice(0, 10) === todayIso;
+  const company = r => {
+    const name = esc(r.corp_name);
+    const link = r.url ? `<a href="${r.url}" target="_blank" rel="noopener">${name}</a>` : name;
+    return `<span class="co">${link}</span>${MK[r.corp_cls] ? `<span class="mk">${MK[r.corp_cls]}</span>` : ''}`
+      + (isNew(r) ? '<span class="badge b-new">새</span>' : '')
+      + (r.amended ? '<span class="badge b-amd">정정</span>' : '');
+  };
+  const offer = o => o === '공모' ? '<span class="badge b-pub">공모</span>' : o === '사모' ? '<span class="badge b-pvt">사모</span>' : esc(o || '-');
+  const dartLink = r => r.url ? `<a class="dart" href="${r.url}" target="_blank" rel="noopener">원문</a>` : '<span class="muted">-</span>';
+
+  // ── 섹션 정의 ──
+  const S = {
+    mezz: {
+      label: '메자닌', kpi: '메자닌 발행결정',
+      pick: r => ['CB', 'BW', 'EB'].includes(r.type),
+      date: r => r.board_dt || r.rcept_dt,
+      chips: ['CB', 'BW', 'EB', '공모', '사모'],
+      chipTest: (r, c) => ['CB','BW','EB'].includes(c) ? r.type === c : r.offering === c,
+      cols: [
+        ['이사회', r => md(r.board_dt || r.rcept_dt)],
+        ['회사명', company],
+        ['회차', r => r.series ? esc(r.series) + '회' : '-'],
+        ['종류', r => `<span class="type">${r.type}</span>`],
+        ['금액', r => won(r.amount), 'r'],
+        ['방식', r => offer(r.offering)],
+        ['표면/만기', r => `${pct(r.coupon, 2)} / ${pct(r.ytm, 2)}`, 'r'],
+        ['행사가', r => int(r.price), 'r'],
+        ['희석', r => pct(r.dilution), 'r'],
+        ['리픽싱 하한', r => int(r.refix_floor), 'r'],
+        ['만기', r => md(r.maturity)],
+        ['', dartLink],
+      ],
+      note: '출처 DART 주요사항보고서 · 행사가 = 전환가(CB)·행사가(BW)·교환가(EB) · 희석 = 행사 시 발행주식 ÷ 발행주식총수',
+    },
+    rights: {
+      label: '유상증자', kpi: '유상증자 결정',
+      pick: r => r.type === 'RIGHTS',
+      date: r => r.board_dt || r.rcept_dt,
+      chips: ['보통주', '종류주', '공모'],
+      chipTest: (r, c) => c === '공모' ? r.offering === '공모' : (r.stock_kind || '').includes(c),
+      cols: [
+        ['접수일', r => md(r.rcept_dt)],
+        ['회사명', company],
+        ['종류', r => esc(r.stock_kind || '-')],
+        ['증자방식', r => esc(r.method || '-')],
+        ['금액', r => won(r.amount), 'r'],
+        ['신주(보통)', r => int(r.new_common), 'r'],
+        ['신주(기타)', r => int(r.new_other), 'r'],
+        ['증자비율', r => pct(r.dilution), 'r'],
+        ['', dartLink],
+      ],
+      note: '출처 DART 주요사항보고서 · 금액 = 자금조달 목적 합계 · 증자비율 = 신주 ÷ 증자 전 발행주식총수',
+    },
+    pub: {
+      label: '회사채 공모', kpi: '회사채 공모',
+      pick: r => r.type === 'BOND' && r.offering === '공모',
+      date: r => r.sub_dt || r.pay_dt || r.rcept_dt,
+      chips: [],
+      cols: [
+        ['청약일', r => md(r.sub_dt)],
+        ['회사명', company],
+        ['회차', r => r.series ? esc(r.series) + '회' : '-'],
+        ['모집금액', r => won(r.amount), 'r'],
+        ['금리', r => r.coupon != null ? pct(r.coupon, 3)
+          : /수요예측/.test(r.coupon_raw || '') ? '<span class="muted">수요예측 후</span>' : esc(r.coupon_raw || '-'), 'r'],
+        ['만기', r => md(r.maturity)],
+        ['신용등급', r => esc(r.rating || '-')],
+        ['대표주관', r => esc(r.lead || '-')],
+        ['납입일', r => md(r.pay_dt)],
+        ['', dartLink],
+      ],
+      note: '출처 DART 증권신고서(채무증권) · 금융채·ABS·주식연계채권 제외 · 수요예측 후 증액되면 정정신고서 기준으로 갱신',
+    },
+    pvt: {
+      label: '회사채 사모', kpi: '회사채 사모',
+      pick: r => r.type === 'BOND' && r.offering === '사모',
+      date: r => r.issue_dt,
+      chips: [],
+      cols: [
+        ['발행일', r => md(r.issue_dt)],
+        ['발행사', r => `<span class="co">${esc(r.corp_name)}</span>` + (isNew(r) ? '<span class="badge b-new">새</span>' : '')],
+        ['종목명', r => `<span class="muted">${esc(r.name || '-')}</span>`],
+        ['발행금액', r => won(r.amount), 'r'],
+        ['금리', r => pct(r.coupon, 3), 'r'],
+        ['만기', r => md(r.maturity)],
+        ['보증', r => esc(r.guarantee || '-')],
+        ['주관·인수', r => esc(r.lead || r.underwriter || '-')],
+      ],
+      note: '출처 금융위원회 채권기본정보(한국예탁결제원) · 모집방법 = 사모 · 금융채·ABS·단기물·주식연계채권 제외 · 발행 다음 영업일 반영',
+    },
+  };
+
+  const state = {tab: 'mezz', chips: new Set(), period: 30, q: ''};
+  try { const saved = JSON.parse(localStorage.getItem('ecm-state') || '{}'); if (S[saved.tab]) state.tab = saved.tab; if (saved.period != null) state.period = saved.period; } catch (e) {}
+
+  // ── 헤더 기준시각 ──
+  const fmtStamp = s => s ? s.slice(0, 16).replace('T', ' ') : '-';
+  document.getElementById('stamp').innerHTML =
+    `데이터 기준 <b>${fmtStamp(DB.meta.data_updated)}</b><br>정기 갱신 ${fmtStamp(DB.meta.last_daily)}`;
+
+  // ── KPI ──
+  const since14 = daysAgo(14);
+  document.getElementById('kpis').innerHTML = Object.entries(S).map(([k, s]) => {
+    const list = rows.filter(r => s.pick(r) && (s.date(r) || '') >= since14);
+    const sum = list.reduce((a, r) => a + (r.amount || 0), 0);
+    return `<button class="kpi" data-tab="${k}"><div class="l">${s.kpi}</div><div class="v">${list.length}건</div><div class="s">${sum ? won(sum) : '-'}</div></button>`;
+  }).join('');
+  document.querySelectorAll('.kpi').forEach(b => b.onclick = () => { state.tab = b.dataset.tab; state.chips.clear(); render(); });
+
+  // ── 렌더 ──
+  const $ = id => document.getElementById(id);
+  $('period').value = String(state.period);
+  $('period').onchange = e => { state.period = +e.target.value; render(); };
+  $('q').oninput = e => { state.q = e.target.value.trim(); render(); };
+
+  function filtered(s) {
+    const since = state.period ? daysAgo(state.period) : '';
+    return rows.filter(r => s.pick(r)
+      && (!since || (s.date(r) || '') >= since)
+      && (!state.q || (r.corp_name || '').includes(state.q))
+      && (!state.chips.size || [...state.chips].some(c => s.chipTest(r, c))))
+      .sort((a, b) => (s.date(b) || '').localeCompare(s.date(a) || ''));
+  }
+
+  function render() {
+    const s = S[state.tab];
+    $('tabs').innerHTML = Object.entries(S).map(([k, t]) => {
+      const n = filtered({...t, chipTest: () => true, pick: t.pick}).length;
+      return `<button class="tab" role="tab" aria-selected="${k === state.tab}" data-k="${k}">${t.label}<span class="n">${n}</span></button>`;
+    }).join('');
+    document.querySelectorAll('.tab').forEach(b => b.onclick = () => { state.tab = b.dataset.k; state.chips.clear(); render(); });
+
+    $('chips').innerHTML = s.chips.map(c => `<button class="chip" aria-pressed="${state.chips.has(c)}" data-c="${c}">${c}</button>`).join('');
+    document.querySelectorAll('.chip').forEach(b => b.onclick = () => {
+      state.chips.has(b.dataset.c) ? state.chips.delete(b.dataset.c) : state.chips.add(b.dataset.c); render();
+    });
+
+    $('thead').innerHTML = '<tr>' + s.cols.map(([h, , c]) => `<th class="${c || ''}">${h}</th>`).join('') + '</tr>';
+    const list = filtered(s);
+    $('tbody').innerHTML = list.length
+      ? list.map(r => '<tr>' + s.cols.map(([, f, c]) => `<td class="${c ? c + ' num' : ''}">${f(r)}</td>`).join('') + '</tr>').join('')
+      : `<tr><td colspan="${s.cols.length}"><div class="empty">조건에 맞는 공시가 없습니다</div></td></tr>`;
+    $('note').textContent = s.note;
+    try { localStorage.setItem('ecm-state', JSON.stringify({tab: state.tab, period: state.period})); } catch (e) {}
+  }
+  render();
+})();
+</script>
+</body>
+</html>
