@@ -213,6 +213,11 @@ def public_bonds(groups, filing=None):
     return out
 
 
+def _name_or_none(v):
+    v = str(v or "").strip()
+    return None if not v or v.isdigit() else v
+
+
 # ── 사모 회사채 (금융위원회_채권기본정보) ──
 def private_bond(item):
     isin = item.get("isinCd")
@@ -239,8 +244,9 @@ def private_bond(item):
         "rank": item.get("bondRnknDcdNm"),
         "option": item.get("optnTcdNm"),
         "usage": item.get("cptUsgeDcdNm"),
-        "lead": item.get("issuDptyNm") or None,
-        "underwriter": item.get("bondUndtInstNm") or None,
+        # issuDptyNm에 기관 이름 대신 숫자 코드가 오는 경우가 많아 숫자면 버린다
+        "lead": _name_or_none(item.get("issuDptyNm")),
+        "underwriter": _name_or_none(item.get("bondUndtInstNm")),
         "rcept_dt": issue,
         "url": None,
     }
