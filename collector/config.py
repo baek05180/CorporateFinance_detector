@@ -52,9 +52,17 @@ BOND_INFO_URL = "https://apis.data.go.kr/1160100/GetBondIssuInfoService_V2/getBo
 BOND_INFO_ROWS = 1000          # 한 번에 받는 건수
 BOND_INFO_MAX_PAGES = 30       # 기준일 하루치 최대 페이지 (호출 한도 보호)
 BOND_INFO_BASDT_DAYS = 5       # 매일 저녁 최근 며칠치 기준일을 훑을지
-BOND_ISSUE_LOOKBACK_DAYS = 45  # 발행일이 이 기간 안인 것만 저장
+BOND_ISSUE_LOOKBACK_DAYS = 90  # 발행일이 이 기간 안인 것만 저장
 
-# 종목종류명(scrsItmsKcdNm)·업종명(sicNm)·특이채권종류명에 이 단어가 있으면 제외
+# 실제 데이터 확인 결과(2026-10-23 기준일 29,261건)에 맞춘 허용 목록
+# 종목종류: 일반회사채만 (금융채·MBS·SLBS·유동화SPC채·유사집합투자기구채·특수채 제외)
+PRIVATE_BOND_KINDS = ["일반회사채"]
+# 특이채권종류: 주식 관련 없는 것만 (CB·EB·BW·이익참가 제외)
+PRIVATE_BOND_PCLR_OK = ["주식관련해당사항없음", "", "None"]
+# 모집방법: '사모'만. 'CBO기초사모'(P-CBO 기초자산 채권)는 별도 구분이라 기본 제외
+PRIVATE_BOND_METHODS = ["사모"]
+
+# 위 조건을 통과한 뒤에도 종목명·업종명에 이 단어가 있으면 제외
 PRIVATE_BOND_EXCLUDE = ["금융", "은행", "카드", "캐피탈", "유동화", "ABS", "단기", "CD", "CP",
                         "국채", "지방채", "특수채", "통화안정", "보험", "전환", "교환", "신주인수권",
                         "조건부", "파생", "커버드"]

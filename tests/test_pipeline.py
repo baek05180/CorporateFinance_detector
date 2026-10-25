@@ -112,7 +112,7 @@ BDRS = {
 COMPANY = {"00000005": "20302", "00000006": "64992", "00000007": "76110"}
 
 
-def bond_item(isin, name, issuer, method, kind, issue_ago, years, amt, pclr="해당없음", sic="제조업"):
+def bond_item(isin, name, issuer, method, kind, issue_ago, years, amt, pclr="주식관련해당사항없음", sic="제조업"):
     return dict(basDt=D(1), isinCd=isin, isinCdNm=name, bondIsurNm=issuer, bondOffrMcdNm=method,
                 scrsItmsKcdNm=kind, pclrBondKcdNm=pclr, sicNm=sic, bondIssuDt=D(issue_ago),
                 bondExprDt=(T - timedelta(days=issue_ago) + timedelta(days=365 * years)).strftime("%Y%m%d"),
@@ -126,7 +126,7 @@ BOND_ITEMS = [
     bond_item("KR6000001G03", "현대차500-1", "현대자동차", "공모", "일반회사채", 2, 3, 300000000000),
     bond_item("KR6000002G04", "OO캐피탈1234", "OO캐피탈", "사모", "금융채", 2, 2, 20000000000, sic="여신금융업"),
     bond_item("KR6000003G05", "단기물", "어떤회사", "사모", "일반회사채", 2, 0.5, 5000000000),
-    bond_item("KR6000004G06", "OO전환1", "OO바이오", "사모", "일반회사채", 2, 3, 5000000000, pclr="전환사채"),
+    bond_item("KR6000004G06", "OO전환1", "OO바이오", "사모", "일반회사채", 2, 3, 5000000000, pclr="CB"),
     bond_item("KR6000005G07", "옛날사모채", "오래된회사", "사모", "일반회사채", 120, 3, 5000000000),
 ]
 

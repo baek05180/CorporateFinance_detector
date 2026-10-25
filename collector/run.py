@@ -130,6 +130,7 @@ def collect_private_bonds(store, mode):
     store.reset_diag("private_bond_kinds")
     store.reset_diag("offer_methods")
     days_done, d, kept = 0, today, 0
+    kept_ids = set()
     tries = 0
     while days_done < config.BOND_INFO_BASDT_DAYS and tries < 14:
         d -= timedelta(days=1)
@@ -142,15 +143,19 @@ def collect_private_bonds(store, mode):
             continue
         days_done += 1
         for it in items:
-            store.note_diag("offer_methods", str(it.get("bondOffrMcdNm")))
-            if "사모" not in str(it.get("bondOffrMcdNm") or ""):
+            method = str(it.get("bondOffrMcdNm") or "")
+            store.note_diag("offer_methods", method)
+            if method not in config.PRIVATE_BOND_METHODS:
                 continue
             store.note_diag("private_bond_kinds", f"{it.get('scrsItmsKcdNm')} | {it.get('pclrBondKcdNm')}")
-            rec = normalize.private_bond(it)
-            if not rec["issue_dt"] or rec["issue_dt"] < cutoff:
+            if str(it.get("scrsItmsKcdNm") or "") not in config.PRIVATE_BOND_KINDS:
                 continue
-            text = " ".join(str(it.get(k) or "") for k in
-                            ("scrsItmsKcdNm", "sicNm", "pclrBondKcdNm", "isinCdNm"))
+            if str(it.get("pclrBondKcdNm") or "") not in config.PRIVATE_BOND_PCLR_OK:
+                continue
+            rec = normalize.private_bond(it)
+            if not rec["issue_dt"] or rec["issue_dt"] < cutoff or rec["issue_dt"] > today.isoformat():
+                continue
+            text = " ".join(str(it.get(k) or "") for k in ("sicNm", "isinCdNm"))
             if any(x in text for x in config.PRIVATE_BOND_EXCLUDE):
                 continue
             if any(h in (rec["corp_name"] or "") for h in config.FINANCIAL_NAME_HINTS):
@@ -160,9 +165,15 @@ def collect_private_bonds(store, mode):
                 if span.days <= 366:  # 1년 이하 = 단기물 제외
                     continue
             store.upsert(rec, mode)
+            kept_ids.add(rec["id"])
             kept += 1
         if len(items) >= 5000:
-            break  # 기준일 하루치가 전체 스냅샷이면 하루만 보면 충분
+            # 기준일 하루치가 전체 잔존 채권 스냅샷이므로 하루만 보면 충분.
+            # 필터를 바꿨을 때 예전 기준으로 들어온 건이 남지 않도록 이번에 통과 못 한 건은 지운다.
+            for rid in [k for k, r in store.records.items() if k.startswith("PBOND:") and k not in kept_ids]:
+                del store.records[rid]
+                store.changed = True
+            break
     log.info("사모채 %s건 반영 (공공데이터 호출 %s회)", kept, client.calls)
     return client.calls
 
