@@ -3,15 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>__SITE_NAME__ · 자본시장 발행 공시</title>
-<meta name="description" content="메자닌(CB·BW·EB), 유상증자, 일반 회사채(공모·사모) 발행 공시를 한눈에">
+<title>__SITE_NAME__ · 자본시장 조달 공시</title>
+<meta name="description" content="메자닌(CB·BW·EB), 유상증자, 회사채(공모·사모·P-CBO) 조달 내역과 기업 정보, 조달 제안 보고서">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 :root{
   --bg:#f6f5f2; --panel:#ffffff; --ink:#16181d; --ink-2:#4b5059; --ink-3:#8a8f98;
   --line:#e6e3dd; --line-2:#f0eee9; --accent:#1f4fd8; --accent-soft:#e8eefc;
-  --pos:#c2410c; --neg:#1d4ed8; --new:#d9480f; --new-soft:#fff1e8;
-  --pub:#0f766e; --pub-soft:#e6f4f1; --pvt:#6d28d9; --pvt-soft:#f1ebfd;
+  --new:#d9480f; --new-soft:#fff1e8; --pub:#0f766e; --pub-soft:#e6f4f1; --pvt:#6d28d9; --pvt-soft:#f1ebfd;
+  --neg:#c92a2a; --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --good:#2b8a3e; --warn:#e67700;
+  --shadow:0 12px 40px rgba(20,20,30,.18);
   --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 }
 @media (prefers-color-scheme: dark){
@@ -19,291 +20,910 @@
     --bg:#111317; --panel:#181b20; --ink:#eceef1; --ink-2:#b5bac3; --ink-3:#7c828c;
     --line:#2a2e35; --line-2:#22252b; --accent:#7aa2ff; --accent-soft:#1d2740;
     --new:#ff8a4c; --new-soft:#33211a; --pub:#4fd1c5; --pub-soft:#16302d; --pvt:#b69cff; --pvt-soft:#261f3d;
+    --neg:#ff6b6b; --s1:#3987e5; --s2:#d95926; --s3:#199e70; --good:#69db7c; --warn:#ffa94d;
+    --shadow:0 12px 40px rgba(0,0,0,.5);
   }
 }
 *{box-sizing:border-box}
 html,body{margin:0}
 body{background:var(--bg); color:var(--ink); font-family:"Pretendard Variable",Pretendard,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
-  font-size:14px; line-height:1.5; -webkit-font-smoothing:antialiased; font-feature-settings:"tnum"}
+  font-size:14px; line-height:1.55; -webkit-font-smoothing:antialiased; font-feature-settings:"tnum"}
 a{color:inherit}
-.wrap{max-width:1180px; margin:0 auto; padding:0 16px}
+button{font:inherit; color:inherit}
+.wrap{max-width:1200px; margin:0 auto; padding:0 16px}
+.muted{color:var(--ink-3)} .ink2{color:var(--ink-2)} .neg{color:var(--neg)}
+.r{text-align:right} .num{font-variant-numeric:tabular-nums}
 
 /* header */
-header{border-bottom:1px solid var(--line); background:var(--panel)}
-.top{display:flex; align-items:center; gap:16px; height:56px}
-.brand{font-weight:800; letter-spacing:.02em; font-size:16px}
+header{border-bottom:1px solid var(--line); background:var(--panel); position:sticky; top:0; z-index:20}
+.top{display:flex; align-items:center; gap:20px; height:56px}
+.brand{font-weight:800; letter-spacing:.02em; font-size:16px; text-decoration:none; white-space:nowrap}
 .brand small{font-weight:600; color:var(--ink-3); font-size:11px; margin-left:6px; letter-spacing:.08em}
-.stamp{margin-left:auto; color:var(--ink-3); font-size:12px; text-align:right}
-.stamp b{color:var(--ink-2); font-weight:600}
+nav.main{display:flex; gap:2px}
+nav.main a{text-decoration:none; color:var(--ink-3); font-weight:600; padding:6px 10px; border-radius:7px; white-space:nowrap}
+nav.main a:hover{background:var(--line-2); color:var(--ink)}
+nav.main a.on{color:var(--ink); background:var(--line-2)}
+.search{position:relative; margin-left:auto; width:260px}
+.search input[type=search]{width:100%; font:inherit; font-size:13px; color:var(--ink); background:var(--bg); border:1px solid var(--line); border-radius:8px; padding:7px 10px 7px 30px; height:34px}
+.search svg{position:absolute; left:9px; top:10px; color:var(--ink-3)}
+.suggest{position:absolute; top:40px; left:0; right:0; background:var(--panel); border:1px solid var(--line); border-radius:10px; box-shadow:var(--shadow); overflow:hidden; display:none}
+.suggest.on{display:block}
+.suggest a{display:flex; gap:8px; align-items:baseline; padding:8px 12px; text-decoration:none; border-bottom:1px solid var(--line-2)}
+.suggest a:last-child{border-bottom:0}
+.suggest a.sel, .suggest a:hover{background:var(--accent-soft)}
+.suggest .sub{margin-left:auto; font-size:12px; color:var(--ink-3); white-space:nowrap}
+
+main{padding:20px 0 40px}
+h1{font-size:22px; margin:0 0 4px; letter-spacing:-.01em}
+h2{font-size:16px; margin:0 0 12px}
+h3{font-size:14px; margin:0 0 8px}
+.lead{color:var(--ink-2); margin:0 0 18px}
+
+/* cards & grid */
+.card{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:18px}
+.card + .card{margin-top:14px}
+.grid2{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+.grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+.sec-title{display:flex; align-items:baseline; gap:10px; margin-bottom:12px}
+.sec-title h2{margin:0}
+.sec-title .src{margin-left:auto; font-size:12px; color:var(--ink-3)}
 
 /* kpis */
-.kpis{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:10px; overflow:hidden; margin:20px 0 8px}
-.kpi{background:var(--panel); padding:14px 16px; cursor:pointer; text-align:left; border:0; font:inherit; color:inherit}
+.kpis{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:10px; overflow:hidden; margin:0 0 8px}
+.kpi{background:var(--panel); padding:14px 16px; cursor:pointer; text-align:left; border:0}
 .kpi:hover{background:var(--line-2)}
 .kpi .l{font-size:12px; color:var(--ink-3)}
 .kpi .v{font-size:22px; font-weight:700; margin-top:2px; letter-spacing:-.01em}
 .kpi .s{font-size:12px; color:var(--ink-2)}
-.period-note{font-size:12px; color:var(--ink-3); margin-bottom:18px}
+.note{font-size:12px; color:var(--ink-3)}
+
+/* tiles */
+.tiles{display:grid; grid-template-columns:repeat(6,1fr); gap:10px}
+.tile{border:1px solid var(--line); border-radius:10px; padding:10px 12px; background:var(--panel)}
+.tile .l{font-size:12px; color:var(--ink-3)}
+.tile .v{font-size:18px; font-weight:700; margin-top:2px}
+.tile .s{font-size:11px; color:var(--ink-3)}
 
 /* tabs + filters */
-.bar{display:flex; flex-wrap:wrap; align-items:center; gap:8px 16px; border-bottom:1px solid var(--line); margin-bottom:0}
+.bar{display:flex; flex-wrap:wrap; align-items:center; gap:8px 16px; border-bottom:1px solid var(--line)}
 .tabs{display:flex; gap:2px; overflow-x:auto; scrollbar-width:none}
-.tab{appearance:none; border:0; background:none; font:inherit; color:var(--ink-3); font-weight:600; padding:10px 12px; border-bottom:2px solid transparent; cursor:pointer; white-space:nowrap}
+.tab{appearance:none; border:0; background:none; color:var(--ink-3); font-weight:600; padding:10px 12px; border-bottom:2px solid transparent; cursor:pointer; white-space:nowrap}
 .tab[aria-selected=true]{color:var(--ink); border-color:var(--ink)}
 .tab .n{font-weight:500; color:var(--ink-3); margin-left:4px; font-size:12px}
 .filters{display:flex; gap:8px; align-items:center; margin-left:auto; padding:6px 0; flex-wrap:wrap}
-select,input[type=search]{font:inherit; font-size:13px; color:var(--ink); background:var(--panel); border:1px solid var(--line); border-radius:7px; padding:6px 10px; height:32px}
-input[type=search]{width:180px}
-.chips{display:flex; gap:4px}
-.chip{font:inherit; font-size:12px; font-weight:600; border:1px solid var(--line); background:var(--panel); color:var(--ink-2); border-radius:999px; padding:4px 10px; cursor:pointer}
+select,input[type=search],input[type=date],input[type=number]{font:inherit; font-size:13px; color:var(--ink); background:var(--panel); border:1px solid var(--line); border-radius:7px; padding:5px 9px; height:32px}
+input[type=search]{width:170px}
+input[type=number]{width:90px}
+.chips{display:flex; gap:4px; flex-wrap:wrap}
+.chip{font-size:12px; font-weight:600; border:1px solid var(--line); background:var(--panel); color:var(--ink-2); border-radius:999px; padding:4px 10px; cursor:pointer}
 .chip[aria-pressed=true]{background:var(--ink); color:var(--panel); border-color:var(--ink)}
+.btn{display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; border:1px solid var(--line); background:var(--panel); border-radius:8px; padding:6px 12px; cursor:pointer; text-decoration:none; white-space:nowrap}
+.btn:hover{background:var(--line-2)}
+.btn.primary{background:var(--ink); color:var(--panel); border-color:var(--ink)}
+.btn.primary:hover{opacity:.9}
 
 /* table */
-.panel{background:var(--panel); border:1px solid var(--line); border-top:0; border-radius:0 0 10px 10px}
+.panel{background:var(--panel); border:1px solid var(--line); border-radius:0 0 10px 10px; border-top:0}
+.panel.round{border-radius:10px; border-top:1px solid var(--line)}
 .scroll{overflow-x:auto}
-table{width:100%; border-collapse:collapse; min-width:860px}
+table{width:100%; border-collapse:collapse}
+table.list{min-width:860px}
 th,td{padding:9px 12px; text-align:left; white-space:nowrap; border-bottom:1px solid var(--line-2)}
-th{font-size:12px; font-weight:600; color:var(--ink-3); background:var(--panel); position:sticky; top:0}
+th{font-size:12px; font-weight:600; color:var(--ink-3); background:var(--panel)}
+th.sort{cursor:pointer} th.sort:hover{color:var(--ink)}
 td.r,th.r{text-align:right}
-td.num{font-variant-numeric:tabular-nums}
-tbody tr:hover{background:var(--line-2)}
+tbody tr.click{cursor:pointer}
+tbody tr.click:hover{background:var(--line-2)}
+.kv td{white-space:normal; vertical-align:top}
+.kv td:first-child{color:var(--ink-3); width:110px; white-space:nowrap}
 .co{font-weight:600}
-.co a{text-decoration:none}
-.co a:hover{text-decoration:underline}
+.co a{text-decoration:none} .co a:hover{text-decoration:underline}
 .mk{display:inline-block; font-size:10px; font-weight:700; color:var(--ink-3); border:1px solid var(--line); border-radius:4px; padding:0 4px; margin-left:6px; vertical-align:1px}
-.badge{display:inline-block; font-size:11px; font-weight:700; border-radius:4px; padding:1px 6px}
+.badge{display:inline-block; font-size:11px; font-weight:700; border-radius:4px; padding:1px 6px; white-space:nowrap}
 .b-new{color:var(--new); background:var(--new-soft); margin-left:6px}
 .b-amd{color:var(--ink-3); border:1px solid var(--line); margin-left:6px; font-weight:600}
 .b-pub{color:var(--pub); background:var(--pub-soft)}
 .b-pvt{color:var(--pvt); background:var(--pvt-soft)}
 .b-cbo{color:var(--ink-2); border:1px solid var(--line); margin-left:6px; font-weight:600}
 .type{font-family:var(--mono); font-size:12px; font-weight:700}
-.muted{color:var(--ink-3)}
 .dart{font-size:12px; color:var(--accent); text-decoration:none}
 .dart:hover{text-decoration:underline}
-.empty{padding:48px 16px; text-align:center; color:var(--ink-3)}
+.empty{padding:40px 16px; text-align:center; color:var(--ink-3)}
 .foot-note{padding:10px 12px; font-size:12px; color:var(--ink-3); border-top:1px solid var(--line-2)}
+.pager{display:flex; align-items:center; gap:8px; padding:10px 12px; border-top:1px solid var(--line-2); font-size:13px}
+.pager .sp{margin-left:auto}
 
-footer{color:var(--ink-3); font-size:12px; padding:28px 0 40px}
+/* company */
+.co-head{display:flex; gap:16px; align-items:flex-start; flex-wrap:wrap}
+.co-head .meta{color:var(--ink-2); font-size:13px}
+.co-head .actions{margin-left:auto; display:flex; gap:8px; flex-wrap:wrap}
+.secnav{display:flex; gap:4px; flex-wrap:wrap; margin:16px 0}
+.secnav a{font-size:13px; font-weight:600; text-decoration:none; color:var(--ink-2); border:1px solid var(--line); border-radius:999px; padding:4px 12px; background:var(--panel)}
+.secnav a:hover{background:var(--line-2)}
+.prose{white-space:pre-line; color:var(--ink); margin:0}
+.share{display:flex; align-items:center; gap:8px}
+.share .track{flex:1; height:6px; background:var(--line-2); border-radius:3px; min-width:60px}
+.share .fill{height:6px; border-radius:3px; background:var(--s1)}
+.pending{border:1px dashed var(--line); border-radius:10px; padding:14px; color:var(--ink-2); background:var(--bg)}
+
+/* charts */
+.chart{width:100%; height:auto; display:block}
+.chart text{fill:var(--ink-3); font-size:11px; font-family:inherit}
+.chart .grid{stroke:var(--line-2)}
+.chart .base{stroke:var(--line)}
+.legend{display:flex; gap:14px; font-size:12px; color:var(--ink-2); margin-top:6px; flex-wrap:wrap}
+.legend i{display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:5px; vertical-align:-1px}
+#tip{position:fixed; pointer-events:none; background:var(--ink); color:var(--panel); font-size:12px; padding:6px 9px; border-radius:6px; z-index:60; display:none; white-space:nowrap; box-shadow:var(--shadow)}
+
+/* proposal */
+.opt{border:1px solid var(--line); border-radius:10px; padding:14px 16px; background:var(--panel)}
+.opt + .opt{margin-top:10px}
+.opt-head{display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+.opt-head h3{margin:0; font-size:15px}
+.rank{font-family:var(--mono); font-weight:700; color:var(--ink-3)}
+.fit{font-size:11px; font-weight:700; border-radius:4px; padding:1px 7px}
+.fit-높음{color:var(--good); border:1px solid currentColor}
+.fit-보통{color:var(--warn); border:1px solid currentColor}
+.fit-낮음{color:var(--ink-3); border:1px solid var(--line)}
+.score{margin-left:auto; display:flex; align-items:center; gap:8px; font-size:12px; color:var(--ink-3)}
+.score .track{width:90px; height:6px; background:var(--line-2); border-radius:3px}
+.score .fill{height:6px; border-radius:3px; background:var(--ink-2)}
+.opt ul{margin:8px 0 0; padding-left:18px}
+.opt li{margin:2px 0}
+.opt .why li::marker{content:"＋ "; color:var(--good)}
+.opt .risk li::marker{content:"－ "; color:var(--neg)}
+.opt .meta{font-size:12px; color:var(--ink-3); margin-top:8px}
+.top3{display:grid; grid-template-columns:repeat(3,1fr); gap:10px}
+.top3 .opt{margin:0}
+details summary{cursor:pointer; color:var(--ink-2); font-weight:600; margin-top:10px}
+
+/* calendar */
+.cal{display:grid; grid-template-columns:repeat(7,1fr); border-top:1px solid var(--line); border-left:1px solid var(--line)}
+.cal .dow{font-size:12px; font-weight:600; color:var(--ink-3); padding:6px 8px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--panel)}
+.cal .day{min-height:104px; padding:6px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--panel)}
+.cal .day.out{background:var(--bg)}
+.cal .day.out .dn{opacity:.4}
+.cal .day.today{box-shadow:inset 0 0 0 2px var(--accent)}
+.cal .dn{font-size:12px; font-weight:700; color:var(--ink-2); margin-bottom:4px}
+.ev{display:block; width:100%; text-align:left; border:0; border-left:3px solid; border-radius:4px; padding:3px 6px; margin-bottom:3px; font-size:12px; cursor:pointer; background:var(--line-2); overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.ev.dem{border-color:var(--s1)} .ev.iss{border-color:var(--s3)}
+.ev b{font-weight:700; margin-right:4px}
+.cal-head{display:flex; align-items:center; gap:10px; margin-bottom:12px; flex-wrap:wrap}
+.cal-head h2{margin:0; min-width:120px}
+
+/* modal */
+.modal-bg{position:fixed; inset:0; background:rgba(10,12,16,.45); z-index:50; display:none; align-items:flex-start; justify-content:center; padding:5vh 16px; overflow:auto}
+.modal-bg.on{display:flex}
+.modal{background:var(--panel); border-radius:14px; width:100%; max-width:640px; box-shadow:var(--shadow); border:1px solid var(--line)}
+.modal-h{display:flex; align-items:center; gap:10px; padding:16px 18px; border-bottom:1px solid var(--line-2); flex-wrap:wrap}
+.modal-h h2{margin:0; font-size:18px}
+.modal-h .x{margin-left:auto; border:0; background:none; font-size:22px; line-height:1; cursor:pointer; color:var(--ink-3); padding:4px}
+.modal-b{padding:16px 18px}
+.fields{display:grid; grid-template-columns:repeat(3,1fr); gap:12px 16px}
+.fields .l{font-size:11px; color:var(--ink-3)}
+.fields .v{font-weight:600}
+.modal-b h3{margin:18px 0 8px}
+
+footer{color:var(--ink-3); font-size:12px; padding:8px 0 40px}
 footer p{margin:4px 0}
 
+@media (max-width:900px){
+  .tiles{grid-template-columns:repeat(3,1fr)}
+  .grid3,.top3{grid-template-columns:1fr}
+  .search{width:180px}
+}
 @media (max-width:760px){
+  .top{height:auto; flex-wrap:wrap; padding:10px 16px; gap:8px 12px}
+  nav.main{order:3; width:100%; overflow-x:auto}
+  .search{width:auto; flex:1; margin-left:0}
   .kpis{grid-template-columns:repeat(2,1fr)}
   .kpi .v{font-size:19px}
+  .grid2{grid-template-columns:1fr}
+  .tiles{grid-template-columns:repeat(2,1fr)}
   .filters{margin-left:0; width:100%}
   input[type=search]{flex:1; width:auto}
-  .stamp{font-size:11px}
+  .fields{grid-template-columns:repeat(2,1fr)}
+  .cal .day{min-height:70px; padding:3px}
+  .ev{font-size:10px; padding:2px 3px}
+  .ev b{display:none}
+}
+@media print{
+  header, footer, .noprint, .secnav{display:none !important}
+  body{background:#fff; color:#000; font-size:12px}
+  .card,.opt{break-inside:avoid; border-color:#ccc}
+  main{padding:0}
+  .top3{grid-template-columns:repeat(3,1fr)}
 }
 </style>
 </head>
 <body>
 <header>
   <div class="wrap top">
-    <div class="brand">__SITE_NAME__<small>BETA</small></div>
-    <div class="stamp" id="stamp"></div>
+    <a class="brand" href="#/">__SITE_NAME__<small>BETA</small></a>
+    <nav class="main" id="nav">
+      <a href="#/" data-r="home">홈</a>
+      <a href="#/deals" data-r="deals">전체 조달내역</a>
+      <a href="#/calendar" data-r="calendar">공모채 캘린더</a>
+    </nav>
+    <div class="search">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="gq" type="search" placeholder="회사명·종목코드로 찾기" autocomplete="off" aria-label="회사 검색">
+      <div class="suggest" id="suggest"></div>
+    </div>
   </div>
 </header>
 
-<main class="wrap">
-  <section class="kpis" id="kpis" aria-label="최근 2주 요약"></section>
-  <div class="period-note">최근 2주 기준 · 메자닌·유상증자는 이사회 결의일, 공모채는 청약일, 사모채는 발행일</div>
-
-  <div class="bar">
-    <div class="tabs" role="tablist" id="tabs"></div>
-    <div class="filters">
-      <div class="chips" id="chips"></div>
-      <select id="period" aria-label="기간">
-        <option value="14">최근 2주</option>
-        <option value="30" selected>최근 1개월</option>
-        <option value="90">최근 3개월</option>
-        <option value="0">전체</option>
-      </select>
-      <input type="search" id="q" placeholder="회사명 검색" aria-label="회사명 검색">
-    </div>
-  </div>
-  <div class="panel">
-    <div class="scroll"><table><thead id="thead"></thead><tbody id="tbody"></tbody></table></div>
-    <div class="foot-note" id="note"></div>
-  </div>
-</main>
+<main class="wrap" id="app"><div class="empty">불러오는 중…</div></main>
 
 <footer class="wrap">
-  <p>출처: 금융감독원 DART(OpenDART) · 금융위원회 채권기본정보(공공데이터포털, 한국예탁결제원 제공)</p>
-  <p>이 사이트의 정보는 공시를 자동으로 정리한 것으로 오류가 있을 수 있으며 투자 권유가 아닙니다. 정확한 내용은 공시 원문을 확인하세요.</p>
+  <p>출처: 금융감독원 DART(OpenDART) · 금융위원회 채권기본정보·주식시세정보(공공데이터포털, 한국예탁결제원·한국거래소 제공) · KRX KIND 상장법인목록</p>
+  <p>공시를 자동으로 정리한 정보라 오류가 있을 수 있으며, 조달 제안은 공시 숫자에 기반한 참고 의견일 뿐 투자 권유가 아닙니다. 정확한 내용은 공시 원문을 확인하세요.</p>
 </footer>
 
-<script id="payload" type="application/json">__DATA__</script>
+<div class="modal-bg" id="modal" role="dialog" aria-modal="true"><div class="modal" id="modal-box"></div></div>
+<div id="tip"></div>
+
 <script>
 (() => {
-  const DB = JSON.parse(document.getElementById('payload').textContent);
-  const rows = DB.rows || [];
-  const kstDate = ms => new Intl.DateTimeFormat('sv-SE', {timeZone: 'Asia/Seoul'}).format(new Date(ms)); // YYYY-MM-DD
-  const todayIso = kstDate(Date.now());
+'use strict';
+// ───────────── 공통 ─────────────
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+const app = $('#app');
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const kstDate = ms => new Intl.DateTimeFormat('sv-SE', {timeZone: 'Asia/Seoul'}).format(new Date(ms));
+const todayIso = kstDate(Date.now());
+const daysAgo = n => kstDate(Date.now() - n * 86400000);
+const DASH = '<span class="muted">-</span>';
+const won = v => {
+  if (v == null || isNaN(v)) return DASH;
+  const a = Math.abs(v), sign = v < 0 ? '-' : '';
+  if (a >= 1e12) return sign + (a / 1e12).toLocaleString('ko-KR', {maximumFractionDigits: 1}) + '조';
+  if (a >= 1e8) { const e = a / 1e8; return sign + (e >= 100 ? Math.round(e).toLocaleString('ko-KR') : (Math.round(e * 10) / 10).toLocaleString('ko-KR')) + '억'; }
+  if (a >= 1e4) return sign + Math.round(a / 1e4).toLocaleString('ko-KR') + '만';
+  return sign + a.toLocaleString('ko-KR');
+};
+const wonTxt = v => won(v).replace(/<[^>]+>/g, '');
+const int = v => v == null ? DASH : Number(v).toLocaleString('ko-KR');
+const pct = (v, d = 1) => v == null || isNaN(v) ? DASH : (+v).toFixed(d).replace(/\.0+$/, '').replace(/(\.\d*?)0+$/, '$1') + '%';
+const md = s => s ? s.slice(2).replace(/-/g, '.') : DASH;
+const fullDate = s => s ? s.replace(/-/g, '.') : DASH;
+const ratio = (v, d = 1, unit = '배') => v == null ? DASH : (+v).toFixed(d) + unit;
+const MK = {Y: '유', K: '코', N: '넥', E: '비상장'};
+const MKF = {Y: '유가증권', K: '코스닥', N: '코넥스', E: '비상장'};
+const debounce = (f, ms) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => f(...a), ms); }; };
+const store = {
+  get(k, d) { try { const v = localStorage.getItem('ecm:' + k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
+  set(k, v) { try { localStorage.setItem('ecm:' + k, JSON.stringify(v)); } catch (e) {} },
+};
 
-  // ── 포맷 ──
-  const won = v => {
-    if (v == null) return '<span class="muted">-</span>';
-    if (Math.abs(v) >= 1e8) {
-      const e = v / 1e8;
-      return (e >= 100 ? Math.round(e).toLocaleString('ko-KR') : (Math.round(e * 10) / 10).toLocaleString('ko-KR')) + '억';
+const cache = {};
+const getJSON = url => cache[url] || (cache[url] = fetch(url, {cache: 'no-cache'}).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }));
+
+// ───────────── 조달 행 공통 ─────────────
+const dealDate = r => r.board_dt || r.sub_dt || r.issue_dt || r.rcept_dt || '';
+const isNew = r => r.captured_by === 'watch' && !r.confirmed;
+const typeLabel = r => r.type === 'BOND' ? (r.pcbo ? 'P-CBO' : '회사채') : r.type === 'RIGHTS' ? '유상증자' : r.type;
+const kindKey = r => r.type === 'BOND' ? (r.pcbo ? 'P-CBO' : r.offering === '공모' ? '공모채' : '사모채') : r.type === 'RIGHTS' ? '유상증자' : r.type;
+const coLink = (r, name) => `<a href="#/company/${encodeURIComponent(r.key)}" data-stop>${esc(name ?? r.corp_name)}</a>`;
+const company = r => `<span class="co">${coLink(r)}</span>${MK[r.corp_cls] && r.corp_cls !== 'E' ? `<span class="mk">${MK[r.corp_cls]}</span>` : ''}`
+  + (r.pcbo ? '<span class="badge b-cbo">P-CBO</span>' : '')
+  + (isNew(r) ? '<span class="badge b-new">새</span>' : '')
+  + (r.amended ? '<span class="badge b-amd">정정</span>' : '');
+const offer = o => o === '공모' ? '<span class="badge b-pub">공모</span>' : o === '사모' ? '<span class="badge b-pvt">사모</span>' : esc(o || '-');
+const dartLink = r => r.url ? `<a class="dart" href="${r.url}" target="_blank" rel="noopener" data-stop>원문</a>` : DASH;
+const series = r => r.series ? esc(r.series) + '회' : DASH;
+const priceOrRate = r => ['CB','BW','EB'].includes(r.type) ? int(r.price) + '<span class="muted"> 원</span>'
+  : r.type === 'BOND' ? (r.coupon != null ? pct(r.coupon, 3) : /수요예측/.test(r.coupon_raw || '') ? '<span class="muted">수요예측 후</span>' : DASH)
+  : r.type === 'RIGHTS' ? (r.dilution != null ? pct(r.dilution) + '<span class="muted"> 증자</span>' : DASH) : DASH;
+
+let ROWS_BY_ID = {};
+function remember(rows) { rows.forEach(r => { ROWS_BY_ID[r.id] = r; }); return rows; }
+
+// 행 클릭 → 팝업 (회사명·원문 링크는 그대로 이동)
+app.addEventListener('click', e => {
+  if (e.target.closest('[data-stop]')) return;
+  const tr = e.target.closest('[data-deal]');
+  if (tr && ROWS_BY_ID[tr.dataset.deal]) openDeal(ROWS_BY_ID[tr.dataset.deal]);
+});
+
+// ───────────── 툴팁 ─────────────
+const tip = $('#tip');
+document.addEventListener('mousemove', e => {
+  const t = e.target.closest && e.target.closest('[data-tip]');
+  if (!t) { tip.style.display = 'none'; return; }
+  tip.textContent = t.getAttribute('data-tip');
+  tip.style.display = 'block';
+  const w = tip.offsetWidth;
+  tip.style.left = Math.min(e.clientX + 12, innerWidth - w - 8) + 'px';
+  tip.style.top = (e.clientY + 14) + 'px';
+});
+
+// ───────────── 차트 (SVG) ─────────────
+// 단일 계열 막대: 0 기준선, 음수 아래로, 끝 4px 둥글게
+function barChart(points, {height = 170, color = 'var(--s1)', fmt = wonTxt, label = ''} = {}) {
+  const W = 360, H = height, padL = 6, padR = 6, padT = 18, padB = 22;
+  const vals = points.map(p => p.v ?? 0);
+  const max = Math.max(0, ...vals), min = Math.min(0, ...vals);
+  const span = (max - min) || 1;
+  const y = v => padT + (max - v) / span * (H - padT - padB);
+  const bw = Math.min(42, (W - padL - padR) / points.length * 0.55);
+  const step = (W - padL - padR) / points.length;
+  const r = 4;
+  let s = `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(label)}">`;
+  s += `<line class="base" x1="${padL}" x2="${W - padR}" y1="${y(0)}" y2="${y(0)}"/>`;
+  points.forEach((p, i) => {
+    const cx = padL + step * i + step / 2, x = cx - bw / 2;
+    if (p.v == null) { s += `<text x="${cx}" y="${y(0) - 4}" text-anchor="middle">-</text>`; }
+    else {
+      const y0 = y(0), y1 = y(p.v), h = Math.max(1, Math.abs(y1 - y0)), top = Math.min(y0, y1), neg = p.v < 0;
+      const rr = Math.min(r, h, bw / 2);
+      const d = neg
+        ? `M${x},${top} h${bw} v${h - rr} q0,${rr} -${rr},${rr} h-${bw - 2 * rr} q-${rr},0 -${rr},-${rr} z`
+        : `M${x},${top + h} v-${h - rr} q0,-${rr} ${rr},-${rr} h${bw - 2 * rr} q${rr},0 ${rr},${rr} v${h - rr} z`;
+      s += `<path d="${d}" fill="${neg ? 'var(--neg)' : color}" opacity="${p.dim ? .45 : 1}"/>`;
+      s += `<rect x="${cx - step / 2}" y="${padT - 14}" width="${step}" height="${H - padT - padB + 14}" fill="transparent" data-tip="${esc(p.label)} · ${esc(fmt(p.v))}"/>`;
+      s += `<text x="${cx}" y="${neg ? y1 + 12 : y1 - 5}" text-anchor="middle" style="fill:var(--ink-2);font-weight:600">${esc(fmt(p.v))}</text>`;
     }
-    return Math.round(v / 1e4).toLocaleString('ko-KR') + '만';
-  };
-  const int = v => v == null ? '<span class="muted">-</span>' : Number(v).toLocaleString('ko-KR');
-  const pct = (v, d = 2) => v == null ? '<span class="muted">-</span>' : (+v).toFixed(d).replace(/\.?0+$/, '') + '%';
-  const md = s => s ? s.slice(2).replace(/-/g, '.') : '<span class="muted">-</span>';   // 2026-10-20 → 26.10.20
-  const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-  const MK = {Y: '유', K: '코', N: '넥'};
-  const daysAgo = n => kstDate(Date.now() - n * 86400000);
+    s += `<text x="${cx}" y="${H - 6}" text-anchor="middle">${esc(p.label)}</text>`;
+  });
+  return s + '</svg>';
+}
 
-  const isNew = r => r.captured_by === 'watch' && !r.confirmed;   // 실시간 감시가 잡았고 아직 정기 갱신 전
-  const company = r => {
-    const name = esc(r.corp_name);
-    const link = r.url ? `<a href="${r.url}" target="_blank" rel="noopener">${name}</a>` : name;
-    return `<span class="co">${link}</span>${MK[r.corp_cls] ? `<span class="mk">${MK[r.corp_cls]}</span>` : ''}`
-      + (isNew(r) ? '<span class="badge b-new">새</span>' : '')
-      + (r.amended ? '<span class="badge b-amd">정정</span>' : '');
-  };
-  const offer = o => o === '공모' ? '<span class="badge b-pub">공모</span>' : o === '사모' ? '<span class="badge b-pvt">사모</span>' : esc(o || '-');
-  const dartLink = r => r.url ? `<a class="dart" href="${r.url}" target="_blank" rel="noopener">원문</a>` : '<span class="muted">-</span>';
-
-  // ── 섹션 정의 ──
-  const S = {
-    mezz: {
-      label: '메자닌', kpi: '메자닌 발행결정',
-      pick: r => ['CB', 'BW', 'EB'].includes(r.type),
-      date: r => r.board_dt || r.rcept_dt,
-      chips: ['CB', 'BW', 'EB', '공모', '사모'],
-      chipTest: (r, c) => ['CB','BW','EB'].includes(c) ? r.type === c : r.offering === c,
-      cols: [
-        ['이사회', r => md(r.board_dt || r.rcept_dt)],
-        ['회사명', company],
-        ['회차', r => r.series ? esc(r.series) + '회' : '-'],
-        ['종류', r => `<span class="type">${r.type}</span>`],
-        ['금액', r => won(r.amount), 'r'],
-        ['방식', r => offer(r.offering)],
-        ['표면/만기', r => `${pct(r.coupon, 2)} / ${pct(r.ytm, 2)}`, 'r'],
-        ['행사가', r => int(r.price), 'r'],
-        ['희석', r => pct(r.dilution), 'r'],
-        ['리픽싱 하한', r => int(r.refix_floor), 'r'],
-        ['만기', r => md(r.maturity)],
-        ['', dartLink],
-      ],
-      note: '출처 DART 주요사항보고서 · 행사가 = 전환가(CB)·행사가(BW)·교환가(EB) · 희석 = 행사 시 발행주식 ÷ 발행주식총수',
-    },
-    rights: {
-      label: '유상증자', kpi: '유상증자 결정',
-      pick: r => r.type === 'RIGHTS',
-      date: r => r.board_dt || r.rcept_dt,
-      chips: ['보통주', '종류주', '공모'],
-      chipTest: (r, c) => c === '공모' ? r.offering === '공모' : (r.stock_kind || '').includes(c),
-      cols: [
-        ['접수일', r => md(r.rcept_dt)],
-        ['회사명', company],
-        ['종류', r => esc(r.stock_kind || '-')],
-        ['증자방식', r => esc(r.method || '-')],
-        ['금액', r => won(r.amount), 'r'],
-        ['신주(보통)', r => int(r.new_common), 'r'],
-        ['신주(기타)', r => int(r.new_other), 'r'],
-        ['증자비율', r => pct(r.dilution), 'r'],
-        ['', dartLink],
-      ],
-      note: '출처 DART 주요사항보고서 · 금액 = 자금조달 목적 합계 · 증자비율 = 신주 ÷ 증자 전 발행주식총수',
-    },
-    pub: {
-      label: '회사채 공모', kpi: '회사채 공모',
-      pick: r => r.type === 'BOND' && r.offering === '공모',
-      date: r => r.sub_dt || r.pay_dt || r.rcept_dt,
-      chips: [],
-      cols: [
-        ['청약일', r => md(r.sub_dt)],
-        ['회사명', company],
-        ['회차', r => r.series ? esc(r.series) + '회' : '-'],
-        ['모집금액', r => won(r.amount), 'r'],
-        ['금리', r => r.coupon != null ? pct(r.coupon, 3)
-          : /수요예측/.test(r.coupon_raw || '') ? '<span class="muted">수요예측 후</span>' : esc(r.coupon_raw || '-'), 'r'],
-        ['만기', r => md(r.maturity)],
-        ['신용등급', r => esc(r.rating || '-')],
-        ['대표주관', r => esc(r.lead || '-')],
-        ['납입일', r => md(r.pay_dt)],
-        ['', dartLink],
-      ],
-      note: '출처 DART 증권신고서(채무증권) · 금융채·ABS·주식연계채권 제외 · 수요예측 후 증액되면 정정신고서 기준으로 갱신',
-    },
-    pvt: {
-      label: '회사채 사모', kpi: '회사채 사모',
-      pick: r => r.type === 'BOND' && r.offering === '사모',
-      date: r => r.issue_dt,
-      chips: ['일반 사모', 'P-CBO'],
-      chipTest: (r, c) => c === 'P-CBO' ? !!r.pcbo : !r.pcbo,
-      cols: [
-        ['발행일', r => md(r.issue_dt)],
-        ['발행사', r => `<span class="co">${esc(r.corp_name)}</span>` + (r.pcbo ? '<span class="badge b-cbo">P-CBO</span>' : '') + (isNew(r) ? '<span class="badge b-new">새</span>' : '')],
-        ['종목명', r => `<span class="muted">${esc(r.name || '-')}</span>`],
-        ['발행금액', r => won(r.amount), 'r'],
-        ['금리', r => pct(r.coupon, 3), 'r'],
-        ['만기', r => md(r.maturity)],
-        ['보증', r => esc(r.guarantee || '-')],
-        ['업종', r => `<span class="muted">${esc(r.industry || '-')}</span>`],
-      ],
-      note: '출처 금융위원회 채권기본정보(한국예탁결제원) · 모집방법 = 사모·CBO기초사모(P-CBO 태그) · 금융채·ABS·단기물·주식연계채권 제외 · 발행 다음 영업일 반영',
-    },
-  };
-
-  const state = {tab: 'mezz', chips: new Set(), period: 30, q: ''};
-  try { const saved = JSON.parse(localStorage.getItem('ecm-state') || '{}'); if (S[saved.tab]) state.tab = saved.tab; if (saved.period != null) state.period = saved.period; } catch (e) {}
-
-  // ── 헤더 기준시각 ──
-  const fmtStamp = s => s ? s.slice(0, 16).replace('T', ' ') : '-';
-  document.getElementById('stamp').innerHTML =
-    `데이터 기준 <b>${fmtStamp(DB.meta.data_updated)}</b><br>정기 갱신 ${fmtStamp(DB.meta.last_daily)}`;
-
-  // ── KPI ──
-  const since14 = daysAgo(14);
-  document.getElementById('kpis').innerHTML = Object.entries(S).map(([k, s]) => {
-    const list = rows.filter(r => s.pick(r) && (s.date(r) || '') >= since14);
-    const sum = list.reduce((a, r) => a + (r.amount || 0), 0);
-    return `<button class="kpi" data-tab="${k}"><div class="l">${s.kpi}</div><div class="v">${list.length}건</div><div class="s">${sum ? won(sum) : '-'}</div></button>`;
-  }).join('');
-  document.querySelectorAll('.kpi').forEach(b => b.onclick = () => { state.tab = b.dataset.tab; state.chips.clear(); render(); });
-
-  // ── 렌더 ──
-  const $ = id => document.getElementById(id);
-  $('period').value = String(state.period);
-  $('period').onchange = e => { state.period = +e.target.value; render(); };
-  $('q').oninput = e => { state.q = e.target.value.trim(); render(); };
-
-  function filtered(s) {
-    const since = state.period ? daysAgo(state.period) : '';
-    return rows.filter(r => s.pick(r)
-      && (!since || (s.date(r) || '') >= since)
-      && (!state.q || (r.corp_name || '').includes(state.q))
-      && (!state.chips.size || [...state.chips].some(c => s.chipTest(r, c))))
-      .sort((a, b) => (s.date(b) || '').localeCompare(s.date(a) || ''));
-  }
-
-  function render() {
-    const s = S[state.tab];
-    $('tabs').innerHTML = Object.entries(S).map(([k, t]) => {
-      const n = filtered({...t, chipTest: () => true, pick: t.pick}).length;
-      return `<button class="tab" role="tab" aria-selected="${k === state.tab}" data-k="${k}">${t.label}<span class="n">${n}</span></button>`;
-    }).join('');
-    document.querySelectorAll('.tab').forEach(b => b.onclick = () => { state.tab = b.dataset.k; state.chips.clear(); render(); });
-
-    $('chips').innerHTML = s.chips.map(c => `<button class="chip" aria-pressed="${state.chips.has(c)}" data-c="${c}">${c}</button>`).join('');
-    document.querySelectorAll('.chip').forEach(b => b.onclick = () => {
-      state.chips.has(b.dataset.c) ? state.chips.delete(b.dataset.c) : state.chips.add(b.dataset.c); render();
+// 누적 막대: 만기 구조 (공모 / 사모 / 주식연계)
+function stackChart(rows, keys, colors) {
+  const W = 720, H = 210, padL = 8, padR = 8, padT = 22, padB = 24;
+  const tot = rows.map(r => keys.reduce((a, k) => a + (r[k] || 0), 0));
+  const max = Math.max(1, ...tot);
+  const step = (W - padL - padR) / Math.max(rows.length, 1);
+  const bw = Math.min(46, step * 0.6);
+  const yh = v => v / max * (H - padT - padB);
+  let s = `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="연도별 사채 만기">`;
+  s += `<line class="base" x1="${padL}" x2="${W - padR}" y1="${H - padB}" y2="${H - padB}"/>`;
+  rows.forEach((r, i) => {
+    const cx = padL + step * i + step / 2, x = cx - bw / 2;
+    let yb = H - padB;
+    const segs = keys.filter(k => r[k] > 0);
+    segs.forEach((k, j) => {
+      const h = yh(r[k]);
+      const last = j === segs.length - 1;
+      const gap = j > 0 ? 2 : 0;
+      const top = yb - h;
+      const hh = Math.max(1, h - gap);
+      const rr = last ? Math.min(4, hh, bw / 2) : 0;
+      const d = `M${x},${yb - gap} v-${hh - rr} ${rr ? `q0,-${rr} ${rr},-${rr} h${bw - 2 * rr} q${rr},0 ${rr},${rr}` : `h${bw}`} v${hh - rr} z`;
+      s += `<path d="${d}" fill="${colors[keys.indexOf(k)]}"/>`;
+      yb = top;
     });
+    const label = keys.map(k => `${k} ${wonTxt(r[k] || 0)}`).join(' · ');
+    s += `<rect x="${cx - step / 2}" y="${padT - 18}" width="${step}" height="${H - padT - padB + 18}" fill="transparent" data-tip="${esc(r.year)}년 만기 · ${esc(label)}"/>`;
+    s += `<text x="${cx}" y="${yb - 6}" text-anchor="middle" style="fill:var(--ink-2);font-weight:600">${esc(wonTxt(tot[i]))}</text>`;
+    s += `<text x="${cx}" y="${H - 7}" text-anchor="middle">${esc(r.year)}</text>`;
+  });
+  return s + '</svg>' + `<div class="legend">${keys.map((k, i) => `<span><i style="background:${colors[i]}"></i>${k}</span>`).join('')}</div>`;
+}
 
-    $('thead').innerHTML = '<tr>' + s.cols.map(([h, , c]) => `<th class="${c || ''}">${h}</th>`).join('') + '</tr>';
+// ───────────── 팝업: 종목 상세 ─────────────
+const modal = $('#modal'), box = $('#modal-box');
+function closeModal() { modal.classList.remove('on'); document.body.style.overflow = ''; }
+modal.addEventListener('click', e => { if (e.target === modal || e.target.closest('.x')) closeModal(); if (e.target.closest('a[href^="#/"]')) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+function field(l, v) { return v == null || v === '' || v === DASH ? '' : `<div><div class="l">${l}</div><div class="v">${v}</div></div>`; }
+function openDeal(r) {
+  const head = `<span class="badge ${r.type === 'BOND' ? (r.offering === '공모' ? 'b-pub' : 'b-pvt') : 'b-amd'}" style="margin:0">${esc(kindKey(r))}</span>
+    <h2>${esc(r.corp_name)} ${r.series ? esc(r.series) + '회' : ''} ${r.type !== 'BOND' && r.type !== 'RIGHTS' ? esc(r.type) : ''}</h2>
+    ${r.corp_cls && r.corp_cls !== 'E' ? `<span class="mk" style="margin:0">${MK[r.corp_cls]}</span>` : ''}
+    <button class="x" aria-label="닫기">×</button>`;
+  let f = '';
+  if (['CB', 'BW', 'EB'].includes(r.type)) {
+    f = field('권면총액', won(r.amount)) + field('발행방식', offer(r.offering)) + field('이사회 결의일', md(r.board_dt))
+      + field('표면이자율', pct(r.coupon, 2)) + field('만기이자율', pct(r.ytm, 2)) + field('만기일', md(r.maturity))
+      + field(r.type === 'CB' ? '전환가액' : r.type === 'BW' ? '행사가액' : '교환가액', r.price ? int(r.price) + '원' : null)
+      + field('리픽싱 하한', r.refix_floor ? int(r.refix_floor) + '원' : null)
+      + field('행사 시 주식수', r.shares ? int(r.shares) + '주' : null) + field('발행주식 대비', r.dilution != null ? pct(r.dilution, 2) : null)
+      + field('청구 기간', r.exercise_from ? md(r.exercise_from) + ' ~ ' + md(r.exercise_to) : null)
+      + field('납입일', md(r.pay_dt)) + field('교환 대상', esc(r.exchange_target)) + field('사채·인수권 분리', esc(r.detachable))
+      + field('대표주관', esc(r.lead));
+  } else if (r.type === 'RIGHTS') {
+    f = field('조달 금액', won(r.amount)) + field('증자 방식', esc(r.method)) + field('주식 종류', esc(r.stock_kind))
+      + field('신주(보통)', r.new_common ? int(r.new_common) + '주' : null) + field('신주(기타)', r.new_other ? int(r.new_other) + '주' : null)
+      + field('증자 비율', pct(r.dilution, 2)) + field('접수일', md(r.rcept_dt)) + field('액면가', r.par_value ? int(r.par_value) + '원' : null);
+  } else if (r.offering === '공모') {
+    f = field('모집 금액', won(r.amount)) + field('금리', priceOrRate(r)) + field('만기일', md(r.maturity))
+      + field('수요예측일', md(r.demand_dt)) + field('청약일', md(r.sub_dt)) + field('납입(발행)일', md(r.pay_dt))
+      + field('신용등급', esc(r.rating)) + field('대표주관', esc(r.lead)) + field('보증기관', esc(r.guarantor))
+      + field('인수단', r.underwriters?.length ? esc(r.underwriters.join(', ')) : null) + field('종목명', esc(r.name));
+  } else {
+    f = field('발행 금액', won(r.amount)) + field('표면금리', pct(r.coupon, 3)) + field('금리 구분', esc(r.rate_type))
+      + field('발행일', md(r.issue_dt)) + field('만기일', md(r.maturity)) + field('보증', esc(r.guarantee))
+      + field('옵션', esc(r.option)) + field('자금 용도', esc(r.usage)) + field('업종', esc(r.industry))
+      + field('종목명', esc(r.name)) + field('ISIN', esc(r.isin)) + field('구분', r.pcbo ? 'P-CBO 기초자산' : '일반 사모');
+  }
+  const uses = r.purposes || r.uses;
+  let useHtml = '';
+  if (uses && Object.keys(uses).length) {
+    const tot = Object.values(uses).reduce((a, b) => a + b, 0);
+    useHtml = '<h3>자금 사용 목적</h3>' + Object.entries(uses).sort((a, b) => b[1] - a[1]).map(([k, v]) =>
+      `<div class="share" style="margin:4px 0"><span style="width:90px">${esc(k)}</span><div class="track"><div class="fill" style="width:${v / tot * 100}%"></div></div><span class="num" style="width:70px;text-align:right">${won(v)}</span></div>`).join('');
+  }
+  box.innerHTML = `<div class="modal-h">${head}</div><div class="modal-b">
+    <div class="fields">${f}</div>${useHtml}
+    <div id="m-more"></div>
+    <div style="display:flex;gap:8px;margin-top:18px;flex-wrap:wrap">
+      <a class="btn primary" href="#/company/${encodeURIComponent(r.key)}">회사 정보 보기 →</a>
+      <a class="btn" href="#/report/${encodeURIComponent(r.key)}">조달 제안 보고서</a>
+      ${r.url ? `<a class="btn" href="${r.url}" target="_blank" rel="noopener">DART 원문</a>` : ''}
+    </div>
+    <p class="note" style="margin:12px 0 0">출처: ${r.source === '공공데이터포털' ? '금융위원회 채권기본정보(한국예탁결제원)' : 'DART ' + (r.type === 'BOND' ? '증권신고서(채무증권)' : '주요사항보고서')}${r.rcept_no ? ' · 접수번호 ' + esc(r.rcept_no) : ''}</p>
+  </div>`;
+  modal.classList.add('on'); document.body.style.overflow = 'hidden';
+  getJSON(`data/co/${encodeURIComponent(r.key)}.json`).then(co => {
+    const others = (co.deals || []).filter(d => d.id !== r.id).slice(0, 6);
+    if (!others.length) return;
+    remember(others);
+    $('#m-more').innerHTML = '<h3>이 회사의 다른 조달</h3><table><tbody>' + others.map(d =>
+      `<tr class="click" data-pop="${esc(d.id)}"><td>${md(dealDate(d))}</td><td>${esc(kindKey(d))}</td><td>${series(d)}</td><td class="r num">${won(d.amount)}</td></tr>`).join('') + '</tbody></table>';
+    $$('#m-more [data-pop]').forEach(tr => tr.onclick = () => openDeal(ROWS_BY_ID[tr.dataset.pop]));
+  }).catch(() => {});
+}
+
+// ───────────── 회사 검색 ─────────────
+const gq = $('#gq'), sug = $('#suggest');
+let COS = null, sel = -1;
+const loadCos = () => COS ? Promise.resolve(COS) : getJSON('data/companies.json').then(x => (COS = x));
+gq.addEventListener('focus', loadCos);
+gq.addEventListener('input', debounce(async () => {
+  const q = gq.value.trim().replace(/\s/g, '').toLowerCase();
+  if (!q) { sug.classList.remove('on'); return; }
+  const cos = await loadCos();
+  const hit = cos.filter(c => c[1].replace(/\s/g, '').toLowerCase().includes(q) || c[3] === q.toUpperCase())
+    .sort((a, b) => (a[1].replace(/\s/g, '').toLowerCase().startsWith(q) ? 0 : 1) - (b[1].replace(/\s/g, '').toLowerCase().startsWith(q) ? 0 : 1) || b[5] - a[5])
+    .slice(0, 8);
+  sel = -1;
+  sug.innerHTML = hit.length ? hit.map(c => `<a href="#/company/${encodeURIComponent(c[0])}"><b>${esc(c[1])}</b>${c[2] && c[2] !== 'E' ? `<span class="mk">${MK[c[2]]}</span>` : ''}<span class="sub">${esc(c[4] || '')}${c[5] ? ` · 조달 ${c[5]}건` : ''}</span></a>`).join('')
+    : '<div class="empty" style="padding:14px">찾는 회사가 없습니다</div>';
+  sug.classList.add('on');
+}, 120));
+gq.addEventListener('keydown', e => {
+  const items = $$('a', sug);
+  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+    e.preventDefault(); sel = (sel + (e.key === 'ArrowDown' ? 1 : -1) + items.length) % items.length;
+    items.forEach((a, i) => a.classList.toggle('sel', i === sel));
+  } else if (e.key === 'Enter' && items.length) { location.hash = (items[Math.max(sel, 0)]).getAttribute('href'); sug.classList.remove('on'); gq.blur(); }
+});
+document.addEventListener('click', e => { if (!e.target.closest('.search')) sug.classList.remove('on'); else if (e.target.closest('.suggest a')) { sug.classList.remove('on'); gq.value = ''; } });
+
+// ───────────── 홈 ─────────────
+const S = {
+  mezz: { label: '메자닌', kpi: '메자닌 발행결정', pick: r => ['CB','BW','EB'].includes(r.type), date: r => r.board_dt || r.rcept_dt,
+    chips: ['CB','BW','EB','공모','사모'], chipTest: (r, c) => ['CB','BW','EB'].includes(c) ? r.type === c : r.offering === c,
+    cols: [['이사회', r => md(r.board_dt || r.rcept_dt)], ['회사명', company], ['회차', series], ['종류', r => `<span class="type">${r.type}</span>`],
+      ['금액', r => won(r.amount), 'r'], ['방식', r => offer(r.offering)], ['표면/만기', r => `${pct(r.coupon, 2)} / ${pct(r.ytm, 2)}`, 'r'],
+      ['행사가', r => int(r.price), 'r'], ['희석', r => pct(r.dilution, 2), 'r'], ['리픽싱 하한', r => int(r.refix_floor), 'r'], ['만기', r => md(r.maturity)], ['', dartLink]],
+    note: '출처 DART 주요사항보고서 · 행사가 = 전환가(CB)·행사가(BW)·교환가(EB) · 희석 = 행사 시 발행주식 ÷ 발행주식총수 · 행을 누르면 상세' },
+  rights: { label: '유상증자', kpi: '유상증자 결정', pick: r => r.type === 'RIGHTS', date: r => r.board_dt || r.rcept_dt,
+    chips: ['보통주','종류주','공모'], chipTest: (r, c) => c === '공모' ? r.offering === '공모' : (r.stock_kind || '').includes(c),
+    cols: [['접수일', r => md(r.rcept_dt)], ['회사명', company], ['종류', r => esc(r.stock_kind || '-')], ['증자방식', r => esc(r.method || '-')],
+      ['금액', r => won(r.amount), 'r'], ['신주(보통)', r => int(r.new_common), 'r'], ['신주(기타)', r => int(r.new_other), 'r'], ['증자비율', r => pct(r.dilution, 2), 'r'], ['', dartLink]],
+    note: '출처 DART 주요사항보고서 · 금액 = 자금조달 목적 합계 · 증자비율 = 신주 ÷ 증자 전 발행주식총수' },
+  pub: { label: '회사채 공모', kpi: '회사채 공모', pick: r => r.type === 'BOND' && r.offering === '공모', date: r => r.sub_dt || r.pay_dt || r.rcept_dt,
+    chips: [], cols: [['청약일', r => md(r.sub_dt)], ['회사명', company], ['회차', series], ['모집금액', r => won(r.amount), 'r'], ['금리', priceOrRate, 'r'],
+      ['만기', r => md(r.maturity)], ['신용등급', r => esc(r.rating || '-')], ['대표주관', r => esc(r.lead || '-')], ['수요예측', r => md(r.demand_dt)], ['', dartLink]],
+    note: '출처 DART 증권신고서(채무증권) · 금융채·ABS·주식연계채권 제외' },
+  pvt: { label: '회사채 사모', kpi: '회사채 사모', pick: r => r.type === 'BOND' && r.offering === '사모', date: r => r.issue_dt,
+    chips: ['일반 사모','P-CBO'], chipTest: (r, c) => c === 'P-CBO' ? !!r.pcbo : !r.pcbo,
+    cols: [['발행일', r => md(r.issue_dt)], ['발행사', company], ['종목명', r => `<span class="muted">${esc(r.name || '-')}</span>`], ['발행금액', r => won(r.amount), 'r'],
+      ['금리', r => pct(r.coupon, 3), 'r'], ['만기', r => md(r.maturity)], ['보증', r => esc(r.guarantee || '-')], ['업종', r => `<span class="muted">${esc(r.industry || '-')}</span>`]],
+    note: '출처 금융위원회 채권기본정보(한국예탁결제원) · 모집방법 = 사모·CBO기초사모(P-CBO 태그) · 금융채·ABS·단기물·주식연계채권 제외' },
+};
+
+async function viewHome() {
+  const [meta, rows] = await Promise.all([getJSON('data/meta.json'), getJSON('data/deals_recent.json')]);
+  remember(rows);
+  const st = {tab: store.get('home-tab', 'mezz'), period: store.get('home-period', 30), q: '', chips: new Set()};
+  if (!S[st.tab]) st.tab = 'mezz';
+  const stamp = s => s ? s.slice(0, 16).replace('T', ' ') : '-';
+  const since14 = daysAgo(14);
+  app.innerHTML = `
+    <div style="display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-bottom:14px">
+      <div><h1>자본시장 조달 한눈에</h1><div class="note">데이터 기준 ${stamp(meta.data_updated)} · 정기 갱신 ${stamp(meta.last_daily)}</div></div>
+      <a class="btn" href="#/deals" style="margin-left:auto">전체 조달내역 →</a><a class="btn" href="#/calendar">공모채 캘린더 →</a>
+    </div>
+    <section class="kpis">${Object.entries(S).map(([k, s]) => {
+      const list = rows.filter(r => s.pick(r) && (s.date(r) || '') >= since14);
+      const sum = list.reduce((a, r) => a + (r.amount || 0), 0);
+      return `<button class="kpi" data-tab="${k}"><div class="l">${s.kpi}</div><div class="v">${list.length}건</div><div class="s">${sum ? won(sum) : '-'}</div></button>`;
+    }).join('')}</section>
+    <div class="note" style="margin-bottom:18px">최근 2주 기준 · 메자닌·유상증자는 이사회 결의일, 공모채는 청약일, 사모채는 발행일</div>
+    <div class="bar"><div class="tabs" role="tablist" id="tabs"></div>
+      <div class="filters"><div class="chips" id="chips"></div>
+        <select id="period" aria-label="기간"><option value="14">최근 2주</option><option value="30">최근 1개월</option><option value="90">최근 3개월</option></select>
+        <input type="search" id="q" placeholder="회사명 검색" aria-label="회사명 검색"></div></div>
+    <div class="panel"><div class="scroll"><table class="list"><thead id="thead"></thead><tbody id="tbody"></tbody></table></div><div class="foot-note" id="note"></div></div>`;
+  $$('.kpi').forEach(b => b.onclick = () => { st.tab = b.dataset.tab; st.chips.clear(); render(); });
+  $('#period').value = String(st.period);
+  $('#period').onchange = e => { st.period = +e.target.value; store.set('home-period', st.period); render(); };
+  $('#q').oninput = e => { st.q = e.target.value.trim(); render(); };
+  const filtered = (s, withChips = true) => {
+    const since = daysAgo(st.period);
+    return rows.filter(r => s.pick(r) && (s.date(r) || '') >= since && (!st.q || (r.corp_name || '').includes(st.q))
+      && (!withChips || !st.chips.size || [...st.chips].some(c => s.chipTest(r, c))))
+      .sort((a, b) => (s.date(b) || '').localeCompare(s.date(a) || ''));
+  };
+  function render() {
+    const s = S[st.tab];
+    store.set('home-tab', st.tab);
+    $('#tabs').innerHTML = Object.entries(S).map(([k, t]) => `<button class="tab" role="tab" aria-selected="${k === st.tab}" data-k="${k}">${t.label}<span class="n">${filtered(t, false).length}</span></button>`).join('');
+    $$('.tab').forEach(b => b.onclick = () => { st.tab = b.dataset.k; st.chips.clear(); render(); });
+    $('#chips').innerHTML = s.chips.map(c => `<button class="chip" aria-pressed="${st.chips.has(c)}" data-c="${c}">${c}</button>`).join('');
+    $$('.chip').forEach(b => b.onclick = () => { st.chips.has(b.dataset.c) ? st.chips.delete(b.dataset.c) : st.chips.add(b.dataset.c); render(); });
+    $('#thead').innerHTML = '<tr>' + s.cols.map(([h, , c]) => `<th class="${c || ''}">${h}</th>`).join('') + '</tr>';
     const list = filtered(s);
-    $('tbody').innerHTML = list.length
-      ? list.map(r => '<tr>' + s.cols.map(([, f, c]) => `<td class="${c ? c + ' num' : ''}">${f(r)}</td>`).join('') + '</tr>').join('')
+    $('#tbody').innerHTML = list.length ? list.map(r => `<tr class="click" data-deal="${esc(r.id)}">` + s.cols.map(([, f, c]) => `<td class="${c ? c + ' num' : ''}">${f(r)}</td>`).join('') + '</tr>').join('')
       : `<tr><td colspan="${s.cols.length}"><div class="empty">조건에 맞는 공시가 없습니다</div></td></tr>`;
-    $('note').textContent = s.note;
-    try { localStorage.setItem('ecm-state', JSON.stringify({tab: state.tab, period: state.period})); } catch (e) {}
+    $('#note').textContent = s.note;
   }
   render();
+}
+
+// ───────────── 전체 조달내역 ─────────────
+const KINDS = ['CB', 'BW', 'EB', '유상증자', '공모채', '사모채', 'P-CBO'];
+async function viewDeals(params) {
+  app.innerHTML = '<div class="empty">전체 조달내역을 불러오는 중…</div>';
+  const rows = remember(await getJSON('data/deals.json'));
+  const minDate = rows.reduce((m, r) => { const d = dealDate(r); return d && d < m ? d : m; }, todayIso);
+  const st = Object.assign({kinds: new Set(), mk: '', from: daysAgo(365), to: '', min: '', q: '', sort: 'date', dir: -1, page: 0}, store.get('deals-st', {}));
+  st.kinds = new Set(st.kinds || []);
+  if (params.get('q')) st.q = params.get('q');
+  if (params.get('kind')) st.kinds = new Set([params.get('kind')]);
+  app.innerHTML = `
+    <h1>전체 조달내역</h1>
+    <p class="lead">메자닌·유상증자·회사채(공모·사모·P-CBO) 조달 기록 전체. 행을 누르면 상세, 회사명을 누르면 회사 화면으로 갑니다.</p>
+    <div class="card" style="padding:12px 14px;margin-bottom:12px">
+      <div class="chips" id="k">${KINDS.map(k => `<button class="chip" data-k="${k}">${k}</button>`).join('')}</div>
+      <div class="filters" style="margin:10px 0 0;padding:0;justify-content:flex-start">
+        <select id="mk" aria-label="시장"><option value="">전체 시장</option><option value="Y">유가증권</option><option value="K">코스닥</option><option value="N">코넥스</option><option value="E">비상장</option></select>
+        <span class="note">기간</span><input type="date" id="from" aria-label="시작일"><span class="muted">~</span><input type="date" id="to" aria-label="종료일">
+        <div class="chips"><button class="chip" data-p="365">1년</button><button class="chip" data-p="1095">3년</button><button class="chip" data-p="all">전체</button></div>
+        <input type="number" id="min" min="0" placeholder="최소 금액" aria-label="최소 금액(억)"><span class="note">억 이상</span>
+        <input type="search" id="q" placeholder="회사명 검색" aria-label="회사명 검색">
+        <button class="btn" id="csv" style="margin-left:auto">CSV 내려받기</button>
+      </div>
+    </div>
+    <div class="panel round"><div id="sum" class="foot-note" style="border:0;border-bottom:1px solid var(--line-2)"></div>
+      <div class="scroll"><table class="list"><thead id="thead"></thead><tbody id="tbody"></tbody></table></div><div class="pager" id="pager"></div></div>
+    <p class="note">수집 범위: ${md(minDate)} 이후 · 사모채는 현재 만기가 남아 있는 채권 기준(이미 상환된 사모채는 빠짐)</p>`;
+  const sync = () => {
+    $$('#k .chip').forEach(b => b.setAttribute('aria-pressed', st.kinds.has(b.dataset.k)));
+    $('#mk').value = st.mk; $('#from').value = st.from || ''; $('#to').value = st.to || ''; $('#min').value = st.min; $('#q').value = st.q;
+  };
+  const cols = [
+    ['date', '날짜', r => md(dealDate(r))], [null, '회사명', company], [null, '종류', r => `<span class="type">${esc(kindKey(r))}</span>`],
+    [null, '방식', r => r.type === 'RIGHTS' ? esc(r.method || '-') : offer(r.offering)], [null, '회차', series],
+    ['amount', '금액', r => won(r.amount), 'r'], [null, '금리·행사가', priceOrRate, 'r'], [null, '만기', r => md(r.maturity)], [null, '', dartLink]];
+  const apply = () => {
+    const min = st.min ? +st.min * 1e8 : 0;
+    const q = st.q.replace(/\s/g, '');
+    let list = rows.filter(r => {
+      const d = dealDate(r);
+      return (!st.kinds.size || st.kinds.has(kindKey(r))) && (!st.mk || (r.corp_cls || 'E') === st.mk)
+        && (!st.from || d >= st.from) && (!st.to || d <= st.to) && (!min || (r.amount || 0) >= min)
+        && (!q || (r.corp_name || '').replace(/\s/g, '').includes(q));
+    });
+    list.sort((a, b) => st.sort === 'amount' ? st.dir * ((a.amount || 0) - (b.amount || 0)) : st.dir * dealDate(a).localeCompare(dealDate(b)));
+    return list;
+  };
+  const PER = 100;
+  function render() {
+    store.set('deals-st', {...st, kinds: [...st.kinds], page: 0, q: ''});
+    sync();
+    const list = apply();
+    const pages = Math.max(1, Math.ceil(list.length / PER));
+    st.page = Math.min(st.page, pages - 1);
+    const sum = list.reduce((a, r) => a + (r.amount || 0), 0);
+    const by = {}; list.forEach(r => { const k = kindKey(r); by[k] = (by[k] || 0) + 1; });
+    $('#sum').innerHTML = `<b style="color:var(--ink)">${list.length.toLocaleString('ko-KR')}건</b> · 합계 ${won(sum)}` + (Object.keys(by).length > 1 ? ' · ' + Object.entries(by).map(([k, v]) => `${k} ${v}`).join(' · ') : '');
+    $('#thead').innerHTML = '<tr>' + cols.map(([s, h, , c]) => `<th class="${c || ''} ${s ? 'sort' : ''}" ${s ? `data-s="${s}"` : ''}>${h}${st.sort === s ? (st.dir < 0 ? ' ↓' : ' ↑') : ''}</th>`).join('') + '</tr>';
+    $$('#thead [data-s]').forEach(th => th.onclick = () => { if (st.sort === th.dataset.s) st.dir *= -1; else { st.sort = th.dataset.s; st.dir = -1; } render(); });
+    const page = list.slice(st.page * PER, st.page * PER + PER);
+    $('#tbody').innerHTML = page.length ? page.map(r => `<tr class="click" data-deal="${esc(r.id)}">` + cols.map(([, , f, c]) => `<td class="${c ? c + ' num' : ''}">${f(r)}</td>`).join('') + '</tr>').join('')
+      : `<tr><td colspan="${cols.length}"><div class="empty">조건에 맞는 조달 기록이 없습니다</div></td></tr>`;
+    $('#pager').innerHTML = pages > 1 ? `<button class="btn" id="pv" ${st.page ? '' : 'disabled'}>← 이전</button><span>${st.page + 1} / ${pages}</span><button class="btn" id="nx" ${st.page < pages - 1 ? '' : 'disabled'}>다음 →</button><span class="sp note">페이지당 ${PER}건</span>` : '';
+    if ($('#pv')) { $('#pv').onclick = () => { st.page--; render(); scrollTo(0, 0); }; $('#nx').onclick = () => { st.page++; render(); scrollTo(0, 0); }; }
+    $('#csv').onclick = () => downloadCSV(list);
+  }
+  $$('#k .chip').forEach(b => b.onclick = () => { st.kinds.has(b.dataset.k) ? st.kinds.delete(b.dataset.k) : st.kinds.add(b.dataset.k); st.page = 0; render(); });
+  $$('[data-p]').forEach(b => b.onclick = () => { st.from = b.dataset.p === 'all' ? '' : daysAgo(+b.dataset.p); st.to = ''; st.page = 0; render(); });
+  $('#mk').onchange = e => { st.mk = e.target.value; st.page = 0; render(); };
+  $('#from').onchange = e => { st.from = e.target.value; st.page = 0; render(); };
+  $('#to').onchange = e => { st.to = e.target.value; st.page = 0; render(); };
+  $('#min').oninput = debounce(e => { st.min = e.target.value; st.page = 0; render(); }, 200);
+  $('#q').oninput = debounce(e => { st.q = e.target.value.trim(); st.page = 0; render(); }, 150);
+  render();
+}
+function downloadCSV(list) {
+  const head = ['날짜', '회사명', '시장', '종류', '방식', '회차', '금액(원)', '표면금리(%)', '행사가(원)', '만기', '접수번호', '원문'];
+  const q = v => { const s = String(v ?? ''); return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
+  const lines = [head.join(',')].concat(list.map(r => [dealDate(r), r.corp_name, MKF[r.corp_cls] || '비상장', kindKey(r), r.type === 'RIGHTS' ? r.method : r.offering,
+    r.series, r.amount, r.coupon, r.price, r.maturity, r.rcept_no, r.url].map(q).join(',')));
+  const blob = new Blob(['﻿' + lines.join('\n')], {type: 'text/csv;charset=utf-8'});
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `조달내역_${todayIso}.csv`; a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+
+// ───────────── 공모채 캘린더 ─────────────
+async function viewCalendar(params) {
+  app.innerHTML = '<div class="empty">불러오는 중…</div>';
+  const rows = remember((await getJSON('data/deals.json')).filter(r => r.type === 'BOND' && r.offering === '공모'));
+  const events = [];
+  rows.forEach(r => {
+    if (r.demand_dt) events.push({d: r.demand_dt, k: 'dem', label: '수요예측', r});
+    const iss = r.pay_dt || r.sub_dt;
+    if (iss) events.push({d: iss, k: 'iss', label: '발행', r});
+  });
+  let ym = params.get('m') || todayIso.slice(0, 7);
+  function render() {
+    const [y, m] = ym.split('-').map(Number);
+    const first = new Date(Date.UTC(y, m - 1, 1)), startDow = first.getUTCDay();
+    const days = new Date(Date.UTC(y, m, 0)).getUTCDate();
+    const cells = [];
+    const n = Math.ceil((startDow + days) / 7) * 7;
+    for (let i = 0; i < n; i++) cells.push(new Date(Date.UTC(y, m - 1, 1 - startDow + i)).toISOString().slice(0, 10));
+    const inMonth = events.filter(e => e.d.slice(0, 7) === ym).sort((a, b) => a.d.localeCompare(b.d) || a.k.localeCompare(b.k));
+    const byDay = {}; events.forEach(e => (byDay[e.d] = byDay[e.d] || []).push(e));
+    const shift = n => { const d = new Date(Date.UTC(y, m - 1 + n, 1)); return d.toISOString().slice(0, 7); };
+    const dem = inMonth.filter(e => e.k === 'dem'), iss = inMonth.filter(e => e.k === 'iss');
+    app.innerHTML = `
+      <h1>공모 회사채 캘린더</h1>
+      <p class="lead">일반 회사채 공모의 <b style="color:var(--s1)">수요예측일</b>과 <b style="color:var(--s3)">발행(납입)일</b>. 일정을 누르면 상세가 열립니다.</p>
+      <div class="cal-head">
+        <button class="btn" id="prev" aria-label="이전 달">←</button><h2>${y}년 ${m}월</h2><button class="btn" id="next" aria-label="다음 달">→</button>
+        <button class="btn" id="now">이번 달</button>
+        <span class="note" style="margin-left:auto">이번 달 수요예측 ${dem.length}건 · 발행 ${iss.length}건 (${won(iss.reduce((a, e) => a + (e.r.amount || 0), 0))})</span>
+      </div>
+      <div class="cal">${['일','월','화','수','목','금','토'].map(d => `<div class="dow">${d}</div>`).join('')}
+        ${cells.map(d => `<div class="day ${d.slice(0, 7) !== ym ? 'out' : ''} ${d === todayIso ? 'today' : ''}"><div class="dn">${+d.slice(8)}</div>
+          ${(byDay[d] || []).sort((a, b) => a.k.localeCompare(b.k)).map(e => `<button class="ev ${e.k}" data-ev="${esc(e.r.id)}" data-tip="${esc(e.label)} · ${esc(e.r.corp_name)} ${esc(e.r.series || '')}회 · ${esc(wonTxt(e.r.amount))}${e.r.rating ? ' · ' + esc(e.r.rating) : ''}"><b>${e.k === 'dem' ? '수' : '발'}</b>${esc(e.r.corp_name)}</button>`).join('')}</div>`).join('')}
+      </div>
+      <div class="legend" style="margin:8px 0 20px"><span><i style="background:var(--s1)"></i>수요예측</span><span><i style="background:var(--s3)"></i>발행(납입)</span></div>
+      <div class="panel round"><div class="scroll"><table class="list"><thead><tr><th>날짜</th><th>일정</th><th>회사명</th><th>회차</th><th class="r">금액</th><th>신용등급</th><th>대표주관</th><th>수요예측</th><th>발행일</th><th></th></tr></thead><tbody>
+        ${inMonth.length ? inMonth.map(e => `<tr class="click" data-deal="${esc(e.r.id)}"><td>${md(e.d)}</td><td><span class="badge" style="border-left:3px solid ${e.k === 'dem' ? 'var(--s1)' : 'var(--s3)'};padding-left:6px">${e.label}</span></td><td>${company(e.r)}</td><td>${series(e.r)}</td><td class="r num">${won(e.r.amount)}</td><td>${esc(e.r.rating || '-')}</td><td>${esc(e.r.lead || '-')}</td><td>${md(e.r.demand_dt)}</td><td>${md(e.r.pay_dt)}</td><td>${dartLink(e.r)}</td></tr>`).join('')
+          : '<tr><td colspan="10"><div class="empty">이 달에는 일정이 없습니다</div></td></tr>'}
+      </tbody></table></div>
+      <div class="foot-note">출처 DART 증권신고서(채무증권) · 수요예측일은 신고서 본문에서 자동 추출(찾지 못한 건은 발행일만 표시) · 금융채·ABS·주식연계채권 제외</div></div>`;
+    $('#prev').onclick = () => { ym = shift(-1); history.replaceState(null, '', '#/calendar?m=' + ym); render(); };
+    $('#next').onclick = () => { ym = shift(1); history.replaceState(null, '', '#/calendar?m=' + ym); render(); };
+    $('#now').onclick = () => { ym = todayIso.slice(0, 7); history.replaceState(null, '', '#/calendar'); render(); };
+    $$('[data-ev]').forEach(b => b.onclick = () => openDeal(ROWS_BY_ID[b.dataset.ev]));
+  }
+  render();
+}
+
+// ───────────── 회사 화면 ─────────────
+const finRows = [
+  ['매출액', 'revenue', won], ['영업이익', 'op', won], ['당기순이익', 'ni', won], ['영업이익률', 'op_margin', v => pct(v)],
+  ['자산총계', 'assets', won], ['부채총계', 'liab', won], ['자본총계', 'equity', won], ['부채비율', 'debt_ratio', v => pct(v, 0)], ['유동비율', 'current_ratio', v => pct(v, 0)]];
+
+function tilesHtml(co) {
+  const m = co.metrics || {};
+  const t = (l, v, s) => `<div class="tile"><div class="l">${l}</div><div class="v">${v}</div>${s ? `<div class="s">${s}</div>` : ''}</div>`;
+  return `<div class="tiles">
+    ${t('매출액', won(m.revenue), m.period ? `${m.period}년${m.revenue_growth != null ? ' · 전년비 ' + (m.revenue_growth > 0 ? '+' : '') + m.revenue_growth.toFixed(1) + '%' : ''}` : '')}
+    ${t('영업이익률', pct(m.op_margin), m.op != null ? '영업이익 ' + won(m.op) : '')}
+    ${t('부채비율', pct(m.debt_ratio, 0), m.bs_period ? m.bs_period + ' 기준' : '')}
+    ${t('순차입금/EBITDA', m.net_debt_ebitda != null ? ratio(m.net_debt_ebitda) : DASH, m.net_debt != null ? '순차입금 ' + won(m.net_debt) : '')}
+    ${t('시가총액', won(m.mcap), m.close ? int(m.close) + '원' + (co.price_date ? ' · ' + md(co.price_date) : '') : '주가 정보 없음')}
+    ${t('신용등급', esc(co.rating || '-'), co.rating ? '최근 공모채 기준' : '공모채 이력 없음')}
+  </div>`;
+}
+
+function dealTable(deals) {
+  if (!deals.length) return '<div class="empty">수집된 조달 기록이 없습니다</div>';
+  return `<div class="scroll"><table class="list"><thead><tr><th>날짜</th><th>종류</th><th>방식</th><th>회차</th><th class="r">금액</th><th class="r">금리·행사가</th><th>만기</th><th></th></tr></thead><tbody>
+    ${deals.map(r => `<tr class="click" data-deal="${esc(r.id)}"><td>${md(dealDate(r))}</td><td><span class="type">${esc(kindKey(r))}</span>${r.amended ? '<span class="badge b-amd">정정</span>' : ''}</td><td>${r.type === 'RIGHTS' ? esc(r.method || '-') : offer(r.offering)}</td><td>${series(r)}</td><td class="r num">${won(r.amount)}</td><td class="r num">${priceOrRate(r)}</td><td>${md(r.maturity)}</td><td>${dartLink(r)}</td></tr>`).join('')}
+  </tbody></table></div>`;
+}
+
+async function viewCompany(key) {
+  app.innerHTML = '<div class="empty">회사 정보를 불러오는 중…</div>';
+  let co;
+  try { co = await getJSON(`data/co/${encodeURIComponent(key)}.json`); }
+  catch (e) { app.innerHTML = '<div class="empty">회사 정보를 찾지 못했습니다. 검색창에서 다시 찾아보세요.</div>'; return; }
+  remember(co.deals || []);
+  document.title = `${co.name} · __SITE_NAME__`;
+  const L = co.listing || {}, I = co.info || {}, B = co.business || {}, m = co.metrics || {};
+  const annualLink = co.annual_rcept ? `<a class="dart" href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=${co.annual_rcept}" target="_blank" rel="noopener">${esc(co.annual_name || '사업보고서')}</a>` : '';
+  const pendingMsg = co.pending ? '<div class="pending">사업보고서 기반 상세 정보(사업 내용·주요 매출처·차입금 등)는 아직 수집 전입니다. 조달 기록이 있는 회사부터 매일 밤 순서대로 채워지며, 저장소의 <b>watchlist.txt</b>에 회사명을 적으면 먼저 수집합니다.</div>' : '';
+  const ser = (co.series || []).filter(r => r.kind === 'annual' || r.kind === 'interim');
+  const annual = ser.filter(r => r.kind === 'annual');
+
+  // 사업
+  const prod = (B.products || []);
+  const prodHtml = prod.length ? `<table><thead><tr><th>사업부문</th><th>주요 제품·서비스</th><th style="width:34%">매출 비중</th></tr></thead><tbody>${prod.map(p => `<tr><td>${esc(p.segment || '-')}</td><td style="white-space:normal">${esc(p.name)}${p.desc ? `<div class="note">${esc(p.desc)}</div>` : ''}</td><td>${p.share != null ? `<div class="share"><div class="track"><div class="fill" style="width:${Math.min(100, p.share)}%"></div></div><span class="num">${pct(p.share)}</span></div>` : DASH}</td></tr>`).join('')}</tbody></table>` : '';
+
+  // 주주
+  const H = co.holders || {};
+  const holderHtml = H.top?.length ? `<div>${H.top.map(h => `<div class="share" style="margin:6px 0"><span style="width:38%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(h.name)} <span class="note">${esc(h.relation || '')}</span></span><div class="track"><div class="fill" style="width:${Math.min(100, h.pct * 2)}%"></div></div><span class="num" style="width:56px;text-align:right">${pct(h.pct, 2)}</span></div>`).join('')}
+    <p class="note" style="margin:10px 0 0">최대주주 및 특수관계인 합계 <b style="color:var(--ink)">${pct(H.total_pct, 2)}</b>${H.as_of ? ' · ' + esc(H.as_of) + ' 기준' : ''}${co.treasury_shares != null ? ` · 자기주식 ${int(co.treasury_shares)}주${m.shares ? ' (' + pct(co.treasury_shares / m.shares * 100, 2) + ')' : ''}` : ''}</p></div>` : '<div class="empty" style="padding:18px">주주 정보가 아직 없습니다</div>';
+
+  // 재무 표
+  const finTable = ser.length ? `<div class="scroll"><table><thead><tr><th></th>${ser.map(r => `<th class="r">${esc(r.period)}${r.kind === 'interim' ? ' 누적' : ''}</th>`).join('')}</tr></thead><tbody>
+    ${finRows.map(([l, k, f]) => `<tr><td class="muted">${l}</td>${ser.map(r => `<td class="r num ${(r[k] ?? 0) < 0 ? 'neg' : ''}">${f(r[k])}</td>`).join('')}</tr>`).join('')}
+    </tbody></table></div><p class="note">${esc(ser[ser.length - 1]?.fs === 'OFS' ? '별도' : '연결')} 기준 · 출처 DART 정기보고서 주요계정</p>` : '<div class="empty">재무 정보가 없습니다 (사업보고서 제출 대상이 아니거나 수집 전)</div>';
+  const fd = co.fs_interim || co.fs_annual;
+  const detail = fd ? `<table class="kv"><tbody>
+    <tr><td>현금성 자산</td><td class="num">${won((fd.cash || 0) + (fd.st_deposits || 0))} <span class="note">현금 ${wonTxt(fd.cash)}${fd.st_deposits ? ' + 단기금융상품 ' + wonTxt(fd.st_deposits) : ''}</span></td></tr>
+    <tr><td>차입금(추정)</td><td class="num">${won(fd.debt)} ${fd.debt_items ? `<span class="note">${esc(fd.debt_items.slice(0, 6).join(', '))}</span>` : ''}</td></tr>
+    <tr><td>순차입금</td><td class="num">${won(m.net_debt)}</td></tr>
+    <tr><td>EBITDA</td><td class="num">${won(m.ebitda)} <span class="note">영업이익 + 감가상각비 (${esc(co.fs_annual?.period || '')})</span></td></tr>
+    <tr><td>이자보상배율</td><td class="num">${m.interest_coverage != null ? ratio(m.interest_coverage) : DASH} <span class="note">영업이익 ÷ 금융원가</span></td></tr>
+    <tr><td>영업현금흐름</td><td class="num">${won(m.ocf)}</td></tr><tr><td>설비투자</td><td class="num">${won(m.capex)}</td></tr>
+    </tbody></table><p class="note">${esc(fd.period)} ${fd.fs === 'OFS' ? '별도' : '연결'} 재무제표 기준 · 차입금은 계정명으로 합산한 추정치</p>` : '';
+
+  // peer
+  const P = co.peers || [];
+  const peerHtml = P.length > 1 ? `<div class="scroll"><table class="list" style="min-width:640px"><thead><tr><th>회사</th><th class="r">매출액</th><th class="r">영업이익률</th><th class="r">부채비율</th><th class="r">시가총액</th><th class="r">PER</th><th class="r">PBR</th></tr></thead><tbody>
+    ${P.map(p => `<tr ${p.me ? 'style="background:var(--accent-soft)"' : ''}><td class="co"><a href="#/company/${encodeURIComponent(p.code ? (p.key || '') : '')}" data-peer="${esc(p.code)}">${esc(p.name)}</a>${p.market ? `<span class="mk">${MK[p.market]}</span>` : ''}</td><td class="r num">${won(p.revenue)}</td><td class="r num ${(p.op_margin ?? 0) < 0 ? 'neg' : ''}">${pct(p.op_margin)}</td><td class="r num">${pct(p.debt_ratio, 0)}</td><td class="r num">${won(p.mcap)}</td><td class="r num">${p.per != null ? ratio(p.per) : DASH}</td><td class="r num">${p.pbr != null ? ratio(p.pbr, 2) : DASH}</td></tr>`).join('')}
+    </tbody></table></div><p class="note">같은 업종(${esc(co.industry)}) 상장사 중 매출 규모가 가장 가까운 곳 · 최근 사업보고서 기준${co.price_date ? ' · 시총 ' + md(co.price_date) : ''}</p>` : '<div class="empty" style="padding:18px">비교할 같은 업종 상장사 정보가 없습니다</div>';
+
+  // 잔존 사채
+  const BP = co.bonds || {};
+  const bondHtml = BP.count ? `
+    <div class="tiles" style="grid-template-columns:repeat(4,1fr);margin-bottom:12px">
+      <div class="tile"><div class="l">잔존 사채</div><div class="v">${won(BP.total)}</div><div class="s">${BP.count}종목</div></div>
+      <div class="tile"><div class="l">12개월 내 만기</div><div class="v">${won(BP.due12)}</div><div class="s">공모 ${wonTxt(BP.due12_by?.['공모'] || 0)} · 사모 ${wonTxt(BP.due12_by?.['사모'] || 0)}</div></div>
+      <div class="tile"><div class="l">주식연계 만기</div><div class="v">${won(BP.due12_by?.['주식연계'] || 0)}</div><div class="s">12개월 내 CB·EB·BW</div></div>
+      <div class="tile"><div class="l">가중평균 금리</div><div class="v">${pct(BP.avg_coupon, 2)}</div><div class="s">표면금리 기준</div></div>
+    </div>
+    ${stackChart(BP.ladder || [], ['공모', '사모', '주식연계'], ['var(--s1)', 'var(--s2)', 'var(--s3)'])}
+    <details><summary>잔존 사채 목록 ${BP.count}건</summary><div class="scroll"><table class="list" style="min-width:640px"><thead><tr><th>종목명</th><th>구분</th><th>발행일</th><th>만기일</th><th class="r">발행액</th><th class="r">잔액</th><th class="r">금리</th><th>보증</th></tr></thead><tbody>
+      ${BP.list.map(b => `<tr><td>${esc(b.name)}</td><td>${esc(b.link || (b.method === 'CBO기초사모' ? 'P-CBO' : b.method))}</td><td>${md(b.issue)}</td><td>${md(b.mat)}</td><td class="r num">${won(b.amt)}</td><td class="r num">${won(b.bal)}</td><td class="r num">${pct(b.cpn, 3)}</td><td>${esc(b.grn || '-')}</td></tr>`).join('')}
+    </tbody></table></div></details>
+    <p class="note">출처 금융위원회 채권기본정보(한국예탁결제원) · 법인등록번호로 연결 · 일반회사채만(금융채·ABS 제외)</p>` : '<div class="empty" style="padding:18px">연결된 잔존 사채 정보가 없습니다</div>';
+
+  app.innerHTML = `
+    <div class="card">
+      <div class="co-head">
+        <div><h1>${esc(co.name)} ${co.market && co.market !== 'E' ? `<span class="mk" style="font-size:12px">${MKF[co.market]}</span>` : '<span class="mk" style="font-size:12px">비상장</span>'}</h1>
+          <div class="meta">${[co.stock_code, co.industry, L.products ? '주요제품 ' + L.products : ''].filter(Boolean).map(esc).join(' · ')}</div></div>
+        <div class="actions noprint"><a class="btn primary" href="#/report/${encodeURIComponent(co.key)}">조달 제안 보고서 →</a>${annualLink ? `<a class="btn" href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=${co.annual_rcept}" target="_blank" rel="noopener">사업보고서</a>` : ''}</div>
+      </div>
+      <p style="margin:12px 0 14px" class="ink2">${esc(co.summary || '')}</p>
+      ${tilesHtml(co)}
+    </div>
+    <nav class="secnav"><a href="#s-ov" data-jump>개요</a><a href="#s-biz" data-jump>돈 버는 방식</a><a href="#s-fin" data-jump>재무</a><a href="#s-hold" data-jump>주주</a><a href="#s-peer" data-jump>Peer</a><a href="#s-deal" data-jump>조달 이력</a><a href="#s-bond" data-jump>잔존 사채</a></nav>
+    ${pendingMsg}
+    <div class="grid2" style="margin-top:14px">
+      <section class="card" id="s-ov"><div class="sec-title"><h2>기업 개요</h2><span class="src">DART 기업개황 · KIND</span></div>
+        <table class="kv"><tbody>
+          <tr><td>대표</td><td>${esc(I.ceo_nm || L.ceo || '-')}</td></tr>
+          <tr><td>설립</td><td>${I.est_dt ? fullDate(I.est_dt.slice(0, 4) + '-' + I.est_dt.slice(4, 6) + '-' + I.est_dt.slice(6)) : DASH}</td></tr>
+          <tr><td>상장</td><td>${L.listed ? fullDate(L.listed) + ' · ' + esc(MKF[co.market] || '') : '비상장'}</td></tr>
+          <tr><td>업종</td><td>${esc(co.industry || '-')}${I.induty_code ? ` <span class="note">(${esc(I.induty_code)})</span>` : ''}</td></tr>
+          <tr><td>주요 제품</td><td>${esc(L.products || '-')}</td></tr>
+          <tr><td>결산월</td><td>${esc(I.acc_mt ? I.acc_mt + '월' : L.fiscal_month || '-')}</td></tr>
+          <tr><td>주소</td><td>${esc(I.adres || L.region || '-')}</td></tr>
+          <tr><td>홈페이지</td><td>${(I.hm_url || L.homepage) ? `<a class="dart" href="${esc(/^https?:/.test(I.hm_url || L.homepage) ? (I.hm_url || L.homepage) : 'http://' + (I.hm_url || L.homepage))}" target="_blank" rel="noopener">${esc(I.hm_url || L.homepage)}</a>` : DASH}</td></tr>
+        </tbody></table></section>
+      <section class="card" id="s-hold"><div class="sec-title"><h2>주주 구성</h2><span class="src">DART 최대주주 현황</span></div>${holderHtml}</section>
+    </div>
+    <section class="card" id="s-biz" style="margin-top:14px"><div class="sec-title"><h2>돈 버는 방식</h2><span class="src">${annualLink || '사업보고서 II. 사업의 내용'}</span></div>
+      ${B.overview ? `<h3>사업 개요</h3><p class="prose">${esc(B.overview)}</p>` : ''}
+      ${prodHtml ? `<h3 style="margin-top:16px">주요 제품·서비스</h3>${prodHtml}` : ''}
+      ${B.customers ? `<h3 style="margin-top:16px">주요 매출처</h3><p class="prose">${esc(B.customers)}</p>` : ''}
+      ${!B.overview && !prodHtml && !B.customers ? `<div class="empty" style="padding:18px">${co.pending ? '수집 대기 중' : '사업보고서에서 사업 내용을 찾지 못했습니다'}${L.products ? ' · KIND 주요제품: ' + esc(L.products) : ''}</div>` : ''}
+    </section>
+    <section class="card" id="s-fin"><div class="sec-title"><h2>재무</h2><span class="src">${esc(m.detail_period || '')}</span></div>
+      ${annual.length ? `<div class="grid2" style="margin-bottom:14px"><div><h3>매출액</h3>${barChart(annual.map(r => ({label: r.period, v: r.revenue})), {label: '매출액'})}</div><div><h3>영업이익</h3>${barChart(annual.map(r => ({label: r.period, v: r.op})), {color: 'var(--s3)', label: '영업이익'})}</div></div>` : ''}
+      ${finTable}${detail ? `<h3 style="margin-top:16px">상환 능력</h3>${detail}` : ''}
+    </section>
+    <section class="card" id="s-peer"><div class="sec-title"><h2>Peer 비교</h2></div>${peerHtml}</section>
+    <section class="card" id="s-deal"><div class="sec-title"><h2>조달 이력</h2><span class="src">${(co.deals || []).length}건 · 행을 누르면 상세</span></div>${dealTable(co.deals || [])}</section>
+    <section class="card" id="s-bond"><div class="sec-title"><h2>잔존 사채 만기</h2></div>${bondHtml}</section>`;
+  $$('[data-jump]').forEach(a => a.onclick = e => { e.preventDefault(); $(a.getAttribute('href')).scrollIntoView({behavior: 'smooth', block: 'start'}); });
+  // peer 링크: 종목코드 → 회사 키
+  loadCos().then(cos => { const byCode = {}; cos.forEach(c => { if (c[3]) byCode[c[3]] = c[0]; });
+    $$('[data-peer]').forEach(a => { const k = byCode[a.dataset.peer]; if (k) a.href = '#/company/' + encodeURIComponent(k); else a.removeAttribute('href'); }); });
+}
+
+// ───────────── 조달 제안 보고서 ─────────────
+const OPT_Q = {
+  public_bond: ['차환 대상 사채의 만기와 금액', '희망 만기 구조(2·3·5년)와 금리 수준', '신용평가사 등급 전망(Outlook)과 평가 일정'],
+  private_bond: ['담보·보증 제공 가능 여부', '조기상환(Put)·강제상환 특약 수용 범위', '기존 사모채 투자자와의 관계'],
+  pcbo: ['신용보증기금 거래 이력과 보증 잔액', '다음 P-CBO 차수 일정', '신용등급(회사채 또는 기업신용평가) 보유 여부'],
+  cb: ['기존 CB의 Put 일정·잔액', '최대주주 Call 옵션 수요', '리픽싱 하한(70%) 수용 여부와 주가 흐름'],
+  eb: ['자기주식(또는 계열사 지분) 처분 계획', '교환가 할증률 기대 수준', '주주 소통 계획'],
+  rights: ['최대주주 참여 의사와 규모', '자금 용도(시설·운영·차입금 상환)의 구체성', '할인율·일정(권리락 등)'],
+  hybrid: ['자본 인정 요건(회계·신용평가) 충족 구조', '콜 시점과 스텝업 수용 범위', '상장 계획(RCPS의 경우)'],
+};
+async function viewReport(key) {
+  app.innerHTML = '<div class="empty">보고서를 만드는 중…</div>';
+  let co;
+  try { co = await getJSON(`data/co/${encodeURIComponent(key)}.json`); }
+  catch (e) { app.innerHTML = '<div class="empty">회사 정보를 찾지 못했습니다.</div>'; return; }
+  remember(co.deals || []);
+  document.title = `${co.name} 조달 제안 · __SITE_NAME__`;
+  const m = co.metrics || {}, BP = co.bonds || {}, B = co.business || {};
+  const opts = co.proposal || [];
+  const top = opts.slice(0, 3), rest = opts.slice(3);
+  const optCard = (o, i, compact) => `<div class="opt">
+      <div class="opt-head"><span class="rank">${i + 1}</span><h3>${esc(o.title)}</h3><span class="fit fit-${o.fit}">적합도 ${o.fit}</span>
+        <span class="score"><span class="track"><span class="fill" style="display:block;width:${o.score}%"></span></span>${o.score}점</span></div>
+      ${o.reasons.length ? `<ul class="why">${o.reasons.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
+      ${o.cautions.length ? `<ul class="risk">${o.cautions.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
+      <div class="meta">${o.size ? `예상 규모 <b style="color:var(--ink)">${esc(o.size)}</b>` : ''}${o.note && !compact ? (o.size ? ' · ' : '') + esc(o.note) : ''}</div>
+      ${!compact && o.comps?.length ? `<details open><summary>비교 사례 (${esc(o.comps_scope)}, 최근 1년)</summary><table style="margin-top:6px"><tbody>${o.comps.map(c => `<tr class="click" data-deal="${esc(c.id)}"><td>${md(c.date)}</td><td class="co"><a href="#/company/${encodeURIComponent(c.key)}" data-stop>${esc(c.corp_name)}</a></td><td class="r num">${won(c.amount)}</td><td class="r num">${c.coupon != null ? pct(c.coupon, 2) : c.price ? int(c.price) + '원' : DASH}</td><td>${esc(c.rating || '')}</td></tr>`).join('')}</tbody></table></details>` : ''}
+      ${!compact && OPT_Q[o.key] ? `<div class="meta" style="margin-top:10px">확인할 것: ${OPT_Q[o.key].map(esc).join(' · ')}</div>` : ''}
+    </div>`;
+  // 상세 보고서에서 비교 사례 클릭을 위해 등록
+  getJSON('data/deals.json').then(rows => remember(rows)).catch(() => {});
+  const H = (co.history || []);
+  const checks = [
+    ['수익성', m.op_margin != null ? `영업이익률 ${pct(m.op_margin)}${m.loss_years ? ` · 최근 ${m.loss_years}개년 영업손실` : ''}` : '정보 없음', m.op_margin == null ? '' : m.op_margin < 0 ? 'neg' : ''],
+    ['레버리지', m.debt_ratio != null ? `부채비율 ${pct(m.debt_ratio, 0)}${m.net_debt_ebitda != null ? ` · 순차입금/EBITDA ${ratio(m.net_debt_ebitda)}` : ''}` : '정보 없음', m.debt_ratio > 300 ? 'neg' : ''],
+    ['이자 상환력', m.interest_coverage != null ? `이자보상배율 ${ratio(m.interest_coverage)}` : '정보 없음', m.interest_coverage != null && m.interest_coverage < 1 ? 'neg' : ''],
+    ['유동성', m.current_ratio != null ? `유동비율 ${pct(m.current_ratio, 0)}${m.cash != null ? ` · 현금성자산 ${wonTxt((m.cash || 0) + (m.st_deposits || 0))}` : ''}` : '정보 없음', m.current_ratio != null && m.current_ratio < 100 ? 'neg' : ''],
+    ['자본 상태', m.impairment ? `자본${m.impairment}` : (m.equity != null ? '잠식 없음' : '정보 없음'), m.impairment ? 'neg' : ''],
+    ['차환 부담', BP.due12 ? `12개월 내 만기 사채 ${wonTxt(BP.due12)}` : (BP.count ? '12개월 내 만기 없음' : '잔존 사채 정보 없음'), ''],
+    ['신용등급', co.rating ? `${esc(co.rating_src || co.rating)}` : '확인된 등급 없음', ''],
+    ['시장 가치', m.mcap ? `시가총액 ${wonTxt(m.mcap)}${m.per ? ` · PER ${ratio(m.per)}` : ''}${m.pbr ? ` · PBR ${ratio(m.pbr, 2)}` : ''}` : (co.market === 'E' ? '비상장' : '주가 정보 없음'), ''],
+  ];
+  app.innerHTML = `
+    <div class="noprint" style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap"><a class="btn" href="#/company/${encodeURIComponent(co.key)}">← 회사 화면</a><button class="btn" onclick="print()" style="margin-left:auto">인쇄 / PDF 저장</button></div>
+    <div class="card">
+      <div class="note">조달 제안 보고서 · ${todayIso.replace(/-/g, '.')} 작성</div>
+      <h1 style="margin-top:4px">${esc(co.name)} <span class="mk" style="font-size:12px">${MKF[co.market] || '비상장'}</span></h1>
+      <div class="ink2">${[co.industry, co.listing?.products].filter(Boolean).map(esc).join(' · ')}</div>
+      <p style="margin:12px 0 0">${esc(co.summary || '')}</p>
+    </div>
+    <section class="card"><h2>1. 추천 조달 방식</h2><div class="top3">${top.map((o, i) => optCard(o, i, true)).join('')}</div>
+      <p class="note" style="margin:10px 0 0">점수는 공시 숫자(재무·등급·조달 이력·사채 만기·주주 구성)를 규칙으로 따진 것으로, 회사의 자금 수요·시장 상황을 확인한 뒤 조정해야 합니다.</p></section>
+    <section class="card"><h2>2. 회사 한눈에</h2>
+      ${B.overview ? `<p class="prose" style="margin-bottom:10px">${esc(B.overview.slice(0, 420))}${B.overview.length > 420 ? '…' : ''}</p>` : ''}
+      ${B.products?.length ? `<p class="ink2" style="margin:0 0 6px"><b>주요 제품</b> · ${B.products.slice(0, 5).map(p => esc(p.segment ? p.segment + ' ' : '') + esc(p.name) + (p.share != null ? ` (${pct(p.share)})` : '')).join(', ')}</p>` : ''}
+      ${B.customers ? `<p class="ink2" style="margin:0"><b>주요 매출처</b> · ${esc(B.customers.slice(0, 260))}</p>` : ''}
+      ${!B.overview && !B.products?.length ? '<p class="muted" style="margin:0">사업보고서 기반 사업 내용이 아직 수집되지 않았습니다.</p>' : ''}
+    </section>
+    <section class="card"><h2>3. 재무 체크포인트</h2><table class="kv"><tbody>${checks.map(([l, v, c]) => `<tr><td>${l}</td><td class="${c}">${v}</td></tr>`).join('')}</tbody></table>
+      <p class="note" style="margin:8px 0 0">${esc(m.period ? m.period + '년 사업보고서' : '')}${m.detail_period ? ' · 세부 항목 ' + esc(m.detail_period) : ''} 기준</p></section>
+    <section class="card"><h2>4. 조달 이력과 만기</h2>
+      ${H.length ? `<p class="ink2" style="margin:0 0 10px">최근 3년: ${H.map(h => `${esc(h.label)} ${h.count}건 ${wonTxt(h.amount)} (최근 ${md(h.last)})`).join(' · ')}</p>` : '<p class="muted">최근 3년 수집된 조달 기록이 없습니다.</p>'}
+      ${BP.count ? stackChart(BP.ladder || [], ['공모', '사모', '주식연계'], ['var(--s1)', 'var(--s2)', 'var(--s3)']) : ''}
+      ${(co.deals || []).length ? `<details><summary>조달 기록 ${co.deals.length}건</summary>${dealTable(co.deals)}</details>` : ''}
+    </section>
+    <section class="card"><h2>5. 방식별 검토</h2>${opts.map((o, i) => optCard(o, i, false)).join('')}</section>
+    <section class="card"><h2>6. 미팅 전 확인할 것</h2><ul style="margin:0;padding-left:18px">
+      <li>자금 용도와 필요 시점 (시설투자·운영자금·차환·M&A)</li><li>희망 조달 규모와 금리·희석 허용 범위</li>
+      ${top.flatMap(o => (OPT_Q[o.key] || []).slice(0, 2)).map(q => `<li>${esc(q)}</li>`).join('')}
+      <li>최근 공시 이후 바뀐 사항 (분기 실적·신용등급·최대주주 변동)</li></ul></section>
+    <p class="note">이 보고서는 공시 자료를 자동으로 분석한 참고 자료이며 투자 권유나 확정 제안이 아닙니다. 금액·조건은 시장 상황과 회사 사정에 따라 달라집니다.</p>`;
+}
+
+// ───────────── 라우터 ─────────────
+async function route() {
+  closeModal();
+  const h = location.hash.replace(/^#/, '') || '/';
+  const [path, qs] = h.split('?');
+  const params = new URLSearchParams(qs || '');
+  const parts = path.split('/').filter(Boolean);
+  const r = parts[0] || 'home';
+  $$('#nav a').forEach(a => a.classList.toggle('on', a.dataset.r === r));
+  document.title = '__SITE_NAME__ · 자본시장 조달 공시';
+  try {
+    if (r === 'deals') await viewDeals(params);
+    else if (r === 'calendar') await viewCalendar(params);
+    else if (r === 'company' && parts[1]) await viewCompany(decodeURIComponent(parts[1]));
+    else if (r === 'report' && parts[1]) await viewReport(decodeURIComponent(parts[1]));
+    else await viewHome();
+  } catch (e) {
+    console.error(e);
+    app.innerHTML = `<div class="empty">화면을 불러오지 못했습니다. 잠시 후 새로고침해 주세요.<br><span class="note">${esc(e.message)}</span></div>`;
+  }
+  if (r !== 'deals' || !params.get('keep')) scrollTo(0, 0);
+}
+addEventListener('hashchange', route);
+route();
 })();
 </script>
 </body>

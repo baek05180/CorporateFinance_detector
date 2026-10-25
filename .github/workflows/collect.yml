@@ -6,28 +6,29 @@ on:
     - cron: "*/5 22-23 * * 0-4"   # 평일 KST 07:00~08:55 신규 공시 감시
     - cron: "*/5 0-10 * * 1-5"    # 평일 KST 09:00~19:55 신규 공시 감시
     - cron: "15 11 * * 1-5"       # 평일 KST 20:15 정기 갱신 (최근 7일 재수집 + 사모채)
+    - cron: "30 12 * * *"         # 매일 KST 21:30 기업 프로필 (호출 예산 안에서 점진 수집)
   workflow_dispatch:
     inputs:
       mode:
-        description: "watch / daily / backfill"
+        description: "watch / daily / backfill / profiles"
         default: "daily"
         type: choice
-        options: [watch, daily, backfill]
+        options: [watch, daily, backfill, profiles]
       days:
-        description: "daily·backfill 때 거슬러 올라갈 일수 (backfill은 최대 90 권장)"
+        description: "daily·backfill 때 거슬러 올라갈 일수 (backfill은 1095 = 3년)"
         default: "7"
 
 permissions:
   contents: write
 
-concurrency:
-  group: collect
-  cancel-in-progress: false
-
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 300
+    concurrency:
+      # 프로필 수집은 오래 걸리므로 공시 감시와 따로 돈다 (쓰는 파일이 겹치지 않음)
+      group: ${{ (github.event.schedule == '30 12 * * *' || inputs.mode == 'profiles') && 'profiles' || 'collect' }}
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
 
@@ -46,6 +47,8 @@ jobs:
             echo "days=${{ inputs.days }}" >> "$GITHUB_OUTPUT"
           elif [ "${{ github.event.schedule }}" = "15 11 * * 1-5" ]; then
             echo "mode=daily" >> "$GITHUB_OUTPUT"; echo "days=7" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.schedule }}" = "30 12 * * *" ]; then
+            echo "mode=profiles" >> "$GITHUB_OUTPUT"; echo "days=0" >> "$GITHUB_OUTPUT"
           else
             echo "mode=watch" >> "$GITHUB_OUTPUT"; echo "days=0" >> "$GITHUB_OUTPUT"
           fi
@@ -56,22 +59,34 @@ jobs:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
         run: python -m collector.run --mode ${{ steps.mode.outputs.mode }} --days ${{ steps.mode.outputs.days }}
 
-      - name: 페이지 생성
-        run: python -m web.build
-
       - name: 변경분 커밋
         id: commit
+        env:
+          DART_API_KEY: ${{ secrets.DART_API_KEY }}
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
         run: |
+          # 인증키가 데이터 파일에 섞여 들어가면 커밋하지 않는다
+          if grep -rqF "$DART_API_KEY" data; then echo "::error::DART 키가 data/에 있음" && exit 1; fi
+          if [ -n "$DATA_GO_KR_KEY" ] && grep -rqF "$DATA_GO_KR_KEY" data; then echo "::error::공공데이터 키가 data/에 있음" && exit 1; fi
           git config user.name "ecm-bot"
           git config user.email "ecm-bot@users.noreply.github.com"
-          git add data public
+          git add data
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
-            git commit -m "data: ${{ steps.mode.outputs.mode }} $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M')"
-            git push
+            git commit -q -m "data: ${{ steps.mode.outputs.mode }} $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M')"
+            for i in 1 2 3; do
+              git pull --rebase -q && git push -q && break
+              sleep 5
+            done
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: 페이지 생성
+        if: steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        run: |
+          git pull -q --rebase || true
+          python -m web.build
 
       - name: Cloudflare Pages 배포
         if: steps.commit.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
@@ -79,6 +94,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          # 프로젝트가 없으면 처음 한 번 만든다 (이미 있으면 에러를 무시)
           preCommands: wrangler pages project create ${{ vars.CF_PAGES_PROJECT || 'ecm-board' }} --production-branch=main || true
           command: pages deploy public --project-name=${{ vars.CF_PAGES_PROJECT || 'ecm-board' }} --branch=main --commit-dirty=true

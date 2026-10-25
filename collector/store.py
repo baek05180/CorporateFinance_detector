@@ -10,6 +10,16 @@ def _path(name):
     return os.path.join(config.DATA_DIR, name)
 
 
+def load_json(name, default):
+    return _load(name, default)
+
+
+def dump_json(name, obj, indent=1):
+    """data/ 아래에 저장 (하위 폴더 자동 생성). 내용이 같으면 쓰지 않는다."""
+    os.makedirs(os.path.dirname(_path(name)) or config.DATA_DIR, exist_ok=True)
+    return _dump(name, obj, indent)
+
+
 def _load(name, default):
     try:
         with open(_path(name), encoding="utf-8") as f:
@@ -18,9 +28,10 @@ def _load(name, default):
         return default
 
 
-def _dump(name, obj):
+def _dump(name, obj, indent=1):
     os.makedirs(config.DATA_DIR, exist_ok=True)
-    text = json.dumps(obj, ensure_ascii=False, indent=1, sort_keys=True)
+    text = json.dumps(obj, ensure_ascii=False, indent=indent, sort_keys=True,
+                      separators=(",", ":") if indent is None else None)
     p = _path(name)
     try:
         with open(p, encoding="utf-8") as f:

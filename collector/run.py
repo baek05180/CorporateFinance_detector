@@ -2,7 +2,8 @@
 
   python -m collector.run --mode watch            # 오늘 신규 공시만 확인 (평일 5분 간격)
   python -m collector.run --mode daily            # 최근 7일 재수집 + 사모채 (매일 저녁)
-  python -m collector.run --mode backfill --days 90   # 처음 한 번, 과거 데이터 채우기
+  python -m collector.run --mode backfill --days 1095 # 처음 한 번, 과거 3년 채우기
+  python -m collector.run --mode profiles         # 기업 프로필 (매일 밤, 호출 예산 안에서 점진적으로)
 """
 import argparse
 import logging
@@ -14,7 +15,7 @@ from datetime import date, timedelta
 from . import config, normalize
 from .dart import DartClient, DartQuotaExceeded
 from .datagokr import BondInfoClient, DataGoKrError, redact
-from .store import Store, now_kst
+from .store import Store, dump_json, now_kst
 
 log = logging.getLogger("collector")
 
@@ -118,6 +119,17 @@ def process_filings(dart, store, filings, mode):
             store.mark_seen(rno)
 
 
+def compact_bond(it):
+    """잔존 회사채 스냅샷 1건 (기업 화면의 만기 구조·차환 분석용)"""
+    return {k: v for k, v in {
+        "isin": it.get("isinCd"), "crno": it.get("crno"), "issuer": it.get("bondIsurNm"), "name": it.get("isinCdNm"),
+        "method": it.get("bondOffrMcdNm"), "link": it.get("pclrBondKcdNm") if it.get("pclrBondKcdNm") not in config.PRIVATE_BOND_PCLR_OK else None,
+        "issue": normalize.iso_date(it.get("bondIssuDt")), "mat": normalize.iso_date(it.get("bondExprDt")),
+        "amt": normalize.num(it.get("bondIssuAmt")), "bal": normalize.num(it.get("bondBal")),
+        "cpn": normalize.pct(it.get("bondSrfcInrt")), "grn": it.get("grnDcdNm"), "opt": it.get("optnTcdNm"),
+    }.items() if v not in (None, "", "None")}
+
+
 def collect_private_bonds(store, mode):
     try:
         client = BondInfoClient()
@@ -131,6 +143,7 @@ def collect_private_bonds(store, mode):
     store.reset_diag("offer_methods")
     days_done, d, kept = 0, today, 0
     kept_ids = set()
+    outstanding = []
     tries = 0
     while days_done < config.BOND_INFO_BASDT_DAYS and tries < 14:
         d -= timedelta(days=1)
@@ -145,6 +158,8 @@ def collect_private_bonds(store, mode):
         for it in items:
             method = str(it.get("bondOffrMcdNm") or "")
             store.note_diag("offer_methods", method)
+            if str(it.get("scrsItmsKcdNm") or "") in config.PRIVATE_BOND_KINDS:
+                outstanding.append(compact_bond(it))
             if method not in config.PRIVATE_BOND_METHODS:
                 continue
             store.note_diag("private_bond_kinds", f"{it.get('scrsItmsKcdNm')} | {it.get('pclrBondKcdNm')}")
@@ -173,6 +188,9 @@ def collect_private_bonds(store, mode):
             for rid in [k for k, r in store.records.items() if k.startswith("PBOND:") and k not in kept_ids]:
                 del store.records[rid]
                 store.changed = True
+            outstanding.sort(key=lambda b: (b.get("crno") or "", b.get("isin") or ""))
+            dump_json("bonds/outstanding.json", {"basDt": ymd(d), "bonds": outstanding}, indent=None)
+            store.diag["private_bond_status"]["outstanding"] = len(outstanding)
             break
     log.info("사모채 %s건 반영 (공공데이터 호출 %s회)", kept, client.calls)
     return client.calls
@@ -180,7 +198,7 @@ def collect_private_bonds(store, mode):
 
 def main(argv=None):
     ap = argparse.ArgumentParser()
-    ap.add_argument("--mode", choices=["watch", "daily", "backfill"], default="watch")
+    ap.add_argument("--mode", choices=["watch", "daily", "backfill", "profiles"], default="watch")
     ap.add_argument("--days", type=int, default=7)
     args = ap.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
@@ -188,6 +206,21 @@ def main(argv=None):
     store = Store()
     dart = DartClient()
     today = now_kst().date()
+
+    if args.mode == "profiles":
+        from . import profiles
+        profiles.run(dart, store, today)
+        d = store.diag.pop("profiles", {})
+        # 공시 감시 실행과 같은 파일을 건드리지 않도록 진단은 따로 저장 (동시 push 충돌 방지)
+        dump_json("diag_profiles.json", d)
+        summary = (f"mode=profiles · DART 호출 {dart.calls}회 · 대상 {d.get('targets')}곳 · 갱신 {d.get('profiles_done')}곳"
+                   f" · 예산소진={'예' if d.get('budget_exhausted') else '아니오'}")
+        log.info(summary)
+        if os.environ.get("GITHUB_STEP_SUMMARY"):
+            with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as f:
+                f.write(summary + "\n")
+        return 0
+
     mode = "daily" if args.mode == "backfill" else args.mode
 
     if args.mode == "watch":

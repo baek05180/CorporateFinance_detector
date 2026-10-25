@@ -52,7 +52,7 @@ BOND_INFO_URL = "https://apis.data.go.kr/1160100/GetBondIssuInfoService_V2/getBo
 BOND_INFO_ROWS = 1000          # 한 번에 받는 건수
 BOND_INFO_MAX_PAGES = 30       # 기준일 하루치 최대 페이지 (호출 한도 보호)
 BOND_INFO_BASDT_DAYS = 5       # 매일 저녁 최근 며칠치 기준일을 훑을지
-BOND_ISSUE_LOOKBACK_DAYS = 90  # 발행일이 이 기간 안인 것만 저장
+BOND_ISSUE_LOOKBACK_DAYS = 1095  # 조달내역 화면용: 발행일이 최근 3년 안인 잔존 사모채를 저장
 
 # 실제 데이터 확인 결과(2026-10-23 기준일 29,261건)에 맞춘 허용 목록
 # 종목종류: 일반회사채만 (금융채·MBS·SLBS·유동화SPC채·유사집합투자기구채·특수채 제외)
@@ -66,3 +66,25 @@ PRIVATE_BOND_METHODS = ["사모", "CBO기초사모"]
 PRIVATE_BOND_EXCLUDE = ["금융", "은행", "카드", "캐피탈", "유동화", "ABS", "단기", "CD", "CP",
                         "국채", "지방채", "특수채", "통화안정", "보험", "전환", "교환", "신주인수권",
                         "조건부", "파생", "커버드"]
+
+
+# ── 기업 프로필 (profiles 모드) ──
+DART_RUN_BUDGET = 8000          # profiles 한 번 실행에서 쓸 최대 OpenDART 호출 수 (일일 한도 20,000)
+PROFILE_RECHECK_DAYS = 7        # 프로필이 있는 회사는 이 주기로 새 정기보고서가 나왔는지 확인
+COMPANY_INFO_RECHECK_DAYS = 60  # 기업개황(대표·주소·업종코드 등) 재확인 주기
+PROFILE_TARGET_DAYS = 1095      # 최근 3년 안에 조달 기록이 있는 회사 = 프로필 대상
+WATCHLIST_FILE = "watchlist.txt"  # 저장소 루트. 한 줄에 회사명 또는 종목코드 하나 (관심 회사)
+
+KIND_MIN_ROWS = 1500         # 이보다 적게 받으면 형식 변경으로 보고 기존 목록 유지
+KIND_LIST_URL = "https://kind.krx.co.kr/corpgeneral/corpList.do"
+STOCK_PRICE_URL = "https://apis.data.go.kr/1160100/GetStockSecuritiesInfoService_V2/getStockPriceInfo_V2"
+
+# 다중회사 주요계정 → 사이트에서 쓰는 이름
+MULTI_ACCOUNTS = {
+    "유동자산": "cur_assets", "비유동자산": "noncur_assets", "자산총계": "assets",
+    "유동부채": "cur_liab", "비유동부채": "noncur_liab", "부채총계": "liab",
+    "자본금": "capital", "이익잉여금": "retained", "자본총계": "equity",
+    "매출액": "revenue", "영업이익": "op", "법인세차감전 순이익": "pretax", "당기순이익(손실)": "ni",
+    "당기순이익": "ni",
+}
+REPORT_CODES = {"11013": "1Q", "11012": "반기", "11014": "3Q", "11011": "연간"}

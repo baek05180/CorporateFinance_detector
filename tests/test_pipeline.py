@@ -16,6 +16,7 @@ TMP = tempfile.mkdtemp(prefix="ecm-test-")
 config.DATA_DIR = os.path.join(TMP, "data")
 config.PUBLIC_DIR = os.path.join(TMP, "public")
 config.DART_SLEEP_SEC = 0
+config.KIND_MIN_ROWS = 1
 os.environ["DART_API_KEY"] = "x" * 40
 os.environ["DATA_GO_KR_KEY"] = "test"
 config.DART_API_KEY = "x" * 40
@@ -132,10 +133,63 @@ BOND_ITEMS = [
 ]
 
 
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROBE = os.path.join(REPO, "tests", "fixtures")
+
+# 상장사·고유번호 (프로필 테스트용)
+LISTED = [  # 종목코드, 고유번호, 이름, 시장, 업종
+    ("002990", "00000001", "금호건설", "유가증권", "종합 건설업"),
+    ("126340", "00000002", "비나텍", "코스닥", "전자부품 제조업"),
+    ("083660", "00000004", "CSA 코스믹", "코스닥", "화학제품 제조업"),
+    ("009830", "00000005", "한화솔루션", "유가증권", "기초 화학물질 제조업"),
+    ("458870", "00000011", "씨어스", "코스닥", "의료용 기기 제조업"),
+    ("047040", "00000020", "대우건설", "유가증권", "종합 건설업"),
+    ("014790", "00000021", "HL D&I", "유가증권", "종합 건설업"),
+]
+
+
+def _zip(name, text):
+    import io
+    import zipfile
+    b = io.BytesIO()
+    with zipfile.ZipFile(b, "w") as z:
+        z.writestr(name, text.encode("utf-8"))
+    return b.getvalue()
+
+
+def corpcode_zip():
+    body = "".join(f"<list><corp_code>{c}</corp_code><corp_name>{n}</corp_name><stock_code>{s}</stock_code></list>"
+                   for s, c, n, _, _ in LISTED)
+    body += "<list><corp_code>00000099</corp_code><corp_name>비상장회사</corp_name><stock_code> </stock_code></list>"
+    return _zip("CORPCODE.xml", f"<?xml version='1.0' encoding='UTF-8'?><result>{body}</result>")
+
+
+def kind_html():
+    head = "<tr><th>회사명</th><th>시장구분</th><th>종목코드</th><th>업종</th><th>주요제품</th><th>상장일</th><th>결산월</th><th>대표자명</th><th>홈페이지</th><th>지역</th></tr>"
+    rows = "".join(f"<tr><td>{n}</td><td>{m}</td><td>{s}</td><td>{i}</td><td>{n} 제품</td><td>2000-01-01</td><td>12월</td><td>대표</td><td>http://x.kr</td><td>서울</td></tr>"
+                   for s, c, n, m, i in LISTED)
+    return f"<html><body><table>{head}{rows}</table></body></html>".encode("euc-kr")
+
+
+def multi_rows(corp_codes):
+    out = []
+    for s, c, n, m, i in LISTED:
+        if c not in corp_codes:
+            continue
+        base = int(c[-2:]) * 10**11
+        for nm, sj, v in [("매출액", "IS", base * 2), ("영업이익", "IS", base // 10), ("당기순이익(손실)", "IS", base // 20),
+                          ("자산총계", "BS", base * 3), ("부채총계", "BS", base * 2), ("자본총계", "BS", base), ("자본금", "BS", base // 5),
+                          ("유동자산", "BS", base), ("유동부채", "BS", base)]:
+            out.append(dict(stock_code=s, fs_div="CFS", sj_div=sj, account_nm=nm, thstrm_dt="2025.12.31",
+                            thstrm_amount=f"{v:,}", frmtrm_amount=f"{int(v * .9):,}", bfefrmtrm_amount=f"{int(v * .8):,}"))
+    return out
+
+
 class Resp:
-    def __init__(self, obj):
+    def __init__(self, obj, content=None):
         self._obj = obj
-        self.text = json.dumps(obj, ensure_ascii=False)
+        self.text = json.dumps(obj, ensure_ascii=False) if content is None else ""
+        self.content = content if content is not None else self.text.encode()
         self.status_code = 200
 
     def raise_for_status(self):
@@ -149,11 +203,39 @@ class FakeSession:
     def __init__(self):
         self.calls = []
 
+    def post(self, url, data=None, headers=None, timeout=None):
+        self.calls.append(("kind", {}))
+        return Resp({}, content=kind_html())
+
     def get(self, url, params=None, timeout=None):
         p = params or {}
         ep = urlparse(url).path.rsplit("/", 1)[-1].replace(".json", "")
         self.calls.append((ep, {k: v for k, v in p.items() if k not in ("crtfc_key", "serviceKey")}))
         ok = lambda **kw: Resp({"status": "000", "message": "정상", **kw})  # noqa: E731
+        if ep == "list" and p.get("pblntf_ty") == "A":
+            if p.get("corp_code") in ("00000001", "00000011"):
+                return ok(list=[dict(report_nm="반기보고서 (2026.06)", rcept_no="20260814000001", corp_code=p["corp_code"]),
+                                dict(report_nm="사업보고서 (2025.12)", rcept_no="20260310000001", corp_code=p["corp_code"])])
+            return Resp({"status": "013", "message": "없음"})
+        if ep == "corpCode.xml":
+            return Resp({}, content=corpcode_zip())
+        if ep == "document.xml":
+            if p["rcept_no"].startswith("2026031"):
+                return Resp({}, content=_zip("a.xml", open(os.path.join(PROBE, "annual_remed_excerpt.xml"), encoding="utf-8").read()))
+            return Resp({}, content=_zip("b.xml", "<P>1. 공모개요</P><P>수요예측 일시 : 2026년 10월 20일 09:00~16:00</P>"))
+        if ep == "fnlttMultiAcnt":
+            return ok(list=multi_rows(p["corp_code"].split(",")))
+        if ep == "fnlttSinglAcntAll":
+            if p["fs_div"] == "CFS":
+                return ok(list=json.load(open(os.path.join(PROBE, "full_fs_remed.json"), encoding="utf-8")))
+            return Resp({"status": "013", "message": "없음"})
+        if ep == "hyslrSttus":
+            return ok(**json.load(open(os.path.join(PROBE, "summary.json"), encoding="utf-8"))["hyslr"])
+        if ep == "tesstkAcqsDspsSttus":
+            return ok(**json.load(open(os.path.join(PROBE, "summary.json"), encoding="utf-8"))["tesstk"])
+        if ep == "getStockPriceInfo_V2":
+            items = [dict(srtnCd=s, clpr="10000", mrktTotAmt=str(int(c[-2:]) * 10**11), lstgStCnt="10000000") for s, c, *_ in LISTED]
+            return Resp({"response": {"header": {"resultCode": "00"}, "body": {"totalCount": len(items), "items": {"item": items}}}})
         if ep == "list":
             src = LIST_B if p.get("pblntf_ty") == "B" else LIST_C
             rows = [f for f in src if p["bgn_de"] <= f["rcept_dt"] <= p["end_de"]]
@@ -164,7 +246,9 @@ class FakeSession:
         if ep == "bdRs":
             return ok(**BDRS.get(p["corp_code"], {"group": []}))
         if ep == "company":
-            return ok(induty_code=COMPANY.get(p["corp_code"], ""), stock_code="")
+            code = next((x[0] for x in LISTED if x[1] == p["corp_code"]), "")
+            return ok(induty_code=COMPANY.get(p["corp_code"], "41221"), stock_code=code, corp_name="테스트", jurir_no="J" + p["corp_code"],
+                      ceo_nm="대표", corp_cls="Y", adres="서울", hm_url="x.kr", est_dt="20000101", acc_mt="12")
         if ep == "getBondBasiInfo_V2":
             items = BOND_ITEMS
             return Resp({"response": {"header": {"resultCode": "00"}, "body": {
@@ -213,22 +297,43 @@ def main():
     check("금융사(KB캐피탈) 공모채 제외", not any(r["corp_name"] == "KB캐피탈" for r in recs.values()))
     check("전환사채 명칭의 공모 채무증권 제외", not any(r["corp_name"] == "에스케이렌터카" for r in recs.values()))
     pvt = sorted(r["corp_name"] for r in recs.values() if r["type"] == "BOND" and r["offering"] == "사모")
-    check("사모채 = 두산퓨얼셀·쌍용건설·중소제조(P-CBO)", pvt == ["두산퓨얼셀", "쌍용건설", "중소제조"])
+    check("사모채 = 두산퓨얼셀·쌍용건설·오래된회사·중소제조(P-CBO) — 3년 보관", pvt == ["두산퓨얼셀", "쌍용건설", "오래된회사", "중소제조"])
     check("P-CBO 태그는 CBO기초사모에만", [r["corp_name"] for r in recs.values() if r.get("pcbo")] == ["중소제조"])
     check("자기주식·유무상증자 공시 무시", not any(r["corp_name"] in ("아무개", "유무상테스트") for r in recs.values()))
     check("두 번째 감시 실행은 목록 조회 2회뿐", second_run_calls == 2)
     check("실시간 감시가 오늘 CB(씨어스)를 미확정 상태로 잡음", [r["corp_name"] for r in watch_caught] == ["씨어스"])
     check("정기 갱신 후 확정 표시", all(r.get("confirmed") for r in recs.values()))
 
+    # 4) 기업 프로필
+    run.main(["--mode", "profiles"])
+    prof = json.load(open(os.path.join(config.DATA_DIR, "co", "00000001.json"), encoding="utf-8"))
+    check("프로필: 사업 개요·주요제품·매출처 추출", prof.get("business", {}).get("overview") and prof["business"].get("products")
+          and "Zimmer" in prof["business"].get("customers", ""))
+    check("프로필: 현금·차입금·EBITDA 재료", prof["fs_annual"].get("cash") and "dep" in prof["fs_annual"])
+    check("프로필: 최대주주 합계·자기주식", prof["holders"].get("top") and prof.get("treasury_shares") == 91828987)
+    bd = json.load(open(os.path.join(config.DATA_DIR, "ref", "bond_docs.json"), encoding="utf-8"))
+    check("공모채 수요예측일 추출", any(v.get("demand_dt") == "2026-10-20" for v in bd.values()))
+    calls_before = len(fake.calls)
+    run.main(["--mode", "profiles"])
+    check("두 번째 프로필 실행은 새로 받을 것이 거의 없음", len(fake.calls) - calls_before < 20)
+
     from web import build
     build.main()
     html = open(os.path.join(config.PUBLIC_DIR, "index.html"), encoding="utf-8").read()
-    check("페이지에 데이터 삽입", "금호건설" in html and "__DATA__" not in html)
+    deals = json.load(open(os.path.join(config.PUBLIC_DIR, "data", "deals.json"), encoding="utf-8"))
+    check("화면 + 데이터 파일 생성", "__SITE_NAME__" not in html and any(d["corp_name"] == "금호건설" for d in deals))
+    co = json.load(open(os.path.join(config.PUBLIC_DIR, "data", "co", "00000001.json"), encoding="utf-8"))
+    check("회사 화면: peer = 같은 업종 3곳", sorted(p["name"] for p in co["peers"]) == ["HL D&I", "금호건설", "대우건설"])
+    check("회사 화면: 제안 7가지 + 근거", len(co["proposal"]) == 7 and all("reasons" in o for o in co["proposal"]))
+    check("회사 화면: 시가총액·PER", co["metrics"].get("mcap") and co["metrics"].get("per"))
+    check("공모채에 수요예측일 반영", any(d.get("demand_dt") == "2026-10-20" for d in deals if d["type"] == "BOND"))
+    idx = json.load(open(os.path.join(config.PUBLIC_DIR, "data", "companies.json"), encoding="utf-8"))
+    check("검색 목록에 상장사 전체 포함", {"대우건설", "HL D&I"} <= {c[1] for c in idx})
 
     for name, ok in checks:
         print(("PASS " if ok else "FAIL ") + name)
     print(f"\n결과물: {TMP}")
-    print("diag:", json.dumps(json.load(open(os.path.join(config.DATA_DIR, "diag.json"), encoding="utf-8")), ensure_ascii=False))
+    print("diag:", json.dumps(json.load(open(os.path.join(config.DATA_DIR, "diag_profiles.json"), encoding="utf-8")), ensure_ascii=False)[:600])
     return 0 if all(ok for _, ok in checks) else 1
 
 
