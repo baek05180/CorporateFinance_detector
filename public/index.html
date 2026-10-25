@@ -155,7 +155,7 @@ footer p{margin:4px 0}
   const MK = {Y: '유', K: '코', N: '넥'};
   const daysAgo = n => kstDate(Date.now() - n * 86400000);
 
-  const isNew = r => (r.captured_by === 'watch' && !r.confirmed) || (r.first_seen || '').slice(0, 10) === todayIso;
+  const isNew = r => r.captured_by === 'watch' && !r.confirmed;   // 실시간 감시가 잡았고 아직 정기 갱신 전
   const company = r => {
     const name = esc(r.corp_name);
     const link = r.url ? `<a href="${r.url}" target="_blank" rel="noopener">${name}</a>` : name;
