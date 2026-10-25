@@ -1,7 +1,7 @@
 {
  "meta": {
-  "data_updated": "2026-10-25T18:20+09:00",
-  "last_daily": "2026-10-25T18:20+09:00"
+  "data_updated": "2026-10-25T18:23+09:00",
+  "last_daily": "2026-10-25T18:23+09:00"
  },
  "records": {
   "BOND:00102858:14": {
@@ -6100,6 +6100,36 @@
    "updated": "2026-10-25T18:18+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261022000279"
   },
+  "RIGHTS:00104120:20261020000324": {
+   "amended": true,
+   "amount": 1999997550,
+   "board_dt": "2026-10-22",
+   "captured_by": "daily",
+   "confirmed": true,
+   "corp_cls": "K",
+   "corp_code": "00104120",
+   "corp_name": "광진실업",
+   "dilution": 10.8,
+   "first_seen": "2026-10-25T18:22+09:00",
+   "id": "RIGHTS:00104120:20261020000324",
+   "method": "제3자배정증자",
+   "new_common": 856530,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "original_rcept": "20261020000324",
+   "par_value": 500,
+   "purposes": {
+    "운영": 1999997550
+   },
+   "rcept_dt": "2026-10-22",
+   "rcept_no": "20261022000279",
+   "source": "DART",
+   "stock_code": "026910",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-10-25T18:22+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261022000279"
+  },
   "RIGHTS:00104786:20261022000100": {
    "amended": false,
    "amount": 10000001000,
@@ -7534,6 +7564,36 @@
    "updated": "2026-10-25T18:19+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261021000288"
   },
+  "RIGHTS:00369569:20261021000288": {
+   "amended": true,
+   "amount": 4270000000,
+   "board_dt": "2026-10-21",
+   "captured_by": "daily",
+   "confirmed": true,
+   "corp_cls": "K",
+   "corp_code": "00369569",
+   "corp_name": "비케이홀딩스",
+   "dilution": 29.74,
+   "first_seen": "2026-10-25T18:23+09:00",
+   "id": "RIGHTS:00369569:20261021000288",
+   "method": "제3자배정증자",
+   "new_common": 7000000,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 500,
+   "purposes": {
+    "운영": 2000000000,
+    "타법인증권": 2270000000
+   },
+   "rcept_dt": "2026-10-21",
+   "rcept_no": "20261021000288",
+   "source": "DART",
+   "stock_code": "050090",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-10-25T18:23+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261021000288"
+  },
   "RIGHTS:00391197:20260827000830": {
    "amended": true,
    "amount": null,
@@ -8467,6 +8527,35 @@
    "updated": "2026-10-25T18:19+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261019000262"
   },
+  "RIGHTS:00587925:20261019000262": {
+   "amended": true,
+   "amount": 2000000000,
+   "board_dt": "2026-10-19",
+   "captured_by": "daily",
+   "confirmed": true,
+   "corp_cls": "K",
+   "corp_code": "00587925",
+   "corp_name": "모아라이프플러스",
+   "dilution": 9.49,
+   "first_seen": "2026-10-25T18:23+09:00",
+   "id": "RIGHTS:00587925:20261019000262",
+   "method": "제3자배정증자",
+   "new_common": 2000000,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 1000,
+   "purposes": {
+    "운영": 2000000000
+   },
+   "rcept_dt": "2026-10-19",
+   "rcept_no": "20261019000262",
+   "source": "DART",
+   "stock_code": "142760",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-10-25T18:23+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261019000262"
+  },
   "RIGHTS:00608839:20260827000798": {
    "amended": true,
    "amount": 3000000000,
@@ -8585,6 +8674,37 @@
    "stock_kind": "보통주",
    "type": "RIGHTS",
    "updated": "2026-10-25T18:19+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261023000388"
+  },
+  "RIGHTS:00618410:20261020000377": {
+   "amended": true,
+   "amount": 4999999059,
+   "board_dt": "2026-10-23",
+   "captured_by": "daily",
+   "confirmed": true,
+   "corp_cls": "K",
+   "corp_code": "00618410",
+   "corp_name": "KS인더스트리",
+   "dilution": 27.84,
+   "first_seen": "2026-10-25T18:23+09:00",
+   "id": "RIGHTS:00618410:20261020000377",
+   "method": "제3자배정증자",
+   "new_common": 4170141,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "original_rcept": "20261020000377",
+   "par_value": 500,
+   "purposes": {
+    "운영": 2399999059,
+    "채무상환": 2600000000
+   },
+   "rcept_dt": "2026-10-23",
+   "rcept_no": "20261023000388",
+   "source": "DART",
+   "stock_code": "101000",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-10-25T18:23+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261023000388"
   },
   "RIGHTS:00623184:20261021000422": {
@@ -8909,6 +9029,35 @@
    "stock_kind": "보통주",
    "type": "RIGHTS",
    "updated": "2026-10-25T18:19+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261019000322"
+  },
+  "RIGHTS:00781202:20261019000322": {
+   "amended": true,
+   "amount": 9999999090,
+   "board_dt": "2026-10-19",
+   "captured_by": "daily",
+   "confirmed": true,
+   "corp_cls": "K",
+   "corp_code": "00781202",
+   "corp_name": "파이온엑스",
+   "dilution": 178.47,
+   "first_seen": "2026-10-25T18:23+09:00",
+   "id": "RIGHTS:00781202:20261019000322",
+   "method": "제3자배정증자",
+   "new_common": 9416195,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 206,
+   "purposes": {
+    "운영": 9999999090
+   },
+   "rcept_dt": "2026-10-19",
+   "rcept_no": "20261019000322",
+   "source": "DART",
+   "stock_code": "900100",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-10-25T18:23+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261019000322"
   },
   "RIGHTS:00787057:20261014000405": {
