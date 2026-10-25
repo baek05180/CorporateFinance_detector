@@ -217,10 +217,12 @@ def public_bonds(groups, filing=None):
 def private_bond(item):
     isin = item.get("isinCd")
     issue = iso_date(item.get("bondIssuDt"))
+    method = str(item.get("bondOffrMcdNm") or "")
     return {
         "id": f"PBOND:{isin}",
         "type": "BOND",
-        "offering": "사모" if "사모" in str(item.get("bondOffrMcdNm") or "") else offering_of(item.get("bondOffrMcdNm")),
+        "offering": "사모" if "사모" in method else offering_of(method),
+        "pcbo": "CBO" in method,                # P-CBO 기초자산 사모채 여부
         "source": "공공데이터포털",
         "isin": isin,
         "name": item.get("isinCdNm"),

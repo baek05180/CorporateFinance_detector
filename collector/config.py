@@ -59,8 +59,8 @@ BOND_ISSUE_LOOKBACK_DAYS = 90  # 발행일이 이 기간 안인 것만 저장
 PRIVATE_BOND_KINDS = ["일반회사채"]
 # 특이채권종류: 주식 관련 없는 것만 (CB·EB·BW·이익참가 제외)
 PRIVATE_BOND_PCLR_OK = ["주식관련해당사항없음", "", "None"]
-# 모집방법: '사모'만. 'CBO기초사모'(P-CBO 기초자산 채권)는 별도 구분이라 기본 제외
-PRIVATE_BOND_METHODS = ["사모"]
+# 모집방법: '사모' + 'CBO기초사모'(신용보증기금 P-CBO에 편입되는 사모채, 화면에 P-CBO 태그)
+PRIVATE_BOND_METHODS = ["사모", "CBO기초사모"]
 
 # 위 조건을 통과한 뒤에도 종목명·업종명에 이 단어가 있으면 제외
 PRIVATE_BOND_EXCLUDE = ["금융", "은행", "카드", "캐피탈", "유동화", "ABS", "단기", "CD", "CP",

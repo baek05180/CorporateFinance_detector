@@ -76,6 +76,7 @@ tbody tr:hover{background:var(--line-2)}
 .b-amd{color:var(--ink-3); border:1px solid var(--line); margin-left:6px; font-weight:600}
 .b-pub{color:var(--pub); background:var(--pub-soft)}
 .b-pvt{color:var(--pvt); background:var(--pvt-soft)}
+.b-cbo{color:var(--ink-2); border:1px solid var(--line); margin-left:6px; font-weight:600}
 .type{font-family:var(--mono); font-size:12px; font-weight:700}
 .muted{color:var(--ink-3)}
 .dart{font-size:12px; color:var(--accent); text-decoration:none}
@@ -233,10 +234,11 @@ footer p{margin:4px 0}
       label: '회사채 사모', kpi: '회사채 사모',
       pick: r => r.type === 'BOND' && r.offering === '사모',
       date: r => r.issue_dt,
-      chips: [],
+      chips: ['일반 사모', 'P-CBO'],
+      chipTest: (r, c) => c === 'P-CBO' ? !!r.pcbo : !r.pcbo,
       cols: [
         ['발행일', r => md(r.issue_dt)],
-        ['발행사', r => `<span class="co">${esc(r.corp_name)}</span>` + (isNew(r) ? '<span class="badge b-new">새</span>' : '')],
+        ['발행사', r => `<span class="co">${esc(r.corp_name)}</span>` + (r.pcbo ? '<span class="badge b-cbo">P-CBO</span>' : '') + (isNew(r) ? '<span class="badge b-new">새</span>' : '')],
         ['종목명', r => `<span class="muted">${esc(r.name || '-')}</span>`],
         ['발행금액', r => won(r.amount), 'r'],
         ['금리', r => pct(r.coupon, 3), 'r'],
@@ -244,7 +246,7 @@ footer p{margin:4px 0}
         ['보증', r => esc(r.guarantee || '-')],
         ['주관·인수', r => esc(r.lead || r.underwriter || '-')],
       ],
-      note: '출처 금융위원회 채권기본정보(한국예탁결제원) · 모집방법 = 사모 · 금융채·ABS·단기물·주식연계채권 제외 · 발행 다음 영업일 반영',
+      note: '출처 금융위원회 채권기본정보(한국예탁결제원) · 모집방법 = 사모·CBO기초사모(P-CBO 태그) · 금융채·ABS·단기물·주식연계채권 제외 · 발행 다음 영업일 반영',
     },
   };
 

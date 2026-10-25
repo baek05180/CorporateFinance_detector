@@ -123,6 +123,7 @@ def bond_item(isin, name, issuer, method, kind, issue_ago, years, amt, pclr="주
 BOND_ITEMS = [
     bond_item("KR6336261G01", "두산퓨얼셀11", "두산퓨얼셀", "사모", "일반회사채", 3, 2, 10000000000),
     bond_item("KR6012631G02", "쌍용건설120", "쌍용건설", "사모", "일반회사채", 2, 2, 12000000000),
+    bond_item("KR6999991G08", "중소제조1(CBO)", "중소제조", "CBO기초사모", "일반회사채", 4, 3, 3000000000),
     bond_item("KR6000001G03", "현대차500-1", "현대자동차", "공모", "일반회사채", 2, 3, 300000000000),
     bond_item("KR6000002G04", "OO캐피탈1234", "OO캐피탈", "사모", "금융채", 2, 2, 20000000000, sic="여신금융업"),
     bond_item("KR6000003G05", "단기물", "어떤회사", "사모", "일반회사채", 2, 0.5, 5000000000),
@@ -212,7 +213,8 @@ def main():
     check("금융사(KB캐피탈) 공모채 제외", not any(r["corp_name"] == "KB캐피탈" for r in recs.values()))
     check("전환사채 명칭의 공모 채무증권 제외", not any(r["corp_name"] == "에스케이렌터카" for r in recs.values()))
     pvt = sorted(r["corp_name"] for r in recs.values() if r["type"] == "BOND" and r["offering"] == "사모")
-    check("사모채 = 두산퓨얼셀·쌍용건설만", pvt == ["두산퓨얼셀", "쌍용건설"])
+    check("사모채 = 두산퓨얼셀·쌍용건설·중소제조(P-CBO)", pvt == ["두산퓨얼셀", "쌍용건설", "중소제조"])
+    check("P-CBO 태그는 CBO기초사모에만", [r["corp_name"] for r in recs.values() if r.get("pcbo")] == ["중소제조"])
     check("자기주식·유무상증자 공시 무시", not any(r["corp_name"] in ("아무개", "유무상테스트") for r in recs.values()))
     check("두 번째 감시 실행은 목록 조회 2회뿐", second_run_calls == 2)
     check("실시간 감시가 오늘 CB(씨어스)를 미확정 상태로 잡음", [r["corp_name"] for r in watch_caught] == ["씨어스"])

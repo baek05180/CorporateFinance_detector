@@ -18,7 +18,7 @@ KEEP = {
     "price", "shares", "dilution", "refix_floor", "exercise_from", "exercise_to", "exchange_target",
     "new_common", "new_other", "stock_kind", "method", "purposes", "name", "rating", "sub_dt",
     "underwriters", "guarantor", "coupon_raw", "isin", "kind", "issue_dt", "guarantee", "rank",
-    "underwriter", "usage", "first_seen", "captured_by", "confirmed", "source",
+    "underwriter", "usage", "pcbo", "first_seen", "captured_by", "confirmed", "source",
 }
 
 
