@@ -6,7 +6,7 @@ on:
     - cron: "*/5 22-23 * * 0-4"   # 평일 KST 07:00~08:55 신규 공시 감시
     - cron: "*/5 0-10 * * 1-5"    # 평일 KST 09:00~19:55 신규 공시 감시
     - cron: "15 11 * * 1-5"       # 평일 KST 20:15 정기 갱신 (최근 7일 재수집 + 사모채)
-    - cron: "30 12 * * *"         # 매일 KST 21:30 기업 프로필 (호출 예산 안에서 점진 수집)
+    - cron: "30 12,14,16,18,20 * * *"  # 매일 KST 21:30~05:30 2시간마다 기업 프로필 (회당 100분, 이어서 수집)
   workflow_dispatch:
     inputs:
       mode:
@@ -27,7 +27,7 @@ jobs:
     timeout-minutes: 300
     concurrency:
       # 프로필 수집은 오래 걸리므로 공시 감시와 따로 돈다 (쓰는 파일이 겹치지 않음)
-      group: ${{ (github.event.schedule == '30 12 * * *' || inputs.mode == 'profiles') && 'profiles' || 'collect' }}
+      group: ${{ (github.event.schedule == '30 12,14,16,18,20 * * *' || inputs.mode == 'profiles') && 'profiles' || 'collect' }}
       cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
@@ -47,7 +47,7 @@ jobs:
             echo "days=${{ inputs.days }}" >> "$GITHUB_OUTPUT"
           elif [ "${{ github.event.schedule }}" = "15 11 * * 1-5" ]; then
             echo "mode=daily" >> "$GITHUB_OUTPUT"; echo "days=7" >> "$GITHUB_OUTPUT"
-          elif [ "${{ github.event.schedule }}" = "30 12 * * *" ]; then
+          elif [ "${{ github.event.schedule }}" = "30 12,14,16,18,20 * * *" ]; then
             echo "mode=profiles" >> "$GITHUB_OUTPUT"; echo "days=0" >> "$GITHUB_OUTPUT"
           else
             echo "mode=watch" >> "$GITHUB_OUTPUT"; echo "days=0" >> "$GITHUB_OUTPUT"
