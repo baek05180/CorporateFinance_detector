@@ -186,6 +186,53 @@ def customers(body, limit=400):
     return ""
 
 
+def _flatten(body, limit):
+    """섹션 본문 → 문단과 표(행마다 'a | b | c')를 이어 붙인 텍스트. AI 요약 재료용."""
+    body = re.sub(r"<TITLE[^>]*>.*?</TITLE>", "", body, count=1, flags=re.S | re.I)
+    lines, n = [], 0
+    for kind, val in blocks(body):
+        if kind == "p":
+            t = val.strip()
+            if len(t) < 2:
+                continue
+            lines.append(t)
+        else:
+            for row in val[:40]:
+                cells = [c for c in row if c]
+                if cells:
+                    lines.append(" | ".join(cells))
+        n = sum(len(x) + 1 for x in lines)
+        if n >= limit:
+            break
+    return "\n".join(lines)[:limit]
+
+
+RAW_PARTS = [("overview", ("사업의 개요",), 5000), ("products", ("주요 제품",), 2500),
+             ("materials", ("원재료",), 1500), ("sales", ("매출",), 3500)]
+
+
+def business_raw(xml):
+    """사업보고서 'II. 사업의 내용' 1~4절을 압축한 원문 {overview, products, materials, sales}"""
+    part = _business_part(xml)
+    if part is None:
+        return {}
+    secs = sections(part, 2)
+    out = {}
+    for key, kws, limit in RAW_PARTS:
+        body = find_section(secs, *kws)
+        if body:
+            out[key] = _flatten(body, limit)
+    return {k: v for k, v in out.items() if v}
+
+
+def _business_part(xml):
+    for m in re.finditer(r"<TITLE[^>]*>(.*?)</TITLE>", xml, re.S | re.I):
+        if re.sub(r"\s", "", text_of(m.group(1))).endswith("사업의내용"):
+            nxt = re.search(r"<SECTION-1\b", xml[m.end():], re.I)
+            return xml[m.end(): m.end() + nxt.start()] if nxt else xml[m.end():]
+    return None
+
+
 def annual_business(xml):
     """사업보고서 원문 → {"overview","products","customers"}"""
     part = None

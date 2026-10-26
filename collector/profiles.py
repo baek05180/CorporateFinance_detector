@@ -110,6 +110,8 @@ def fs_detail(rows):
     out = {}
     debt_names = set()
     debt = 0
+    debt_prev = [0, 0]      # 전기, 전전기 (연간 보고서의 비교 기간)
+    has_prev = [False, False]
     for r in rows:
         sj, aid, nm = r.get("sj_div"), r.get("account_id") or "", (r.get("account_nm") or "").replace(" ", "")
         v = num(r.get("thstrm_add_amount")) if sj in ("IS", "CIS") and r.get("thstrm_add_amount") not in (None, "", "-") \
@@ -132,6 +134,11 @@ def fs_detail(rows):
             elif any(k in nm for k in DEBT_KEYS) and not any(k in nm for k in DEBT_SKIP) and nm not in debt_names:
                 debt_names.add(nm)
                 debt += v
+                for i, f in enumerate(("frmtrm_amount", "bfefrmtrm_amount")):
+                    pv = num(r.get(f))
+                    if pv is not None:
+                        debt_prev[i] += pv
+                        has_prev[i] = True
         elif sj in ("IS", "CIS"):
             if aid in ("ifrs-full_Revenue",) or nm in ("매출액", "수익(매출액)", "영업수익"):
                 out.setdefault("revenue", v)
@@ -157,10 +164,11 @@ def fs_detail(rows):
     if debt_names:
         out["debt"] = debt
         out["debt_items"] = sorted(debt_names)
+        out["debt_hist"] = [debt_prev[1] if has_prev[1] else None, debt_prev[0] if has_prev[0] else None, debt]
     return out
 
 
-PROFILE_VERSION = 2   # 추출 규칙이 바뀌면 올린다 → 기존 프로필을 다음 실행 때 다시 만든다
+PROFILE_VERSION = 3   # 추출 규칙이 바뀌면 올린다 → 기존 프로필을 다음 실행 때 다시 만든다
 
 
 def holders(rows):
@@ -235,6 +243,7 @@ def build_profile(dart, corp_code, old, today):
             docs = dart.document(annual["rcept_no"])
             main = max(docs.values(), key=len) if docs else ""
             prof["business"] = docparse.annual_business(main)
+            prof["biz_raw"] = docparse.business_raw(main)   # AI 요약 재료 (사이트에는 내보내지 않음)
         except (DartError, ValueError) as e:
             log.warning("사업보고서 원문 실패 %s: %s", corp_code, e)
             prof["business"] = prof.get("business") or {}

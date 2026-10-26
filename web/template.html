@@ -11,7 +11,7 @@
   --bg:#f6f5f2; --panel:#ffffff; --ink:#16181d; --ink-2:#4b5059; --ink-3:#8a8f98;
   --line:#e6e3dd; --line-2:#f0eee9; --accent:#1f4fd8; --accent-soft:#e8eefc;
   --new:#d9480f; --new-soft:#fff1e8; --pub:#0f766e; --pub-soft:#e6f4f1; --pvt:#6d28d9; --pvt-soft:#f1ebfd;
-  --neg:#c92a2a; --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --good:#2b8a3e; --warn:#e67700;
+  --neg:#c92a2a; --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s5:#e87ba4; --s7:#6250d6; --c-ov:#8a8f98; --c-biz:#eda100; --good:#2b8a3e; --warn:#e67700;
   --shadow:0 12px 40px rgba(20,20,30,.18);
   --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 }
@@ -20,7 +20,7 @@
     --bg:#111317; --panel:#181b20; --ink:#eceef1; --ink-2:#b5bac3; --ink-3:#7c828c;
     --line:#2a2e35; --line-2:#22252b; --accent:#7aa2ff; --accent-soft:#1d2740;
     --new:#ff8a4c; --new-soft:#33211a; --pub:#4fd1c5; --pub-soft:#16302d; --pvt:#b69cff; --pvt-soft:#261f3d;
-    --neg:#ff6b6b; --s1:#3987e5; --s2:#d95926; --s3:#199e70; --good:#69db7c; --warn:#ffa94d;
+    --neg:#ff6b6b; --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s5:#d55181; --s7:#9085e9; --c-ov:#7c828c; --c-biz:#c98500; --good:#69db7c; --warn:#ffa94d;
     --shadow:0 12px 40px rgba(0,0,0,.5);
   }
 }
@@ -155,6 +155,56 @@ tbody tr.click:hover{background:var(--line-2)}
 .legend i{display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:5px; vertical-align:-1px}
 #tip{position:fixed; pointer-events:none; background:var(--ink); color:var(--panel); font-size:12px; padding:6px 9px; border-radius:6px; z-index:60; display:none; white-space:nowrap; box-shadow:var(--shadow)}
 
+/* company (발행사) */
+.co-hero{display:flex; gap:16px 24px; align-items:center; flex-wrap:wrap; background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:18px 20px}
+.co-hero h1{margin:0}
+.co-hero .meta{color:var(--ink-2); font-size:13px; margin-top:2px}
+.co-hero .price{margin-left:auto; text-align:right}
+.co-hero .price b{font-size:24px; letter-spacing:-.01em} .co-hero .price small{font-size:13px; font-weight:600; margin-left:2px}
+.co-hero .price span{display:block; font-size:12px; color:var(--ink-3)}
+.co-hero .actions{display:flex; gap:8px}
+.mk-lg{font-size:12px; padding:1px 6px; vertical-align:4px}
+.secnav.sticky{position:sticky; top:56px; z-index:10; background:var(--bg); padding:10px 0; margin:6px 0 10px}
+.cgrid{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:14px; align-items:start}
+.cgrid > *{min-width:0}
+.cgrid .span2{grid-column:1 / -1}
+.cgrid .card + .card{margin-top:0}
+.sec{border-left:4px solid var(--s1); scroll-margin-top:110px}
+.c-sum{border-left-color:var(--s1)} .c-ov{border-left-color:var(--c-ov)} .c-hold{border-left-color:var(--s5)} .c-biz{border-left-color:var(--c-biz)}
+.c-pl{border-left-color:var(--s3)} .c-bs{border-left-color:var(--s2)} .c-peer{border-left-color:var(--s7)} .c-deal{border-left-color:var(--s2)} .c-bond{border-left-color:var(--s1)}
+.sec .sec-title{flex-wrap:wrap}
+.sec .sec-title .sub{color:var(--ink-2); font-size:13px; font-weight:600}
+.src-note{font-size:12px; color:var(--ink-3); margin:12px 0 0}
+.facts{font-size:12px; color:var(--ink-3); margin:0 0 10px}
+.oneliner{font-size:16px; font-weight:700; line-height:1.6; margin:0 0 16px; letter-spacing:-.005em}
+.flow-title{display:flex; gap:8px; align-items:baseline; flex-wrap:wrap}
+.flow-title .muted{font-weight:500; font-size:12px}
+.flow{display:flex; align-items:stretch; gap:6px; margin:8px 0 10px; overflow-x:auto; padding-bottom:4px}
+.fcol{display:flex; flex-direction:column; gap:6px; min-width:120px; flex:1}
+.fcol .fh{font-size:11px; font-weight:700; color:var(--ink-3); letter-spacing:.02em}
+.fbox{position:relative; border:1px solid var(--line); border-radius:8px; padding:7px 9px; background:var(--bg); overflow:hidden}
+.fbox b{display:block; font-size:13px; line-height:1.35}
+.fbox span{display:block; font-size:11px; color:var(--ink-2); margin-top:1px}
+.fbox.me{background:var(--accent-soft); border-color:transparent; flex:1; display:flex; flex-direction:column; justify-content:center}
+.fbox.rev i{position:absolute; left:0; bottom:0; height:3px; background:var(--s1); border-radius:0 2px 2px 0}
+.farrow{width:18px; flex:0 0 18px; position:relative}
+.farrow::before{content:""; position:absolute; top:50%; left:2px; right:4px; height:2px; background:var(--line)}
+.farrow::after{content:""; position:absolute; top:calc(50% - 4px); right:2px; border:5px solid transparent; border-left:6px solid var(--line); border-right:0}
+.caption{color:var(--ink-2); font-size:13px; margin:6px 0 0; line-height:1.65}
+.glance{border-top:1px solid var(--line-2)}
+.glance a{display:flex; gap:12px; align-items:center; padding:9px 2px; border-bottom:1px solid var(--line-2); text-decoration:none}
+.glance a:hover{background:var(--line-2)}
+.glance .gl{width:70px; flex:0 0 70px; font-weight:700; font-size:13px}
+.glance .gt{flex:1; color:var(--ink-2); font-size:13px}
+.glance .gc{color:var(--ink-3)}
+.eq{font-size:13px; color:var(--ink-2); margin:8px 0 10px}
+.tiles.t3{grid-template-columns:repeat(3,1fr)} .tiles.t4{grid-template-columns:repeat(4,1fr); margin-bottom:12px}
+tr.me{background:var(--accent-soft)}
+.ev em{font-style:normal; font-weight:700; color:var(--ink-3); margin-left:4px; font-size:11px}
+details.scoreb summary, details.method summary{font-size:13px}
+details.method ul{margin:8px 0 0; padding-left:18px; color:var(--ink-2); font-size:13px}
+details.method li{margin:4px 0}
+
 /* proposal */
 .opt{border:1px solid var(--line); border-radius:10px; padding:14px 16px; background:var(--panel)}
 .opt + .opt{margin-top:10px}
@@ -212,7 +262,19 @@ footer p{margin:4px 0}
   .grid3,.top3{grid-template-columns:1fr}
   .search{width:180px}
 }
+@media (max-width:900px){
+  .cgrid{grid-template-columns:minmax(0,1fr)}
+  .tiles.t4{grid-template-columns:repeat(2,1fr)}
+}
 @media (max-width:760px){
+  .secnav.sticky{top:96px}
+  .co-hero .price{margin-left:0; text-align:left}
+  .flow{flex-direction:column}
+  .fcol{min-width:0}
+  .farrow{width:auto; height:16px; flex:0 0 16px}
+  .farrow::before{top:2px; bottom:4px; left:50%; right:auto; width:2px; height:auto}
+  .farrow::after{top:auto; bottom:0; left:calc(50% - 5px); right:auto; border:5px solid transparent; border-top:6px solid var(--line); border-bottom:0}
+  .tiles.t3{grid-template-columns:repeat(2,1fr)}
   .top{height:auto; flex-wrap:wrap; padding:10px 16px; gap:8px 12px}
   nav.main{order:3; width:100%; overflow-x:auto}
   .search{width:auto; flex:1; margin-left:0}
@@ -457,7 +519,7 @@ function openDeal(r) {
     </div>
     <p class="note" style="margin:12px 0 0">출처: ${r.source === '공공데이터포털' ? '금융위원회 채권기본정보(한국예탁결제원)' : 'DART ' + (r.type === 'BOND' ? '증권신고서(채무증권)' : '주요사항보고서')}${r.rcept_no ? ' · 접수번호 ' + esc(r.rcept_no) : ''}</p>
   </div>`;
-  modal.classList.add('on'); document.body.style.overflow = 'hidden';
+  modal.classList.add('on'); document.body.style.overflow = 'hidden'; tip.style.display = 'none';
   getJSON(`data/co/${encodeURIComponent(r.key)}.json`).then(co => {
     const others = (co.deals || []).filter(d => d.id !== r.id).slice(0, 6);
     if (!others.length) return;
@@ -466,6 +528,25 @@ function openDeal(r) {
       `<tr class="click" data-pop="${esc(d.id)}"><td>${md(dealDate(d))}</td><td>${esc(kindKey(d))}</td><td>${series(d)}</td><td class="r num">${won(d.amount)}</td></tr>`).join('') + '</tbody></table>';
     $$('#m-more [data-pop]').forEach(tr => tr.onclick = () => openDeal(ROWS_BY_ID[tr.dataset.pop]));
   }).catch(() => {});
+}
+
+function openTranches(g) {
+  const r = g.r;
+  box.innerHTML = `<div class="modal-h"><span class="badge b-pub" style="margin:0">공모채</span><h2>${esc(r.corp_name)} ${esc(g.series ? g.series + '회' : '')}</h2>
+    <span class="note">${g.rows.length}개 트랜치 · 합계 ${esc(wonTxt(g.amount))}</span><button class="x" aria-label="닫기">×</button></div>
+    <div class="modal-b">
+      <div class="fields">${field('수요예측일', md(r.demand_dt))}${field('청약일', md(r.sub_dt))}${field('발행(납입)일', md(r.pay_dt))}${field('신용등급', esc(r.rating))}${field('대표주관', esc(r.lead))}${field('합계 금액', won(g.amount))}</div>
+      <h3>트랜치</h3>
+      <div class="scroll"><table style="min-width:440px"><thead><tr><th>회차</th><th class="r">금액</th><th class="r">금리</th><th>만기</th><th>대표주관</th></tr></thead><tbody>
+        ${g.rows.map(t => `<tr class="click" data-tr="${esc(t.id)}"><td><b>${esc(t.series_raw || t.series || '-')}</b></td><td class="r num">${won(t.amount)}</td><td class="r num">${priceOrRate(t)}</td><td>${md(t.maturity)}</td><td>${esc(t.lead || '-')}</td></tr>`).join('')}
+      </tbody></table></div>
+      <p class="note">트랜치를 누르면 상세가 열립니다.</p>
+      <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">
+        <a class="btn primary" href="#/company/${encodeURIComponent(r.key)}">회사 정보 보기 →</a>
+        ${r.url ? `<a class="btn" href="${r.url}" target="_blank" rel="noopener">DART 원문</a>` : ''}</div>
+    </div>`;
+  modal.classList.add('on'); document.body.style.overflow = 'hidden'; tip.style.display = 'none';
+  $$('[data-tr]', box).forEach(tr => tr.onclick = () => openDeal(ROWS_BY_ID[tr.dataset.tr]));
 }
 
 // ───────────── 회사 검색 ─────────────
@@ -656,12 +737,26 @@ function downloadCSV(list) {
 async function viewCalendar(params) {
   app.innerHTML = '<div class="empty">불러오는 중…</div>';
   const rows = remember((await getJSON('data/deals.json')).filter(r => r.type === 'BOND' && r.offering === '공모'));
-  const events = [];
+  // 같은 신고서의 트랜치(321-1, 321-2 …)는 한 블록으로 묶는다
+  const groups = {};
   rows.forEach(r => {
-    if (r.demand_dt) events.push({d: r.demand_dt, k: 'dem', label: '수요예측', r});
+    const base = r.key + '|' + (r.rcept_no || '');
+    const add = (d, k, label) => {
+      const g = groups[base + k] || (groups[base + k] = {id: base + k, d, k, label, rows: [], r});
+      g.rows.push(r);
+    };
+    if (r.demand_dt) add(r.demand_dt, 'dem', '수요예측');
     const iss = r.pay_dt || r.sub_dt;
-    if (iss) events.push({d: iss, k: 'iss', label: '발행', r});
+    if (iss) add(iss, 'iss', '발행');
   });
+  const events = Object.values(groups).map(g => {
+    g.rows.sort((a, b) => (a.series_raw || a.series || '').localeCompare(b.series_raw || b.series || '', 'ko', {numeric: true}));
+    g.amount = g.rows.reduce((a, r) => a + (r.amount || 0), 0);
+    g.series = [...new Set(g.rows.map(r => String(r.series || '').split('-')[0]).filter(Boolean))].join('·');
+    return g;
+  });
+  const byId = Object.fromEntries(events.map(e => [e.id, e]));
+  const trLabel = e => e.rows.length > 1 ? `${e.rows.length}개 트랜치` : (e.rows[0].series ? e.rows[0].series + '회' : '');
   let ym = params.get('m') || todayIso.slice(0, 7);
   function render() {
     const [y, m] = ym.split('-').map(Number);
@@ -684,46 +779,100 @@ async function viewCalendar(params) {
       </div>
       <div class="cal">${['일','월','화','수','목','금','토'].map(d => `<div class="dow">${d}</div>`).join('')}
         ${cells.map(d => `<div class="day ${d.slice(0, 7) !== ym ? 'out' : ''} ${d === todayIso ? 'today' : ''}"><div class="dn">${+d.slice(8)}</div>
-          ${(byDay[d] || []).sort((a, b) => a.k.localeCompare(b.k)).map(e => `<button class="ev ${e.k}" data-ev="${esc(e.r.id)}" data-tip="${esc(e.label)} · ${esc(e.r.corp_name)} ${esc(e.r.series || '')}회 · ${esc(wonTxt(e.r.amount))}${e.r.rating ? ' · ' + esc(e.r.rating) : ''}"><b>${e.k === 'dem' ? '수' : '발'}</b>${esc(e.r.corp_name)}</button>`).join('')}</div>`).join('')}
+          ${(byDay[d] || []).sort((a, b) => a.k.localeCompare(b.k)).map(e => `<button class="ev ${e.k}" data-ev="${esc(e.id)}" data-tip="${esc(e.label)} · ${esc(e.r.corp_name)} ${esc(e.series ? e.series + '회' : '')} · ${esc(trLabel(e))} · ${esc(wonTxt(e.amount))}${e.r.rating ? ' · ' + esc(e.r.rating) : ''}"><b>${e.k === 'dem' ? '수' : '발'}</b>${esc(e.r.corp_name)}${e.rows.length > 1 ? `<em>×${e.rows.length}</em>` : ''}</button>`).join('')}</div>`).join('')}
       </div>
       <div class="legend" style="margin:8px 0 20px"><span><i style="background:var(--s1)"></i>수요예측</span><span><i style="background:var(--s3)"></i>발행(납입)</span></div>
-      <div class="panel round"><div class="scroll"><table class="list"><thead><tr><th>날짜</th><th>일정</th><th>회사명</th><th>회차</th><th class="r">금액</th><th>신용등급</th><th>대표주관</th><th>수요예측</th><th>발행일</th><th></th></tr></thead><tbody>
-        ${inMonth.length ? inMonth.map(e => `<tr class="click" data-deal="${esc(e.r.id)}"><td>${md(e.d)}</td><td><span class="badge" style="border-left:3px solid ${e.k === 'dem' ? 'var(--s1)' : 'var(--s3)'};padding-left:6px">${e.label}</span></td><td>${company(e.r)}</td><td>${series(e.r)}</td><td class="r num">${won(e.r.amount)}</td><td>${esc(e.r.rating || '-')}</td><td>${esc(e.r.lead || '-')}</td><td>${md(e.r.demand_dt)}</td><td>${md(e.r.pay_dt)}</td><td>${dartLink(e.r)}</td></tr>`).join('')
+      <div class="panel round"><div class="scroll"><table class="list"><thead><tr><th>날짜</th><th>일정</th><th>회사명</th><th>회차</th><th>트랜치</th><th class="r">합계 금액</th><th>신용등급</th><th>대표주관</th><th>수요예측</th><th>발행일</th></tr></thead><tbody>
+        ${inMonth.length ? inMonth.map(e => `<tr class="click" data-ev="${esc(e.id)}"><td>${md(e.d)}</td><td><span class="badge" style="border-left:3px solid ${e.k === 'dem' ? 'var(--s1)' : 'var(--s3)'};padding-left:6px">${e.label}</span></td><td>${company(e.r)}</td><td>${esc(e.series ? e.series + '회' : '-')}</td><td>${esc(e.rows.map(r => r.series_raw || r.series).filter(Boolean).join(', ') || '-')}</td><td class="r num">${won(e.amount)}</td><td>${esc(e.r.rating || '-')}</td><td>${esc(e.r.lead || '-')}</td><td>${md(e.r.demand_dt)}</td><td>${md(e.r.pay_dt)}</td></tr>`).join('')
           : '<tr><td colspan="10"><div class="empty">이 달에는 일정이 없습니다</div></td></tr>'}
       </tbody></table></div>
       <div class="foot-note">출처 DART 증권신고서(채무증권) · 수요예측일은 신고서 본문에서 자동 추출(찾지 못한 건은 발행일만 표시) · 금융채·ABS·주식연계채권 제외</div></div>`;
     $('#prev').onclick = () => { ym = shift(-1); history.replaceState(null, '', '#/calendar?m=' + ym); render(); };
     $('#next').onclick = () => { ym = shift(1); history.replaceState(null, '', '#/calendar?m=' + ym); render(); };
     $('#now').onclick = () => { ym = todayIso.slice(0, 7); history.replaceState(null, '', '#/calendar'); render(); };
-    $$('[data-ev]').forEach(b => b.onclick = () => openDeal(ROWS_BY_ID[b.dataset.ev]));
+    $$('[data-ev]').forEach(b => b.onclick = e => { if (e.target.closest('[data-stop]')) return; const g = byId[b.dataset.ev]; g.rows.length > 1 ? openTranches(g) : openDeal(g.rows[0]); });
   }
   render();
 }
 
 // ───────────── 회사 화면 ─────────────
 const finRows = [
-  ['매출액', 'revenue', won], ['영업이익', 'op', won], ['당기순이익', 'ni', won], ['영업이익률', 'op_margin', v => pct(v)],
-  ['자산총계', 'assets', won], ['부채총계', 'liab', won], ['자본총계', 'equity', won], ['부채비율', 'debt_ratio', v => pct(v, 0)], ['유동비율', 'current_ratio', v => pct(v, 0)]];
+  ['매출액', 'revenue', won], ['영업이익', 'op', won], ['당기순이익', 'ni', won], ['영업이익률', 'op_margin', v => pct(v)], ['순이익률', 'net_margin', v => pct(v)]];
+const bsRows = [['자산총계', 'assets', won], ['부채총계', 'liab', won], ['자본총계', 'equity', won], ['부채비율', 'debt_ratio', v => pct(v, 0)], ['유동비율', 'current_ratio', v => pct(v, 0)]];
+const yy = p => /^\d{4}$/.test(p) ? p.slice(2) + '년' : p.replace(/^20(\d\d) /, '$1.');
 
-function tilesHtml(co) {
-  const m = co.metrics || {};
-  const t = (l, v, s) => `<div class="tile"><div class="l">${l}</div><div class="v">${v}</div>${s ? `<div class="s">${s}</div>` : ''}</div>`;
-  return `<div class="tiles">
-    ${t('매출액', won(m.revenue), m.period ? `${m.period}년${m.revenue_growth != null ? ' · 전년비 ' + (m.revenue_growth > 0 ? '+' : '') + m.revenue_growth.toFixed(1) + '%' : ''}` : '')}
-    ${t('영업이익률', pct(m.op_margin), m.op != null ? '영업이익 ' + won(m.op) : '')}
-    ${t('부채비율', pct(m.debt_ratio, 0), m.bs_period ? m.bs_period + ' 기준' : '')}
-    ${t('순차입금/EBITDA', m.net_debt_ebitda != null ? ratio(m.net_debt_ebitda) : DASH, m.net_debt != null ? '순차입금 ' + won(m.net_debt) : '')}
-    ${t('시가총액', won(m.mcap), m.close ? int(m.close) + '원' + (co.price_date ? ' · ' + md(co.price_date) : '') : '주가 정보 없음')}
-    ${t('신용등급', esc(co.rating || '-'), co.rating ? '최근 공모채 기준' : '공모채 이력 없음')}
+// 묶음 막대: 기간별로 여러 계열 (예: 매출·영업이익). 0 기준선, 음수 아래, 끝 4px 둥글게, 막대 사이 2px
+function groupChart(cats, series, {height = 200, labelFirst = true} = {}) {
+  const W = 560, H = height, padL = 6, padR = 6, padT = 20, padB = 24;
+  const all = series.flatMap(s => s.values.filter(v => v != null));
+  const max = Math.max(0, ...all), min = Math.min(0, ...all), span = (max - min) || 1;
+  const y = v => padT + (max - v) / span * (H - padT - padB);
+  const step = (W - padL - padR) / cats.length;
+  const bw = Math.min(30, step * 0.7 / series.length);
+  let s = `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img">`;
+  s += `<line class="base" x1="${padL}" x2="${W - padR}" y1="${y(0)}" y2="${y(0)}"/>`;
+  cats.forEach((c, i) => {
+    const cx = padL + step * i + step / 2, x0 = cx - (bw * series.length + 2 * (series.length - 1)) / 2;
+    series.forEach((se, j) => {
+      const v = se.values[i];
+      if (v == null) return;
+      const x = x0 + j * (bw + 2), y0 = y(0), y1 = y(v), h = Math.max(1, Math.abs(y1 - y0)), top = Math.min(y0, y1), rr = Math.min(4, h, bw / 2);
+      const d = v < 0 ? `M${x},${top} h${bw} v${h - rr} q0,${rr} -${rr},${rr} h-${bw - 2 * rr} q-${rr},0 -${rr},-${rr} z`
+        : `M${x},${top + h} v-${h - rr} q0,-${rr} ${rr},-${rr} h${bw - 2 * rr} q${rr},0 ${rr},${rr} v${h - rr} z`;
+      s += `<path d="${d}" fill="${v < 0 && se.negColor ? se.negColor : se.color}" opacity="${se.dim && se.dim[i] ? .5 : 1}"/>`;
+      if (labelFirst && j === 0) s += `<text x="${x + bw / 2}" y="${v < 0 ? y1 + 12 : y1 - 5}" text-anchor="middle" style="fill:var(--ink-2);font-weight:600;font-size:10px">${esc(wonTxt(v))}</text>`;
+    });
+    const tipTxt = `${c} · ` + series.map(se => `${se.name} ${se.values[i] == null ? '-' : wonTxt(se.values[i])}`).join(' · ');
+    s += `<rect x="${cx - step / 2}" y="${padT - 16}" width="${step}" height="${H - padT - padB + 16}" fill="transparent" data-tip="${esc(tipTxt)}"/>`;
+    s += `<text x="${cx}" y="${H - 7}" text-anchor="middle">${esc(c)}</text>`;
+  });
+  return s + '</svg>' + `<div class="legend">${series.map(se => `<span><i style="background:${se.color}"></i>${se.name}</span>`).join('')}</div>`;
+}
+
+// 돈 버는 구조 그림 (사 오는 것 → 회사 → 누구에게 파나 / 어떤 매출)
+function flowHtml(f) {
+  if (!f) return '';
+  const box = (b, cls = '') => `<div class="fbox ${cls}"><b>${esc(b.name)}</b>${b.note ? `<span>${esc(b.note)}</span>` : ''}</div>`;
+  const rev = (f.revenue || []).slice(0, 6);
+  const col = (title, inner) => inner ? `<div class="fcol"><div class="fh">${title}</div>${inner}</div>` : '';
+  return `<div class="flow">
+    ${col('사 오는 것', (f.inputs || []).map(b => box(b)).join(''))}
+    ${(f.inputs || []).length ? '<div class="farrow" aria-hidden="true"></div>' : ''}
+    ${col('회사', f.company ? box(f.company, 'me') : '')}
+    <div class="farrow" aria-hidden="true"></div>
+    ${col('누구에게 파나', (f.customers || []).map(b => box(b)).join(''))}
+    ${rev.length ? col(`어떤 매출${f.basis ? ` <span class="muted">(${esc(f.basis)})</span>` : ''}`, rev.map(r => `<div class="fbox rev"><b>${esc(r.name)}</b><span>${r.amount ? esc(wonTxt(r.amount)) + ' · ' : ''}${r.share != null ? pct(r.share) : ''}</span>${r.share != null ? `<i style="width:${Math.min(100, r.share)}%"></i>` : ''}</div>`).join('')) : ''}
   </div>`;
+}
+
+function glanceRows(co) {
+  const m = co.metrics || {}, I = co.info || {}, L = co.listing || {}, H = co.holders || {}, BP = co.bonds || {};
+  const rows = [];
+  const est = I.est_dt ? I.est_dt.slice(0, 4) + ' 설립' : '';
+  const lst = L.listed ? L.listed.slice(0, 4) + ' 상장' : (co.market === 'E' ? '비상장' : '');
+  rows.push(['개요', 's-ov', [I.ceo_nm || L.ceo ? '대표 ' + (I.ceo_nm || L.ceo) : '', est, lst].filter(Boolean).join(' · ')]);
+  if (m.revenue != null) rows.push(['손익', 's-pl', `${yy(m.period)} 매출 ${wonTxt(m.revenue)}${m.revenue_growth != null ? ` (${m.revenue_growth > 0 ? '+' : ''}${m.revenue_growth.toFixed(1)}%)` : ''} · 영업이익률 ${pct(m.op_margin).replace(/<[^>]+>/g, '')}`]);
+  if (m.debt_ratio != null) rows.push(['재무상태', 's-bs', `부채비율 ${m.debt_ratio.toFixed(0)}%${m.cash != null ? ' · 현금성자산 ' + wonTxt((m.cash || 0) + (m.st_deposits || 0)) : ''}${m.debt != null ? ' · 차입금 ' + wonTxt(m.debt) : ''}`]);
+  if (H.top?.length) rows.push(['주주', 's-hold', `${H.top[0].name} 외 ${(H.total_pct ?? 0).toFixed(1)}%${H.as_of ? ' · ' + H.as_of.replace(/-/g, '.') + ' 기준' : ''}`]);
+  const P = co.peers || [];
+  if (P.length > 1) { const rank = [...P].sort((a, b) => (b.revenue || 0) - (a.revenue || 0)).findIndex(p => p.me) + 1; rows.push(['업종', 's-peer', `${co.industry} · 매출 비슷한 ${P.length}곳 중 매출 ${rank}위`]); }
+  const h = co.history || [];
+  if (h.length) rows.push(['조달 이력', 's-deal', '최근 3년 ' + h.slice(0, 3).map(x => `${x.label} ${x.count}건`).join(' · ') + ` · 합계 ${wonTxt(h.reduce((a, x) => a + x.amount, 0))}`]);
+  if (BP.count) rows.push(['잔존 사채', 's-bond', `${wonTxt(BP.total)} · 12개월 내 만기 ${wonTxt(BP.due12 || 0)}`]);
+  const top = (co.proposal || [])[0];
+  if (top) rows.push(['조달 제안', 'report', `1순위 ${top.title} · 적합도 ${top.fit}`]);
+  return rows;
 }
 
 function dealTable(deals) {
   if (!deals.length) return '<div class="empty">수집된 조달 기록이 없습니다</div>';
-  return `<div class="scroll"><table class="list"><thead><tr><th>날짜</th><th>종류</th><th>방식</th><th>회차</th><th class="r">금액</th><th class="r">금리·행사가</th><th>만기</th><th></th></tr></thead><tbody>
+  return `<div class="scroll"><table class="list" style="min-width:620px"><thead><tr><th>날짜</th><th>종류</th><th>방식</th><th>회차</th><th class="r">금액</th><th class="r">금리·행사가</th><th>만기</th><th></th></tr></thead><tbody>
     ${deals.map(r => `<tr class="click" data-deal="${esc(r.id)}"><td>${md(dealDate(r))}</td><td><span class="type">${esc(kindKey(r))}</span>${r.amended ? '<span class="badge b-amd">정정</span>' : ''}</td><td>${r.type === 'RIGHTS' ? esc(r.method || '-') : offer(r.offering)}</td><td>${series(r)}</td><td class="r num">${won(r.amount)}</td><td class="r num">${priceOrRate(r)}</td><td>${md(r.maturity)}</td><td>${dartLink(r)}</td></tr>`).join('')}
   </tbody></table></div>`;
 }
+
+const card = (id, cls, title, sub, body, src) => `<section class="card sec ${cls}" id="${id}">
+  <div class="sec-title"><h2>${title}</h2>${sub ? `<span class="sub">${sub}</span>` : ''}</div>${body}${src ? `<p class="src-note">${src}</p>` : ''}</section>`;
 
 async function viewCompany(key) {
   app.innerHTML = '<div class="empty">회사 정보를 불러오는 중…</div>';
@@ -732,99 +881,126 @@ async function viewCompany(key) {
   catch (e) { app.innerHTML = '<div class="empty">회사 정보를 찾지 못했습니다. 검색창에서 다시 찾아보세요.</div>'; return; }
   remember(co.deals || []);
   document.title = `${co.name} · __SITE_NAME__`;
-  const L = co.listing || {}, I = co.info || {}, B = co.business || {}, m = co.metrics || {};
-  const annualLink = co.annual_rcept ? `<a class="dart" href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=${co.annual_rcept}" target="_blank" rel="noopener">${esc(co.annual_name || '사업보고서')}</a>` : '';
-  const pendingMsg = co.pending ? '<div class="pending">사업보고서 기반 상세 정보(사업 내용·주요 매출처·차입금 등)는 아직 수집 전입니다. 조달 기록이 있는 회사부터 매일 밤 순서대로 채워지며, 저장소의 <b>watchlist.txt</b>에 회사명을 적으면 먼저 수집합니다.</div>' : '';
+  const L = co.listing || {}, I = co.info || {}, B = co.business || {}, m = co.metrics || {}, AI = co.ai || null;
+  const annualSrc = co.annual_rcept ? `<a class="dart" href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=${co.annual_rcept}" target="_blank" rel="noopener">${esc(co.annual_name || '사업보고서')}</a>` : '';
   const ser = (co.series || []).filter(r => r.kind === 'annual' || r.kind === 'interim');
-  const annual = ser.filter(r => r.kind === 'annual');
+  const prevQ = (co.series || []).find(r => r.kind === 'interim_prev');
 
-  // 사업
-  const prod = (B.products || []);
-  const prodHtml = prod.length ? `<div class="scroll"><table style="min-width:520px"><thead><tr><th>사업부문</th><th>주요 제품·서비스</th><th style="width:34%">매출 비중</th></tr></thead><tbody>${prod.map(p => `<tr><td>${esc(p.segment || '-')}</td><td style="white-space:normal">${esc(p.name)}${p.desc ? `<div class="note">${esc(p.desc)}</div>` : ''}</td><td>${p.share != null ? `<div class="share"><div class="track"><div class="fill" style="width:${Math.min(100, p.share)}%"></div></div><span class="num">${pct(p.share)}</span></div>` : DASH}</td></tr>`).join('')}</tbody></table></div>` : '';
+  // ── 요약 ──
+  const headline = m.revenue != null ? `${yy(m.period)} 매출 ${wonTxt(m.revenue)}${m.revenue_growth != null ? ` (${m.revenue_growth > 0 ? '+' : ''}${m.revenue_growth.toFixed(1)}%)` : ''}` : '';
+  const facts = AI?.facts || [I.est_dt ? '설립 ' + I.est_dt.slice(0, 4) + '.' + I.est_dt.slice(4, 6) : '', L.listed ? `${MKF[co.market]} 상장 ${L.listed.slice(0, 7).replace('-', '.')}` : (co.market === 'E' ? '비상장' : ''),
+    co.rating ? `신용등급 ${co.rating} (최근 공모채)` : '', I.acc_mt ? `결산 ${I.acc_mt}월` : ''].filter(Boolean).join(' · ');
+  const fallbackOne = [co.name + '은(는)', co.industry ? co.industry + ' 업종으로' : '', L.products ? `${L.products.split(/[,·]/).slice(0, 3).join(', ')} 등을 만드는` : '', '회사입니다.'].filter(Boolean).join(' ');
+  const fallbackFlow = (B.products || []).some(p => p.share != null) ? {company: {name: co.name, note: co.industry}, revenue: B.products.filter(p => p.share != null).map(p => ({name: (p.segment ? p.segment + ' ' : '') + p.name, share: p.share})), basis: '사업보고서 주요 제품 표'} : null;
+  const glance = glanceRows(co);
+  const summaryBody = `
+    ${facts ? `<p class="facts">${esc(facts)}</p>` : ''}
+    <p class="oneliner">${esc(AI?.one_liner || fallbackOne)}</p>
+    ${(AI?.flow || fallbackFlow) ? `<h3 class="flow-title">돈 버는 구조 ${AI?.mix_line ? `<span class="muted">${esc(AI.mix_line)}</span>` : ''}</h3>${flowHtml(AI?.flow || fallbackFlow)}` : ''}
+    ${AI?.caption ? `<p class="caption">${esc(AI.caption)}</p>` : (!AI && !co.pending ? '<p class="caption muted">쉬운 말 요약과 돈 버는 구조 그림은 준비 중입니다 (사업보고서를 읽고 순서대로 작성).</p>' : '')}
+    <h3 style="margin-top:16px">한눈에</h3>
+    <div class="glance">${glance.map(([l, id, t]) => id === 'report'
+      ? `<a href="#/report/${encodeURIComponent(co.key)}"><span class="gl">${l}</span><span class="gt">${esc(t)}</span><span class="gc">›</span></a>`
+      : `<a href="#${id}" data-jump><span class="gl">${l}</span><span class="gt">${esc(t)}</span><span class="gc">›</span></a>`).join('')}</div>`;
 
-  // 주주
-  const H = co.holders || {};
-  const holderHtml = H.top?.length ? `<div>${H.top.map(h => `<div class="share" style="margin:6px 0"><span style="width:38%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(h.name)} <span class="note">${esc(h.relation || '')}</span></span><div class="track"><div class="fill" style="width:${Math.min(100, h.pct * 2)}%"></div></div><span class="num" style="width:56px;text-align:right">${pct(h.pct, 2)}</span></div>`).join('')}
-    <p class="note" style="margin:10px 0 0">최대주주 및 특수관계인 합계 <b style="color:var(--ink)">${pct(H.total_pct, 2)}</b>${H.as_of ? ' · ' + esc(H.as_of) + ' 기준' : ''}${co.treasury_shares != null ? ` · 자기주식 ${int(co.treasury_shares)}주${m.shares ? ' (' + pct(co.treasury_shares / m.shares * 100, 2) + ')' : ''}` : ''}</p></div>` : '<div class="empty" style="padding:18px">주주 정보가 아직 없습니다</div>';
+  // ── 사업 (돈 버는 방식 상세) ──
+  const prod = AI?.products?.length ? AI.products : (B.products || []);
+  const prodHtml = prod.length ? `<div class="scroll"><table style="min-width:480px"><thead><tr><th>부문·제품</th><th>설명</th><th style="width:30%">매출 비중</th></tr></thead><tbody>${prod.map(p => `<tr><td style="white-space:normal"><b>${esc(p.name)}</b>${p.segment ? `<div class="note">${esc(p.segment)}</div>` : ''}</td><td style="white-space:normal" class="ink2">${esc(p.desc || '')}</td><td>${p.share != null ? `<div class="share"><div class="track"><div class="fill" style="width:${Math.min(100, p.share)}%"></div></div><span class="num">${pct(p.share)}</span></div>` : DASH}</td></tr>`).join('')}</tbody></table></div>` : '';
+  const bizText = AI?.business || B.overview_short;
+  const custText = AI?.customers || B.customers_short;
+  const bizBody = (bizText || prodHtml || custText) ? `
+    ${bizText ? `<p class="prose">${esc(bizText)}</p>` : ''}
+    ${prodHtml ? `<h3 style="margin-top:14px">주요 제품·서비스</h3>${prodHtml}` : ''}
+    ${custText ? `<h3 style="margin-top:14px">주요 매출처</h3><p class="prose">${esc(custText)}</p>` : ''}`
+    : `<div class="empty" style="padding:18px">${co.pending ? '사업보고서 수집 대기 중' : '사업 내용 정보가 없습니다'}${L.products ? ' · KIND 주요제품: ' + esc(L.products) : ''}</div>`;
 
-  // 재무 표
-  const finTable = ser.length ? `<div class="scroll"><table><thead><tr><th></th>${ser.map(r => `<th class="r">${esc(r.period)}${r.kind === 'interim' ? ' 누적' : ''}</th>`).join('')}</tr></thead><tbody>
-    ${finRows.map(([l, k, f]) => `<tr><td class="muted">${l}</td>${ser.map(r => `<td class="r num ${(r[k] ?? 0) < 0 ? 'neg' : ''}">${f(r[k])}</td>`).join('')}</tr>`).join('')}
-    </tbody></table></div><p class="note">${esc(ser[ser.length - 1]?.fs === 'OFS' ? '별도' : '연결')} 기준 · 출처 DART 정기보고서 주요계정</p>` : '<div class="empty">재무 정보가 없습니다 (사업보고서 제출 대상이 아니거나 수집 전)</div>';
+  // ── 손익 ──
+  const plBody = ser.length ? `
+    ${groupChart(ser.map(r => yy(r.period)), [
+      {name: '매출액', color: 'var(--s1)', values: ser.map(r => r.revenue)},
+      {name: '영업이익', color: 'var(--s3)', negColor: 'var(--neg)', values: ser.map(r => r.op)}])}
+    <div class="scroll" style="margin-top:8px"><table><thead><tr><th></th>${ser.map(r => `<th class="r">${esc(yy(r.period))}${r.kind === 'interim' ? ' 누적' : ''}</th>`).join('')}</tr></thead><tbody>
+      ${finRows.map(([l, k, f]) => `<tr><td class="muted">${l}</td>${ser.map(r => `<td class="r num ${(r[k] ?? 0) < 0 ? 'neg' : ''}">${f(r[k])}</td>`).join('')}</tr>`).join('')}
+    </tbody></table></div>
+    ${prevQ && prevQ.revenue ? `<p class="note">${esc(yy(ser[ser.length - 1].period))} 누적 매출 전년 동기 대비 <b style="color:var(--ink)">${((ser[ser.length - 1].revenue / prevQ.revenue - 1) * 100).toFixed(1)}%</b></p>` : ''}`
+    : '<div class="empty" style="padding:18px">손익 정보가 없습니다 (사업보고서 제출 대상이 아니거나 수집 전)</div>';
+
+  // ── 재무상태 ──
+  const DS = (co.debt_series || []);
+  const bsLast = [...ser].reverse().find(r => r.equity != null);
   const fd = co.fs_interim || co.fs_annual;
-  const detail = fd ? `<table class="kv"><tbody>
-    <tr><td>현금성 자산</td><td class="num">${won((fd.cash || 0) + (fd.st_deposits || 0))} <span class="note">현금 ${wonTxt(fd.cash)}${fd.st_deposits ? ' + 단기금융상품 ' + wonTxt(fd.st_deposits) : ''}</span></td></tr>
-    <tr><td>차입금(추정)</td><td class="num">${won(fd.debt)} ${fd.debt_items ? `<span class="note">${esc(fd.debt_items.slice(0, 6).join(', '))}</span>` : ''}</td></tr>
-    <tr><td>순차입금</td><td class="num">${won(m.net_debt)}</td></tr>
-    <tr><td>EBITDA</td><td class="num">${won(m.ebitda)} <span class="note">영업이익 + 감가상각비 (${esc(co.fs_annual?.period || '')})</span></td></tr>
-    <tr><td>이자보상배율</td><td class="num">${m.interest_coverage != null ? ratio(m.interest_coverage) : DASH} <span class="note">영업이익 ÷ ${esc(m.interest_basis || '금융원가')}</span></td></tr>
-    <tr><td>영업현금흐름</td><td class="num">${won(m.ocf)}</td></tr><tr><td>설비투자</td><td class="num">${won(m.capex)}</td></tr>
-    </tbody></table><p class="note">${esc(fd.period)} ${fd.fs === 'OFS' ? '별도' : '연결'} 재무제표 기준 · 차입금은 계정명으로 합산한 추정치</p>` : '';
-
-  // peer
-  const P = co.peers || [];
-  const peerHtml = P.length > 1 ? `<div class="scroll"><table class="list" style="min-width:640px"><thead><tr><th>회사</th><th class="r">매출액</th><th class="r">영업이익률</th><th class="r">부채비율</th><th class="r">시가총액</th><th class="r">PER</th><th class="r">PBR</th></tr></thead><tbody>
-    ${P.map(p => `<tr ${p.me ? 'style="background:var(--accent-soft)"' : ''}><td class="co"><a href="#/company/${encodeURIComponent(p.code ? (p.key || '') : '')}" data-peer="${esc(p.code)}">${esc(p.name)}</a>${p.market ? `<span class="mk">${MK[p.market]}</span>` : ''}</td><td class="r num">${won(p.revenue)}</td><td class="r num ${(p.op_margin ?? 0) < 0 ? 'neg' : ''}">${pct(p.op_margin)}</td><td class="r num">${pct(p.debt_ratio, 0)}</td><td class="r num">${won(p.mcap)}</td><td class="r num">${p.per != null ? ratio(p.per) : DASH}</td><td class="r num">${p.pbr != null ? ratio(p.pbr, 2) : DASH}</td></tr>`).join('')}
-    </tbody></table></div><p class="note">같은 업종(${esc(co.industry)}) 상장사 중 매출 규모가 가장 가까운 곳 · 최근 사업보고서 기준${co.price_date ? ' · 시총 ' + md(co.price_date) : ''}</p>` : '<div class="empty" style="padding:18px">비교할 같은 업종 상장사 정보가 없습니다</div>';
-
-  // 잔존 사채
-  const BP = co.bonds || {};
-  const bondHtml = BP.count ? `
-    <div class="tiles" style="grid-template-columns:repeat(4,1fr);margin-bottom:12px">
-      <div class="tile"><div class="l">잔존 사채</div><div class="v">${won(BP.total)}</div><div class="s">${BP.count}종목</div></div>
-      <div class="tile"><div class="l">12개월 내 만기</div><div class="v">${won(BP.due12)}</div><div class="s">공모 ${wonTxt(BP.due12_by?.['공모'] || 0)} · 사모 ${wonTxt(BP.due12_by?.['사모'] || 0)}</div></div>
-      <div class="tile"><div class="l">주식연계 만기</div><div class="v">${won(BP.due12_by?.['주식연계'] || 0)}</div><div class="s">12개월 내 CB·EB·BW</div></div>
-      <div class="tile"><div class="l">가중평균 금리</div><div class="v">${pct(BP.avg_coupon, 2)}</div><div class="s">표면금리 기준</div></div>
+  const tile = (l, v, s) => `<div class="tile"><div class="l">${l}</div><div class="v">${v}</div>${s ? `<div class="s">${s}</div>` : ''}</div>`;
+  const bsBody = (DS.length || bsLast) ? `
+    ${DS.some(r => r.liab != null) ? groupChart(DS.map(r => yy(r.period)), [
+      {name: '부채총계', color: 'var(--s2)', values: DS.map(r => r.liab)},
+      {name: '차입금', color: 'var(--s7)', values: DS.map(r => r.debt)}]) : ''}
+    ${bsLast ? `<p class="eq">자산 <b>${wonTxt(bsLast.assets)}</b> = 부채 <b>${wonTxt(bsLast.liab)}</b> + 자본 <b>${wonTxt(bsLast.equity)}</b> <span class="muted">(${esc(yy(bsLast.period))})</span></p>` : ''}
+    <div class="tiles t3">
+      ${tile('부채비율', pct(m.debt_ratio, 0), '부채 ÷ 자본')}${tile('유동비율', pct(m.current_ratio, 0), '유동자산 ÷ 유동부채')}${tile('현금성자산', won(m.cash != null ? (m.cash || 0) + (m.st_deposits || 0) : null), '현금 + 단기금융상품')}
+      ${tile('차입금', won(m.debt), fd?.debt_items ? esc(fd.debt_items.slice(0, 3).join('·')) : '계정명 합산 추정')}${tile('순차입금', won(m.net_debt), m.net_debt != null && m.net_debt < 0 ? '순현금' : '차입금 − 현금성자산')}${tile('이자보상배율', m.interest_coverage != null ? ratio(m.interest_coverage) : DASH, '영업이익 ÷ ' + esc(m.interest_basis || '금융원가'))}
     </div>
+    ${DS.some(r => r.debt == null) && DS.some(r => r.debt != null) ? '<p class="note">차입금은 전체 재무제표를 받은 기간만 표시 (과거 연도는 다음 수집 때 채워짐)</p>' : ''}`
+    : '<div class="empty" style="padding:18px">재무상태 정보가 없습니다</div>';
+
+  // ── 주주 ──
+  const H = co.holders || {};
+  const holdBody = H.top?.length ? `${H.top.map(h => `<div class="share" style="margin:7px 0"><span style="width:42%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(h.name)} <span class="note">${esc(h.relation || '')}</span></span><div class="track"><div class="fill" style="width:${Math.min(100, h.pct * 2)}%;background:var(--s5)"></div></div><span class="num" style="width:56px;text-align:right">${pct(h.pct, 2)}</span></div>`).join('')}
+    <p class="note" style="margin:10px 0 0">최대주주 및 특수관계인 합계 <b style="color:var(--ink)">${pct(H.total_pct, 2)}</b>${co.treasury_shares ? ` · 자기주식 ${int(co.treasury_shares)}주${m.shares ? ' (' + pct(co.treasury_shares / m.shares * 100, 2) + ')' : ''}` : ''}</p>`
+    : '<div class="empty" style="padding:18px">주주 정보가 아직 없습니다</div>';
+
+  // ── 업종 ──
+  const P = co.peers || [];
+  const peerBody = P.length > 1 ? `<div class="scroll"><table style="min-width:520px"><thead><tr><th>회사</th><th class="r">매출액</th><th class="r">영업이익률</th><th class="r">부채비율</th><th class="r">시총</th><th class="r">PER</th><th class="r">PBR</th></tr></thead><tbody>
+    ${P.map(p => `<tr ${p.me ? 'class="me"' : ''}><td class="co"><a data-peer="${esc(p.code)}">${esc(p.name)}</a>${p.market ? `<span class="mk">${MK[p.market]}</span>` : ''}</td><td class="r num">${won(p.revenue)}</td><td class="r num ${(p.op_margin ?? 0) < 0 ? 'neg' : ''}">${pct(p.op_margin)}</td><td class="r num">${pct(p.debt_ratio, 0)}</td><td class="r num">${won(p.mcap)}</td><td class="r num">${p.per != null ? ratio(p.per) : DASH}</td><td class="r num">${p.pbr != null ? ratio(p.pbr, 2) : DASH}</td></tr>`).join('')}
+    </tbody></table></div>` : '<div class="empty" style="padding:18px">비교할 같은 업종 상장사 정보가 없습니다</div>';
+
+  // ── 잔존 사채 ──
+  const BP = co.bonds || {};
+  const bondBody = BP.count ? `
+    <div class="tiles t4">${tile('잔존 사채', won(BP.total), BP.count + '종목')}${tile('12개월 내 만기', won(BP.due12), `공모 ${wonTxt(BP.due12_by?.['공모'] || 0)} · 사모 ${wonTxt(BP.due12_by?.['사모'] || 0)}`)}${tile('주식연계 만기', won(BP.due12_by?.['주식연계'] || 0), '12개월 내 CB·EB·BW')}${tile('가중평균 금리', pct(BP.avg_coupon, 2), '표면금리 기준')}</div>
     ${stackChart(BP.ladder || [], ['공모', '사모', '주식연계'], ['var(--s1)', 'var(--s2)', 'var(--s3)'])}
     <details><summary>잔존 사채 목록 ${BP.count}건</summary><div class="scroll"><table class="list" style="min-width:640px"><thead><tr><th>종목명</th><th>구분</th><th>발행일</th><th>만기일</th><th class="r">발행액</th><th class="r">잔액</th><th class="r">금리</th><th>보증</th></tr></thead><tbody>
       ${BP.list.map(b => `<tr><td>${esc(b.name)}</td><td>${esc(b.link || (b.method === 'CBO기초사모' ? 'P-CBO' : b.method))}</td><td>${md(b.issue)}</td><td>${md(b.mat)}</td><td class="r num">${won(b.amt)}</td><td class="r num">${won(b.bal)}</td><td class="r num">${pct(b.cpn, 3)}</td><td>${esc(b.grn || '-')}</td></tr>`).join('')}
-    </tbody></table></div></details>
-    <p class="note">출처 금융위원회 채권기본정보(한국예탁결제원) · 법인등록번호로 연결 · 일반회사채만(금융채·ABS 제외)</p>` : '<div class="empty" style="padding:18px">연결된 잔존 사채 정보가 없습니다</div>';
+    </tbody></table></div></details>` : '<div class="empty" style="padding:18px">연결된 잔존 사채 정보가 없습니다</div>';
 
+  const ovBody = `<table class="kv"><tbody>
+      <tr><td>대표</td><td>${esc(I.ceo_nm || L.ceo || '-')}</td></tr>
+      <tr><td>설립</td><td>${I.est_dt ? fullDate(I.est_dt.slice(0, 4) + '-' + I.est_dt.slice(4, 6) + '-' + I.est_dt.slice(6)) : DASH}</td></tr>
+      <tr><td>상장</td><td>${L.listed ? fullDate(L.listed) + ' · ' + esc(MKF[co.market] || '') : '비상장'}</td></tr>
+      <tr><td>업종</td><td>${esc(co.industry || '-')}</td></tr>
+      <tr><td>주요 제품</td><td>${esc(L.products || '-')}</td></tr>
+      <tr><td>결산월</td><td>${esc(I.acc_mt ? I.acc_mt + '월' : L.fiscal_month || '-')}</td></tr>
+      <tr><td>본사</td><td>${esc(I.adres || L.region || '-')}</td></tr>
+      <tr><td>홈페이지</td><td>${(I.hm_url || L.homepage) ? `<a class="dart" href="${esc(/^https?:/.test(I.hm_url || L.homepage) ? (I.hm_url || L.homepage) : 'http://' + (I.hm_url || L.homepage))}" target="_blank" rel="noopener">${esc(I.hm_url || L.homepage)}</a>` : DASH}</td></tr>
+    </tbody></table>`;
+
+  const price = m.close ? `<div class="price"><b>${int(m.close)}<small>원</small></b><span>시가총액 ${wonTxt(m.mcap)}${co.price_date ? ' · ' + md(co.price_date) : ''}</span></div>` : '';
   app.innerHTML = `
-    <div class="card">
-      <div class="co-head">
-        <div><h1>${esc(co.name)} ${co.market && co.market !== 'E' ? `<span class="mk" style="font-size:12px">${MKF[co.market]}</span>` : '<span class="mk" style="font-size:12px">비상장</span>'}</h1>
-          <div class="meta">${[co.stock_code, co.industry, L.products ? '주요제품 ' + L.products : ''].filter(Boolean).map(esc).join(' · ')}</div></div>
-        <div class="actions noprint"><a class="btn primary" href="#/report/${encodeURIComponent(co.key)}">조달 제안 보고서 →</a>${annualLink ? `<a class="btn" href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=${co.annual_rcept}" target="_blank" rel="noopener">사업보고서</a>` : ''}</div>
-      </div>
-      <p style="margin:12px 0 14px" class="ink2">${esc(co.summary || '')}</p>
-      ${tilesHtml(co)}
+    <div class="co-hero">
+      <div><h1>${esc(co.name)} <span class="mk mk-lg">${MKF[co.market] || '비상장'}</span></h1>
+        <div class="meta">${[co.stock_code, co.industry].filter(Boolean).map(esc).join(' · ')}</div></div>
+      ${price}
+      <div class="actions noprint"><a class="btn primary" href="#/report/${encodeURIComponent(co.key)}">조달 제안 보고서 →</a></div>
     </div>
-    <nav class="secnav"><a href="#s-ov" data-jump>개요</a><a href="#s-biz" data-jump>돈 버는 방식</a><a href="#s-fin" data-jump>재무</a><a href="#s-hold" data-jump>주주</a><a href="#s-peer" data-jump>Peer</a><a href="#s-deal" data-jump>조달 이력</a><a href="#s-bond" data-jump>잔존 사채</a></nav>
-    ${pendingMsg}
-    <div class="grid2" style="margin-top:14px">
-      <section class="card" id="s-ov"><div class="sec-title"><h2>기업 개요</h2><span class="src">DART 기업개황 · KIND</span></div>
-        <table class="kv"><tbody>
-          <tr><td>대표</td><td>${esc(I.ceo_nm || L.ceo || '-')}</td></tr>
-          <tr><td>설립</td><td>${I.est_dt ? fullDate(I.est_dt.slice(0, 4) + '-' + I.est_dt.slice(4, 6) + '-' + I.est_dt.slice(6)) : DASH}</td></tr>
-          <tr><td>상장</td><td>${L.listed ? fullDate(L.listed) + ' · ' + esc(MKF[co.market] || '') : '비상장'}</td></tr>
-          <tr><td>업종</td><td>${esc(co.industry || '-')}${I.induty_code ? ` <span class="note">(${esc(I.induty_code)})</span>` : ''}</td></tr>
-          <tr><td>주요 제품</td><td>${esc(L.products || '-')}</td></tr>
-          <tr><td>결산월</td><td>${esc(I.acc_mt ? I.acc_mt + '월' : L.fiscal_month || '-')}</td></tr>
-          <tr><td>주소</td><td>${esc(I.adres || L.region || '-')}</td></tr>
-          <tr><td>홈페이지</td><td>${(I.hm_url || L.homepage) ? `<a class="dart" href="${esc(/^https?:/.test(I.hm_url || L.homepage) ? (I.hm_url || L.homepage) : 'http://' + (I.hm_url || L.homepage))}" target="_blank" rel="noopener">${esc(I.hm_url || L.homepage)}</a>` : DASH}</td></tr>
-        </tbody></table></section>
-      <section class="card" id="s-hold"><div class="sec-title"><h2>주주 구성</h2><span class="src">DART 최대주주 현황</span></div>${holderHtml}</section>
-    </div>
-    <section class="card" id="s-biz" style="margin-top:14px"><div class="sec-title"><h2>돈 버는 방식</h2><span class="src">${annualLink || '사업보고서 II. 사업의 내용'}</span></div>
-      ${B.overview ? `<h3>사업 개요</h3><p class="prose">${esc(B.overview)}</p>` : ''}
-      ${prodHtml ? `<h3 style="margin-top:16px">주요 제품·서비스</h3>${prodHtml}` : ''}
-      ${B.customers ? `<h3 style="margin-top:16px">주요 매출처</h3><p class="prose">${esc(B.customers)}</p>` : ''}
-      ${!B.overview && !prodHtml && !B.customers ? `<div class="empty" style="padding:18px">${co.pending ? '수집 대기 중' : '사업보고서에서 사업 내용을 찾지 못했습니다'}${L.products ? ' · KIND 주요제품: ' + esc(L.products) : ''}</div>` : ''}
-    </section>
-    <section class="card" id="s-fin"><div class="sec-title"><h2>재무</h2><span class="src">${esc(m.detail_period || '')}</span></div>
-      ${annual.length ? `<div class="grid2" style="margin-bottom:14px"><div><h3>매출액</h3>${barChart(annual.map(r => ({label: r.period, v: r.revenue})), {label: '매출액'})}</div><div><h3>영업이익</h3>${barChart(annual.map(r => ({label: r.period, v: r.op})), {color: 'var(--s3)', label: '영업이익'})}</div></div>` : ''}
-      ${finTable}${detail ? `<h3 style="margin-top:16px">상환 능력</h3>${detail}` : ''}
-    </section>
-    <section class="card" id="s-peer"><div class="sec-title"><h2>Peer 비교</h2></div>${peerHtml}</section>
-    <section class="card" id="s-deal"><div class="sec-title"><h2>조달 이력</h2><span class="src">${(co.deals || []).length}건 · 행을 누르면 상세</span></div>${dealTable(co.deals || [])}</section>
-    <section class="card" id="s-bond"><div class="sec-title"><h2>잔존 사채 만기</h2></div>${bondHtml}</section>`;
-  $$('[data-jump]').forEach(a => a.onclick = e => { e.preventDefault(); $(a.getAttribute('href')).scrollIntoView({behavior: 'smooth', block: 'start'}); });
-  // peer 링크: 종목코드 → 회사 키
+    <nav class="secnav sticky" id="secnav">
+      ${[['s-sum', '요약'], ['s-ov', '개요'], ['s-biz', '사업'], ['s-pl', '손익'], ['s-bs', '재무상태'], ['s-hold', '주주'], ['s-peer', '업종'], ['s-deal', '조달 이력'], ['s-bond', '잔존 사채']]
+        .map(([id, t]) => `<a href="#${id}" data-jump>${t}</a>`).join('')}
+    </nav>
+    ${co.pending ? '<div class="pending" style="margin-bottom:14px">사업보고서 기반 상세 정보(사업 내용·주주·차입금)는 아직 수집 전입니다. 조달 기록이 있는 회사부터 매일 밤 순서대로 채워지며, 저장소 <b>watchlist.txt</b>에 회사명을 적으면 먼저 수집합니다.</div>' : ''}
+    <div class="cgrid">
+      ${card('s-sum', 'c-sum span2', '요약', esc(headline), summaryBody, [annualSrc ? '출처: ' + annualSrc : '', AI ? `요약 작성 ${esc(AI.written || '')} · 사업보고서를 AI가 읽고 정리 (원문 확인 권장)` : ''].filter(Boolean).join(' · '))}
+      ${card('s-ov', 'c-ov', '개요', esc([I.ceo_nm ? '대표 ' + I.ceo_nm : '', I.est_dt ? I.est_dt.slice(0, 4) + ' 설립' : ''].filter(Boolean).join(' · ')), ovBody, '출처: DART 기업개황 · KIND 상장법인목록')}
+      ${card('s-hold', 'c-hold', '주주', H.top?.length ? esc(`${H.top[0].name} 외 ${(H.total_pct ?? 0).toFixed(1)}%`) : '', holdBody, H.as_of ? `출처: 최대주주 현황 (${esc(H.as_of)} 기준)` : '')}
+      ${card('s-biz', 'c-biz span2', '사업', AI?.mix_line ? esc(AI.mix_line) : '', bizBody, annualSrc ? '출처: ' + annualSrc + ' II. 사업의 내용' : '')}
+      ${card('s-pl', 'c-pl', '손익', esc(headline + (m.op_margin != null ? ` · 영업이익률 ${m.op_margin.toFixed(1)}%` : '')), plBody, `${ser[ser.length - 1]?.fs === 'OFS' ? '별도' : '연결'} 기준 · 출처: DART 정기보고서 주요계정`)}
+      ${card('s-bs', 'c-bs', '재무상태', esc(m.debt_ratio != null ? `부채비율 ${m.debt_ratio.toFixed(0)}%` + (m.cash != null ? ` · 현금성자산 ${wonTxt((m.cash || 0) + (m.st_deposits || 0))}` : '') : ''), bsBody, fd ? `상환능력 ${esc(fd.period)} ${fd.fs === 'OFS' ? '별도' : '연결'} 재무제표 · 차입금은 계정명 합산 추정` : '')}
+      ${card('s-peer', 'c-peer span2', '업종', esc(co.industry || ''), peerBody, P.length > 1 ? `같은 업종(KIND 분류) 상장사 중 매출이 가장 가까운 곳 · 사업이 같은 비교기업은 아닐 수 있음${co.price_date ? ' · 시총 ' + md(co.price_date) : ''}` : '')}
+      ${card('s-deal', 'c-deal span2', '조달 이력', `${(co.deals || []).length}건 · 행을 누르면 상세`, dealTable(co.deals || []), '출처: DART 주요사항보고서·증권신고서 · 금융위원회 채권기본정보')}
+      ${card('s-bond', 'c-bond span2', '잔존 사채 만기', BP.count ? esc(`${wonTxt(BP.total)} · ${BP.count}종목`) : '', bondBody, BP.count ? '출처: 금융위원회 채권기본정보(한국예탁결제원) · 법인등록번호로 연결 · 일반회사채만' : '')}
+    </div>`;
+  $$('[data-jump]').forEach(a => a.onclick = e => { e.preventDefault(); const t = $(a.getAttribute('href')); if (t) scrollTo({top: t.getBoundingClientRect().top + scrollY - 110, behavior: 'smooth'}); });
   loadCos().then(cos => { const byCode = {}; cos.forEach(c => { if (c[3]) byCode[c[3]] = c[0]; });
-    $$('[data-peer]').forEach(a => { const k = byCode[a.dataset.peer]; if (k) a.href = '#/company/' + encodeURIComponent(k); else a.removeAttribute('href'); }); });
+    $$('[data-peer]').forEach(a => { const k = byCode[a.dataset.peer]; if (k) a.href = '#/company/' + encodeURIComponent(k); }); });
 }
 
 // ───────────── 조달 제안 보고서 ─────────────
@@ -837,6 +1013,23 @@ const OPT_Q = {
   rights: ['최대주주 참여 의사와 규모', '자금 용도(시설·운영·차입금 상환)의 구체성', '할인율·일정(권리락 등)'],
   hybrid: ['자본 인정 요건(회계·신용평가) 충족 구조', '콜 시점과 스텝업 수용 범위', '상장 계획(RCPS의 경우)'],
 };
+const OPT_MATCHABLE = new Set(['public_bond', 'private_bond', 'pcbo', 'cb', 'eb', 'rights']);
+function scoreTable(o) {
+  const sum = o.base + (o.factors || []).reduce((a, f) => a + f.pts, 0);
+  const rows = (o.factors || []).filter(f => f.pts !== 0);
+  return `<details class="scoreb"><summary>점수 산정 ${o.score}점 = 기본 ${o.base}점 ${rows.map(f => (f.pts > 0 ? '+ ' : '− ') + Math.abs(f.pts)).join(' ')}${sum !== o.score ? ` (${sum}점 → 0~100 범위로 조정)` : ''}</summary>
+    <table style="margin-top:6px"><tbody><tr><td class="r num" style="width:60px">${o.base}</td><td class="muted">기본점수 — 이 방식의 출발점</td></tr>
+    ${rows.map(f => `<tr><td class="r num ${f.pts < 0 ? 'neg' : ''}" style="color:${f.pts > 0 ? 'var(--good)' : ''}">${f.pts > 0 ? '+' : '−'}${Math.abs(f.pts)}</td><td>${esc(f.text)}</td></tr>`).join('')}
+    <tr><td class="r num"><b>${o.score}</b></td><td><b>합계</b> <span class="note">적합도 ${o.fit} (65점 이상 높음 · 45~64 보통 · 그 아래 낮음)</span></td></tr></tbody></table></details>`;
+}
+const METHOD_HTML = `<details class="method"><summary>점수는 이렇게 매깁니다</summary>
+  <ul>
+    <li><b>기본점수</b>에서 출발합니다 — 공모채 20 · 사모채 25 · P-CBO 10 · CB 10 · EB 0 · 유상증자 10 · 자본성 증권 5. 특별한 조건이 없을 때 시장에서 흔히 쓰이는 정도를 반영한 값입니다.</li>
+    <li>공시로 확인되는 조건마다 <b>가점·감점</b>을 더합니다: 신용등급(공모채 증권신고서), 매출·자산 규모, 영업손익, 부채비율, 자본잠식, 12개월 내 만기 사채(예탁원 잔존 사채), 최근 3년 조달 이력, 상장 시장, 자기주식, 최대주주 지분, 시가총액.</li>
+    <li>합계를 0~100으로 자르고 <b>65점 이상 높음 · 45~64 보통 · 그 아래 낮음</b>으로 표시합니다. 각 방식의 '점수 산정'을 펼치면 항목별 가감점을 볼 수 있습니다.</li>
+    <li><b>비교 사례</b>는 최근 1년 같은 종류의 발행 중에서 고릅니다. 공모채는 신용등급이 한 단계 안쪽인 회사(같은 업종 우선), 나머지는 같은 업종을 먼저, 부족하면 같은 시장에서 매출이 1/3~3배인 회사를 고르며 회사당 1건만 넣습니다.</li>
+    <li>회사의 실제 자금 수요·주가·시장 금리는 반영되지 않으니, 미팅 전에 확인해 조정해야 합니다.</li>
+  </ul></details>`;
 async function viewReport(key) {
   app.innerHTML = '<div class="empty">보고서를 만드는 중…</div>';
   let co;
@@ -853,7 +1046,8 @@ async function viewReport(key) {
       ${o.reasons.length ? `<ul class="why">${o.reasons.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
       ${o.cautions.length ? `<ul class="risk">${o.cautions.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
       <div class="meta">${o.size ? `예상 규모 <b style="color:var(--ink)">${esc(o.size)}</b>` : ''}${o.note && !compact ? (o.size ? ' · ' : '') + esc(o.note) : ''}</div>
-      ${!compact && o.comps?.length ? `<details open><summary>비교 사례 (${esc(o.comps_scope)}, 최근 1년)</summary><div class="scroll"><table style="margin-top:6px;min-width:420px"><tbody>${o.comps.map(c => `<tr class="click" data-deal="${esc(c.id)}"><td>${md(c.date)}</td><td class="co"><a href="#/company/${encodeURIComponent(c.key)}" data-stop>${esc(c.corp_name)}</a></td><td class="r num">${won(c.amount)}</td><td class="r num">${c.coupon != null ? pct(c.coupon, 2) : c.price ? int(c.price) + '원' : DASH}</td><td>${esc(c.rating || '')}</td></tr>`).join('')}</tbody></table></div></details>` : ''}
+      ${!compact ? scoreTable(o) : ''}
+      ${!compact ? (o.comps?.length ? `<details open><summary>비교 사례 · 최근 1년 ${o.comps.length}곳</summary><div class="scroll"><table style="margin-top:6px;min-width:560px"><thead><tr><th>날짜</th><th>회사</th><th class="r">금액</th><th class="r">금리·행사가</th><th>등급</th><th>고른 근거</th></tr></thead><tbody>${o.comps.map(c => `<tr class="click" data-deal="${esc(c.id)}"><td>${md(c.date)}</td><td class="co"><a href="#/company/${encodeURIComponent(c.key)}" data-stop>${esc(c.corp_name)}</a>${c.series ? ` <span class="note">${esc(c.series)}회</span>` : ''}</td><td class="r num">${won(c.amount)}</td><td class="r num">${c.coupon != null ? pct(c.coupon, 2) : c.price ? int(c.price) + '원' : DASH}</td><td>${esc(c.rating || '')}</td><td class="note">${esc(c.basis || '')}</td></tr>`).join('')}</tbody></table></div></details>` : (OPT_MATCHABLE.has(o.key) ? '<p class="note" style="margin:8px 0 0">비교 사례 없음 — 최근 1년 안에 같은 업종(공모채는 비슷한 등급) 또는 같은 시장·비슷한 매출 규모 회사의 발행이 없습니다.</p>' : '')) : ''}
       ${!compact && OPT_Q[o.key] ? `<div class="meta" style="margin-top:10px">확인할 것: ${OPT_Q[o.key].map(esc).join(' · ')}</div>` : ''}
     </div>`;
   // 상세 보고서에서 비교 사례 클릭을 위해 등록
@@ -878,12 +1072,14 @@ async function viewReport(key) {
       <p style="margin:12px 0 0">${esc(co.summary || '')}</p>
     </div>
     <section class="card"><h2>1. 추천 조달 방식</h2><div class="top3">${top.map((o, i) => optCard(o, i, true)).join('')}</div>
-      <p class="note" style="margin:10px 0 0">점수는 공시 숫자(재무·등급·조달 이력·사채 만기·주주 구성)를 규칙으로 따진 것으로, 회사의 자금 수요·시장 상황을 확인한 뒤 조정해야 합니다.</p></section>
+      ${METHOD_HTML}</section>
     <section class="card"><h2>2. 회사 한눈에</h2>
-      ${B.overview ? `<p class="prose" style="margin-bottom:10px">${esc(B.overview.slice(0, 420))}${B.overview.length > 420 ? '…' : ''}</p>` : ''}
-      ${B.products?.length ? `<p class="ink2" style="margin:0 0 6px"><b>주요 제품</b> · ${B.products.slice(0, 5).map(p => esc(p.segment ? p.segment + ' ' : '') + esc(p.name) + (p.share != null ? ` (${pct(p.share)})` : '')).join(', ')}</p>` : ''}
-      ${B.customers ? `<p class="ink2" style="margin:0"><b>주요 매출처</b> · ${esc(B.customers.slice(0, 260))}</p>` : ''}
-      ${!B.overview && !B.products?.length ? '<p class="muted" style="margin:0">사업보고서 기반 사업 내용이 아직 수집되지 않았습니다.</p>' : ''}
+      ${co.ai?.one_liner ? `<p style="margin:0 0 10px"><b>${esc(co.ai.one_liner)}</b></p>` : ''}
+      ${co.ai?.flow ? flowHtml(co.ai.flow) : ''}
+      ${co.ai?.caption ? `<p class="caption">${esc(co.ai.caption)}</p>` : (B.overview_short ? `<p class="prose" style="margin-bottom:10px">${esc(B.overview_short)}</p>` : '')}
+      ${!co.ai && B.products?.length ? `<p class="ink2" style="margin:0 0 6px"><b>주요 제품</b> · ${B.products.slice(0, 5).map(p => esc(p.segment ? p.segment + ' ' : '') + esc(p.name) + (p.share != null ? ` (${pct(p.share)})` : '')).join(', ')}</p>` : ''}
+      ${(co.ai?.customers || B.customers_short) ? `<p class="ink2" style="margin:6px 0 0"><b>주요 매출처</b> · ${esc(co.ai?.customers || B.customers_short)}</p>` : ''}
+      ${!co.ai && !B.overview && !B.products?.length ? '<p class="muted" style="margin:0">사업보고서 기반 사업 내용이 아직 수집되지 않았습니다.</p>' : ''}
     </section>
     <section class="card"><h2>3. 재무 체크포인트</h2><table class="kv"><tbody>${checks.map(([l, v, c]) => `<tr><td>${l}</td><td class="${c}">${v}</td></tr>`).join('')}</tbody></table>
       <p class="note" style="margin:8px 0 0">${esc(m.period ? m.period + '년 사업보고서' : '')}${m.detail_period ? ' · 세부 항목 ' + esc(m.detail_period) : ''} 기준</p></section>

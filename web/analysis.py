@@ -248,158 +248,161 @@ def propose(ctx):
     small = has_fin and (rev or 0) < 1500 * EOK and (assets or 0) < 3000 * EOK
     opts = []
 
-    def add(key, title, score, reasons, cautions, size=None, note=None):
-        opts.append({"key": key, "title": title, "score": max(0, min(100, round(score))), "fit": _fit(score),
-                     "reasons": [r for r in reasons if r], "cautions": [c for c in cautions if c],
+    def add(key, title, base, reasons, cautions, size=None, note=None):
+        """reasons·cautions: [(가감점, 문장)] → 점수 = 기본점수 + 가감점 합 (0~100으로 자름)"""
+        factors = [{"pts": p, "text": t} for p, t in reasons + cautions if t]
+        score = base + sum(f["pts"] for f in factors)
+        opts.append({"key": key, "title": title, "base": base, "factors": factors,
+                     "score": max(0, min(100, round(score))), "fit": _fit(score),
+                     "reasons": [t for p, t in reasons if t], "cautions": [t for p, t in cautions if t],
                      "size": size, "note": note})
 
     # 1) 공모 회사채
-    s, R, C = 20, [], []
+    base, R, C = 20, [], []
     if gr is not None and gr <= grade_rank("A-"):
-        s += 40; R.append(f"최근 신용등급 {g} — 공모채 수요예측에 참여하는 기관 수요가 두터운 구간")
+        R.append((40, f"최근 신용등급 {g} — 공모채 수요예측에 참여하는 기관 수요가 두터운 구간"))
     elif gr is not None and gr <= grade_rank("BBB-"):
-        s += 10; R.append(f"신용등급 {g}"); C.append("BBB급은 수요예측 미매각 가능성이 있어 하이일드 펀드·리테일 수요 확인 필요")
+        R.append((10, f"신용등급 {g}")); C.append((0, "BBB급은 수요예측 미매각 가능성이 있어 하이일드 펀드·리테일 수요 확인 필요"))
     elif gr is None:
-        s -= 10; C.append("유효 신용등급이 확인되지 않음 — 공모 발행에는 신용평가 2곳 이상 필요")
+        C.append((-10, "유효 신용등급이 확인되지 않음 — 공모 발행에는 신용평가 2곳 이상 필요"))
     if cnt_bond("공모"):
-        s += 15; R.append(f"최근 3년 공모 회사채 {cnt_bond('공모')}건 발행 이력 — 시장 인지도 확보")
+        R.append((15, f"최근 3년 공모 회사채 {cnt_bond('공모')}건 발행 이력 — 시장 인지도 확보"))
     if due_pub:
-        s += 15; R.append(f"12개월 내 공모채 만기 {eok(due_pub)} — 차환 발행 수요")
+        R.append((15, f"12개월 내 공모채 만기 {eok(due_pub)} — 차환 발행 수요"))
     if big:
-        s += 15; R.append(f"매출 {eok(rev)} · 자산 {eok(assets)} 규모로 공모 최소 발행 규모(수백억) 소화 가능")
+        R.append((15, f"매출 {eok(rev)} · 자산 {eok(assets)} 규모로 공모 최소 발행 규모(수백억) 소화 가능"))
     elif small:
-        s -= 20; C.append("매출·자산 규모가 작아 공모 비용(평가·주관·공시) 대비 효율이 낮음")
+        C.append((-20, "매출·자산 규모가 작아 공모 비용(평가·주관·공시) 대비 효율이 낮음"))
     if loss:
-        s -= 15; C.append("최근 연도 영업손실 — 등급 하향 가능성 점검")
+        C.append((-15, "최근 연도 영업손실 — 등급 하향 가능성 점검"))
     if dr and dr > 400:
-        s -= 10; C.append(f"부채비율 {dr:.0f}%")
+        C.append((-10, f"부채비율 {dr:.0f}%"))
     size = _round_size(due_pub) or _round_size(_median([d.get("amount") for d in deals if d["type"] == "BOND" and d.get("offering") == "공모"]))
-    add("public_bond", "공모 회사채", s, R, C, eok(size) if size else "500억~1,000억 (수요예측 결과에 따라 증액)" if big else None,
+    add("public_bond", "공모 회사채", base, R, C, eok(size) if size else "500억~1,000억 (수요예측 결과에 따라 증액)" if big else None,
         "수요예측 → 증권신고서 효력 발생 → 청약·납입. 금리는 민평 대비 가산금리로 결정")
 
     # 2) 사모 회사채
-    s, R, C = 25, [], []
+    base, R, C = 25, [], []
     if gr is None or gr >= grade_rank("BBB+"):
-        s += 15; R.append("등급이 없거나 BBB급 이하 — 공모보다 사모가 현실적인 구간" if gr is None else f"신용등급 {g} — 공모 수요가 얇은 구간이라 사모 선호")
+        R.append((15, "등급이 없거나 BBB급 이하 — 공모보다 사모가 현실적인 구간" if gr is None else f"신용등급 {g} — 공모 수요가 얇은 구간이라 사모 선호"))
     if cnt_bond("사모"):
-        s += 10; R.append(f"최근 3년 사모채 {cnt_bond('사모')}건 발행 — 기존 투자자 네트워크 활용 가능")
+        R.append((10, f"최근 3년 사모채 {cnt_bond('사모')}건 발행 — 기존 투자자 네트워크 활용 가능"))
     if due_pvt:
-        s += 15; R.append(f"12개월 내 사모채 만기 {eok(due_pvt)} — 차환 수요")
+        R.append((15, f"12개월 내 사모채 만기 {eok(due_pvt)} — 차환 수요"))
     if has_fin and not loss:
-        s += 10; R.append("영업이익 흑자 — 이자 상환 능력 설명 가능")
+        R.append((10, "영업이익 흑자 — 이자 상환 능력 설명 가능"))
     if loss:
-        s -= 10; C.append("영업손실 — 담보·보증 또는 조기상환(Put) 조건 요구 가능성")
+        C.append((-10, "영업손실 — 담보·보증 또는 조기상환(Put) 조건 요구 가능성"))
     if impaired:
-        s -= 20; C.append(f"자본{impaired} 상태 — 사채보다 자본 확충이 먼저")
+        C.append((-20, f"자본{impaired} 상태 — 사채보다 자본 확충이 먼저"))
     if big and gr is not None and gr <= grade_rank("A-"):
-        s -= 15; C.append("우량 등급이면 공모채가 금리 면에서 유리")
+        C.append((-15, "우량 등급이면 공모채가 금리 면에서 유리"))
     size = _round_size(due_pvt) or _round_size(_median([d.get("amount") for d in deals if d["type"] == "BOND" and d.get("offering") == "사모" and not d.get("pcbo")]))
-    add("private_bond", "사모 회사채", s, R, C, eok(size) if size else "100억~300억",
+    add("private_bond", "사모 회사채", base, R, C, eok(size) if size else "100억~300억",
         "49인 이하 투자자 대상, 증권신고서 불필요. 강제상환·신용등급 하락 시 조기상환 등 특약이 흔함")
 
     # 3) P-CBO
-    s, R, C = 10, [], []
+    base, R, C = 10, [], []
     if cbo_hist or bonds.get("has_cbo"):
-        s += 25; R.append("P-CBO 편입 이력 보유 — 신용보증기금 심사 경험")
+        R.append((25, "P-CBO 편입 이력 보유 — 신용보증기금 심사 경험"))
     if small or (mk in ("K", "N", "E") and not big):
-        s += 25; R.append("중소·중견 규모 — 신용보증기금 P-CBO 지원 대상에 해당할 가능성")
+        R.append((25, "중소·중견 규모 — 신용보증기금 P-CBO 지원 대상에 해당할 가능성"))
     if gr is not None and grade_rank("BBB+") <= gr <= grade_rank("B-"):
-        s += 10; R.append(f"신용등급 {g} — 단독 사모 발행보다 보증부 P-CBO가 금리 면에서 유리할 수 있음")
+        R.append((10, f"신용등급 {g} — 단독 사모 발행보다 보증부 P-CBO가 금리 면에서 유리할 수 있음"))
     if impaired:
-        s -= 30; C.append("자본잠식 기업은 보증 심사 통과가 어려움")
+        C.append((-30, "자본잠식 기업은 보증 심사 통과가 어려움"))
     if big:
-        s -= 30; C.append("대기업·우량 기업은 P-CBO 지원 대상이 아님")
+        C.append((-30, "대기업·우량 기업은 P-CBO 지원 대상이 아님"))
     if loss_years >= 2:
-        s -= 10; C.append("2년 이상 영업손실 — 보증 한도 축소 가능성")
-    add("pcbo", "P-CBO (신용보증기금 유동화 보증)", s, R, C, "수십억~100억 (보증 한도 내)",
+        C.append((-10, "2년 이상 영업손실 — 보증 한도 축소 가능성"))
+    add("pcbo", "P-CBO (신용보증기금 유동화 보증)", base, R, C, "수십억~100억 (보증 한도 내)",
         "기업이 사모사채를 발행하면 신보가 보증한 유동화증권(P-CBO)에 편입. 정기 차수(대개 월 단위)에 맞춰 신청")
 
     # 4) CB
-    s, R, C = 10, [], []
+    base, R, C = 10, [], []
     if mk in ("K", "N"):
-        s += 25; R.append(f"{'코스닥' if mk == 'K' else '코넥스'} 상장사 — 메자닌 투자자 풀이 가장 큰 시장")
+        R.append((25, f"{'코스닥' if mk == 'K' else '코넥스'} 상장사 — 메자닌 투자자 풀이 가장 큰 시장"))
     elif mk == "Y":
-        s += 5
+        R.append((5, "유가증권 상장사 — CB 발행은 가능하나 코스닥보다 투자자 풀이 작음"))
     else:
-        s -= 20; C.append("비상장사 CB는 투자자가 제한적 — 상장 예정이면 RCPS·CB 병행 검토")
+        C.append((-20, "비상장사 CB는 투자자가 제한적 — 상장 예정이면 RCPS·CB 병행 검토"))
     if loss or (m.get("op_margin") is not None and m["op_margin"] < 3):
-        s += 10; R.append("수익성이 낮아 일반 사채 금리 부담이 큼 — 표면금리 0~2% CB가 이자 부담을 줄임")
+        R.append((10, "수익성이 낮아 일반 사채 금리 부담이 큼 — 표면금리 0~2% CB가 이자 부담을 줄임"))
     if dr and dr > 200:
-        s += 10; R.append(f"부채비율 {dr:.0f}% — 전환 시 자본으로 바뀌는 구조가 재무구조 개선에 유리")
+        R.append((10, f"부채비율 {dr:.0f}% — 전환 시 자본으로 바뀌는 구조가 재무구조 개선에 유리"))
     if cnt("CB"):
-        s += 15; R.append(f"최근 3년 CB {cnt('CB')}건 발행 — 기존 메자닌 투자자 존재")
+        R.append((15, f"최근 3년 CB {cnt('CB')}건 발행 — 기존 메자닌 투자자 존재"))
     if cnt("CB") >= 3:
-        s -= 10; C.append(f"CB를 {cnt('CB')}차례 발행 — 누적 희석·오버행 우려로 조건(리픽싱 하한, 콜옵션)이 불리해질 수 있음")
+        C.append((-10, f"CB를 {cnt('CB')}차례 발행 — 누적 희석·오버행 우려로 조건(리픽싱 하한, 콜옵션)이 불리해질 수 있음"))
     if due_link:
-        s += 5; R.append(f"12개월 내 주식연계채권 만기·상환 {eok(due_link)} — 차환 CB 수요")
+        R.append((5, f"12개월 내 주식연계채권 만기·상환 {eok(due_link)} — 차환 CB 수요"))
     if gr is not None and gr <= grade_rank("A-"):
-        s -= 15; C.append("우량 등급이면 일반 사채가 희석 없이 조달 가능")
+        C.append((-15, "우량 등급이면 일반 사채가 희석 없이 조달 가능"))
     if mcap and mcap < 300 * EOK:
-        s -= 10; C.append(f"시가총액 {eok(mcap)} — 발행 규모가 시총 대비 커지면 희석 부담")
+        C.append((-10, f"시가총액 {eok(mcap)} — 발행 규모가 시총 대비 커지면 희석 부담"))
     cb_size = _round_size(mcap * 0.1, 10 * EOK) if mcap else _round_size(_median([d.get("amount") for d in deals if d["type"] == "CB"]), 10 * EOK)
-    add("cb", "전환사채 (CB)", s, R, C, (eok(cb_size) + (" (시총의 약 10%)" if mcap else "")) if cb_size else None,
+    add("cb", "전환사채 (CB)", base, R, C, (eok(cb_size) + (" (시총의 약 10%)" if mcap else "")) if cb_size else None,
         "리픽싱 하한 70%, 발행 1년 후 Put, 최대주주 Call(통상 30% 이내)이 일반적인 조건")
 
     # 5) EB
-    s, R, C = 0, [], []
+    base, R, C = 0, [], []
     ts = ctx.get("treasury_shares") or 0
     shares = m.get("shares")
     if ts > 0:
-        s += 45
         ratio = f" (발행주식의 {ts / shares * 100:.1f}%)" if shares else ""
         val = f", 시가 약 {eok(ts * m['close'])}" if m.get("close") else ""
-        R.append(f"자기주식 {ts:,}주 보유{ratio}{val} — 교환 대상 주식으로 활용 가능")
+        R.append((45, f"자기주식 {ts:,}주 보유{ratio}{val} — 교환 대상 주식으로 활용 가능"))
         if shares and ts / shares >= 0.03:
-            s += 10
+            R.append((10, "자기주식이 발행주식의 3% 이상 — 의미 있는 규모의 EB 가능"))
     else:
-        C.append("자기주식 보유가 확인되지 않음 — 계열사 지분 등 다른 교환 대상이 있는지 확인")
+        C.append((0, "자기주식 보유가 확인되지 않음 — 계열사 지분 등 다른 교환 대상이 있는지 확인"))
     if cnt("EB"):
-        s += 10; R.append(f"EB 발행 이력 {cnt('EB')}건")
+        R.append((10, f"EB 발행 이력 {cnt('EB')}건"))
     if ts > 0:
-        C.append("자기주식을 대상으로 한 EB는 공시·규제가 강화되는 추세 — 처분 목적·주주 설명 필요")
+        C.append((0, "자기주식을 대상으로 한 EB는 공시·규제가 강화되는 추세 — 처분 목적·주주 설명 필요"))
     eb_size = None
     if ts and m.get("close"):
         eb_size = ts * m["close"] * 0.9
         if mcap:
             eb_size = min(eb_size, mcap * 0.3)
-    add("eb", "교환사채 (EB)", s, R, C, eok(_round_size(eb_size, 10 * EOK)) if eb_size else None,
+    add("eb", "교환사채 (EB)", base, R, C, eok(_round_size(eb_size, 10 * EOK)) if eb_size else None,
         "신주 발행 없이 보유 주식으로 교환하므로 추가 희석이 없음")
 
     # 6) 유상증자
-    s, R, C = 10, [], []
+    base, R, C = 10, [], []
     if impaired:
-        s += 40; R.append(f"자본{impaired} — 자본 확충이 우선 과제 (관리종목·상장적격성 이슈 예방)")
+        R.append((40, f"자본{impaired} — 자본 확충이 우선 과제 (관리종목·상장적격성 이슈 예방)"))
     if dr and dr > 300:
-        s += 20; R.append(f"부채비율 {dr:.0f}% — 차입 여력보다 자본 조달이 필요")
+        R.append((20, f"부채비율 {dr:.0f}% — 차입 여력보다 자본 조달이 필요"))
     if loss_years >= 2:
-        s += 10; R.append("2년 이상 영업손실 — 부채성 조달의 상환 부담이 큼")
+        R.append((10, "2년 이상 영업손실 — 부채성 조달의 상환 부담이 큼"))
     tp = holders.get("total_pct")
     if tp is not None:
         if tp >= 40:
-            s += 5; R.append(f"최대주주 등 지분 {tp:.1f}% — 주주배정 시 최대주주 참여로 경영권 유지 가능")
+            R.append((5, f"최대주주 등 지분 {tp:.1f}% — 주주배정 시 최대주주 참여로 경영권 유지 가능"))
         elif tp < 20:
-            C.append(f"최대주주 등 지분 {tp:.1f}% — 대규모 증자 시 경영권 희석 주의")
+            C.append((0, f"최대주주 등 지분 {tp:.1f}% — 대규모 증자 시 경영권 희석 주의"))
     if cnt("RIGHTS"):
-        R.append(f"최근 3년 유상증자 {cnt('RIGHTS')}건")
+        R.append((0, f"최근 3년 유상증자 {cnt('RIGHTS')}건"))
     if mk == "E":
-        C.append("비상장사는 제3자배정(전략적 투자자·VC) 또는 RCPS 형태가 현실적")
+        C.append((0, "비상장사는 제3자배정(전략적 투자자·VC) 또는 RCPS 형태가 현실적"))
     method = ("주주배정 후 실권주 일반공모" if mk in ("Y", "K") and (mcap or 0) >= 1000 * EOK
               else "제3자배정 (전략적·재무적 투자자)" if mk in ("K", "N", "E") else "주주배정")
-    add("rights", f"유상증자 ({method})", s, R, C, eok(_round_size((mcap or 0) * 0.15, 10 * EOK)) + " (시총의 약 15%)" if mcap else None,
+    add("rights", f"유상증자 ({method})", base, R, C, eok(_round_size((mcap or 0) * 0.15, 10 * EOK)) + " (시총의 약 15%)" if mcap else None,
         "증권신고서 제출(공모) → 권리락 → 청약. 할인율·발행가 산정 방식 확인")
 
     # 7) 자본성 증권 (영구채·RCPS)
-    s, R, C = 5, [], []
+    base, R, C = 5, [], []
     if mk == "Y" and dr and dr > 200 and (gr is None or gr <= grade_rank("BBB-")):
-        s += 35; R.append(f"부채비율 {dr:.0f}% — 신종자본증권(영구채)은 회계상 자본으로 인정돼 부채비율을 낮춤")
+        R.append((35, f"부채비율 {dr:.0f}% — 신종자본증권(영구채)은 회계상 자본으로 인정돼 부채비율을 낮춤"))
         if gr is not None:
-            R.append(f"신용등급 {g} — 영구채 발행이 가능한 등급대")
+            R.append((0, f"신용등급 {g} — 영구채 발행이 가능한 등급대"))
     if mk == "E" and has_fin:
-        s += 30; R.append("비상장 성장 기업 — 상장 전 RCPS(상환전환우선주)로 지분 투자 유치")
+        R.append((30, "비상장 성장 기업 — 상장 전 RCPS(상환전환우선주)로 지분 투자 유치"))
     if mk in ("K", "N") and loss and not impaired:
-        s += 10; R.append("적자 상장사 — 제3자배정 RCPS·CPS로 FI 유치 가능")
-    C.append("영구채는 금리가 일반 사채보다 높고 콜(통상 5년) 이후 금리 상향(step-up) 조건 확인")
-    add("hybrid", "자본성 증권 (영구채·RCPS)", s, R, C, None)
+        R.append((10, "적자 상장사 — 제3자배정 RCPS·CPS로 FI 유치 가능"))
+    C.append((0, "영구채는 금리가 일반 사채보다 높고 콜(통상 5년) 이후 금리 상향(step-up) 조건 확인"))
+    add("hybrid", "자본성 증권 (영구채·RCPS)", base, R, C, None)
 
     opts.sort(key=lambda o: -o["score"])
     return opts
@@ -426,3 +429,57 @@ def summary_line(name, industry, metrics, hist, bonds, top):
     if top:
         s += " 우선 검토할 방식은 " + " · ".join(o["title"] for o in top[:2]) + "입니다."
     return s
+
+
+# ── 비교 사례 ──
+def pick_comps(opt_key, me, pool, limit=5):
+    """me: {"key","industry","market","revenue","grade"} / pool: 최근 1년 같은 종류 조달 [(row, meta)]
+    meta: {"industry","market","revenue","grade"}. 회사당 1건, 고른 근거를 함께 돌려준다."""
+    out, seen = [], {me["key"]}
+
+    def take(cands, basis):
+        for row, meta in cands:
+            if len(out) >= limit:
+                return
+            if row["key"] in seen:
+                continue
+            seen.add(row["key"])
+            out.append((row, basis(meta) if callable(basis) else basis))
+
+    if opt_key == "public_bond":
+        gr = grade_rank(me.get("grade"))
+        if gr is not None:
+            near = [(r, m) for r, m in pool if m.get("grade") is not None and abs(grade_rank(m["grade"]) - gr) <= 1]
+            take([(r, m) for r, m in near if me.get("industry") and m.get("industry") == me["industry"]],
+                 lambda m: f"같은 업종 · 등급 {m['grade']}")
+            take(near, lambda m: f"비슷한 등급 ({m['grade']})")
+        elif me.get("industry"):
+            take([(r, m) for r, m in pool if m.get("industry") == me["industry"]], "같은 업종")
+        return out
+
+    if me.get("industry"):
+        take([(r, m) for r, m in pool if m.get("industry") == me["industry"]], "같은 업종")
+    rev = me.get("revenue")
+    if len(out) < limit and rev:
+        sim = [(r, m) for r, m in pool if m.get("market") == me.get("market") and m.get("revenue")
+               and rev / 3 <= m["revenue"] <= rev * 3]
+        sim.sort(key=lambda x: abs(math.log(x[1]["revenue"] / rev)))
+        mk = {"Y": "유가증권", "K": "코스닥", "N": "코넥스"}.get(me.get("market"), "")
+        take(sim, lambda m: f"{mk} · 매출 {eok(m['revenue'])}(비슷한 규모)".strip(" ·"))
+    return out
+
+
+def clip_sentences(text, limit):
+    """문장 단위로 자른다 (중간에서 '…'로 끊지 않음)."""
+    if not text:
+        return ""
+    t = re.sub(r"\s+", " ", text).strip()
+    if len(t) <= limit:
+        return t
+    parts = re.split(r"(?<=[다요음함됨]\.)\s+|(?<=\.)\s+(?=[가-힣A-Z\[(])", t)
+    out = ""
+    for p in parts:
+        if len(out) + len(p) + 1 > limit:
+            break
+        out = (out + " " + p).strip()
+    return out or t[:limit].rsplit(" ", 1)[0]

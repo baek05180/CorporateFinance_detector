@@ -119,17 +119,18 @@ def main():
 
     index = []
     since_peer = (today - timedelta(days=365)).isoformat()
-    by_ind_opt, by_mk_opt = {}, {}
+    pools = {ok: [] for ok in OPTION_MATCH}   # 비교 사례 후보: 최근 1년, 종류별
     for r in rows:
         if A.deal_date(r) < since_peer:
             continue
         code = r.get("stock_code") or corp_to_code.get(r["key"])
-        ind = (listed.get(code) or {}).get("industry")
+        meta = {"industry": (listed.get(code) or {}).get("industry") or r.get("industry"),
+                "market": (listed.get(code) or {}).get("market") or r.get("corp_cls") or "E",
+                "revenue": ((multi_a.get(code) or {}).get("cur") or {}).get("revenue"),
+                "grade": A.grade_of(r.get("rating"))}
         for ok, fn in OPTION_MATCH.items():
             if fn(r):
-                if ind:
-                    by_ind_opt.setdefault((ind, ok), []).append(r)
-                by_mk_opt.setdefault((r.get("corp_cls") or "E", ok), []).append(r)
+                pools[ok].append((r, meta))
 
     for key in keys:
         deals = by_co.get(key, [])
@@ -153,25 +154,39 @@ def main():
             "deals": [d for d in deals if A.deal_date(d) >= since3], "bonds": bp,
             "holders": (prof or {}).get("holders") or {}, "treasury_shares": (prof or {}).get("treasury_shares"),
         })
-        # 비교 사례: 같은 업종(없으면 같은 시장)의 최근 1년 같은 종류 조달
-        for o in options[:3]:
+        # 비교 사례: 공모채는 같은 등급대, 나머지는 같은 업종 → 같은 시장·비슷한 매출 규모 (회사당 1건, 근거 표시)
+        me = {"key": key, "industry": industry, "market": market, "grade": rating,
+              "revenue": ((multi_a.get(code) or {}).get("cur") or {}).get("revenue") if code else metrics.get("revenue")}
+        for o in options:
             if o["key"] not in OPTION_MATCH:
                 continue
-            ind_pool = by_ind_opt.get((industry, o["key"]), []) if industry else []
-            comps = [d for d in ind_pool if d["key"] != key][:5]
-            o["comps_scope"] = "같은 업종"
-            if len(comps) < 3:
-                ids = {d["id"] for d in comps}
-                comps += [d for d in by_mk_opt.get((market, o["key"]), []) if d["key"] != key and d["id"] not in ids][:5 - len(comps)]
-                o["comps_scope"] = "같은 업종·같은 시장" if ind_pool else "같은 시장"
             o["comps"] = [{k: d.get(k) for k in ("id", "key", "corp_name", "type", "amount", "offering", "coupon", "price",
-                                                 "rating", "pcbo") if d.get(k) is not None} | {"date": A.deal_date(d)}
-                          for d in comps]
+                                                 "rating", "pcbo", "series") if d.get(k) is not None}
+                          | {"date": A.deal_date(d), "basis": basis}
+                          for d, basis in A.pick_comps(o["key"], me, pools[o["key"]])]
 
+        ai = load_json(f"summaries/{key}.json", None)
+        biz = dict((prof or {}).get("business") or {})
+        if biz.get("overview"):
+            biz["overview_short"] = A.clip_sentences(biz["overview"], 320)
+        if biz.get("customers"):
+            biz["customers_short"] = A.clip_sentences(biz["customers"], 260)
+        # 재무상태 그래프: 부채총계·차입금 (연간 3개년 + 최근 분기)
+        debt_series = []
+        fa, fi = (prof or {}).get("fs_annual") or {}, (prof or {}).get("fs_interim") or {}
+        dh = fa.get("debt_hist") or [None, None, fa.get("debt")]
+        ay = int(fa["period"][:4]) if fa.get("period") else None
+        for r in series:
+            if r["kind"] == "annual":
+                d = dh[int(r["period"]) - ay + 2] if ay and 0 <= int(r["period"]) - ay + 2 <= 2 else None
+                debt_series.append({"period": r["period"], "liab": r.get("liab"), "debt": d})
+            elif r["kind"] == "interim":
+                debt_series.append({"period": r["period"], "liab": r.get("liab"), "debt": fi.get("debt")})
         co = {
+            "ai": ai, "debt_series": debt_series,
             "key": key, "name": name, "market": market, "stock_code": code, "industry": industry,
             "listing": kd, "info": {k: v for k, v in inf.items() if k not in ("checked",)} if inf else None,
-            "business": (prof or {}).get("business"), "profile_checked": (prof or {}).get("checked"),
+            "business": biz, "profile_checked": (prof or {}).get("checked"),
             "annual_name": (prof or {}).get("annual_name"), "annual_rcept": (prof or {}).get("annual_rcept"),
             "holders": (prof or {}).get("holders"), "treasury_shares": (prof or {}).get("treasury_shares"),
             "fs_annual": (prof or {}).get("fs_annual"), "fs_interim": (prof or {}).get("fs_interim"),
