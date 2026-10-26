@@ -31,10 +31,13 @@ class DartClient:
         self.session = session or requests.Session()
         self.calls = 0
         self.budget = None   # None = 제한 없음
+        self.deadline = None  # time.time() 기준 마감 시각
 
     def _spend(self):
         if self.budget is not None and self.calls >= self.budget:
             raise DartBudgetExceeded(f"호출 예산 {self.budget}회 소진")
+        if self.deadline is not None and time.time() >= self.deadline:
+            raise DartBudgetExceeded("시간 예산 소진")
 
     def _get(self, endpoint, **params):
         self._spend()

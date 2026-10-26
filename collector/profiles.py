@@ -292,7 +292,9 @@ def pick_targets(records, info, watch, today):
 # ── 실행 ──
 def run(dart, store, today=None):
     today = today or now_kst().date()
+    import time
     dart.budget = dart.calls + config.DART_RUN_BUDGET
+    dart.deadline = time.time() + config.PROFILE_TIME_BUDGET_MIN * 60
     diag = store.diag.setdefault("profiles", {})
     diag.clear()
     diag["run"] = now_kst().isoformat(timespec="minutes")

@@ -70,6 +70,7 @@ PRIVATE_BOND_EXCLUDE = ["금융", "은행", "카드", "캐피탈", "유동화", 
 
 # ── 기업 프로필 (profiles 모드) ──
 DART_RUN_BUDGET = 8000          # profiles 한 번 실행에서 쓸 최대 OpenDART 호출 수 (일일 한도 20,000)
+PROFILE_TIME_BUDGET_MIN = 100  # profiles 한 번 실행의 최대 시간(분). 넘으면 저장하고 다음 실행에서 이어감
 PROFILE_RECHECK_DAYS = 7        # 프로필이 있는 회사는 이 주기로 새 정기보고서가 나왔는지 확인
 COMPANY_INFO_RECHECK_DAYS = 60  # 기업개황(대표·주소·업종코드 등) 재확인 주기
 PROFILE_TARGET_DAYS = 1095      # 최근 3년 안에 조달 기록이 있는 회사 = 프로필 대상
