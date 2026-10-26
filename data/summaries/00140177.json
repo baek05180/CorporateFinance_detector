@@ -1,0 +1,87 @@
+{
+ "corp_code": "00140177",
+ "name": "GS리테일",
+ "source_rcept": "20260311004487",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "GS리테일은 편의점 GS25, 슈퍼마켓 GS THE FRESH, 홈쇼핑 GS SHOP을 운영해 소비자에게 식품·생활용품을 파는 GS그룹 유통회사입니다.",
+ "facts": "유가증권 상장 2011.12 · 2025 연결 매출 11.96조(+3.3%) · 영업이익 2,921억",
+ "mix_line": "매출 편의점 74.8% · 슈퍼 14.6% · 홈쇼핑 8.8%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "상품 매입",
+    "note": "식품·생활용품 공급업체"
+   }
+  ],
+  "company": {
+   "name": "GS리테일",
+   "note": "편의점 · 슈퍼 · 홈쇼핑"
+  },
+  "customers": [
+   {
+    "name": "GS25 이용 고객",
+    "note": "직영점·가맹점"
+   },
+   {
+    "name": "GS THE FRESH 고객",
+    "note": ""
+   },
+   {
+    "name": "홈쇼핑 시청자",
+    "note": "TV·모바일"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "편의점(GS25)",
+    "amount": 8939683000000,
+    "share": 74.8
+   },
+   {
+    "name": "슈퍼(GS THE FRESH)",
+    "amount": 1742513000000,
+    "share": 14.6
+   },
+   {
+    "name": "홈쇼핑(GS SHOP)",
+    "amount": 1049110000000,
+    "share": 8.8
+   },
+   {
+    "name": "개발사업",
+    "amount": 34265000000,
+    "share": 0.3
+   },
+   {
+    "name": "공통·기타",
+    "amount": 191851000000,
+    "share": 1.6
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출의 75%가 편의점 GS25다. 2025년 편의점 매출은 3.2%, 슈퍼는 8.4% 늘었고 홈쇼핑은 0.3% 줄었다.",
+ "business": "편의점(GS25), 수퍼마켓(GS THE FRESH), 홈쇼핑(GS SHOP·GS MY SHOP·Mobile LIVE) 등 소매유통업과 부동산 개발·상업시설 운영을 합니다. 물류 자회사 지에스네트웍스, 상품 자회사 후레쉬서브·쿠캣을 둡니다.",
+ "products": [
+  {
+   "name": "GS25",
+   "segment": "편의점",
+   "desc": "",
+   "share": 74.8
+  },
+  {
+   "name": "GS THE FRESH",
+   "segment": "수퍼",
+   "desc": "",
+   "share": 14.6
+  },
+  {
+   "name": "GS SHOP",
+   "segment": "홈쇼핑",
+   "desc": "TV·모바일",
+   "share": 8.8
+  }
+ ],
+ "customers": "편의점·수퍼는 직영점과 가맹점에서 대면·비대면으로 팔고, 홈쇼핑은 TV·모바일로 주문을 받습니다.",
+ "written": "2026-10-27"
+}
