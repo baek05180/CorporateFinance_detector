@@ -18,6 +18,7 @@ from datetime import date, timedelta
 from . import config, docparse
 from .dart import DartBudgetExceeded, DartError, DartQuotaExceeded
 from .normalize import num
+from .datagokr import redact
 from .refdata import StockPriceError, kind_listed, stock_prices
 from .store import dump_json, load_json, now_kst
 
@@ -331,7 +332,7 @@ def run(dart, store, today=None):
             dump_json("ref/listed.json", listed)
         diag["listed"] = len(listed)
     except Exception as e:  # noqa: BLE001
-        diag["listed_error"] = str(e)[:300]
+        diag["listed_error"] = redact(e)[:300]
         log.warning("KIND 목록 실패: %s", e)
 
     # 2) 종목코드 → 고유번호
@@ -343,7 +344,7 @@ def run(dart, store, today=None):
                   "map": {r["stock_code"]: r["corp_code"] for r in rows if r["stock_code"]}}
             dump_json("ref/corpcodes.json", cc)
         except (DartError, DartBudgetExceeded) as e:
-            diag["corpcode_error"] = str(e)[:200]
+            diag["corpcode_error"] = redact(e)[:200]
     corpcodes = cc.get("map", {})
     listed_cc = {code: corpcodes[code] for code in listed if code in corpcodes}
 
@@ -354,9 +355,9 @@ def run(dart, store, today=None):
             dump_json("ref/prices.json", {"date": bas, "prices": prices}, indent=None)
         diag["prices"] = len(prices)
     except StockPriceError as e:
-        diag["prices_error"] = str(e)[:300]
+        diag["prices_error"] = redact(e)[:300]
     except Exception as e:  # noqa: BLE001
-        diag["prices_error"] = str(e)[:300]
+        diag["prices_error"] = redact(e)[:300]
 
     info = load_json("ref/company_info.json", {})
     try:
@@ -378,7 +379,7 @@ def run(dart, store, today=None):
             try:
                 docs = dart.document(rno)
             except DartError as e:
-                return rno, {"demand_dt": None, "error": str(e)[:100], "v": docparse.BOND_DOC_VERSION}, None
+                return rno, {"demand_dt": None, "error": redact(e)[:100], "v": docparse.BOND_DOC_VERSION}, None
             main = max(docs.values(), key=len) if docs else ""
             got = docparse.bond_schedule(main)
             miss = None
@@ -450,7 +451,7 @@ def run(dart, store, today=None):
         diag["budget_exhausted"] = True
         log.info("호출 예산 소진 — 다음 실행에서 이어감")
     except DartQuotaExceeded as e:
-        diag["quota_exceeded"] = str(e)[:200]
+        diag["quota_exceeded"] = redact(e)[:200]
     finally:
         dump_json("ref/company_info.json", info)
         diag["dart_calls"] = dart.calls

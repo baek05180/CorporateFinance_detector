@@ -12,6 +12,11 @@ from . import config
 log = logging.getLogger(__name__)
 
 
+def _redact(e):
+    from .datagokr import redact
+    return redact(e)
+
+
 class DartQuotaExceeded(Exception):
     """status 020: 일일 호출 한도 초과."""
 
@@ -63,7 +68,7 @@ class DartClient:
                 last_err = e
                 time.sleep(2 * (attempt + 1))
         else:
-            raise DartError(f"{endpoint} 호출 실패: {last_err}")
+            raise DartError(f"{endpoint} 호출 실패: {_redact(last_err)}")
 
         status = data.get("status")
         if status == "000":
@@ -129,7 +134,7 @@ class DartClient:
                 last_err = e
                 time.sleep(2 * (attempt + 1))
         else:
-            raise DartError(f"{endpoint} 다운로드 실패: {last_err}")
+            raise DartError(f"{endpoint} 다운로드 실패: {_redact(last_err)}")
         if content[:2] != b"PK":   # zip이 아니면 오류 응답(XML/JSON)
             text = content[:400].decode("utf-8", "ignore")
             if "020" in text and "제한" in text:

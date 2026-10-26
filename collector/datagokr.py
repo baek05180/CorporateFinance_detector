@@ -17,7 +17,13 @@ class DataGoKrError(Exception):
 
 def redact(text):
     """오류 메시지에 인증키가 섞여 공개 저장소에 남지 않도록 지운다."""
-    return re.sub(r"(serviceKey=)[^&\s]+", r"\1***", str(text))
+    t = re.sub(r"((?:serviceKey|crtfc_key)=)[^&\s'\"]+", r"\1***", str(text))
+    for k in (config.DATA_GO_KR_KEY, config.DART_API_KEY):   # 인코딩 여부와 관계없이 키 값 자체도 지운다
+        if k and len(k) > 8:
+            from urllib.parse import quote, unquote
+            for v in {k, unquote(k), quote(unquote(k), safe="")}:
+                t = t.replace(v, "***")
+    return t
 
 
 class BondInfoClient:

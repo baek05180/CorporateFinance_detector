@@ -212,7 +212,8 @@ def main(argv=None):
         profiles.run(dart, store, today)
         d = store.diag.pop("profiles", {})
         # 공시 감시 실행과 같은 파일을 건드리지 않도록 진단은 따로 저장 (동시 push 충돌 방지)
-        dump_json("diag_profiles.json", d)
+        import json
+        dump_json("diag_profiles.json", json.loads(redact(json.dumps(d, ensure_ascii=False))))
         summary = (f"mode=profiles · DART 호출 {dart.calls}회 · 대상 {d.get('targets')}곳 · 갱신 {d.get('profiles_done')}곳"
                    f" · 예산소진={'예' if d.get('budget_exhausted') else '아니오'}")
         log.info(summary)

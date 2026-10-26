@@ -124,5 +124,6 @@ class Store:
         # seen은 최근 것만 유지 (파일이 끝없이 커지지 않게)
         wrote |= _dump("seen.json", sorted(self.seen)[-20000:])
         wrote |= _dump("corp_cache.json", self.corp_cache)
-        wrote |= _dump("diag.json", self.diag)
+        from .datagokr import redact
+        wrote |= _dump("diag.json", json.loads(redact(json.dumps(self.diag, ensure_ascii=False))))
         return wrote
