@@ -5,14 +5,13 @@
   "sec": 0,
   "todo": 0
  },
- "budget_exhausted": true,
- "dart_calls": 4000,
+ "dart_calls": 842,
  "listed": 2758,
  "prices_error": "HTTP 403: {\n  \"OpenAPI_ServiceResponse\": {\n    \"cmmMsgHeader\": {\n      \"errMsg\": \"SERVICE_KEY_IS_NOT_REGISTERED_ERROR\",\n      \"returnAuthMsg\": \"등록되지 않은 서비스키\",\n      \"returnReasonCode\": \"30\"\n    }\n  }\n}\n",
- "profiles_done": 376,
- "profiles_fresh": 1046,
+ "profiles_done": 75,
+ "profiles_fresh": 1422,
  "profiles_left": 0,
- "profiles_sec": 1967,
- "run": "2026-10-27T04:18+09:00",
- "targets": 1422
+ "profiles_sec": 46,
+ "run": "2026-10-27T06:03+09:00",
+ "targets": 1497
 }

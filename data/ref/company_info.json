@@ -6355,6 +6355,20 @@
   "stock_code": "039830",
   "stock_name": "오로라"
  },
+ "00141583": {
+  "acc_mt": "12",
+  "adres": "서울특별시 서초구 반포대로27길 16, 8층(서초동, 파크빌딩)",
+  "ceo_nm": "김종일",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 삼양컴텍",
+  "est_dt": "19621222",
+  "hm_url": "samyangct.com/",
+  "induty_code": "25200",
+  "jurir_no": "1101110035728",
+  "stock_code": "484590",
+  "stock_name": "삼양컴텍"
+ },
  "00141608": {
   "acc_mt": "12",
   "adres": "부산광역시 강서구  녹산산단289로 6 오리엔탈정공",
@@ -10597,6 +10611,20 @@
   "stock_code": "060380",
   "stock_name": "동양에스텍"
  },
+ "00179489": {
+  "acc_mt": "12",
+  "adres": "경기도 화성시 팔탄면 노하길 361-12",
+  "ceo_nm": "이관순,차봉권",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "명인제약(주)",
+  "est_dt": "19881108",
+  "hm_url": "www.myunginph.co.kr",
+  "induty_code": "21212",
+  "jurir_no": "1243110022866",
+  "stock_code": "317450",
+  "stock_name": "명인제약"
+ },
  "00180263": {
   "acc_mt": "12",
   "adres": "서울특별시 광진구 능동로 90 더클래식 500 씨 404호",
@@ -10680,6 +10708,20 @@
   "jurir_no": "1301110008862",
   "stock_code": "025530",
   "stock_name": "에스제이엠홀딩스"
+ },
+ "00182696": {
+  "acc_mt": "12",
+  "adres": "전라남도 해남군 화원면 조선소길 498",
+  "ceo_nm": "왕삼동, 이석문",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "Y",
+  "corp_name": "대한조선 주식회사",
+  "est_dt": "19870930",
+  "hm_url": "www.daehanship.com",
+  "induty_code": "3111",
+  "jurir_no": "2047110003887",
+  "stock_code": "439260",
+  "stock_name": "대한조선"
  },
  "00184667": {
   "acc_mt": "12",
@@ -11451,6 +11493,20 @@
   "stock_code": "030520",
   "stock_name": "한컴"
  },
+ "00204323": {
+  "acc_mt": "12",
+  "adres": "경기도 안산시 단원구 산단로68번길 37",
+  "ceo_nm": "신재명, 권대희 (각자 대표이사)",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "키스트론(주)",
+  "est_dt": "19921127",
+  "hm_url": "www.kistron.com/",
+  "induty_code": "28302",
+  "jurir_no": "1746110015485",
+  "stock_code": "475430",
+  "stock_name": "키스트론"
+ },
  "00204642": {
   "acc_mt": "12",
   "adres": "대구광역시 수성구 동대구로 23",
@@ -12221,6 +12277,20 @@
   "stock_code": "033230",
   "stock_name": "인성정보"
  },
+ "00229030": {
+  "acc_mt": "12",
+  "adres": "경상남도 창원시 성산구 공단로 148",
+  "ceo_nm": "신상호, 박준표",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)알멕",
+  "est_dt": "20011101",
+  "hm_url": "www.almac.co.kr",
+  "induty_code": "24222",
+  "jurir_no": "1942110050823",
+  "stock_code": "354320",
+  "stock_name": "알멕"
+ },
  "00229058": {
   "acc_mt": "12",
   "adres": "서울특별시 영등포구 여의대로 24 (여의도동, 에프케이아이타워) 17층",
@@ -12234,6 +12304,20 @@
   "jurir_no": "1101111220641",
   "stock_code": "",
   "stock_name": "DB캐피탈"
+ },
+ "00229085": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강서구 공항대로 395 (등촌동, 기도산업사옥)",
+  "ceo_nm": "박장희",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)기도산업",
+  "est_dt": "19800820",
+  "hm_url": "www.kido.co.kr",
+  "induty_code": "14199",
+  "jurir_no": "1101110278980",
+  "stock_code": "282620",
+  "stock_name": "기도산업"
  },
  "00230036": {
   "acc_mt": "12",
@@ -12444,6 +12528,20 @@
   "jurir_no": "1943110004498",
   "stock_code": "034940",
   "stock_name": "조아제약"
+ },
+ "00231901": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 테헤란로 512, 13층(대치동, 신안빌딩)",
+  "ceo_nm": "박기호",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "엘비인베스트먼트(주)",
+  "est_dt": "19960704",
+  "hm_url": "lbinvestment.com/",
+  "induty_code": "64991",
+  "jurir_no": "1101111293531",
+  "stock_code": "309960",
+  "stock_name": "LB인베스트먼트"
  },
  "00231929": {
   "acc_mt": "12",
@@ -13004,6 +13102,20 @@
   "jurir_no": "1101111419286",
   "stock_code": "",
   "stock_name": "엠지캐피탈"
+ },
+ "00248974": {
+  "acc_mt": "12",
+  "adres": "경기도 화성시 향남읍 제약단지로 13-39",
+  "ceo_nm": "최태홍",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "하나제약(주)",
+  "est_dt": "19780119",
+  "hm_url": "www.hanaph.co.kr",
+  "induty_code": "212",
+  "jurir_no": "1311110002409",
+  "stock_code": "293480",
+  "stock_name": "하나제약"
  },
  "00249034": {
   "acc_mt": "12",
@@ -15105,6 +15217,20 @@
   "stock_code": "068940",
   "stock_name": "셀피글로벌"
  },
+ "00309460": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 언주로 819",
+  "ceo_nm": "황유선",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "에이치비인베스트먼트(주)",
+  "est_dt": "19991111",
+  "hm_url": "www.hbvc.co.kr",
+  "induty_code": "649",
+  "jurir_no": "1101111806409",
+  "stock_code": "440290",
+  "stock_name": "HB인베스트먼트"
+ },
  "00309503": {
   "acc_mt": "12",
   "adres": "경상남도 사천시  사남면 공단1로 78 한국항공우주산업",
@@ -15272,6 +15398,20 @@
   "jurir_no": "1101111347940",
   "stock_code": "056730",
   "stock_name": "CNT85"
+ },
+ "00319272": {
+  "acc_mt": "12",
+  "adres": "경상북도 구미시 3공단2로 107",
+  "ceo_nm": "박종헌, 박채원(각자 대표)",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)성우",
+  "est_dt": "19920901",
+  "hm_url": "www.e-sungwoo.co.kr",
+  "induty_code": "282",
+  "jurir_no": "1760110007078",
+  "stock_code": "458650",
+  "stock_name": "성우"
  },
  "00321204": {
   "acc_mt": "12",
@@ -15538,6 +15678,20 @@
   "jurir_no": "1101111532286",
   "stock_code": "122830",
   "stock_name": "원포유"
+ },
+ "00338170": {
+  "acc_mt": "12",
+  "adres": "부산광역시 해운대구 해운대로191번길 16",
+  "ceo_nm": "강동호.김정득(각자 대표이사)",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)이닉스",
+  "est_dt": "19840507",
+  "hm_url": "www.inics.kr",
+  "induty_code": "30399",
+  "jurir_no": "1801110053411",
+  "stock_code": "452400",
+  "stock_name": "이닉스"
  },
  "00339072": {
   "acc_mt": "12",
@@ -16491,6 +16645,20 @@
   "stock_code": "060590",
   "stock_name": "씨티씨바이오"
  },
+ "00362441": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 테헤란로 510 루첸타워",
+  "ceo_nm": "류석문",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "현대오토에버(주)",
+  "est_dt": "20000410",
+  "hm_url": "www.hyundai-autoever.com",
+  "induty_code": "582",
+  "jurir_no": "1101111935638",
+  "stock_code": "307950",
+  "stock_name": "현대오토에버"
+ },
  "00362858": {
   "acc_mt": "12",
   "adres": "서울특별시 영등포구 은행로 11",
@@ -16869,6 +17037,20 @@
   "stock_code": "097870",
   "stock_name": "효성오앤비"
  },
+ "00367400": {
+  "acc_mt": "12",
+  "adres": "경기도 용인시 처인구 백암면 백암로 79",
+  "ceo_nm": "김기한",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "모티브링크(주)",
+  "est_dt": "19770321",
+  "hm_url": "evpart.co.kr",
+  "induty_code": "26294",
+  "jurir_no": "1345110002367",
+  "stock_code": "463480",
+  "stock_name": "모티브링크"
+ },
  "00367455": {
   "acc_mt": "12",
   "adres": "인천광역시 서구 검단로 51 -",
@@ -16938,6 +17120,20 @@
   "jurir_no": "1244110014316",
   "stock_code": "111380",
   "stock_name": "동인기연"
+ },
+ "00367844": {
+  "acc_mt": "12",
+  "adres": "서울특별시 중구 마른내로 27 TOWER 107 13층~14층",
+  "ceo_nm": "구본삼",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "자이에스앤디(주)",
+  "est_dt": "20000408",
+  "hm_url": "www.xisnd.com/",
+  "induty_code": "681",
+  "jurir_no": "1101111934557",
+  "stock_code": "317400",
+  "stock_name": "자이에스앤디"
  },
  "00367871": {
   "acc_mt": "12",
@@ -18016,6 +18212,20 @@
   "jurir_no": "1101111955694",
   "stock_code": "069080",
   "stock_name": "웹젠"
+ },
+ "00405506": {
+  "acc_mt": "12",
+  "adres": "경기도 성남시 중원구 둔촌대로 446",
+  "ceo_nm": "박상익",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 삼영에스앤씨",
+  "est_dt": "20000612",
+  "hm_url": "samyoungsnc.com",
+  "induty_code": "2629",
+  "jurir_no": "1311110050086",
+  "stock_code": "361670",
+  "stock_name": "삼영에스앤씨"
  },
  "00405719": {
   "acc_mt": "12",
@@ -19389,6 +19599,20 @@
   "stock_code": "067990",
   "stock_name": "도이치모터스"
  },
+ "00450010": {
+  "acc_mt": "12",
+  "adres": "울산광역시 북구 모듈화산업로 115",
+  "ceo_nm": "강상우, 최재흔",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "(주)씨티알모빌리티",
+  "est_dt": "19940221",
+  "hm_url": "www.ctrmobility.co.kr",
+  "induty_code": "303",
+  "jurir_no": "1942110014431",
+  "stock_code": "308170",
+  "stock_name": "씨티알모빌리티"
+ },
  "00450931": {
   "acc_mt": "12",
   "adres": "경기도 평택시 포승읍 포승공단로118번길 88",
@@ -19402,6 +19626,34 @@
   "jurir_no": "1350110062633",
   "stock_code": "101970",
   "stock_name": "우양에이치씨"
+ },
+ "00450995": {
+  "acc_mt": "12",
+  "adres": "경기도 시흥시 엠티브이26로58번길 56 -",
+  "ceo_nm": "이원해",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "대모엔지니어링주식회사",
+  "est_dt": "19890616",
+  "hm_url": "www.daemo.co.kr",
+  "induty_code": "29242",
+  "jurir_no": "1101110633556",
+  "stock_code": "317850",
+  "stock_name": "대모"
+ },
+ "00453284": {
+  "acc_mt": "12",
+  "adres": "경기도 성남시 수정구 금토로80번길 15-3 (금토동)",
+  "ceo_nm": "송종화",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "교촌에프앤비(주)",
+  "est_dt": "19991112",
+  "hm_url": "kyochonfnb.com",
+  "induty_code": "46313",
+  "jurir_no": "1752110009005",
+  "stock_code": "339770",
+  "stock_name": "교촌에프앤비"
  },
  "00453442": {
   "acc_mt": "12",
@@ -19514,6 +19766,20 @@
   "jurir_no": "1101110609771",
   "stock_code": "080160",
   "stock_name": "모두투어"
+ },
+ "00458234": {
+  "acc_mt": "12",
+  "adres": "서울특별시 종로구 우정국로 26 에이동 21층, 22층(표시층 23층, 25층) (공평동, 센트로폴리스)",
+  "ceo_nm": "윤찬의",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "아시아나아이디티(주)",
+  "est_dt": "19910902",
+  "hm_url": "www.asianaidt.com",
+  "induty_code": "62021",
+  "jurir_no": "1101110801848",
+  "stock_code": "267850",
+  "stock_name": "아시아나IDT"
  },
  "00458562": {
   "acc_mt": "12",
@@ -20551,6 +20817,20 @@
   "stock_code": "068240",
   "stock_name": "다원시스"
  },
+ "00523936": {
+  "acc_mt": "12",
+  "adres": "세종특별자치시  소정면 소정산단6로 48 에이치비솔루션 주식회사",
+  "ceo_nm": "이재원",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "에이치비솔루션(주)",
+  "est_dt": "20010906",
+  "hm_url": "www.hb-solution.co.kr",
+  "induty_code": "29272",
+  "jurir_no": "1311110065514",
+  "stock_code": "297890",
+  "stock_name": "HB솔루션"
+ },
  "00524421": {
   "acc_mt": "12",
   "adres": "경기도 용인시 처인구 양지면 중부대로 2374-36",
@@ -21027,6 +21307,20 @@
   "stock_code": "094970",
   "stock_name": "제이엠티"
  },
+ "00533809": {
+  "acc_mt": "12",
+  "adres": "경기도 안성시 원곡면 원당로 354",
+  "ceo_nm": "이법표",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "N",
+  "corp_name": "주식회사 바스칸바이오제약",
+  "est_dt": "19860325",
+  "hm_url": "www.baskhanbio.com",
+  "induty_code": "212",
+  "jurir_no": "1101110422090",
+  "stock_code": "354390",
+  "stock_name": "바스칸바이오제약"
+ },
  "00533924": {
   "acc_mt": "12",
   "adres": "대구광역시 달서구 성서로35길 26",
@@ -21040,6 +21334,34 @@
   "jurir_no": "1701110262452",
   "stock_code": "131400",
   "stock_name": "이브이첨단소재"
+ },
+ "00534598": {
+  "acc_mt": "12",
+  "adres": "경기도 용인시 처인구 양지면 중부대로1960번길 53",
+  "ceo_nm": "김선영",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "Y",
+  "corp_name": "주식회사 한컴라이프케어",
+  "est_dt": "19711221",
+  "hm_url": "www.hancomlifecare.com",
+  "induty_code": "27199",
+  "jurir_no": "1345110021549",
+  "stock_code": "372910",
+  "stock_name": "한컴라이프케어"
+ },
+ "00534701": {
+  "acc_mt": "12",
+  "adres": "경상북도 구미시 1공단로10길 80",
+  "ceo_nm": "이성욱",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)에이치티로보틱스",
+  "est_dt": "19990901",
+  "hm_url": "www.seamechanics.com",
+  "induty_code": "259",
+  "jurir_no": "1760110019792",
+  "stock_code": "396300",
+  "stock_name": "HT로보틱스"
  },
  "00534729": {
   "acc_mt": "12",
@@ -21769,6 +22091,20 @@
   "stock_code": "091440",
   "stock_name": "한울소재과학"
  },
+ "00560849": {
+  "acc_mt": "12",
+  "adres": "충청북도 청주시 흥덕구 오송읍 오송생명4로 163",
+  "ceo_nm": "여경목",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)에스앤디",
+  "est_dt": "19981215",
+  "hm_url": "www.isnd.co.kr",
+  "induty_code": "108",
+  "jurir_no": "1615110028766",
+  "stock_code": "260970",
+  "stock_name": "에스앤디"
+ },
  "00560982": {
   "acc_mt": "12",
   "adres": "서울특별시 노원구 공릉로 232 5층 (공릉동, 서울테크노파크)",
@@ -21951,6 +22287,20 @@
   "stock_code": "101170",
   "stock_name": "우림피티에스"
  },
+ "00567897": {
+  "acc_mt": "12",
+  "adres": "경기도 김포시 월곶면 김포대로2918번길 22",
+  "ceo_nm": "류재완, 송진웅(각자 대표이사)",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)에스비비테크",
+  "est_dt": "20001118",
+  "hm_url": "www.sbb.co.kr/",
+  "induty_code": "291",
+  "jurir_no": "1101112113142",
+  "stock_code": "389500",
+  "stock_name": "에스비비테크"
+ },
  "00568188": {
   "acc_mt": "12",
   "adres": "충청남도 천안시 서북구 성거읍 오송2길 15-21",
@@ -22006,6 +22356,20 @@
   "jurir_no": "1601110109896",
   "stock_code": "092070",
   "stock_name": "디엔에프"
+ },
+ "00571298": {
+  "acc_mt": "12",
+  "adres": "경상북도 구미시 산동면 첨단기업7로 98-23",
+  "ceo_nm": "이준용",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "덕우전자(주)",
+  "est_dt": "19920801",
+  "hm_url": "www.derkwoo.com",
+  "induty_code": "2629",
+  "jurir_no": "1760110006963",
+  "stock_code": "263600",
+  "stock_name": "덕우전자"
  },
  "00571483": {
   "acc_mt": "12",
@@ -22090,6 +22454,20 @@
   "jurir_no": "1101111020299",
   "stock_code": "099220",
   "stock_name": "SDN"
+ },
+ "00575106": {
+  "acc_mt": "12",
+  "adres": "경기도 평택시 청북읍 현곡산단로93번길 6",
+  "ceo_nm": "백영현",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "씨유테크 주식회사",
+  "est_dt": "20040923",
+  "hm_url": "www.cutech.co.kr",
+  "induty_code": "26224",
+  "jurir_no": "1313110055652",
+  "stock_code": "376290",
+  "stock_name": "씨유테크"
  },
  "00576789": {
   "acc_mt": "12",
@@ -22553,6 +22931,20 @@
   "stock_code": "093520",
   "stock_name": "매커스"
  },
+ "00598198": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 테헤란로 620 에이동 14층",
+  "ceo_nm": "김학범",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "컴퍼니케이파트너스(주)",
+  "est_dt": "20061018",
+  "hm_url": "www.kpartners.co.kr",
+  "induty_code": "649",
+  "jurir_no": "1101113544263",
+  "stock_code": "307930",
+  "stock_name": "컴퍼니케이"
+ },
  "00599106": {
   "acc_mt": "12",
   "adres": "서울특별시 강남구 학동로 155 (논현동, 원영빌딩지하1층,3층, 4층, 5층, 6층)",
@@ -22721,6 +23113,20 @@
   "stock_code": "093320",
   "stock_name": "케이아이엔엑스"
  },
+ "00604028": {
+  "acc_mt": "12",
+  "adres": "인천광역시 부평구 부평북로 118",
+  "ceo_nm": "최석림",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 피코그램",
+  "est_dt": "20020307",
+  "hm_url": "www.picogram.com",
+  "induty_code": "339",
+  "jurir_no": "1101112463654",
+  "stock_code": "376180",
+  "stock_name": "피코그램"
+ },
  "00604268": {
   "acc_mt": "12",
   "adres": "경기도 안양시 동안구 부림로170번길 41-14 (관양동, 에이프로 글로벌센터)",
@@ -22861,6 +23267,20 @@
   "stock_code": "183490",
   "stock_name": "엔지켐생명과학"
  },
+ "00607496": {
+  "acc_mt": "12",
+  "adres": "대전광역시 유성구 유성대로1596번길 32-48 &nbsp",
+  "ceo_nm": "김정묵",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)한빛레이저",
+  "est_dt": "19971007",
+  "hm_url": "www.hblaser.co.kr",
+  "induty_code": "29221",
+  "jurir_no": "1601110066145",
+  "stock_code": "452190",
+  "stock_name": "한빛레이저"
+ },
  "00607797": {
   "acc_mt": "12",
   "adres": "서울특별시 강남구 테헤란로28길 25-",
@@ -22888,6 +23308,20 @@
   "jurir_no": "1101110948997",
   "stock_code": "131220",
   "stock_name": "대한과학"
+ },
+ "00608440": {
+  "acc_mt": "12",
+  "adres": "경기도 용인시 수지구 신수로 767 에이동 2401호",
+  "ceo_nm": "최윤소",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)티앤엘",
+  "est_dt": "19980609",
+  "hm_url": "www.tnl.co.kr/",
+  "induty_code": "213",
+  "jurir_no": "1345110028404",
+  "stock_code": "340570",
+  "stock_name": "티앤엘"
  },
  "00608699": {
   "acc_mt": "12",
@@ -23197,6 +23631,20 @@
   "stock_code": "123570",
   "stock_name": "이엠넷"
  },
+ "00616962": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 테헤란로 234, 4층(역삼동, 삼익빌딩)",
+  "ceo_nm": "김진하",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "린드먼아시아인베스트먼트(주)",
+  "est_dt": "20060705",
+  "hm_url": "www.laic.kr",
+  "induty_code": "64209",
+  "jurir_no": "1101113489154",
+  "stock_code": "277070",
+  "stock_name": "린드먼아시아"
+ },
  "00617314": {
   "acc_mt": "12",
   "adres": "인천광역시 남구 염전로187번길 33",
@@ -23308,6 +23756,20 @@
   "jurir_no": "1101113224849",
   "stock_code": "124500",
   "stock_name": "아이티센글로벌"
+ },
+ "00622787": {
+  "acc_mt": "12",
+  "adres": "경기도 화성시 삼성1로4길 22",
+  "ceo_nm": "조병기",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "Y",
+  "corp_name": "(주)바이오노트",
+  "est_dt": "20030328",
+  "hm_url": "www.bionote.co.kr",
+  "induty_code": "213",
+  "jurir_no": "1348110324294",
+  "stock_code": "377740",
+  "stock_name": "바이오노트"
  },
  "00623184": {
   "acc_mt": "12",
@@ -23799,6 +24261,20 @@
   "stock_code": "160190",
   "stock_name": "하이젠알앤엠"
  },
+ "00651017": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 테헤란로 534 글라스타워빌딩 3층",
+  "ceo_nm": "이승원",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "나우아이비캐피탈(주)",
+  "est_dt": "20070806",
+  "hm_url": "www.nauib.com",
+  "induty_code": "64919",
+  "jurir_no": "1101113731563",
+  "stock_code": "293580",
+  "stock_name": "나우IB"
+ },
  "00651901": {
   "acc_mt": "12",
   "adres": "부산광역시 강서구 유통단지1로57번가길 6",
@@ -23854,6 +24330,20 @@
   "jurir_no": "1348110052019",
   "stock_code": "",
   "stock_name": "네오바이오텍"
+ },
+ "00653024": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강서구 마곡중앙로 143 르웨스트시티 비동 8층(마곡동)",
+  "ceo_nm": "박병률",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "주식회사 진에어",
+  "est_dt": "20080123",
+  "hm_url": "www.jinair.com",
+  "induty_code": "511",
+  "jurir_no": "1201110454976",
+  "stock_code": "272450",
+  "stock_name": "진에어"
  },
  "00653194": {
   "acc_mt": "12",
@@ -23966,6 +24456,20 @@
   "jurir_no": "1101112453184",
   "stock_code": "461300",
   "stock_name": "아이스크림미디어"
+ },
+ "00657783": {
+  "acc_mt": "12",
+  "adres": "서울특별시 금천구 벚꽃로20길 24",
+  "ceo_nm": "유형민",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "모델솔루션 주식회사",
+  "est_dt": "20050225",
+  "hm_url": "www.model-solution.com",
+  "induty_code": "292",
+  "jurir_no": "1101113176925",
+  "stock_code": "417970",
+  "stock_name": "모델솔루션"
  },
  "00657987": {
   "acc_mt": "12",
@@ -24233,6 +24737,20 @@
   "stock_code": "176590",
   "stock_name": "코나솔"
  },
+ "00667373": {
+  "acc_mt": "12",
+  "adres": "울산광역시 북구 매곡산업로 21",
+  "ceo_nm": "최지용",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "현대힘스 주식회사",
+  "est_dt": "20080425",
+  "hm_url": "www.hyms.kr",
+  "induty_code": "31114",
+  "jurir_no": "2301110143443",
+  "stock_code": "460930",
+  "stock_name": "현대힘스"
+ },
  "00667425": {
   "acc_mt": "12",
   "adres": "경기도 안성시 일죽면 서동대로 7280-26 &nbsp",
@@ -24260,6 +24778,20 @@
   "jurir_no": "1101113306861",
   "stock_code": "102370",
   "stock_name": "케이옥션"
+ },
+ "00668965": {
+  "acc_mt": "12",
+  "adres": "경기도 안성시 금석3길 30",
+  "ceo_nm": "신현국",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)지오엘리먼트",
+  "est_dt": "20050503",
+  "hm_url": "www.goelement.co.kr",
+  "induty_code": "262",
+  "jurir_no": "1313110059571",
+  "stock_code": "311320",
+  "stock_name": "지오엘리먼트"
  },
  "00669450": {
   "acc_mt": "12",
@@ -24835,6 +25367,20 @@
   "stock_code": "",
   "stock_name": "우방"
  },
+ "00760971": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 테헤란로 231",
+  "ceo_nm": "김창한",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "주식회사 크래프톤",
+  "est_dt": "20070326",
+  "hm_url": "www.krafton.com",
+  "induty_code": "5821",
+  "jurir_no": "1101113645772",
+  "stock_code": "259960",
+  "stock_name": "크래프톤"
+ },
  "00760999": {
   "acc_mt": "12",
   "adres": "경상남도 김해시 진영읍 본산로269번길 16-34 -",
@@ -24848,6 +25394,20 @@
   "jurir_no": "1341110025060",
   "stock_code": "263810",
   "stock_name": "상신전자"
+ },
+ "00761059": {
+  "acc_mt": "12",
+  "adres": "인천광역시 부평구 부평대로329번길 46",
+  "ceo_nm": "이재신, 이도훈",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "펌텍코리아 주식회사",
+  "est_dt": "20010810",
+  "hm_url": "www.pum-tech.co.kr",
+  "induty_code": "22232",
+  "jurir_no": "1211110088451",
+  "stock_code": "251970",
+  "stock_name": "펌텍코리아"
  },
  "00761183": {
   "acc_mt": "12",
@@ -24932,6 +25492,48 @@
   "jurir_no": "1101112085523",
   "stock_code": "234340",
   "stock_name": "헥토파이낸셜"
+ },
+ "00765462": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 언주로 723 8층(논현동)",
+  "ceo_nm": "김창헌",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "씨에스베어링 주식회사",
+  "est_dt": "20071109",
+  "hm_url": "www.csbrg.com",
+  "induty_code": "29141",
+  "jurir_no": "1801110611863",
+  "stock_code": "297090",
+  "stock_name": "씨에스베어링"
+ },
+ "00765569": {
+  "acc_mt": "12",
+  "adres": "경기도 화성시 동탄구 동탄산단3길 20-5 -",
+  "ceo_nm": "강해철",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "기가비스(주)",
+  "est_dt": "20040218",
+  "hm_url": "www.gigavis.com",
+  "induty_code": "292",
+  "jurir_no": "1345110078029",
+  "stock_code": "420770",
+  "stock_name": "기가비스"
+ },
+ "00765851": {
+  "acc_mt": "12",
+  "adres": "서울특별시 서초구 동산로12길 9",
+  "ceo_nm": "성대영",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "위더스제약(주)",
+  "est_dt": "20040819",
+  "hm_url": "withuspharm.com",
+  "induty_code": "212",
+  "jurir_no": "1101113069534",
+  "stock_code": "330350",
+  "stock_name": "위더스제약"
  },
  "00765897": {
   "acc_mt": "12",
@@ -25058,6 +25660,20 @@
   "jurir_no": "",
   "stock_code": "900100",
   "stock_name": "파이온엑스"
+ },
+ "00783246": {
+  "acc_mt": "12",
+  "adres": "GEORGE TOWN,GRAND CAYMAN KY1-1112 CAYMAN ISLANDS SCOTLA CENTRE 4TH FLOOR,P.O.BOX2804,",
+  "ceo_nm": "유대희",
+  "checked": "2026-10-27T06:06+09:00",
+  "corp_cls": "K",
+  "corp_name": "글로벌에스엠테크리미티드",
+  "est_dt": "20080828",
+  "hm_url": "www.globalsmtech.com",
+  "induty_code": "64992",
+  "jurir_no": "",
+  "stock_code": "900070",
+  "stock_name": "글로벌에스엠"
  },
  "00786711": {
   "acc_mt": "12",
@@ -26207,6 +26823,20 @@
   "stock_code": "313760",
   "stock_name": "캐리"
  },
+ "00863533": {
+  "acc_mt": "12",
+  "adres": "경기도 화성시 동탄면 동탄산단7길 98-34",
+  "ceo_nm": "정회식",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)삼양엔씨켐",
+  "est_dt": "20080306",
+  "hm_url": "www.samyangncchem.com",
+  "induty_code": "20499",
+  "jurir_no": "1314110209166",
+  "stock_code": "482630",
+  "stock_name": "삼양엔씨켐"
+ },
  "00864338": {
   "acc_mt": "12",
   "adres": "부산광역시 해운대구 센텀동로 45 901호",
@@ -26248,6 +26878,20 @@
   "jurir_no": "1341110160494",
   "stock_code": "170920",
   "stock_name": "엘티씨"
+ },
+ "00866451": {
+  "acc_mt": "12",
+  "adres": "경기도 화성시 동탄면 동탄산단10길 53-15 &nbsp",
+  "ceo_nm": "박승배",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "워트 주식회사",
+  "est_dt": "20040408",
+  "hm_url": "wot.co.kr",
+  "induty_code": "29271",
+  "jurir_no": "1601110172108",
+  "stock_code": "396470",
+  "stock_name": "워트"
  },
  "00866965": {
   "acc_mt": "12",
@@ -26515,6 +27159,20 @@
   "stock_code": "180060",
   "stock_name": "탑선"
  },
+ "00875237": {
+  "acc_mt": "12",
+  "adres": "부산광역시 강서구 녹산산업중로192번길 24",
+  "ceo_nm": "하춘욱",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 씨앤투스",
+  "est_dt": "20030527",
+  "hm_url": "cntus.com",
+  "induty_code": "205",
+  "jurir_no": "2301110096064",
+  "stock_code": "352700",
+  "stock_name": "씨앤투스"
+ },
  "00875307": {
   "acc_mt": "12",
   "adres": "경기도 파주시 탄현면 한산로 69 &nbsp",
@@ -26528,6 +27186,20 @@
   "jurir_no": "1101112494451",
   "stock_code": "255440",
   "stock_name": "야스"
+ },
+ "00876166": {
+  "acc_mt": "12",
+  "adres": "충청남도 천안시 동남구 성남면 대흥신덕길 84-19",
+  "ceo_nm": "부삼열",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)케이비지",
+  "est_dt": "20010302",
+  "hm_url": "www.kbgtech.co.kr/",
+  "induty_code": "20202",
+  "jurir_no": "1615110041619",
+  "stock_code": "318000",
+  "stock_name": "KBG"
  },
  "00876209": {
   "acc_mt": "12",
@@ -26612,6 +27284,34 @@
   "jurir_no": "1101111670234",
   "stock_code": "169330",
   "stock_name": "엠브레인"
+ },
+ "00877819": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 언주로 620, 10층",
+  "ceo_nm": "배복태, 정교중",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)데이타솔루션",
+  "est_dt": "20110103",
+  "hm_url": "www.datasolution.kr",
+  "induty_code": "465",
+  "jurir_no": "1101114504901",
+  "stock_code": "263800",
+  "stock_name": "데이타솔루션"
+ },
+ "00878696": {
+  "acc_mt": "12",
+  "adres": "경기도 성남시 분당구 판교역로 221",
+  "ceo_nm": "이동훈",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "에스케이바이오팜 주식회사",
+  "est_dt": "20110401",
+  "hm_url": "www.skbp.com",
+  "induty_code": "7011",
+  "jurir_no": "1101114570720",
+  "stock_code": "326030",
+  "stock_name": "에스케이바이오팜"
  },
  "00878915": {
   "acc_mt": "12",
@@ -26710,6 +27410,20 @@
   "jurir_no": "1101112380890",
   "stock_code": "145020",
   "stock_name": "휴젤"
+ },
+ "00892526": {
+  "acc_mt": "12",
+  "adres": "경기도 안산시 단원구 별망로 345",
+  "ceo_nm": "최민석",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)디케이앤디",
+  "est_dt": "20000512",
+  "hm_url": "www.dknd.co.kr",
+  "induty_code": "22214",
+  "jurir_no": "1101111967243",
+  "stock_code": "263020",
+  "stock_name": "디케이앤디"
  },
  "00895985": {
   "acc_mt": "12",
@@ -27033,6 +27747,48 @@
   "stock_code": "215600",
   "stock_name": "신라젠"
  },
+ "00920379": {
+  "acc_mt": "12",
+  "adres": "경기도 안산시 단원구 신원로 305",
+  "ceo_nm": "백성현",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)티엘비",
+  "est_dt": "20110325",
+  "hm_url": "www.tlbpcb.com",
+  "induty_code": "2622",
+  "jurir_no": "1314110255979",
+  "stock_code": "356860",
+  "stock_name": "티엘비"
+ },
+ "00920731": {
+  "acc_mt": "12",
+  "adres": "대전광역시 유성구 유성대로 1476-55 &nbsp",
+  "ceo_nm": "진병욱",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)케이앤에스아이앤씨",
+  "est_dt": "20011226",
+  "hm_url": "www.kns-kr.com",
+  "induty_code": "26429",
+  "jurir_no": "1101112405896",
+  "stock_code": "487400",
+  "stock_name": "케이앤에스아이앤씨"
+ },
+ "00921916": {
+  "acc_mt": "12",
+  "adres": "경기도 안산시 단원구 별망로459번길 24",
+  "ceo_nm": "임형섭",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 석경에이티",
+  "est_dt": "20001218",
+  "hm_url": "www.sukgyung.com",
+  "induty_code": "20129",
+  "jurir_no": "1350110108445",
+  "stock_code": "357550",
+  "stock_name": "석경에이티"
+ },
  "00922304": {
   "acc_mt": "12",
   "adres": "부산광역시 사하구 을숙도대로873번길 31",
@@ -27158,6 +27914,20 @@
   "jurir_no": "1355110102249",
   "stock_code": "372170",
   "stock_name": "윤성에프앤씨"
+ },
+ "00925587": {
+  "acc_mt": "12",
+  "adres": "대전광역시 유성구 테크노2로 300 (탑립동)",
+  "ceo_nm": "유승교,박현열(각자 대표이사)",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)위드텍",
+  "est_dt": "20031211",
+  "hm_url": "www.withtech.co.kr",
+  "induty_code": "27213",
+  "jurir_no": "1601110166341",
+  "stock_code": "348350",
+  "stock_name": "위드텍"
  },
  "00925967": {
   "acc_mt": "03",
@@ -27397,6 +28167,20 @@
   "stock_code": "217590",
   "stock_name": "티엠씨"
  },
+ "00956028": {
+  "acc_mt": "12",
+  "adres": "7 Fitzgerald Avenue, Monroe Township, NJ 08831, USA -",
+  "ceo_nm": "최영호",
+  "checked": "2026-10-27T06:06+09:00",
+  "corp_cls": "K",
+  "corp_name": "엑세스바이오 인코퍼레이션",
+  "est_dt": "20020927",
+  "hm_url": "www.accessbio.net",
+  "induty_code": "213",
+  "jurir_no": "",
+  "stock_code": "950130",
+  "stock_name": "엑세스바이오"
+ },
  "00956930": {
   "acc_mt": "12",
   "adres": "서울 동대문구 용두동 138 ~255 천호대로 64",
@@ -27452,6 +28236,20 @@
   "jurir_no": "1101111421273",
   "stock_code": "237880",
   "stock_name": "클리오"
+ },
+ "00958327": {
+  "acc_mt": "12",
+  "adres": "경기도 안성시 대덕면 모산로 401-14",
+  "ceo_nm": "박상순",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)지앤비에스 에코",
+  "est_dt": "20050404",
+  "hm_url": "www.gnbseng.com",
+  "induty_code": "29271",
+  "jurir_no": "1348110105579",
+  "stock_code": "382800",
+  "stock_name": "지앤비에스 에코"
  },
  "00958451": {
   "acc_mt": "12",
@@ -27523,6 +28321,34 @@
   "stock_code": "266690",
   "stock_name": "덕산넵코어스"
  },
+ "00961507": {
+  "acc_mt": "12",
+  "adres": "부산광역시 강서구 범방2로 6 &nbsp",
+  "ceo_nm": "최연지",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)케일럼",
+  "est_dt": "20090519",
+  "hm_url": "www.ewkinc.co.kr",
+  "induty_code": "251",
+  "jurir_no": "1101114097518",
+  "stock_code": "258610",
+  "stock_name": "케일럼"
+ },
+ "00961570": {
+  "acc_mt": "12",
+  "adres": "경기도 시흥시 마유로238번길 21",
+  "ceo_nm": "박웅기",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)신도기연",
+  "est_dt": "20000803",
+  "hm_url": "www.lcd.co.kr",
+  "induty_code": "29272",
+  "jurir_no": "1211110078395",
+  "stock_code": "290520",
+  "stock_name": "신도기연"
+ },
  "00961774": {
   "acc_mt": "12",
   "adres": "충청남도 예산군 응봉면 응봉로 50-16 &nbsp",
@@ -27550,6 +28376,20 @@
   "jurir_no": "1311110131159",
   "stock_code": "263860",
   "stock_name": "지니언스"
+ },
+ "00962393": {
+  "acc_mt": "12",
+  "adres": "서울특별시 금천구 디지털로 178 (가산동, 가산퍼블릭) A동 26층",
+  "ceo_nm": "이철환",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)포인트모바일",
+  "est_dt": "20060728",
+  "hm_url": "pointmobile.com",
+  "induty_code": "263",
+  "jurir_no": "1101113501601",
+  "stock_code": "318020",
+  "stock_name": "포인트모바일"
  },
  "00962922": {
   "acc_mt": "12",
@@ -27663,6 +28503,34 @@
   "stock_code": "201490",
   "stock_name": "미투온"
  },
+ "00966168": {
+  "acc_mt": "12",
+  "adres": "경기도 광명시 하안로 60 광명테크노파크 E동 7층",
+  "ceo_nm": "박정병",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)디알젬",
+  "est_dt": "20030925",
+  "hm_url": "www.drgemhealthcare.com",
+  "induty_code": "27111",
+  "jurir_no": "1101112863789",
+  "stock_code": "263690",
+  "stock_name": "디알젬"
+ },
+ "00968607": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 봉은사로1길 39 5, 6층",
+  "ceo_nm": "백종원",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "Y",
+  "corp_name": "주식회사 더본코리아",
+  "est_dt": "19940112",
+  "hm_url": "www.theborn.co.kr/",
+  "induty_code": "468",
+  "jurir_no": "1101111002122",
+  "stock_code": "475560",
+  "stock_name": "더본코리아"
+ },
  "00969642": {
   "acc_mt": "12",
   "adres": "경기도 화성시 장안면 화곡로 280-50 에스이그린에너지",
@@ -27732,6 +28600,20 @@
   "jurir_no": "1601110247141",
   "stock_code": "208340",
   "stock_name": "파멥신"
+ },
+ "00972503": {
+  "acc_mt": "12",
+  "adres": "전라북도 완주군 봉동읍 완주산단5로 97-46",
+  "ceo_nm": "임만규",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "일진하이솔루스(주)",
+  "est_dt": "20121102",
+  "hm_url": "hysolus.co.kr",
+  "induty_code": "319",
+  "jurir_no": "2101110086548",
+  "stock_code": "271940",
+  "stock_name": "일진하이솔루스"
  },
  "00974927": {
   "acc_mt": "12",
@@ -27999,6 +28881,20 @@
   "stock_code": "182360",
   "stock_name": "큐브엔터"
  },
+ "00986898": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강서구 마곡중앙8로3길 37 -",
+  "ceo_nm": "이병욱",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 팜스빌",
+  "est_dt": "20000315",
+  "hm_url": "www.pharmsville.com",
+  "induty_code": "108",
+  "jurir_no": "1101111908338",
+  "stock_code": "318010",
+  "stock_name": "팜스빌"
+ },
  "00988364": {
   "acc_mt": "12",
   "adres": "경기도 의왕시 광진말로 54 의왕스마트시티퀀텀 B525호",
@@ -28096,6 +28992,20 @@
   "jurir_no": "1101114379213",
   "stock_code": "174900",
   "stock_name": "앱클론"
+ },
+ "00991225": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 테헤란로 322서관 1410~1412호(역삼동, 한신인터밸리24)",
+  "ceo_nm": "김상윤",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "N",
+  "corp_name": "(주)더콘텐츠온",
+  "est_dt": "20121206",
+  "hm_url": "www.tcokr.com",
+  "induty_code": "59130",
+  "jurir_no": "1101115017614",
+  "stock_code": "302920",
+  "stock_name": "더콘텐츠온"
  },
  "00991298": {
   "acc_mt": "12",
@@ -28405,6 +29315,20 @@
   "stock_code": "195940",
   "stock_name": "HK이노엔"
  },
+ "01012640": {
+  "acc_mt": "12",
+  "adres": "경기도 성남시 수정구 금토로80번길 37 인피니티타워 E동",
+  "ceo_nm": "배현섭, 오승욱",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "슈어소프트테크 주식회사",
+  "est_dt": "20020306",
+  "hm_url": "www.suresofttech.com/",
+  "induty_code": "582",
+  "jurir_no": "1101112462002",
+  "stock_code": "298830",
+  "stock_name": "슈어소프트테크"
+ },
  "01012987": {
   "acc_mt": "12",
   "adres": "충청남도 천안시 서북구 직산읍 모시리 308 천안 제4지방산업단지 19-1블럭",
@@ -28489,6 +29413,34 @@
   "stock_code": "332570",
   "stock_name": "PS일렉트로닉스"
  },
+ "01016309": {
+  "acc_mt": "12",
+  "adres": "대전광역시 유성구 테크노11로 55-11",
+  "ceo_nm": "이상조",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)한켐",
+  "est_dt": "19991015",
+  "hm_url": "www.hanchem.net",
+  "induty_code": "20119",
+  "jurir_no": "1350110097060",
+  "stock_code": "457370",
+  "stock_name": "한켐"
+ },
+ "01016479": {
+  "acc_mt": "12",
+  "adres": "경기도 화성시 동탄구 삼성1로5길 25 -",
+  "ceo_nm": "각자 대표이사 이준우, 최성원",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)오로스테크놀로지",
+  "est_dt": "20031021",
+  "hm_url": "www.aurostech.com",
+  "induty_code": "292",
+  "jurir_no": "1311110104403",
+  "stock_code": "322310",
+  "stock_name": "오로스테크놀로지"
+ },
  "01016886": {
   "acc_mt": "12",
   "adres": "대구광역시 달성군 구지면 국가산단대로50길 99",
@@ -28531,6 +29483,20 @@
   "stock_code": "140610",
   "stock_name": "엔솔바이오사이언스"
  },
+ "01020269": {
+  "acc_mt": "12",
+  "adres": "경기도 안양시 동안구 학의로 282 금강펜테리움IT타워 1701호~1708호",
+  "ceo_nm": "채재호",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "N",
+  "corp_name": "(주) 탈로스",
+  "est_dt": "20050330",
+  "hm_url": "www.talos.or.kr",
+  "induty_code": "28202",
+  "jurir_no": "2811110093358",
+  "stock_code": "434190",
+  "stock_name": "탈로스"
+ },
  "01020524": {
   "acc_mt": "12",
   "adres": "서울특별시 강서구 허준로 217 11층 1114호",
@@ -28558,6 +29524,34 @@
   "jurir_no": "1348110045535",
   "stock_code": "217820",
   "stock_name": "원익피앤이"
+ },
+ "01021639": {
+  "acc_mt": "12",
+  "adres": "경기도 이천시 백사면 청백리로393번길 353, 지하 1층",
+  "ceo_nm": "마승철",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "나라셀라(주)",
+  "est_dt": "19900110",
+  "hm_url": "www.naracellar.com/",
+  "induty_code": "46331",
+  "jurir_no": "1101110668579",
+  "stock_code": "405920",
+  "stock_name": "나라셀라"
+ },
+ "01021666": {
+  "acc_mt": "12",
+  "adres": "충청남도 천안시 동남구 풍세면 풍세산단2로 39 &nbsp",
+  "ceo_nm": "김병기",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)덕산테코피아",
+  "est_dt": "20060316",
+  "hm_url": "dstp.co.kr",
+  "induty_code": "2049",
+  "jurir_no": "2301110120607",
+  "stock_code": "317330",
+  "stock_name": "덕산테코피아"
  },
  "01021949": {
   "acc_mt": "12",
@@ -28685,6 +29679,34 @@
   "stock_code": "221800",
   "stock_name": "지구홀딩스"
  },
+ "01027794": {
+  "acc_mt": "12",
+  "adres": "경기도 성남시 수정구 금토로 61 (금토동)",
+  "ceo_nm": "김선중, 김민 (각자대표이사)",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)브이원텍",
+  "est_dt": "20060530",
+  "hm_url": "www.v-one.co.kr",
+  "induty_code": "29272",
+  "jurir_no": "1311110164978",
+  "stock_code": "251630",
+  "stock_name": "브이원텍"
+ },
+ "01027828": {
+  "acc_mt": "12",
+  "adres": "경상북도 경주시 안강읍 사박길 21 주식회사 퓨릿",
+  "ceo_nm": "김정수",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)퓨릿",
+  "est_dt": "20100104",
+  "hm_url": "purit.co.kr",
+  "induty_code": "20119",
+  "jurir_no": "1101114253681",
+  "stock_code": "445180",
+  "stock_name": "퓨릿"
+ },
  "01028322": {
   "acc_mt": "12",
   "adres": "경기도 성남시 분당구 동판교로 56 (백현동, 아리바이오빌딩)",
@@ -28726,6 +29748,20 @@
   "jurir_no": "1101112743866",
   "stock_code": "230360",
   "stock_name": "에코마케팅"
+ },
+ "01030503": {
+  "acc_mt": "12",
+  "adres": "경기도 화성시 동탄역로 24-2 , 24-1",
+  "ceo_nm": "신상연",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)우진엔텍",
+  "est_dt": "20130102",
+  "hm_url": "www.woojinntec.com/",
+  "induty_code": "7390",
+  "jurir_no": "1348110260331",
+  "stock_code": "457550",
+  "stock_name": "우진엔텍"
  },
  "01031229": {
   "acc_mt": "12",
@@ -28978,6 +30014,20 @@
   "jurir_no": "1101115448356",
   "stock_code": "203650",
   "stock_name": "드림시큐리티"
+ },
+ "01041828": {
+  "acc_mt": "02",
+  "adres": "(160-0017) 도쿄도 신주쿠구 사몬쵸 2-6 와코빌딩 6F -",
+  "ceo_nm": "야마모토 후미야",
+  "checked": "2026-10-27T06:06+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 제이티씨",
+  "est_dt": "19940317",
+  "hm_url": "www.groupjtc.com/korean/",
+  "induty_code": "471",
+  "jurir_no": "",
+  "stock_code": "950170",
+  "stock_name": "JTC"
  },
  "01042085": {
   "acc_mt": "12",
@@ -29679,6 +30729,34 @@
   "stock_code": "217620",
   "stock_name": "선샤인푸드"
  },
+ "01068737": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 양평로 115 -",
+  "ceo_nm": "최승호",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 에이치피오",
+  "est_dt": "20120406",
+  "hm_url": "denps.com/kor/",
+  "induty_code": "108",
+  "jurir_no": "1101114838516",
+  "stock_code": "357230",
+  "stock_name": "에이치피오"
+ },
+ "01069736": {
+  "acc_mt": "12",
+  "adres": "대전광역시 유성구 테크노8로 13",
+  "ceo_nm": "고인선, 이광규",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)한독크린텍",
+  "est_dt": "20031126",
+  "hm_url": "hdctech.co.kr",
+  "induty_code": "29175",
+  "jurir_no": "1601110165806",
+  "stock_code": "256150",
+  "stock_name": "한독크린텍"
+ },
  "01070149": {
   "acc_mt": "12",
   "adres": "경기도 용인시 기흥구 동백중앙로16번길 16-4 에이스동백타워1동 20층",
@@ -29874,6 +30952,20 @@
   "jurir_no": "1101114816570",
   "stock_code": "226400",
   "stock_name": "오스테오닉"
+ },
+ "01082418": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 테헤란로 325 8층",
+  "ceo_nm": "김수훈",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)에스에이엠지엔터테인먼트",
+  "est_dt": "20000726",
+  "hm_url": "www.samg.net",
+  "induty_code": "59112",
+  "jurir_no": "1101112034562",
+  "stock_code": "419530",
+  "stock_name": "SAMG엔터"
  },
  "01082834": {
   "acc_mt": "03",
@@ -30169,6 +31261,20 @@
   "stock_code": "288180",
   "stock_name": "케이피항공산업"
  },
+ "01105153": {
+  "acc_mt": "12",
+  "adres": "경기도 수원시 권선구 산업로156번길 79",
+  "ceo_nm": "박인원, 조길성",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "Y",
+  "corp_name": "두산로보틱스 주식회사",
+  "est_dt": "20150731",
+  "hm_url": "www.doosanrobotics.com",
+  "induty_code": "2928",
+  "jurir_no": "1101115798272",
+  "stock_code": "454910",
+  "stock_name": "두산로보틱스"
+ },
  "01105621": {
   "acc_mt": "12",
   "adres": "경기도 안성시 원곡면 원당로 157 -",
@@ -30379,6 +31485,34 @@
   "stock_code": "298060",
   "stock_name": "풍전약품"
  },
+ "01110678": {
+  "acc_mt": "12",
+  "adres": "서울특별시 금천구 가산디지털1로 58 408호 (가산동, 에이스한솔타워)",
+  "ceo_nm": "권병세, 안용섭 (각자대표이사)",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)유틸렉스",
+  "est_dt": "20150227",
+  "hm_url": "www.eutilex.com",
+  "induty_code": "211",
+  "jurir_no": "2850110287959",
+  "stock_code": "263050",
+  "stock_name": "유틸렉스"
+ },
+ "01112700": {
+  "acc_mt": "12",
+  "adres": "경기도 수원시 영통구 창룡대로 260, 광교센트럴비즈타워7층 (이의동)",
+  "ceo_nm": "이영태",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)에스엘에스바이오",
+  "est_dt": "20070117",
+  "hm_url": "www.slabs.co.kr",
+  "induty_code": "739",
+  "jurir_no": "1101113602524",
+  "stock_code": "246250",
+  "stock_name": "에스엘에스바이오"
+ },
  "01112889": {
   "acc_mt": "12",
   "adres": "경기도 용인시 기흥구 동백중앙로16번길 16-25, 804호(중동, 대우프론티어밸리 1단지) &nbsp",
@@ -30505,6 +31639,20 @@
   "stock_code": "208850",
   "stock_name": "이비테크"
  },
+ "01116380": {
+  "acc_mt": "12",
+  "adres": "경기도 성남시 중원구 갈마치로288번길 1412층 1206호(상대원동, 성남에스케이브이1타워)",
+  "ceo_nm": "안상태",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "N",
+  "corp_name": "(주)씨앤에스링크",
+  "est_dt": "20000920",
+  "hm_url": "www.cns-link.co.kr",
+  "induty_code": "264",
+  "jurir_no": "1101112072869",
+  "stock_code": "245450",
+  "stock_name": "씨앤에스링크"
+ },
  "01116502": {
   "acc_mt": "12",
   "adres": "서울특별시 강남구 도산대로 430 3층(청담동)",
@@ -30532,6 +31680,20 @@
   "jurir_no": "1341110364153",
   "stock_code": "278990",
   "stock_name": "EMB"
+ },
+ "01117413": {
+  "acc_mt": "12",
+  "adres": "서울특별시 성동구 아차산로5길 24-4",
+  "ceo_nm": "임욱빈",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 바이오다인",
+  "est_dt": "19991008",
+  "hm_url": "www.biodyne.asia/",
+  "induty_code": "2719",
+  "jurir_no": "1101111786057",
+  "stock_code": "314930",
+  "stock_name": "바이오다인"
  },
  "01117422": {
   "acc_mt": "12",
@@ -30659,6 +31821,20 @@
   "stock_code": "236200",
   "stock_name": "슈프리마"
  },
+ "01124680": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 강남대로 518 화이트518",
+  "ceo_nm": "김대영",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)보라티알",
+  "est_dt": "20151102",
+  "hm_url": "www.boratr.co.kr",
+  "induty_code": "4632",
+  "jurir_no": "1101115879030",
+  "stock_code": "250000",
+  "stock_name": "보라티알"
+ },
  "01126004": {
   "acc_mt": "12",
   "adres": "서울특별시 강남구 학동로 206 (논현동, 동화빌딩) 2층",
@@ -30743,6 +31919,34 @@
   "stock_code": "266470",
   "stock_name": "바이오인프라생명과학"
  },
+ "01133217": {
+  "acc_mt": "12",
+  "adres": "경기도 성남시 분당구 분당내곡로 131 (백현동, 판교테크원)",
+  "ceo_nm": "윤호영",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "주식회사 카카오뱅크",
+  "est_dt": "20160122",
+  "hm_url": "",
+  "induty_code": "64121",
+  "jurir_no": "1311110435767",
+  "stock_code": "323410",
+  "stock_name": "카카오뱅크"
+ },
+ "01134216": {
+  "acc_mt": "12",
+  "adres": "서울특별시 구로구 디지털로33길 28, 1108, 1309호(구로동, 우림이비지센터1차)",
+  "ceo_nm": "안재천",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 트루엔",
+  "est_dt": "20050128",
+  "hm_url": "truen.co.kr",
+  "induty_code": "265",
+  "jurir_no": "1101113161306",
+  "stock_code": "417790",
+  "stock_name": "트루엔"
+ },
  "01134395": {
   "acc_mt": "12",
   "adres": "서울특별시 영등포구 의사당대로 8",
@@ -30770,6 +31974,20 @@
   "jurir_no": "1345110083218",
   "stock_code": "234690",
   "stock_name": "녹십자웰빙"
+ },
+ "01135084": {
+  "acc_mt": "12",
+  "adres": "충청북도 충주시 엄정면 세고개로 154",
+  "ceo_nm": "홍성균",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "에스와이스틸텍(주)",
+  "est_dt": "20150701",
+  "hm_url": "systeeltech.com/",
+  "induty_code": "2511",
+  "jurir_no": "1511110053458",
+  "stock_code": "365330",
+  "stock_name": "에스와이스틸텍"
  },
  "01135640": {
   "acc_mt": "12",
@@ -30827,6 +32045,20 @@
   "stock_code": "242040",
   "stock_name": "나무AX"
  },
+ "01136977": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 테헤란로 124 삼원타워 4층",
+  "ceo_nm": "김기현 (단독대표)",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)마녀공장",
+  "est_dt": "20120302",
+  "hm_url": "www.manyo.co.kr",
+  "induty_code": "204",
+  "jurir_no": "1101114810308",
+  "stock_code": "439090",
+  "stock_name": "마녀공장"
+ },
  "01137295": {
   "acc_mt": "12",
   "adres": "대전시 유성구 테크노2로 306",
@@ -30855,6 +32087,48 @@
   "stock_code": "293490",
   "stock_name": "카카오게임즈"
  },
+ "01137860": {
+  "acc_mt": "12",
+  "adres": "경기도 남양주시 진접읍 진벌로223번길 53",
+  "ceo_nm": "김창성",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)위너스일렉",
+  "est_dt": "20040130",
+  "hm_url": "www.wns21.co.kr/",
+  "induty_code": "289",
+  "jurir_no": "1152110049566",
+  "stock_code": "479960",
+  "stock_name": "위너스일렉"
+ },
+ "01137903": {
+  "acc_mt": "12",
+  "adres": "인천광역시 부평구 평천로199번길 25 -",
+  "ceo_nm": "이지열",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)디케이티",
+  "est_dt": "20120621",
+  "hm_url": "www.dtktech.co.kr/",
+  "induty_code": "26224",
+  "jurir_no": "1201110615990",
+  "stock_code": "290550",
+  "stock_name": "디케이티"
+ },
+ "01138364": {
+  "acc_mt": "12",
+  "adres": "서울특별시 서초구 명달로 94",
+  "ceo_nm": "김민석",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "더핑크퐁컴퍼니(주)",
+  "est_dt": "20100526",
+  "hm_url": "www.pinkfongcompany.com",
+  "induty_code": "591",
+  "jurir_no": "1101114357110",
+  "stock_code": "403850",
+  "stock_name": "더핑크퐁컴퍼니"
+ },
  "01138595": {
   "acc_mt": "12",
   "adres": "서울특별시 중구 서소문로11길 19 B동 12층",
@@ -30868,6 +32142,20 @@
   "jurir_no": "1101115141877",
   "stock_code": "199480",
   "stock_name": "뱅크웨어글로벌"
+ },
+ "01139035": {
+  "acc_mt": "12",
+  "adres": "경기도 화성시 동탄첨단산업1로 27 영천동, 금강 펜테리움 IX타워 코벤트가든 M201",
+  "ceo_nm": "표인식",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 티에스아이",
+  "est_dt": "20110701",
+  "hm_url": "taesungind.co.kr/",
+  "induty_code": "292",
+  "jurir_no": "1313110109110",
+  "stock_code": "277880",
+  "stock_name": "티에스아이"
  },
  "01139266": {
   "acc_mt": "12",
@@ -30897,6 +32185,34 @@
   "stock_code": "217910",
   "stock_name": "에스제이켐"
  },
+ "01139965": {
+  "acc_mt": "12",
+  "adres": "서울특별시 금천구 디지털로9길 33 1701호(가산동, 아이티미래타워)",
+  "ceo_nm": "유재명",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 스튜디오미르",
+  "est_dt": "20101028",
+  "hm_url": "www.studiomir.co.kr/",
+  "induty_code": "59112",
+  "jurir_no": "1101114460046",
+  "stock_code": "408900",
+  "stock_name": "스튜디오미르"
+ },
+ "01140837": {
+  "acc_mt": "12",
+  "adres": "경기도 화성시 금곡로163번길 63-100",
+  "ceo_nm": " 강민경",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 이지트로닉스",
+  "est_dt": "20081124",
+  "hm_url": "www.egtronics.co.kr",
+  "induty_code": "2811",
+  "jurir_no": "1345110132792",
+  "stock_code": "377330",
+  "stock_name": "이지트로닉스"
+ },
  "01141599": {
   "acc_mt": "12",
   "adres": "경기도 성남시 중원구 둔촌대로 560,  406,407호(상대원동, 벽산테크노피아)",
@@ -30910,6 +32226,20 @@
   "jurir_no": "1101111992670",
   "stock_code": "261780",
   "stock_name": "아리바이오LAB"
+ },
+ "01141942": {
+  "acc_mt": "12",
+  "adres": "경기도 용인시 기흥구 흥덕1로 13 제타워동 35층 제에이3504호",
+  "ceo_nm": "하동길",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)액트로",
+  "est_dt": "20120904",
+  "hm_url": "www.actro.co.kr",
+  "induty_code": "262",
+  "jurir_no": "1352110033862",
+  "stock_code": "290740",
+  "stock_name": "액트로"
  },
  "01142075": {
   "acc_mt": "12",
@@ -31009,6 +32339,34 @@
   "stock_code": "406820",
   "stock_name": "뷰티스킨"
  },
+ "01150515": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 테헤란로 422 11층 (대치동,KT선릉타워East)",
+  "ceo_nm": "서종현",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "대명에너지 주식회사",
+  "est_dt": "20000804",
+  "hm_url": "www.daemyoung-eng.com",
+  "induty_code": "4112",
+  "jurir_no": "1311110051935",
+  "stock_code": "389260",
+  "stock_name": "대명에너지"
+ },
+ "01152470": {
+  "acc_mt": "12",
+  "adres": "경기도 과천시 과천대로2길 48 (갈현동, 펄어비스 홈 원)",
+  "ceo_nm": "허진영",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 펄어비스",
+  "est_dt": "20100910",
+  "hm_url": "www.pearlabyss.com",
+  "induty_code": "58211",
+  "jurir_no": "1341110195582",
+  "stock_code": "263750",
+  "stock_name": "펄어비스"
+ },
  "01152586": {
   "acc_mt": "12",
   "adres": "인천광역시 서구 첨단기술로 87 (주)유일로보틱스 청라국제도시 사옥",
@@ -31022,6 +32380,20 @@
   "jurir_no": "1201110592130",
   "stock_code": "388720",
   "stock_name": "유일로보틱스"
+ },
+ "01153105": {
+  "acc_mt": "12",
+  "adres": "대전광역시 대덕구 문평동로 25 -",
+  "ceo_nm": "강기태,전용태",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "비비씨 주식회사",
+  "est_dt": "20080619",
+  "hm_url": "bestbristle.com",
+  "induty_code": "204",
+  "jurir_no": "1601110243678",
+  "stock_code": "318410",
+  "stock_name": "비비씨"
  },
  "01153293": {
   "acc_mt": "12",
@@ -31177,6 +32549,20 @@
   "stock_code": "900270",
   "stock_name": "헝셩그룹"
  },
+ "01160974": {
+  "acc_mt": "12",
+  "adres": "인천광역시 연수구 송도미래로 30 A동 509호, 510호, 511호",
+  "ceo_nm": "모상현, 정대현",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 바이오에프디엔씨",
+  "est_dt": "20051111",
+  "hm_url": "www.biofdnc.com",
+  "induty_code": "2110",
+  "jurir_no": "1201110388092",
+  "stock_code": "251120",
+  "stock_name": "바이오에프디엔씨"
+ },
  "01161432": {
   "acc_mt": "12",
   "adres": "경기도 성남시 중원구 갈마치로 245 성남아이파크디어반 14층",
@@ -31219,6 +32605,20 @@
   "stock_code": "250060",
   "stock_name": "모비스"
  },
+ "01165739": {
+  "acc_mt": "12",
+  "adres": "20 Campus Rd Totowa, NJ 07512, USA -",
+  "ceo_nm": "조현철",
+  "checked": "2026-10-27T06:06+09:00",
+  "corp_cls": "K",
+  "corp_name": "잉글우드랩 주식회사",
+  "est_dt": "20150820",
+  "hm_url": "www.englewoodlab.com",
+  "induty_code": "204",
+  "jurir_no": "",
+  "stock_code": "950140",
+  "stock_name": "잉글우드랩"
+ },
  "01166109": {
   "acc_mt": "12",
   "adres": "경기도 군포시 공단로 356-3 (지번 주소: 경기도 군포시 산본1동 1026-2)",
@@ -31232,6 +32632,62 @@
   "jurir_no": "1101116122470",
   "stock_code": "250930",
   "stock_name": "예선테크"
+ },
+ "01167056": {
+  "acc_mt": "12",
+  "adres": "서울특별시 중구 충무로 2 8층 (필동1가, 매일경제빌딩)",
+  "ceo_nm": "박진선",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "샘표식품(주)",
+  "est_dt": "20160704",
+  "hm_url": "www.sempio.com",
+  "induty_code": "108",
+  "jurir_no": "1101116110045",
+  "stock_code": "248170",
+  "stock_name": "샘표식품"
+ },
+ "01168383": {
+  "acc_mt": "12",
+  "adres": "서울특별시 서초구 바우뫼로27길 2",
+  "ceo_nm": "윤웅섭, 이재준(공동 대표이사)",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "일동제약(주)",
+  "est_dt": "20160801",
+  "hm_url": "www.ildong.com",
+  "induty_code": "212",
+  "jurir_no": "1101116139277",
+  "stock_code": "249420",
+  "stock_name": "일동제약"
+ },
+ "01168684": {
+  "acc_mt": "12",
+  "adres": "서울특별시 마포구 매봉산로 75 1701호 (상암동, 디디엠씨)",
+  "ceo_nm": "Jang Kyung-ik",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "스튜디오드래곤(주)",
+  "est_dt": "20160503",
+  "hm_url": "www.studiodragon.net",
+  "induty_code": "59114",
+  "jurir_no": "1101116052164",
+  "stock_code": "253450",
+  "stock_name": "스튜디오드래곤"
+ },
+ "01169267": {
+  "acc_mt": "12",
+  "adres": "충청북도 진천군 초평면 은암길 36 -",
+  "ceo_nm": "이훈구",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)세화피앤씨",
+  "est_dt": "20160818",
+  "hm_url": "www.sewha.co.kr",
+  "induty_code": "204",
+  "jurir_no": "1101116153095",
+  "stock_code": "252500",
+  "stock_name": "세화피앤씨"
  },
  "01169434": {
   "acc_mt": "12",
@@ -31289,6 +32745,20 @@
   "stock_code": "900290",
   "stock_name": "GRT"
  },
+ "01174038": {
+  "acc_mt": "12",
+  "adres": "경기도 성남시 중원구 사기막골로 177 금강하이테크밸리 619호",
+  "ceo_nm": "김형철",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)자비스",
+  "est_dt": "20160920",
+  "hm_url": "www.xavis.co.kr",
+  "induty_code": "292",
+  "jurir_no": "1101116178564",
+  "stock_code": "254120",
+  "stock_name": "자비스"
+ },
  "01174223": {
   "acc_mt": "12",
   "adres": "경기도 성남시 중원구 사기막골로45번길 14 비동 비205호(상대원동, 성남우림라이온스밸리)",
@@ -31316,6 +32786,62 @@
   "jurir_no": "2001110418983",
   "stock_code": "377460",
   "stock_name": "큐에이드"
+ },
+ "01179608": {
+  "acc_mt": "12",
+  "adres": "충청남도 아산시 둔포면 아산밸리로 89 -",
+  "ceo_nm": "안범모, 강대현",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)포인트엔지니어링",
+  "est_dt": "20161013",
+  "hm_url": "www.pointeng.co.kr",
+  "induty_code": "25923",
+  "jurir_no": "1101116201737",
+  "stock_code": "256630",
+  "stock_name": "포인트엔지니어링"
+ },
+ "01179617": {
+  "acc_mt": "12",
+  "adres": "대구광역시 달서구 성서공단로11길 62 대구테크노파크 벤처공장 1호관 405호(사무실),502호, 503호, 206호,",
+  "ceo_nm": "최완규",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)한국비엔씨",
+  "est_dt": "20161014",
+  "hm_url": "www.bnckorea.co.kr",
+  "induty_code": "211",
+  "jurir_no": "1101116202305",
+  "stock_code": "256840",
+  "stock_name": "한국비엔씨"
+ },
+ "01179866": {
+  "acc_mt": "12",
+  "adres": "경기도 이천시  모가면 양녕로 10",
+  "ceo_nm": "김정수",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)에스지헬스케어",
+  "est_dt": "20090717",
+  "hm_url": "sghealthcare.com/",
+  "induty_code": "27111",
+  "jurir_no": "1244110097700",
+  "stock_code": "398120",
+  "stock_name": "에스지헬스케어"
+ },
+ "01180118": {
+  "acc_mt": "02",
+  "adres": "서울특별시 강남구 삼성로 511",
+  "ceo_nm": "서길석",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "Y",
+  "corp_name": "(주)코람코더원위탁관리부동산투자회사",
+  "est_dt": "20150915",
+  "hm_url": "koramcothe1.com",
+  "induty_code": "68112",
+  "jurir_no": "1101115837294",
+  "stock_code": "417310",
+  "stock_name": "코람코더원리츠"
  },
  "01181418": {
   "acc_mt": "12",
@@ -31359,6 +32885,48 @@
   "stock_code": "308100",
   "stock_name": "형지글로벌"
  },
+ "01182240": {
+  "acc_mt": "12",
+  "adres": "서울특별시 용산구 새창로44길 10 2층",
+  "ceo_nm": "박영준",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)배럴",
+  "est_dt": "20100107",
+  "hm_url": "www.getbarrel.com",
+  "induty_code": "1419",
+  "jurir_no": "1101114256924",
+  "stock_code": "267790",
+  "stock_name": "배럴"
+ },
+ "01182259": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 삼성로 634",
+  "ceo_nm": "윤재훈",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)알피바이오",
+  "est_dt": "20160805",
+  "hm_url": "rpskorea.com",
+  "induty_code": "212",
+  "jurir_no": "1101116142668",
+  "stock_code": "314140",
+  "stock_name": "알피바이오"
+ },
+ "01182408": {
+  "acc_mt": "12",
+  "adres": "경기도 과천시 과천대로7나길 9 5층(갈현동,디엑스타워)",
+  "ceo_nm": "배환국",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "소프트캠프(주)",
+  "est_dt": "20161101",
+  "hm_url": "www.softcamp.co.kr",
+  "induty_code": "582",
+  "jurir_no": "1101116219037",
+  "stock_code": "258790",
+  "stock_name": "소프트캠프"
+ },
  "01182550": {
   "acc_mt": "12",
   "adres": "인천광역시 연수구 갯벌로 143 -",
@@ -31387,6 +32955,20 @@
   "stock_code": "290120",
   "stock_name": "DH오토리드"
  },
+ "01185566": {
+  "acc_mt": "12",
+  "adres": "인천광역시 서구 원적로7번길 29 (주)에스엔피월드",
+  "ceo_nm": "이충모",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)휴엠앤씨",
+  "est_dt": "20020625",
+  "hm_url": "humnc.com",
+  "induty_code": "33999",
+  "jurir_no": "1201110290289",
+  "stock_code": "263920",
+  "stock_name": "휴엠앤씨"
+ },
  "01185867": {
   "acc_mt": "12",
   "adres": "경기도 성남시 수정구 창업로 54 619호",
@@ -31400,6 +32982,34 @@
   "jurir_no": "1101115742831",
   "stock_code": "341170",
   "stock_name": "퓨쳐메디신"
+ },
+ "01186404": {
+  "acc_mt": "12",
+  "adres": "서울특별시 구로구 디지털로32길 30 코오롱디지털타워빌란트. 1301-1308호",
+  "ceo_nm": "최원영",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 디앤씨미디어",
+  "est_dt": "20120104",
+  "hm_url": "www.dncmedia.co.kr",
+  "induty_code": "581",
+  "jurir_no": "1101114767153",
+  "stock_code": "263720",
+  "stock_name": "디앤씨미디어"
+ },
+ "01187148": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 역삼로2길 16 S타워 11층",
+  "ceo_nm": "이민경",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)케어랩스",
+  "est_dt": "20120410",
+  "hm_url": "carelabs.co.kr",
+  "induty_code": "713",
+  "jurir_no": "1201110607278",
+  "stock_code": "263700",
+  "stock_name": "케어랩스"
  },
  "01187166": {
   "acc_mt": "12",
@@ -31485,6 +33095,20 @@
   "stock_code": "260870",
   "stock_name": "SK시그넷"
  },
+ "01188749": {
+  "acc_mt": "12",
+  "adres": "경기도 하남시 초광산단동로6번길 55(광암동, 지앤이빌딩)",
+  "ceo_nm": "장영민",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "N",
+  "corp_name": "(주)지앤이헬스케어",
+  "est_dt": "20140204",
+  "hm_url": "www.hannahpad.com",
+  "induty_code": "13999",
+  "jurir_no": "1357110098741",
+  "stock_code": "299480",
+  "stock_name": "지앤이헬스케어"
+ },
  "01189438": {
   "acc_mt": "12",
   "adres": "인천광역시 연수구 아카데미로79번길 38 -",
@@ -31499,6 +33123,20 @@
   "stock_code": "278650",
   "stock_name": "HLB바이오스텝"
  },
+ "01190124": {
+  "acc_mt": "12",
+  "adres": "경기도 성남시 분당구 판교역로 230 삼환하이펙스B동 9층 제906호  (지번주소:경기도 성남시 분당구 삼평동",
+  "ceo_nm": "송민규, 유영근(각자 대표이사)",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "미디어젠(주)",
+  "est_dt": "20000620",
+  "hm_url": "www.mediazen.co.kr",
+  "induty_code": "58222",
+  "jurir_no": "1101112001842",
+  "stock_code": "279600",
+  "stock_name": "미디어젠"
+ },
  "01190203": {
   "acc_mt": "12",
   "adres": "대전광역시 유성구 테크노2로 187 (용산동, 미건테크노월드) A동 201호",
@@ -31512,6 +33150,48 @@
   "jurir_no": "1101111369241",
   "stock_code": "",
   "stock_name": "진켐"
+ },
+ "01190568": {
+  "acc_mt": "12",
+  "adres": "서울특별시 송파구 올림픽로 300 36층(신천동, 롯데월드타워앤드롯데월드몰)",
+  "ceo_nm": "김병훈",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "(주)에이피알",
+  "est_dt": "20141010",
+  "hm_url": "apr-in.com",
+  "induty_code": "20423",
+  "jurir_no": "1101115535012",
+  "stock_code": "278470",
+  "stock_name": "에이피알"
+ },
+ "01194607": {
+  "acc_mt": "12",
+  "adres": "경기도 안산시 단원구 장자골로 11",
+  "ceo_nm": "이병호",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 비츠로넥스텍",
+  "est_dt": "20160830",
+  "hm_url": "www.vitzronextech.com",
+  "induty_code": "31322",
+  "jurir_no": "1314110373599",
+  "stock_code": "488900",
+  "stock_name": "비츠로넥스텍"
+ },
+ "01194689": {
+  "acc_mt": "12",
+  "adres": "경기도 성남시 분당구 분당수서로 477 경기도 성남시 분당구 분당수서로 477",
+  "ceo_nm": "김성준",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "Y",
+  "corp_name": "에이치디현대마린솔루션(주)",
+  "est_dt": "20161128",
+  "hm_url": "www.hd-marinesolution.com/",
+  "induty_code": "7212",
+  "jurir_no": "1801111065811",
+  "stock_code": "443060",
+  "stock_name": "HD현대마린솔루션"
  },
  "01195305": {
   "acc_mt": "12",
@@ -31540,6 +33220,62 @@
   "jurir_no": "1911110073490",
   "stock_code": "",
   "stock_name": "뉴스테이허브제2호위탁관리부동산투자회사"
+ },
+ "01196313": {
+  "acc_mt": "12",
+  "adres": "경상북도 포항시 남구 철강로 290 (주)유에스티",
+  "ceo_nm": "김종식",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)유에스티",
+  "est_dt": "20170123",
+  "hm_url": "www.u-st.co.kr",
+  "induty_code": "241",
+  "jurir_no": "1101116298148",
+  "stock_code": "263770",
+  "stock_name": "유에스티"
+ },
+ "01199189": {
+  "acc_mt": "12",
+  "adres": "인천광역시 서구 파랑로466번길 30 (청라동) -",
+  "ceo_nm": "심재귀",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)이랜시스",
+  "est_dt": "20170210",
+  "hm_url": "www.elensys.co.kr",
+  "induty_code": "262",
+  "jurir_no": "1101116314449",
+  "stock_code": "264850",
+  "stock_name": "이랜시스"
+ },
+ "01199550": {
+  "acc_mt": "12",
+  "adres": "경기도 성남시 분당구 분당수서로 477 9층(정자동, HD현대그룹 글로벌 R&D센터)",
+  "ceo_nm": "박종환",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "에이치디현대에너지솔루션(주)",
+  "est_dt": "20161221",
+  "hm_url": "www.hd-hyundaies.co.kr",
+  "induty_code": "2612",
+  "jurir_no": "1101116265410",
+  "stock_code": "322000",
+  "stock_name": "HD현대에너지솔루션"
+ },
+ "01199727": {
+  "acc_mt": "12",
+  "adres": "경기도 성남시 분당구 판교로255번길 28, 8층(삼평동, DHK솔루션빌딩) -",
+  "ceo_nm": "최유진",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)샘씨엔에스",
+  "est_dt": "20160610",
+  "hm_url": "www.semcns.com",
+  "induty_code": "2629",
+  "jurir_no": "1311110449718",
+  "stock_code": "252990",
+  "stock_name": "샘씨엔에스"
  },
  "01201590": {
   "acc_mt": "12",
@@ -31583,6 +33319,20 @@
   "stock_code": "279570",
   "stock_name": "케이뱅크"
  },
+ "01203376": {
+  "acc_mt": "12",
+  "adres": "경기도 성남시 분당구 판교로255번길 68",
+  "ceo_nm": "이상근, 이정길(공동대표)",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)유비쿼스",
+  "est_dt": "20170302",
+  "hm_url": "www.ubiquoss.com",
+  "induty_code": "26410",
+  "jurir_no": "1311110475341",
+  "stock_code": "264450",
+  "stock_name": "유비쿼스"
+ },
  "01203659": {
   "acc_mt": "12",
   "adres": "경기도 용인시 기흥구 탑실로35번길 25",
@@ -31624,6 +33374,34 @@
   "jurir_no": "1101113166546",
   "stock_code": "352820",
   "stock_name": "하이브"
+ },
+ "01205329": {
+  "acc_mt": "12",
+  "adres": "서울특별시 용산구 한강대로72길 3(남영동)",
+  "ceo_nm": "윤석빈",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "(주)크라운제과",
+  "est_dt": "20170302",
+  "hm_url": "www.crown.co.kr",
+  "induty_code": "106",
+  "jurir_no": "1101116332590",
+  "stock_code": "264900",
+  "stock_name": "크라운제과"
+ },
+ "01205514": {
+  "acc_mt": "12",
+  "adres": "충청북도 청주시 흥덕구 오송읍 오송생명1로 207",
+  "ceo_nm": "신숙정",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "N",
+  "corp_name": "(주)큐라켐",
+  "est_dt": "20090609",
+  "hm_url": "www.curachem.com",
+  "induty_code": "213",
+  "jurir_no": "1244110096794",
+  "stock_code": "456190",
+  "stock_name": "큐라켐"
  },
  "01205709": {
   "acc_mt": "12",
@@ -31667,6 +33445,20 @@
   "stock_code": "267260",
   "stock_name": "HD현대일렉트릭"
  },
+ "01206717": {
+  "acc_mt": "12",
+  "adres": "대구광역시 동구 매여로1길 22",
+  "ceo_nm": "이종건/정재경",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "N",
+  "corp_name": "(주)마이크로엔엑스",
+  "est_dt": "20010705",
+  "hm_url": "www.micronx.co.kr",
+  "induty_code": "27191",
+  "jurir_no": "1701110200585",
+  "stock_code": "448780",
+  "stock_name": "마이크로엔엑스"
+ },
  "01207169": {
   "acc_mt": "12",
   "adres": "서울특별시 구로구 디지털로26길 111 (구로동, 제이앤케이디지털타워)",
@@ -31708,6 +33500,20 @@
   "jurir_no": "1101114865569",
   "stock_code": "227100",
   "stock_name": "프로브잇"
+ },
+ "01207901": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강서구 마곡중앙4로 62",
+  "ceo_nm": "전경헌",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)사이냅소프트",
+  "est_dt": "20000726",
+  "hm_url": "/www.synapsoft.co.kr",
+  "induty_code": "58222",
+  "jurir_no": "1101112035172",
+  "stock_code": "466410",
+  "stock_name": "사이냅소프트"
  },
  "01208751": {
   "acc_mt": "12",
@@ -31751,6 +33557,20 @@
   "stock_code": "267320",
   "stock_name": "나인테크"
  },
+ "01208885": {
+  "acc_mt": "12",
+  "adres": "울산광역시 북구 염포로 260-10(진장동) 주식회사 경동도시가스",
+  "ceo_nm": "송재호, 손현익",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "(주)경동도시가스",
+  "est_dt": "20170401",
+  "hm_url": "www.kdgas.co.kr",
+  "induty_code": "35200",
+  "jurir_no": "2301110274751",
+  "stock_code": "267290",
+  "stock_name": "경동도시가스"
+ },
  "01210066": {
   "acc_mt": "12",
   "adres": "서울특별시 송파구 송파대로49길 41 -",
@@ -31764,6 +33584,62 @@
   "jurir_no": "1101112564478",
   "stock_code": "377450",
   "stock_name": "리파인"
+ },
+ "01210190": {
+  "acc_mt": "12",
+  "adres": "서울특별시 성동구 성수이로 62 7층 (성수동2가, 무신사성수S1)",
+  "ceo_nm": "임중수",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 모비릭스",
+  "est_dt": "20070709",
+  "hm_url": "www.mobirix.com",
+  "induty_code": "5821",
+  "jurir_no": "1211110160415",
+  "stock_code": "348030",
+  "stock_name": "모비릭스"
+ },
+ "01210677": {
+  "acc_mt": "12",
+  "adres": "경기도 용인시 기흥구 신구로12번길 32, 씨케이빌딩",
+  "ceo_nm": "김유곤, 안근표 (공동 대표이사)",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "Y",
+  "corp_name": "(주)씨케이솔루션",
+  "est_dt": "20040223",
+  "hm_url": "www.cksolution.co.kr/",
+  "induty_code": "29172",
+  "jurir_no": "1345110077964",
+  "stock_code": "480370",
+  "stock_name": "씨케이솔루션"
+ },
+ "01211232": {
+  "acc_mt": "12",
+  "adres": "충청남도 아산시 둔포면 아산밸리로 285 (주)코윈테크",
+  "ceo_nm": "이재환, 최현순 각자 대표이사",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)코윈로보틱스",
+  "est_dt": "19981016",
+  "hm_url": "www.cowintech.com",
+  "induty_code": "292",
+  "jurir_no": "1351110047419",
+  "stock_code": "282880",
+  "stock_name": "코윈로보틱스"
+ },
+ "01211889": {
+  "acc_mt": "12",
+  "adres": "대구광역시 수성구 알파시티1로31길 2, 401호",
+  "ceo_nm": "박광목",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 이지스",
+  "est_dt": "20010226",
+  "hm_url": "www.egiskorea.com/",
+  "induty_code": "58221",
+  "jurir_no": "1701110191495",
+  "stock_code": "261520",
+  "stock_name": "이지스"
  },
  "01212921": {
   "acc_mt": "12",
@@ -31779,6 +33655,48 @@
   "stock_code": "",
   "stock_name": "비바리퍼블리카"
  },
+ "01213586": {
+  "acc_mt": "12",
+  "adres": "서울특별시 구로구 디지털로33길 50, 601",
+  "ceo_nm": "노현철",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "아이디피(주)",
+  "est_dt": "20051208",
+  "hm_url": "www.idp-corp.com",
+  "induty_code": "26329",
+  "jurir_no": "1101113356410",
+  "stock_code": "332370",
+  "stock_name": "아이디피"
+ },
+ "01214248": {
+  "acc_mt": "12",
+  "adres": "서울시 송파구 백제고분로 27길 6-14 (삼전동 101-3) -",
+  "ceo_nm": "김도언",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)뉴트리",
+  "est_dt": "20010412",
+  "hm_url": "www.newtree.co.kr",
+  "induty_code": "108",
+  "jurir_no": "1101112214429",
+  "stock_code": "270870",
+  "stock_name": "뉴트리"
+ },
+ "01214743": {
+  "acc_mt": "12",
+  "adres": "서울특별시 용산구 새창로44길 10 -",
+  "ceo_nm": "박영준",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)더네이쳐홀딩스",
+  "est_dt": "20040220",
+  "hm_url": "www.thenatureholdings.co.kr",
+  "induty_code": "144",
+  "jurir_no": "1101112958259",
+  "stock_code": "298540",
+  "stock_name": "더네이쳐홀딩스"
+ },
  "01215618": {
   "acc_mt": "12",
   "adres": "충청북도 청주시 흥덕구 옥산면 과학산업3로 38",
@@ -31792,6 +33710,76 @@
   "jurir_no": "1501110081963",
   "stock_code": "273640",
   "stock_name": "와이엠텍"
+ },
+ "01217014": {
+  "acc_mt": "12",
+  "adres": "경기도 화성시 삼성1로4길 7-4",
+  "ceo_nm": "정한섭(단독대표)",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)트윔",
+  "est_dt": "20100121",
+  "hm_url": "www.twim21.com",
+  "induty_code": "58222",
+  "jurir_no": "1501110132344",
+  "stock_code": "290090",
+  "stock_name": "트윔"
+ },
+ "01217795": {
+  "acc_mt": "12",
+  "adres": "경기도 화성시 마도면 청원산단7길 35(청원리 1453)",
+  "ceo_nm": "황성관, 서기형(각자 대표이사)",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "엠에프씨(주)",
+  "est_dt": "20080307",
+  "hm_url": "www.mfcglobal.co.kr",
+  "induty_code": "21100",
+  "jurir_no": "1314110209249",
+  "stock_code": "432980",
+  "stock_name": "엠에프씨"
+ },
+ "01217829": {
+  "acc_mt": "12",
+  "adres": "인천광역시 연수구 갯벌로145번길 15-8 &nbsp",
+  "ceo_nm": "김학철",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사엔에프씨",
+  "est_dt": "20120423",
+  "hm_url": "nfccosmetics.co.kr",
+  "induty_code": "20423",
+  "jurir_no": "1201110608755",
+  "stock_code": "265740",
+  "stock_name": "엔에프씨"
+ },
+ "01217865": {
+  "acc_mt": "12",
+  "adres": "경기도 용인시 기흥구 서천로127번길 10 -",
+  "ceo_nm": "심태진",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 프롬바이오",
+  "est_dt": "20060626",
+  "hm_url": "frombio-company.co.kr",
+  "induty_code": "108",
+  "jurir_no": "1358110127754",
+  "stock_code": "377220",
+  "stock_name": "프롬바이오"
+ },
+ "01218299": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 여의나루로 61 11층",
+  "ceo_nm": "현성완",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 에코아이",
+  "est_dt": "20050406",
+  "hm_url": "www.ecoeye.com",
+  "induty_code": "716",
+  "jurir_no": "1601110188262",
+  "stock_code": "448280",
+  "stock_name": "에코아이"
  },
  "01218800": {
   "acc_mt": "12",
@@ -31835,6 +33823,34 @@
   "stock_code": "388610",
   "stock_name": "지에프씨생명과학"
  },
+ "01222113": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 국제금융로 39 20층(앵커원)",
+  "ceo_nm": "어세룡",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)인스웨이브",
+  "est_dt": "20020415",
+  "hm_url": "www.inswave.com",
+  "induty_code": "58222",
+  "jurir_no": "1101112498312",
+  "stock_code": "450520",
+  "stock_name": "인스웨이브"
+ },
+ "01222432": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 도곡로 156 SJ빌딩",
+  "ceo_nm": "이주영",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 에스제이그룹",
+  "est_dt": "20080314",
+  "hm_url": "www.sj-group.co.kr",
+  "induty_code": "15129",
+  "jurir_no": "1101113856618",
+  "stock_code": "306040",
+  "stock_name": "에스제이그룹"
+ },
  "01222867": {
   "acc_mt": "12",
   "adres": "강원도 원주시 지정면 조엄로 321",
@@ -31849,6 +33865,20 @@
   "stock_code": "216080",
   "stock_name": "제테마"
  },
+ "01223219": {
+  "acc_mt": "12",
+  "adres": "대구광역시 달성군 구지면 국가산단대로33길 270 -",
+  "ceo_nm": "김명훈",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "에이에프더블류(주)",
+  "est_dt": "19980916",
+  "hm_url": "www.asanfw.com",
+  "induty_code": "242",
+  "jurir_no": "1752110007968",
+  "stock_code": "312610",
+  "stock_name": "에이에프더블류"
+ },
  "01226234": {
   "acc_mt": "12",
   "adres": "대전광역시 유성구 테크로 4로 17, 비715호",
@@ -31862,6 +33892,20 @@
   "jurir_no": "1601110235641",
   "stock_code": "338840",
   "stock_name": "와이바이오로직스"
+ },
+ "01226270": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강서구 화곡로68길 143",
+  "ceo_nm": "강기환, 최준수",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)스톰테크",
+  "est_dt": "19991008",
+  "hm_url": "www.stormtec.co.kr/",
+  "induty_code": "22211",
+  "jurir_no": "1101111785710",
+  "stock_code": "352090",
+  "stock_name": "스톰테크"
  },
  "01226410": {
   "acc_mt": "12",
@@ -31905,6 +33949,20 @@
   "stock_code": "270520",
   "stock_name": "앱튼"
  },
+ "01229240": {
+  "acc_mt": "12",
+  "adres": "경기도 용인시 기흥구 동백죽전대로175번길 63층(중동)",
+  "ceo_nm": "나원석, 박보선",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "N",
+  "corp_name": "(주)가이아코퍼레이션",
+  "est_dt": "20100818",
+  "hm_url": "gaiabiz.co.kr/",
+  "induty_code": "46499",
+  "jurir_no": "2850110181903",
+  "stock_code": "296520",
+  "stock_name": "가이아코퍼레이션"
+ },
  "01230255": {
   "acc_mt": "12",
   "adres": "제주특별자치도 제주시 한림읍 금능농공길 62-11",
@@ -31933,6 +33991,62 @@
   "stock_code": "317770",
   "stock_name": "엑스페릭스"
  },
+ "01232192": {
+  "acc_mt": "12",
+  "adres": "경기도 성남시 분당구 판교로 253 C동 403호",
+  "ceo_nm": "김철준",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)티디에스팜",
+  "est_dt": "20021111",
+  "hm_url": "www.tdspharm.com",
+  "induty_code": "21212",
+  "jurir_no": "1545110024284",
+  "stock_code": "464280",
+  "stock_name": "티디에스팜"
+ },
+ "01233465": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 테헤란로108길 7",
+  "ceo_nm": "박재원",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "동국생명과학(주)",
+  "est_dt": "20170501",
+  "hm_url": "dkls.co.kr",
+  "induty_code": "212",
+  "jurir_no": "1101116391778",
+  "stock_code": "303810",
+  "stock_name": "동국생명과학"
+ },
+ "01234297": {
+  "acc_mt": "12",
+  "adres": "전라북도 완주군 봉동읍 완주산단1로 167",
+  "ceo_nm": "배원, 김태준(각자대표)",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "미원스페셜티케미칼(주)",
+  "est_dt": "20170501",
+  "hm_url": "www.miramer.co.kr",
+  "induty_code": "201",
+  "jurir_no": "2101110123944",
+  "stock_code": "268280",
+  "stock_name": "미원에스씨"
+ },
+ "01234507": {
+  "acc_mt": "12",
+  "adres": "서울특별시 종로구 종로1길 50 &nbsp",
+  "ceo_nm": "김선희, 이인기(각자대표)",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "매일유업 주식회사",
+  "est_dt": "20170501",
+  "hm_url": "www.maeil.com",
+  "induty_code": "104",
+  "jurir_no": "1101116390770",
+  "stock_code": "267980",
+  "stock_name": "매일유업"
+ },
  "01235296": {
   "acc_mt": "12",
   "adres": "서울특별시 관악구 관악로 1 서울대학교 관악 940동(연구공원지원시설) B119호",
@@ -31946,6 +34060,20 @@
   "jurir_no": "1101113572636",
   "stock_code": "299660",
   "stock_name": "셀리드"
+ },
+ "01236286": {
+  "acc_mt": "12",
+  "adres": "Connaught Place, Central, Hong Kong Suite 3201, Jardine house 1",
+  "ceo_nm": "줘중비아오",
+  "checked": "2026-10-27T06:06+09:00",
+  "corp_cls": "K",
+  "corp_name": "컬러레이홀딩스",
+  "est_dt": "20131014",
+  "hm_url": "www.coloray.co.kr",
+  "induty_code": "649",
+  "jurir_no": "",
+  "stock_code": "900310",
+  "stock_name": "컬러레이"
  },
  "01236532": {
   "acc_mt": "12",
@@ -31961,6 +34089,34 @@
   "stock_code": "273060",
   "stock_name": "와이즈버즈"
  },
+ "01236897": {
+  "acc_mt": "12",
+  "adres": "서울특별시 서초구 사평대로 343 제일약품 사옥",
+  "ceo_nm": "성석제, 한상철 (공동대표)",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "제일약품(주)",
+  "est_dt": "20170601",
+  "hm_url": "www.jeilpharm.co.kr",
+  "induty_code": "212",
+  "jurir_no": "1101116420361",
+  "stock_code": "271980",
+  "stock_name": "제일약품"
+ },
+ "01237434": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 영동대로96길 20 대화빌딩 6층",
+  "ceo_nm": "이정수",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)플리토",
+  "est_dt": "20120824",
+  "hm_url": "www.flitto.com",
+  "induty_code": "63120",
+  "jurir_no": "1101114945246",
+  "stock_code": "300080",
+  "stock_name": "플리토"
+ },
  "01237540": {
   "acc_mt": "12",
   "adres": "충청남도 아산시 둔포면 아산밸리로 171",
@@ -31975,6 +34131,34 @@
   "stock_code": "272290",
   "stock_name": "이녹스첨단소재"
  },
+ "01238169": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 남부순환로 2745 -",
+  "ceo_nm": "이승준",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "(주)오리온",
+  "est_dt": "20170601",
+  "hm_url": "www.orionworld.com",
+  "induty_code": "108",
+  "jurir_no": "1101116417805",
+  "stock_code": "271560",
+  "stock_name": "오리온"
+ },
+ "01242241": {
+  "acc_mt": "12",
+  "adres": "경기도 과천시 과천대로7나길 25 12층",
+  "ceo_nm": "김기홍",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 샌즈랩",
+  "est_dt": "20041101",
+  "hm_url": "www.sandslab.io",
+  "induty_code": "582",
+  "jurir_no": "1101113108465",
+  "stock_code": "411080",
+  "stock_name": "샌즈랩"
+ },
  "01243161": {
   "acc_mt": "12",
   "adres": "경상남도 함양군 수동면 수동농공길 23-26 -",
@@ -31988,6 +34172,20 @@
   "jurir_no": "1101116471554",
   "stock_code": "277410",
   "stock_name": "인산가"
+ },
+ "01244601": {
+  "acc_mt": "12",
+  "adres": "경기도 성남시 분당구 판교역로 166 카카오페이판교아지트 B동 15층",
+  "ceo_nm": "신원근",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "Y",
+  "corp_name": "주식회사 카카오페이",
+  "est_dt": "20170403",
+  "hm_url": "www.kakaopay.com",
+  "induty_code": "66199",
+  "jurir_no": "1311110478337",
+  "stock_code": "377300",
+  "stock_name": "카카오페이"
  },
  "01245062": {
   "acc_mt": "12",
@@ -32058,6 +34256,34 @@
   "jurir_no": "1311110246859",
   "stock_code": "300120",
   "stock_name": "라온피플"
+ },
+ "01251577": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강동구 고덕비즈밸리로2가길 67 휴네시온타워 휴네시온타워",
+  "ceo_nm": "정동섭",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 휴네시온",
+  "est_dt": "20031215",
+  "hm_url": "www.hunesion.com",
+  "induty_code": "582",
+  "jurir_no": "1101112919938",
+  "stock_code": "290270",
+  "stock_name": "휴네시온"
+ },
+ "01251595": {
+  "acc_mt": "12",
+  "adres": "경기도 용인시 기흥구 흥덕1로 13 타워동 30층(영덕동, 흥덕아이티밸리)",
+  "ceo_nm": "이수진",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "압타바이오(주)",
+  "est_dt": "20090724",
+  "hm_url": "www.aptabio.com",
+  "induty_code": "70113",
+  "jurir_no": "1358110168906",
+  "stock_code": "293780",
+  "stock_name": "압타바이오"
  },
  "01253636": {
   "acc_mt": "12",
@@ -32157,6 +34383,20 @@
   "stock_code": "280360",
   "stock_name": "롯데웰푸드"
  },
+ "01258710": {
+  "acc_mt": "12",
+  "adres": "경기도 화성시 정남면 정남산단1길 40 -",
+  "ceo_nm": "이갑수",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)이노메트리",
+  "est_dt": "20080603",
+  "hm_url": "www.innometry.com",
+  "induty_code": "29299",
+  "jurir_no": "1345110127040",
+  "stock_code": "302430",
+  "stock_name": "이노메트리"
+ },
  "01259056": {
   "acc_mt": "12",
   "adres": "서울특별시 강남구 강남대로 636 6층",
@@ -32170,6 +34410,20 @@
   "jurir_no": "1101115131886",
   "stock_code": "299910",
   "stock_name": "애닉"
+ },
+ "01259232": {
+  "acc_mt": "12",
+  "adres": "경기도 용인시 기흥구 흥덕중앙로 120 1101호, 1105호, 1106호, 1107호, 1111호, 1112호, 1113호(영덕동, ？",
+  "ceo_nm": "오춘택",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)노바텍",
+  "est_dt": "20070223",
+  "hm_url": "www.mynovatech.com",
+  "induty_code": "339",
+  "jurir_no": "1351110083661",
+  "stock_code": "285490",
+  "stock_name": "노바텍"
  },
  "01259311": {
   "acc_mt": "12",
@@ -32185,6 +34439,48 @@
   "stock_code": "290720",
   "stock_name": "푸드나무"
  },
+ "01259418": {
+  "acc_mt": "12",
+  "adres": "경기도 화성시 팔탄면 현대기아로 25-13",
+  "ceo_nm": "이준각",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "대보마그네틱(주)",
+  "est_dt": "19941229",
+  "hm_url": "www.daebo.com",
+  "induty_code": "28909",
+  "jurir_no": "1101111114589",
+  "stock_code": "290670",
+  "stock_name": "대보마그네틱"
+ },
+ "01261644": {
+  "acc_mt": "12",
+  "adres": "세종특별자치시  집현중앙3로 8 세종특별자치시 집현중앙3로 8(집현동)",
+  "ceo_nm": "이정호",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)레인보우로보틱스",
+  "est_dt": "20110210",
+  "hm_url": "www.rainbow-robotics.com",
+  "induty_code": "29280",
+  "jurir_no": "1601110293889",
+  "stock_code": "277810",
+  "stock_name": "레인보우로보틱스"
+ },
+ "01261893": {
+  "acc_mt": "12",
+  "adres": "경기도 안성시 미양면 제2공단3길 12 -",
+  "ceo_nm": "양호근, 최동규 (각자 대표이사)",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "(주)케이씨텍",
+  "est_dt": "20171101",
+  "hm_url": "www.kctech.co.kr",
+  "induty_code": "272",
+  "jurir_no": "1346110087565",
+  "stock_code": "281820",
+  "stock_name": "케이씨텍"
+ },
  "01262023": {
   "acc_mt": "12",
   "adres": "서울특별시 금천구 디지털로9길 68B125호 (가산동,대륭포스트타워5차)",
@@ -32198,6 +34494,34 @@
   "jurir_no": "1211110269473",
   "stock_code": "253610",
   "stock_name": "루트락"
+ },
+ "01262032": {
+  "acc_mt": "12",
+  "adres": "서울특별시 금천구 가산디지털2로 179 롯데센터",
+  "ceo_nm": "김경엽",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "롯데이노베이트(주)",
+  "est_dt": "20171102",
+  "hm_url": "www.lotteinnovate.com",
+  "induty_code": "62021",
+  "jurir_no": "1101116557114",
+  "stock_code": "286940",
+  "stock_name": "롯데이노베이트"
+ },
+ "01263022": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 테헤란로 405 BGF사옥",
+  "ceo_nm": "민승배",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "(주)비지에프리테일",
+  "est_dt": "20171101",
+  "hm_url": "www.bgfretail.com",
+  "induty_code": "47122",
+  "jurir_no": "1101116555770",
+  "stock_code": "282330",
+  "stock_name": "BGF리테일"
  },
  "01263527": {
   "acc_mt": "12",
@@ -32240,6 +34564,20 @@
   "jurir_no": "1101113909839",
   "stock_code": "289220",
   "stock_name": "자이언트스텝"
+ },
+ "01264872": {
+  "acc_mt": "12",
+  "adres": "서울특별시 금천구 디지털로9길 47 한신IT타워 2차 9층, 11층",
+  "ceo_nm": "이성진",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "이노뎁(주)",
+  "est_dt": "20080110",
+  "hm_url": "innodep.co.kr",
+  "induty_code": "582",
+  "jurir_no": "1101113820738",
+  "stock_code": "303530",
+  "stock_name": "이노뎁"
  },
  "01265251": {
   "acc_mt": "12",
@@ -32296,6 +34634,34 @@
   "jurir_no": "1101112669369",
   "stock_code": "288490",
   "stock_name": "나라소프트"
+ },
+ "01267684": {
+  "acc_mt": "12",
+  "adres": "경기도 시흥시 엠티브이북로 349(정왕동)",
+  "ceo_nm": "구본학",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "쿠쿠홈시스 주식회사",
+  "est_dt": "20171204",
+  "hm_url": "www,cuckoo.co.kr",
+  "induty_code": "762",
+  "jurir_no": "1355110319406",
+  "stock_code": "284740",
+  "stock_name": "쿠쿠홈시스"
+ },
+ "01267958": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강서구 양천로 401, 강서한강자이타워 A동 702호",
+  "ceo_nm": "임국진",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 프로티아",
+  "est_dt": "20000322",
+  "hm_url": "www.protia.co.kr",
+  "induty_code": "271",
+  "jurir_no": "1101111915094",
+  "stock_code": "303360",
+  "stock_name": "프로티아"
  },
  "01267967": {
   "acc_mt": "12",
@@ -32437,6 +34803,20 @@
   "stock_code": "",
   "stock_name": "넥셀"
  },
+ "01276901": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 도산대로 128 8층",
+  "ceo_nm": "조재덕",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)컴투스엔",
+  "est_dt": "20180206",
+  "hm_url": "www.npinc.co.kr/",
+  "induty_code": "759",
+  "jurir_no": "1101116652790",
+  "stock_code": "291230",
+  "stock_name": "컴투스엔"
+ },
  "01279698": {
   "acc_mt": "12",
   "adres": "대구광역시 수성구 알파시티1로31길 9",
@@ -32465,6 +34845,20 @@
   "stock_code": "446440",
   "stock_name": "에피바이오텍"
  },
+ "01283974": {
+  "acc_mt": "12",
+  "adres": "인천광역시 연수구 컨벤시아대로 165 32층",
+  "ceo_nm": "박광춘",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)삐아",
+  "est_dt": "20040311",
+  "hm_url": "www.bbiacosmetic.com/",
+  "induty_code": "20423",
+  "jurir_no": "1411110024675",
+  "stock_code": "451250",
+  "stock_name": "삐아"
+ },
  "01284751": {
   "acc_mt": "12",
   "adres": "전라북도 완주군 봉동읍 테크노밸리로 497",
@@ -32479,6 +34873,34 @@
   "stock_code": "429270",
   "stock_name": "시지트로닉스"
  },
+ "01284876": {
+  "acc_mt": "12",
+  "adres": "서울특별시 금천구 벚꽃로 278 507호,508호,509호,510호,511호,512호,513호,514호(가산동, 에스제이테크노？",
+  "ceo_nm": "최정규",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "인스피언(주)",
+  "est_dt": "20090615",
+  "hm_url": "www.inspien.co.kr",
+  "induty_code": "582",
+  "jurir_no": "1101114116433",
+  "stock_code": "465480",
+  "stock_name": "인스피언"
+ },
+ "01286476": {
+  "acc_mt": "12",
+  "adres": "경기도 오산시 가장산업서북로 40-48",
+  "ceo_nm": "김시곤",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "알에프시스템즈(주)",
+  "est_dt": "20001103",
+  "hm_url": "www.rf-systems.co.kr/",
+  "induty_code": "25924",
+  "jurir_no": "1348110054627",
+  "stock_code": "474610",
+  "stock_name": "RF시스템즈"
+ },
  "01288410": {
   "acc_mt": "12",
   "adres": "경기도 안양시 동안구 시민대로 401 대륭테크노타운15차 제2001호,제2101호",
@@ -32492,6 +34914,20 @@
   "jurir_no": "1314110346786",
   "stock_code": "318160",
   "stock_name": "셀바이오휴먼텍"
+ },
+ "01288827": {
+  "acc_mt": "12",
+  "adres": "경기도 화성시 삼성1로1길 26 석우동",
+  "ceo_nm": "이케빈기두, 김재현",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 에이치피에스피",
+  "est_dt": "20170314",
+  "hm_url": "www.thehpsp.com/",
+  "induty_code": "29271",
+  "jurir_no": "1348110401886",
+  "stock_code": "403870",
+  "stock_name": "HPSP"
  },
  "01290132": {
   "acc_mt": "12",
@@ -32520,6 +34956,20 @@
   "jurir_no": "1101112499641",
   "stock_code": "276040",
   "stock_name": "스코넥"
+ },
+ "01290381": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 국회대로62길 25 교육시설재난공제회관 4층",
+  "ceo_nm": "박진오, 이해광(각자대표)",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "피엔케이피부임상연구센타(주)",
+  "est_dt": "20101007",
+  "hm_url": "www.pnkskin.com",
+  "induty_code": "739",
+  "jurir_no": "1101114445725",
+  "stock_code": "347740",
+  "stock_name": "피엔케이피부임상연구센타"
  },
  "01291317": {
   "acc_mt": "12",
@@ -32590,6 +35040,20 @@
   "jurir_no": "1313110097737",
   "stock_code": "381620",
   "stock_name": "제닉스로보틱스"
+ },
+ "01293953": {
+  "acc_mt": "12",
+  "adres": "서울특별시 서초구 효령로 39",
+  "ceo_nm": "육동현",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 싸이버원",
+  "est_dt": "20050112",
+  "hm_url": "www.cyberone.kr/",
+  "induty_code": "582",
+  "jurir_no": "1101113149287",
+  "stock_code": "356890",
+  "stock_name": "싸이버원"
  },
  "01294110": {
   "acc_mt": "12",
@@ -32675,6 +35139,20 @@
   "stock_code": "453450",
   "stock_name": "그리드위즈"
  },
+ "01301252": {
+  "acc_mt": "12",
+  "adres": "충청북도 보은군 삼승면 남부로 3750-148(우진리,티이엠씨)",
+  "ceo_nm": "유원양",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "티이엠씨 주식회사",
+  "est_dt": "20150126",
+  "hm_url": "temc.co.kr/",
+  "induty_code": "20121",
+  "jurir_no": "1501110198453",
+  "stock_code": "425040",
+  "stock_name": "티이엠씨"
+ },
  "01301623": {
   "acc_mt": "12",
   "adres": "경기도 이천시 신둔면 마소로57번길 25",
@@ -32717,6 +35195,20 @@
   "stock_code": "361570",
   "stock_name": "알비더블유"
  },
+ "01305249": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 테헤란로 211 14층(역삼동, 케이에프에이에스빌딩)",
+  "ceo_nm": "유승운",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "스톤브릿지벤처스(주)",
+  "est_dt": "20170531",
+  "hm_url": "stonebridgeventures.vc",
+  "induty_code": "649",
+  "jurir_no": "1101116416683",
+  "stock_code": "330730",
+  "stock_name": "스톤브릿지벤처스"
+ },
  "01305869": {
   "acc_mt": "12",
   "adres": "경기도 안양시 동안구 흥안대로427번길 16, 411호",
@@ -32730,6 +35222,48 @@
   "jurir_no": "1101113313254",
   "stock_code": "188260",
   "stock_name": "세니젠"
+ },
+ "01307335": {
+  "acc_mt": "12",
+  "adres": "경기도 양주시 평화로 1525",
+  "ceo_nm": "이기운",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)나인앤컴퍼니",
+  "est_dt": "20061102",
+  "hm_url": "www.09women.net",
+  "induty_code": "144",
+  "jurir_no": "2801110078161",
+  "stock_code": "366030",
+  "stock_name": "나인앤컴퍼니"
+ },
+ "01307593": {
+  "acc_mt": "12",
+  "adres": "경기도 수원시 권선구 산업로 94 -",
+  "ceo_nm": "안진호",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)에이아이코리아",
+  "est_dt": "20140822",
+  "hm_url": "www.aik.co.kr/",
+  "induty_code": "29271",
+  "jurir_no": "1348110309577",
+  "stock_code": "364950",
+  "stock_name": "에이아이코리아"
+ },
+ "01309069": {
+  "acc_mt": "12",
+  "adres": "서울특별시 금천구 벚꽃로 27813층 1309호(가산동, SJ테크노빌)",
+  "ceo_nm": "조경종",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "N",
+  "corp_name": "(주)타이드",
+  "est_dt": "20101013",
+  "hm_url": "www.tidekorea.com/kr/",
+  "induty_code": "262",
+  "jurir_no": "1101114449694",
+  "stock_code": "346010",
+  "stock_name": "타이드"
  },
  "01309388": {
   "acc_mt": "12",
@@ -32815,6 +35349,20 @@
   "stock_code": "333620",
   "stock_name": "엔시스"
  },
+ "01311055": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 영신로 220, KnK디지털타워 19층",
+  "ceo_nm": "김종현",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)쿠콘",
+  "est_dt": "20061214",
+  "hm_url": "www.coocon.net",
+  "induty_code": "639",
+  "jurir_no": "1101113579947",
+  "stock_code": "294570",
+  "stock_name": "쿠콘"
+ },
  "01311286": {
   "acc_mt": "12",
   "adres": "서울특별시 금천구 가산디지털1로 131 B동 16층(가산동, 비와이씨하이시티)",
@@ -32828,6 +35376,20 @@
   "jurir_no": "1101114481274",
   "stock_code": "317690",
   "stock_name": "퀀타매트릭스"
+ },
+ "01311310": {
+  "acc_mt": "12",
+  "adres": "충청남도 아산시 둔포면 아산밸리로387번길 42",
+  "ceo_nm": "이인영,이상권(각자 대표이사)",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 지아이텍",
+  "est_dt": "20120502",
+  "hm_url": "gitec.kr",
+  "induty_code": "292",
+  "jurir_no": "1648110065785",
+  "stock_code": "382480",
+  "stock_name": "지아이텍"
  },
  "01311408": {
   "acc_mt": "12",
@@ -32884,6 +35446,20 @@
   "jurir_no": "1101116770188",
   "stock_code": "298000",
   "stock_name": "효성화학"
+ },
+ "01316245": {
+  "acc_mt": "12",
+  "adres": "서울특별시 마포구 마포대로 119 효성빌딩",
+  "ceo_nm": "우태희",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "효성중공업(주)",
+  "est_dt": "20180604",
+  "hm_url": "www.hyosungheavyindustries.com",
+  "induty_code": "281",
+  "jurir_no": "1101116770154",
+  "stock_code": "298040",
+  "stock_name": "효성중공업"
  },
  "01316254": {
   "acc_mt": "12",
@@ -32969,6 +35545,20 @@
   "stock_code": "",
   "stock_name": "스마트골프"
  },
+ "01323032": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 선유로43길 27",
+  "ceo_nm": "정인국(대표이사)",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "Y",
+  "corp_name": "케이지모빌리티플랫폼(주)",
+  "est_dt": "20171129",
+  "hm_url": "www.kcar.com",
+  "induty_code": "45120",
+  "jurir_no": "1101116583490",
+  "stock_code": "381970",
+  "stock_name": "KG모빌리티플랫폼"
+ },
  "01324165": {
   "acc_mt": "12",
   "adres": "대구광역시 동구 혁신대로 440 (대림동) 아스트로젠 본사",
@@ -33010,6 +35600,20 @@
   "jurir_no": "1101116860640",
   "stock_code": "306200",
   "stock_name": "세아제강"
+ },
+ "01326224": {
+  "acc_mt": "12",
+  "adres": "경상북도 구미시 1공단로5길 56 ㈜원바이오젠",
+  "ceo_nm": "김원일",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)원바이오젠",
+  "est_dt": "20180903",
+  "hm_url": "wonbiogen.co.kr",
+  "induty_code": "213",
+  "jurir_no": "1101116860442",
+  "stock_code": "307280",
+  "stock_name": "원바이오젠"
  },
  "01326279": {
   "acc_mt": "12",
@@ -33066,6 +35670,20 @@
   "jurir_no": "1348110326191",
   "stock_code": "310210",
   "stock_name": "보로노이"
+ },
+ "01328170": {
+  "acc_mt": "12",
+  "adres": "서울특별시 마포구 토정로 119 노드메이슨 빌딩",
+  "ceo_nm": "구자풍",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "N",
+  "corp_name": "주식회사 노드메이슨",
+  "est_dt": "20130821",
+  "hm_url": "www.huxley.co.kr",
+  "induty_code": "20423",
+  "jurir_no": "1101115209310",
+  "stock_code": "317860",
+  "stock_name": "노드메이슨"
  },
  "01328639": {
   "acc_mt": "12",
@@ -33164,6 +35782,34 @@
   "jurir_no": "1101116895217",
   "stock_code": "310200",
   "stock_name": "애니플러스"
+ },
+ "01335790": {
+  "acc_mt": "12",
+  "adres": "서울특별시 금천구 가산로9길 66 더리즌밸리 지식산업센터(가산동)",
+  "ceo_nm": "기평석",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "바이젠셀 주식회사",
+  "est_dt": "20130201",
+  "hm_url": "www.vigencell.com/kr/index.asp",
+  "induty_code": "701",
+  "jurir_no": "1101115059773",
+  "stock_code": "308080",
+  "stock_name": "바이젠셀"
+ },
+ "01335851": {
+  "acc_mt": "12",
+  "adres": "전라남도 화순군 화순읍 산단길 98-1 (주)박셀바이오",
+  "ceo_nm": "이제중 (단독 대표이사)",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 박셀바이오",
+  "est_dt": "20100218",
+  "hm_url": "www.vaxcell-bio.com",
+  "induty_code": "70113",
+  "jurir_no": "2052110029832",
+  "stock_code": "323990",
+  "stock_name": "박셀바이오"
  },
  "01335930": {
   "acc_mt": "12",
@@ -33333,6 +35979,20 @@
   "stock_code": "226330",
   "stock_name": "신테카바이오"
  },
+ "01344363": {
+  "acc_mt": "12",
+  "adres": "경기도 안산시 단원구 목내동 390-1 -",
+  "ceo_nm": "남기중",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)다원넥스뷰",
+  "est_dt": "20091120",
+  "hm_url": "www.nexview.co.kr",
+  "induty_code": "292",
+  "jurir_no": "1101114224020",
+  "stock_code": "323350",
+  "stock_name": "다원넥스뷰"
+ },
  "01344831": {
   "acc_mt": "12",
   "adres": "서울특별시 구로구 디지털로33길 48 19층(구로동, 대륭포스트타워 7차)",
@@ -33361,6 +36021,20 @@
   "stock_code": "",
   "stock_name": "쿼럼바이오"
  },
+ "01345724": {
+  "acc_mt": "12",
+  "adres": "경상남도 창원시 성산구 완암로 50, 메카동 813호 (성산동, SK테크노파크)",
+  "ceo_nm": "주양효",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "N",
+  "corp_name": "주식회사 타임기술",
+  "est_dt": "20181001",
+  "hm_url": "timett.co.kr",
+  "induty_code": "582",
+  "jurir_no": "1942110291237",
+  "stock_code": "318660",
+  "stock_name": "타임기술"
+ },
  "01346343": {
   "acc_mt": "12",
   "adres": "서울특별시 성동구 연무장5가길 7 (성수동2가, 성수역현대테라스타워) EAST동 13층",
@@ -33374,6 +36048,20 @@
   "jurir_no": "1311110165869",
   "stock_code": "",
   "stock_name": "펀진"
+ },
+ "01350869": {
+  "acc_mt": "12",
+  "adres": "서울특별시 중구 소공로 51",
+  "ceo_nm": "임종룡",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "(주)우리금융지주",
+  "est_dt": "20190111",
+  "hm_url": "www.woorifg.com/",
+  "induty_code": "64992",
+  "jurir_no": "1101116981206",
+  "stock_code": "316140",
+  "stock_name": "우리금융지주"
  },
  "01351080": {
   "acc_mt": "12",
@@ -33403,6 +36091,20 @@
   "stock_code": "",
   "stock_name": "뉴라클사이언스"
  },
+ "01352575": {
+  "acc_mt": "12",
+  "adres": "전북특별자치도 정읍시 첨단2로 64 -",
+  "ceo_nm": "김영철, 이우송(각자대표)",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "N",
+  "corp_name": "바이오텐(주)",
+  "est_dt": "20101004",
+  "hm_url": "www.bioten.co.kr",
+  "induty_code": "108",
+  "jurir_no": "2112110013457",
+  "stock_code": "289170",
+  "stock_name": "바이오텐"
+ },
  "01353024": {
   "acc_mt": "12",
   "adres": "서울특별시 영등포구 양평로 96 1층,6층,8층(양평동4가,티에스빌딩)",
@@ -33431,6 +36133,20 @@
   "stock_code": "279060",
   "stock_name": "이노벡스"
  },
+ "01354740": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 테헤란로108길 23 대치동, 보이스캐디 사옥",
+  "ceo_nm": "김준오",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)브이씨",
+  "est_dt": "20050401",
+  "hm_url": "www.voicecaddie.co.kr",
+  "induty_code": "3330",
+  "jurir_no": "1101113197088",
+  "stock_code": "365900",
+  "stock_name": "브이씨"
+ },
  "01354953": {
   "acc_mt": "12",
   "adres": "서울특별시 강남구 언주로 413 태현빌딩 3층",
@@ -33444,6 +36160,20 @@
   "jurir_no": "1101114197251",
   "stock_code": "",
   "stock_name": "미라셀"
+ },
+ "01357446": {
+  "acc_mt": "12",
+  "adres": "경기도 성남시 중원구 사기막골로 58",
+  "ceo_nm": "오상근",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 퓨런티어",
+  "est_dt": "20090506",
+  "hm_url": "www.furonteer.com",
+  "induty_code": "27213",
+  "jurir_no": "1311110230307",
+  "stock_code": "370090",
+  "stock_name": "퓨런티어"
  },
  "01357765": {
   "acc_mt": "12",
@@ -33459,6 +36189,20 @@
   "stock_code": "348080",
   "stock_name": "큐라티스"
  },
+ "01358463": {
+  "acc_mt": "12",
+  "adres": "서울시 종로구 율곡로 194 현대그룹빌딩",
+  "ceo_nm": "도익한",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "현대무벡스(주)",
+  "est_dt": "20190218",
+  "hm_url": "www.hyundaimovex.com/",
+  "induty_code": "291",
+  "jurir_no": "1101117016870",
+  "stock_code": "319400",
+  "stock_name": "현대무벡스"
+ },
  "01358898": {
   "acc_mt": "12",
   "adres": "경기도 성남시 수정구 창업로 42 (시흥동, 판교제2테크노밸리경기기업성장센터)829-836호",
@@ -33472,6 +36216,20 @@
   "jurir_no": "1358110248336",
   "stock_code": "",
   "stock_name": "파트론이에스엘"
+ },
+ "01359736": {
+  "acc_mt": "12",
+  "adres": "경기도 군포시 고산로148번길 17 군포IT밸리 411호",
+  "ceo_nm": "김영선, 임이빈",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)프로이천",
+  "est_dt": "20190313",
+  "hm_url": "pro-2000.co.kr",
+  "induty_code": "261",
+  "jurir_no": "1101117042271",
+  "stock_code": "321260",
+  "stock_name": "프로이천"
  },
  "01359815": {
   "acc_mt": "12",
@@ -33487,6 +36245,20 @@
   "stock_code": "320000",
   "stock_name": "한울반도체"
  },
+ "01360875": {
+  "acc_mt": "12",
+  "adres": "경기도 이천시 호법면 덕평로 554-30",
+  "ceo_nm": "노환진",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 탑머티리얼",
+  "est_dt": "20120215",
+  "hm_url": "www.topmaterial.co.kr",
+  "induty_code": "28202",
+  "jurir_no": "1311110304011",
+  "stock_code": "360070",
+  "stock_name": "탑머티리얼"
+ },
  "01363818": {
   "acc_mt": "06",
   "adres": "서울특별시 송파구 올림픽로 300 롯데월드타워 30층",
@@ -33500,6 +36272,20 @@
   "jurir_no": "1101117061081",
   "stock_code": "330590",
   "stock_name": "롯데리츠"
+ },
+ "01363924": {
+  "acc_mt": "12",
+  "adres": "경기도 포천시 군내면 용정경제로1길 94-1",
+  "ceo_nm": "이호경",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "N",
+  "corp_name": "(주)한국미라클피플사",
+  "est_dt": "20140529",
+  "hm_url": "www.kmpc.co.kr",
+  "induty_code": "20422",
+  "jurir_no": "2844110077460",
+  "stock_code": "331660",
+  "stock_name": "한국미라클피플사"
  },
  "01364297": {
   "acc_mt": "12",
@@ -33557,6 +36343,20 @@
   "stock_code": "379390",
   "stock_name": "이성씨엔아이"
  },
+ "01365825": {
+  "acc_mt": "12",
+  "adres": "경기도 화성시 삼성1로4길 48",
+  "ceo_nm": "이경일, 하형찬 각자대표",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "피에스케이 주식회사",
+  "est_dt": "20190401",
+  "hm_url": "www.pskinc.com",
+  "induty_code": "29271",
+  "jurir_no": "1348110493354",
+  "stock_code": "319660",
+  "stock_name": "피에스케이"
+ },
  "01366000": {
   "acc_mt": "12",
   "adres": "충청남도 천안시 서북구 성환읍 비아이티산단로 235 -",
@@ -33571,6 +36371,20 @@
   "stock_code": "323280",
   "stock_name": "태성"
  },
+ "01366824": {
+  "acc_mt": "12",
+  "adres": "충청남도 공주시 흑수골길 39 (신관동) 3층",
+  "ceo_nm": "박훈웅",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "N",
+  "corp_name": "(주)제이엠멀티",
+  "est_dt": "20080324",
+  "hm_url": "www.jmmulti.com",
+  "induty_code": "16101",
+  "jurir_no": "1101113865643",
+  "stock_code": "254160",
+  "stock_name": "제이엠멀티"
+ },
  "01367586": {
   "acc_mt": "12",
   "adres": "전라북도 군산시 중가도길 16",
@@ -33584,6 +36398,20 @@
   "jurir_no": "2111110040569",
   "stock_code": "417500",
   "stock_name": "제이아이테크"
+ },
+ "01368354": {
+  "acc_mt": "12",
+  "adres": "충청북도 괴산군 청안면 네패스로 42 주식회사 네패스아크",
+  "ceo_nm": "이창우, 이병구(각자 대표이사)",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 네패스아크",
+  "est_dt": "20190401",
+  "hm_url": "www.nepesark.co.kr",
+  "induty_code": "739",
+  "jurir_no": "1501110267365",
+  "stock_code": "330860",
+  "stock_name": "네패스아크"
  },
  "01368637": {
   "acc_mt": "12",
@@ -33641,6 +36469,20 @@
   "stock_code": "402490",
   "stock_name": "그린리소스"
  },
+ "01372782": {
+  "acc_mt": "12",
+  "adres": "경기도 과천시 과천대로7나길 34 3층(갈현동, 가비아@)",
+  "ceo_nm": "주갑수",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)엑스게이트",
+  "est_dt": "20101210",
+  "hm_url": "www.axgate.com",
+  "induty_code": "58221",
+  "jurir_no": "1101114495598",
+  "stock_code": "356680",
+  "stock_name": "엑스게이트"
+ },
  "01373709": {
   "acc_mt": "12",
   "adres": "서울특별시 강남구 강남대로84길 16 비1층, 7층, 13층, 14층(역삼동, 제이스타워)",
@@ -33668,6 +36510,20 @@
   "jurir_no": "1601110395354",
   "stock_code": "287840",
   "stock_name": "인투셀"
+ },
+ "01374717": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 테헤란로34길 22(역삼동) 미트박스빌딩",
+  "ceo_nm": "김기봉",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)미트박스글로벌",
+  "est_dt": "20140519",
+  "hm_url": "www.meatbox.co.kr",
+  "induty_code": "639",
+  "jurir_no": "1311110375757",
+  "stock_code": "475460",
+  "stock_name": "미트박스"
  },
  "01375822": {
   "acc_mt": "12",
@@ -33711,6 +36567,48 @@
   "stock_code": "0039P0",
   "stock_name": "매드업"
  },
+ "01379563": {
+  "acc_mt": "12",
+  "adres": "서울특별시 종로구 인사동9길 27",
+  "ceo_nm": "김소연",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)에스팀",
+  "est_dt": "20040715",
+  "hm_url": "esteemgroup.com",
+  "induty_code": "75992",
+  "jurir_no": "1101113050806",
+  "stock_code": "458350",
+  "stock_name": "에스팀"
+ },
+ "01380578": {
+  "acc_mt": "12",
+  "adres": "충청북도 청주시 흥덕구 옥산면 옥산산단로 42",
+  "ceo_nm": "옥경석",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)도우인시스",
+  "est_dt": "20100325",
+  "hm_url": "www.dowooinsys.com/",
+  "induty_code": "26211",
+  "jurir_no": "1501110134952",
+  "stock_code": "484120",
+  "stock_name": "도우인시스"
+ },
+ "01381391": {
+  "acc_mt": "12",
+  "adres": "경기도 과천시 과천대로7나길 34 3층(갈현동, 가비아@)",
+  "ceo_nm": "이은재",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 에스피소프트",
+  "est_dt": "20130128",
+  "hm_url": "www.spsoft.co.kr",
+  "induty_code": "620",
+  "jurir_no": "1101115055284",
+  "stock_code": "443670",
+  "stock_name": "에스피소프트"
+ },
  "01381805": {
   "acc_mt": "12",
   "adres": "서울특별시 강남구 강남대로 162길 41-4(신사동)",
@@ -33739,6 +36637,34 @@
   "stock_code": "357880",
   "stock_name": "SKAI"
  },
+ "01383229": {
+  "acc_mt": "12",
+  "adres": "경기도 용인시 기흥구 탑실로 35번길 57",
+  "ceo_nm": "임영진",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 저스템",
+  "est_dt": "20160425",
+  "hm_url": "www.justem.co.kr",
+  "induty_code": "29271",
+  "jurir_no": "1101116042066",
+  "stock_code": "417840",
+  "stock_name": "저스템"
+ },
+ "01383779": {
+  "acc_mt": "12",
+  "adres": "충청북도 제천시 제2바이오밸리로5길 15(왕암동)",
+  "ceo_nm": "염호영",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)에스켐",
+  "est_dt": "20140514",
+  "hm_url": "www.s-chem.co.kr",
+  "induty_code": "204",
+  "jurir_no": "1358110248774",
+  "stock_code": "475660",
+  "stock_name": "에스켐"
+ },
  "01384477": {
   "acc_mt": "12",
   "adres": "서울특별시 강남구 도곡로 204 동신빌딩 4층,5층",
@@ -33752,6 +36678,48 @@
   "jurir_no": "1101117067138",
   "stock_code": "323230",
   "stock_name": "엠에프엠코리아"
+ },
+ "01384787": {
+  "acc_mt": "12",
+  "adres": "서울특별시 서초구 서초대로77길 55",
+  "ceo_nm": "김형태",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "Y",
+  "corp_name": "(주)시프트업",
+  "est_dt": "20131202",
+  "hm_url": "shiftup.co.kr",
+  "induty_code": "58212",
+  "jurir_no": "1101115281897",
+  "stock_code": "462870",
+  "stock_name": "시프트업"
+ },
+ "01385005": {
+  "acc_mt": "12",
+  "adres": "경기도 성남시 분당구 판교로 700 분당테크노파크 디동 304호",
+  "ceo_nm": "이정주",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)리브스메드",
+  "est_dt": "20110616",
+  "hm_url": "www.livsmed.com",
+  "induty_code": "27112",
+  "jurir_no": "1101114625385",
+  "stock_code": "491000",
+  "stock_name": "리브스메드"
+ },
+ "01385050": {
+  "acc_mt": "12",
+  "adres": "인천광역시 연수구 벤처로100번길 6",
+  "ceo_nm": "이돈행",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)넥스트바이오메디컬",
+  "est_dt": "20140801",
+  "hm_url": "www.nextbiomedical.co.kr",
+  "induty_code": "27199",
+  "jurir_no": "1201110720228",
+  "stock_code": "389650",
+  "stock_name": "넥스트바이오메디컬"
  },
  "01386509": {
   "acc_mt": "12",
@@ -33809,6 +36777,34 @@
   "stock_code": "329180",
   "stock_name": "HD현대중공업"
  },
+ "01390399": {
+  "acc_mt": "12",
+  "adres": "경기도 과천시 과천대로12길 117 지동 701호,702호,802호(문원동 과천지식정보타운공공주택지구지식10블록",
+  "ceo_nm": "이정근",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "솔트웨어 주식회사",
+  "est_dt": "20190604",
+  "hm_url": "saltware.co.kr",
+  "induty_code": "620",
+  "jurir_no": "1101117128211",
+  "stock_code": "328380",
+  "stock_name": "솔트웨어"
+ },
+ "01391033": {
+  "acc_mt": "11",
+  "adres": "서울특별시 영등포구 국제금융로8길  2 5층(여의도동, 농협재단빌딩)",
+  "ceo_nm": "조영재",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "주식회사 엔에이치프라임위탁관리부동산투자회사",
+  "est_dt": "20190530",
+  "hm_url": "www.nhreits.com",
+  "induty_code": "681",
+  "jurir_no": "1101117123732",
+  "stock_code": "338100",
+  "stock_name": "NH프라임리츠"
+ },
  "01391103": {
   "acc_mt": "12",
   "adres": "서울특별시 성동구 뚝섬로1길 63, 12층(성수동1가, 영창디지털타워)",
@@ -33864,6 +36860,20 @@
   "jurir_no": "1101117182655",
   "stock_code": "332290",
   "stock_name": "누보"
+ },
+ "01396676": {
+  "acc_mt": "12",
+  "adres": "부산광역시 강서구 녹산산단165로14번길 31 주식회사 일승",
+  "ceo_nm": "김성욱",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)일승",
+  "est_dt": "20190807",
+  "hm_url": "ilseung.co.kr",
+  "induty_code": "311",
+  "jurir_no": "1101117196523",
+  "stock_code": "333430",
+  "stock_name": "일승"
  },
  "01396931": {
   "acc_mt": "12",
@@ -33935,6 +36945,20 @@
   "stock_code": "331520",
   "stock_name": "밸로프"
  },
+ "01399071": {
+  "acc_mt": "12",
+  "adres": "서울특별시 관악구 관악로 1 220동 745-1호(신림동, 서울대학교종합연구동)",
+  "ceo_nm": "이한승",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 고바이오랩",
+  "est_dt": "20140811",
+  "hm_url": "kobiolabs.com",
+  "induty_code": "70113",
+  "jurir_no": "1101115487437",
+  "stock_code": "348150",
+  "stock_name": "고바이오랩"
+ },
  "01399992": {
   "acc_mt": "12",
   "adres": "서울특별시 강남구 테헤란로 624 (대치동, 오로라빌딩) 4층",
@@ -33963,6 +36987,20 @@
   "stock_code": "432470",
   "stock_name": "케이엔에스"
  },
+ "01405390": {
+  "acc_mt": "12",
+  "adres": "인천광역시 남동구 남동동로138번길 15 -",
+  "ceo_nm": "김민용",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 핌스",
+  "est_dt": "20160119",
+  "hm_url": "pimskorea.com",
+  "induty_code": "26212",
+  "jurir_no": "1201110799950",
+  "stock_code": "347770",
+  "stock_name": "핌스"
+ },
  "01405451": {
   "acc_mt": "12",
   "adres": "서울특별시 강남구 논현로 653 3층(논현동)",
@@ -33990,6 +37028,20 @@
   "jurir_no": "1101117222352",
   "stock_code": "335870",
   "stock_name": "윙스풋"
+ },
+ "01406265": {
+  "acc_mt": "12",
+  "adres": "서울특별시 마포구 잔다리로3길 20",
+  "ceo_nm": "강철구",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 와이랩",
+  "est_dt": "20101112",
+  "hm_url": "ylabcomics.com",
+  "induty_code": "591",
+  "jurir_no": "1101114474659",
+  "stock_code": "432430",
+  "stock_name": "와이랩"
  },
  "01406751": {
   "acc_mt": "12",
@@ -34033,6 +37085,20 @@
   "stock_code": "336570",
   "stock_name": "원텍"
  },
+ "01408999": {
+  "acc_mt": "12",
+  "adres": "서울특별시 구로구 디지털로26길 61 1001호(구로동, 에이스하이엔드타워2차)",
+  "ceo_nm": "김학성, 박창훈",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)웨이버스",
+  "est_dt": "20190904",
+  "hm_url": "",
+  "induty_code": "582",
+  "jurir_no": "1101117224647",
+  "stock_code": "336060",
+  "stock_name": "웨이버스"
+ },
  "01409022": {
   "acc_mt": "12",
   "adres": "서울특별시 종로구 새문안로5길 19, 7층 711호(당주동, 로얄빌딩)",
@@ -34075,6 +37141,20 @@
   "stock_code": "336260",
   "stock_name": "두산퓨얼셀"
  },
+ "01412822": {
+  "acc_mt": "12",
+  "adres": "전북특별자치도 익산시 용안면 동지산안대길 46 -",
+  "ceo_nm": "곽근만",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "솔루스첨단소재 주식회사",
+  "est_dt": "20191001",
+  "hm_url": "www.solusadvancedmaterials.com",
+  "induty_code": "26299",
+  "jurir_no": "2149110058927",
+  "stock_code": "336370",
+  "stock_name": "솔루스첨단소재"
+ },
  "01413371": {
   "acc_mt": "12",
   "adres": "서울특별시 송파구 법원로 128씨동 1314호",
@@ -34089,6 +37169,20 @@
   "stock_code": "343090",
   "stock_name": "에이치엘비사이언스"
  },
+ "01414422": {
+  "acc_mt": "12",
+  "adres": "서울특별시 서초구 강남대로 279 4,5층(서초동, 백향빌딩)",
+  "ceo_nm": "김석철",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)아이비김영",
+  "est_dt": "20191011",
+  "hm_url": "www.kimyoung.co.kr",
+  "induty_code": "85503",
+  "jurir_no": "1101117257507",
+  "stock_code": "339950",
+  "stock_name": "아이비김영"
+ },
  "01415892": {
   "acc_mt": "06",
   "adres": "서울특별시 중구 을지로 100",
@@ -34102,6 +37196,34 @@
   "jurir_no": "1101117263728",
   "stock_code": "348950",
   "stock_name": "제이알글로벌리츠"
+ },
+ "01416235": {
+  "acc_mt": "12",
+  "adres": "308 CENTRAL DES VOEUX, NO.308 DES VOEUX, ROAD CENTRAL, HONG KONG UNIT 2601-02, 26/F",
+  "ceo_nm": "손창욱, 최명규 (공동대표)",
+  "checked": "2026-10-27T06:06+09:00",
+  "corp_cls": "K",
+  "corp_name": "고스트스튜디오(주)",
+  "est_dt": "20160906",
+  "hm_url": "www.ghoststudio.net",
+  "induty_code": "58212",
+  "jurir_no": "",
+  "stock_code": "950190",
+  "stock_name": "고스트스튜디오"
+ },
+ "01416572": {
+  "acc_mt": "12",
+  "adres": "경기도 평택시 오성면 오성북로 154-51 (주)세림비앤지",
+  "ceo_nm": "나상수",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)세림비앤지",
+  "est_dt": "20191017",
+  "hm_url": "-",
+  "induty_code": "222",
+  "jurir_no": "1101117262754",
+  "stock_code": "340440",
+  "stock_name": "세림B&G"
  },
  "01416642": {
   "acc_mt": "12",
@@ -34145,6 +37267,20 @@
   "stock_code": "344860",
   "stock_name": "이노진"
  },
+ "01419205": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 선유로 70, 509호(문래동 3가, 우리벤처타운2)",
+  "ceo_nm": "박광훈, 이재용 (각자대표)",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)피앤에스로보틱스",
+  "est_dt": "20031226",
+  "hm_url": "walkbot.co.kr",
+  "induty_code": "27199",
+  "jurir_no": "1101112922478",
+  "stock_code": "460940",
+  "stock_name": "피앤에스로보틱스"
+ },
  "01423837": {
   "acc_mt": "12",
   "adres": "경기도 성남시 수정구 달래내로 46 810호 (시흥동, 성남글로벌융합센터)",
@@ -34173,6 +37309,20 @@
   "stock_code": "382150",
   "stock_name": "온코크로스"
  },
+ "01424261": {
+  "acc_mt": "12",
+  "adres": "서울특별시 금천구 가산디지털1로 145, 1005호(가산동, 에이스하이엔드타워3차) &nbsp",
+  "ceo_nm": "홍병진",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 레몬헬스케어",
+  "est_dt": "20170630",
+  "hm_url": "www.lemonhealthcare.com/",
+  "induty_code": "58222",
+  "jurir_no": "1101116446995",
+  "stock_code": "365660",
+  "stock_name": "레몬헬스케어"
+ },
  "01428203": {
   "acc_mt": "12",
   "adres": "서울특별시 서초구 강남대로 587(잠원동)",
@@ -34186,6 +37336,20 @@
   "jurir_no": "1101117342473",
   "stock_code": "344820",
   "stock_name": "케이씨씨글라스"
+ },
+ "01428948": {
+  "acc_mt": "12",
+  "adres": "서울특별시 서초구 동작대로 212 -",
+  "ceo_nm": "김상무",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "오아 주식회사",
+  "est_dt": "20140129",
+  "hm_url": "www.oa-world.com",
+  "induty_code": "47320",
+  "jurir_no": "1101115328615",
+  "stock_code": "342870",
+  "stock_name": "오아"
  },
  "01429220": {
   "acc_mt": "12",
@@ -34229,6 +37393,20 @@
   "stock_code": "357120",
   "stock_name": "코람코라이프인프라리츠"
  },
+ "01432598": {
+  "acc_mt": "12",
+  "adres": "경기도 용인시 기흥구 이현로30번길 107",
+  "ceo_nm": "기창석",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)지씨지놈",
+  "est_dt": "20130731",
+  "hm_url": "www.gcgenome.com",
+  "induty_code": "739",
+  "jurir_no": "1345110215100",
+  "stock_code": "340450",
+  "stock_name": "지씨지놈"
+ },
  "01435489": {
   "acc_mt": "12",
   "adres": "경상남도 창원시 마산회원구 자유무역4길 61",
@@ -34242,6 +37420,20 @@
   "jurir_no": "1942110310912",
   "stock_code": "382900",
   "stock_name": "범한퓨얼셀"
+ },
+ "01436479": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 선릉로91길 10 -",
+  "ceo_nm": "조길주, 이강찬(각자 대표이사)",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)토마토시스템",
+  "est_dt": "20001027",
+  "hm_url": "tomatosystem.co.kr/",
+  "induty_code": "582",
+  "jurir_no": "1101112099425",
+  "stock_code": "393210",
+  "stock_name": "토마토시스템"
  },
  "01436558": {
   "acc_mt": "12",
@@ -34355,6 +37547,34 @@
   "stock_code": "351320",
   "stock_name": "넥사다이내믹스"
  },
+ "01441611": {
+  "acc_mt": "12",
+  "adres": "서울특별시 송파구 올림픽로 300 35층",
+  "ceo_nm": "이복기",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)원티드랩",
+  "est_dt": "20150406",
+  "hm_url": "www.wanted.co.kr",
+  "induty_code": "58221",
+  "jurir_no": "1311110405166",
+  "stock_code": "376980",
+  "stock_name": "원티드랩"
+ },
+ "01442115": {
+  "acc_mt": "12",
+  "adres": "City of Wilmington, County of New Castle, State of Delaware, Postal Code 19801 Corporation Trust Cen",
+  "ceo_nm": "홍수",
+  "checked": "2026-10-27T06:06+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 소마젠",
+  "est_dt": "20041202",
+  "hm_url": "psomagen.com",
+  "induty_code": "73909",
+  "jurir_no": "",
+  "stock_code": "950200",
+  "stock_name": "소마젠"
+ },
  "01442966": {
   "acc_mt": "03",
   "adres": "서울특별시 서초구 강남대로 465",
@@ -34382,6 +37602,20 @@
   "jurir_no": "1101115972652",
   "stock_code": "355690",
   "stock_name": "에이텀"
+ },
+ "01445024": {
+  "acc_mt": "12",
+  "adres": "서울특별시 성동구 아차산로 92 4층(성수동2가, S TOWER)",
+  "ceo_nm": "이근주",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "한패스 주식회사",
+  "est_dt": "20170203",
+  "hm_url": "hanpass.com",
+  "induty_code": "64999",
+  "jurir_no": "1101116306420",
+  "stock_code": "408470",
+  "stock_name": "한패스"
  },
  "01445440": {
   "acc_mt": "12",
@@ -34411,6 +37645,34 @@
   "stock_code": "",
   "stock_name": "뱅크샐러드"
  },
+ "01448544": {
+  "acc_mt": "12",
+  "adres": "경기도 용인시 기흥구 구성로 357 D동 710호 (청덕동, 용인테크노밸리)",
+  "ceo_nm": "서정민",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)셀로맥스사이언스",
+  "est_dt": "20141022",
+  "hm_url": "cellromax.kr/",
+  "induty_code": "10897",
+  "jurir_no": "1313110142300",
+  "stock_code": "471820",
+  "stock_name": "셀로맥스사이언스"
+ },
+ "01450938": {
+  "acc_mt": "12",
+  "adres": "경기도 김포시 양촌읍 황금3로39번길 20-42",
+  "ceo_nm": "이상섭",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)지에프아이",
+  "est_dt": "20141120",
+  "hm_url": "www.gfi-aegis.com",
+  "induty_code": "29192",
+  "jurir_no": "2201110120203",
+  "stock_code": "493330",
+  "stock_name": "지에프아이"
+ },
  "01453670": {
   "acc_mt": "12",
   "adres": "서울특별시 금천구 가산디지털2로 115 416호(가산동, 대륭테크노타운3차)",
@@ -34439,6 +37701,20 @@
   "stock_code": "457600",
   "stock_name": "벡트로보틱스"
  },
+ "01454341": {
+  "acc_mt": "12",
+  "adres": "서울특별시 송파구 법원로9길 26, 디동 제6층(문정동, 에이치비지니스파크)",
+  "ceo_nm": "이상훈",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)플래티어",
+  "est_dt": "20050224",
+  "hm_url": "www.plateer.com/",
+  "induty_code": "58222",
+  "jurir_no": "1101113175969",
+  "stock_code": "367000",
+  "stock_name": "플래티어"
+ },
  "01455410": {
   "acc_mt": "12",
   "adres": "대구광역시 동구 율암로 140-9 &nbsp",
@@ -34452,6 +37728,34 @@
   "jurir_no": "1701110383357",
   "stock_code": "387570",
   "stock_name": "파인메딕스"
+ },
+ "01455492": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 테헤란로 231 West동 6층,7층(역삼동,센터필드)",
+  "ceo_nm": "신해동, 김동혁 (공동대표)",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)데이원컴퍼니",
+  "est_dt": "20170417",
+  "hm_url": "day1company.co.kr/",
+  "induty_code": "85669",
+  "jurir_no": "1101116377877",
+  "stock_code": "373160",
+  "stock_name": "데이원컴퍼니"
+ },
+ "01456011": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 언주로172길 8 -",
+  "ceo_nm": "안종오",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 디어유",
+  "est_dt": "20170704",
+  "hm_url": "www.dear-u.co",
+  "induty_code": "58222",
+  "jurir_no": "1101116450615",
+  "stock_code": "376300",
+  "stock_name": "디어유"
  },
  "01458161": {
   "acc_mt": "12",
@@ -34467,6 +37771,76 @@
   "stock_code": "484810",
   "stock_name": "티엑스알로보틱스"
  },
+ "01459212": {
+  "acc_mt": "12",
+  "adres": "경기도 수원시 권선구 산업로 174-29",
+  "ceo_nm": "이성제",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 원준",
+  "est_dt": "20081126",
+  "hm_url": "www.onejoon.co.kr/",
+  "induty_code": "292",
+  "jurir_no": "1348110166589",
+  "stock_code": "382840",
+  "stock_name": "원준"
+ },
+ "01461730": {
+  "acc_mt": "12",
+  "adres": "서울특별시 종로구 대학로 57 홍익대학교대학로캠퍼스 5층",
+  "ceo_nm": "김준호, 정창한",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)딜리셔스",
+  "est_dt": "20110124",
+  "hm_url": "www.dealicious.kr/",
+  "induty_code": "47911",
+  "jurir_no": "1101114522169",
+  "stock_code": "483350",
+  "stock_name": "딜리셔스"
+ },
+ "01462605": {
+  "acc_mt": "12",
+  "adres": "경기도 화성시 양감면 초록로 868-12",
+  "ceo_nm": "김동현, 장철수(각자대표)",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "지투파워(주)",
+  "est_dt": "20101217",
+  "hm_url": "www.g2p.co.kr",
+  "induty_code": "28123",
+  "jurir_no": "1351110102065",
+  "stock_code": "388050",
+  "stock_name": "지투파워"
+ },
+ "01462739": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 선릉로 433, 신관 17층(역삼동)",
+  "ceo_nm": "배영근",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)비아이매트릭스",
+  "est_dt": "20050402",
+  "hm_url": "www.bimatrix.co.kr",
+  "induty_code": "5822",
+  "jurir_no": "1101113200360",
+  "stock_code": "413640",
+  "stock_name": "비아이매트릭스"
+ },
+ "01466373": {
+  "acc_mt": "12",
+  "adres": "경기도 성남시 분당구 정자일로213번길 5 302동 301호~305호(정자동, 아이파크분당3)",
+  "ceo_nm": "이상수",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)알트",
+  "est_dt": "20170901",
+  "hm_url": "www.altech.kr/",
+  "induty_code": "264",
+  "jurir_no": "1311110492543",
+  "stock_code": "459550",
+  "stock_name": "알트"
+ },
  "01466832": {
   "acc_mt": "12",
   "adres": "서울특별시 강남구 도곡로8길 6, 3층(도곡동, 지호빌딩)",
@@ -34480,6 +37854,48 @@
   "jurir_no": "1101113334101",
   "stock_code": "403360",
   "stock_name": "라피치"
+ },
+ "01467451": {
+  "acc_mt": "12",
+  "adres": "서울특별시 마포구 양화로 45 메세나폴리스 세아타워 16층",
+  "ceo_nm": "정재욱",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)케이티밀리의서재",
+  "est_dt": "20160712",
+  "hm_url": "www.millie.town",
+  "induty_code": "581",
+  "jurir_no": "1101116114451",
+  "stock_code": "418470",
+  "stock_name": "KT밀리의서재"
+ },
+ "01467503": {
+  "acc_mt": "12",
+  "adres": "서울특별시 중구 다산로 210, 7층(신당동, 홍진빌딩)",
+  "ceo_nm": "주춘섭",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 뉴키즈온",
+  "est_dt": "20130425",
+  "hm_url": "newkidson.com",
+  "induty_code": "141",
+  "jurir_no": "1101115121275",
+  "stock_code": "462310",
+  "stock_name": "뉴키즈온"
+ },
+ "01468061": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 논현로135길 29",
+  "ceo_nm": "김주오",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)레뷰코퍼레이션",
+  "est_dt": "20141128",
+  "hm_url": "corp.revu.net",
+  "induty_code": "71310",
+  "jurir_no": "1101115576438",
+  "stock_code": "443250",
+  "stock_name": "레뷰코퍼레이션"
  },
  "01472930": {
   "acc_mt": "12",
@@ -34523,6 +37939,34 @@
   "stock_code": "355150",
   "stock_name": "코스텍시스"
  },
+ "01478712": {
+  "acc_mt": "12",
+  "adres": "경기도 안산시 단원구 강촌로 230",
+  "ceo_nm": "신영환",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "Y",
+  "corp_name": "대덕전자(주)",
+  "est_dt": "20200501",
+  "hm_url": "www.daeduck.com",
+  "induty_code": "2622",
+  "jurir_no": "1314110460809",
+  "stock_code": "353200",
+  "stock_name": "대덕전자"
+ },
+ "01480568": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 강남대로 310 (역삼동 837-11) 유니온센터 3층",
+  "ceo_nm": "김재원, 조석현(각자대표)",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)이지바이오",
+  "est_dt": "20200501",
+  "hm_url": "www.easybio.co.kr/",
+  "induty_code": "109",
+  "jurir_no": "1101117474424",
+  "stock_code": "353810",
+  "stock_name": "이지바이오"
+ },
  "01480708": {
   "acc_mt": "12",
   "adres": "경기도 수원시 영통구 창룡대로256번길 50 711호",
@@ -34550,6 +37994,48 @@
   "jurir_no": "1101117299294",
   "stock_code": "400760",
   "stock_name": "NH올원리츠"
+ },
+ "01487446": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 역삼로 412 (대치동, 씨엔알빌딩)",
+  "ceo_nm": "윤문태",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)씨엔알리서치",
+  "est_dt": "20200618",
+  "hm_url": "",
+  "induty_code": "739",
+  "jurir_no": "1101117525110",
+  "stock_code": "359090",
+  "stock_name": "씨엔알리서치"
+ },
+ "01488320": {
+  "acc_mt": "12",
+  "adres": "경기도 오산시 지곶중앙로 1-19",
+  "ceo_nm": "김광일",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 필에너지",
+  "est_dt": "20200402",
+  "hm_url": "philenergy.co.kr",
+  "induty_code": "29299",
+  "jurir_no": "1358110389651",
+  "stock_code": "378340",
+  "stock_name": "필에너지"
+ },
+ "01489648": {
+  "acc_mt": "12",
+  "adres": "경기도 성남시 수정구 금토로 52 F동 (금토동, 솔브레인)",
+  "ceo_nm": "박영수",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "솔브레인 주식회사",
+  "est_dt": "20200701",
+  "hm_url": "www.soulbrain.co.kr",
+  "induty_code": "204",
+  "jurir_no": "1311110597525",
+  "stock_code": "357780",
+  "stock_name": "솔브레인"
  },
  "01491607": {
   "acc_mt": "12",
@@ -34593,6 +38079,48 @@
   "stock_code": "372320",
   "stock_name": "큐로셀"
  },
+ "01492688": {
+  "acc_mt": "12",
+  "adres": "서울특별시 구로구 디지털로33길 12 1410,1411,1412호",
+  "ceo_nm": "김기철",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 드림인사이트",
+  "est_dt": "20120820",
+  "hm_url": "bydream.co.kr/",
+  "induty_code": "71310",
+  "jurir_no": "1101114941038",
+  "stock_code": "362990",
+  "stock_name": "드림인사이트"
+ },
+ "01493535": {
+  "acc_mt": "12",
+  "adres": "서울시 강남구 역삼동 721-38 -",
+  "ceo_nm": "유범령",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)모비데이즈",
+  "est_dt": "20200813",
+  "hm_url": "",
+  "induty_code": "713",
+  "jurir_no": "1101117588506",
+  "stock_code": "363260",
+  "stock_name": "모비데이즈"
+ },
+ "01493793": {
+  "acc_mt": "12",
+  "adres": "대전광역시 유성구 테크노2로 199",
+  "ceo_nm": "이준희",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 코셈",
+  "est_dt": "20070613",
+  "hm_url": "www.coxem.com",
+  "induty_code": "27219",
+  "jurir_no": "1601110226195",
+  "stock_code": "360350",
+  "stock_name": "코셈"
+ },
  "01494118": {
   "acc_mt": "12",
   "adres": "경기도 용인시 수지구 광교중앙로 338, 비동 10층 &nbsp",
@@ -34635,6 +38163,76 @@
   "stock_code": "388870",
   "stock_name": "파로스아이바이오"
  },
+ "01497124": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 역삼로 180",
+  "ceo_nm": "송은강",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "캡스톤파트너스(주)",
+  "est_dt": "20080103",
+  "hm_url": "cspartners.co.kr",
+  "induty_code": "649",
+  "jurir_no": "1101116929959",
+  "stock_code": "452300",
+  "stock_name": "캡스톤파트너스"
+ },
+ "01497142": {
+  "acc_mt": "12",
+  "adres": "서울특별시 서초구 효령로55길 23 3~5층 &nbsp",
+  "ceo_nm": "심효준",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "엠아이큐브솔루션 주식회사",
+  "est_dt": "20050823",
+  "hm_url": "www.micube.co.kr",
+  "induty_code": "58221",
+  "jurir_no": "1101113292086",
+  "stock_code": "373170",
+  "stock_name": "엠아이큐브솔루션"
+ },
+ "01497373": {
+  "acc_mt": "12",
+  "adres": "서울특별시 금천구 가산디지털1로 131 A동 605-가, 605-나, 21층",
+  "ceo_nm": "김태유",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 아이엠비디엑스",
+  "est_dt": "20180705",
+  "hm_url": "www.imbdx.com/",
+  "induty_code": "701",
+  "jurir_no": "1101116801206",
+  "stock_code": "461030",
+  "stock_name": "아이엠비디엑스"
+ },
+ "01497869": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 여의공원로 111, 10층(여의도동)",
+  "ceo_nm": "오동헌",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "Y",
+  "corp_name": "(주)티와이홀딩스",
+  "est_dt": "20200901",
+  "hm_url": "www.ty-holdings.co.kr",
+  "induty_code": "64992",
+  "jurir_no": "1101117608502",
+  "stock_code": "363280",
+  "stock_name": "티와이홀딩스"
+ },
+ "01498576": {
+  "acc_mt": "12",
+  "adres": "경기도 수원시 영통구 창룡대로256번길 91 에이스광교타워2 1405~1408호 &nbsp",
+  "ceo_nm": "왕지남, 조상구 (공동대표이사)",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)유디엠텍",
+  "est_dt": "20070528",
+  "hm_url": "www.udmtek.com",
+  "induty_code": "58222",
+  "jurir_no": "1358110140053",
+  "stock_code": "389680",
+  "stock_name": "유디엠텍"
+ },
  "01498974": {
   "acc_mt": "12",
   "adres": "서울특별시 금천구 디지털로9길 41 2층 202호, 204호 ~ 213호 (가산동, 삼성아이티해링턴타워) &nbsp",
@@ -34648,6 +38246,20 @@
   "jurir_no": "1101116865103",
   "stock_code": "445680",
   "stock_name": "큐리옥스바이오시스템즈"
+ },
+ "01501764": {
+  "acc_mt": "12",
+  "adres": "강원특별자치도 춘천시 삭주로145번길 69-14, 2층 (후평동, 벤처비지니스 살롱)",
+  "ceo_nm": "조봉호",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 레메디",
+  "est_dt": "20120713",
+  "hm_url": "www.remedihc.com",
+  "induty_code": "27111",
+  "jurir_no": "1401110049252",
+  "stock_code": "387690",
+  "stock_name": "레메디"
  },
  "01502587": {
   "acc_mt": "12",
@@ -34775,6 +38387,34 @@
   "stock_code": "",
   "stock_name": "코레이트타워위탁관리부동산투자회사"
  },
+ "01508855": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 논현로131길 35 (논현동, 리손빌)",
+  "ceo_nm": "최승원, 홍민기(각자 대표이사)",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)블리츠웨이엔터테인먼트",
+  "est_dt": "20201020",
+  "hm_url": "http://blitzwayentertainment.com",
+  "induty_code": "901",
+  "jurir_no": "1101117655868",
+  "stock_code": "369370",
+  "stock_name": "블리츠웨이엔터테인먼트"
+ },
+ "01510489": {
+  "acc_mt": "06",
+  "adres": "21 BIOPOLIS ROAD #04-24 NUCLEOS SINGAPORE (138567) -",
+  "ceo_nm": "박소연",
+  "checked": "2026-10-27T06:06+09:00",
+  "corp_cls": "Y",
+  "corp_name": "프레스티지바이오파마",
+  "est_dt": "20150713",
+  "hm_url": "www.prestigebiopharma.com",
+  "induty_code": "70113",
+  "jurir_no": "",
+  "stock_code": "950210",
+  "stock_name": "프레스티지바이오파마"
+ },
  "01511521": {
   "acc_mt": "12",
   "adres": "서울특별시 서초구 반포대로 235 8층",
@@ -34816,6 +38456,20 @@
   "jurir_no": "1101114962092",
   "stock_code": "384470",
   "stock_name": "코어라인소프트"
+ },
+ "01513440": {
+  "acc_mt": "12",
+  "adres": "대전광역시 유성구 가정북로 26-55 주식회사 파이버프로",
+  "ceo_nm": "고연완",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)파이버프로",
+  "est_dt": "20201013",
+  "hm_url": "www.fiberpro.com",
+  "induty_code": "27219",
+  "jurir_no": "1101117648186",
+  "stock_code": "368770",
+  "stock_name": "파이버프로"
  },
  "01513699": {
   "acc_mt": "12",
@@ -34901,6 +38555,20 @@
   "stock_code": "396270",
   "stock_name": "넥스트칩"
  },
+ "01516368": {
+  "acc_mt": "12",
+  "adres": "서울특별시 성동구 아차산로17길 49 601-612호",
+  "ceo_nm": "윤영호 (단독대표)",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)산돌",
+  "est_dt": "20181029",
+  "hm_url": "www.sandoll.co.kr",
+  "induty_code": "58222",
+  "jurir_no": "1101116908870",
+  "stock_code": "419120",
+  "stock_name": "산돌"
+ },
  "01516456": {
   "acc_mt": "12",
   "adres": "경기도 성남시 중원구 둔촌대로388번길 24, 101호, 601호, 612호",
@@ -34914,6 +38582,20 @@
   "jurir_no": "1311110409481",
   "stock_code": "389470",
   "stock_name": "인벤티지랩"
+ },
+ "01516766": {
+  "acc_mt": "12",
+  "adres": "대전광역시 유성구 국제과학21로 54 -",
+  "ceo_nm": "길기재",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)아이비젼웍스",
+  "est_dt": "20150420",
+  "hm_url": "www.ivw.co.kr",
+  "induty_code": "292",
+  "jurir_no": "1601110397045",
+  "stock_code": "469750",
+  "stock_name": "아이비젼웍스"
  },
  "01516890": {
   "acc_mt": "12",
@@ -34942,6 +38624,34 @@
   "jurir_no": "2062110077244",
   "stock_code": "0001A0",
   "stock_name": "덕양에너젠"
+ },
+ "01518506": {
+  "acc_mt": "12",
+  "adres": "서울특별시 마포구 토정로 255 수성빌딩 3층(용강동)",
+  "ceo_nm": "이성호",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "N",
+  "corp_name": "(주)타조이엔터테인먼트",
+  "est_dt": "20110805",
+  "hm_url": "tajoyent.com/",
+  "induty_code": "901",
+  "jurir_no": "1101114663301",
+  "stock_code": "476710",
+  "stock_name": "타조이엔터테인먼트"
+ },
+ "01519790": {
+  "acc_mt": "12",
+  "adres": "경상남도 창원시 성산구 완암로 171",
+  "ceo_nm": "김병근",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "Y",
+  "corp_name": "주식회사 엠앤씨솔루션",
+  "est_dt": "20201201",
+  "hm_url": "www.mncsolution.com",
+  "induty_code": "292",
+  "jurir_no": "1942110326208",
+  "stock_code": "484870",
+  "stock_name": "엠앤씨솔루션"
  },
  "01523128": {
   "acc_mt": "12",
@@ -35012,6 +38722,48 @@
   "jurir_no": "1614110049889",
   "stock_code": "419050",
   "stock_name": "삼기에너지솔루션즈"
+ },
+ "01528141": {
+  "acc_mt": "12",
+  "adres": "경기도 안양시 동안구 엘에스로116번길 39 엘에스엠트론 하이테크 센터 6층",
+  "ceo_nm": "홍영호",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "엘에스머트리얼즈 주식회사",
+  "est_dt": "20210101",
+  "hm_url": "",
+  "induty_code": "26291",
+  "jurir_no": "1341110570437",
+  "stock_code": "417200",
+  "stock_name": "LS머트리얼즈"
+ },
+ "01529982": {
+  "acc_mt": "12",
+  "adres": "경상북도 구미시 산동읍 5공단5로 118 -",
+  "ceo_nm": "박성훈, 박종화 (각자)",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 씨엠티엑스",
+  "est_dt": "20130118",
+  "hm_url": "cmtx.co.kr",
+  "induty_code": "26299",
+  "jurir_no": "2841110111983",
+  "stock_code": "388210",
+  "stock_name": "씨엠티엑스"
+ },
+ "01532603": {
+  "acc_mt": "12",
+  "adres": "경상남도 양산시 충렬로 61",
+  "ceo_nm": "김형진",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "Y",
+  "corp_name": "주식회사 화승알앤에이",
+  "est_dt": "20210303",
+  "hm_url": "www.hsrna.com",
+  "induty_code": "30399",
+  "jurir_no": "2341110120538",
+  "stock_code": "378850",
+  "stock_name": "화승알앤에이"
  },
  "01534027": {
   "acc_mt": "12",
@@ -35111,6 +38863,20 @@
   "stock_code": "445090",
   "stock_name": "에이직랜드"
  },
+ "01540815": {
+  "acc_mt": "12",
+  "adres": "서울특별시 마포구 토정로 115 스튜디오삼익빌딩",
+  "ceo_nm": "최정석",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 스튜디오삼익",
+  "est_dt": "20170908",
+  "hm_url": "www.studiosamick.com",
+  "induty_code": "47520",
+  "jurir_no": "1101116511425",
+  "stock_code": "415380",
+  "stock_name": "스튜디오삼익"
+ },
  "01544468": {
   "acc_mt": "12",
   "adres": "서울특별시 송파구 송파대로 201 17층(송파테라타워2 A동)",
@@ -35181,6 +38947,20 @@
   "stock_code": "397810",
   "stock_name": "애드포러스"
  },
+ "01553129": {
+  "acc_mt": "12",
+  "adres": "충청북도 청주시 청원구  오창읍 두릉유리로 50-3",
+  "ceo_nm": "이재섭",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 제이투케이바이오",
+  "est_dt": "20161227",
+  "hm_url": "www.j2kbio.com",
+  "induty_code": "20423",
+  "jurir_no": "1501110229589",
+  "stock_code": "420570",
+  "stock_name": "제이투케이바이오"
+ },
  "01554508": {
   "acc_mt": "12",
   "adres": "대전광역시 유성구 테크노1로 57 &nbsp",
@@ -35223,6 +39003,48 @@
   "stock_code": "439580",
   "stock_name": "블루엠텍"
  },
+ "01562589": {
+  "acc_mt": "12",
+  "adres": "서울특별시 종로구 새문안로 58 LG광화문빌딩",
+  "ceo_nm": "구본준, 노진서",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "Y",
+  "corp_name": "주식회사 엘엑스홀딩스",
+  "est_dt": "20210503",
+  "hm_url": "www.lxholdings.co.kr",
+  "induty_code": "64992",
+  "jurir_no": "1101117875359",
+  "stock_code": "383800",
+  "stock_name": "LX홀딩스"
+ },
+ "01563667": {
+  "acc_mt": "12",
+  "adres": "서울특별시 서초구 강남대로 465",
+  "ceo_nm": "조철한",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)더즌",
+  "est_dt": "20171123",
+  "hm_url": "www.dozn.co.kr/",
+  "induty_code": "612",
+  "jurir_no": "1101116577188",
+  "stock_code": "462860",
+  "stock_name": "더즌"
+ },
+ "01563922": {
+  "acc_mt": "12",
+  "adres": "경상남도 양산시 상북면 석계산단2길 46",
+  "ceo_nm": "마점래",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)엠오티",
+  "est_dt": "20190307",
+  "hm_url": "www.motfa.com",
+  "induty_code": "29299",
+  "jurir_no": "2341110105621",
+  "stock_code": "413390",
+  "stock_name": "엠오티"
+ },
  "01564222": {
   "acc_mt": "12",
   "adres": "인천광역시 서구 중봉대로306번길 33 (원창동)",
@@ -35236,6 +39058,20 @@
   "jurir_no": "1201111134494",
   "stock_code": "",
   "stock_name": "아이지이"
+ },
+ "01564514": {
+  "acc_mt": "12",
+  "adres": "경기도 화성시 동탄대로21길 10 201, 202, 203, 204, 205, 302, 303, 303-1호 &nbsp",
+  "ceo_nm": "김민선",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)글로벌테크놀로지",
+  "est_dt": "20130509",
+  "hm_url": "www.glbltech.com",
+  "induty_code": "26112",
+  "jurir_no": "1348110270158",
+  "stock_code": "486510",
+  "stock_name": "글로벌테크놀로지"
  },
  "01565054": {
   "acc_mt": "12",
@@ -35251,6 +39087,20 @@
   "stock_code": "318060",
   "stock_name": "그래피"
  },
+ "01565364": {
+  "acc_mt": "12",
+  "adres": "충청남도 서산시 운산면 장생동로 523",
+  "ceo_nm": "이형무",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)폴레드",
+  "est_dt": "20190304",
+  "hm_url": "poled.kr",
+  "induty_code": "28519",
+  "jurir_no": "1342110213952",
+  "stock_code": "487580",
+  "stock_name": "폴레드"
+ },
  "01566248": {
   "acc_mt": "12",
   "adres": "충청북도 청주시 청원구 오창읍 과학산업2로 587-40",
@@ -35264,6 +39114,20 @@
   "jurir_no": "1501110307674",
   "stock_code": "383310",
   "stock_name": "에코프로에이치엔"
+ },
+ "01568413": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 테헤란로8길 8 -",
+  "ceo_nm": "김창수",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "Y",
+  "corp_name": "주식회사 에프앤에프",
+  "est_dt": "20210503",
+  "hm_url": "www.fnf.co.kr",
+  "induty_code": "14111",
+  "jurir_no": "1101117875440",
+  "stock_code": "383220",
+  "stock_name": "F&F"
  },
  "01569102": {
   "acc_mt": "12",
@@ -35321,6 +39185,20 @@
   "stock_code": "391710",
   "stock_name": "코닉오토메이션"
  },
+ "01573336": {
+  "acc_mt": "12",
+  "adres": "대전광역시 유성구 죽동로 141 2층",
+  "ceo_nm": "박용근",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)토모큐브",
+  "est_dt": "20150824",
+  "hm_url": "www.tomocube.com",
+  "induty_code": "27309",
+  "jurir_no": "1601110406466",
+  "stock_code": "475960",
+  "stock_name": "토모큐브"
+ },
  "01573381": {
   "acc_mt": "12",
   "adres": "경기도 화성시 동탄면 동탄산단4길 9-9 -",
@@ -35348,6 +39226,20 @@
   "jurir_no": "1101113478107",
   "stock_code": "",
   "stock_name": "유우일렉트로닉스"
+ },
+ "01575361": {
+  "acc_mt": "12",
+  "adres": "전북특별자치도 익산시 왕궁면 국가식품로4길 21 -",
+  "ceo_nm": "김강삼",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "N",
+  "corp_name": "세븐브로이맥주 주식회사",
+  "est_dt": "20110705",
+  "hm_url": "sevenbrau.com",
+  "induty_code": "11112",
+  "jurir_no": "2845110012696",
+  "stock_code": "267080",
+  "stock_name": "세븐브로이맥주"
  },
  "01575839": {
   "acc_mt": "12",
@@ -35447,6 +39339,20 @@
   "stock_code": "",
   "stock_name": "에이모"
  },
+ "01583652": {
+  "acc_mt": "12",
+  "adres": "서울특별시 구로구 디지털로 306 대륭포스트타워 2차 1008호",
+  "ceo_nm": "이광후",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)모니터랩",
+  "est_dt": "20050222",
+  "hm_url": "www.monitorapp.com",
+  "induty_code": "58221",
+  "jurir_no": "1101113173351",
+  "stock_code": "434480",
+  "stock_name": "모니터랩"
+ },
  "01583953": {
   "acc_mt": "12",
   "adres": "경기도 광명시 원광명로37번길 32",
@@ -35517,6 +39423,20 @@
   "stock_code": "407400",
   "stock_name": "꿈비"
  },
+ "01586923": {
+  "acc_mt": "12",
+  "adres": "경기도 성남시 분당구 판교로255번길 58 703호 삼평동, 씨즈타워",
+  "ceo_nm": "이병환",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 스카이랩스",
+  "est_dt": "20150921",
+  "hm_url": "www.skylabs.io/",
+  "induty_code": "27199",
+  "jurir_no": "1345110270691",
+  "stock_code": "386380",
+  "stock_name": "스카이랩스"
+ },
  "01587056": {
   "acc_mt": "12",
   "adres": "경기도 수원시 권선구 산업로92번길 45 &nbsp",
@@ -35531,6 +39451,20 @@
   "stock_code": "419080",
   "stock_name": "엔젯"
  },
+ "01588189": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 도산대로 318 &nbsp",
+  "ceo_nm": "이성호",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "씨메스로보틱스(주)",
+  "est_dt": "20140828",
+  "hm_url": "www.cmesrobotics.ai/",
+  "induty_code": "29299",
+  "jurir_no": "1101115501550",
+  "stock_code": "475400",
+  "stock_name": "씨메스로보틱스"
+ },
  "01588426": {
   "acc_mt": "12",
   "adres": "서울특별시 송파구 올림픽로43길 88 (풍납동, 서울아산병원) 11층",
@@ -35544,6 +39478,62 @@
   "jurir_no": "1101116958502",
   "stock_code": "",
   "stock_name": "레드엔비아"
+ },
+ "01588897": {
+  "acc_mt": "12",
+  "adres": "서울특별시 송파구 정의로8길 9 AJ빌딩 3층 &nbsp",
+  "ceo_nm": "최재혁",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 니어스랩",
+  "est_dt": "20150514",
+  "hm_url": "www.nearthlab.com",
+  "induty_code": "58221",
+  "jurir_no": "1314110342669",
+  "stock_code": "417030",
+  "stock_name": "니어스랩"
+ },
+ "01590528": {
+  "acc_mt": "12",
+  "adres": "서울특별시 성동구 성수일로4길 25, 서울숲코오롱디지털타워1차 1005호",
+  "ceo_nm": "서은택",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)아스테라시스",
+  "est_dt": "20150707",
+  "hm_url": "asterasys.com",
+  "induty_code": "27112",
+  "jurir_no": "1412110077086",
+  "stock_code": "450950",
+  "stock_name": "아스테라시스"
+ },
+ "01590980": {
+  "acc_mt": "12",
+  "adres": "서울특별시 금천구 가산디지털1로 226, 2003호",
+  "ceo_nm": "임대근, 강태신",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)심플랫폼",
+  "est_dt": "20111130",
+  "hm_url": "simplatform.com/",
+  "induty_code": "58222",
+  "jurir_no": "1101114739730",
+  "stock_code": "444530",
+  "stock_name": "심플랫폼"
+ },
+ "01592049": {
+  "acc_mt": "12",
+  "adres": "서울특별시 광진구 광나루로56길 85 테크노마트21 제12층 제01호, 제02호(구의동)",
+  "ceo_nm": "공경철",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 엔젤로보틱스",
+  "est_dt": "20170210",
+  "hm_url": "www.angel-robotics.com/ko/",
+  "induty_code": "29280",
+  "jurir_no": "1101116314085",
+  "stock_code": "455900",
+  "stock_name": "엔젤로보틱스"
  },
  "01592447": {
   "acc_mt": "12",
@@ -35629,6 +39619,34 @@
   "stock_code": "0017J0",
   "stock_name": "세미티에스"
  },
+ "01596425": {
+  "acc_mt": "12",
+  "adres": "서울특별시 중구 을지로 65 SK T타워",
+  "ceo_nm": "김정규",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "Y",
+  "corp_name": "에스케이스퀘어 주식회사",
+  "est_dt": "20211102",
+  "hm_url": "www.sksquare.com",
+  "induty_code": "64992",
+  "jurir_no": "1101118077821",
+  "stock_code": "402340",
+  "stock_name": "SK스퀘어"
+ },
+ "01596656": {
+  "acc_mt": "12",
+  "adres": "서울특별시 마포구 월드컵북로58길 9 ES타워",
+  "ceo_nm": "조원표",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)메쎄이상",
+  "est_dt": "20211029",
+  "hm_url": "messeesang.com",
+  "induty_code": "759",
+  "jurir_no": "1101118073613",
+  "stock_code": "408920",
+  "stock_name": "메쎄이상"
+ },
  "01596920": {
   "acc_mt": "12",
   "adres": "경기도 성남시 분당구 판교로 253 C동 801호",
@@ -35671,6 +39689,48 @@
   "stock_code": "",
   "stock_name": "에스케이스페셜티"
  },
+ "01602638": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강동구 고덕비즈밸리로2가길 61 한싹타워",
+  "ceo_nm": "이주도",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)한싹",
+  "est_dt": "20000622",
+  "hm_url": "www.hanssak.co.kr",
+  "induty_code": "58221",
+  "jurir_no": "1101112003640",
+  "stock_code": "430690",
+  "stock_name": "한싹"
+ },
+ "01605282": {
+  "acc_mt": "12",
+  "adres": "서울특별시 마포구 동교로41길 41",
+  "ceo_nm": "정해운",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)닷밀",
+  "est_dt": "20151229",
+  "hm_url": "dot-mill.com/",
+  "induty_code": "591",
+  "jurir_no": "1101115931319",
+  "stock_code": "464580",
+  "stock_name": "닷밀"
+ },
+ "01605529": {
+  "acc_mt": "12",
+  "adres": "서울특별시 용산구 한강대로7길 10-15  버넥트 익스피리언스센터",
+  "ceo_nm": "하태진",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)버넥트",
+  "est_dt": "20161004",
+  "hm_url": "www.virnect.com",
+  "induty_code": "58222",
+  "jurir_no": "2055110049363",
+  "stock_code": "438700",
+  "stock_name": "버넥트"
+ },
  "01618532": {
   "acc_mt": "12",
   "adres": "서울특별시 구로구 디지털로 272 6층 601호, 602호, 7층 702호(구로동, 한신아이티타워)",
@@ -35698,6 +39758,20 @@
   "jurir_no": "1717110171410",
   "stock_code": "",
   "stock_name": "포스코"
+ },
+ "01622331": {
+  "acc_mt": "12",
+  "adres": "울산광역시 중구 종가8길 45 (복산동)",
+  "ceo_nm": "이정현",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 벨로크",
+  "est_dt": "20220317",
+  "hm_url": "www.bellock.co.kr",
+  "induty_code": "620",
+  "jurir_no": "1101118233415",
+  "stock_code": "424760",
+  "stock_name": "벨로크"
  },
  "01622720": {
   "acc_mt": "01",
@@ -35727,6 +39801,20 @@
   "stock_code": "476040",
   "stock_name": "오가노이드사이언스"
  },
+ "01627363": {
+  "acc_mt": "12",
+  "adres": "경기도 성남시 분당구 양현로 322, 6층 603호, 605호",
+  "ceo_nm": "조명현",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)세미파이브",
+  "est_dt": "20190530",
+  "hm_url": "semifive.com",
+  "induty_code": "721",
+  "jurir_no": "1101117124574",
+  "stock_code": "490470",
+  "stock_name": "세미파이브"
+ },
  "01629495": {
   "acc_mt": "12",
   "adres": "서울특별시 마포구 양화로 45 세아타워",
@@ -35740,6 +39828,20 @@
   "jurir_no": "1101118256467",
   "stock_code": "",
   "stock_name": "세아베스틸"
+ },
+ "01632912": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 테헤란로26길 12 제일비젼타워 11층",
+  "ceo_nm": "김존",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "온코닉테라퓨틱스(주)",
+  "est_dt": "20200507",
+  "hm_url": "onconic.co.kr",
+  "induty_code": "701",
+  "jurir_no": "1101117478088",
+  "stock_code": "476060",
+  "stock_name": "온코닉테라퓨틱스"
  },
  "01635308": {
   "acc_mt": "12",
@@ -35783,6 +39885,20 @@
   "stock_code": "455180",
   "stock_name": "케이지에이"
  },
+ "01639508": {
+  "acc_mt": "12",
+  "adres": "경기도 고양시 일산서구 킨텍스로 240 킨텍스 꿈에그린 GIFC 타워 24층",
+  "ceo_nm": "배성환",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)뉴엔에이아이",
+  "est_dt": "20040531",
+  "hm_url": "www.newen.ai",
+  "induty_code": "58222",
+  "jurir_no": "2811110080389",
+  "stock_code": "463020",
+  "stock_name": "뉴엔AI"
+ },
  "01641600": {
   "acc_mt": "12",
   "adres": "서울특별시 도봉구 마들로13길 61, 16층 (창동, 창동 씨드큐브)",
@@ -35810,6 +39926,20 @@
   "jurir_no": "1101115995993",
   "stock_code": "483650",
   "stock_name": "달바글로벌"
+ },
+ "01649620": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 여의공원로 115 세우빌딩, 8층",
+  "ceo_nm": "이석우, 김덕수(각자대표이사)",
+  "checked": "2026-10-27T06:04+09:00",
+  "corp_cls": "K",
+  "corp_name": "아우토크립트 주식회사",
+  "est_dt": "20190823",
+  "hm_url": "autocrypt.co.kr/",
+  "induty_code": "58222",
+  "jurir_no": "1101117213757",
+  "stock_code": "331740",
+  "stock_name": "아우토크립트"
  },
  "01657197": {
   "acc_mt": "12",
@@ -35853,6 +39983,20 @@
   "stock_code": "163280",
   "stock_name": "에어레인"
  },
+ "01663569": {
+  "acc_mt": "12",
+  "adres": "강원특별자치도 강릉시 과학단지로 77-14 하스 본사",
+  "ceo_nm": "김용수",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)하스",
+  "est_dt": "20080104",
+  "hm_url": "www.hassbio.com",
+  "induty_code": "21309",
+  "jurir_no": "1748110047195",
+  "stock_code": "450330",
+  "stock_name": "하스"
+ },
  "01669226": {
   "acc_mt": "04",
   "adres": "서울특별시 영등포구 63로 50 47층(여의도동, 63한화생명빌딩)",
@@ -35895,6 +40039,34 @@
   "stock_code": "464490",
   "stock_name": "쿼드메디슨"
  },
+ "01676642": {
+  "acc_mt": "12",
+  "adres": "경기도 성남시 수정구 창업로 43 판교글로벌비즈센터 A동 601~613호",
+  "ceo_nm": "이명희",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)사피엔반도체",
+  "est_dt": "20170829",
+  "hm_url": "www.sapien-semicon.com",
+  "induty_code": "2611",
+  "jurir_no": "2301110281186",
+  "stock_code": "452430",
+  "stock_name": "사피엔반도체"
+ },
+ "01678312": {
+  "acc_mt": "12",
+  "adres": "대전광역시 유성구 테크노4로 17, 대덕비즈센터 비동 415호(관평동)",
+  "ceo_nm": "김필한",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "아이빔테크놀로지(주)",
+  "est_dt": "20170623",
+  "hm_url": "www.ivimtech.com",
+  "induty_code": "27309",
+  "jurir_no": "1601110458821",
+  "stock_code": "460470",
+  "stock_name": "아이빔테크놀로지"
+ },
  "01680131": {
   "acc_mt": "12",
   "adres": "서울특별시 강남구 테헤란로4길 38, 8층 &nbsp",
@@ -35922,6 +40094,20 @@
   "jurir_no": "1601110387525",
   "stock_code": "451760",
   "stock_name": "컨텍"
+ },
+ "01685677": {
+  "acc_mt": "12",
+  "adres": "경기도 화성시 동탄순환대로 830, 908호 &nbsp",
+  "ceo_nm": "김건호, 최의경",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 리센스메디컬",
+  "est_dt": "20161018",
+  "hm_url": "recensmedical.co.kr/",
+  "induty_code": "27199",
+  "jurir_no": "2301110265867",
+  "stock_code": "394420",
+  "stock_name": "리센스메디컬"
  },
  "01686427": {
   "acc_mt": "12",
@@ -35951,6 +40137,20 @@
   "stock_code": "441270",
   "stock_name": "파인엠텍"
  },
+ "01688568": {
+  "acc_mt": "12",
+  "adres": "서울특별시 구로구 디지털로33길 11 구로동, 에이스테크노타워8차 13층 1301호",
+  "ceo_nm": "윤태영",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)프로티나",
+  "est_dt": "20150805",
+  "hm_url": "/www.proteina.co.kr",
+  "induty_code": "701",
+  "jurir_no": "1601110405070",
+  "stock_code": "468530",
+  "stock_name": "프로티나"
+ },
  "01688896": {
   "acc_mt": "01",
   "adres": "서울특별시 서초구 서초대로74길 4",
@@ -35965,6 +40165,20 @@
   "stock_code": "448730",
   "stock_name": "삼성FN리츠"
  },
+ "01689035": {
+  "acc_mt": "12",
+  "adres": "대전광역시 유성구 국제과학21로 62 -",
+  "ceo_nm": "홍영진",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 민테크",
+  "est_dt": "20150616",
+  "hm_url": "www.g-mintech.co.kr",
+  "induty_code": "27212",
+  "jurir_no": "1601110401242",
+  "stock_code": "452200",
+  "stock_name": "민테크"
+ },
  "01689266": {
   "acc_mt": "12",
   "adres": "대전광역시 유성구 엑스포로 1 16층(도룡동 사이언스센터)",
@@ -35978,6 +40192,20 @@
   "jurir_no": "1601110094576",
   "stock_code": "431190",
   "stock_name": "케이쓰리아이"
+ },
+ "01693922": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 개포로 208 형지빌딩 -",
+  "ceo_nm": "한동진",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)지슨",
+  "est_dt": "20221007",
+  "hm_url": "www.gitsn.com",
+  "induty_code": "272",
+  "jurir_no": "1101118444707",
+  "stock_code": "446840",
+  "stock_name": "지슨"
  },
  "01694903": {
   "acc_mt": "12",
@@ -36021,6 +40249,20 @@
   "stock_code": "462350",
   "stock_name": "이노스페이스"
  },
+ "01702017": {
+  "acc_mt": "12",
+  "adres": "서울특별시 중구 서소문로 50 6층(중림동, 센트럴플레이스)",
+  "ceo_nm": "한상준",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "Y",
+  "corp_name": "(주)유니드비티플러스",
+  "est_dt": "20221102",
+  "hm_url": "www.unidbtplus.co.kr",
+  "induty_code": "16102",
+  "jurir_no": "1101118466280",
+  "stock_code": "446070",
+  "stock_name": "유니드비티플러스"
+ },
  "01703849": {
   "acc_mt": "12",
   "adres": "서울특별시 강남구 논현로149길 67-5 1층, 2층, 3층, 4층, 5층 (논현동)",
@@ -36034,6 +40276,20 @@
   "jurir_no": "1101117042247",
   "stock_code": "473980",
   "stock_name": "노머스"
+ },
+ "01704680": {
+  "acc_mt": "12",
+  "adres": "서울특별시 마포구 양화로 176, 4층(동교동)",
+  "ceo_nm": "정성진",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)엠83",
+  "est_dt": "20200220",
+  "hm_url": "m83.co.kr",
+  "induty_code": "59111",
+  "jurir_no": "1101117398913",
+  "stock_code": "476080",
+  "stock_name": "M83"
  },
  "01706703": {
   "acc_mt": "12",
@@ -36049,6 +40305,48 @@
   "stock_code": "",
   "stock_name": "메타록"
  },
+ "01706794": {
+  "acc_mt": "12",
+  "adres": "서울시 강남구 강남대로 636 7층 (신사동, 두원빌딩)",
+  "ceo_nm": "박기태",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)아이언디바이스",
+  "est_dt": "20080501",
+  "hm_url": "www.irondevice.com/index.html",
+  "induty_code": "26112",
+  "jurir_no": "1101113892513",
+  "stock_code": "464500",
+  "stock_name": "아이언디바이스"
+ },
+ "01708163": {
+  "acc_mt": "12",
+  "adres": "전북특별자치도 군산시 군산산단로 96",
+  "ceo_nm": "강건우",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)엔알비",
+  "est_dt": "20191024",
+  "hm_url": "www.and-rb.com/kor",
+  "induty_code": "259",
+  "jurir_no": "1101117269370",
+  "stock_code": "475230",
+  "stock_name": "엔알비"
+ },
+ "01709065": {
+  "acc_mt": "12",
+  "adres": "서울특별시 서초구 강남대로 343 신덕빌딩, 12층",
+  "ceo_nm": "윤성호",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)마키나락스",
+  "est_dt": "20171221",
+  "hm_url": "www.makinarocks.ai",
+  "induty_code": "582",
+  "jurir_no": "1101116605856",
+  "stock_code": "477850",
+  "stock_name": "마키나락스"
+ },
  "01714483": {
   "acc_mt": "12",
   "adres": "서울특별시 용산구 한남대로 98 (한남동, 일신빌딩)2층 스탠드업테라퓨티스",
@@ -36062,6 +40360,20 @@
   "jurir_no": "1101118017760",
   "stock_code": "",
   "stock_name": "스탠드업테라퓨티스"
+ },
+ "01714997": {
+  "acc_mt": "02",
+  "adres": "서울특별시 중구 세종대로 136 , 4층, 6층(태평로1가, 서울파이낸스센터)",
+  "ceo_nm": "조준우",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "Y",
+  "corp_name": "(주)신한글로벌액티브위탁관리부동산투자회사",
+  "est_dt": "20220317",
+  "hm_url": "shglobalreit.com",
+  "induty_code": "64201",
+  "jurir_no": "1101118234075",
+  "stock_code": "481850",
+  "stock_name": "신한글로벌액티브리츠"
  },
  "01717903": {
   "acc_mt": "12",
@@ -36105,6 +40417,20 @@
   "stock_code": "",
   "stock_name": "하이리움산업"
  },
+ "01721809": {
+  "acc_mt": "12",
+  "adres": "경기도 용인시 수지구 문인로 30",
+  "ceo_nm": "박홍진",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "Y",
+  "corp_name": "주식회사 현대그린푸드",
+  "est_dt": "20230302",
+  "hm_url": "hyundaigreenfood.com",
+  "induty_code": "471",
+  "jurir_no": "1345110623337",
+  "stock_code": "453340",
+  "stock_name": "현대그린푸드"
+ },
  "01722066": {
   "acc_mt": "12",
   "adres": "서울특별시 강남구 역삼로 542, 4층 (대치동, 신사에스앤지빌딩) &nbsp",
@@ -36119,6 +40445,20 @@
   "stock_code": "0035S0",
   "stock_name": "빅웨이브로보틱스"
  },
+ "01722437": {
+  "acc_mt": "12",
+  "adres": "서울특별시 마포구 양화로 81 H스퀘어빌딩 6층, 7층, 8층",
+  "ceo_nm": "김영훈",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "Y",
+  "corp_name": "한화갤러리아(주)",
+  "est_dt": "20230302",
+  "hm_url": "www.hanwhagalleria.co.kr",
+  "induty_code": "47111",
+  "jurir_no": "1101118570891",
+  "stock_code": "452260",
+  "stock_name": "한화갤러리아"
+ },
  "01723366": {
   "acc_mt": "12",
   "adres": "경기도 고양시 덕양구 삼원로 63 (원흥동, 고양아크비즈지식산업센터) 1216호",
@@ -36132,6 +40472,48 @@
   "jurir_no": "1101111086308",
   "stock_code": "",
   "stock_name": "오스템바스큘라"
+ },
+ "01728167": {
+  "acc_mt": "12",
+  "adres": "서울특별시 송파구 법원로8길 9 청림타워 5,6층",
+  "ceo_nm": "김창균, 김지태",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)아이지넷",
+  "est_dt": "20140516",
+  "hm_url": "www.bodoc.kr/",
+  "induty_code": "63991",
+  "jurir_no": "1358110248964",
+  "stock_code": "462980",
+  "stock_name": "아이지넷"
+ },
+ "01745173": {
+  "acc_mt": "12",
+  "adres": "충청남도 아산시 음봉면 스마트산단로 102",
+  "ceo_nm": "장석준",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)이노테크",
+  "est_dt": "20130604",
+  "hm_url": "www.innotech2013.com/",
+  "induty_code": "29299",
+  "jurir_no": "1358110231646",
+  "stock_code": "469610",
+  "stock_name": "이노테크"
+ },
+ "01747977": {
+  "acc_mt": "12",
+  "adres": "충청남도 천안시 서북구 성거읍 성거길 228-17",
+  "ceo_nm": "이창엽",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)엘케이켐",
+  "est_dt": "20071101",
+  "hm_url": "lkchem.co.kr",
+  "induty_code": "20499",
+  "jurir_no": "1615110093610",
+  "stock_code": "489500",
+  "stock_name": "엘케이켐"
  },
  "01749559": {
   "acc_mt": "12",
@@ -36189,6 +40571,20 @@
   "stock_code": "456040",
   "stock_name": "OCI"
  },
+ "01762569": {
+  "acc_mt": "12",
+  "adres": "서울특별시 서초구 사평대로 84",
+  "ceo_nm": "류승호",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "Y",
+  "corp_name": "주식회사 이수스페셜티케미컬",
+  "est_dt": "20230502",
+  "hm_url": "www.isuspecialtychemical.com",
+  "induty_code": "20111",
+  "jurir_no": "1101118626561",
+  "stock_code": "457190",
+  "stock_name": "이수스페셜티케미컬"
+ },
  "01764099": {
   "acc_mt": "12",
   "adres": "경기도 안양시 동안구 부림로170번길 41-4, 5층",
@@ -36203,6 +40599,34 @@
   "stock_code": "474650",
   "stock_name": "링크솔루션"
  },
+ "01765256": {
+  "acc_mt": "12",
+  "adres": "서울특별시 중구 을지로5길 19",
+  "ceo_nm": "박상훈",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "Y",
+  "corp_name": "동국씨엠 주식회사",
+  "est_dt": "20230601",
+  "hm_url": "www.dongkukcm.com",
+  "induty_code": "24122",
+  "jurir_no": "1101118651659",
+  "stock_code": "460850",
+  "stock_name": "동국씨엠"
+ },
+ "01765265": {
+  "acc_mt": "12",
+  "adres": "서울특별시 중구 을지로5길 19",
+  "ceo_nm": "최삼영",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "Y",
+  "corp_name": "동국제강(주)",
+  "est_dt": "20230601",
+  "hm_url": "www.dongkuksteel.com",
+  "induty_code": "241",
+  "jurir_no": "1101118651633",
+  "stock_code": "460860",
+  "stock_name": "동국제강"
+ },
  "01766741": {
   "acc_mt": "12",
   "adres": "Cricket Square, Hutchins Drive P.O. Box 2681 Grand Cayman KY1-1111 Cayman Islands",
@@ -36216,6 +40640,20 @@
   "jurir_no": "",
   "stock_code": "",
   "stock_name": "CaptivisionInc."
+ },
+ "01770203": {
+  "acc_mt": "12",
+  "adres": "전라남도 광양시 산업로 55",
+  "ceo_nm": "최광철",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "Y",
+  "corp_name": "조선내화 주식회사",
+  "est_dt": "20230704",
+  "hm_url": "www.chosunref.co.kr",
+  "induty_code": "2321",
+  "jurir_no": "2046110071943",
+  "stock_code": "462520",
+  "stock_name": "조선내화"
  },
  "01776410": {
   "acc_mt": "12",
@@ -36329,6 +40767,20 @@
   "stock_code": "465770",
   "stock_name": "STX그린로지스"
  },
+ "01784677": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 의사당대로 96 TP Tower",
+  "ceo_nm": "고명진",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "키움히어로제1호기업인수목적 주식회사",
+  "est_dt": "20230901",
+  "hm_url": "",
+  "induty_code": "66199",
+  "jurir_no": "1101118731518",
+  "stock_code": "466690",
+  "stock_name": "키움히어로제1호스팩"
+ },
  "01784914": {
   "acc_mt": "12",
   "adres": "경기도 성남시 중원구 양현로405번길 4-5 (여수동, 마커스빌딩)",
@@ -36357,6 +40809,48 @@
   "stock_code": "494120",
   "stock_name": "큐리오시스"
  },
+ "01787072": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 국제금융로 24",
+  "ceo_nm": "김동진",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "유진기업인수목적10호 주식회사",
+  "est_dt": "20230914",
+  "hm_url": "",
+  "induty_code": "66191",
+  "jurir_no": "1101118744488",
+  "stock_code": "468760",
+  "stock_name": "유진스팩10호"
+ },
+ "01787355": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 국회대로 632 영등포유윈시티 14층,15층",
+  "ceo_nm": "박재필",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)나라스페이스테크놀로지",
+  "est_dt": "20150331",
+  "hm_url": "",
+  "induty_code": "31311",
+  "jurir_no": "1101115682201",
+  "stock_code": "478340",
+  "stock_name": "나라스페이스테크놀로지"
+ },
+ "01792791": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 국제금융로6길 11 &nbsp",
+  "ceo_nm": "김강민",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "아이비케이에스제24호기업인수목적 주식회사",
+  "est_dt": "20230922",
+  "hm_url": "www.ibks.com",
+  "induty_code": "66199",
+  "jurir_no": "1101118753330",
+  "stock_code": "469480",
+  "stock_name": "IBKS제24호스팩"
+ },
  "01797291": {
   "acc_mt": "12",
   "adres": "경기도 성남시 중원구 사기막골로 148 (상대원동) 중앙이노테크 910호",
@@ -36371,6 +40865,286 @@
   "stock_code": "",
   "stock_name": "사피엔스바이오"
  },
+ "01798722": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 국제금융로8길 31",
+  "ceo_nm": "이재혁",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "에스케이증권제12호기업인수목적 주식회사",
+  "est_dt": "20231116",
+  "hm_url": "",
+  "induty_code": "66199",
+  "jurir_no": "1101118794475",
+  "stock_code": "473000",
+  "stock_name": "SK증권제12호스팩"
+ },
+ "01801026": {
+  "acc_mt": "12",
+  "adres": "인천광역시 연수구 갯벌로 94 &nbsp",
+  "ceo_nm": "전진",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 브릴스",
+  "est_dt": "20260206",
+  "hm_url": "www.brils.co.kr",
+  "induty_code": "29299",
+  "jurir_no": "1201110746711",
+  "stock_code": "468670",
+  "stock_name": "브릴스"
+ },
+ "01801822": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 국제금융로8길 31",
+  "ceo_nm": "임율표",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "에스케이증권제13호기업인수목적 주식회사",
+  "est_dt": "20231130",
+  "hm_url": "",
+  "induty_code": "66199",
+  "jurir_no": "1101118805545",
+  "stock_code": "473950",
+  "stock_name": "SK증권제13호스팩"
+ },
+ "01802928": {
+  "acc_mt": "12",
+  "adres": "서울특별시 구로구 디지털로31길 20 8층 801호",
+  "ceo_nm": "오주영",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "코스모로보틱스 주식회사",
+  "est_dt": "20160928",
+  "hm_url": "www.cosmo-robotics.com",
+  "induty_code": "27199",
+  "jurir_no": "1348110383141",
+  "stock_code": "439960",
+  "stock_name": "코스모로보틱스"
+ },
+ "01803635": {
+  "acc_mt": "12",
+  "adres": "경기도 성남시 분당구 황새울로246(수내동, 도담빌딩) 9층",
+  "ceo_nm": "서상덕",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 에스투더블유",
+  "est_dt": "20180917",
+  "hm_url": "s2w.inc/",
+  "induty_code": "582",
+  "jurir_no": "1101116873750",
+  "stock_code": "488280",
+  "stock_name": "에스투더블유"
+ },
+ "01803927": {
+  "acc_mt": "12",
+  "adres": "서울특별시 성동구 아차산로 68(성수동2가)",
+  "ceo_nm": "김지훈",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)에이유브랜즈",
+  "est_dt": "20220128",
+  "hm_url": "aubrandz.irpage.co.kr",
+  "induty_code": "47430",
+  "jurir_no": "1101118185567",
+  "stock_code": "481070",
+  "stock_name": "에이유브랜즈"
+ },
+ "01804476": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 국제금융로 39 여의도동 앵커원",
+  "ceo_nm": "박병권",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "유안타제16호기업인수목적 주식회사",
+  "est_dt": "20231206",
+  "hm_url": "",
+  "induty_code": "661",
+  "jurir_no": "1101118810932",
+  "stock_code": "474490",
+  "stock_name": "유안타제16호스팩"
+ },
+ "01806951": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 여의대로 108 파크원 타워1 42층",
+  "ceo_nm": "임종민 / 김유진",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "폰드그룹(주)",
+  "est_dt": "20231228",
+  "hm_url": "www.pond-group.co.kr",
+  "induty_code": "474",
+  "jurir_no": "1101118828068",
+  "stock_code": "472850",
+  "stock_name": "폰드그룹"
+ },
+ "01807729": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 의사당대로 82 하나증권빌딩",
+  "ceo_nm": "박태한",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "하나33호기업인수목적 주식회사",
+  "est_dt": "20240105",
+  "hm_url": "",
+  "induty_code": "66199",
+  "jurir_no": "1101118834875",
+  "stock_code": "475250",
+  "stock_name": "하나33호스팩"
+ },
+ "01807738": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 의사당대로 82",
+  "ceo_nm": "박종찬",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "하나32호기업인수목적 주식회사",
+  "est_dt": "20240105",
+  "hm_url": "",
+  "induty_code": "66199",
+  "jurir_no": "1101118835245",
+  "stock_code": "475240",
+  "stock_name": "하나32호스팩"
+ },
+ "01807747": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 의사당대로 96 티피타워 32F",
+  "ceo_nm": "배성환",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "신한제13호기업인수목적주식회사",
+  "est_dt": "20231221",
+  "hm_url": "",
+  "induty_code": "661",
+  "jurir_no": "1101118823828",
+  "stock_code": "474930",
+  "stock_name": "신한제13호스팩"
+ },
+ "01809569": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 의사당대로 96 티피타워 32F",
+  "ceo_nm": "이동호",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "신한제12호기업인수목적 주식회사",
+  "est_dt": "20231214",
+  "hm_url": "",
+  "induty_code": "66199",
+  "jurir_no": "1101118819330",
+  "stock_code": "474660",
+  "stock_name": "신한제12호스팩"
+ },
+ "01810477": {
+  "acc_mt": "12",
+  "adres": "대전광역시 유성구 문지로 272-16, 502호",
+  "ceo_nm": "채명수",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 노타",
+  "est_dt": "20150424",
+  "hm_url": "/www.nota.ai",
+  "induty_code": "582",
+  "jurir_no": "1601110397409",
+  "stock_code": "486990",
+  "stock_name": "노타"
+ },
+ "01813377": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 국제금융로2길 28 &nbsp",
+  "ceo_nm": "조한종",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "에이치엠씨아이비제7호기업인수목적(주)",
+  "est_dt": "20240215",
+  "hm_url": "",
+  "induty_code": "66199",
+  "jurir_no": "1101118870118",
+  "stock_code": "477340",
+  "stock_name": "에이치엠씨제7호스팩"
+ },
+ "01814233": {
+  "acc_mt": "12",
+  "adres": "서울특별시 중구 을지로5길 26 미래에셋센터원 이스트타워",
+  "ceo_nm": "김정수",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "미래에셋비전기업인수목적4호 주식회사",
+  "est_dt": "20240219",
+  "hm_url": "",
+  "induty_code": "66199",
+  "jurir_no": "1101118871520",
+  "stock_code": "477380",
+  "stock_name": "미래에셋비전스팩4호"
+ },
+ "01814589": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 국제금융로8길 32 &nbsp",
+  "ceo_nm": "김창희",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "디비금융제12호기업인수목적 주식회사",
+  "est_dt": "20240223",
+  "hm_url": "",
+  "induty_code": "6491",
+  "jurir_no": "1101118876554",
+  "stock_code": "477760",
+  "stock_name": "디비금융스팩12호"
+ },
+ "01815764": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 여의나루로 60 &nbsp",
+  "ceo_nm": "박용",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "이베스트기업인수목적6호 주식회사",
+  "est_dt": "20240228",
+  "hm_url": "",
+  "induty_code": "661",
+  "jurir_no": "1101118880323",
+  "stock_code": "478110",
+  "stock_name": "이베스트스팩6호"
+ },
+ "01816268": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 여의나루로 50",
+  "ceo_nm": "서영화",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "케이비제29호기업인수목적(주)",
+  "est_dt": "20240305",
+  "hm_url": "",
+  "induty_code": "66199",
+  "jurir_no": "1101118885472",
+  "stock_code": "478390",
+  "stock_name": "KB제29호스팩"
+ },
+ "01817081": {
+  "acc_mt": "12",
+  "adres": "경기도 성남시 분당구 판교로 332",
+  "ceo_nm": "김해중",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "Y",
+  "corp_name": "SK이터닉스(주)",
+  "est_dt": "20240304",
+  "hm_url": "www.sketernix.com",
+  "induty_code": "411",
+  "jurir_no": "1311110729441",
+  "stock_code": "475150",
+  "stock_name": "SK이터닉스"
+ },
+ "01817249": {
+  "acc_mt": "12",
+  "adres": "서울특별시 중구 을지로5길 26 미래에셋센터원 이스트타워",
+  "ceo_nm": "김대호",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "미래에셋비전기업인수목적5호 주식회사",
+  "est_dt": "20240222",
+  "hm_url": "",
+  "induty_code": "66199",
+  "jurir_no": "1101118875225",
+  "stock_code": "477470",
+  "stock_name": "미래에셋비전스팩5호"
+ },
  "01817920": {
   "acc_mt": "12",
   "adres": "경기도 수원시 영통구 광교중앙로266번길 40, 4층(하동, 에스케이법조타운) &nbsp",
@@ -36384,6 +41158,34 @@
   "jurir_no": "1601110431299",
   "stock_code": "0015S0",
   "stock_name": "페스카로"
+ },
+ "01818682": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 의사당대로 88",
+  "ceo_nm": "유한",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "한국제15호기업인수목적 주식회사",
+  "est_dt": "20240319",
+  "hm_url": "",
+  "induty_code": "66199",
+  "jurir_no": "1101118899043",
+  "stock_code": "479880",
+  "stock_name": "한국제15호스팩"
+ },
+ "01819867": {
+  "acc_mt": "12",
+  "adres": "서울특별시 중구 을지로5길 26",
+  "ceo_nm": "정명훈",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "미래에셋비전기업인수목적6호 주식회사",
+  "est_dt": "20240305",
+  "hm_url": "",
+  "induty_code": "66199",
+  "jurir_no": "1101118885068",
+  "stock_code": "478440",
+  "stock_name": "미래에셋비전스팩6호"
  },
  "01829819": {
   "acc_mt": "12",
@@ -36427,6 +41229,62 @@
   "stock_code": "0203K0",
   "stock_name": "송우인포텍"
  },
+ "01834194": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 여의대로 108 파크원 타워2 NH투자증권 8층",
+  "ceo_nm": "이시형",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "엔에이치기업인수목적31호(주)",
+  "est_dt": "20240415",
+  "hm_url": "",
+  "induty_code": "661",
+  "jurir_no": "1101118921416",
+  "stock_code": "481890",
+  "stock_name": "엔에이치스팩31호"
+ },
+ "01841635": {
+  "acc_mt": "12",
+  "adres": "서울특별시 중구 을지로5길 26",
+  "ceo_nm": "송우영",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "미래에셋비전기업인수목적7호 주식회사",
+  "est_dt": "20240430",
+  "hm_url": "",
+  "induty_code": "66199",
+  "jurir_no": "1101118936829",
+  "stock_code": "482680",
+  "stock_name": "미래에셋비전스팩7호"
+ },
+ "01845534": {
+  "acc_mt": "12",
+  "adres": "서울특별시 중구 삼일대로 343",
+  "ceo_nm": "임병완",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "대신밸런스제19호기업인수목적(주)",
+  "est_dt": "20240425",
+  "hm_url": "없음",
+  "induty_code": "66199",
+  "jurir_no": "1101118932108",
+  "stock_code": "482690",
+  "stock_name": "대신밸런스제19호스팩"
+ },
+ "01845701": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 의사당대로 97, 17층",
+  "ceo_nm": "김동주",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "교보16호기업인수목적 주식회사",
+  "est_dt": "20240415",
+  "hm_url": "",
+  "induty_code": "6619",
+  "jurir_no": "1101118923066",
+  "stock_code": "482520",
+  "stock_name": "교보16호스팩"
+ },
  "01847329": {
   "acc_mt": "12",
   "adres": "222 N. Pacific Coast Highway, Suite 2300, El Segundo, CA 90245",
@@ -36441,6 +41299,118 @@
   "stock_code": "",
   "stock_name": "WEBTOONENTERTAINMENTINC."
  },
+ "01847550": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 의사당대로 82",
+  "ceo_nm": "송하용",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "하나34호기업인수목적 주식회사",
+  "est_dt": "20240516",
+  "hm_url": "",
+  "induty_code": "66199",
+  "jurir_no": "1101118948361",
+  "stock_code": "484130",
+  "stock_name": "하나34호스팩"
+ },
+ "01851650": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 여의나루로 50",
+  "ceo_nm": "박홍진",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "케이비제30호기업인수목적(주)",
+  "est_dt": "20240610",
+  "hm_url": "",
+  "induty_code": "66199",
+  "jurir_no": "1101118971289",
+  "stock_code": "486630",
+  "stock_name": "KB제30호스팩"
+ },
+ "01853214": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 의사당대로 96 (TP Tower)",
+  "ceo_nm": "홍승표",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "신한제14호기업인수목적 주식회사",
+  "est_dt": "20240614",
+  "hm_url": "",
+  "induty_code": "66199",
+  "jurir_no": "1101118974655",
+  "stock_code": "487360",
+  "stock_name": "신한제14호스팩"
+ },
+ "01854392": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 국제금융로 24",
+  "ceo_nm": "박홍식",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "유진기업인수목적11호 주식회사",
+  "est_dt": "20240625",
+  "hm_url": "",
+  "induty_code": "66199",
+  "jurir_no": "1101118984505",
+  "stock_code": "488060",
+  "stock_name": "유진스팩11호"
+ },
+ "01854408": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 의사당대로 96(TP Tower)",
+  "ceo_nm": "연오흠",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "신한제15호기업인수목적 주식회사",
+  "est_dt": "20240621",
+  "hm_url": "",
+  "induty_code": "661",
+  "jurir_no": "1101118982971",
+  "stock_code": "487830",
+  "stock_name": "신한제15호스팩"
+ },
+ "01854763": {
+  "acc_mt": "12",
+  "adres": "서울특별시 마포구 마포대로 119 (공덕동)",
+  "ceo_nm": "노기수, 안성훈 (각자 대표이사)",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "Y",
+  "corp_name": "(주)에이치에스효성",
+  "est_dt": "20240701",
+  "hm_url": "www.hshyosung.com",
+  "induty_code": "64999",
+  "jurir_no": "1101118993457",
+  "stock_code": "487570",
+  "stock_name": "HS효성"
+ },
+ "01857991": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 국제금융로8길 32 &nbsp",
+  "ceo_nm": "양준석",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "디비금융제13호기업인수목적 주식회사",
+  "est_dt": "20240726",
+  "hm_url": "",
+  "induty_code": "649",
+  "jurir_no": "1101119015268",
+  "stock_code": "489730",
+  "stock_name": "디비금융제13호스팩"
+ },
+ "01859500": {
+  "acc_mt": "12",
+  "adres": "경기도 수원시 영통구 창룡대로 260 11층",
+  "ceo_nm": "하경식",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)아이엠바이오로직스",
+  "est_dt": "20200804",
+  "hm_url": "imbiologics.com",
+  "induty_code": "701",
+  "jurir_no": "1311110601384",
+  "stock_code": "493280",
+  "stock_name": "아이엠바이오로직스"
+ },
  "01860010": {
   "acc_mt": "12",
   "adres": "경상남도 창원시 의창구 중동북로 235층 506호",
@@ -36454,6 +41424,34 @@
   "jurir_no": "1314110415896",
   "stock_code": "332190",
   "stock_name": "오션스바이오"
+ },
+ "01866528": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 의사당대로 97 &nbsp",
+  "ceo_nm": "장정훈",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "교보17호기업인수목적 주식회사",
+  "est_dt": "20240717",
+  "hm_url": "",
+  "induty_code": "661",
+  "jurir_no": "1101119005433",
+  "stock_code": "489210",
+  "stock_name": "교보17호스팩"
+ },
+ "01866926": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 여의나루로 50",
+  "ceo_nm": "김형철",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "케이비제31호기업인수목적(주)",
+  "est_dt": "20240902",
+  "hm_url": "",
+  "induty_code": "66199",
+  "jurir_no": "1101119045231",
+  "stock_code": "492220",
+  "stock_name": "KB제31호스팩"
  },
  "01867688": {
   "acc_mt": "12",
@@ -36511,6 +41509,20 @@
   "stock_code": "0007J0",
   "stock_name": "인벤테라"
  },
+ "01872219": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 국제금융로 39 (여의도동, 앵커원)",
+  "ceo_nm": "윤원도",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "유안타제17호기업인수목적 주식회사",
+  "est_dt": "20240913",
+  "hm_url": "",
+  "induty_code": "66199",
+  "jurir_no": "1101119056585",
+  "stock_code": "493790",
+  "stock_name": "유안타제17호스팩"
+ },
  "01872459": {
   "acc_mt": "12",
   "adres": "경상남도 창원시 의창구 북면 감계로156번길 5-15",
@@ -36539,6 +41551,34 @@
   "stock_code": "495900",
   "stock_name": "에이엠시지"
  },
+ "01873272": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 의사당대로 96",
+  "ceo_nm": "조선희",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "키움제11호기업인수목적 주식회사",
+  "est_dt": "20240722",
+  "hm_url": "",
+  "induty_code": "66199",
+  "jurir_no": "1101119009310",
+  "stock_code": "489480",
+  "stock_name": "키움제11호스팩"
+ },
+ "01875146": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 의사당대로 96",
+  "ceo_nm": "김종환",
+  "checked": "2026-10-27T06:06+09:00",
+  "corp_cls": "K",
+  "corp_name": "신한제16호기업인수목적 주식회사",
+  "est_dt": "20241015",
+  "hm_url": "",
+  "induty_code": "661",
+  "jurir_no": "1101119077078",
+  "stock_code": "496070",
+  "stock_name": "신한제16호스팩"
+ },
  "01876251": {
   "acc_mt": "12",
   "adres": "서울특별시 강남구 영동대로96길 20, 5층(삼성동, 대화빌딩) &nbsp",
@@ -36553,6 +41593,20 @@
   "stock_code": "0161M0",
   "stock_name": "네오사피엔스"
  },
+ "01877126": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 의사당대로 96",
+  "ceo_nm": "김대식",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "K",
+  "corp_name": "키움제10호기업인수목적 주식회사",
+  "est_dt": "20240620",
+  "hm_url": "",
+  "induty_code": "661",
+  "jurir_no": "1101118980652",
+  "stock_code": "487720",
+  "stock_name": "키움제10호스팩"
+ },
  "01877728": {
   "acc_mt": "12",
   "adres": "서울특별시 강남구 언주로 417",
@@ -36566,6 +41620,48 @@
   "jurir_no": "1101118652681",
   "stock_code": "0077H0",
   "stock_name": "모비콘텐츠테크"
+ },
+ "01880801": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 국제금융로 10, 40층, 41층 40층, 41층",
+  "ceo_nm": "법인이사 케이비자산운용(주)",
+  "checked": "2026-10-27T06:05+09:00",
+  "corp_cls": "Y",
+  "corp_name": "케이비발해인프라투융자회사",
+  "est_dt": "20060124",
+  "hm_url": "",
+  "induty_code": "642",
+  "jurir_no": "1101113386954",
+  "stock_code": "415640",
+  "stock_name": "KB발해인프라"
+ },
+ "01881800": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 여의대로 56",
+  "ceo_nm": "김광후",
+  "checked": "2026-10-27T06:06+09:00",
+  "corp_cls": "K",
+  "corp_name": "한화플러스제5호기업인수목적(주)",
+  "est_dt": "20241030",
+  "hm_url": "",
+  "induty_code": "661",
+  "jurir_no": "1101119091581",
+  "stock_code": "498390",
+  "stock_name": "한화플러스제5호스팩"
+ },
+ "01882845": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 논현로 508, GS타워",
+  "ceo_nm": "박민수",
+  "checked": "2026-10-27T06:06+09:00",
+  "corp_cls": "Y",
+  "corp_name": "(주)지에스피앤엘",
+  "est_dt": "20241202",
+  "hm_url": "www.gspnl.com",
+  "induty_code": "64992",
+  "jurir_no": "1101119120299",
+  "stock_code": "499790",
+  "stock_name": "GS피앤엘"
  },
  "01884065": {
   "acc_mt": "12",
@@ -36945,6 +42041,20 @@
   "stock_code": "0105P0",
   "stock_name": "유진스팩12호"
  },
+ "01957282": {
+  "acc_mt": "04",
+  "adres": "Unit 1, Enterprise, Cambridge Research Park, Cambridge CB25 9PD UK",
+  "ceo_nm": "도널드 도미닉 아르논",
+  "checked": "2026-10-27T06:06+09:00",
+  "corp_cls": "K",
+  "corp_name": "테라뷰홀딩스",
+  "est_dt": "20240719",
+  "hm_url": "teraview.com/",
+  "induty_code": "64992",
+  "jurir_no": "",
+  "stock_code": "950250",
+  "stock_name": "테라뷰"
+ },
  "01957909": {
   "acc_mt": "12",
   "adres": "서울특별시 서초구 서초대로74길 11",
@@ -37140,6 +42250,20 @@
   "jurir_no": "1101110958324",
   "stock_code": "0197V0",
   "stock_name": "엔에이치스팩34호"
+ },
+ "02031369": {
+  "acc_mt": "12",
+  "adres": "490 Arsenal Way, Suite 100B, Watertown",
+  "ceo_nm": "한상열",
+  "checked": "2026-10-27T06:06+09:00",
+  "corp_cls": "K",
+  "corp_name": "인제니아테라퓨틱스",
+  "est_dt": "20180322",
+  "hm_url": "www.ingeniatx.com",
+  "induty_code": "70113",
+  "jurir_no": "",
+  "stock_code": "950260",
+  "stock_name": "인제니아테라퓨틱스"
  },
  "02032155": {
   "acc_mt": "12",
