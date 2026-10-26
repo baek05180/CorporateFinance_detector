@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-10-26T09:33+09:00",
+  "data_updated": "2026-10-26T16:22+09:00",
   "last_daily": "2026-10-26T09:33+09:00"
  },
  "records": {
@@ -282301,33 +282301,33 @@
   },
   "RIGHTS:00615723:20260724000529": {
    "amended": true,
-   "amount": 19999998495,
-   "board_dt": "2026-10-19",
+   "amount": 1999997064,
+   "board_dt": "2026-10-26",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
    "corp_code": "00615723",
    "corp_name": "MSDI",
-   "dilution": 55.24,
+   "dilution": 2.92,
    "first_seen": "2026-10-26T09:20+09:00",
    "id": "RIGHTS:00615723:20260724000529",
    "method": "제3자배정증자",
-   "new_common": 11166945,
+   "new_common": 589448,
    "new_other": null,
    "offering": "사모·주주배정",
    "original_rcept": "20260724000529",
    "par_value": 1000,
    "purposes": {
-    "운영": 19999998495
+    "운영": 1999997064
    },
-   "rcept_dt": "2026-10-19",
-   "rcept_no": "20261019000120",
+   "rcept_dt": "2026-10-26",
+   "rcept_no": "20261026000212",
    "source": "DART",
    "stock_code": "123010",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-10-26T09:20+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261019000120"
+   "updated": "2026-10-26T16:22+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261026000212"
   },
   "RIGHTS:00615723:20261013000136": {
    "amended": true,
