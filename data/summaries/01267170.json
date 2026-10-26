@@ -1,0 +1,82 @@
+{
+ "corp_code": "01267170",
+ "name": "SK케미칼",
+ "source_rcept": "20260319000495",
+ "source_name": "[기재정정]사업보고서 (2025.12)",
+ "one_liner": "SK케미칼은 친환경 코폴리에스터 수지와 화학적 재활용 PET 원료를 만드는 화학 사업, 관절염약 등 제약 사업, 백신 회사 SK바이오사이언스를 거느린 SK그룹 회사입니다.",
+ "facts": "유가증권 상장 2018.01 · 울산·청주·안동 및 중국 2개 공장 · 2025 연결 매출 2.37조 · 영업손실 2억",
+ "mix_line": "부문 매출(조정 전) 그린케미칼 57.6% · SK바이오사이언스 24.2% · 제약 18.1%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "PTA·MEG",
+    "note": "코폴리에스터 원료"
+   }
+  ],
+  "company": {
+   "name": "SK케미칼",
+   "note": "그린소재 + 제약·백신"
+  },
+  "customers": [
+   {
+    "name": "소재·용기 가공업체",
+    "note": "코폴리에스터·DMT"
+   },
+   {
+    "name": "병·의원·약국",
+    "note": "관절염·혈액순환 치료제"
+   },
+   {
+    "name": "정부·글로벌 제약사",
+    "note": "백신·CDMO"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Green Chemicals(코폴리에스터·DMT·재활용 PET)",
+    "amount": 1551421000000,
+    "share": 57.6
+   },
+   {
+    "name": "SK바이오사이언스(백신·CDMO)",
+    "amount": 651724000000,
+    "share": 24.2
+   },
+   {
+    "name": "Pharma(합성·천연물 의약품)",
+    "amount": 488091000000,
+    "share": 18.1
+   }
+  ],
+  "basis": "2025 연결 (내부거래 3,261억 조정 전)"
+ },
+ "caption": "그린케미칼 매출은 늘었지만 2025년 영업손익은 거의 0(-2억 원)이었다. 중국 재활용 기업 Shuye 투자 등으로 화학적 재활용 PET 사업을 키우고 있다.",
+ "business": "Green Chemicals Biz.는 고기능성 코폴리에스터, DMT, 코팅·접착용 폴리에스터, 바이오폴리올(PO3G), 화학적 재활용 PET(CR-PET)와 원료(r-BHET)를 만듭니다. Life Science Biz.는 제약(Pharma)과 백신(SK바이오사이언스)입니다.",
+ "products": [
+  {
+   "name": "코폴리에스터 수지·DMT",
+   "segment": "Green Chemicals",
+   "desc": "",
+   "share": 55.2
+  },
+  {
+   "name": "재활용 PET·바이오폴리올",
+   "segment": "Green Chemicals",
+   "desc": "CR-PET·PO3G"
+  },
+  {
+   "name": "백신·수액·CDMO",
+   "segment": "SK바이오사이언스",
+   "desc": "",
+   "share": 24.2
+  },
+  {
+   "name": "관절염·혈액순환 치료제",
+   "segment": "Pharma",
+   "desc": "",
+   "share": 18.1
+  }
+ ],
+ "customers": "코폴리에스터는 국내외 용기·가전·소재 업체에, 의약품은 병·의원에, 백신은 정부·제약사 고객에 판매합니다.",
+ "written": "2026-10-27"
+}
