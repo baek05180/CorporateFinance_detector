@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-10-26T22:17+09:00",
+  "data_updated": "2026-10-27T07:23+09:00",
   "last_daily": "2026-10-26T22:17+09:00"
  },
  "records": {
@@ -65932,6 +65932,42 @@
    "updated": "2026-10-26T09:20+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250320000979",
    "ytm": 6.0
+  },
+  "CB:00602279:6": {
+   "amended": false,
+   "amount": 10000000000,
+   "board_dt": "2026-10-26",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "K",
+   "corp_code": "00602279",
+   "corp_name": "그린플러스",
+   "coupon": 2.0,
+   "dilution": 19.84,
+   "exercise_from": "2027-11-25",
+   "exercise_to": "2029-10-25",
+   "first_seen": "2026-10-27T07:23+09:00",
+   "id": "CB:00602279:6",
+   "lead": null,
+   "maturity": "2029-11-25",
+   "method_raw": "사모",
+   "offering": "사모",
+   "pay_dt": "2026-11-25",
+   "price": 3699,
+   "purposes": {
+    "운영": 10000000000
+   },
+   "rcept_dt": "2026-10-26",
+   "rcept_no": "20261026000394",
+   "refix_floor": 2590,
+   "series": "6",
+   "shares": 2703433,
+   "source": "DART",
+   "stock_code": "186230",
+   "type": "CB",
+   "updated": "2026-10-27T07:23+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261026000394",
+   "ytm": 8.0
   },
   "CB:00604268:1": {
    "amended": false,
@@ -281825,6 +281861,35 @@
    "updated": "2026-10-26T09:20+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251014000212"
   },
+  "RIGHTS:00602279:20261026000393": {
+   "amended": false,
+   "amount": 9999995500,
+   "board_dt": "2026-10-26",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "K",
+   "corp_code": "00602279",
+   "corp_name": "그린플러스",
+   "dilution": 26.94,
+   "first_seen": "2026-10-27T07:23+09:00",
+   "id": "RIGHTS:00602279:20261026000393",
+   "method": "제3자배정증자",
+   "new_common": 3034900,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 500,
+   "purposes": {
+    "채무상환": 9999995500
+   },
+   "rcept_dt": "2026-10-26",
+   "rcept_no": "20261026000393",
+   "source": "DART",
+   "stock_code": "186230",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-10-27T07:23+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261026000393"
+  },
   "RIGHTS:00604426:20251105000188": {
    "amended": true,
    "amount": 29999981664,
@@ -288664,6 +288729,37 @@
    "type": "RIGHTS",
    "updated": "2026-10-26T09:22+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251219000577"
+  },
+  "RIGHTS:00963000:20261026000385": {
+   "amended": false,
+   "amount": 1499926610,
+   "board_dt": "2026-10-26",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "N",
+   "corp_code": "00963000",
+   "corp_name": "썬테크",
+   "dilution": 10.77,
+   "first_seen": "2026-10-27T07:23+09:00",
+   "id": "RIGHTS:00963000:20261026000385",
+   "method": "제3자배정증자",
+   "new_common": 113074,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 500,
+   "purposes": {
+    "기타": 499926620,
+    "운영": 201008390,
+    "타법인증권": 798991600
+   },
+   "rcept_dt": "2026-10-26",
+   "rcept_no": "20261026000385",
+   "source": "DART",
+   "stock_code": "217320",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-10-27T07:23+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261026000385"
   },
   "RIGHTS:00963976:20240614000107": {
    "amended": true,
