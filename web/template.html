@@ -178,7 +178,7 @@ tbody tr.click:hover{background:var(--line-2)}
 details summary{cursor:pointer; color:var(--ink-2); font-weight:600; margin-top:10px}
 
 /* calendar */
-.cal{display:grid; grid-template-columns:repeat(7,1fr); border-top:1px solid var(--line); border-left:1px solid var(--line)}
+.cal{display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); border-top:1px solid var(--line); border-left:1px solid var(--line)}
 .cal .dow{font-size:12px; font-weight:600; color:var(--ink-3); padding:6px 8px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--panel)}
 .cal .day{min-height:104px; padding:6px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--panel)}
 .cal .day.out{background:var(--bg)}
@@ -740,7 +740,7 @@ async function viewCompany(key) {
 
   // 사업
   const prod = (B.products || []);
-  const prodHtml = prod.length ? `<table><thead><tr><th>사업부문</th><th>주요 제품·서비스</th><th style="width:34%">매출 비중</th></tr></thead><tbody>${prod.map(p => `<tr><td>${esc(p.segment || '-')}</td><td style="white-space:normal">${esc(p.name)}${p.desc ? `<div class="note">${esc(p.desc)}</div>` : ''}</td><td>${p.share != null ? `<div class="share"><div class="track"><div class="fill" style="width:${Math.min(100, p.share)}%"></div></div><span class="num">${pct(p.share)}</span></div>` : DASH}</td></tr>`).join('')}</tbody></table>` : '';
+  const prodHtml = prod.length ? `<div class="scroll"><table style="min-width:520px"><thead><tr><th>사업부문</th><th>주요 제품·서비스</th><th style="width:34%">매출 비중</th></tr></thead><tbody>${prod.map(p => `<tr><td>${esc(p.segment || '-')}</td><td style="white-space:normal">${esc(p.name)}${p.desc ? `<div class="note">${esc(p.desc)}</div>` : ''}</td><td>${p.share != null ? `<div class="share"><div class="track"><div class="fill" style="width:${Math.min(100, p.share)}%"></div></div><span class="num">${pct(p.share)}</span></div>` : DASH}</td></tr>`).join('')}</tbody></table></div>` : '';
 
   // 주주
   const H = co.holders || {};
@@ -757,7 +757,7 @@ async function viewCompany(key) {
     <tr><td>차입금(추정)</td><td class="num">${won(fd.debt)} ${fd.debt_items ? `<span class="note">${esc(fd.debt_items.slice(0, 6).join(', '))}</span>` : ''}</td></tr>
     <tr><td>순차입금</td><td class="num">${won(m.net_debt)}</td></tr>
     <tr><td>EBITDA</td><td class="num">${won(m.ebitda)} <span class="note">영업이익 + 감가상각비 (${esc(co.fs_annual?.period || '')})</span></td></tr>
-    <tr><td>이자보상배율</td><td class="num">${m.interest_coverage != null ? ratio(m.interest_coverage) : DASH} <span class="note">영업이익 ÷ 금융원가</span></td></tr>
+    <tr><td>이자보상배율</td><td class="num">${m.interest_coverage != null ? ratio(m.interest_coverage) : DASH} <span class="note">영업이익 ÷ ${esc(m.interest_basis || '금융원가')}</span></td></tr>
     <tr><td>영업현금흐름</td><td class="num">${won(m.ocf)}</td></tr><tr><td>설비투자</td><td class="num">${won(m.capex)}</td></tr>
     </tbody></table><p class="note">${esc(fd.period)} ${fd.fs === 'OFS' ? '별도' : '연결'} 재무제표 기준 · 차입금은 계정명으로 합산한 추정치</p>` : '';
 

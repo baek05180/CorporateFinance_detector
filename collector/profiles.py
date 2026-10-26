@@ -152,14 +152,23 @@ def fs_detail(rows):
                 out.setdefault("amort", v)
             elif aid == "ifrs-full_PurchaseOfPropertyPlantAndEquipment" or nm.startswith("유형자산의취득"):
                 out.setdefault("capex", abs(v))
+            elif aid.startswith("ifrs-full_InterestPaid") or nm in ("이자의지급", "이자지급", "이자의지급(영업)", "이자지급액"):
+                out["interest_paid"] = out.get("interest_paid", 0) + abs(v)
     if debt_names:
         out["debt"] = debt
         out["debt_items"] = sorted(debt_names)
     return out
 
 
+PROFILE_VERSION = 2   # 추출 규칙이 바뀌면 올린다 → 기존 프로필을 다음 실행 때 다시 만든다
+
+
 def holders(rows):
-    common = [r for r in rows if "보통" in (r.get("stock_knd") or "") or not r.get("stock_knd")]
+    common = [r for r in rows if any(k in (r.get("stock_knd") or "") for k in ("보통", "의결권")) or not r.get("stock_knd")]
+    if not common and rows:   # 주식 종류 표기가 회사마다 달라 못 찾으면 가장 많이 나온 종류로
+        from collections import Counter
+        kind = Counter(r.get("stock_knd") for r in rows).most_common(1)[0][0]
+        common = [r for r in rows if r.get("stock_knd") == kind]
     total = next((r for r in common if (r.get("nm") or "").replace(" ", "") in ("계", "합계", "총계")), None)
     people = [r for r in common if r is not total and (r.get("nm") or "").replace(" ", "") not in ("계", "합계", "총계")]
     top = sorted(people, key=lambda r: -(num(r.get("trmend_posesn_stock_co")) or 0))[:6]
@@ -206,6 +215,10 @@ def build_profile(dart, corp_code, old, today):
     reports = [r for r in reports if classify_report(r.get("report_nm"))]
     reports.sort(key=lambda r: r["rcept_no"], reverse=True)
     prof = dict(old or {})
+    if prof.get("pv") != PROFILE_VERSION:      # 규칙이 바뀌었으면 원문·재무를 다시 읽는다
+        prof.pop("annual_rcept", None)
+        prof.pop("latest_rcept", None)
+    prof["pv"] = PROFILE_VERSION
     prof["corp_code"] = corp_code
     prof["checked"] = now_kst().isoformat(timespec="minutes")
     if not reports:
@@ -409,7 +422,7 @@ def run(dart, store, today=None):
         todo = []
         for corp in targets:
             old = load_json(f"co/{corp}.json", None)
-            if old and not _stale(old.get("checked"), config.PROFILE_RECHECK_DAYS):
+            if old and old.get("pv") == PROFILE_VERSION and not _stale(old.get("checked"), config.PROFILE_RECHECK_DAYS):
                 continue
             todo.append((corp, old))
         diag["profiles_fresh"] = len(targets) - len(todo)

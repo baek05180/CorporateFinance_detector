@@ -13,7 +13,7 @@ from .datagokr import redact
 
 log = logging.getLogger(__name__)
 
-MARKET = {"유가증권": "Y", "코스닥": "K", "코넥스": "N"}
+MARKET = {"유가증권": "Y", "유가": "Y", "코스피": "Y", "코스닥": "K", "코넥스": "N"}
 
 
 def _cells(tr):

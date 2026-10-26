@@ -103,7 +103,9 @@ def key_metrics(series, prof, price):
         ebitda = fa["op"] + (fa.get("dep") or 0) + (fa.get("amort") or 0)
     m["ebitda"] = ebitda
     m["net_debt_ebitda"] = safe_div(m["net_debt"], ebitda, 1) if ebitda and ebitda > 0 else None
-    cost = fa.get("interest") or fa.get("fin_cost")
+    # 이자보상배율: 현금흐름표의 이자 지급액(없으면 손익계산서 이자비용, 그것도 없으면 금융원가)
+    cost = fa.get("interest_paid") or fa.get("interest") or fa.get("fin_cost")
+    m["interest_basis"] = "이자 지급액" if fa.get("interest_paid") else ("이자비용" if fa.get("interest") else ("금융원가" if fa.get("fin_cost") else None))
     m["interest_coverage"] = safe_div(fa.get("op"), cost, 1) if cost else None
     m["ocf"], m["capex"] = fa.get("ocf"), fa.get("capex")
     if m["equity"] is not None and m["capital"]:
