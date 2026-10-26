@@ -87,9 +87,13 @@ def main():
         row = {k: v for k, v in r.items() if k in KEEP and v not in (None, "", [], {})}
         row["key"] = key_of(r)
         if r.get("type") == "BOND" and r.get("offering") == "공모":
-            dd = bond_docs.get(r.get("original_rcept") or r.get("rcept_no"), {}).get("demand_dt")
-            if dd:
-                row["demand_dt"] = dd
+            doc = bond_docs.get(r.get("original_rcept") or r.get("rcept_no"), {})
+            if doc.get("demand_dt"):
+                row["demand_dt"] = doc["demand_dt"]
+            if doc.get("rating") and not A.grade_of(row.get("rating")):
+                row["rating"] = doc["rating"]
+        if row.get("rating") in ("-", "—"):
+            row.pop("rating")
         if row["key"] in info and not row.get("corp_cls"):
             row["corp_cls"] = info[row["key"]].get("corp_cls")
         rows.append(row)

@@ -222,7 +222,7 @@ class FakeSession:
         if ep == "document.xml":
             if p["rcept_no"].startswith("2026031"):
                 return Resp({}, content=_zip("a.xml", open(os.path.join(PROBE, "annual_remed_excerpt.xml"), encoding="utf-8").read()))
-            return Resp({}, content=_zip("b.xml", "<P>1. 공모개요</P><P>수요예측 일시 : 2026년 10월 20일 09:00~16:00</P>"))
+            return Resp({}, content=_zip("b.xml", "<P>1. 공모개요</P><P>수요예측 일시 : 2026년 10월 20일 09:00~16:00</P><TABLE><TR><TD>한국기업평가</TD><TD>2026.10.10</TD><TD>AA-</TD></TR><TR><TD>한국신용평가</TD><TD>2026.10.11</TD><TD>AA-</TD></TR><TR><TD>NICE신용평가</TD><TD>A+</TD></TR></TABLE>"))
         if ep == "fnlttMultiAcnt":
             return ok(list=multi_rows(p["corp_code"].split(",")))
         if ep == "fnlttSinglAcntAll":
@@ -313,6 +313,7 @@ def main():
     check("프로필: 최대주주 합계·자기주식", prof["holders"].get("top") and prof.get("treasury_shares") == 91828987)
     bd = json.load(open(os.path.join(config.DATA_DIR, "ref", "bond_docs.json"), encoding="utf-8"))
     check("공모채 수요예측일 추출", any(v.get("demand_dt") == "2026-10-20" for v in bd.values()))
+    check("공모채 신용등급 추출 (다수결)", any(v.get("rating") == "AA-" for v in bd.values()))
     calls_before = len(fake.calls)
     run.main(["--mode", "profiles"])
     check("두 번째 프로필 실행은 새로 받을 것이 거의 없음", len(fake.calls) - calls_before < 20)

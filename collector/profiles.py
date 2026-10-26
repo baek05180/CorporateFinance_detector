@@ -346,18 +346,20 @@ def run(dart, store, today=None):
             if r.get("type") != "BOND" or r.get("offering") != "공모" or not r.get("rcept_no"):
                 continue
             rno = r.get("original_rcept") or r["rcept_no"]
-            if rno in bond_docs:
+            if (bond_docs.get(rno) or {}).get("v") == docparse.BOND_DOC_VERSION:
                 continue
             try:
                 docs = dart.document(rno)
                 main = max(docs.values(), key=len) if docs else ""
-                bond_docs[rno] = docparse.bond_schedule(main) or {"demand_dt": None}
-                if not bond_docs[rno].get("demand_dt"):
-                    i = docparse.text_of(main).find("수요예측")
+                bond_docs[rno] = docparse.bond_schedule(main)
+                if not bond_docs[rno].get("demand_dt") or not bond_docs[rno].get("rating"):
+                    t = docparse.text_of(main)
+                    i, j = t.find("수요예측"), t.find("신용등급")
                     diag.setdefault("demand_miss", []).append(
-                        {"rcept": rno, "snip": docparse.text_of(main)[max(0, i - 80): i + 220] if i >= 0 else ""})
+                        {"rcept": rno, "got": bond_docs[rno], "demand": t[max(0, i - 80): i + 220] if i >= 0 else "",
+                         "rating": t[max(0, j - 40): j + 300] if j >= 0 else ""})
             except DartError as e:
-                bond_docs[rno] = {"demand_dt": None, "error": str(e)[:100]}
+                bond_docs[rno] = {"demand_dt": None, "error": str(e)[:100], "v": docparse.BOND_DOC_VERSION}
             dump_json("ref/bond_docs.json", bond_docs)
 
         # 6) 조달 대상 회사 상세

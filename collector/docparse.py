@@ -220,12 +220,27 @@ def _iso(m):
     return f"{y:04d}-{mo:02d}-{d:02d}"
 
 
+AGENCY = r"(한국기업평가|한국신용평가|NICE\s*신용평가|나이스신용평가|서울신용평가|한기평|한신평|NICE)"
+GRADE = r"(?<![A-Za-z])(AAA|AA[+\-]|AA0|AA|A[+\-]|A0|BBB[+\-]|BBB0|BBB|BB[+\-]|BB0|BB|B[+\-]|B0)(?![A-Za-z0-9가-힣])"
+BOND_DOC_VERSION = 2
+
+
 def bond_schedule(xml):
-    """증권신고서(채무증권) 원문 → {"demand_dt": "YYYY-MM-DD"} (찾지 못하면 빈 dict)"""
+    """증권신고서(채무증권) 원문 → {"demand_dt": "YYYY-MM-DD", "rating": "AA-", "v": 2} (못 찾은 값은 None)"""
     text = text_of(xml)
+    out = {"demand_dt": None, "rating": None, "v": BOND_DOC_VERSION}
     for p in (r"수요예측\s*(?:기간|일시|일자|실시일|기일|일)\s*[:：]?\s*", r"수요예측[^0-9]{0,15}"):
         m = re.search(p + DATE, text)
         if m:
             y, mo, d = (int(x) for x in m.groups()[-3:])
-            return {"demand_dt": f"{y:04d}-{mo:02d}-{d:02d}"}
-    return {}
+            out["demand_dt"] = f"{y:04d}-{mo:02d}-{d:02d}"
+            break
+    votes = {}
+    for m in re.finditer(AGENCY, text):
+        g = re.search(GRADE, text[m.end(): m.end() + 80])
+        if g:
+            grade = g.group(1).replace("0", "")
+            votes[grade] = votes.get(grade, 0) + 1
+    if votes:
+        out["rating"] = max(votes.items(), key=lambda kv: kv[1])[0]
+    return out
