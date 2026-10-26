@@ -222,6 +222,21 @@ def main(argv=None):
                 f.write(summary + "\n")
         return 0
 
+    # GitHub 예약 실행은 붐비면 건너뛰어질 때가 있다. 저녁 정기 갱신을 놓치지 않도록
+    # 평일 20:10 이후 감시 실행이 오늘 정기 갱신이 없었음을 보면 정기 갱신으로 바꾼다.
+    if args.mode == "watch" and os.environ.get("GITHUB_EVENT_NAME") == "schedule":
+        now = now_kst()
+        last = store.meta.get("last_daily") or ""
+        if now.weekday() < 5 and now.strftime("%H:%M") >= "20:10" and last[:10] != now.date().isoformat():
+            log.info("오늘 정기 갱신이 없어 감시 실행을 정기 갱신으로 전환")
+            args.mode, args.days = "daily", 7
+    if args.mode == "daily" and os.environ.get("GITHUB_EVENT_NAME") == "schedule":
+        last = store.meta.get("last_daily") or ""
+        if last[:10] == now_kst().date().isoformat() and last[11:16] >= "20:00":
+            log.info("오늘 정기 갱신을 이미 마쳐 감시로 전환")
+            args.mode = "watch"
+    if args.mode == "daily" and args.days < 7:
+        args.days = 7
     mode = "daily" if args.mode == "backfill" else args.mode
 
     if args.mode == "watch":
