@@ -1,0 +1,55 @@
+{
+ "corp_code": "01622720",
+ "name": "KB스타리츠",
+ "source_rcept": "20261022000450",
+ "source_name": "사업보고서 (2026.07)",
+ "one_liner": "KB스타리츠는 투자자 돈을 모아 벨기에 노스 갤럭시 타워와 영국 삼성전자 유럽본사 건물 같은 해외 오피스를 사들이고 임대료를 받아 배당하는 상장 해외부동산 리츠입니다.",
+ "facts": "유가증권 상장 2022.10 · 보유 자산 벨기에 North Galaxy Towers·영국 Samsung Europe HQ",
+ "mix_line": "매출 해외 오피스 임대료",
+ "flow": {
+  "inputs": [
+   {
+    "name": "투자자 자금·차입",
+    "note": "해외 오피스 매입"
+   }
+  ],
+  "company": {
+   "name": "KB스타리츠",
+   "note": "해외 오피스 리츠"
+  },
+  "customers": [
+   {
+    "name": "North Galaxy Towers 임차인",
+    "note": "벨기에"
+   },
+   {
+    "name": "삼성전자 유럽본사",
+    "note": "영국"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "임대료",
+    "amount": 30390000000,
+    "share": 100.0
+   }
+  ],
+  "basis": "2026.07 사업연도"
+ },
+ "caption": "연 임대수익은 약 304억 원이지만, 사업연도에 영업손실 725억 원, 순손실 994억 원을 냈다.",
+ "business": "부동산투자회사법에 따라 투자자 자금을 모아 부동산에 투자하고 수익을 돌려주는 리츠입니다. 벨기에 North Galaxy Towers와 영국 Samsung Europe HQ를 보유합니다.",
+ "products": [
+  {
+   "name": "North Galaxy Towers",
+   "segment": "해외 오피스",
+   "desc": "벨기에"
+  },
+  {
+   "name": "Samsung Europe HQ",
+   "segment": "해외 오피스",
+   "desc": "영국"
+  }
+ ],
+ "customers": "보유 해외 오피스의 임차인에게서 임대료를 받습니다.",
+ "written": "2026-10-27"
+}
