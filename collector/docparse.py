@@ -135,6 +135,8 @@ def products(body, max_rows=8):
         if (not name or any(t in joined for t in ("합계", "총계", "소계", "내부거래"))
                 or re.fullmatch(r"[\d,.\-()%\s]+", name)):
             continue
+        if name.replace(" ", "") in HEADER_WORDS:   # 2줄짜리 머리글의 두 번째 줄
+            continue
         ident = (r[seg_col] if seg_col is not None and seg_col < len(r) else "", name)
         if ident in seen:          # 세로 병합으로 같은 제품이 반복된 행
             continue
@@ -152,6 +154,9 @@ def products(body, max_rows=8):
         if len(out) >= max_rows:
             break
     return out
+
+
+HEADER_WORDS = {"매출액", "비율", "비중", "금액", "품목", "구분", "제품", "주요제품", "용도", "사업부문", "매출유형", "구체적용도", "(%)", "%"}
 
 
 CUSTOMER_KEYS = ("주요매출처", "주요 매출처", "주요거래처", "주요 거래처", "주요고객", "주요 고객", "매출처")

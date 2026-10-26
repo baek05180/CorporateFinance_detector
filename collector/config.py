@@ -69,7 +69,7 @@ PRIVATE_BOND_EXCLUDE = ["금융", "은행", "카드", "캐피탈", "유동화", 
 
 
 # ── 기업 프로필 (profiles 모드) ──
-DART_RUN_BUDGET = 8000          # profiles 한 번 실행에서 쓸 최대 OpenDART 호출 수 (일일 한도 20,000)
+DART_RUN_BUDGET = 4000          # profiles 한 번 실행에서 쓸 최대 OpenDART 호출 수 (일일 한도 20,000, 밤사이 여러 번 실행)
 PROFILE_TIME_BUDGET_MIN = 100  # profiles 한 번 실행의 최대 시간(분). 넘으면 저장하고 다음 실행에서 이어감
 PROFILE_WORKERS = 6             # 원문·재무 동시 다운로드 수
 BOND_DOC_DAYS = 400             # 수요예측일·신용등급을 원문에서 읽을 공모채 범위(최근 N일)
