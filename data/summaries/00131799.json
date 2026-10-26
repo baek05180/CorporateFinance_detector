@@ -1,0 +1,88 @@
+{
+ "corp_code": "00131799",
+ "name": "에스케이에코플랜트",
+ "source_rcept": "20260331003895",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "에스케이에코플랜트는 SK하이닉스 등의 반도체 공장·AI 데이터센터를 지어 주고, 반도체용 산업가스·소재 공급과 메모리 모듈 제조·폐전자 재활용까지 하는 SK그룹의 비상장 회사입니다.",
+ "facts": "비상장 · 2025 매출 12.2조(전년 8.7조) · 해외 매출 3.5조",
+ "mix_line": "사업 Hi-Tech · Gas & Material · Asset Lifecycle · 솔루션",
+ "flow": {
+  "inputs": [
+   {
+    "name": "건설 자재",
+    "note": "레미콘 등"
+   },
+   {
+    "name": "연료전지 설비",
+    "note": "Bloom Energy 외"
+   }
+  ],
+  "company": {
+   "name": "SK에코플랜트",
+   "note": "반도체 인프라 + 가스·소재"
+  },
+  "customers": [
+   {
+    "name": "SK하이닉스",
+    "note": "반도체 FAB 건설 (Captive)"
+   },
+   {
+    "name": "SK그룹·글로벌 고객",
+    "note": "AI DC·플랜트"
+   },
+   {
+    "name": "반도체·디스플레이 회사",
+    "note": "산업가스·소재"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Hi-Tech(반도체 FAB·AI DC)",
+    "amount": null,
+    "share": null
+   },
+   {
+    "name": "Gas & Material",
+    "amount": null,
+    "share": null
+   },
+   {
+    "name": "Asset Lifecycle(모듈·재활용)",
+    "amount": null,
+    "share": null
+   },
+   {
+    "name": "솔루션(플랜트 등)",
+    "amount": null,
+    "share": null
+   }
+  ],
+  "basis": "2025 연결 12.19조"
+ },
+ "caption": "건설사에서 반도체 종합서비스 회사로 바뀌는 중이다. 2024~25년 가스·소재 회사를 자회사로 편입해 매출이 1년 새 40% 늘었다. 핵심 고객은 SK하이닉스다.",
+ "business": "반도체 제조시설·AI 데이터센터를 설계·조달·시공하는 Hi-Tech, 반도체용 산업가스·소재를 파는 Gas & Material, DRAM 모듈·SSD 제조와 폐메모리·전자폐기물 재활용(ITAD)을 하는 Asset Lifecycle, 플랜트·발전 등 솔루션 사업을 합니다.",
+ "products": [
+  {
+   "name": "반도체 FAB·AI 데이터센터 건설",
+   "segment": "Hi-Tech",
+   "desc": "SK하이닉스 등"
+  },
+  {
+   "name": "산업가스·반도체 소재",
+   "segment": "Gas & Material",
+   "desc": ""
+  },
+  {
+   "name": "메모리 모듈·전자폐기물 재활용",
+   "segment": "Asset Lifecycle",
+   "desc": ""
+  },
+  {
+   "name": "플랜트·LNG 발전",
+   "segment": "솔루션",
+   "desc": ""
+  }
+ ],
+ "customers": "SK하이닉스의 반도체 공장 건설(Captive)이 핵심이고, SK그룹 AI·에너지 인프라와 글로벌 고객에게 가스·소재와 재활용 서비스를 공급합니다.",
+ "written": "2026-10-27"
+}
