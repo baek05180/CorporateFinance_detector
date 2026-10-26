@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-10-26T17:49+09:00",
+  "data_updated": "2026-10-26T18:25+09:00",
   "last_daily": "2026-10-26T09:33+09:00"
  },
  "records": {
@@ -275476,6 +275476,35 @@
    "updated": "2026-10-26T09:17+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260818000324"
   },
+  "RIGHTS:00367695:20261026000355": {
+   "amended": false,
+   "amount": 7000000362,
+   "board_dt": "2026-10-26",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "K",
+   "corp_code": "00367695",
+   "corp_name": "에이전트AI",
+   "dilution": 52.36,
+   "first_seen": "2026-10-26T18:25+09:00",
+   "id": "RIGHTS:00367695:20261026000355",
+   "method": "제3자배정증자",
+   "new_common": 3426334,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 500,
+   "purposes": {
+    "운영": 7000000362
+   },
+   "rcept_dt": "2026-10-26",
+   "rcept_no": "20261026000355",
+   "source": "DART",
+   "stock_code": "060900",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-10-26T18:25+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261026000355"
+  },
   "RIGHTS:00369213:20240305000510": {
    "amended": true,
    "amount": 16769816613,
@@ -280499,33 +280528,32 @@
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260804000545"
   },
   "RIGHTS:00545929:20261016000373": {
-   "amended": false,
-   "amount": 2999949500,
-   "board_dt": "2026-10-16",
+   "amended": true,
+   "amount": null,
+   "board_dt": "2026-10-26",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
    "corp_code": "00545929",
    "corp_name": "제넥신",
-   "dilution": 2.75,
+   "dilution": null,
    "first_seen": "2026-10-25T18:19+09:00",
    "id": "RIGHTS:00545929:20261016000373",
    "method": "제3자배정증자",
-   "new_common": 1250500,
+   "new_common": null,
    "new_other": null,
    "offering": "사모·주주배정",
-   "par_value": 500,
-   "purposes": {
-    "운영": 2999949500
-   },
-   "rcept_dt": "2026-10-16",
-   "rcept_no": "20261016000373",
+   "original_rcept": "20261016000373",
+   "par_value": null,
+   "purposes": {},
+   "rcept_dt": "2026-10-26",
+   "rcept_no": "20261026000363",
    "source": "DART",
    "stock_code": "095700",
-   "stock_kind": "보통주",
+   "stock_kind": null,
    "type": "RIGHTS",
-   "updated": "2026-10-25T18:19+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261016000373"
+   "updated": "2026-10-26T18:25+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261026000363"
   },
   "RIGHTS:00547510:20260914000174": {
    "amended": true,
