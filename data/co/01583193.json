@@ -1,0 +1,48 @@
+{
+ "checked": "2026-10-27T02:18+09:00",
+ "corp_code": "01583193",
+ "fs_interim": {
+  "assets": 6731738583,
+  "capital": 6440917000,
+  "cash": 87419444,
+  "debt": 8308275417,
+  "debt_hist": [
+   null,
+   8484518176,
+   8308275417
+  ],
+  "debt_items": [
+   "단기차입금",
+   "비유동리스부채",
+   "유동리스부채",
+   "유동성장기부채",
+   "장기차입금"
+  ],
+  "equity": -10652487436,
+  "fin_cost": 755090490,
+  "fs": "OFS",
+  "interest_paid": 42040361,
+  "liab": 17384226019,
+  "ni": -1710757528,
+  "ocf": 338817860,
+  "op": -957661644,
+  "period": "2026 1Q",
+  "revenue": 57224753
+ },
+ "holders": {
+  "as_of": "2026-03-31",
+  "top": [
+   {
+    "name": "-",
+    "pct": 0.0,
+    "relation": "-",
+    "shares": null
+   }
+  ],
+  "total_pct": 0.0
+ },
+ "latest_name": "분기보고서 (2026.03)",
+ "latest_rcept": "20260515000704",
+ "pv": 3,
+ "treasury_shares": null
+}

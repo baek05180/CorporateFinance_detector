@@ -1,0 +1,49 @@
+{
+ "annual_name": "[첨부정정]사업보고서 (2025.12)",
+ "annual_rcept": "20260318000344",
+ "biz_raw": {},
+ "business": {},
+ "checked": "2026-10-27T02:16+09:00",
+ "corp_code": "00963000",
+ "fs_annual": {},
+ "holders": {
+  "as_of": "2025-12-31",
+  "top": [
+   {
+    "name": "이선휴",
+    "pct": 41.54,
+    "relation": "본인",
+    "shares": 700000
+   },
+   {
+    "name": "김옥신",
+    "pct": 2.97,
+    "relation": "처형",
+    "shares": 50000
+   },
+   {
+    "name": "이유리",
+    "pct": 2.97,
+    "relation": "자녀",
+    "shares": 50000
+   },
+   {
+    "name": "김희자",
+    "pct": 2.97,
+    "relation": "제수",
+    "shares": 50000
+   },
+   {
+    "name": "이천휴",
+    "pct": 2.96,
+    "relation": "동생",
+    "shares": 49950
+   }
+  ],
+  "total_pct": 53.41
+ },
+ "latest_name": "[첨부정정]사업보고서 (2025.12)",
+ "latest_rcept": "20260318000344",
+ "pv": 3,
+ "treasury_shares": null
+}

@@ -1,0 +1,54 @@
+{
+ "annual_name": "[첨부정정]사업보고서 (2025.12)",
+ "annual_rcept": "20260323001059",
+ "business": {},
+ "checked": "2026-10-27T02:15+09:00",
+ "corp_code": "00978075",
+ "fs_annual": {},
+ "holders": {
+  "as_of": "2025-12-31",
+  "top": [
+   {
+    "name": "이상규",
+    "pct": 27.6,
+    "relation": "본인",
+    "shares": 677809
+   },
+   {
+    "name": "느티나무도서관재단",
+    "pct": 1.43,
+    "relation": "기타",
+    "shares": 35039
+   },
+   {
+    "name": "박형근",
+    "pct": 1.39,
+    "relation": "등기임원",
+    "shares": 34100
+   },
+   {
+    "name": "박천훈",
+    "pct": 1.07,
+    "relation": "친인척",
+    "shares": 26344
+   },
+   {
+    "name": "곽기봉",
+    "pct": 0.98,
+    "relation": "미등기임원",
+    "shares": 24111
+   },
+   {
+    "name": "김준엽",
+    "pct": 0.41,
+    "relation": "친인척",
+    "shares": 10000
+   }
+  ],
+  "total_pct": 33.7
+ },
+ "latest_name": "[첨부정정]사업보고서 (2025.12)",
+ "latest_rcept": "20260323001059",
+ "pv": 3,
+ "treasury_shares": 0
+}

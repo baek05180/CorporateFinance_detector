@@ -1,0 +1,87 @@
+{
+ "annual_name": "[첨부정정]사업보고서 (2025.12)",
+ "annual_rcept": "20260316001331",
+ "business": {},
+ "checked": "2026-10-27T02:19+09:00",
+ "corp_code": "00962223",
+ "fs_annual": {
+  "assets": 80399685754,
+  "capex": 280090728,
+  "capital": 4722300000,
+  "cash": 8308204646,
+  "debt": 7863929849,
+  "debt_hist": [
+   0,
+   0,
+   7863929849
+  ],
+  "debt_items": [
+   "교환사채"
+  ],
+  "equity": 62211095881,
+  "fin_cost": 448020914,
+  "fs": "CFS",
+  "interest_paid": 39413478,
+  "liab": 18188589873,
+  "ni": 7496920564,
+  "ocf": 6032941125,
+  "op": 7007064713,
+  "period": "2025 연간",
+  "revenue": 48381253076,
+  "st_deposits": 39010840826
+ },
+ "fs_interim": {
+  "assets": 84113552073,
+  "capex": 197262398,
+  "capital": 4722300000,
+  "cash": 5715237868,
+  "debt": 7999528852,
+  "debt_hist": [
+   null,
+   7863929849,
+   7999528852
+  ],
+  "debt_items": [
+   "교환사채"
+  ],
+  "equity": 64323035771,
+  "fin_cost": 150520542,
+  "fs": "CFS",
+  "interest_paid": 14031174,
+  "liab": 19790516302,
+  "ni": 4656113483,
+  "ocf": 486750709,
+  "op": 4311478247,
+  "period": "2026 반기",
+  "revenue": 24924044872,
+  "st_deposits": 39010840826
+ },
+ "holders": {
+  "as_of": "2026-06-30",
+  "top": [
+   {
+    "name": "이동범",
+    "pct": 31.54,
+    "relation": "본인",
+    "shares": 2863699
+   },
+   {
+    "name": "김계연",
+    "pct": 7.05,
+    "relation": "임원",
+    "shares": 640000
+   },
+   {
+    "name": "정유주",
+    "pct": 0.68,
+    "relation": "임원",
+    "shares": 61377
+   }
+  ],
+  "total_pct": 39.26
+ },
+ "latest_name": "반기보고서 (2026.06)",
+ "latest_rcept": "20260814000732",
+ "pv": 3,
+ "treasury_shares": 400900
+}
