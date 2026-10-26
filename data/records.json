@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-10-26T16:22+09:00",
+  "data_updated": "2026-10-26T16:42+09:00",
   "last_daily": "2026-10-26T09:33+09:00"
  },
  "records": {
@@ -20043,6 +20043,85 @@
    "uses": {
     "발행제비용": 410444412,
     "채무상환자금": 100000000000
+   }
+  },
+  "BOND:00201450:59-1": {
+   "amended": false,
+   "amount": 40000000000,
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "E",
+   "corp_code": "00201450",
+   "corp_name": "에스케이렌터카",
+   "coupon": null,
+   "coupon_raw": "-",
+   "first_seen": "2026-10-26T16:42+09:00",
+   "guarantor": null,
+   "id": "BOND:00201450:59-1",
+   "lead": "케이비증권",
+   "maturity": "2028-11-03",
+   "method_raw": "공모",
+   "name": "무보증사채",
+   "offering": "공모",
+   "pay_dt": "2026-11-05",
+   "rating": "-",
+   "rcept_dt": "2026-10-26",
+   "rcept_no": "20261026000244",
+   "series": "59-1",
+   "series_raw": "59-1",
+   "source": "DART",
+   "stock_code": "068400",
+   "sub_dt": "2026-11-05",
+   "type": "BOND",
+   "underwriters": [
+    "SK증권",
+    "현대차증권"
+   ],
+   "updated": "2026-10-26T16:42+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261026000244",
+   "uses": {
+    "발행제비용": 159311600,
+    "채무상환자금": 40000000000
+   }
+  },
+  "BOND:00201450:59-2": {
+   "amended": false,
+   "amount": 60000000000,
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "E",
+   "corp_code": "00201450",
+   "corp_name": "에스케이렌터카",
+   "coupon": null,
+   "coupon_raw": "-",
+   "first_seen": "2026-10-26T16:42+09:00",
+   "guarantor": null,
+   "id": "BOND:00201450:59-2",
+   "lead": "케이비증권",
+   "maturity": "2029-11-05",
+   "method_raw": "공모",
+   "name": "무보증사채",
+   "offering": "공모",
+   "pay_dt": "2026-11-05",
+   "rating": "-",
+   "rcept_dt": "2026-10-26",
+   "rcept_no": "20261026000244",
+   "series": "59-2",
+   "series_raw": "59-2",
+   "source": "DART",
+   "stock_code": "068400",
+   "sub_dt": "2026-11-05",
+   "type": "BOND",
+   "underwriters": [
+    "신한투자증권",
+    "키움증권",
+    "한국투자증권"
+   ],
+   "updated": "2026-10-26T16:42+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261026000244",
+   "uses": {
+    "발행제비용": 175020000,
+    "채무상환자금": 60000000000
    }
   },
   "BOND:00203315:22-1": {
@@ -295055,6 +295134,35 @@
    "type": "RIGHTS",
    "updated": "2026-10-26T09:24+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260610000542"
+  },
+  "RIGHTS:01110474:20261026000213": {
+   "amended": false,
+   "amount": 3000000000,
+   "board_dt": "2026-10-26",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "K",
+   "corp_code": "01110474",
+   "corp_name": "풍전약품",
+   "dilution": 12.45,
+   "first_seen": "2026-10-26T16:42+09:00",
+   "id": "RIGHTS:01110474:20261026000213",
+   "method": "제3자배정증자",
+   "new_common": 1200000,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 2500,
+   "purposes": {
+    "운영": 3000000000
+   },
+   "rcept_dt": "2026-10-26",
+   "rcept_no": "20261026000213",
+   "source": "DART",
+   "stock_code": "298060",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-10-26T16:42+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261026000213"
   },
   "RIGHTS:01113718:20250819000254": {
    "amended": false,
