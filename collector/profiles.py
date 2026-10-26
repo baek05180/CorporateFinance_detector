@@ -474,6 +474,10 @@ def run(dart, store, today=None):
         log.info("호출 예산 소진 — 다음 실행에서 이어감")
     except DartQuotaExceeded as e:
         diag["quota_exceeded"] = redact(e)[:200]
+    except Exception:  # noqa: BLE001 — 예상 못한 오류도 지금까지 받은 것은 저장하고 원인을 남긴다
+        import traceback
+        diag["crash"] = redact(traceback.format_exc())[-1500:]
+        log.exception("프로필 수집 중 오류")
     finally:
         dump_json("ref/company_info.json", info)
         diag["dart_calls"] = dart.calls
