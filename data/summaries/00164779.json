@@ -1,0 +1,64 @@
+{
+ "corp_code": "00164779",
+ "name": "SK하이닉스",
+ "source_rcept": "20260317000635",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "SK하이닉스는 DRAM·HBM·NAND 같은 메모리 반도체를 만들어 전 세계 서버·스마트폰·PC 업체와 AI 데이터센터에 파는 세계적인 메모리 반도체 회사입니다.",
+ "facts": "유가증권 상장 1996.12 · 이천 본사·생산기지 4곳 · 2025 연결 매출 97.1조 · 영업이익 47.2조",
+ "mix_line": "매출 메모리 반도체(DRAM·NAND) 100%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "웨이퍼·Substrate·PCB",
+    "note": "반도체 원재료"
+   }
+  ],
+  "company": {
+   "name": "SK하이닉스",
+   "note": "DRAM · HBM · NAND"
+  },
+  "customers": [
+   {
+    "name": "AI·데이터센터 업체",
+    "note": "HBM·서버 DRAM·기업용 SSD"
+   },
+   {
+    "name": "모바일·컴퓨팅 전자업체",
+    "note": "DRAM"
+   },
+   {
+    "name": "IT·저장장치 업체",
+    "note": "NAND·SSD"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "DRAM·NAND 등 메모리",
+    "amount": 97146675000000,
+    "share": 100.0
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "AI 확산으로 HBM과 서버용 DRAM 수요가 폭증해 매출이 2023년 32.8조 원에서 2025년 97.1조 원으로 3배가 됐다. 영업이익률은 49%다.",
+ "business": "이천 본사를 거점으로 4개 생산기지, 3개 연구개발법인, 미국·중국·싱가포르·대만·홍콩 판매법인을 운영합니다. 휘발성 메모리 DRAM과 비휘발성 메모리 NAND Flash가 주력이고 Foundry 사업도 병행합니다.",
+ "products": [
+  {
+   "name": "DRAM(HBM 포함)",
+   "segment": "반도체",
+   "desc": "서버·모바일·PC"
+  },
+  {
+   "name": "NAND Flash·SSD",
+   "segment": "반도체",
+   "desc": "기업용 SSD 등"
+  },
+  {
+   "name": "Foundry",
+   "segment": "반도체",
+   "desc": ""
+  }
+ ],
+ "customers": "DRAM은 세계 유수의 모바일·컴퓨팅 업체에, NAND는 모바일·IT 제조사와 SSD·메모리카드 업체에 공급하며, 공급 물량과 가격은 고객과 월·분기별로 정합니다.",
+ "written": "2026-10-27"
+}
