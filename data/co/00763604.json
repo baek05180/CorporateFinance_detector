@@ -1,0 +1,77 @@
+{
+ "checked": "2026-10-27T04:19+09:00",
+ "corp_code": "00763604",
+ "fs_interim": {
+  "assets": 33746717023,
+  "capex": 0,
+  "capital": 6429543000,
+  "cash": 39924265,
+  "debt": 23327373618,
+  "debt_hist": [
+   null,
+   24289738217,
+   23327373618
+  ],
+  "debt_items": [
+   "유동차입금(사채포함)",
+   "장기차입금(사채포함),총액"
+  ],
+  "equity": -17552298652,
+  "fin_cost": 312933866,
+  "fs": "OFS",
+  "interest_paid": 346588426,
+  "liab": 51299015675,
+  "ni": -1764882186,
+  "ocf": 490090597,
+  "op": -1640508325,
+  "period": "2025 1Q",
+  "revenue": 5654253821,
+  "st_deposits": 0
+ },
+ "holders": {
+  "as_of": "2025-03-31",
+  "top": [
+   {
+    "name": "지엘라파(주)",
+    "pct": 24.59,
+    "relation": "최대주주",
+    "shares": 3161659
+   },
+   {
+    "name": "김윤정",
+    "pct": 5.25,
+    "relation": "특수관계인",
+    "shares": 675160
+   },
+   {
+    "name": "황재간",
+    "pct": 4.08,
+    "relation": "대표이사",
+    "shares": 525000
+   },
+   {
+    "name": "황현서",
+    "pct": 0.4,
+    "relation": "특수관계인",
+    "shares": 51970
+   },
+   {
+    "name": "황규영",
+    "pct": 0.31,
+    "relation": "특수관계인",
+    "shares": 39273
+   },
+   {
+    "name": "황규헌",
+    "pct": 0.14,
+    "relation": "특수관계인",
+    "shares": 18137
+   }
+  ],
+  "total_pct": 34.9
+ },
+ "latest_name": "분기보고서 (2025.03)",
+ "latest_rcept": "20250509000439",
+ "pv": 3,
+ "treasury_shares": null
+}

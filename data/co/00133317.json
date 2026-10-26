@@ -1,0 +1,26 @@
+{
+ "annual_name": "사업보고서 (2025.12)",
+ "annual_rcept": "20260331002326",
+ "biz_raw": {},
+ "business": {},
+ "checked": "2026-10-27T04:36+09:00",
+ "corp_code": "00133317",
+ "fs_annual": {},
+ "fs_interim": {},
+ "holders": {
+  "as_of": "2026-06-30",
+  "top": [
+   {
+    "name": "이계호",
+    "pct": 31.42,
+    "relation": "최대주주",
+    "shares": 317349
+   }
+  ],
+  "total_pct": 31.42
+ },
+ "latest_name": "반기보고서 (2026.06)",
+ "latest_rcept": "20260814000571",
+ "pv": 3,
+ "treasury_shares": 1668
+}

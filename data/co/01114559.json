@@ -1,0 +1,37 @@
+{
+ "annual_name": "[기재정정]사업보고서 (2020.12)",
+ "annual_rcept": "20250819000044",
+ "biz_raw": {},
+ "business": {},
+ "checked": "2026-10-27T04:33+09:00",
+ "corp_code": "01114559",
+ "fs_annual": {},
+ "holders": {
+  "as_of": "2020-12-31",
+  "top": [
+   {
+    "name": "정창원",
+    "pct": 26.86,
+    "relation": "본인",
+    "shares": 1328650
+   },
+   {
+    "name": "안태우",
+    "pct": 21.5,
+    "relation": "특수관계인",
+    "shares": 1063605
+   },
+   {
+    "name": "김주향",
+    "pct": 0.51,
+    "relation": "배우자",
+    "shares": 25519
+   }
+  ],
+  "total_pct": 48.87
+ },
+ "latest_name": "[기재정정]사업보고서 (2020.12)",
+ "latest_rcept": "20250819000044",
+ "pv": 3,
+ "treasury_shares": null
+}

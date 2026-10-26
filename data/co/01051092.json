@@ -1,0 +1,72 @@
+{
+ "checked": "2026-10-27T04:35+09:00",
+ "corp_code": "01051092",
+ "fs_interim": {
+  "assets": 17091705881,
+  "capital": 1391049000,
+  "cash": 1633135550,
+  "debt": 8728639115,
+  "debt_hist": [
+   null,
+   10988058915,
+   8728639115
+  ],
+  "debt_items": [
+   "비유동리스부채",
+   "유동리스부채",
+   "유동차입금(사채포함)",
+   "장기차입금(사채포함),총액"
+  ],
+  "equity": 2715624965,
+  "fin_cost": 438877408,
+  "fs": "CFS",
+  "interest_paid": 12867282,
+  "liab": 14376080916,
+  "ni": -4400739842,
+  "ocf": -4508037477,
+  "op": -3961366848,
+  "period": "2025 3Q",
+  "revenue": 4919921328,
+  "st_deposits": 0
+ },
+ "holders": {
+  "as_of": "2025-09-30",
+  "top": [
+   {
+    "name": "김소연",
+    "pct": 12.69,
+    "relation": "본인",
+    "shares": 352999
+   },
+   {
+    "name": "김인규",
+    "pct": 0.43,
+    "relation": "직원",
+    "shares": 12000
+   },
+   {
+    "name": "이지원",
+    "pct": 0.11,
+    "relation": "자녀",
+    "shares": 3119
+   },
+   {
+    "name": "이승현",
+    "pct": 0.11,
+    "relation": "자녀",
+    "shares": 3119
+   },
+   {
+    "name": "장지운",
+    "pct": 0.02,
+    "relation": "직원",
+    "shares": 494
+   }
+  ],
+  "total_pct": 13.36
+ },
+ "latest_name": "분기보고서 (2025.09)",
+ "latest_rcept": "20251114001114",
+ "pv": 3,
+ "treasury_shares": null
+}
