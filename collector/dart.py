@@ -1,5 +1,6 @@
 """OpenDART API 클라이언트 (requests 기반, 재시도·한도 초과 처리 포함)."""
 import io
+import threading
 import time
 import logging
 import zipfile
@@ -29,26 +30,32 @@ class DartClient:
         if not self.api_key:
             raise DartError("DART_API_KEY 환경변수가 비어 있습니다.")
         self.session = session or requests.Session()
+        if hasattr(self.session, "mount"):   # 병렬 다운로드용 연결 풀
+            ad = requests.adapters.HTTPAdapter(pool_connections=12, pool_maxsize=12)
+            self.session.mount("https://", ad)
         self.calls = 0
+        self._lock = threading.Lock()
         self.budget = None   # None = 제한 없음
         self.deadline = None  # time.time() 기준 마감 시각
 
     def _spend(self):
-        if self.budget is not None and self.calls >= self.budget:
-            raise DartBudgetExceeded(f"호출 예산 {self.budget}회 소진")
-        if self.deadline is not None and time.time() >= self.deadline:
-            raise DartBudgetExceeded("시간 예산 소진")
+        """호출 1회를 기록하고, 예산(횟수·시간)을 넘었으면 멈춘다. 여러 스레드에서 불려도 안전."""
+        with self._lock:
+            if self.budget is not None and self.calls >= self.budget:
+                raise DartBudgetExceeded(f"호출 예산 {self.budget}회 소진")
+            if self.deadline is not None and time.time() >= self.deadline:
+                raise DartBudgetExceeded("시간 예산 소진")
+            self.calls += 1
 
     def _get(self, endpoint, **params):
-        self._spend()
         params["crtfc_key"] = self.api_key
         url = f"{config.DART_BASE}/{endpoint}.json"
         last_err = None
         for attempt in range(3):
             try:
+                self._spend()
                 time.sleep(config.DART_SLEEP_SEC)
                 r = self.session.get(url, params=params, timeout=20)
-                self.calls += 1
                 r.raise_for_status()
                 data = r.json()
                 break
@@ -108,14 +115,13 @@ class DartClient:
 
     # ── 원문 파일 (zip 안의 XML들) ──
     def _download(self, endpoint, **params):
-        self._spend()
         params["crtfc_key"] = self.api_key
         last_err = None
         for attempt in range(3):
             try:
+                self._spend()
                 time.sleep(config.DART_SLEEP_SEC)
                 r = self.session.get(f"{config.DART_BASE}/{endpoint}", params=params, timeout=120)
-                self.calls += 1
                 r.raise_for_status()
                 content = r.content
                 break

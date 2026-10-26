@@ -12,6 +12,7 @@
 """
 import logging
 import re
+import time
 from datetime import date, timedelta
 
 from . import config, docparse
@@ -289,10 +290,32 @@ def pick_targets(records, info, watch, today):
     return [cc for cc, _ in sorted(last.items(), key=lambda x: x[1], reverse=True)]
 
 
+def parallel(items, fn, workers=None):
+    """items를 여러 스레드로 처리하며 결과를 내보낸다. 예산·한도 초과가 나면 남은 일을 멈추고 그 예외를 다시 던진다."""
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    stop = []
+
+    def wrap(x):
+        if stop:
+            return None
+        try:
+            return fn(x)
+        except (DartBudgetExceeded, DartQuotaExceeded) as e:
+            stop.append(e)
+            return None
+    with ThreadPoolExecutor(max_workers=workers or config.PROFILE_WORKERS) as ex:
+        futs = [ex.submit(wrap, x) for x in items]
+        for f in as_completed(futs):
+            res = f.result()
+            if res is not None:
+                yield res
+    if stop:
+        raise stop[0]
+
+
 # ── 실행 ──
 def run(dart, store, today=None):
     today = today or now_kst().date()
-    import time
     dart.budget = dart.calls + config.DART_RUN_BUDGET
     dart.deadline = time.time() + config.PROFILE_TIME_BUDGET_MIN * 60
     diag = store.diag.setdefault("profiles", {})
@@ -342,39 +365,56 @@ def run(dart, store, today=None):
         fin = refresh_multi(dart, listed_cc, fin, today)
         dump_json("fin/multi.json", fin, indent=None)
 
-        # 5) 공모채 수요예측일 (건수가 적고 캘린더에 바로 쓰여서 먼저)
+        # 5) 공모채 수요예측일·신용등급 (최근 것만, 병렬)
+        t0 = time.time()
         bond_docs = load_json("ref/bond_docs.json", {})
-        for r in store.records.values():
-            if r.get("type") != "BOND" or r.get("offering") != "공모" or not r.get("rcept_no"):
-                continue
-            rno = r.get("original_rcept") or r["rcept_no"]
-            if (bond_docs.get(rno) or {}).get("v") == docparse.BOND_DOC_VERSION:
-                continue
+        since_doc = (today - timedelta(days=config.BOND_DOC_DAYS)).isoformat()
+        todo = sorted({r.get("original_rcept") or r["rcept_no"] for r in store.records.values()
+                       if r.get("type") == "BOND" and r.get("offering") == "공모" and r.get("rcept_no")
+                       and (r.get("rcept_dt") or "") >= since_doc}, reverse=True)
+        todo = [rno for rno in todo if (bond_docs.get(rno) or {}).get("v") != docparse.BOND_DOC_VERSION]
+
+        def bond_job(rno):
             try:
                 docs = dart.document(rno)
-                main = max(docs.values(), key=len) if docs else ""
-                bond_docs[rno] = docparse.bond_schedule(main)
-                if not bond_docs[rno].get("demand_dt") or not bond_docs[rno].get("rating"):
-                    t = docparse.text_of(main)
-                    i, j = t.find("수요예측"), t.find("신용등급")
-                    diag.setdefault("demand_miss", []).append(
-                        {"rcept": rno, "got": bond_docs[rno], "demand": t[max(0, i - 80): i + 220] if i >= 0 else "",
-                         "rating": t[max(0, j - 40): j + 300] if j >= 0 else ""})
             except DartError as e:
-                bond_docs[rno] = {"demand_dt": None, "error": str(e)[:100], "v": docparse.BOND_DOC_VERSION}
-            dump_json("ref/bond_docs.json", bond_docs)
+                return rno, {"demand_dt": None, "error": str(e)[:100], "v": docparse.BOND_DOC_VERSION}, None
+            main = max(docs.values(), key=len) if docs else ""
+            got = docparse.bond_schedule(main)
+            miss = None
+            if not got.get("demand_dt") or not got.get("rating"):
+                t = docparse.text_of(main)
+                i, j = t.find("수요예측"), t.find("신용등급")
+                miss = {"rcept": rno, "got": got, "demand": t[max(0, i - 80): i + 220] if i >= 0 else "",
+                        "rating": t[max(0, j - 40): j + 300] if j >= 0 else ""}
+            return rno, got, miss
 
-        # 6) 조달 대상 회사 상세
+        try:
+            for rno, got, miss in parallel(todo, bond_job):
+                bond_docs[rno] = got
+                if miss and len(diag.setdefault("demand_miss", [])) < 6:
+                    diag["demand_miss"].append(miss)
+        finally:
+            dump_json("ref/bond_docs.json", bond_docs)
+            diag["bond_docs"] = {"todo": len(todo), "found_demand": sum(1 for v in bond_docs.values() if v.get("demand_dt")),
+                                 "found_rating": sum(1 for v in bond_docs.values() if v.get("rating")),
+                                 "sec": round(time.time() - t0)}
+
+        # 6) 조달 대상 회사 상세 (병렬)
+        t0 = time.time()
         watch = resolve_watchlist(read_watchlist(), listed, corpcodes)
         targets = pick_targets(store.records, info, watch, today)
         diag["targets"] = len(targets)
-        done = skipped = 0
+        todo = []
         for corp in targets:
-            path = f"co/{corp}.json"
-            old = load_json(path, None)
+            old = load_json(f"co/{corp}.json", None)
             if old and not _stale(old.get("checked"), config.PROFILE_RECHECK_DAYS):
-                skipped += 1
                 continue
+            todo.append((corp, old))
+        diag["profiles_fresh"] = len(targets) - len(todo)
+
+        def profile_job(item):
+            corp, old = item
             if not info.get(corp) or _stale(info[corp].get("checked"), config.COMPANY_INFO_RECHECK_DAYS):
                 c = dart.company(corp)
                 info[corp] = {k: c.get(k) for k in ("corp_name", "stock_name", "stock_code", "ceo_nm", "corp_cls",
@@ -384,11 +424,18 @@ def run(dart, store, today=None):
                 prof = build_profile(dart, corp, old, today)
             except DartError as e:
                 log.warning("프로필 실패 %s: %s", corp, e)
-                continue
-            dump_json(path, prof)
-            done += 1
-        diag["profiles_done"] = done
-        diag["profiles_fresh"] = skipped
+                return False
+            dump_json(f"co/{corp}.json", prof)
+            return True
+
+        done = 0
+        try:
+            for ok in parallel(todo, profile_job):
+                done += bool(ok)
+        finally:
+            diag["profiles_done"] = done
+            diag["profiles_left"] = len(todo) - done
+            diag["profiles_sec"] = round(time.time() - t0)
 
         # 7) 상장사 기업개황 (사모채 발행사 연결용 법인등록번호) — 남은 예산으로 조금씩
         for code, corp in sorted(listed_cc.items()):
@@ -407,5 +454,3 @@ def run(dart, store, today=None):
     finally:
         dump_json("ref/company_info.json", info)
         diag["dart_calls"] = dart.calls
-        if "demand_miss" in diag:
-            diag["demand_miss"] = diag["demand_miss"][:5]
