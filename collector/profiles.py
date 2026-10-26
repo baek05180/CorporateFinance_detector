@@ -171,6 +171,13 @@ def fs_detail(rows):
 PROFILE_VERSION = 3   # 추출 규칙이 바뀌면 올린다 → 기존 프로필을 다음 실행 때 다시 만든다
 
 
+def _pct(v):
+    try:
+        return float(str(v or "0").replace(",", "").replace("%", "").strip() or 0)
+    except ValueError:      # '-' 등
+        return 0.0
+
+
 def holders(rows):
     common = [r for r in rows if any(k in (r.get("stock_knd") or "") for k in ("보통", "의결권")) or not r.get("stock_knd")]
     if not common and rows:   # 주식 종류 표기가 회사마다 달라 못 찾으면 가장 많이 나온 종류로
@@ -181,13 +188,10 @@ def holders(rows):
     people = [r for r in common if r is not total and (r.get("nm") or "").replace(" ", "") not in ("계", "합계", "총계")]
     top = sorted(people, key=lambda r: -(num(r.get("trmend_posesn_stock_co")) or 0))[:6]
     out = {"top": [{"name": r.get("nm"), "relation": r.get("relate"),
-                    "pct": float(str(r.get("trmend_posesn_stock_qota_rt") or "0").replace(",", "") or 0),
+                    "pct": _pct(r.get("trmend_posesn_stock_qota_rt")),
                     "shares": num(r.get("trmend_posesn_stock_co"))} for r in top]}
-    if total:
-        try:
-            out["total_pct"] = float(str(total.get("trmend_posesn_stock_qota_rt")).replace(",", ""))
-        except ValueError:
-            pass
+    if total and _pct(total.get("trmend_posesn_stock_qota_rt")):
+        out["total_pct"] = _pct(total.get("trmend_posesn_stock_qota_rt"))
     if "total_pct" not in out and people:
         out["total_pct"] = round(sum(x["pct"] for x in out["top"]), 2)
     if rows:
@@ -325,6 +329,9 @@ def parallel(items, fn, workers=None):
             return fn(x)
         except (DartBudgetExceeded, DartQuotaExceeded) as e:
             stop.append(e)
+            return None
+        except Exception:  # noqa: BLE001 — 한 회사의 이상한 데이터 때문에 전체가 멈추지 않게
+            log.exception("개별 처리 실패: %s", str(x)[:40])
             return None
     with ThreadPoolExecutor(max_workers=workers or config.PROFILE_WORKERS) as ex:
         futs = [ex.submit(wrap, x) for x in items]
