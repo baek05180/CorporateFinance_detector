@@ -853,7 +853,7 @@ async function viewReport(key) {
       ${o.reasons.length ? `<ul class="why">${o.reasons.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
       ${o.cautions.length ? `<ul class="risk">${o.cautions.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
       <div class="meta">${o.size ? `예상 규모 <b style="color:var(--ink)">${esc(o.size)}</b>` : ''}${o.note && !compact ? (o.size ? ' · ' : '') + esc(o.note) : ''}</div>
-      ${!compact && o.comps?.length ? `<details open><summary>비교 사례 (${esc(o.comps_scope)}, 최근 1년)</summary><table style="margin-top:6px"><tbody>${o.comps.map(c => `<tr class="click" data-deal="${esc(c.id)}"><td>${md(c.date)}</td><td class="co"><a href="#/company/${encodeURIComponent(c.key)}" data-stop>${esc(c.corp_name)}</a></td><td class="r num">${won(c.amount)}</td><td class="r num">${c.coupon != null ? pct(c.coupon, 2) : c.price ? int(c.price) + '원' : DASH}</td><td>${esc(c.rating || '')}</td></tr>`).join('')}</tbody></table></details>` : ''}
+      ${!compact && o.comps?.length ? `<details open><summary>비교 사례 (${esc(o.comps_scope)}, 최근 1년)</summary><div class="scroll"><table style="margin-top:6px;min-width:420px"><tbody>${o.comps.map(c => `<tr class="click" data-deal="${esc(c.id)}"><td>${md(c.date)}</td><td class="co"><a href="#/company/${encodeURIComponent(c.key)}" data-stop>${esc(c.corp_name)}</a></td><td class="r num">${won(c.amount)}</td><td class="r num">${c.coupon != null ? pct(c.coupon, 2) : c.price ? int(c.price) + '원' : DASH}</td><td>${esc(c.rating || '')}</td></tr>`).join('')}</tbody></table></div></details>` : ''}
       ${!compact && OPT_Q[o.key] ? `<div class="meta" style="margin-top:10px">확인할 것: ${OPT_Q[o.key].map(esc).join(' · ')}</div>` : ''}
     </div>`;
   // 상세 보고서에서 비교 사례 클릭을 위해 등록
