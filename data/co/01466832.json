@@ -1,0 +1,70 @@
+{
+ "annual_name": "[첨부정정]사업보고서 (2025.12)",
+ "annual_rcept": "20260320001301",
+ "business": {},
+ "checked": "2026-10-26T19:58+09:00",
+ "corp_code": "01466832",
+ "fs_annual": {},
+ "fs_interim": {
+  "assets": 29420479701,
+  "capex": 372599587,
+  "capital": 1792908500,
+  "cash": 7021479160,
+  "equity": 12425509980,
+  "fin_cost": 190707502,
+  "fs": "CFS",
+  "liab": 16994969721,
+  "ni": 1537580789,
+  "ocf": 27951993,
+  "op": 1474185619,
+  "period": "2026 반기",
+  "revenue": 24739803057,
+  "st_deposits": 1595000000
+ },
+ "holders": {
+  "as_of": "2026-06-30",
+  "top": [
+   {
+    "name": "김재중",
+    "pct": 35.19,
+    "relation": "본인",
+    "shares": 1262000
+   },
+   {
+    "name": "이재혁",
+    "pct": 6.27,
+    "relation": "임원",
+    "shares": 225000
+   },
+   {
+    "name": "한혜경",
+    "pct": 4.32,
+    "relation": "배우자",
+    "shares": 155000
+   },
+   {
+    "name": "오범근",
+    "pct": 3.76,
+    "relation": "임원",
+    "shares": 135000
+   },
+   {
+    "name": "김아름",
+    "pct": 1.67,
+    "relation": "자녀",
+    "shares": 60000
+   },
+   {
+    "name": "김종엽",
+    "pct": 1.67,
+    "relation": "임원",
+    "shares": 60000
+   }
+  ],
+  "total_pct": 53.74
+ },
+ "latest_name": "반기보고서 (2026.06)",
+ "latest_rcept": "20260814001610",
+ "pv": 3,
+ "treasury_shares": null
+}

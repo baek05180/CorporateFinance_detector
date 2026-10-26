@@ -1,0 +1,86 @@
+{
+ "annual_name": "[첨부정정]사업보고서 (2025.12)",
+ "annual_rcept": "20260327000199",
+ "biz_raw": {},
+ "business": {},
+ "checked": "2026-10-26T19:49+09:00",
+ "corp_code": "00276083",
+ "fs_annual": {
+  "amort": 12337,
+  "assets": 163677757029,
+  "capital": 34018660500,
+  "cash": 47310337169,
+  "debt": 103055288,
+  "debt_hist": [
+   0,
+   52822457,
+   103055288
+  ],
+  "debt_items": [
+   "비유동리스부채",
+   "유동리스부채"
+  ],
+  "dep": 332835430,
+  "equity": 98275917816,
+  "fin_cost": 23116849943,
+  "fs": "OFS",
+  "interest_paid": 6643983,
+  "liab": 65401839213,
+  "ni": -5852327699,
+  "ocf": -11112118716,
+  "op": 8847177396,
+  "period": "2025 연간",
+  "revenue": 264760884474
+ },
+ "fs_interim": {
+  "amort": 0,
+  "assets": 234975176218,
+  "capex": 41655818,
+  "capital": 41660943500,
+  "cash": 114248075194,
+  "debt": 195149421,
+  "debt_hist": [
+   null,
+   1253177738,
+   195149421
+  ],
+  "debt_items": [
+   "비유동리스부채",
+   "유동리스부채",
+   "전환사채"
+  ],
+  "dep": 173140943,
+  "equity": 198556851630,
+  "fin_cost": 7263610249,
+  "fs": "CFS",
+  "interest_paid": 48113818,
+  "liab": 36418324588,
+  "ni": 7125969401,
+  "ocf": 14292570979,
+  "op": 11791743145,
+  "period": "2026 반기",
+  "revenue": 213504413591
+ },
+ "holders": {
+  "as_of": "2026-06-30",
+  "top": [
+   {
+    "name": "Zoomwe Hong Kong New Energy Technology Co., Ltd",
+    "pct": 25.62,
+    "relation": "최대주주",
+    "shares": 21346095
+   },
+   {
+    "name": "CNGR Hong Kong Hongchuang New Energy Co., Limited",
+    "pct": 11.09,
+    "relation": "특수관계인",
+    "shares": 9240924
+   }
+  ],
+  "total_pct": 36.71
+ },
+ "latest_name": "반기보고서 (2026.06)",
+ "latest_rcept": "20260814001415",
+ "pv": 3,
+ "treasury_shares": 120000
+}

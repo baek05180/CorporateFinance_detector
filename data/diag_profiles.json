@@ -1,50 +1,18 @@
 {
  "bond_docs": {
-  "found_demand": 140,
-  "found_rating": 143,
-  "sec": 636,
-  "todo": 143
+  "found_demand": 141,
+  "found_rating": 144,
+  "sec": 17,
+  "todo": 1
  },
- "budget_exhausted": true,
- "dart_calls": 1019,
- "demand_miss": [
-  {
-   "demand": "",
-   "got": {
-    "demand_dt": null,
-    "rating": "AA-",
-    "v": 2
-   },
-   "rating": " 경우 담보부사채로 \n 한국신용평가(주) 및 NICE신용평가(주)로부터 신용등급을 AA-로 평가 \n 받았습니다. 다만, \n 해당 신용등급은 부동산 담보(롯데백화점 강남점)에 의한 상환가능성 제고 효과를 감안하여, 당사 무보증사채 신용등급 대비 1 Notch 상향된 것으로, 당사의 자체적인 신용등급으로 보기는 어려운 바, 투자자 여러분께서는 투자의사를 결정하시는데 참조 \n 하시기 바랍니다. \n \n \n \n \n \n \n \n \n\n \n 2. 모집 또는 매출에 관한 일반사항 \n\n \n \n\n \n\n \n \n \n \n \n\n \n\n \n 회차 : \n 9-1 \n (단위 : 원, 주) \n \n \n \n\n \n\n \n \n \n \n \n \n\n \n\n",
-   "rcept": "20260806000320"
-  },
-  {
-   "demand": "제반여건을 고려하여 금번 공모를 추후로 연기하는 것으로 결정하였으며, 대표주관회사 등의 동의하에 잔여일정을 취소하고 본 철회신고서를 제출합니다.수요예측 및 일반투자자 청약 등 제반 공모 절차를 실시하기 이전이므로 투자자 보호상 문제가 없습니다. \n \n \n \n\n \n\n \n \n \n\n \n\n \n 자료 : 금융감독원 전자공시시스템(2016.06.13) \n \n \n \n 당사의 기업공개 연기로 현재 당사는 운영에 필요한 자금을 기업어음 및 사모사채 발행과 자산유동화 등으로 조달하고 있습니다. 당사가 속한 롯데그룹은 지배구조 개선을 위해 당사의 기업",
-   "got": {
-    "demand_dt": null,
-    "rating": "AAA",
-    "v": 2
-   },
-   "rating": "권의 가치를 보증 또는 승인하는 효력을 가지지 아니합니다. \n \n 사. 신용등급에 관한 사항 \n \n 한국기업평가(주) 및 한국신용평가(주)는 당사의 기업어음증권 신용등급을 A1등급으로 평가하였습니다. \n \n \n 아. 전자공시 관련 사항 \n \n 금융감독원 전자공시 홈페이지(http://dart.fss.or.kr)에는 당사의 사업보고서 및 분기/반기보고서, 감사보고서 등 기타 \n 정기공시사항과 수시공시사항 등이 전자공시되어 있사오니 투자의사를 결정하시는 데 참조하시기 바랍니다. \n \n \n \n \n \n \n \n\n \n 2. 모집 또는 매출에 관한 일반사항 \n\n \n \n\n \n\n \n \n \n \n \n\n \n\n \n 회차 : ",
-   "rcept": "20251030000494"
-  },
-  {
-   "demand": "",
-   "got": {
-    "demand_dt": null,
-    "rating": "AAA",
-    "v": 2
-   },
-   "rating": "을 미칠 수 있으므로 투자자께서는 이 점 유의하시기 바랍니다. \n 사. 신용등급 관련 위험 \n \n 2020년 4월 한국기업평가, 6월 한국신용평가 및 NICE신용평가는 당사의 신용등급 전망을 AA0(안정적)에서 AA0(부정적)으로 변경 \n 하였습니다 \n . \n 국내신용평가사는 전망 변경에 대해 코로나19 사태로 인해 당사 영업실적 및 재무안정성이 저하될 가능성이 높아져 신용등급 전망을 변경하였다고 밝혔습니다. 그리고 \n 2022년 2월 한국기업평가, NICE신용평가, 한국신용평가는 당사의 신용등급을 AA0(부정적)에서 AA-(안정적)으로 하향 조정 \n 하였습니다. 국내신용평가사는 공통적으로 2021년 ",
-   "rcept": "20251021000410"
-  }
- ],
+ "crash": "che/Python/3.12.15/x64/lib/python3.12/concurrent/futures/_base.py\", line 449, in result\n    return self.__get_result()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/concurrent/futures/_base.py\", line 401, in __get_result\n    raise self._exception\n  File \"/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/concurrent/futures/thread.py\", line 59, in run\n    result = self.fn(*self.args, **self.kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/CorporateFinance_detector/CorporateFinance_detector/collector/profiles.py\", line 325, in wrap\n    return fn(x)\n           ^^^^^\n  File \"/home/runner/work/CorporateFinance_detector/CorporateFinance_detector/collector/profiles.py\", line 447, in profile_job\n    prof = build_profile(dart, corp, old, today)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/CorporateFinance_detector/CorporateFinance_detector/collector/profiles.py\", line 261, in build_profile\n    prof[\"holders\"] = holders(dart.shareholders(corp_code, ly, lrc))\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/CorporateFinance_detector/CorporateFinance_detector/collector/profiles.py\", line 184, in holders\n    \"pct\": float(str(r.get(\"trmend_posesn_stock_qota_rt\") or \"0\").replace(\",\", \"\") or 0),\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: could not convert string to float: '-'\n",
+ "dart_calls": 4000,
  "listed": 2757,
  "prices_error": "HTTP 403: {\n  \"OpenAPI_ServiceResponse\": {\n    \"cmmMsgHeader\": {\n      \"errMsg\": \"SERVICE_KEY_IS_NOT_REGISTERED_ERROR\",\n      \"returnAuthMsg\": \"등록되지 않은 서비스키\",\n      \"returnReasonCode\": \"30\"\n    }\n  }\n}\n",
- "profiles_done": 99,
+ "profiles_done": 80,
  "profiles_fresh": 0,
- "profiles_left": 1327,
- "profiles_sec": 592,
- "run": "2026-10-26T14:57+09:00",
+ "profiles_left": 1346,
+ "profiles_sec": 2671,
+ "run": "2026-10-26T19:32+09:00",
  "targets": 1426
 }
