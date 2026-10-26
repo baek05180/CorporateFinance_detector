@@ -1,23 +1,135 @@
 {
+ "00100814": {
+  "induty_code": "41229",
+  "stock_code": ""
+ },
  "00102858": {
   "induty_code": "24213",
   "stock_code": "010130"
+ },
+ "00103176": {
+  "induty_code": "65121",
+  "stock_code": "000540"
+ },
+ "00104069": {
+  "induty_code": "65110",
+  "stock_code": ""
+ },
+ "00104388": {
+  "induty_code": "20111",
+  "stock_code": "007690"
+ },
+ "00104698": {
+  "induty_code": "46800",
+  "stock_code": "000680"
+ },
+ "00104768": {
+  "induty_code": "28302",
+  "stock_code": "000500"
+ },
+ "00104856": {
+  "induty_code": "66121",
+  "stock_code": "016360"
+ },
+ "00105101": {
+  "induty_code": "715",
+  "stock_code": "015360"
+ },
+ "00105174": {
+  "induty_code": "19210",
+  "stock_code": ""
  },
  "00105271": {
   "induty_code": "20411",
   "stock_code": "002380"
  },
+ "00105280": {
+  "induty_code": "64992",
+  "stock_code": "005440"
+ },
+ "00105466": {
+  "induty_code": "41112",
+  "stock_code": "021320"
+ },
+ "00105855": {
+  "induty_code": "28121",
+  "stock_code": "010120"
+ },
+ "00105952": {
+  "induty_code": "64992",
+  "stock_code": "006260"
+ },
+ "00105961": {
+  "induty_code": "262",
+  "stock_code": "011070"
+ },
+ "00106368": {
+  "induty_code": "201",
+  "stock_code": "011780"
+ },
+ "00106623": {
+  "induty_code": "303",
+  "stock_code": "011210"
+ },
+ "00106669": {
+  "induty_code": "2411",
+  "stock_code": "001430"
+ },
+ "00108135": {
+  "induty_code": "715",
+  "stock_code": "005250"
+ },
+ "00108418": {
+  "induty_code": "47111",
+  "stock_code": ""
+ },
+ "00108940": {
+  "induty_code": "715",
+  "stock_code": "016710"
+ },
  "00110893": {
   "induty_code": "66121",
   "stock_code": "003540"
+ },
+ "00111704": {
+  "induty_code": "3111",
+  "stock_code": "042660"
+ },
+ "00111722": {
+  "induty_code": "66121",
+  "stock_code": "006800"
+ },
+ "00112332": {
+  "induty_code": "65110",
+  "stock_code": "085620"
  },
  "00112882": {
   "induty_code": "65110",
   "stock_code": ""
  },
+ "00113058": {
+  "induty_code": "65110",
+  "stock_code": "088350"
+ },
+ "00113191": {
+  "induty_code": "65200",
+  "stock_code": "003690"
+ },
  "00113207": {
   "induty_code": "28302",
   "stock_code": "001440"
+ },
+ "00113234": {
+  "induty_code": "105",
+  "stock_code": "001790"
+ },
+ "00113359": {
+  "induty_code": "66121",
+  "stock_code": "030610"
+ },
+ "00113410": {
+  "induty_code": "493",
+  "stock_code": "000120"
  },
  "00113465": {
   "induty_code": "66121",
@@ -27,41 +139,417 @@
   "induty_code": "511",
   "stock_code": "003490"
  },
+ "00113562": {
+  "induty_code": "65121",
+  "stock_code": "000400"
+ },
  "00115694": {
   "induty_code": "66121",
   "stock_code": "016610"
+ },
+ "00116824": {
+  "induty_code": "64992",
+  "stock_code": "000640"
+ },
+ "00117212": {
+  "induty_code": "26221",
+  "stock_code": "000150"
+ },
+ "00117267": {
+  "induty_code": "65110",
+  "stock_code": "082640"
+ },
+ "00117601": {
+  "induty_code": "66121",
+  "stock_code": "003470"
+ },
+ "00117744": {
+  "induty_code": "65121",
+  "stock_code": "000060"
+ },
+ "00118026": {
+  "induty_code": "64992",
+  "stock_code": "006040"
+ },
+ "00120030": {
+  "induty_code": "4111",
+  "stock_code": "006360"
+ },
+ "00120076": {
+  "induty_code": "4610",
+  "stock_code": "001120"
  },
  "00120182": {
   "induty_code": "66121",
   "stock_code": "005940"
  },
+ "00120216": {
+  "induty_code": "65121",
+  "stock_code": "002550"
+ },
  "00120438": {
   "induty_code": "41112",
   "stock_code": ""
+ },
+ "00120483": {
+  "induty_code": "681",
+  "stock_code": ""
+ },
+ "00120526": {
+  "induty_code": "47111",
+  "stock_code": "023530"
  },
  "00120562": {
   "induty_code": "64992",
   "stock_code": "004990"
  },
+ "00120571": {
+  "induty_code": "11209",
+  "stock_code": "005300"
+ },
+ "00121941": {
+  "induty_code": "108",
+  "stock_code": "001680"
+ },
+ "00122737": {
+  "induty_code": "50112",
+  "stock_code": "028670"
+ },
+ "00123143": {
+  "induty_code": "212",
+  "stock_code": "003850"
+ },
+ "00124106": {
+  "induty_code": "64121",
+  "stock_code": "005280"
+ },
+ "00124197": {
+  "induty_code": "64992",
+  "stock_code": "003030"
+ },
+ "00124504": {
+  "induty_code": "461",
+  "stock_code": "047050"
+ },
+ "00124726": {
+  "induty_code": "104",
+  "stock_code": "005180"
+ },
+ "00125530": {
+  "induty_code": "108",
+  "stock_code": "005610"
+ },
+ "00125743": {
+  "induty_code": "24122",
+  "stock_code": "004560"
+ },
+ "00126478": {
+  "induty_code": "3111",
+  "stock_code": "010140"
+ },
+ "00126566": {
+  "induty_code": "31321",
+  "stock_code": "012450"
+ },
  "00126937": {
   "induty_code": "64992",
   "stock_code": "000070"
  },
+ "00126955": {
+  "induty_code": "108",
+  "stock_code": "003230"
+ },
+ "00127954": {
+  "induty_code": "4632",
+  "stock_code": "051500"
+ },
+ "00128555": {
+  "induty_code": "35200",
+  "stock_code": "004690"
+ },
+ "00129679": {
+  "induty_code": "212",
+  "stock_code": "006280"
+ },
+ "00130772": {
+  "induty_code": "60210",
+  "stock_code": "034120"
+ },
+ "00131692": {
+  "induty_code": "2049",
+  "stock_code": "008490"
+ },
+ "00131780": {
+  "induty_code": "467",
+  "stock_code": "001740"
+ },
  "00131799": {
   "induty_code": "41229",
+  "stock_code": ""
+ },
+ "00131832": {
+  "induty_code": "64992",
+  "stock_code": "006120"
+ },
+ "00132637": {
+  "induty_code": "222",
+  "stock_code": "014820"
+ },
+ "00135917": {
+  "induty_code": "65121",
+  "stock_code": "000370"
+ },
+ "00136086": {
+  "induty_code": "171",
+  "stock_code": "009200"
+ },
+ "00136378": {
+  "induty_code": "47111",
+  "stock_code": "004170"
+ },
+ "00137207": {
+  "induty_code": "303",
+  "stock_code": "011330"
+ },
+ "00137517": {
+  "induty_code": "65110",
+  "stock_code": ""
+ },
+ "00137997": {
+  "induty_code": "66121",
+  "stock_code": "001500"
+ },
+ "00138020": {
+  "induty_code": "2612",
+  "stock_code": ""
+ },
+ "00138190": {
+  "induty_code": "468",
+  "stock_code": "001250"
+ },
+ "00138224": {
+  "induty_code": "23311",
+  "stock_code": "003410"
+ },
+ "00138242": {
+  "induty_code": "301",
+  "stock_code": "003620"
+ },
+ "00138279": {
+  "induty_code": "19210",
+  "stock_code": "010950"
+ },
+ "00138321": {
+  "induty_code": "66121",
+  "stock_code": "008670"
+ },
+ "00139889": {
+  "induty_code": "204",
+  "stock_code": "011790"
+ },
+ "00140177": {
+  "induty_code": "47122",
+  "stock_code": "007070"
+ },
+ "00140955": {
+  "induty_code": "20129",
+  "stock_code": "014680"
+ },
+ "00142713": {
+  "induty_code": "1419",
+  "stock_code": "011080"
+ },
+ "00144164": {
+  "induty_code": "46713",
+  "stock_code": "018670"
+ },
+ "00145880": {
+  "induty_code": "2411",
+  "stock_code": "004020"
+ },
+ "00147295": {
+  "induty_code": "64121",
+  "stock_code": "006350"
+ },
+ "00148364": {
+  "induty_code": "64992",
+  "stock_code": "003380"
+ },
+ "00148391": {
+  "induty_code": "65110",
+  "stock_code": ""
+ },
+ "00148540": {
+  "induty_code": "64992",
+  "stock_code": "001040"
+ },
+ "00148610": {
+  "induty_code": "66121",
+  "stock_code": "003530"
+ },
+ "00148665": {
+  "induty_code": "66121",
   "stock_code": ""
  },
  "00148832": {
   "induty_code": "64121",
   "stock_code": "006220"
  },
+ "00148993": {
+  "induty_code": "64992",
+  "stock_code": "000140"
+ },
+ "00149293": {
+  "induty_code": "64121",
+  "stock_code": "000010"
+ },
+ "00149354": {
+  "induty_code": "212",
+  "stock_code": "001630"
+ },
+ "00149655": {
+  "induty_code": "467",
+  "stock_code": "028260"
+ },
+ "00149813": {
+  "induty_code": "58121",
+  "stock_code": ""
+ },
+ "00150244": {
+  "induty_code": "11122",
+  "stock_code": "000080"
+ },
+ "00152455": {
+  "induty_code": "30",
+  "stock_code": ""
+ },
+ "00152932": {
+  "induty_code": "64913",
+  "stock_code": ""
+ },
+ "00155276": {
+  "induty_code": "282",
+  "stock_code": "003670"
+ },
+ "00155355": {
+  "induty_code": "108",
+  "stock_code": "017810"
+ },
+ "00157399": {
+  "induty_code": "26299",
+  "stock_code": "004710"
+ },
+ "00158307": {
+  "induty_code": "47320",
+  "stock_code": "071840"
+ },
+ "00159023": {
+  "induty_code": "61220",
+  "stock_code": "017670"
+ },
+ "00159102": {
+  "induty_code": "65121",
+  "stock_code": "005830"
+ },
+ "00159616": {
+  "induty_code": "29119",
+  "stock_code": "034020"
+ },
+ "00160144": {
+  "induty_code": "66121",
+  "stock_code": ""
+ },
+ "00160588": {
+  "induty_code": "20494",
+  "stock_code": "000880"
+ },
+ "00161116": {
+  "induty_code": "41221",
+  "stock_code": "014790"
+ },
+ "00161125": {
+  "induty_code": "29172",
+  "stock_code": "018880"
+ },
+ "00161356": {
+  "induty_code": "55101",
+  "stock_code": ""
+ },
+ "00161408": {
+  "induty_code": "64911",
+  "stock_code": "021960"
+ },
  "00162416": {
   "induty_code": "66121",
   "stock_code": "001750"
  },
+ "00162461": {
+  "induty_code": "20111",
+  "stock_code": "009830"
+ },
+ "00163512": {
+  "induty_code": "49309",
+  "stock_code": "002320"
+ },
+ "00163682": {
+  "induty_code": "66121",
+  "stock_code": "008560"
+ },
+ "00164478": {
+  "induty_code": "41221",
+  "stock_code": "000720"
+ },
+ "00164636": {
+  "induty_code": "649",
+  "stock_code": "012630"
+ },
+ "00164724": {
+  "induty_code": "29162",
+  "stock_code": "017800"
+ },
+ "00164779": {
+  "induty_code": "2612",
+  "stock_code": "000660"
+ },
+ "00164812": {
+  "induty_code": "46800",
+  "stock_code": "011760"
+ },
+ "00164876": {
+  "induty_code": "66121",
+  "stock_code": "003450"
+ },
+ "00164973": {
+  "induty_code": "65121",
+  "stock_code": "001450"
+ },
  "00165413": {
   "induty_code": "20111",
   "stock_code": "011170"
+ },
+ "00165459": {
+  "induty_code": "19210",
+  "stock_code": ""
+ },
+ "00165583": {
+  "induty_code": "46713",
+  "stock_code": "017940"
+ },
+ "00165653": {
+  "induty_code": "55101",
+  "stock_code": ""
+ },
+ "00165680": {
+  "induty_code": "47859",
+  "stock_code": "008770"
+ },
+ "00167068": {
+  "induty_code": "65110",
+  "stock_code": ""
+ },
+ "00168933": {
+  "induty_code": "65110",
+  "stock_code": ""
  },
  "00170442": {
   "induty_code": "64209",
@@ -75,45 +563,309 @@
   "induty_code": "91249",
   "stock_code": "034230"
  },
+ "00173032": {
+  "induty_code": "16212",
+  "stock_code": "025900"
+ },
+ "00173874": {
+  "induty_code": "221",
+  "stock_code": "002350"
+ },
+ "00176914": {
+  "induty_code": "631",
+  "stock_code": "023590"
+ },
  "00181712": {
   "induty_code": "64992",
   "stock_code": "034730"
+ },
+ "00186513": {
+  "induty_code": "4610",
+  "stock_code": ""
+ },
+ "00189653": {
+  "induty_code": "5299",
+  "stock_code": ""
+ },
+ "00190321": {
+  "induty_code": "612",
+  "stock_code": "030200"
+ },
+ "00200938": {
+  "induty_code": "52912",
+  "stock_code": ""
+ },
+ "00201450": {
+  "induty_code": "76110",
+  "stock_code": "068400"
+ },
+ "00203315": {
+  "induty_code": "591",
+  "stock_code": "036420"
  },
  "00207108": {
   "induty_code": "471",
   "stock_code": ""
  },
+ "00207676": {
+  "induty_code": "5299",
+  "stock_code": ""
+ },
+ "00219051": {
+  "induty_code": "64913",
+  "stock_code": ""
+ },
+ "00220561": {
+  "induty_code": "47111",
+  "stock_code": "037710"
+ },
+ "00222295": {
+  "induty_code": "64913",
+  "stock_code": ""
+ },
+ "00222532": {
+  "induty_code": "60222",
+  "stock_code": "037560"
+ },
  "00231363": {
   "induty_code": "61220",
   "stock_code": "032640"
+ },
+ "00231512": {
+  "induty_code": "24123",
+  "stock_code": ""
+ },
+ "00231929": {
+  "induty_code": "35113",
+  "stock_code": ""
+ },
+ "00233653": {
+  "induty_code": "642",
+  "stock_code": "034830"
+ },
+ "00243988": {
+  "induty_code": "61210",
+  "stock_code": "033630"
+ },
+ "00244455": {
+  "induty_code": "12000",
+  "stock_code": "033780"
+ },
+ "00246611": {
+  "induty_code": "4112",
+  "stock_code": ""
  },
  "00248053": {
   "induty_code": "25114",
   "stock_code": "037640"
  },
+ "00254045": {
+  "induty_code": "64121",
+  "stock_code": "000030"
+ },
+ "00254948": {
+  "induty_code": "55103",
+  "stock_code": ""
+ },
+ "00259703": {
+  "induty_code": "65122",
+  "stock_code": ""
+ },
+ "00259776": {
+  "induty_code": "64201",
+  "stock_code": ""
+ },
+ "00260356": {
+  "induty_code": "64911",
+  "stock_code": "008270"
+ },
+ "00265324": {
+  "induty_code": "602",
+  "stock_code": "035760"
+ },
+ "00266961": {
+  "induty_code": "63120",
+  "stock_code": "035420"
+ },
+ "00267058": {
+  "induty_code": "35113",
+  "stock_code": ""
+ },
+ "00274933": {
+  "induty_code": "561",
+  "stock_code": "031440"
+ },
+ "00278373": {
+  "induty_code": "20111",
+  "stock_code": ""
+ },
+ "00296290": {
+  "induty_code": "66121",
+  "stock_code": "039490"
+ },
+ "00299002": {
+  "induty_code": "64992",
+  "stock_code": "060980"
+ },
+ "00299367": {
+  "induty_code": "59130",
+  "stock_code": ""
+ },
  "00302634": {
   "induty_code": "30",
+  "stock_code": ""
+ },
+ "00302926": {
+  "induty_code": "31910",
+  "stock_code": "064350"
+ },
+ "00303873": {
+  "induty_code": "59141",
+  "stock_code": "079160"
+ },
+ "00307897": {
+  "induty_code": "64913",
+  "stock_code": "032710"
+ },
+ "00309503": {
+  "induty_code": "31311",
+  "stock_code": "047810"
+ },
+ "00310156": {
+  "induty_code": "211",
+  "stock_code": "049180"
+ },
+ "00325185": {
+  "induty_code": "3511",
   "stock_code": ""
  },
  "00330424": {
   "induty_code": "66121",
   "stock_code": "078020"
  },
+ "00339391": {
+  "induty_code": "26299",
+  "stock_code": "272210"
+ },
+ "00340917": {
+  "induty_code": "108",
+  "stock_code": "049770"
+ },
+ "00344287": {
+  "induty_code": "29241",
+  "stock_code": "042670"
+ },
+ "00349097": {
+  "induty_code": "60229",
+  "stock_code": "053210"
+ },
+ "00356361": {
+  "induty_code": "20111",
+  "stock_code": "051910"
+ },
+ "00360595": {
+  "induty_code": "5299",
+  "stock_code": "086280"
+ },
+ "00365387": {
+  "induty_code": "76320",
+  "stock_code": "095570"
+ },
+ "00377610": {
+  "induty_code": "241",
+  "stock_code": "058650"
+ },
  "00382199": {
   "induty_code": "64992",
   "stock_code": "055550"
  },
+ "00386937": {
+  "induty_code": "64121",
+  "stock_code": "060000"
+ },
+ "00396518": {
+  "induty_code": "3511",
+  "stock_code": ""
+ },
+ "00397289": {
+  "induty_code": "304",
+  "stock_code": "067170"
+ },
+ "00398701": {
+  "induty_code": "28202",
+  "stock_code": "066970"
+ },
+ "00401731": {
+  "induty_code": "264",
+  "stock_code": "066570"
+ },
+ "00404701": {
+  "induty_code": "642",
+  "stock_code": "123890"
+ },
  "00416593": {
   "induty_code": "64999",
+  "stock_code": ""
+ },
+ "00427483": {
+  "induty_code": "212",
+  "stock_code": "069620"
+ },
+ "00428251": {
+  "induty_code": "47111",
+  "stock_code": "069960"
+ },
+ "00428321": {
+  "induty_code": "108",
+  "stock_code": "101530"
+ },
+ "00429889": {
+  "induty_code": "35300",
   "stock_code": ""
  },
  "00432102": {
   "induty_code": "64992",
   "stock_code": "071050"
  },
+ "00435297": {
+  "induty_code": "64201",
+  "stock_code": "088980"
+ },
+ "00459844": {
+  "induty_code": "65110",
+  "stock_code": ""
+ },
+ "00459871": {
+  "induty_code": "64992",
+  "stock_code": "072710"
+ },
+ "00461593": {
+  "induty_code": "20111",
+  "stock_code": ""
+ },
+ "00481454": {
+  "induty_code": "221",
+  "stock_code": "073240"
+ },
  "00500254": {
   "induty_code": "64992",
   "stock_code": "078930"
+ },
+ "00503668": {
+  "induty_code": "25200",
+  "stock_code": "079550"
+ },
+ "00526872": {
+  "induty_code": "213",
+  "stock_code": "086890"
+ },
+ "00536541": {
+  "induty_code": "64992",
+  "stock_code": "086520"
+ },
+ "00539274": {
+  "induty_code": "64992",
+  "stock_code": "084690"
  },
  "00545716": {
   "induty_code": "76110",
@@ -123,56 +875,472 @@
   "induty_code": "64992",
   "stock_code": "086790"
  },
+ "00565242": {
+  "induty_code": "37011",
+  "stock_code": ""
+ },
+ "00593032": {
+  "induty_code": "14111",
+  "stock_code": "093050"
+ },
+ "00603278": {
+  "induty_code": "64913",
+  "stock_code": ""
+ },
+ "00631518": {
+  "induty_code": "192",
+  "stock_code": "096770"
+ },
+ "00635134": {
+  "induty_code": "108",
+  "stock_code": "097950"
+ },
+ "00645432": {
+  "induty_code": "64999",
+  "stock_code": ""
+ },
+ "00646495": {
+  "induty_code": "3511",
+  "stock_code": ""
+ },
+ "00683283": {
+  "induty_code": "2830",
+  "stock_code": ""
+ },
+ "00683450": {
+  "induty_code": "351",
+  "stock_code": ""
+ },
+ "00683627": {
+  "induty_code": "29",
+  "stock_code": ""
+ },
+ "00684714": {
+  "induty_code": "242",
+  "stock_code": "103140"
+ },
+ "00684732": {
+  "induty_code": "46",
+  "stock_code": "103160"
+ },
  "00688996": {
   "induty_code": "64992",
   "stock_code": "105560"
+ },
+ "00759513": {
+  "induty_code": "2222",
+  "stock_code": "108670"
+ },
+ "00786711": {
+  "induty_code": "192",
+  "stock_code": ""
+ },
+ "00787376": {
+  "induty_code": "35200",
+  "stock_code": "117580"
+ },
+ "00795135": {
+  "induty_code": "205",
+  "stock_code": "120110"
+ },
+ "00819268": {
+  "induty_code": "64999",
+  "stock_code": ""
+ },
+ "00826435": {
+  "induty_code": "2032",
+  "stock_code": ""
  },
  "00852078": {
   "induty_code": "20111",
   "stock_code": ""
  },
+ "00857392": {
+  "induty_code": "64913",
+  "stock_code": ""
+ },
+ "00858364": {
+  "induty_code": "64992",
+  "stock_code": "138930"
+ },
  "00860332": {
   "induty_code": "64992",
   "stock_code": "138040"
+ },
+ "00862905": {
+  "induty_code": "64201",
+  "stock_code": ""
+ },
+ "00864842": {
+  "induty_code": "24123",
+  "stock_code": ""
+ },
+ "00871772": {
+  "induty_code": "52104",
+  "stock_code": ""
+ },
+ "00872984": {
+  "induty_code": "471",
+  "stock_code": "139480"
+ },
+ "00875167": {
+  "induty_code": "64911",
+  "stock_code": ""
+ },
+ "00877059": {
+  "induty_code": "211",
+  "stock_code": "207940"
  },
  "00878915": {
   "induty_code": "64992",
   "stock_code": "139130"
  },
+ "00887001": {
+  "induty_code": "351",
+  "stock_code": ""
+ },
+ "00895985": {
+  "induty_code": "35113",
+  "stock_code": ""
+ },
+ "00896285": {
+  "induty_code": "108",
+  "stock_code": "145990"
+ },
+ "00896559": {
+  "induty_code": "3511",
+  "stock_code": ""
+ },
+ "00903503": {
+  "induty_code": "64992",
+  "stock_code": ""
+ },
  "00904663": {
   "induty_code": "6491",
+  "stock_code": ""
+ },
+ "00904672": {
+  "induty_code": "5821",
+  "stock_code": "251270"
+ },
+ "00908021": {
+  "induty_code": "64992",
+  "stock_code": ""
+ },
+ "00908155": {
+  "induty_code": "65121",
+  "stock_code": ""
+ },
+ "00922702": {
+  "induty_code": "6022",
+  "stock_code": ""
+ },
+ "00933504": {
+  "induty_code": "6491",
+  "stock_code": ""
+ },
+ "00937324": {
+  "induty_code": "221",
+  "stock_code": "161390"
+ },
+ "00939289": {
+  "induty_code": "35300",
+  "stock_code": ""
+ },
+ "00939331": {
+  "induty_code": "20423",
+  "stock_code": "161890"
+ },
+ "00956930": {
+  "induty_code": "212",
+  "stock_code": "170900"
+ },
+ "00958822": {
+  "induty_code": "64913",
+  "stock_code": ""
+ },
+ "00969642": {
+  "induty_code": "3511",
+  "stock_code": ""
+ },
+ "00978677": {
+  "induty_code": "28519",
+  "stock_code": ""
+ },
+ "00979074": {
+  "induty_code": "19210",
+  "stock_code": ""
+ },
+ "00980061": {
+  "induty_code": "35200",
   "stock_code": ""
  },
  "00980122": {
   "induty_code": "64992",
   "stock_code": "175330"
  },
+ "00983040": {
+  "induty_code": "64992",
+  "stock_code": "180640"
+ },
+ "00984401": {
+  "induty_code": "35113",
+  "stock_code": ""
+ },
+ "00992871": {
+  "induty_code": "212",
+  "stock_code": "185750"
+ },
+ "01003031": {
+  "induty_code": "47122",
+  "stock_code": ""
+ },
+ "01004775": {
+  "induty_code": "71531",
+  "stock_code": ""
+ },
+ "01011526": {
+  "induty_code": "20119",
+  "stock_code": "348370"
+ },
+ "01012066": {
+  "induty_code": "212",
+  "stock_code": "195940"
+ },
+ "01028164": {
+  "induty_code": "64121",
+  "stock_code": "192530"
+ },
+ "01030132": {
+  "induty_code": "64121",
+  "stock_code": "192520"
+ },
+ "01032185": {
+  "induty_code": "52104",
+  "stock_code": ""
+ },
+ "01032422": {
+  "induty_code": "1921",
+  "stock_code": ""
+ },
+ "01042775": {
+  "induty_code": "303",
+  "stock_code": "204320"
+ },
+ "01043844": {
+  "induty_code": "20111",
+  "stock_code": ""
+ },
+ "01060744": {
+  "induty_code": "171",
+  "stock_code": "213500"
+ },
  "01060814": {
   "induty_code": "22232",
   "stock_code": "272550"
+ },
+ "01086867": {
+  "induty_code": "47",
+  "stock_code": ""
+ },
+ "01089378": {
+  "induty_code": "464",
+  "stock_code": "219550"
+ },
+ "01108099": {
+  "induty_code": "463",
+  "stock_code": "227840"
+ },
+ "01128631": {
+  "induty_code": "6812",
+  "stock_code": ""
+ },
+ "01134395": {
+  "induty_code": "68",
+  "stock_code": ""
+ },
+ "01160363": {
+  "induty_code": "28202",
+  "stock_code": "247540"
+ },
+ "01169832": {
+  "induty_code": "47",
+  "stock_code": ""
+ },
+ "01195305": {
+  "induty_code": "68",
+  "stock_code": ""
+ },
+ "01195624": {
+  "induty_code": "68",
+  "stock_code": ""
+ },
+ "01205709": {
+  "induty_code": "64992",
+  "stock_code": "267250"
+ },
+ "01205842": {
+  "induty_code": "29241",
+  "stock_code": "267270"
+ },
+ "01205851": {
+  "induty_code": "281",
+  "stock_code": "267260"
+ },
+ "01258507": {
+  "induty_code": "108",
+  "stock_code": "280360"
+ },
+ "01267170": {
+  "induty_code": "20202",
+  "stock_code": "285130"
+ },
+ "01292671": {
+  "induty_code": "3520",
+  "stock_code": ""
+ },
+ "01310269": {
+  "induty_code": "411",
+  "stock_code": "294870"
+ },
+ "01310515": {
+  "induty_code": "68",
+  "stock_code": ""
+ },
+ "01316227": {
+  "induty_code": "2050",
+  "stock_code": "298020"
+ },
+ "01316236": {
+  "induty_code": "201",
+  "stock_code": "298000"
+ },
+ "01316254": {
+  "induty_code": "205",
+  "stock_code": "298050"
+ },
+ "01319808": {
+  "induty_code": "23311",
+  "stock_code": "300720"
+ },
+ "01325979": {
+  "induty_code": "2413",
+  "stock_code": "306200"
  },
  "01350869": {
   "induty_code": "64992",
   "stock_code": "316140"
  },
+ "01353051": {
+  "induty_code": "64913",
+  "stock_code": ""
+ },
  "01363818": {
   "induty_code": "681",
   "stock_code": "330590"
+ },
+ "01386916": {
+  "induty_code": "282",
+  "stock_code": "361610"
+ },
+ "01390344": {
+  "induty_code": "31113",
+  "stock_code": "329180"
+ },
+ "01394377": {
+  "induty_code": "681",
+  "stock_code": "334890"
+ },
+ "01412725": {
+  "induty_code": "28111",
+  "stock_code": "336260"
+ },
+ "01415892": {
+  "induty_code": "681",
+  "stock_code": "348950"
+ },
+ "01428203": {
+  "induty_code": "2311",
+  "stock_code": "344820"
+ },
+ "01436628": {
+  "induty_code": "681",
+  "stock_code": "350520"
+ },
+ "01438291": {
+  "induty_code": "6812",
+  "stock_code": ""
+ },
+ "01500349": {
+  "induty_code": "64209",
+  "stock_code": ""
  },
  "01511521": {
   "induty_code": "64999",
   "stock_code": ""
  },
+ "01515323": {
+  "induty_code": "28202",
+  "stock_code": "373220"
+ },
+ "01524093": {
+  "induty_code": "412",
+  "stock_code": "375500"
+ },
  "01535150": {
   "induty_code": "68112",
   "stock_code": "395400"
+ },
+ "01562589": {
+  "induty_code": "64992",
+  "stock_code": "383800"
+ },
+ "01564222": {
+  "induty_code": "3520",
+  "stock_code": ""
+ },
+ "01592447": {
+  "induty_code": "28202",
+  "stock_code": ""
+ },
+ "01602124": {
+  "induty_code": "2012",
+  "stock_code": ""
+ },
+ "01620971": {
+  "induty_code": "2411",
+  "stock_code": ""
+ },
+ "01622720": {
+  "induty_code": "68112",
+  "stock_code": "432320"
+ },
+ "01629495": {
+  "induty_code": "24119",
+  "stock_code": ""
  },
  "01669226": {
   "induty_code": "68112",
   "stock_code": "451800"
  },
+ "01688896": {
+  "induty_code": "6811",
+  "stock_code": "448730"
+ },
  "01717903": {
   "induty_code": "64999",
+  "stock_code": ""
+ },
+ "01760738": {
+  "induty_code": "20129",
+  "stock_code": "456040"
+ },
+ "01867758": {
+  "induty_code": "264",
+  "stock_code": "489790"
+ },
+ "01899216": {
+  "induty_code": "759",
   "stock_code": ""
  }
 }
