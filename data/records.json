@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-10-26T17:10+09:00",
+  "data_updated": "2026-10-26T17:49+09:00",
   "last_daily": "2026-10-26T09:33+09:00"
  },
  "records": {
@@ -275037,6 +275037,35 @@
    "type": "RIGHTS",
    "updated": "2026-10-26T09:17+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250930000564"
+  },
+  "RIGHTS:00364254:20261026000327": {
+   "amended": false,
+   "amount": 1489998840,
+   "board_dt": "2026-10-26",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "K",
+   "corp_code": "00364254",
+   "corp_name": "알티캐스트",
+   "dilution": 8.71,
+   "first_seen": "2026-10-26T17:49+09:00",
+   "id": "RIGHTS:00364254:20261026000327",
+   "method": "제3자배정증자",
+   "new_common": 1231404,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 500,
+   "purposes": {
+    "운영": 1489998840
+   },
+   "rcept_dt": "2026-10-26",
+   "rcept_no": "20261026000327",
+   "source": "DART",
+   "stock_code": "085810",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-10-26T17:49+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261026000327"
   },
   "RIGHTS:00365590:20240612000141": {
    "amended": true,
