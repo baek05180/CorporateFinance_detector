@@ -1,0 +1,93 @@
+{
+ "corp_code": "00166272",
+ "name": "화승코퍼레이션",
+ "source_rcept": "20260323001005",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "화승코퍼레이션은 자동차 도어 실링·연료 호스 같은 고무 부품과 고무 소재, 종합무역, 산업용 벨트·방산 부품을 하는 코스피 회사입니다.",
+ "facts": "코스피 · 1991-02 상장 · 2025 연결 매출 1.64조 · 영업이익 831억 · 순이익 1,032억",
+ "mix_line": "매출 자동차부품 71.6% · 소재 13.4% · 종합무역 10.5% · 산업용품 3.1% · 방산 1.3%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "연고무",
+    "note": "화승코퍼레이션"
+   },
+   {
+    "name": "심금·금구",
+    "note": "부미·PASOTTI 외"
+   }
+  ],
+  "company": {
+   "name": "화승코퍼레이션",
+   "note": "고무 부품 · 소재"
+  },
+  "customers": [
+   {
+    "name": "현대자동차·기아",
+    "note": "실링·호스"
+   },
+   {
+    "name": "포스코·현대제철",
+    "note": "벨트·호스"
+   },
+   {
+    "name": "한화오션·LIG넥스원",
+    "note": "방산"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Auto Parts(Sealing·Fluid)",
+    "amount": 1174261000000,
+    "share": 71.6
+   },
+   {
+    "name": "Material(CMB·TPE)",
+    "amount": 219197000000,
+    "share": 13.4
+   },
+   {
+    "name": "General Trade",
+    "amount": 172230000000,
+    "share": 10.5
+   },
+   {
+    "name": "산업용품(벨트·호스·펜더)",
+    "amount": 50029000000,
+    "share": 3.1
+   },
+   {
+    "name": "방산부품",
+    "amount": 22087000000,
+    "share": 1.3
+   },
+   {
+    "name": "EF(전력케이블 보호관 등)",
+    "amount": 1973000000,
+    "share": 0.1
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 1.63조 원, 1.70조 원, 1.64조 원으로 움직였다.",
+ "business": "HS R&A 브랜드 차량용 Sealing·Fluid Products를 북남미·중국·베트남·인도 거점에서 만들고, CMB·TPE 고무 소재(XENOMER), 합성고무·철강 무역, 컨베이어 벨트·호스·방충재(EXWILL), 연료탱크·음향스텔스 방산부품을 공급합니다.",
+ "products": [
+  {
+   "name": "Sealing Products",
+   "segment": "Auto Parts",
+   "desc": "도어·차체 실링"
+  },
+  {
+   "name": "Fluid Products",
+   "segment": "Auto Parts",
+   "desc": "호스"
+  },
+  {
+   "name": "XENOMER",
+   "segment": "Material",
+   "desc": "TPE"
+  }
+ ],
+ "customers": "실링 제품은 대부분 차체·도어를 조립하는 완성차 공장으로 직납합니다."
+}
