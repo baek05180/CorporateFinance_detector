@@ -1,0 +1,70 @@
+{
+ "corp_code": "01455410",
+ "name": "파인메딕스",
+ "source_rcept": "20260626000596",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "파인메딕스는 위·대장 내시경으로 용종이나 조기암을 떼어낼 때 쓰는 나이프·스네어·주사침 같은 시술 기구를 만드는 코스닥 의료기기 회사입니다.",
+ "facts": "코스닥 · 2009년 설립 · 2024-12 상장 · 2025 연결 매출 95억 · 영업손실 26억 · 순손실 19억 · 수출 22%",
+ "mix_line": "매출 국내 78.4% · 수출 21.6%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "시술기구 원재료",
+    "note": "인젝터·스네어 등 품목별"
+   }
+  ],
+  "company": {
+   "name": "파인메딕스",
+   "note": "내시경 시술기구"
+  },
+  "customers": [
+   {
+    "name": "국내 병원",
+    "note": "총판·대리점·직판, 74.7억"
+   },
+   {
+    "name": "해외 Distributor·ODM",
+    "note": "수출 20.6억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "국내",
+    "amount": 7467000000,
+    "share": 78.4
+   },
+   {
+    "name": "수출",
+    "amount": 2055000000,
+    "share": 21.6
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 2023년 101.5억 원, 2024년 99.6억 원, 2025년 95.2억 원으로 줄었다. 수출이 30.5억 원에서 20.6억 원으로 감소했다.",
+ "business": "ESD(내시경점막하박리술)·EMR(내시경점막절제술)용 ClearCut Knife, Clear-Jet 주사 카테터, Clear-Grasp 스네어와 생검용 Clear-Bite 포셉을 자체 개발·생산합니다. 내시경 장비 유통과 지혈 제품 개발을 신사업으로 추진합니다.",
+ "products": [
+  {
+   "name": "ClearCut Knife",
+   "segment": "치료내시경",
+   "desc": "ESD 절개용 나이프"
+  },
+  {
+   "name": "Clear-Jet Injection Catheter",
+   "segment": "치료내시경",
+   "desc": "ESD·EMR용 주사 카테터"
+  },
+  {
+   "name": "Clear-Grasp Snare",
+   "segment": "치료내시경",
+   "desc": "용종절제·EMR"
+  },
+  {
+   "name": "Clear-Bite Biopsy Forceps",
+   "segment": "진단내시경",
+   "desc": "조직 생검"
+  }
+ ],
+ "customers": "국내는 지역 총판·대리점과 직접 판매로 상급종합병원 판매를 늘리고 있고, 해외는 국가별 Distributor와 ODM 업체를 통해 팝니다."
+}

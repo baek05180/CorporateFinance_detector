@@ -1,0 +1,89 @@
+{
+ "corp_code": "00172185",
+ "name": "남성",
+ "source_rcept": "20260320001336",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "남성은 차량용 오디오·스피커·스마트키 같은 전자제품을 자체 브랜드로 미국·캐나다에 수출하고, 서울에서 지식산업센터 임대업도 하는 코스피 회사입니다.",
+ "facts": "코스피 · 1965년 설립 · 2025 연결 매출 775억 · 영업이익 2억 · 순손실 37억",
+ "mix_line": "매출 모바일 AV 67.0% · 스피커·앰프 18.5% · 자산관리 7.3%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "전자제품 상품",
+    "note": "남성인터내셔널 등"
+   }
+  ],
+  "company": {
+   "name": "남성",
+   "note": "전자제품 수출 · 임대"
+  },
+  "customers": [
+   {
+    "name": "미국 Wal-Mart 등",
+    "note": "Namsung America 경유"
+   },
+   {
+    "name": "임차인",
+    "note": "남성프라자·크라운프라자"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "MOBILE AUDIO/VIDEO",
+    "amount": 51923933000,
+    "share": 67.0
+   },
+   {
+    "name": "DIGITAL SPEAKER/AMP",
+    "amount": 14326091000,
+    "share": 18.5
+   },
+   {
+    "name": "GPS·SMART KEY 외",
+    "amount": 3780045000,
+    "share": 4.9
+   },
+   {
+    "name": "기타 디지털전자",
+    "amount": 1850645000,
+    "share": 2.4
+   },
+   {
+    "name": "자산관리(임대 등)",
+    "amount": 5660509000,
+    "share": 7.3
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 2023년 696.7억 원, 2024년 745.8억 원, 2025년 775.4억 원으로 늘었지만 영업이익은 1.9억 원에 그쳤다.",
+ "business": "Digital Mobile Audio/Video, XM 위성수신 Radio, GPS 수신기, Digital Amplifier, Multi-Media Speaker, Wireless Headphone, Smart Key를 자사 브랜드로 수출합니다. 국내에서는 남성프라자·크라운프라자 등 부동산 임대·관리 사업을 합니다.",
+ "products": [
+  {
+   "name": "Mobile Audio/Video",
+   "segment": "디지털전자",
+   "desc": "차량용 AV 기기",
+   "share": 67.0
+  },
+  {
+   "name": "Speaker·Amp",
+   "segment": "디지털전자",
+   "desc": "",
+   "share": 18.5
+  },
+  {
+   "name": "GPS·Smart Key 외",
+   "segment": "디지털전자",
+   "desc": "",
+   "share": 4.9
+  },
+  {
+   "name": "지식산업센터 임대",
+   "segment": "자산관리",
+   "desc": "서울 금천·구로",
+   "share": 7.3
+  }
+ ],
+ "customers": "바이어 수주를 받아 미국 현지법인이나 바이어를 거쳐 소비자에게 팔며, 주요 거래처는 미국 Wal-Mart 등입니다."
+}
