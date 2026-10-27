@@ -1,0 +1,66 @@
+{
+ "corp_code": "00305941",
+ "name": "노브랜드",
+ "source_rcept": "20260323001509",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "노브랜드는 Gap·Old Navy·Target 같은 40여 개 글로벌 패션 브랜드에 니트·우븐 의류를 직접 디자인해 제안하고 생산·수출하는 코스닥 ODM 회사입니다.",
+ "facts": "코스닥 · 2024-05 상장 · 2025 연결 매출 6,022억 · 영업이익 133억 · 순이익 51억",
+ "mix_line": "별도 매출 Knit 67% · Woven 33%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "원사·원단·부자재",
+    "note": "한국·생산국·해외"
+   }
+  ],
+  "company": {
+   "name": "노브랜드",
+   "note": "디자인 플랫폼 하우스"
+  },
+  "customers": [
+   {
+    "name": "Old Navy·Gap·Banana Republic",
+    "note": ""
+   },
+   {
+    "name": "Target·Kohl's·JCPenney",
+    "note": ""
+   },
+   {
+    "name": "미국",
+    "note": "수출 3,721억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Knit",
+    "amount": 320037000000,
+    "share": 67.2
+   },
+   {
+    "name": "Woven",
+    "amount": 155920000000,
+    "share": 32.8
+   }
+  ],
+  "basis": "2025 별도"
+ },
+ "caption": "별도 수출이 4,478.2억 원, 5,181.6억 원, 4,754.7억 원으로 움직였다. Woven 평균가격이 1만 676원에서 1만 4,043원으로 올랐다.",
+ "business": "시장 동향 분석으로 소재와 디자인을 먼저 제안하고, 채택되면 베트남·인도네시아 현지 법인 공장에서 생산·납품하는 ODM 방식으로 티셔츠·캐주얼·드레스(니트)와 셔츠·바지(우븐)를 만듭니다.",
+ "products": [
+  {
+   "name": "Knit 의류",
+   "segment": "의류",
+   "desc": "티셔츠·드레스",
+   "share": 67.2
+  },
+  {
+   "name": "Woven 의류",
+   "segment": "의류",
+   "desc": "",
+   "share": 32.8
+  }
+ ],
+ "customers": "40여 개 글로벌 브랜드에 공급하며 수출국은 44개입니다."
+}

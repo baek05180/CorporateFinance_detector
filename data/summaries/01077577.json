@@ -1,0 +1,92 @@
+{
+ "corp_code": "01077577",
+ "name": "우리산업",
+ "source_rcept": "20260319000860",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "우리산업은 차량 에어컨·히터 조절기와 PTC 히터, 공조 액추에이터를 한온시스템·DENSO 등 공조 업체와 완성차에 공급하는 코스닥 부품 회사입니다.",
+ "facts": "코스닥 · 2015-05 상장 · 2025 연결 매출 5,320억 · 영업이익 187억 · 순이익 142억 · 수출 43%",
+ "mix_line": "매출 HEATER CONTROL 49.1% · 상품 24.2% · PTC Heater 8.7% · 기타 7.6% · ACTUATOR 5.0%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "MOTOR",
+    "note": "마부치 외, 121.9억"
+   }
+  ],
+  "company": {
+   "name": "우리산업",
+   "note": "공조 부품"
+  },
+  "customers": [
+   {
+    "name": "한온시스템·현대모비스·두원공조",
+    "note": "국내"
+   },
+   {
+    "name": "DENSO·MAHLE·YINLUN·MARELLI",
+    "note": "수출"
+   },
+   {
+    "name": "현대·기아·유럽 완성차",
+    "note": "PTC 직납"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "HEATER CONTROL ASSEMBLY",
+    "amount": 261458000000,
+    "share": 49.1
+   },
+   {
+    "name": "상품(원재료 외)",
+    "amount": 128971000000,
+    "share": 24.2
+   },
+   {
+    "name": "PTC Heater",
+    "amount": 46264000000,
+    "share": 8.7
+   },
+   {
+    "name": "기타 부품",
+    "amount": 40578000000,
+    "share": 7.6
+   },
+   {
+    "name": "HVAC ACTUATOR",
+    "amount": 26540000000,
+    "share": 5.0
+   },
+   {
+    "name": "CLUTCH COIL·용역·금형",
+    "amount": 28226000000,
+    "share": 5.3
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 4,621.5억 원, 5,105.7억 원, 5,320.4억 원으로 늘었다.",
+ "business": "2015년 우리산업홀딩스에서 인적분할한 회사로, 차량 실내 온도·풍향을 바꾸는 HVAC 액추에이터, 에어컨 컴프레서 클러치 코일, 히터·에어컨 조절기, PTC·COOLANT 히터를 만듭니다. 2022년부터 완성차 1차 업체로도 등록됐습니다.",
+ "products": [
+  {
+   "name": "HEATER CONTROL",
+   "segment": "자동차부품",
+   "desc": "",
+   "share": 49.1
+  },
+  {
+   "name": "PTC Heater",
+   "segment": "자동차부품",
+   "desc": "",
+   "share": 8.7
+  },
+  {
+   "name": "HVAC ACTUATOR",
+   "segment": "자동차부품",
+   "desc": "",
+   "share": 5.0
+  }
+ ],
+ "customers": "내수 57.2%, 수출 42.8%이며 장기 기본계약 후 수시 발주로 판매합니다."
+}
