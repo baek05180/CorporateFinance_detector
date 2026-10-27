@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-10-27T18:07+09:00",
+  "data_updated": "2026-10-27T18:36+09:00",
   "last_daily": "2026-10-26T22:17+09:00"
  },
  "records": {
@@ -82841,29 +82841,29 @@
    "corp_name": "리메드",
    "coupon": 1.0,
    "dilution": 11.91,
-   "exercise_from": "2027-10-28",
-   "exercise_to": "2031-09-27",
+   "exercise_from": "2027-11-05",
+   "exercise_to": "2031-10-04",
    "first_seen": "2026-10-25T18:20+09:00",
    "id": "CB:01275665:4",
    "lead": null,
-   "maturity": "2031-10-27",
+   "maturity": "2031-11-04",
    "method_raw": "사모",
    "offering": "사모",
-   "pay_dt": "2026-10-27",
+   "pay_dt": "2026-11-04",
    "price": 2774,
    "purposes": {
     "운영": 10000000000
    },
-   "rcept_dt": "2026-10-19",
-   "rcept_no": "20261019000366",
+   "rcept_dt": "2026-10-27",
+   "rcept_no": "20261027000389",
    "refix_floor": null,
    "series": "4",
    "shares": 3604902,
    "source": "DART",
    "stock_code": "302550",
    "type": "CB",
-   "updated": "2026-10-25T18:20+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261019000366",
+   "updated": "2026-10-27T18:36+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261027000389",
    "ytm": 5.0
   },
   "CB:01276026:2": {
