@@ -1,0 +1,76 @@
+{
+ "corp_code": "00160232",
+ "name": "KSS해운",
+ "source_rcept": "20260318001401",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "KSS해운은 LPG·암모니아 같은 가스와 석유화학제품을 전용선으로 실어 나르는 코스피 해운사입니다.",
+ "facts": "코스피 · 2007-10 상장 · 2025 연결 매출 5,614억 · 영업이익 1,103억 · 순이익 366억",
+ "mix_line": "매출 GAS선 86.0% · PRODUCT선 8.1% · CHEMICAL선 6.0%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "선박용 연료유",
+    "note": "고유황유 톤당 454.91달러"
+   }
+  ],
+  "company": {
+   "name": "KSS해운",
+   "note": "특수화물 해운"
+  },
+  "customers": [
+   {
+    "name": "SK가스·E1·BGN·PTT 등",
+    "note": "GAS 화물"
+   },
+   {
+    "name": "GS칼텍스·HD현대오일뱅크",
+    "note": "PRODUCT"
+   },
+   {
+    "name": "SK온 등",
+    "note": "CHEMICAL"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "GAS(LPG·암모니아·VCM 등)",
+    "amount": 482699000000,
+    "share": 86.0
+   },
+   {
+    "name": "PRODUCT(CPP·메탄올 등)",
+    "amount": 45317000000,
+    "share": 8.1
+   },
+   {
+    "name": "CHEMICAL(B.OIL·BTX 등)",
+    "amount": 33568000000,
+    "share": 6.0
+   },
+   {
+    "name": "기타(선박대리점)",
+    "amount": -189000000,
+    "share": -0.03
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 4,726.0억 원, 5,179.3억 원, 5,614.0억 원으로 늘었다. PRODUCT선이 161.4억 원에서 453.2억 원으로 커졌다.",
+ "business": "GAS선으로 LPG·암모니아·프로필렌·부타디엔·VCM을, PRODUCT선으로 CPP·메탄올을, CHEMICAL선으로 B.OIL·BTX를 운송합니다. 본사 가스·탱커·케미칼팀과 도쿄·싱가포르 사무소가 영업합니다.",
+ "products": [
+  {
+   "name": "GAS 운송",
+   "segment": "GAS",
+   "desc": "LPG·암모니아",
+   "share": 86.0
+  },
+  {
+   "name": "PRODUCT 운송",
+   "segment": "PRODUCT",
+   "desc": "",
+   "share": 8.1
+  }
+ ],
+ "customers": "주요 고객은 SK가스, E1, BGN, PTT, MITSUBISHI, 한화솔루션 등입니다."
+}
