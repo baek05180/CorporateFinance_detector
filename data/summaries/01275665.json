@@ -1,0 +1,86 @@
+{
+ "corp_code": "01275665",
+ "name": "리메드",
+ "source_rcept": "20260626000758",
+ "source_name": "[기재정정]사업보고서 (2025.12)",
+ "one_liner": "리메드는 자기장으로 뇌를 자극해 우울증을 치료하는 TMS 기기와 자기장·충격파 통증치료기, 피부 리프팅 같은 에스테틱 기기를 만들어 국내외에 파는 의료기기 회사입니다.",
+ "facts": "코스닥 상장 2019.12 · 2025 연결 매출 245억 · 영업이익 7억",
+ "mix_line": "매출 뇌재활(TMS) 16.0% · 만성통증치료 28.3% (일부 품목 기준)",
+ "flow": {
+  "inputs": [
+   {
+    "name": "전자부품·코일 등",
+    "note": "원재료"
+   }
+  ],
+  "company": {
+   "name": "리메드",
+   "note": "비침습 자기장 의료기기"
+  },
+  "customers": [
+   {
+    "name": "정신과·신경과 병원",
+    "note": "BrainStim·ALTMS"
+   },
+   {
+    "name": "해외 거래처",
+    "note": "통증치료기 대부분 수출"
+   },
+   {
+    "name": "에스테틱 시장",
+    "note": "ZTone 등"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "뇌재활(ALTMS·BrainStim)",
+    "amount": 3913193000,
+    "share": 16.0
+   },
+   {
+    "name": "emField Pro",
+    "amount": 3344312000,
+    "share": 13.7
+   },
+   {
+    "name": "Talent-Pro",
+    "amount": 2960053000,
+    "share": 12.1
+   },
+   {
+    "name": "FSWT",
+    "amount": 602823000,
+    "share": 2.5
+   },
+   {
+    "name": "그 외(에스테틱 등, 표 미표시)",
+    "amount": 13680000000,
+    "share": 55.8
+   }
+  ],
+  "basis": "2025 연결 (그 외는 연결 매출과의 차액)"
+ },
+ "caption": "BrainStim 내수 매출이 10억 원에서 21억 원으로 늘었고, emField Pro 수출은 44억 원에서 33억 원으로 줄었다.",
+ "business": "뇌재활(TMS: BrainStim·ALTMS, 우울증 치료 허가), 만성통증치료(Salus Talent Pro·emField Pro·FSWT), 에스테틱(ZTone·V1·REFTONE) 사업을 합니다.",
+ "products": [
+  {
+   "name": "BrainStim·ALTMS",
+   "segment": "뇌재활",
+   "desc": "우울증 TMS",
+   "share": 16.0
+  },
+  {
+   "name": "Salus Talent Pro·emField Pro",
+   "segment": "만성통증치료",
+   "desc": "",
+   "share": 25.8
+  },
+  {
+   "name": "ZTone·V1·REFTONE",
+   "segment": "에스테틱",
+   "desc": ""
+  }
+ ],
+ "customers": "TMS는 국내 정신과·신경과에, 통증치료기는 주로 해외에 수출합니다.",
+ "written": "2026-10-27"
+}

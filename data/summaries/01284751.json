@@ -1,0 +1,78 @@
+{
+ "corp_code": "01284751",
+ "name": "시지트로닉스",
+ "source_rcept": "20260318000115",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "시지트로닉스는 전자제품 회로를 정전기로부터 보호하는 ESD 소자와 광센서 소자를 실리콘으로 만들어 주로 해외에 팔고, 질화갈륨(GaN) 전력·RF 반도체를 개발하는 회사입니다.",
+ "facts": "코스닥 상장 2023.08 · 2025 매출 127억 · 영업손실 76억 · 수출 73%",
+ "mix_line": "매출 ESD 86.7% · Sensor 9.0% · Power 3.7%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "Wafer",
+    "note": "원재료 20억"
+   }
+  ],
+  "company": {
+   "name": "시지트로닉스",
+   "note": "개별소자 반도체"
+  },
+  "customers": [
+   {
+    "name": "해외 전자부품 거래처",
+    "note": "수출 93억"
+   },
+   {
+    "name": "국내 거래처",
+    "note": "35억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "ESD 소자",
+    "amount": 11055000000,
+    "share": 86.7
+   },
+   {
+    "name": "Sensor 소자",
+    "amount": 1150000000,
+    "share": 9.0
+   },
+   {
+    "name": "Power 소자",
+    "amount": 474000000,
+    "share": 3.7
+   },
+   {
+    "name": "기타",
+    "amount": 70000000,
+    "share": 0.5
+   }
+  ],
+  "basis": "2025 별도"
+ },
+ "caption": "ESD 매출이 80억 원에서 111억 원으로 늘었지만 영업손실 76억 원을 냈다.",
+ "business": "실리콘 기반 ESD·Power·Sensor(P-TR, BB-PD, APD) 개별소자를 개발·생산·판매하고, GaN 전력·RF 소자 상용화와 Epi 공정 기반 자체 파운드리(M-FAB)를 추진합니다.",
+ "products": [
+  {
+   "name": "ESD 보호소자",
+   "segment": "개별소자",
+   "desc": "",
+   "share": 86.7
+  },
+  {
+   "name": "P-TR 등 광센서",
+   "segment": "Sensor",
+   "desc": "",
+   "share": 9.0
+  },
+  {
+   "name": "전력 소자",
+   "segment": "Power",
+   "desc": "",
+   "share": 3.7
+  }
+ ],
+ "customers": "매출의 73%가 해외 거래처이며 나머지는 국내에서 팝니다.",
+ "written": "2026-10-27"
+}
