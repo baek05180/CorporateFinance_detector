@@ -1,0 +1,88 @@
+{
+ "corp_code": "00867034",
+ "name": "듀켐바이오",
+ "source_rcept": "20260318001568",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "듀켐바이오는 암·치매·파킨슨병 진단용 PET-CT 방사성의약품을 국내 12곳 제조소에서 만들어 병원에 공급하는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2024-12 상장 · 2025 연결 매출 386억 · 영업이익 74억 · 순이익 65억",
+ "mix_line": "매출 FDG 57.1% · 알츠하이머 진단 19.4% · FP-CIT 10.5% · 카세트 시약 등 5.6%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "O-18 Water 등",
+    "note": "원재료"
+   }
+  ],
+  "company": {
+   "name": "듀켐바이오",
+   "note": "방사성의약품"
+  },
+  "customers": [
+   {
+    "name": "대형병원",
+    "note": "1년 이상 계약"
+   },
+   {
+    "name": "Cyclotek",
+    "note": "호주·뉴질랜드 FP-CIT 독점 수출"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "FDG(종양·심장·간질 진단)",
+    "amount": 22017140000,
+    "share": 57.1
+   },
+   {
+    "name": "Neuraceq·Vizamyl(알츠하이머)",
+    "amount": 7501071000,
+    "share": 19.4
+   },
+   {
+    "name": "FP-CIT(파킨슨병)",
+    "amount": 4052198000,
+    "share": 10.5
+   },
+   {
+    "name": "카세트 시약공급 등",
+    "amount": 2172017000,
+    "share": 5.6
+   },
+   {
+    "name": "조영제",
+    "amount": 1478779000,
+    "share": 3.8
+   },
+   {
+    "name": "PARTIO VS·F-DOPA 등",
+    "amount": 1351159000,
+    "share": 3.5
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 347.0억 원, 356.0억 원, 385.7억 원으로 늘었다. 매출의 87.7%가 자체 제품이다.",
+ "business": "GMP 제조소 6곳을 포함한 12곳에서 국내 최다 PET-CT 방사성의약품(FDG, Neuraceq·Vizamyl, FP-CIT, F-DOPA, 프로스타시크)을 만들고, 조영제·분배장치·PSMA-11 KIT를 팝니다. 2024년 인수한 라디오디앤에스랩스가 R&D를 맡습니다.",
+ "products": [
+  {
+   "name": "FDG",
+   "segment": "제품",
+   "desc": "악성종양 진단",
+   "share": 57.1
+  },
+  {
+   "name": "Neuraceq·Vizamyl",
+   "segment": "제품",
+   "desc": "치매 진단",
+   "share": 19.4
+  },
+  {
+   "name": "FP-CIT",
+   "segment": "제품",
+   "desc": "파킨슨병 진단",
+   "share": 10.5
+  }
+ ],
+ "customers": "주로 대형병원과 1년 이상 계약하며, 지역 전문 유통회사를 통해 납품합니다."
+}

@@ -1,0 +1,86 @@
+{
+ "corp_code": "00172079",
+ "name": "HLB파나진",
+ "source_rcept": "20260317000770",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "HLB파나진은 인공 유전자 PNA로 암 돌연변이를 찾는 분자진단 키트 'PNAClamp'와 PNA 소재를 만드는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2000-08 상장 · 2025 연결 매출 151억 · 영업손실 34억 · 순손실 31억 · 수출 36%",
+ "mix_line": "매출 유전자진단키트 61.2% · PNA 소재 18.5% · 상품 10.6% · 기타 4.9% · 핵산추출키트 4.2%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "Base Acetic acid 외",
+    "note": "PNA 원료"
+   }
+  ],
+  "company": {
+   "name": "HLB파나진",
+   "note": "PNA 분자진단"
+  },
+  "customers": [
+   {
+    "name": "종합병원 병리과·진단검사의학과",
+    "note": "직영·대리점"
+   },
+   {
+    "name": "해외",
+    "note": "수출 54.3억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "유전자진단키트",
+    "amount": 9213000000,
+    "share": 61.2
+   },
+   {
+    "name": "PNA 등 소재",
+    "amount": 2785000000,
+    "share": 18.5
+   },
+   {
+    "name": "상품",
+    "amount": 1592000000,
+    "share": 10.6
+   },
+   {
+    "name": "기타",
+    "amount": 736000000,
+    "share": 4.9
+   },
+   {
+    "name": "핵산추출키트 등",
+    "amount": 637000000,
+    "share": 4.2
+   },
+   {
+    "name": "면역진단·분석서비스",
+    "amount": 87000000,
+    "share": 0.6
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 122.5억 원, 132.0억 원, 150.5억 원으로 늘었다. 유전자진단키트가 82.8억 원에서 92.1억 원으로 증가했다.",
+ "business": "PNA·DNA 소재와 폐암 EGFR·대장암 KRAS 등 체세포 돌연변이 검출 키트 PNAClamp, 액체생검 PANAMutyper를 만들고 진단 자동화를 합니다. 종속회사 바이오스퀘어는 퀀텀팩 기술로 면역진단을 합니다.",
+ "products": [
+  {
+   "name": "PNAClamp",
+   "segment": "분자진단",
+   "desc": "암 돌연변이 검출"
+  },
+  {
+   "name": "PANAMutyper",
+   "segment": "분자진단",
+   "desc": "액체생검"
+  },
+  {
+   "name": "Custom PNA",
+   "segment": "소재",
+   "desc": "",
+   "share": 18.5
+  }
+ ],
+ "customers": "국내는 종합병원 병리과·진단검사의학과·검사센터에 직영 또는 전문 대리점으로 판매합니다."
+}

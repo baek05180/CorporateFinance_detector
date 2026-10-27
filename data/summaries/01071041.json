@@ -1,0 +1,58 @@
+{
+ "corp_code": "01071041",
+ "name": "CJ 바이오사이언스",
+ "source_rcept": "20260316001695",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "CJ 바이오사이언스는 AI 기반 마이크로바이옴 분석 플랫폼으로 항암 신약을 개발하고 장내 미생물 분석 서비스를 파는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2019-12 상장 · 2025 연결 매출 37억 · 영업손실 248억 · 순손실 240억",
+ "mix_line": "미생물 유전체 분석 · 헬스앤웰니스 · 신약 개발",
+ "flow": {
+  "inputs": [
+   {
+    "name": "시약 외",
+    "note": "9.2억"
+   }
+  ],
+  "company": {
+   "name": "CJ 바이오사이언스",
+   "note": "마이크로바이옴"
+  },
+  "customers": [
+   {
+    "name": "대학·국가기관·기업",
+    "note": "유전체 분석"
+   },
+   {
+    "name": "의료기관·소비자",
+    "note": "GUT INSIDE·SMILE GUT"
+   },
+   {
+    "name": "해외",
+    "note": "미국 법인 경유"
+   }
+  ],
+  "revenue": [],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 55.8억 원, 34.7억 원, 36.9억 원으로 움직였고 영업손실 247.9억 원을 냈다.",
+ "business": "Ez-Mx 플랫폼으로 폐암 대상 CJRB-101 등 마이크로바이옴 신약을 개발하고, EzBioCloud 기반 NGS/BI 분석 솔루션과 약 14만 건 데이터를 활용한 장내 미생물 분석 서비스 GUT INSIDE·SMILE GUT를 제공합니다.",
+ "products": [
+  {
+   "name": "EzBioCloud",
+   "segment": "생명정보 분석",
+   "desc": "NGS/BI"
+  },
+  {
+   "name": "GUT INSIDE·SMILE GUT",
+   "segment": "헬스앤웰니스",
+   "desc": "장내 미생물 분석"
+  },
+  {
+   "name": "CJRB-101",
+   "segment": "신약",
+   "desc": "폐암"
+  }
+ ],
+ "customers": "GUT INSIDE는 병의원·검진센터로, SMILE GUT는 온라인으로 판매합니다."
+}

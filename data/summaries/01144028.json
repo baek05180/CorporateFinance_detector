@@ -1,0 +1,66 @@
+{
+ "corp_code": "01144028",
+ "name": "씨티케이",
+ "source_rcept": "20260320001391",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "씨티케이는 공장 없이 협력사와 함께 글로벌 화장품 브랜드의 제품 기획부터 생산·패키징까지 대행하는 코스닥 뷰티 플랫폼 회사입니다.",
+ "facts": "코스닥 · 2017-12 상장 · 2025 연결 매출 892억 · 영업손실 57억 · 순손실 73억",
+ "mix_line": "매출 CTKCLIP 사업부 94.5% · 기타 4.3% · 친환경 1.2%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "포뮬러(Bulk)",
+    "note": "한국화장품제조 외, 218억"
+   }
+  ],
+  "company": {
+   "name": "씨티케이",
+   "note": "화장품 Full-Turnkey"
+  },
+  "customers": [
+   {
+    "name": "글로벌 화장품 브랜드사",
+    "note": "해외바이어 수출"
+   },
+   {
+    "name": "OTC 제품 고객",
+    "note": "미국 OEM/ODM 법인"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "CTKCLIP 사업부",
+    "amount": 84281449000,
+    "share": 94.5
+   },
+   {
+    "name": "기타",
+    "amount": 3876677000,
+    "share": 4.3
+   },
+   {
+    "name": "친환경 사업부",
+    "amount": 1072159000,
+    "share": 1.2
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "순매출 892.3억 원 중 CTKCLIP 사업부가 842.8억 원이다. CTKCLIP 사업부 매출(내부거래 전)은 811.3억 원에서 849.7억 원으로 늘었다.",
+ "business": "브랜드 콘셉트에 맞춘 기획·디자인·개발·생산·패키징·검수·마케팅·물류를 무공장(Fabless)으로 제공하고, 2021년 B2B 디지털 뷰티 플랫폼 CTKCLIP을 열어 수천 개 포뮬라·패키지를 조합하는 맞춤 서비스를 합니다.",
+ "products": [
+  {
+   "name": "CTKCLIP",
+   "segment": "CTKCLIP 사업부",
+   "desc": "B2B 뷰티 플랫폼",
+   "share": 94.5
+  },
+  {
+   "name": "OTC 화장품",
+   "segment": "CTK OTC LABORATORIES",
+   "desc": "OEM/ODM"
+  }
+ ],
+ "customers": "글로벌 화장품 브랜드사가 주요 고객이며 MOQ 1,000 기준 소량 생산을 지원합니다."
+}
