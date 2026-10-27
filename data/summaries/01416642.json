@@ -1,0 +1,87 @@
+{
+ "corp_code": "01416642",
+ "name": "다보링크",
+ "source_rcept": "20260323001726",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "다보링크는 KT·LGU+·SKB 같은 통신사 상표로 들어가는 가정용 와이파이 공유기(AP)와 홈게이트웨이, 기업·공공용 AP를 만들어 공급하는 통신장비 회사입니다.",
+ "facts": "코스닥 상장 2019.12 · 2025 연결 매출 632억 · 영업손실 19억 · 순손실 50억",
+ "mix_line": "매출 가정용 AP 65.4% · 기업/공공 AP 20.8% · 게이트웨이 11.0%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "칩셋 등 원재료",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "다보링크",
+   "note": "Wi-Fi AP·게이트웨이"
+  },
+  "customers": [
+   {
+    "name": "KT·LGU+·SKB·LG헬로비전",
+    "note": "가정용 AP"
+   },
+   {
+    "name": "기업·공공기관",
+    "note": "Smart Air AP"
+   },
+   {
+    "name": "LGU+·SKB",
+    "note": "홈·VoIP 게이트웨이"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "가정용 AP",
+    "amount": 41317000000,
+    "share": 65.4
+   },
+   {
+    "name": "기업/공공 AP(Smart Air)",
+    "amount": 13158000000,
+    "share": 20.8
+   },
+   {
+    "name": "홈 게이트웨이",
+    "amount": 5896000000,
+    "share": 9.3
+   },
+   {
+    "name": "VoIP 게이트웨이",
+    "amount": 1026000000,
+    "share": 1.6
+   },
+   {
+    "name": "용역·기타",
+    "amount": 1805000000,
+    "share": 2.8
+   }
+  ],
+  "basis": "2025"
+ },
+ "caption": "AP 매출이 2023년 702억 원에서 2025년 545억 원으로 줄었고 순손실 50억 원을 냈다. 거의 전량 내수다.",
+ "business": "국내 기간·별정통신사업자에 가정용 단말(AP·홈게이트웨이)을, 기업·공공에 AP·APC·VoIP 게이트웨이를 공급합니다. 정보통신공사와 친환경 생분해 제품 사업도 합니다.",
+ "products": [
+  {
+   "name": "가정용 Wi-Fi AP",
+   "segment": "AP",
+   "desc": "통신사 상표",
+   "share": 65.4
+  },
+  {
+   "name": "Smart Air AP·APC",
+   "segment": "AP",
+   "desc": "기업·공공",
+   "share": 20.8
+  },
+  {
+   "name": "홈·VoIP 게이트웨이",
+   "segment": "G/W",
+   "desc": "",
+   "share": 11.0
+  }
+ ],
+ "customers": "통신사업자와 방송사업자, 기업·공공기관에 납품하며 수출은 15억 원 수준입니다.",
+ "written": "2026-10-27"
+}
