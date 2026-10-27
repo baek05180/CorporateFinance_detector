@@ -1,0 +1,57 @@
+{
+ "corp_code": "00442455",
+ "name": "코스나인",
+ "source_rcept": "20260324000091",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "코스나인은 기초·색조 화장품과 손소독제를 고객사 주문으로 생산(OEM·ODM·OCM)하는 화장품 제조회사입니다.",
+ "facts": "화장품 OEM·ODM·OCM · 상위 고객 도미인터내셔널 25.7%",
+ "mix_line": "매출 화장품 제품 100%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "에탄올 등",
+    "note": "원·부재료 46.5%"
+   },
+   {
+    "name": "제품용기",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "코스나인",
+   "note": "화장품 OEM·ODM"
+  },
+  "customers": [
+   {
+    "name": "도미인터내셔널",
+    "note": "25.7%"
+   },
+   {
+    "name": "BioMedical Research Laboratories",
+    "note": "15.7%"
+   },
+   {
+    "name": "험블럼블·비티엔프·Tiens Europe",
+    "note": ""
+   }
+  ],
+  "revenue": [],
+  "basis": "2025"
+ },
+ "caption": "주요 매출처는 도미인터내셔널 25.67%, BioMedical Research Laboratories 15.69%, 험블럼블 13.61%다.",
+ "business": "고객사 요구에 따라 기초·색조 메이크업 전 제품군과 손소독제를 OEM·ODM으로 만들고, 제품·디자인·마케팅 연구소를 둔 OCM(Original Creation Manufacturing) 사업을 하며 화장품 특화 ERP(CEP)를 운영합니다.",
+ "products": [
+  {
+   "name": "기초·색조 화장품",
+   "segment": "화장품사업부",
+   "desc": "OEM·ODM"
+  },
+  {
+   "name": "손소독제",
+   "segment": "화장품사업부",
+   "desc": ""
+  }
+ ],
+ "customers": "개괄적 공급계약 후 10~60일 단위 발주로 각 고객사에 직접 납품합니다."
+}

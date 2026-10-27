@@ -1,0 +1,77 @@
+{
+ "corp_code": "00611736",
+ "name": "엑시콘",
+ "source_rcept": "20260316001681",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "엑시콘은 DDR5 같은 메모리 반도체와 SSD의 성능·신뢰성을 검사하는 테스트 장비를 만드는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2015-10 상장 · 2025 연결 매출 660억 · 영업이익 1억 · 순이익 90억",
+ "mix_line": "매출 Memory Tester 88.4% · SSD Tester 9.8% · SoC Tester 1.8%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "IC",
+    "note": "ADI 등, 매입 43.7%"
+   },
+   {
+    "name": "기구물",
+    "note": "디팜스 등"
+   }
+  ],
+  "company": {
+   "name": "엑시콘",
+   "note": "반도체 검사장비"
+  },
+  "customers": [
+   {
+    "name": "메모리 반도체 제조사",
+    "note": "내수 589.3억"
+   },
+   {
+    "name": "해외",
+    "note": "수출 70.9억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Memory Tester(Burn-in 포함)",
+    "amount": 58423000000,
+    "share": 88.4
+   },
+   {
+    "name": "SSD Tester",
+    "amount": 6443000000,
+    "share": 9.8
+   },
+   {
+    "name": "SoC Tester(CIS)",
+    "amount": 1160000000,
+    "share": 1.8
+   }
+  ],
+  "basis": "2025 별도"
+ },
+ "caption": "2025년 매출 660.3억 원 중 DRAM 검사 장비가 584.2억 원(88.4%)이다.",
+ "business": "2005년 DDR2 테스터를 시작으로 DDR4·DDR5 메모리 모듈 테스터, DDR5·LPDDR6·GDDR6 Burn-in Tester, CLT, SATA·SAS·PCIe Gen5 SSD Aging 설비, UFS 3.0 설비, CIS Tester를 개발·판매합니다.",
+ "products": [
+  {
+   "name": "i1520·i2154 등",
+   "segment": "Memory Tester",
+   "desc": "DDR5",
+   "share": 88.4
+  },
+  {
+   "name": "SST32K",
+   "segment": "SSD Tester",
+   "desc": "",
+   "share": 9.8
+  },
+  {
+   "name": "i9950CP",
+   "segment": "SoC Tester",
+   "desc": "CIS",
+   "share": 1.8
+  }
+ ],
+ "customers": "고객이 한정된 주문 생산 방식이라 대당 가격과 납기는 공개하지 않습니다."
+}
