@@ -1,0 +1,73 @@
+{
+ "corp_code": "00694942",
+ "name": "이미지스",
+ "source_rcept": "20260707000432",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "이미지스는 스마트폰 터치스크린 칩과 손 잡음을 감지하는 그립 센서 칩, 햅틱 칩을 설계해 주로 삼성전자에 공급하는 코스닥 팹리스입니다.",
+ "facts": "코스닥 · 2010-02 상장 · 2025 매출 132억 · 영업손실 20억 · 순손실 18억 · 수출 71%",
+ "mix_line": "매출 Touch IC 49.9% · Grip 센서 IC 30.0% · Haptic 등 기타 20.1%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "Wafer",
+    "note": "파운드리 위탁, 34.4억"
+   }
+  ],
+  "company": {
+   "name": "이미지스",
+   "note": "터치·그립 IC 팹리스"
+  },
+  "customers": [
+   {
+    "name": "삼성전자",
+    "note": "매출 비중 매우 높음"
+   },
+   {
+    "name": "해외 대리점",
+    "note": "수출 94.4억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Touch Controller IC",
+    "amount": 6597129000,
+    "share": 49.9
+   },
+   {
+    "name": "Grip 센서 IC",
+    "amount": 3964116000,
+    "share": 30.0
+   },
+   {
+    "name": "Haptic IC 등 기타",
+    "amount": 2661152000,
+    "share": 20.1
+   }
+  ],
+  "basis": "2025 별도"
+ },
+ "caption": "매출이 2023년 161.0억 원, 2024년 129.8억 원, 2025년 132.2억 원으로 움직였다. Grip 수출이 3.6억 원에서 17.9억 원으로 늘었다.",
+ "business": "생산라인 없이 반도체를 설계하고 생산은 파운드리에 맡기는 팹리스로, Touch Controller IC(IST4050NPT), 그립 센서 IC(ISG6320), Haptic Controller IC 등을 개발합니다.",
+ "products": [
+  {
+   "name": "IST4050NPT",
+   "segment": "Touch",
+   "desc": "터치 컨트롤러",
+   "share": 49.9
+  },
+  {
+   "name": "ISG6320",
+   "segment": "Grip",
+   "desc": "그립 센서",
+   "share": 30.0
+  },
+  {
+   "name": "ISA100A 등",
+   "segment": "기타",
+   "desc": "햅틱",
+   "share": 20.1
+  }
+ ],
+ "customers": "국내 핸드폰 메이커 삼성전자에 납품하며, 해외 대리점과 직수출로 매출의 66.2%가 발생합니다."
+}
