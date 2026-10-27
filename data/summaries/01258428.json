@@ -1,0 +1,58 @@
+{
+ "corp_code": "01258428",
+ "name": "프레스티지바이오로직스",
+ "source_rcept": "20260928000204",
+ "source_name": "[기재정정]사업보고서 (2026.06)",
+ "written": "2026-10-27",
+ "one_liner": "프레스티지바이오로직스는 154,000L 생산설비로 항체의약품을 위탁개발·생산(CDMO)하는 코스닥 바이오 회사입니다.",
+ "facts": "코스닥 · 2021-03 상장 · 2026.06 결산 매출 267억 · EU GMP·ANVISA 인증",
+ "mix_line": "매출 항체의약품 수탁제조 54% · 용역(시험·기술이전) 46%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "Resin·Buffer 등",
+    "note": "Thermo·Merck·Sigma, 53.8%"
+   }
+  ],
+  "company": {
+   "name": "프레스티지바이오로직스",
+   "note": "바이오 CDMO"
+  },
+  "customers": [
+   {
+    "name": "글로벌 제약·바이오기업",
+    "note": "직접 계약"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "항체의약품 수탁제조",
+    "amount": 14466048000,
+    "share": 54.0
+   },
+   {
+    "name": "용역(수탁시험·기술이전)",
+    "amount": 12199096000,
+    "share": 46.0
+   }
+  ],
+  "basis": "2026.06 결산"
+ },
+ "caption": "2026년 6월 결산 매출 266.7억 원 중 항체의약품 수탁제조가 144.7억 원이다.",
+ "business": "MFDS GMP, EMA EU GMP, WHO GDP, 브라질 ANVISA GMP 인증을 받은 154,000L 설비로 공정개발(CDO), 원료·완제의약품 생산(CMO), 완제 포장(CPO), 위탁시험·분석을 일괄 수행합니다.",
+ "products": [
+  {
+   "name": "CMO",
+   "segment": "CDMO",
+   "desc": "항체의약품",
+   "share": 54.0
+  },
+  {
+   "name": "CDO·위탁시험",
+   "segment": "CDMO",
+   "desc": "",
+   "share": 46.0
+  }
+ ],
+ "customers": "대리점 없이 고객사와 직접 계약해 지정 운송업체·창고로 공급·수출합니다."
+}

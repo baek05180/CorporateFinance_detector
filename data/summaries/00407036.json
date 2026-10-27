@@ -1,0 +1,66 @@
+{
+ "corp_code": "00407036",
+ "name": "선바이오",
+ "source_rcept": "20260316000852",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "선바이오는 호중구감소증 바이오시밀러 원료인 PEG 유도체를 만들어 인도 Intas에 수출하고 로열티를 받는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2022-10 상장 · 2025 매출 137억 · 영업이익 50억 · 순이익 28억 · 거의 전량 수출",
+ "mix_line": "매출 P1PAL-20 78.8% · 로열티 16.6% · 기타 PEG 유도체 4.6%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "P1OH 등",
+    "note": "PEG 원료"
+   }
+  ],
+  "company": {
+   "name": "선바이오",
+   "note": "PEG 유도체"
+  },
+  "customers": [
+   {
+    "name": "Intas Pharma",
+    "note": "원료 수출·로열티"
+   },
+   {
+    "name": "진단기기·신약 개발사",
+    "note": "기타 유도체"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "P1PAL-20(Pegfilgrastim 원료)",
+    "amount": 10773540000,
+    "share": 78.8
+   },
+   {
+    "name": "Pegfilgrastim 로열티",
+    "amount": 2265961000,
+    "share": 16.6
+   },
+   {
+    "name": "기타 PEG 유도체",
+    "amount": 632499000,
+    "share": 4.6
+   }
+  ],
+  "basis": "2025 별도"
+ },
+ "caption": "매출이 122.9억 원, 86.8억 원, 136.7억 원으로 움직였다. P1PAL-20 수출이 57.3억 원에서 107.7억 원으로 늘었다.",
+ "business": "PEGylation 기술로 PEG 유도체를 생산·판매하고, EU·캐나다·호주·인도에서 팔리는 Intas의 Pegfilgrastim 원료 mPEG-PAL을 공급해 런닝로열티를 받습니다. 구강건조증 치료제 MucoPEG(미국 승인), 인공혈액 SBX, 이차전지 전해질을 개발합니다.",
+ "products": [
+  {
+   "name": "P1PAL-20",
+   "segment": "PEG 유도체",
+   "desc": "Pegfilgrastim 원료",
+   "share": 78.8
+  },
+  {
+   "name": "MucoPEG",
+   "segment": "제품",
+   "desc": "구강건조증"
+  }
+ ],
+ "customers": "Intas Pharma에 원료를 수출하며 Pegfilgrastim의 미국 승인 절차가 진행 중입니다."
+}
