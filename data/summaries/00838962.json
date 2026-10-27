@@ -1,0 +1,65 @@
+{
+ "corp_code": "00838962",
+ "name": "알서포트",
+ "source_rcept": "20260319000664",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "알서포트는 멀리 있는 PC·스마트폰에 접속해 문제를 해결하는 원격지원 소프트웨어 '리모트콜'·'리모트뷰'를 만들어 일본 등 해외에 주로 파는 회사입니다.",
+ "facts": "코스닥 상장 2011.01 · 2001 창사 · 2025 연결 매출 488억 · 영업이익 24억 · 수출 63%",
+ "mix_line": "매출 원격지원(RemoteCall·RemoteView) 92.5% · 화상회의 등 기타 7.5%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "서버 등 상품",
+    "note": "소규모"
+   }
+  ],
+  "company": {
+   "name": "알서포트",
+   "note": "원격 소프트웨어"
+  },
+  "customers": [
+   {
+    "name": "일본 통신사·제조사",
+    "note": "수출의 대부분"
+   },
+   {
+    "name": "국내 금융·공공·교육기관",
+    "note": ""
+   }
+  ],
+  "revenue": [
+   {
+    "name": "원격지원(RemoteCall·RemoteView)",
+    "amount": 45170000000,
+    "share": 92.5
+   },
+   {
+    "name": "RemoteMeeting·ColaBox·Mobizen 등",
+    "amount": 3675000000,
+    "share": 7.5
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 475억 원에서 488억 원으로 늘었고 영업이익 24억 원을 냈다. 수출은 305억 원이다.",
+ "business": "원격지원 RemoteCall(영상상담 RemoteVS·SDK 포함), 원격제어 RemoteView, 화상회의 RemoteMeeting, AI 회의록 Airepoto, 회의부스 ColaBox, 화면녹화 Mobizen을 공급하며 일본·중국 법인을 둡니다.",
+ "products": [
+  {
+   "name": "RemoteCall",
+   "segment": "원격지원",
+   "desc": ""
+  },
+  {
+   "name": "RemoteView",
+   "segment": "원격제어",
+   "desc": ""
+  },
+  {
+   "name": "RemoteMeeting",
+   "segment": "기타",
+   "desc": "화상회의"
+  }
+ ],
+ "customers": "통신사, 휴대폰·PC 제조사, 금융권, 공공기관에 직접·파트너사로 판매합니다."
+}

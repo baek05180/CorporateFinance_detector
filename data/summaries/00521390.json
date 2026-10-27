@@ -1,0 +1,87 @@
+{
+ "corp_code": "00521390",
+ "name": "뉴파워프라즈마",
+ "source_rcept": "20260323001403",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "뉴파워프라즈마는 반도체·디스플레이 증착 장비의 챔버를 플라즈마로 세정하는 RPG와 플라즈마 전원(RF) 모듈을 만들고, 자회사를 통해 방산과 UTG(초박막 유리) 사업을 하는 회사입니다.",
+ "facts": "코스닥 상장 2016.11 · 2025 연결 매출 5,780억 · 영업이익 287억 · 순이익 76억",
+ "mix_line": "매출 방산부문 등 48.9% · UTG 24.2% · Cleaning System 19.7% · RF 2.4%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "HEAT SINK·HOUSING 등",
+    "note": "원재료"
+   }
+  ],
+  "company": {
+   "name": "뉴파워프라즈마",
+   "note": "플라즈마 부품 + 방산 + UTG"
+  },
+  "customers": [
+   {
+    "name": "해외 반도체 장비사",
+    "note": "Cleaning 수출 873억"
+   },
+   {
+    "name": "국내 방산 고객",
+    "note": "내수 2,781억"
+   },
+   {
+    "name": "UTG 수요처",
+    "note": "수출 956억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "방산부문 등",
+    "amount": 282491459000,
+    "share": 48.9
+   },
+   {
+    "name": "UTG 등",
+    "amount": 139791219000,
+    "share": 24.2
+   },
+   {
+    "name": "Cleaning System(RPG)",
+    "amount": 113809255000,
+    "share": 19.7
+   },
+   {
+    "name": "기타(AS 외)",
+    "amount": 27749571000,
+    "share": 4.8
+   },
+   {
+    "name": "RF System",
+    "amount": 14148890000,
+    "share": 2.4
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "방산 매출이 2,226억 원에서 2,825억 원으로 늘어 매출이 5,198억 원에서 5,780억 원이 됐고 영업이익 287억 원을 냈다.",
+ "business": "박막공정 후 챔버 부산물을 F계열 가스 플라즈마로 세정하는 Remote Plasma Generator와 플라즈마 발생용 RF Generator·Matcher를 만들며, 종속회사가 방산과 UTG 사업을 합니다.",
+ "products": [
+  {
+   "name": "Remote Plasma Generator",
+   "segment": "Cleaning System",
+   "desc": "",
+   "share": 19.7
+  },
+  {
+   "name": "방산 제품",
+   "segment": "방산",
+   "desc": "",
+   "share": 48.9
+  },
+  {
+   "name": "UTG",
+   "segment": "UTG",
+   "desc": "",
+   "share": 24.2
+  }
+ ],
+ "customers": "반도체·디스플레이 장비사와 방산·UTG 고객에 공급합니다."
+}

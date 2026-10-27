@@ -1,0 +1,56 @@
+{
+ "corp_code": "01423916",
+ "name": "온코크로스",
+ "source_rcept": "20260716000447",
+ "source_name": "[기재정정]사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "온코크로스는 유전자 발현 데이터를 AI로 분석해 약물에 맞는 질병(적응증)을 찾아주는 플랫폼(RAPTOR AI)으로 제약사의 신약 개발을 돕는 회사입니다.",
+ "facts": "코스닥 상장 2024.12 · 2025 매출 3.7억 (전년 10.7억) · 순손실 89억",
+ "mix_line": "매출 AI 분석 용역 100% (전량 내수)",
+ "flow": {
+  "inputs": [
+   {
+    "name": "검증용 연구용역",
+    "note": "원재료 없음"
+   }
+  ],
+  "company": {
+   "name": "온코크로스",
+   "note": "AI 신약개발"
+  },
+  "customers": [
+   {
+    "name": "파트너 제약사",
+    "note": "적응증 선정·확장"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "AI 플랫폼 용역",
+    "amount": 370461000,
+    "share": 100.0
+   }
+  ],
+  "basis": "2025"
+ },
+ "caption": "용역 매출이 10.7억 원에서 3.7억 원으로 줄었고 순손실 89억 원을 냈다.",
+ "business": "전사체 기반 RAPTOR AI(500여 질병 코호트, ReDRUG 알고리즘), 항암제 적응증·바이오마커 발굴 ONCO-RAPTOR AI를 운영하고, 암 조기진단 보조 ONCOfind AI를 개발합니다.",
+ "products": [
+  {
+   "name": "RAPTOR AI",
+   "segment": "AI 플랫폼",
+   "desc": "적응증 탐색"
+  },
+  {
+   "name": "ONCO-RAPTOR AI",
+   "segment": "AI 플랫폼",
+   "desc": "항암제"
+  },
+  {
+   "name": "ONCOfind AI",
+   "segment": "진단",
+   "desc": "개발 중"
+  }
+ ],
+ "customers": "국내 제약사의 신약 후보물질 개발에 용역을 제공합니다."
+}
