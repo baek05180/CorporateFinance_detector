@@ -1,0 +1,82 @@
+{
+ "corp_code": "00814582",
+ "name": "탑런토탈솔루션",
+ "source_rcept": "20260421000082",
+ "source_name": "[기재정정]사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "탑런토탈솔루션은 차량 계기판·디스플레이용 백라이트(BLU)와 인포테인먼트·HUD 부품, OLED 부품, 플라스틱 사출·스티로폼 포장재를 중국·베트남 공장에서 만들어 수출하는 회사입니다.",
+ "facts": "코스닥 상장 2024.11 · 2025 연결 매출 5,501억 · 영업이익 89억 · 순이익 61억",
+ "mix_line": "매출 차량용 BLU 34.4% · 플라스틱 사출 26.3% · 스티로폼 19.1% · IVI 6.9%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "LED ASS'Y 등",
+    "note": "수입"
+   }
+  ],
+  "company": {
+   "name": "탑런토탈솔루션",
+   "note": "전장 디스플레이 부품"
+  },
+  "customers": [
+   {
+    "name": "차량 디스플레이 업체",
+    "note": "BLU·IVI·HUD 수출"
+   },
+   {
+    "name": "전자·가전 업체",
+    "note": "사출·포장재"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "차량용 BLU",
+    "amount": 188986000000,
+    "share": 34.4
+   },
+   {
+    "name": "플라스틱 사출",
+    "amount": 144492000000,
+    "share": 26.3
+   },
+   {
+    "name": "스티로폼(EPS/EPP)",
+    "amount": 104827000000,
+    "share": 19.1
+   },
+   {
+    "name": "IVI·HUD",
+    "amount": 50292000000,
+    "share": 9.1
+   },
+   {
+    "name": "OLED 부품·장비",
+    "amount": 15963000000,
+    "share": 2.9
+   },
+   {
+    "name": "상품·기타",
+    "amount": 45541000000,
+    "share": 8.3
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "플라스틱 사출 매출이 1,038억 원에서 1,445억 원으로 늘었고, 2025년 영업이익 89억 원을 냈다.",
+ "business": "전장솔루션(BLU·IVI·HUD), OLED 부품(Stiffener·Bend PSA), 플라스틱 사출(P-Injection), 스티로폼(P-EPS/EPP) 사업을 중국 남경·베트남 하이퐁 법인에서 생산하며, OLED 공정 장비도 공급하기 시작했습니다.",
+ "products": [
+  {
+   "name": "BLU",
+   "segment": "차량용 디스플레이",
+   "desc": "Cluster·CID",
+   "share": 34.4
+  },
+  {
+   "name": "플라스틱 사출",
+   "segment": "P-Injection",
+   "desc": "",
+   "share": 26.3
+  }
+ ],
+ "customers": "매출 대부분을 해외 생산법인에서 수출합니다."
+}
