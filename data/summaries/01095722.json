@@ -1,0 +1,62 @@
+{
+ "corp_code": "01095722",
+ "name": "심텍",
+ "source_rcept": "20260317000641",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "심텍은 메모리 반도체용 모듈 PCB와 반도체 패키지 기판(Package Substrate)을 만들어 대부분 수출하는 코스닥 회사입니다.",
+ "facts": "코스닥 · 1987년 설립 · 2015-08 상장 · 2025 연결 매출 1.41조 · 영업이익 119억 · 순손실 1,646억",
+ "mix_line": "매출 Package Substrate 75.4% · Module PCB 24.6%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "PCB 원재료",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "심텍",
+   "note": "반도체 PCB"
+  },
+  "customers": [
+   {
+    "name": "글로벌 메모리칩 메이커",
+    "note": "Big5"
+   },
+   {
+    "name": "해외",
+    "note": "수출(로칼 포함) 1.19조"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Package Substrate",
+    "amount": 1063840000000,
+    "share": 75.4
+   },
+   {
+    "name": "Module PCB",
+    "amount": 346720000000,
+    "share": 24.6
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 1.04조 원, 1.23조 원, 1.41조 원으로 늘었지만 2025년 순손실 1,645.8억 원을 냈다. Package Substrate가 9,048.6억 원에서 1.06조 원으로 증가했다.",
+ "business": "국내 6개 공장·R&D센터와 중국 신태전자(Module PCB), 일본 심텍그래픽스(Substrate)에서 PC·서버·모바일·SSD·웨어러블용 반도체 PCB를 생산합니다. 2015년 심텍홀딩스에서 인적분할해 신설됐습니다.",
+ "products": [
+  {
+   "name": "Package Substrate",
+   "segment": "인쇄회로기판",
+   "desc": "반도체 칩 패키지 기판",
+   "share": 75.4
+  },
+  {
+   "name": "Module PCB",
+   "segment": "인쇄회로기판",
+   "desc": "메모리 모듈 기판",
+   "share": 24.6
+  }
+ ],
+ "customers": "글로벌 Big5 메모리칩 메이커 등에 PO를 받아 납품합니다."
+}

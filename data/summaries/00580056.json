@@ -1,0 +1,82 @@
+{
+ "corp_code": "00580056",
+ "name": "스맥",
+ "source_rcept": "20260323001679",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "스맥은 CNC선반·머시닝센터(MCT) 같은 공작기계와 산업용 로봇을 만들어 60개국에 수출하고 통신장비도 만드는 코스닥 회사입니다.",
+ "facts": "코스닥 · 1999-06 설립 · 2009-05 상장 · 2025 연결 매출 1,536억 · 영업손실 168억 · 순손실 215억",
+ "mix_line": "매출 CNC선반 52.3% · MCT 36.7% · ICT 4.4% · 부품·A/S 4.1% · 융복합 2.5%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "NC·주물소재·Bearing",
+    "note": "공작기계용"
+   }
+  ],
+  "company": {
+   "name": "스맥",
+   "note": "공작기계 · ICT"
+  },
+  "customers": [
+   {
+    "name": "해외 딜러",
+    "note": "60개국, 기계 수출 885억"
+   },
+   {
+    "name": "국내 직영 영업소·대리점",
+    "note": "내수 583억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "CNC선반(PL·SL)",
+    "amount": 80307836000,
+    "share": 52.3
+   },
+   {
+    "name": "MCT(LCV·PCV)",
+    "amount": 56371212000,
+    "share": 36.7
+   },
+   {
+    "name": "ICT(Trunk gateway·유지보수)",
+    "amount": 6784000000,
+    "share": 4.4
+   },
+   {
+    "name": "부품·A/S·기타",
+    "amount": 6316595000,
+    "share": 4.1
+   },
+   {
+    "name": "융복합(로봇+자동화)",
+    "amount": 3809760000,
+    "share": 2.5
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "기계사업 매출이 2024년 1,928.5억 원에서 2025년 1,468.1억 원으로 24% 줄었다. CNC선반 수출이 1,180.3억 원에서 640.6억 원으로 급감했다.",
+ "business": "삼성중공업 공작기계사업부를 모태로 CNC선반·머시닝센터와 부품, 산업용 로봇·자동화 장비를 만듭니다. ICT사업부문은 Trunk gateway(NGTG/NGSG) 등 통신장비와 유지보수 용역을 제공합니다.",
+ "products": [
+  {
+   "name": "PL·SL",
+   "segment": "기계",
+   "desc": "CNC선반",
+   "share": 52.3
+  },
+  {
+   "name": "LCV·PCV",
+   "segment": "기계",
+   "desc": "머시닝센터",
+   "share": 36.7
+  },
+  {
+   "name": "NGTG/NGSG",
+   "segment": "ICT",
+   "desc": "Trunk gateway"
+  }
+ ],
+ "customers": "국내는 영남·경북·중부·경인 직영 영업소와 대리점, 해외는 딜러를 통해 판매합니다."
+}

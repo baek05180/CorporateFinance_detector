@@ -1,0 +1,62 @@
+{
+ "corp_code": "00965318",
+ "name": "이노시뮬레이션",
+ "source_rcept": "20260323000851",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "이노시뮬레이션은 군 가상훈련 시뮬레이터와 자동차 주행 시뮬레이터를 디지털 트윈·XR 기술로 만드는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2023-07 상장 · 2025 별도 매출 143억 · 영업손실 20억 · 순손실 21억",
+ "mix_line": "매출 Virtual Training 70.6% · Virtual Testing 29.4%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "다양한 부품",
+    "note": "맞춤형 제작"
+   }
+  ],
+  "company": {
+   "name": "이노시뮬레이션",
+   "note": "XR 시뮬레이터"
+  },
+  "customers": [
+   {
+    "name": "국방",
+    "note": "가상훈련"
+   },
+   {
+    "name": "모빌리티 기업",
+    "note": "시뮬레이터"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Virtual Training(가상훈련)",
+    "amount": 10067000000,
+    "share": 70.6
+   },
+   {
+    "name": "Virtual Testing(스마트 모빌리티)",
+    "amount": 4185000000,
+    "share": 29.4
+   }
+  ],
+  "basis": "2025 별도"
+ },
+ "caption": "매출이 194.8억 원, 93.4억 원, 142.5억 원으로 움직였다. 가상훈련 매출이 57.1억 원에서 100.7억 원으로 늘었다.",
+ "business": "방위산업 특화 XR 가상훈련 시스템, 국방 가상훈련 시뮬레이터, 스마트 모빌리티 시뮬레이터, Physical AI 시뮬레이션 플랫폼, VILS 실차 검증 기술을 국방·자동차·철도·중장비·항공우주·해양 분야에 공급합니다.",
+ "products": [
+  {
+   "name": "국방 가상훈련 시스템",
+   "segment": "Virtual Training",
+   "desc": "",
+   "share": 70.6
+  },
+  {
+   "name": "스마트 모빌리티 시뮬레이터",
+   "segment": "Virtual Testing",
+   "desc": "VILS 포함",
+   "share": 29.4
+  }
+ ],
+ "customers": "2025년 매출은 사실상 전량 내수이며, 제품·고객별 전문 영업조직을 운영합니다."
+}
