@@ -296,3 +296,97 @@ def bond_schedule(xml):
     if votes:
         out["rating"] = max(votes.items(), key=lambda kv: kv[1])[0]
     return out
+
+
+# ── 메자닌(CB·BW·EB) 주요사항보고서: 투자자·콜/풋·할증률 ──
+MEZZ_DOC_VERSION = 1
+_KINDS = [  # (구분, 이름에 들어가는 말) — 위에서부터 먼저 맞는 것
+    ("PEF", ("사모투자합자회사", "기관전용사모", "사모투자전문회사", " PEF", "프라이빗에쿼티")),
+    ("자산운용", ("자산운용", "투자신탁", "투자자문", "펀드", "신탁업자", "전문투자형사모", "일반사모")),
+    ("증권", ("증권", "투자증권", "금융투자")),
+    ("신기사·VC", ("인베스트먼트", "벤처", "신기술", "창업투자", "파트너스", "투자조합", "조합", "캐피탈 파트너")),
+    ("캐피탈", ("캐피탈",)),
+    ("은행", ("은행",)),
+    ("보험", ("생명", "화재", "손해보험", "보험")),
+    ("공제·연기금", ("공제", "연금", "기금", "공사")),
+]
+_CORP = re.compile(r"(주식회사|\(주\)|㈜|유한회사|합자회사|Ltd|LTD|Inc|INC|Co\.|Corp|L\.P|LP|LLC|Fund|FUND|GmbH|S\.A)")
+
+
+def investor_kind(name, relation=""):
+    n = name or ""
+    if any(k in (relation or "") for k in ("최대주주", "특수관계", "계열", "임원", "대표이사")) and not _CORP.search(n) and len(n.replace(" ", "")) <= 5:
+        return "개인"
+    for kind, keys in _KINDS:
+        if any(k in n for k in keys):
+            return kind
+    if _CORP.search(n) or len(n.replace(" ", "")) > 5:
+        return "법인"
+    return "개인"
+
+
+def _amount(cells):
+    best = None
+    for c in cells:
+        s = c.replace(",", "").replace(" ", "")
+        m = re.fullmatch(r"(\d{7,})(원)?", s)
+        if m and (best is None or int(m.group(1)) > best):
+            best = int(m.group(1))
+    return best
+
+
+def _months(seg):
+    m = re.search(r"(\d{1,3})\s*개월", seg)
+    if m:
+        return int(m.group(1))
+    m = re.search(r"(\d{1,2})\s*년\s*(?:이|후|경과|이 되는|되는)", seg)
+    return int(m.group(1)) * 12 if m else None
+
+
+def mezz_doc(xml):
+    """전환·신주인수권부·교환사채 발행결정 원문 → 투자자 목록·콜옵션 비율/시작·풋 시작·할증률."""
+    out = {"investors": [], "call_pct": None, "call_m": None, "put_m": None, "premium": None, "base_price": None,
+           "v": MEZZ_DOC_VERSION}
+    seen = set()
+    for kind, rows in blocks(xml):
+        if kind != "table" or len(rows) < 2:
+            continue
+        head = " ".join(rows[0]).replace(" ", "")
+        if "대상자" not in head or not any(k in head for k in ("권면", "총액", "금액", "발행")):
+            continue
+        hcells = [c.replace(" ", "") for c in rows[0]]
+        rel_i = next((i for i, c in enumerate(hcells) if "관계" in c), None)
+        for r in rows[1:]:
+            if not r or not r[0] or any(k in r[0].replace(" ", "") for k in ("합계", "합 계", "계", "-")) and len(r[0]) <= 3:
+                continue
+            amt = _amount(r[1:])
+            name = r[0].strip()
+            if not amt or name in seen:
+                continue
+            seen.add(name)
+            rel = r[rel_i].strip() if rel_i is not None and rel_i < len(r) else ""
+            k = investor_kind(name, rel)
+            out["investors"].append({"name": None if k == "개인" else name, "kind": k, "rel": (rel[:30] if rel not in ("-", "—", "") else None), "amt": amt})
+    t = text_of(xml)
+    i = t.find("매도청구권")
+    if i < 0:
+        i = t.find("Call Option")
+    if i >= 0:
+        seg = t[i: i + 1500]
+        m = (re.search(r"(\d{1,3}(?:\.\d+)?)\s*%\s*(?:에\s*해당|를\s*초과하지|를\s*한도|범위|이내|까지|이하)", seg)
+             or re.search(r"(?:권면|총액|원금)[^%]{0,40}?(\d{1,3}(?:\.\d+)?)\s*%", seg))
+        if m and 0 < float(m.group(1)) <= 100:
+            out["call_pct"] = float(m.group(1))
+        out["call_m"] = _months(seg)
+    j = t.find("조기상환청구권")
+    if j < 0:
+        j = t.find("Put Option")
+    if j >= 0:
+        out["put_m"] = _months(t[j: j + 1200])
+    m = re.search(r"할증\s*률?\s*[:：]?\s*(\d{1,3}(?:\.\d+)?)\s*%", t) or re.search(r"(\d{1,3}(?:\.\d+)?)\s*%\s*(?:를|을)?\s*할증", t)
+    if m:
+        out["premium"] = float(m.group(1))
+    m = re.search(r"기준\s*주가\s*[:：]?\s*([\d,]{3,})\s*원", t)
+    if m:
+        out["base_price"] = int(m.group(1).replace(",", ""))
+    return out

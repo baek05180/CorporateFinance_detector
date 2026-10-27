@@ -490,12 +490,24 @@ modal.addEventListener('click', e => { if (e.target === modal || e.target.closes
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
 function field(l, v) { return v == null || v === '' || v === DASH ? '' : `<div><div class="l">${l}</div><div class="v">${v}</div></div>`; }
+const INV_COL = {'증권': 'var(--s3)', '자산운용': 'var(--s1)', 'PEF': 'var(--s7)', '신기사·VC': 'var(--s2)', '캐피탈': 'var(--s5)', '은행': 'var(--c-biz)', '보험': 'var(--c-biz)', '공제·연기금': 'var(--c-biz)', '법인': 'var(--c-ov)', '개인': 'var(--c-ov)'};
+function invGroups(L) { const g = {}; L.forEach(x => { g[x.kind] = (g[x.kind] || 0) + (x.amt || 0); }); const t = Object.values(g).reduce((a, b) => a + b, 0) || 1; return Object.entries(g).sort((a, b) => b[1] - a[1]).map(([k, v]) => [k, v, v / t * 100]); }
+function invKinds(L) { return invGroups(L).map(([k, , p]) => `${k} ${p.toFixed(0)}%`).join(' · '); }
+function invTable(L) {
+  const G = invGroups(L), tot = L.reduce((a, x) => a + (x.amt || 0), 0) || 1;
+  const bar = `<div style="display:flex;height:22px;border-radius:6px;overflow:hidden;margin:4px 0 10px">${G.map(([k, , p]) => `<div title="${esc(k)} ${p.toFixed(1)}%" style="width:${p}%;background:${INV_COL[k] || 'var(--c-ov)'}"></div>`).join('')}</div>`;
+  const rows = [...L].sort((a, b) => (b.amt || 0) - (a.amt || 0)).map(x => `<tr><td style="white-space:nowrap"><i style="display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px;background:${INV_COL[x.kind] || 'var(--c-ov)'}"></i>${esc(x.kind)}</td><td style="white-space:normal;word-break:keep-all">${x.name ? esc(x.name) : '<span class="muted">개인</span>'}${x.rel ? ` <span class="note">${esc(x.rel)}</span>` : ''}</td><td class="r num">${won(x.amt)}</td><td class="r num">${pct(x.amt / tot * 100, 1)}</td></tr>`).join('');
+  return `<h3 style="margin:16px 0 6px;font-size:15px">투자자 <span class="muted" style="font-weight:400">공시 대상자별 발행내역</span></h3>${bar}
+    <div class="legend">${G.map(([k, , p]) => `<span><i style="background:${INV_COL[k] || 'var(--c-ov)'}"></i>${esc(k)} ${p.toFixed(1)}%</span>`).join('')}</div>
+    <div><table class="list" style="min-width:0;width:100%"><thead><tr><th>구분</th><th>투자자</th><th class="r">금액</th><th class="r">비중</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+}
+window.openDeal = r => openDeal(r);
 function openDeal(r) {
   const head = `<span class="badge ${r.type === 'BOND' ? (r.offering === '공모' ? 'b-pub' : 'b-pvt') : 'b-amd'}" style="margin:0">${esc(kindKey(r))}</span>
     <h2>${esc(r.corp_name)} ${r.series ? esc(r.series) + '회' : ''} ${r.type !== 'BOND' && r.type !== 'RIGHTS' ? esc(r.type) : ''}</h2>
     ${r.corp_cls && r.corp_cls !== 'E' ? `<span class="mk" style="margin:0">${MK[r.corp_cls]}</span>` : ''}
     <button class="x" aria-label="닫기">×</button>`;
-  let f = '';
+  let f = '', extra = '';
   if (['CB', 'BW', 'EB'].includes(r.type)) {
     f = field('권면총액', won(r.amount)) + field('발행방식', offer(r.offering)) + field('이사회 결의일', md(r.board_dt))
       + field('표면이자율', pct(r.coupon, 2)) + field('만기이자율', pct(r.ytm, 2)) + field('만기일', md(r.maturity))
@@ -504,7 +516,13 @@ function openDeal(r) {
       + field('행사 시 주식수', r.shares ? int(r.shares) + '주' : null) + field('발행주식 대비', r.dilution != null ? pct(r.dilution, 2) : null)
       + field('청구 기간', r.exercise_from ? md(r.exercise_from) + ' ~ ' + md(r.exercise_to) : null)
       + field('납입일', md(r.pay_dt)) + field('교환 대상', esc(r.exchange_target)) + field('사채·인수권 분리', esc(r.detachable))
-      + field('대표주관', esc(r.lead));
+      + field('대표주관', esc(r.lead))
+      + field('현재가', r.cur_px ? int(r.cur_px) + '원' + (r.parity != null ? ` <span class="muted">패리티 ${r.parity.toFixed(0)}%</span>` : '') : null)
+      + field('할증률', r.premium != null ? pct(r.premium, 0) : null) + field('기준주가', r.base_price ? int(r.base_price) + '원' : null)
+      + field('Call 비율', r.call_pct != null ? pct(r.call_pct, 1) : null) + field('Call 시작', r.call_m ? r.call_m + '개월' : null)
+      + field('Put 시작', r.put_m ? r.put_m + '개월' : null)
+      + field('투자자 구분', r.investors?.length ? esc(invKinds(r.investors)) : null);
+    if (r.investors?.length) extra = invTable(r.investors);
   } else if (r.type === 'RIGHTS') {
     f = field('조달 금액', won(r.amount)) + field('증자 방식', esc(r.method)) + field('주식 종류', esc(r.stock_kind))
       + field('신주(보통)', r.new_common ? int(r.new_common) + '주' : null) + field('신주(기타)', r.new_other ? int(r.new_other) + '주' : null)
@@ -528,7 +546,7 @@ function openDeal(r) {
       `<div class="share" style="margin:4px 0"><span style="width:90px">${esc(k)}</span><div class="track"><div class="fill" style="width:${v / tot * 100}%"></div></div><span class="num" style="width:70px;text-align:right">${won(v)}</span></div>`).join('');
   }
   box.innerHTML = `<div class="modal-h">${head}</div><div class="modal-b">
-    <div class="fields">${f}</div>${useHtml}
+    <div class="fields">${f}</div>${extra}${useHtml}
     <div id="m-more"></div>
     <div style="display:flex;gap:8px;margin-top:18px;flex-wrap:wrap">
       <a class="btn primary" href="#/company/${encodeURIComponent(r.key)}">회사 정보 보기 →</a>
@@ -599,7 +617,7 @@ const S = {
     chips: ['CB','BW','EB','공모','사모'], chipTest: (r, c) => ['CB','BW','EB'].includes(c) ? r.type === c : r.offering === c,
     cols: [['이사회', r => md(r.board_dt || r.rcept_dt)], ['회사명', company], ['회차', series], ['종류', r => `<span class="type">${r.type}</span>`],
       ['금액', r => won(r.amount), 'r'], ['방식', r => offer(r.offering)], ['표면/만기', r => `${pct(r.coupon, 2)} / ${pct(r.ytm, 2)}`, 'r'],
-      ['행사가', r => int(r.price), 'r'], ['희석', r => pct(r.dilution, 2), 'r'], ['리픽싱 하한', r => int(r.refix_floor), 'r'], ['만기', r => md(r.maturity)], ['', dartLink]],
+      ['행사가', r => int(r.price), 'r'], ['희석', r => pct(r.dilution, 2), 'r'], ['리픽싱 하한', r => int(r.refix_floor), 'r'], ['만기', r => md(r.maturity)], ['투자자', r => r.investors?.length ? esc(invGroups(r.investors).slice(0, 2).map(g => g[0]).join('·')) : DASH], ['', dartLink]],
     note: '출처 DART 주요사항보고서 · 행사가 = 전환가(CB)·행사가(BW)·교환가(EB) · 희석 = 행사 시 발행주식 ÷ 발행주식총수 · 행을 누르면 상세' },
   rights: { label: '유상증자', kpi: '유상증자 결정', pick: r => r.type === 'RIGHTS', date: r => r.board_dt || r.rcept_dt,
     chips: ['보통주','종류주','공모'], chipTest: (r, c) => c === '공모' ? r.offering === '공모' : (r.stock_kind || '').includes(c),

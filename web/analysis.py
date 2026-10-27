@@ -483,3 +483,18 @@ def clip_sentences(text, limit):
             break
         out = (out + " " + p).strip()
     return out or t[:limit].rsplit(" ", 1)[0]
+
+
+_EN = (("에이치디", "HD"), ("엘지", "LG"), ("에스케이", "SK"), ("케이티", "KT"), ("씨제이", "CJ"), ("지에스", "GS"),
+       ("엘에스", "LS"), ("케이씨씨", "KCC"), ("디엘", "DL"), ("에이치엘", "HL"), ("비지에프", "BGF"), ("케이비", "KB"))
+
+
+def norm_target(s):
+    """교환대상 '에이치디현대마린솔루션 주식회사 기명식 보통주' → 'HD현대마린솔루션'"""
+    import re
+    t = re.sub(r"\(주\)|㈜|주식회사|기명식|무기명식|보통주식?|우선주식?|전자등록|주식", " ", s or "")
+    t = re.split(r"[,(]", t)[0].strip().replace(" ", "")
+    for a, b in _EN:
+        if t.startswith(a):
+            t = b + t[len(a):]
+    return t

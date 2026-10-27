@@ -66,6 +66,8 @@ def main():
     ph = load_json("ref/price_hist.json", {})
     ph_dates, ph_close = ph.get("dates") or [], ph.get("close") or {}
     bond_docs = load_json("ref/bond_docs.json", {})
+    mezz_docs = load_json("ref/mezz_docs.json", {})
+    name2code = {v.get("name"): c for c, v in listed.items() if v.get("name")}
     outstanding = load_json("bonds/outstanding.json", {}).get("bonds", [])
 
     code_to_corp = corpcodes
@@ -94,6 +96,15 @@ def main():
                 row["demand_dt"] = doc["demand_dt"]
             if doc.get("rating") and not A.grade_of(row.get("rating")):
                 row["rating"] = doc["rating"]
+        if r.get("type") in ("CB", "BW", "EB"):
+            md_ = mezz_docs.get(r.get("rcept_no")) or {}
+            for k in ("investors", "call_pct", "call_m", "put_m", "premium", "base_price"):
+                if md_.get(k) not in (None, []):
+                    row[k] = md_[k]
+            tgt = r.get("stock_code") if r.get("type") != "EB" else name2code.get(A.norm_target(r.get("exchange_target")))
+            px = (prices.get(tgt) or {}).get("close") if tgt else None
+            if px and r.get("price"):
+                row["cur_px"], row["parity"] = px, round(px / r["price"] * 100, 1)
         if row.get("rating") in ("-", "—"):
             row.pop("rating")
         if row["key"] in info and not row.get("corp_cls"):

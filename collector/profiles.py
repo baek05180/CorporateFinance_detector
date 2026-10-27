@@ -433,6 +433,44 @@ def run(dart, store, today=None):
                                  "found_rating": sum(1 for v in bond_docs.values() if v.get("rating")),
                                  "sec": round(time.time() - t0)}
 
+        # 5-2) 메자닌(CB·BW·EB) 원문: 투자자·콜/풋·할증률 (최근 것부터, 회당 최대 MEZZ_DOC_MAX건)
+        t0 = time.time()
+        mezz_docs = load_json("ref/mezz_docs.json", {})
+        since_m = (today - timedelta(days=config.MEZZ_DOC_DAYS)).isoformat()
+        mtodo = sorted({r["rcept_no"] for r in store.records.values()
+                        if r.get("type") in ("CB", "BW", "EB") and r.get("rcept_no") and (r.get("rcept_dt") or "") >= since_m},
+                       reverse=True)
+        mtodo = [x for x in mtodo if (mezz_docs.get(x) or {}).get("v") != docparse.MEZZ_DOC_VERSION][:config.MEZZ_DOC_MAX]
+
+        def mezz_job(rno):
+            try:
+                docs = dart.document(rno)
+            except DartError as e:
+                return rno, {"error": redact(e)[:100], "v": docparse.MEZZ_DOC_VERSION}, None
+            main = max(docs.values(), key=len) if docs else ""
+            got = docparse.mezz_doc(main)
+            miss = None
+            if not got["investors"] or got["call_pct"] is None or got["premium"] is None:
+                t = docparse.text_of(main)
+                miss = {"rcept": rno, "got": {k: got[k] for k in ("call_pct", "call_m", "put_m", "premium")},
+                        "n_inv": len(got["investors"])}
+                for key, w in (("대상자", 500), ("매도청구권", 700), ("할증", 200), ("기준주가", 200)):
+                    i = t.find(key)
+                    miss[key] = t[max(0, i - 60): i + w] if i >= 0 else ""
+            return rno, got, miss
+
+        try:
+            for rno, got, miss in parallel(mtodo, mezz_job):
+                mezz_docs[rno] = got
+                if miss and len(diag.setdefault("mezz_miss", [])) < 8:
+                    diag["mezz_miss"].append(miss)
+        finally:
+            dump_json("ref/mezz_docs.json", mezz_docs, indent=None)
+            vals = [v for v in mezz_docs.values() if "error" not in v]
+            diag["mezz_docs"] = {"todo": len(mtodo), "total": len(mezz_docs), "with_inv": sum(1 for v in vals if v["investors"]),
+                                 "with_call": sum(1 for v in vals if v["call_pct"] is not None),
+                                 "with_prem": sum(1 for v in vals if v["premium"] is not None), "sec": round(time.time() - t0)}
+
         # 6) 조달 대상 회사 상세 (병렬)
         t0 = time.time()
         watch = resolve_watchlist(read_watchlist(), listed, corpcodes)
