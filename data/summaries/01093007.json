@@ -1,0 +1,66 @@
+{
+ "corp_code": "01093007",
+ "name": "LS에코에너지",
+ "source_rcept": "20260316001365",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "LS에코에너지는 베트남·미얀마 전선 자회사를 지배하는 LS전선 계열 지주회사로, 자회사들이 초고압·중저압 전력케이블과 통신케이블, 구리·알루미늄 선재를 만듭니다.",
+ "facts": "유가증권 상장 2016.09 · 2025 연결 매출 9,601억 · 영업이익 668억 · 순이익 485억",
+ "mix_line": "매출 LS-VINA(전력케이블·소재) 79% · LS Cable Vietnam(통신·전력케이블) 21%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "전기동·알루미늄",
+    "note": "주요 원재료"
+   }
+  ],
+  "company": {
+   "name": "LS에코에너지",
+   "note": "베트남 전선 지주"
+  },
+  "customers": [
+   {
+    "name": "베트남 전력·건설 시장",
+    "note": "현지 내수"
+   },
+   {
+    "name": "해외 수출처",
+    "note": "전력케이블·소재"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "LS-VINA(전력케이블·Cu/Al Rod)",
+    "amount": 988957000000,
+    "share": 78.6
+   },
+   {
+    "name": "LS Cable & System Vietnam(통신·전력케이블)",
+    "amount": 268939000000,
+    "share": 21.4
+   }
+  ],
+  "basis": "2025 (자회사별 매출, 연결조정 전)"
+ },
+ "caption": "LS-VINA 매출이 2023년 7,251억 원에서 2025년 9,890억 원으로 늘었고, 연결 영업이익 668억 원을 냈다.",
+ "business": "2015년 LS전선으로부터 베트남 LS-VINA와 LS Cable & System Vietnam 지분을 현물출자로 인수했고, 미얀마 LS-Gaon Cable도 종속회사로 둔 외국기업 지배 지주회사입니다.",
+ "products": [
+  {
+   "name": "HV·MV·LV 전력케이블",
+   "segment": "LS-VINA",
+   "desc": ""
+  },
+  {
+   "name": "Cu·Al Rod 소재",
+   "segment": "LS-VINA",
+   "desc": ""
+  },
+  {
+   "name": "UTP·광케이블·버스덕트",
+   "segment": "LS Vietnam",
+   "desc": "",
+   "share": 21.4
+  }
+ ],
+ "customers": "베트남 현지 내수가 중심이며 일부를 수출합니다.",
+ "written": "2026-10-27"
+}

@@ -1,0 +1,66 @@
+{
+ "corp_code": "00412348",
+ "name": "LB세미콘",
+ "source_rcept": "20260320000806",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "LB세미콘은 디스플레이 구동칩(DDI) 등의 범핑·테스트·패키징을 위탁받아 하는 반도체 후공정(OSAT) 회사로, 2차전지 재생 소재 사업도 합니다.",
+ "facts": "코스닥 상장 2011.01 · 2025 연결 매출 4,798억 · 영업손실 398억 · 순손실 1,509억",
+ "mix_line": "매출 반도체 후공정 98.8% · 2차전지 재생 1.2%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "Au Target 등",
+    "note": "원재료"
+   }
+  ],
+  "company": {
+   "name": "LB세미콘",
+   "note": "반도체 후공정"
+  },
+  "customers": [
+   {
+    "name": "국내 칩 제조사",
+    "note": "내수 4,218억 직거래"
+   },
+   {
+    "name": "해외 칩 제조사",
+    "note": "수출 524억"
+   },
+   {
+    "name": "양극재 업체",
+    "note": "Black Powder"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "반도체(Bumping·Test·Back-end)",
+    "amount": 474210000000,
+    "share": 98.8
+   },
+   {
+    "name": "2차전지 재생(Black Powder)",
+    "amount": 5572000000,
+    "share": 1.2
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 2023년 4,169억 원에서 2025년 4,798억 원으로 늘었지만 영업손실 398억 원, 순손실 1,509억 원을 냈다.",
+ "business": "반도체 칩과 기판을 연결·보호하는 패키징과 양불 판정 테스트를 하는 OSAT 사업이 주력이며, 매출 100%가 수탁가공입니다. 2차전지 재생 소재(Black Powder) 사업도 합니다.",
+ "products": [
+  {
+   "name": "Bumping·Test",
+   "segment": "반도체",
+   "desc": "DDI 등",
+   "share": 98.8
+  },
+  {
+   "name": "Black Powder",
+   "segment": "2차전지 재생",
+   "desc": "양극재 원료",
+   "share": 1.2
+  }
+ ],
+ "customers": "국내외 칩 제조사와 직거래하고 일부는 대리점을 통합니다.",
+ "written": "2026-10-27"
+}
