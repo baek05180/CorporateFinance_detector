@@ -1,0 +1,92 @@
+{
+ "corp_code": "00540571",
+ "name": "엘디티",
+ "source_rcept": "20260318001358",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "엘디티는 OLED·LED 화면을 켜는 구동칩을 설계하는 팹리스이면서, 무선 IoT 화재 감지 시스템(SSN)도 공급하는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2008-05 상장 · 2025 매출 111억 · 영업이익 3억 · 순이익 12억",
+ "mix_line": "매출 OLED 구동IC 43.5% · SSN 제품 32.0% · SSN 기타 11.4% · LED IC 9.9%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "웨이퍼",
+    "note": "OLED IC 원재료 16.0억"
+   }
+  ],
+  "company": {
+   "name": "엘디티",
+   "note": "디스플레이 구동IC · IoT"
+  },
+  "customers": [
+   {
+    "name": "해외 OLED 고객",
+    "note": "OLED IC 전량 수출"
+   },
+   {
+    "name": "국내 LED 고객",
+    "note": "LED IC"
+   },
+   {
+    "name": "국내 SSN 고객",
+    "note": "스마트 화재 예방"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "OLED 구동 IC",
+    "amount": 4805611009,
+    "share": 43.5
+   },
+   {
+    "name": "SSN 제품",
+    "amount": 3532342757,
+    "share": 32.0
+   },
+   {
+    "name": "SSN 기타",
+    "amount": 1257871970,
+    "share": 11.4
+   },
+   {
+    "name": "LED 구동 IC",
+    "amount": 1098637998,
+    "share": 9.9
+   },
+   {
+    "name": "디스플레이 기타",
+    "amount": 92946691,
+    "share": 0.8
+   },
+   {
+    "name": "기타",
+    "amount": 262589575,
+    "share": 2.4
+   }
+  ],
+  "basis": "2025 별도"
+ },
+ "caption": "OLED 구동IC 매출이 2023년 24.8억 원에서 2024년 46.7억 원, 2025년 48.1억 원으로 늘었다. SSN 제품은 26.3억 원에서 35.3억 원으로 증가했다.",
+ "business": "전류·전압 구동, Timing control, DC/DC 설계기술로 OLED·LED 구동 IC를 개발하는 반도체 사업부와, LoRa·소방용 447MHz·NB-IoT·LTE·5G 무선통신을 쓰는 스마트 화재 예방 등 SSN(Smart Sensor Network) 사업부가 있습니다.",
+ "products": [
+  {
+   "name": "OLED 구동 IC",
+   "segment": "디스플레이 구동IC",
+   "desc": "전량 수출",
+   "share": 43.5
+  },
+  {
+   "name": "LED 구동 IC",
+   "segment": "디스플레이 구동IC",
+   "desc": "",
+   "share": 9.9
+  },
+  {
+   "name": "SSN 장비",
+   "segment": "IoT",
+   "desc": "스마트 화재 예방",
+   "share": 43.4
+  }
+ ],
+ "customers": "OLED 구동IC는 해외, LED 구동IC와 SSN은 국내 고객에 공급합니다."
+}
