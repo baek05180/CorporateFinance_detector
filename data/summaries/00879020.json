@@ -1,0 +1,71 @@
+{
+ "corp_code": "00879020",
+ "name": "유니트론텍",
+ "source_rcept": "20260318001467",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "유니트론텍은 Micron·Microchip·AUO 등 해외 업체의 메모리·비메모리 반도체와 디스플레이를 국내외에 유통하는 코스닥 회사입니다.",
+ "facts": "코스닥 · 1996년 설립 · 2016-02 상장 · 2025 연결 매출 7,690억 · 영업이익 323억 · 순이익 118억",
+ "mix_line": "매출 반도체 72.2% · 디스플레이 외 27.6% · 기타 0.2%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "Micron·Microchip·AUO 등",
+    "note": "반도체 대부분 수입"
+   }
+  ],
+  "company": {
+   "name": "유니트론텍",
+   "note": "반도체 유통"
+  },
+  "customers": [
+   {
+    "name": "국내 전자·자동차 고객사",
+    "note": "발주·Forecast 기반"
+   },
+   {
+    "name": "해외",
+    "note": "수출 388억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "반도체(DRAM·SSD·MCU·Analog IC)",
+    "amount": 555301000000,
+    "share": 72.2
+   },
+   {
+    "name": "디스플레이 외(TFT-LCD)",
+    "amount": 212240000000,
+    "share": 27.6
+   },
+   {
+    "name": "기타",
+    "amount": 1433000000,
+    "share": 0.2
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 5,980.9억 원, 7,122.9억 원, 7,689.7억 원으로 늘었다. 수출은 502.3억 원에서 387.9억 원으로 줄었다.",
+ "business": "DRAM·NAND·NOR·SSD·FRAM 메모리, MCU·Analog IC·AP·GNSS·Wi-Fi 모듈 등 비메모리, TFT-LCD·Mini-LED·Micro-LED 디스플레이를 기술영업으로 유통합니다. 종속회사 오스코도 유통을, 토르드라이브는 자율주행 SW·HW를 개발합니다.",
+ "products": [
+  {
+   "name": "DRAM·SSD",
+   "segment": "메모리",
+   "desc": ""
+  },
+  {
+   "name": "MCU·Analog IC",
+   "segment": "비메모리",
+   "desc": ""
+  },
+  {
+   "name": "TFT-LCD",
+   "segment": "디스플레이",
+   "desc": "",
+   "share": 27.6
+  }
+ ],
+ "customers": "고객 발주와 Forecast에 맞춰 안전재고를 확보한 뒤 수시 납품합니다."
+}

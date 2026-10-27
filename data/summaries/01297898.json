@@ -1,0 +1,61 @@
+{
+ "corp_code": "01297898",
+ "name": "마음AI",
+ "source_rcept": "20260319000767",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "마음AI는 AI 콜센터(AICC)·기업용 LLM 챗봇을 구축하고 자율주행·로봇용 Physical AI를 개발하는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2021-11 상장 · 2025 연결 매출 98억 · 영업손실 64억 · 순손실 77억",
+ "mix_line": "매출 Agent AI 95.3% · 기타 4.7%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "개발 인력",
+    "note": "원재료 없음"
+   }
+  ],
+  "company": {
+   "name": "마음AI",
+   "note": "Agent AI · Physical AI"
+  },
+  "customers": [
+   {
+    "name": "기업·공공기관",
+    "note": "PoC→구축→운영"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Agent AI(AICC·LLM 챗봇)",
+    "amount": 9745000000,
+    "share": 95.3
+   },
+   {
+    "name": "기타",
+    "amount": 479000000,
+    "share": 4.7
+   }
+  ],
+  "basis": "2025 사업별 매출 표"
+ },
+ "caption": "Agent AI 매출이 68.0억 원, 76.3억 원, 97.5억 원으로 늘었다. Physical AI 매출은 2023년 26.5억 원에서 2025년 0원이 됐다.",
+ "business": "자체 STT·TTS·NLP로 AICC를, sLLM·RAG로 기업 전용 LLM 챗봇을 구축합니다. VLA 기반 WoRV 자율주행·자율조작, 사족보행 로봇, 배리어프리 키오스크, 피지컬AI 데이터 팩토리, 서비스 로봇 유통도 합니다.",
+ "products": [
+  {
+   "name": "AICC",
+   "segment": "Agent AI",
+   "desc": "AI 컨택센터"
+  },
+  {
+   "name": "LLM 챗봇",
+   "segment": "Agent AI",
+   "desc": "sLLM·RAG"
+  },
+  {
+   "name": "WoRV",
+   "segment": "Physical AI",
+   "desc": "자율주행·조작"
+  }
+ ],
+ "customers": "기업·공공기관에 직접 제안해 프로젝트형으로 수주합니다."
+}
