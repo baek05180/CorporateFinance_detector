@@ -1,0 +1,73 @@
+{
+ "corp_code": "00991298",
+ "name": "씨이랩",
+ "source_rcept": "20260319000587",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "씨이랩은 GPU 자원을 효율적으로 나눠 쓰게 하는 'AstraGo'와 CCTV 영상 AI 분석 솔루션을 파는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2021-02 상장 · 2025 연결 매출 103억 · 영업손실 32억 · 순손실 31억 · 엔비디아 파트너",
+ "mix_line": "매출 AI Infra 61.5% · Digital Twin 20.5% · Vision AI 17.9%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "H/W(GPU 등)",
+    "note": "NVIDIA"
+   }
+  ],
+  "company": {
+   "name": "씨이랩",
+   "note": "AI 인프라 · 영상 AI"
+  },
+  "customers": [
+   {
+    "name": "국내 기업·기관",
+    "note": "직판·파트너"
+   },
+   {
+    "name": "HPE·Dell·Lenovo",
+    "note": "어플라이언스 파트너"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "AI Infra",
+    "amount": 6321857000,
+    "share": 61.5
+   },
+   {
+    "name": "Digital Twin",
+    "amount": 2107680000,
+    "share": 20.5
+   },
+   {
+    "name": "Vision AI",
+    "amount": 1842783000,
+    "share": 17.9
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 2023년 36.6억 원, 2024년 90.9억 원, 2025년 102.7억 원으로 늘었다. Digital Twin이 9.0억 원에서 21.1억 원으로 증가했다.",
+ "business": "GPU 오케스트레이션 솔루션 AstraGo와 이를 탑재한 GPU 어플라이언스, 실시간 영상분석 XAIVA, 영상 요약·검색 VidiGo, 합성데이터 생성 X-GEN, NVIDIA Omniverse 디지털 트윈을 공급합니다.",
+ "products": [
+  {
+   "name": "AstraGo",
+   "segment": "AI Infra",
+   "desc": "GPU 스케줄링",
+   "share": 61.5
+  },
+  {
+   "name": "X-GEN·Omniverse",
+   "segment": "Digital Twin",
+   "desc": "",
+   "share": 20.5
+  },
+  {
+   "name": "XAIVA·VidiGo",
+   "segment": "Vision AI",
+   "desc": "",
+   "share": 17.9
+  }
+ ],
+ "customers": "직접판매와 판매권을 가진 파트너사를 통해 공급하며 대부분 내수입니다."
+}
