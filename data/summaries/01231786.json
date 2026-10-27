@@ -1,0 +1,76 @@
+{
+ "corp_code": "01231786",
+ "name": "엑스페릭스",
+ "source_rcept": "20260318001711",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "엑스페릭스는 FBI 인증 수준의 지문 등록·인증기, 여권판독기 같은 생체인식 기기를 만들어 주로 해외 정부·기관 사업자에 수출하고, 휴대폰 액세서리 사업도 하는 회사입니다.",
+ "facts": "코스닥 상장 2019.08 · 2025 연결 매출 215억 · 순손실 204억 · 제품 수출 82%",
+ "mix_line": "매출 지문인식(Biometric) 70.9% · 휴대폰 액세서리 18% · eDocument 4.7%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "센서·전자부품",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "엑스페릭스",
+   "note": "생체인식 기기"
+  },
+  "customers": [
+   {
+    "name": "해외 신분증·전자정부 사업자",
+    "note": "지문 등록·인증기"
+   },
+   {
+    "name": "거래처A",
+    "note": "매출 37억"
+   },
+   {
+    "name": "거래처B",
+    "note": "27억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Biometric Solutions(지문 기기)",
+    "amount": 15228000000,
+    "share": 70.9
+   },
+   {
+    "name": "휴대폰 액세서리",
+    "amount": 3857000000,
+    "share": 17.9
+   },
+   {
+    "name": "eDocument Solutions(여권판독기 등)",
+    "amount": 1002000000,
+    "share": 4.7
+   },
+   {
+    "name": "상품 등",
+    "amount": 1400000000,
+    "share": 6.5
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "지문 기기 매출이 110억 원에서 152억 원으로 늘었지만 순손실 204억 원을 냈다. 매출 10% 이상 고객이 두 곳이다.",
+ "business": "바이오 정보 등록·인증용 디바이스와 솔루션을 자체 개발·생산합니다. Biometric Solutions는 지문 등록·인증기를, eDocument Solutions는 여권판독기·장문스캐너·지문인식 스마트카드 리더를 팝니다.",
+ "products": [
+  {
+   "name": "지문 등록·인증 디바이스",
+   "segment": "Biometric",
+   "desc": "FAP20·FAP30",
+   "share": 70.9
+  },
+  {
+   "name": "여권판독기·장문스캐너",
+   "segment": "eDocument",
+   "desc": "",
+   "share": 4.7
+  }
+ ],
+ "customers": "제품 매출의 82%가 수출이며, 매출의 10% 이상인 단일 고객은 거래처A·거래처B 두 곳입니다.",
+ "written": "2026-10-27"
+}
