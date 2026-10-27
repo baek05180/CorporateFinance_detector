@@ -1,0 +1,77 @@
+{
+ "corp_code": "00152127",
+ "name": "심텍홀딩스",
+ "source_rcept": "20260318001388",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "심텍홀딩스는 반도체 패키지 기판과 메모리 모듈 기판을 만드는 심텍을 거느린 지주회사입니다.",
+ "facts": "코스닥 상장 2000.01 · 2025 연결 매출 1.53조 · 영업손실 343억 · 순손실 1,511억",
+ "mix_line": "매출 Package Substrate 69.6% · Memory Module PCB 22.7% · 지주 1.0%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "PCB 원자재",
+    "note": "심텍"
+   }
+  ],
+  "company": {
+   "name": "심텍홀딩스",
+   "note": "PCB 지주회사"
+  },
+  "customers": [
+   {
+    "name": "글로벌 반도체 회사",
+    "note": "PCB 수출 1.19조"
+   },
+   {
+    "name": "국내 반도체 회사",
+    "note": "2,163억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Package Substrate",
+    "amount": 1063840000000,
+    "share": 69.6
+   },
+   {
+    "name": "Memory Module PCB",
+    "amount": 346720000000,
+    "share": 22.7
+   },
+   {
+    "name": "기타 PCB·임가공",
+    "amount": 132841000000,
+    "share": 8.7
+   },
+   {
+    "name": "지주(배당·상표권·임대)",
+    "amount": 15936000000,
+    "share": 1.0
+   },
+   {
+    "name": "연결조정",
+    "amount": -31253000000,
+    "share": -2.0
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "패키지 기판 매출이 2023년 7,980억 원에서 2025년 1.06조 원으로 늘었지만 순손실 1,511억 원을 냈다.",
+ "business": "2015년 인적분할로 지분투자·브랜드 관리·경영자문·임대를 맡는 지주회사가 됐고, 사업회사 심텍이 반도체용 PCB를 제조·판매합니다.",
+ "products": [
+  {
+   "name": "Package Substrate",
+   "segment": "PCB",
+   "desc": "",
+   "share": 69.6
+  },
+  {
+   "name": "Memory Module PCB",
+   "segment": "PCB",
+   "desc": "",
+   "share": 22.7
+  }
+ ],
+ "customers": "PCB는 대부분 해외 반도체 회사로 수출합니다."
+}

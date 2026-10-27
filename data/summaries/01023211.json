@@ -1,0 +1,83 @@
+{
+ "corp_code": "01023211",
+ "name": "와이제이링크",
+ "source_rcept": "20260319000950",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "와이제이링크는 전자부품을 기판에 붙이는 SMT 생산라인에서 기판을 옮기고 쌓고 바코드를 새기는 컨베이어·로더·레이저마킹 장비를 만들어 주로 해외 공장에 파는 회사입니다.",
+ "facts": "코스닥 상장 2024.10 · 8개국 법인 · 2025 연결 매출 461억 · 영업손실 35억 · 수출 87%",
+ "mix_line": "매출(별도) Conveyor 32.4% · Loader/Unloader 17.8% · Laser Marking 17.4% · Buffer 11.3%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "원재료",
+    "note": "대부분 국내 조달"
+   }
+  ],
+  "company": {
+   "name": "와이제이링크",
+   "note": "SMT 공정 장비"
+  },
+  "customers": [
+   {
+    "name": "해외 전자제품 공장",
+    "note": "베트남·멕시코·인도 등, 수출 374억"
+   },
+   {
+    "name": "국내 고객",
+    "note": ""
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Conveyor",
+    "amount": 13943000000,
+    "share": 32.4
+   },
+   {
+    "name": "Loader/Unloader",
+    "amount": 7672000000,
+    "share": 17.8
+   },
+   {
+    "name": "Laser Marking",
+    "amount": 7469000000,
+    "share": 17.4
+   },
+   {
+    "name": "Buffer",
+    "amount": 4868000000,
+    "share": 11.3
+   },
+   {
+    "name": "그 외 장비·부품",
+    "amount": 9085000000,
+    "share": 21.1
+   }
+  ],
+  "basis": "2025 별도 (매출 430억)"
+ },
+ "caption": "별도 매출이 2023년 486억 원에서 2025년 430억 원으로 줄었고 영업손실 35억 원을 냈다.",
+ "business": "SMT 라인 자동화를 위한 이송·추적 장비(Conveyor, Loader/Unloader, Buffer, Laser Marking 등)를 제조하며, 한국·베트남·멕시코·독일·일본·중국·인도·태국 8개국 법인과 30여 마케팅 파트너를 두고 있습니다.",
+ "products": [
+  {
+   "name": "Conveyor",
+   "segment": "SMT 장비",
+   "desc": "PCB 이송",
+   "share": 32.4
+  },
+  {
+   "name": "Loader/Unloader",
+   "segment": "SMT 장비",
+   "desc": "",
+   "share": 17.8
+  },
+  {
+   "name": "Laser Marking",
+   "segment": "SMT 장비",
+   "desc": "바코드 마킹",
+   "share": 17.4
+  }
+ ],
+ "customers": "글로벌 전자 제조사 해외 공장에 직접판매·대리점·종속회사를 통해 공급합니다."
+}

@@ -1,0 +1,60 @@
+{
+ "corp_code": "01782004",
+ "name": "뉴로핏",
+ "source_rcept": "20260320001389",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "뉴로핏은 AI로 뇌 MRI·PET 영상을 분석해 알츠하이머병 진단과 항아밀로이드 치료제 처방·부작용 관리를 돕는 소프트웨어를 만드는 의료 AI 회사입니다.",
+ "facts": "코스닥 상장 2025.07 · 2025 연결 매출 26억 · 영업손실 166억 · 순손실 224억",
+ "mix_line": "매출 뇌영상 분석 SW·뇌자극 치료 솔루션",
+ "flow": {
+  "inputs": [
+   {
+    "name": "조립PC·부재료",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "뉴로핏",
+   "note": "뇌영상 AI"
+  },
+  "customers": [
+   {
+    "name": "국내 병원",
+    "note": "내수 20억"
+   },
+   {
+    "name": "해외 대리점",
+    "note": ""
+   }
+  ],
+  "revenue": [
+   {
+    "name": "뇌영상 분석 SW 등",
+    "amount": 2620000000,
+    "share": null
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출 26억 원에 영업손실 166억 원을 냈다. 국내 매출은 2023년 15억 원에서 2025년 20억 원으로 늘었다.",
+ "business": "Neurophet AQUA(MRI 뇌 위축·병변 분석), SCALE PET(PET 정량 분석), AQUA AD(알츠하이머 진단·항아밀로이드 치료 관리 통합 솔루션)와 뇌자극치료 솔루션을 개발합니다.",
+ "products": [
+  {
+   "name": "Neurophet AQUA",
+   "segment": "MRI 분석",
+   "desc": ""
+  },
+  {
+   "name": "Neurophet SCALE PET",
+   "segment": "PET 분석",
+   "desc": ""
+  },
+  {
+   "name": "Neurophet AQUA AD",
+   "segment": "알츠하이머",
+   "desc": ""
+  }
+ ],
+ "customers": "국내 병원에 직접, 해외는 현지 대리점을 통해 판매합니다."
+}
