@@ -1,0 +1,67 @@
+{
+ "corp_code": "00915508",
+ "name": "알엔투테크놀로지",
+ "source_rcept": "20260323001654",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "알엔투테크놀로지는 LTCC 세라믹 소재로 통신기지국용 커플러 같은 적층 부품(MLC)과 의료기기용 세라믹 기판(MCP)을 만들어 주로 수출하는 회사입니다.",
+ "facts": "코스닥 상장 2016.06 · 2025 연결 매출 187억 · 영업손실 34억 · 순손실 39억",
+ "mix_line": "매출 MCP(세라믹 기판) 45.2% · MLC(적층 부품) 43.3% · 소재(파우더) 11.5%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "LTCC 소재",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "알엔투테크놀로지",
+   "note": "세라믹 RF 부품"
+  },
+  "customers": [
+   {
+    "name": "해외 통신장비 업체",
+    "note": "MLC 수출 53억"
+   },
+   {
+    "name": "의료기기 업체",
+    "note": "MCP 내수 44억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "MCP",
+    "amount": 8216381000,
+    "share": 45.2
+   },
+   {
+    "name": "MLC",
+    "amount": 7870409000,
+    "share": 43.3
+   },
+   {
+    "name": "Material",
+    "amount": 2079151000,
+    "share": 11.5
+   }
+  ],
+  "basis": "2025 별도"
+ },
+ "caption": "별도 매출이 143억 원에서 182억 원으로 27.8% 늘었지만 영업손실을 냈다.",
+ "business": "MLC 사업부는 커플러·Quadrifilar·Doherty Combiner 같은 적층 RF 부품을, MCP 사업부는 의료기기용 세라믹 기판(파운드리 포함)을, Material 사업부는 세라믹 파우더를 만듭니다.",
+ "products": [
+  {
+   "name": "세라믹 기판",
+   "segment": "MCP",
+   "desc": "의료기기용",
+   "share": 45.2
+  },
+  {
+   "name": "Coupler 등",
+   "segment": "MLC",
+   "desc": "이동통신",
+   "share": 43.3
+  }
+ ],
+ "customers": "MLC는 주로 수출하고, MCP는 국내 비중이 큽니다.",
+ "written": "2026-10-27"
+}

@@ -1,0 +1,59 @@
+{
+ "corp_code": "00186559",
+ "name": "아이티센씨티에스",
+ "source_rcept": "20260323001544",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "아이티센씨티에스(옛 콤텍시스템)는 공공·금융·기업 고객의 AI·클라우드 인프라를 컨설팅·구축·운영하는 IT 서비스 회사입니다.",
+ "facts": "유가증권 상장 1997.02 · 1983 설립 · 2025 연결 매출 1.10조 · 영업이익 236억 · 순이익 926억",
+ "mix_line": "매출 AI·클라우드 인프라 구축·운영",
+ "flow": {
+  "inputs": [
+   {
+    "name": "IT 장비·솔루션",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "아이티센씨티에스",
+   "note": "AI·클라우드 인프라"
+  },
+  "customers": [
+   {
+    "name": "공공기관",
+    "note": "Captive 고객"
+   },
+   {
+    "name": "금융기관",
+    "note": ""
+   },
+   {
+    "name": "엔터프라이즈",
+    "note": ""
+   }
+  ],
+  "revenue": [
+   {
+    "name": "AI·클라우드 인프라 사업",
+    "amount": 1095210000000,
+    "share": null
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "2025년 연결 매출 1.10조 원, 영업이익 236억 원, 순이익 926억 원을 냈다.",
+ "business": "AI 솔루션 구축, AI·클라우드 인프라 운영, AI·클라우드 컨설팅을 하며 AI·HPC 솔루션과 AI 데이터센터 구축·운영 사업을 확대하고 있습니다.",
+ "products": [
+  {
+   "name": "AI·클라우드 컨설팅",
+   "segment": "Consulting",
+   "desc": ""
+  },
+  {
+   "name": "Private·Public·Hybrid Cloud 구축",
+   "segment": "AI & Cloud",
+   "desc": ""
+  }
+ ],
+ "customers": "공공·금융·엔터프라이즈 분야의 주요 Captive 고객을 기반으로 합니다.",
+ "written": "2026-10-27"
+}
