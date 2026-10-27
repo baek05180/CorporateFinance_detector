@@ -1,0 +1,74 @@
+{
+ "corp_code": "00166315",
+ "name": "화신",
+ "source_rcept": "20260316000461",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "화신은 차량 하부 섀시 부품(멤버·암·CTBA)과 연료탱크·패널, 전기차 배터리 팩 케이스를 현대차·기아 계열에 공급하는 코스피 부품 회사입니다.",
+ "facts": "코스피 · 1994-01 상장 · 2025 연결 매출 1.96조 · 영업이익 1,025억 · 순이익 667억",
+ "mix_line": "매출 Chassis Parts 67.3% · Body Parts 12.4% · Electrification 등 20.3%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "철판",
+    "note": "현대자동차·현대모비스 외, 4,500.0억"
+   },
+   {
+    "name": "Bushing",
+    "note": "진동 흡수"
+   }
+  ],
+  "company": {
+   "name": "화신",
+   "note": "섀시 · 차체 부품"
+  },
+  "customers": [
+   {
+    "name": "현대기아차그룹 계열사",
+    "note": "OEM"
+   },
+   {
+    "name": "해외 현지법인",
+    "note": "금형·장비 수출"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Chassis Parts(Member·Arm·CTBA·Module)",
+    "amount": 1320900000000,
+    "share": 67.3
+   },
+   {
+    "name": "Body Parts(F/TANK·PNL)",
+    "amount": 242700000000,
+    "share": 12.4
+   },
+   {
+    "name": "Electrification Parts 외",
+    "amount": 398883000000,
+    "share": 20.3
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 1조 8,027.6억 원, 1조 7,123.2억 원, 1조 9,624.8억 원으로 움직였다. Member류가 3,359억 원에서 4,763억 원으로 늘었다.",
+ "business": "엔진 진동을 차체에 덜 전달하는 Member류, 바퀴를 지지하는 Arm류, 후륜 CTBA와 모듈 같은 섀시 부품, 연료탱크·패널 같은 차체 부품, 전기차 배터리 캐리어를 담는 Battery Pack Case를 모듈·개별품으로 납품합니다.",
+ "products": [
+  {
+   "name": "Member류",
+   "segment": "Chassis",
+   "desc": ""
+  },
+  {
+   "name": "Arm류",
+   "segment": "Chassis",
+   "desc": ""
+  },
+  {
+   "name": "Battery Pack Case",
+   "segment": "Electrification",
+   "desc": "전기차"
+  }
+ ],
+ "customers": "완성차와 신차를 공동 개발한 뒤 출시 시점의 차종별 수량으로 생산·납품합니다."
+}

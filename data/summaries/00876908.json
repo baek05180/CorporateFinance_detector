@@ -1,0 +1,50 @@
+{
+ "corp_code": "00876908",
+ "name": "모트렉스",
+ "source_rcept": "20260318000967",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "모트렉스는 차량용 인포테인먼트(IVI)·후석 디스플레이·카메라·무선충전 같은 전장품을 개발해 완성차에 공급하는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2017-08 상장 · 2025 연결 매출 7,023억 · 영업이익 418억 · 순이익 125억",
+ "mix_line": "사업 Display · Vision · Convenience/EV 솔루션",
+ "flow": {
+  "inputs": [
+   {
+    "name": "회로재·LCD",
+    "note": "가격 상승 추세"
+   }
+  ],
+  "company": {
+   "name": "모트렉스",
+   "note": "차량 전장"
+  },
+  "customers": [
+   {
+    "name": "글로벌 완성차",
+    "note": "PIO·DIO 장착"
+   }
+  ],
+  "revenue": [],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 5,310.3억 원, 5,868.9억 원, 7,022.7억 원으로 늘었다.",
+ "business": "Automotive HMI 기술로 무선 Android Auto·CarPlay·텔레매틱스를 갖춘 IVI, 후석 엔터테인먼트(RSE), 디지털 클러스터, 후방·어라운드뷰 카메라와 운전자 모니터링, 공기청정기·무선충전·EV 충전기·PBV 솔루션을 만듭니다.",
+ "products": [
+  {
+   "name": "IVI",
+   "segment": "Display",
+   "desc": "인포테인먼트"
+  },
+  {
+   "name": "RSE",
+   "segment": "Display",
+   "desc": "후석 엔터테인먼트"
+  },
+  {
+   "name": "어라운드뷰",
+   "segment": "Vision",
+   "desc": ""
+  }
+ ],
+ "customers": "완성차 업체에 선정된 뒤 공장 장착(PIO)이나 딜러 장착(DIO)으로 공급합니다."
+}
