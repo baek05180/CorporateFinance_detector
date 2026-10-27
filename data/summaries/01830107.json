@@ -1,0 +1,63 @@
+{
+ "corp_code": "01830107",
+ "name": "퓨리오젠",
+ "source_rcept": "20260330001468",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "퓨리오젠은 항체 의약품을 정제할 때 쓰는 아가로스 기반 크로마토그래피 레진(Protein A·G 등)을 만드는 바이오 소재 회사로, 매출은 아직 작습니다.",
+ "facts": "2025 매출 2.5억 · 영업손실 60억 · 순손실 105억",
+ "mix_line": "매출 Protein A 레진 81.7% · Protein G 레진 12.6%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "아가 분말·화학원료·단백질",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "퓨리오젠",
+   "note": "크로마토그래피 레진"
+  },
+  "customers": [
+   {
+    "name": "국내외 바이오 의약품 생산사",
+    "note": "해외는 달러 결제"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Puriose ProA",
+    "amount": 204942220,
+    "share": 81.7
+   },
+   {
+    "name": "Puriose ProG",
+    "amount": 31690000,
+    "share": 12.6
+   },
+   {
+    "name": "그 외 레진",
+    "amount": 13989558,
+    "share": 5.6
+   }
+  ],
+  "basis": "2025 (그 외는 매출과의 차액)"
+ },
+ "caption": "매출이 1.0억 원에서 2.5억 원으로 늘었지만 순손실 105억 원을 냈다.",
+ "business": "스웨덴 Bio-Works로부터 구형 아가로스 비드 제조 기술을 이전받아 고도화했고, 친화성·이온교환·소수성 상호작용 레진을 Puriose 브랜드로 상업화했습니다.",
+ "products": [
+  {
+   "name": "Puriose ProA HP/FF",
+   "segment": "친화성 레진",
+   "desc": "항체 정제",
+   "share": 81.7
+  },
+  {
+   "name": "Puriose ProG HP/FF",
+   "segment": "친화성 레진",
+   "desc": "",
+   "share": 12.6
+  }
+ ],
+ "customers": "해외 전시·컨퍼런스와 샘플 제공으로 신규 고객을 확보하고 있습니다.",
+ "written": "2026-10-27"
+}
