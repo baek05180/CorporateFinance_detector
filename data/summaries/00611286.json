@@ -1,0 +1,62 @@
+{
+ "corp_code": "00611286",
+ "name": "블루탑",
+ "source_rcept": "20260323001028",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "블루탑은 자동차 전장용 PCB와 통신용 고다층 PCB를 만들어 현대·기아 등과 통신사 장비에 공급하는 코넥스 회사입니다.",
+ "facts": "코넥스 · 2016-08 상장 · 전장 PCB 매출 약 88%",
+ "mix_line": "매출 전장 PCB 약 88% · 통신 6.5% · 기타 4.0% · 모바일 1.5%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "CCL",
+    "note": "원재료 57%"
+   },
+   {
+    "name": "CU",
+    "note": "36%"
+   }
+  ],
+  "company": {
+   "name": "블루탑",
+   "note": "PCB"
+  },
+  "customers": [
+   {
+    "name": "현대·기아·크라이슬러·스바루",
+    "note": "전장용"
+   },
+   {
+    "name": "KT·LGU+·SKT",
+    "note": "통신용 고다층"
+   },
+   {
+    "name": "방산",
+    "note": "천궁 Ⅱ 레이더"
+   }
+  ],
+  "revenue": [],
+  "basis": "2025"
+ },
+ "caption": "판매경로별 매출에서 전장 PCB 기존 고객사 납품이 87.6%를 차지한다.",
+ "business": "양면·다층 PCB를 만들어 정션박스·FATC·멀티 터미널·AVNT·BCM·ABS·TPMS 등 차량 전장품과 통신 시스템·무선 장비, 천궁 Ⅱ 레이더용 6층 PCB에 공급합니다.",
+ "products": [
+  {
+   "name": "자동차 전장 PCB",
+   "segment": "전장",
+   "desc": "정션박스·BCM"
+  },
+  {
+   "name": "고다층 PCB",
+   "segment": "통신",
+   "desc": ""
+  },
+  {
+   "name": "천궁 Ⅱ 레이더 PCB",
+   "segment": "방산",
+   "desc": "6L Multi"
+  }
+ ],
+ "customers": "국내 기존 고객사 납품이 대부분이고 중국·멕시코·베트남 현지 납품도 있습니다."
+}

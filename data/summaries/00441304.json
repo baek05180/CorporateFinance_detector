@@ -1,0 +1,66 @@
+{
+ "corp_code": "00441304",
+ "name": "가온그룹",
+ "source_rcept": "20260317000844",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "가온그룹은 방송통신 사업자에 AI 셋톱박스·OTT 기기와 공유기·게이트웨이 같은 네트워크 장비를 공급하는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2005-07 상장 · 2025 연결 매출 5,176억 · 영업이익 125억 · 순이익 58억 · 수출 64%",
+ "mix_line": "매출 OTT·AI 디바이스 60.3% · 네트워크(가온브로드밴드) 39.7%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "메인 칩·튜너·메모리",
+    "note": "PCB·SMPS"
+   }
+  ],
+  "company": {
+   "name": "가온그룹",
+   "note": "OTT · 네트워크"
+  },
+  "customers": [
+   {
+    "name": "국내외 방송통신 사업자",
+    "note": ""
+   },
+   {
+    "name": "해외",
+    "note": "수출 3,330억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "OTT·AI 디바이스 등",
+    "amount": 312114000000,
+    "share": 60.3
+   },
+   {
+    "name": "네트워크(Broadband CPE)",
+    "amount": 205436000000,
+    "share": 39.7
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 5,363.8억 원, 4,893.4억 원, 5,175.5억 원으로 움직였다.",
+ "business": "AI 솔루션을 결합한 OTT 셋톱박스·AI 디바이스와 로봇 플랫폼을 공급하고, 2020년 세운 가온브로드밴드가 AP 라우터, Wi-Fi 리피터, DOCSIS 게이트웨이, PON, FWA 등 Broadband CPE와 원격관리 솔루션 KRMS를 공급합니다.",
+ "products": [
+  {
+   "name": "AI OTT 셋톱박스",
+   "segment": "OTT",
+   "desc": "KAON",
+   "share": 60.3
+  },
+  {
+   "name": "DOCSIS Gateway",
+   "segment": "네트워크",
+   "desc": ""
+  },
+  {
+   "name": "KRMS",
+   "segment": "네트워크",
+   "desc": "원격 관리"
+  }
+ ],
+ "customers": "나라별 고객사 요구에 맞춘 제품을 공급합니다."
+}

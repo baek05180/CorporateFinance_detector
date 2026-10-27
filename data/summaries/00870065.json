@@ -1,0 +1,71 @@
+{
+ "corp_code": "00870065",
+ "name": "쓰리에이로직스",
+ "source_rcept": "20260320001205",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "쓰리에이로직스는 디지털도어락·자동차·전자가격표시기(ESL)에 들어가는 NFC 태그·리더 칩을 설계하는 코스닥 팹리스 회사입니다.",
+ "facts": "코스닥 · 2024-12 상장 · 2025 매출 145억 · 영업손실 27억 · 순손실 36억 · 수출 57%",
+ "mix_line": "매출 NFC Tag IC 57.4% · NFC Reader IC 24.3% · 무선통신모듈·용역 등 18.4%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "Wafer",
+    "note": "해외 37.4억 · 국내"
+   }
+  ],
+  "company": {
+   "name": "쓰리에이로직스",
+   "note": "NFC SoC"
+  },
+  "customers": [
+   {
+    "name": "도어락·차량 업체",
+    "note": "Tag IC"
+   },
+   {
+    "name": "ESL·정품인증 업체",
+    "note": "Reader IC"
+   },
+   {
+    "name": "해외",
+    "note": "수출 82.6억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "NFC Tag IC",
+    "amount": 8313921000,
+    "share": 57.4
+   },
+   {
+    "name": "NFC Reader IC",
+    "amount": 3516315000,
+    "share": 24.3
+   },
+   {
+    "name": "무선통신모듈·용역 등",
+    "amount": 2663814000,
+    "share": 18.4
+   }
+  ],
+  "basis": "2025 별도"
+ },
+ "caption": "매출이 141.6억 원, 181.1억 원, 144.9억 원으로 움직였다. 내수가 100.9억 원에서 62.4억 원으로 줄었다.",
+ "business": "13.56MHz 근거리 무선통신 NFC의 Tag IC와 Reader IC를 설계해 디지털도어락·차량, ESL, 정품인증, 물류관리에 공급하고 무선통신·NFC 모듈도 만듭니다.",
+ "products": [
+  {
+   "name": "NFC Tag IC",
+   "segment": "NFC",
+   "desc": "도어락·차량",
+   "share": 57.4
+  },
+  {
+   "name": "NFC Reader IC",
+   "segment": "NFC",
+   "desc": "ESL·정품인증",
+   "share": 24.3
+  }
+ ],
+ "customers": "엔지니어·품질·공정 담당으로 프로젝트별 TFT를 꾸려 기술영업을 합니다."
+}

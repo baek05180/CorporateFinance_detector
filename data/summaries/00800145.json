@@ -1,0 +1,92 @@
+{
+ "corp_code": "00800145",
+ "name": "서진오토모티브",
+ "source_rcept": "20260323001419",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "서진오토모티브는 자동차 클러치와 자동변속기 부품을 만들고, 범퍼 회사 에코플라스틱 등을 자회사로 둔 코스닥 부품 회사입니다.",
+ "facts": "코스닥 · 2010-05 상장 · 2025 연결 매출 2.94조 · 영업이익 268억 · 순손실 230억",
+ "mix_line": "본사 매출 A/T PARTS 37.5% · CLUTCH 31.1% · 상품 14.8% · TMED-2 13.2%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "STEEL",
+    "note": "CC/CD·AT PART 제조"
+   }
+  ],
+  "company": {
+   "name": "서진오토모티브",
+   "note": "동력전달부품"
+  },
+  "customers": [
+   {
+    "name": "현대자동차·기아",
+    "note": "OEM"
+   },
+   {
+    "name": "현대모비스",
+    "note": "보수용"
+   },
+   {
+    "name": "해외",
+    "note": "본사 수출 1,331.5억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "A/T PARTS",
+    "amount": 82359000000,
+    "share": 37.5
+   },
+   {
+    "name": "CLUTCH",
+    "amount": 68343000000,
+    "share": 31.1
+   },
+   {
+    "name": "CLUTCH 등 상품",
+    "amount": 32487000000,
+    "share": 14.8
+   },
+   {
+    "name": "TMED-2",
+    "amount": 29041000000,
+    "share": 13.2
+   },
+   {
+    "name": "SCRAP",
+    "amount": 4052000000,
+    "share": 1.8
+   },
+   {
+    "name": "기타(기동장치)",
+    "amount": 3452000000,
+    "share": 1.6
+   }
+  ],
+  "basis": "2025 별도"
+ },
+ "caption": "본사 매출이 1,810.4억 원에서 2,197.3억 원으로 늘었고, 2025년 하이브리드용 TMED-2 부품이 290.4억 원 새로 더해졌다.",
+ "business": "수동변속기용 CLUTCH, 자동변속기용 A/T PARTS, 진동·소음을 줄이는 TMED-2 감쇠장치를 SECO 브랜드로 만듭니다. 에코플라스틱·아이아·코모스·중국 서진기차배건이 종속회사이고 세코글로벌이 부품 무역을 합니다.",
+ "products": [
+  {
+   "name": "A/T PARTS",
+   "segment": "동력전달",
+   "desc": "",
+   "share": 37.5
+  },
+  {
+   "name": "CLUTCH",
+   "segment": "동력전달",
+   "desc": "SECO",
+   "share": 31.1
+  },
+  {
+   "name": "TMED-2",
+   "segment": "동력전달",
+   "desc": "감쇠장치",
+   "share": 13.2
+  }
+ ],
+ "customers": "현대·기아에 완성차 생산계획에 따라 OEM 공급합니다."
+}
