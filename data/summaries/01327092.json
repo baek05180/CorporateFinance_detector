@@ -1,0 +1,77 @@
+{
+ "corp_code": "01327092",
+ "name": "라닉스",
+ "source_rcept": "20260318000717",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "라닉스는 차량 단거리 통신용 DSRC 칩과 차량 보안칩, V2X 통신모뎀을 만드는 코스닥 시스템반도체 회사입니다.",
+ "facts": "코스닥 · 2019-09 상장 · 2025 연결 매출 75억 · 영업손실 61억 · 순손실 78억 · 상위 4개사 73.5%",
+ "mix_line": "매출 Automotive MCU 74.3% · Smart Life 25.5% · Autonomous Vehicle 0.3%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "원재료",
+    "note": "국내 9.1억·수입 6.7억"
+   },
+   {
+    "name": "외주가공",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "라닉스",
+   "note": "자동차·IoT 통신칩"
+  },
+  "customers": [
+   {
+    "name": "DSRC 모듈 제작업체",
+    "note": "주요 4개사 73.5%"
+   },
+   {
+    "name": "정부기관·연구소",
+    "note": "용역"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Automotive MCU(DSRC·보안)",
+    "amount": 5547000000,
+    "share": 74.3
+   },
+   {
+    "name": "Smart Life",
+    "amount": 1901000000,
+    "share": 25.5
+   },
+   {
+    "name": "Autonomous Vehicle",
+    "amount": 19000000,
+    "share": 0.3
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 2023년 115.4억 원, 2024년 77.1억 원, 2025년 74.7억 원으로 줄었다. Smart Life 매출은 10.3억 원에서 19.0억 원으로 늘었다.",
+ "business": "DSRC 칩(MaaT 시리즈)과 연동 RF칩, 보안칩(RS 시리즈·HSM·양자보안), V2X 모뎀·RSU/OBU, 스마트워치·AI 돌봄센서·레이더 센서 등 Smart Life 제품을 개발합니다.",
+ "products": [
+  {
+   "name": "MaaT DSRC 칩",
+   "segment": "Automotive MCU",
+   "desc": "",
+   "share": 74.3
+  },
+  {
+   "name": "RPM100·레이더 센서",
+   "segment": "Smart Life",
+   "desc": "",
+   "share": 25.5
+  },
+  {
+   "name": "T-WAVE·V2X RSU/OBU",
+   "segment": "자율주행",
+   "desc": "",
+   "share": 0.3
+  }
+ ],
+ "customers": "DSRC 모듈 제작업체가 주 고객이며, 상위 4개사가 매출의 73.5%입니다."
+}
