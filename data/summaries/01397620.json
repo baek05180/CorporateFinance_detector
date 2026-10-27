@@ -1,0 +1,69 @@
+{
+ "corp_code": "01397620",
+ "name": "루닛",
+ "source_rcept": "20260323001574",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "루닛은 흉부 엑스레이·유방촬영 영상에서 암 의심 부위를 찾아 주는 AI 'Lunit INSIGHT'와 암 조직 분석 AI 'Lunit SCOPE'를 파는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2013년 설립 · 2022-07 상장 · 2025 연결 매출 831억 · 영업손실 831억 · 수출 92%",
+ "mix_line": "매출 해외 92.4% · 국내 7.6%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "개발 인력",
+    "note": "원재료 없음"
+   }
+  ],
+  "company": {
+   "name": "루닛",
+   "note": "의료 AI"
+  },
+  "customers": [
+   {
+    "name": "GE·Philips·Fujifilm·Hologic 등",
+    "note": "글로벌 파트너"
+   },
+   {
+    "name": "병원·검진기관",
+    "note": "직접 계약"
+   },
+   {
+    "name": "제약사",
+    "note": "SCOPE 연구용"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "해외",
+    "amount": 76799277000,
+    "share": 92.4
+   },
+   {
+    "name": "국내",
+    "amount": 6330018000,
+    "share": 7.6
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 250.8억 원, 541.8억 원, 831.3억 원으로 늘었지만 영업손실 831.0억 원을 냈다.",
+ "business": "흉부 엑스레이 10가지 이상소견 검출(INSIGHT CXR), 유방촬영·단층촬영 암 검출(MMG·DBT)과 위험도 예측 AI를 만들고, 2024년 인수한 Lunit International(구 Volpara)로 유방암 검진 전주기 플랫폼을, Lunit SCOPE로 종양 바이오마커 분석을 제공합니다.",
+ "products": [
+  {
+   "name": "Lunit INSIGHT CXR·MMG",
+   "segment": "Cancer Screening",
+   "desc": ""
+  },
+  {
+   "name": "Volpara Analytics",
+   "segment": "유방암 플랫폼",
+   "desc": ""
+  },
+  {
+   "name": "Lunit SCOPE",
+   "segment": "Oncology",
+   "desc": "바이오마커"
+  }
+ ],
+ "customers": "국내외 고객과 직접 또는 글로벌 의료기기 파트너사를 통해 계약합니다."
+}

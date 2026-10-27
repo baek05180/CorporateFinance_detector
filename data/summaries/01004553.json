@@ -1,0 +1,66 @@
+{
+ "corp_code": "01004553",
+ "name": "엘에스아이앤디",
+ "source_rcept": "20260331000916",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "엘에스아이앤디는 미국 통신·권선 전선회사 Superior Essex를 100% 보유하고 군포·안양 부동산을 임대하는 LS 계열 회사입니다.",
+ "facts": "2013-12 LS전선에서 인적분할 · 2025 매출 4.86조 · 영업이익 1,052억 · 순이익 376억",
+ "mix_line": "매출 해외투자(Superior Essex) 99.7% · 부동산개발 0.3%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "전기동·알루미늄",
+    "note": "주요 원재료"
+   }
+  ],
+  "company": {
+   "name": "엘에스아이앤디",
+   "note": "Superior Essex 지주"
+  },
+  "customers": [
+   {
+    "name": "통신·권선 전선 수요처",
+    "note": "중간생산재"
+   },
+   {
+    "name": "부동산 임차인",
+    "note": "군포·안양"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "해외투자(통신·권선 케이블)",
+    "amount": 4841938000000,
+    "share": 99.7
+   },
+   {
+    "name": "부동산개발(임대·매각)",
+    "amount": 16785000000,
+    "share": 0.3
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 3.83조 원, 4.41조 원, 4.86조 원으로 늘었다.",
+ "business": "2025년 5월 Cyprus Investments가 Superior Essex에 역합병돼 미국 Delaware 지주회사 Superior Essex 지분 100%를 보유합니다. Superior Essex가 Copper·fiber cable 등 통신선과 Round·Flat wire 권선을 만듭니다.",
+ "products": [
+  {
+   "name": "통신 케이블",
+   "segment": "해외투자",
+   "desc": "Copper·fiber"
+  },
+  {
+   "name": "권선",
+   "segment": "해외투자",
+   "desc": "Round·Flat wire"
+  },
+  {
+   "name": "군포·안양 부동산",
+   "segment": "부동산",
+   "desc": "",
+   "share": 0.3
+  }
+ ],
+ "customers": "불특정 소비자가 아닌 중간생산재 고객을 대상으로 기술영업을 합니다."
+}

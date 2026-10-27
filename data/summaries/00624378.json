@@ -1,0 +1,71 @@
+{
+ "corp_code": "00624378",
+ "name": "마이크로투나노",
+ "source_rcept": "20260319000429",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "마이크로투나노는 MEMS 기술로 NAND·DRAM 웨이퍼 불량을 가려내는 메모리용 프로브카드를 만드는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2023-04 상장 · 2025 매출 222억 · 영업손실 34억 · 순손실 50억 · 매출 2.2배",
+ "mix_line": "매출 프로브카드 89.8% · 파운드리 9.8% · 기타 0.3%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "PCB·MLC·소자류",
+    "note": "국내 110.3억"
+   }
+  ],
+  "company": {
+   "name": "마이크로투나노",
+   "note": "MEMS 프로브카드"
+  },
+  "customers": [
+   {
+    "name": "메모리 반도체 제조사",
+    "note": "내수 193.1억"
+   },
+   {
+    "name": "해외",
+    "note": "수출 29.1억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "프로브카드(NAND·DRAM)",
+    "amount": 19969184000,
+    "share": 89.8
+   },
+   {
+    "name": "파운드리(Microneedle·압력센서)",
+    "amount": 2187640000,
+    "share": 9.8
+   },
+   {
+    "name": "상품 등 기타",
+    "amount": 71335000,
+    "share": 0.3
+   }
+  ],
+  "basis": "2025 별도"
+ },
+ "caption": "매출이 93.7억 원, 101.5억 원, 222.3억 원으로 늘었다. 프로브카드 내수가 68.3억 원에서 177.2억 원으로 커졌다.",
+ "business": "MEMS 기반 프로브 Tip 형상·소재·박막·High Speed 회로 기술로 NAND·DRAM용 프로브카드와 Rework·4PIN을 만들고, Microneedle·압력센서·V-Groove 파운드리 서비스를 합니다.",
+ "products": [
+  {
+   "name": "NAND용 프로브카드",
+   "segment": "프로브카드",
+   "desc": ""
+  },
+  {
+   "name": "DRAM용 프로브카드",
+   "segment": "프로브카드",
+   "desc": ""
+  },
+  {
+   "name": "MEMS 파운드리",
+   "segment": "파운드리",
+   "desc": "",
+   "share": 9.8
+  }
+ ],
+ "customers": "B2B 영업을 하며 FA팀과 Repair팀이 고객 서비스를 지원합니다."
+}
