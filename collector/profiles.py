@@ -19,7 +19,7 @@ from . import config, docparse
 from .dart import DartBudgetExceeded, DartError, DartQuotaExceeded
 from .normalize import num
 from .datagokr import redact
-from .refdata import StockPriceError, kind_listed, stock_prices
+from .refdata import StockPriceError, kind_listed, stock_prices, update_price_history
 from .store import dump_json, load_json, now_kst
 
 log = logging.getLogger("profiles")
@@ -383,6 +383,9 @@ def run(dart, store, today=None):
         if prices:
             dump_json("ref/prices.json", {"date": bas, "prices": prices}, indent=None)
         diag["prices"] = len(prices)
+        ph, n = update_price_history(load_json("ref/price_hist.json", {}), today, (bas, prices) if prices else None)
+        dump_json("ref/price_hist.json", ph, indent=None)
+        diag["price_hist_days"], diag["price_hist_fetched"] = len(ph["dates"]), n
     except StockPriceError as e:
         diag["prices_error"] = redact(e)[:300]
     except Exception as e:  # noqa: BLE001

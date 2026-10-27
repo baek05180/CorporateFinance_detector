@@ -63,6 +63,8 @@ def main():
     fin = load_json("fin/multi.json", {})
     prices_doc = load_json("ref/prices.json", {})
     prices = prices_doc.get("prices", {})
+    ph = load_json("ref/price_hist.json", {})
+    ph_dates, ph_close = ph.get("dates") or [], ph.get("close") or {}
     bond_docs = load_json("ref/bond_docs.json", {})
     outstanding = load_json("bonds/outstanding.json", {}).get("bonds", [])
 
@@ -197,6 +199,9 @@ def main():
             "summary": A.summary_line(name, industry, metrics, hist, bp, options),
             "price_date": prices_doc.get("date"),
         }
+        pc = ph_close.get(code) if code else None
+        if pc and sum(v is not None for v in pc) >= 5:
+            co["price_hist"] = [[d, v] for d, v in zip(ph_dates, pc) if v is not None]
         if not key.startswith("b") and not prof:
             co["pending"] = True
         write(os.path.join(out_dir, "co", f"{key}.json"), jdump(co))

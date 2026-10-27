@@ -15,7 +15,7 @@ from datetime import date, timedelta
 from . import config, normalize
 from .dart import DartClient, DartQuotaExceeded
 from .datagokr import BondInfoClient, DataGoKrError, redact
-from .store import Store, dump_json, now_kst
+from .store import Store, dump_json, load_json, now_kst
 
 log = logging.getLogger("collector")
 
@@ -210,12 +210,15 @@ def main(argv=None):
     if args.mode == "prices":
         # 주가 API만 빠르게 확인·갱신 (DART 호출 없음)
         import json
-        from .refdata import StockPriceError, stock_prices
+        from .refdata import StockPriceError, stock_prices, update_price_history
         try:
             bas, prices = stock_prices(today)
             if prices:
                 dump_json("ref/prices.json", {"date": bas, "prices": prices}, indent=None)
-            summary = f"mode=prices · 기준일 {bas} · {len(prices)}종목"
+            ph, n = update_price_history(load_json("ref/price_hist.json", {}), today, (bas, prices) if prices else None,
+                                         max_fetch=140)
+            dump_json("ref/price_hist.json", ph, indent=None)
+            summary = f"mode=prices · 기준일 {bas} · {len(prices)}종목 · 이력 {len(ph['dates'])}일 (이번 조회 {n}일)"
         except (StockPriceError, Exception) as e:  # noqa: BLE001
             summary = f"mode=prices · 실패: {redact(e)[:300]}"
         log.info(summary)
