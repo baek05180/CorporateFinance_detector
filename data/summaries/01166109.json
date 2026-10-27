@@ -1,0 +1,77 @@
+{
+ "corp_code": "01166109",
+ "name": "예선테크",
+ "source_rcept": "20260323001486",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "예선테크는 TV·모니터 패널을 붙이는 폼패드와 LED 어레이 테이프 같은 기능성 접착소재를 디스플레이 업체에 공급하는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2016-09 상장 · 2025 연결 매출 379억 · 영업손실 8억 · 순손실 8억",
+ "mix_line": "매출 Bonding 37.9% · 기타 상품 25.1% · Foam Pad 23.6% · LED array tape 8.2%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "Tape·Film·Graphite류",
+    "note": "라이너·보호필름"
+   }
+  ],
+  "company": {
+   "name": "예선테크",
+   "note": "기능성 접착소재"
+  },
+  "customers": [
+   {
+    "name": "디스플레이 기기 부품 협력사",
+    "note": "직접 거래"
+   },
+   {
+    "name": "중국·베트남·인니 법인",
+    "note": "현지 공급"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Bonding(접착소재)",
+    "amount": 14361000000,
+    "share": 37.9
+   },
+   {
+    "name": "기타 접착소재 상품",
+    "amount": 9524000000,
+    "share": 25.1
+   },
+   {
+    "name": "Foam Pad",
+    "amount": 8952000000,
+    "share": 23.6
+   },
+   {
+    "name": "LED array tape",
+    "amount": 3116000000,
+    "share": 8.2
+   },
+   {
+    "name": "Gasket Pad",
+    "amount": 1923000000,
+    "share": 5.1
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 441.2억 원, 436.1억 원, 378.8억 원으로 줄었다. Bonding이 175.4억 원에서 143.6억 원으로 감소했다.",
+ "business": "LCD·OLED TV 패널을 가이드패널·백커버에 붙이는 Foam Pad, 직하형 LED BLU의 LED 어레이 부착 테이프, 충격흡수·빛샘방지 Gasket Pad, 디스플레이·2차전지용 접착소재를 만들고 중국·베트남·인도네시아 법인에서도 생산합니다.",
+ "products": [
+  {
+   "name": "Foam Pad",
+   "segment": "접착소재",
+   "desc": "TV 패널 부착",
+   "share": 23.6
+  },
+  {
+   "name": "LED array tape",
+   "segment": "접착소재",
+   "desc": "BLU용",
+   "share": 8.2
+  }
+ ],
+ "customers": "수주 없이 고객사 생산계획에 맞춰 납품합니다."
+}
