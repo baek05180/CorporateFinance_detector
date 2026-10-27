@@ -299,7 +299,7 @@ def bond_schedule(xml):
 
 
 # ── 메자닌(CB·BW·EB) 주요사항보고서: 투자자·콜/풋·할증률 ──
-MEZZ_DOC_VERSION = 2
+MEZZ_DOC_VERSION = 3
 _KINDS = [  # (구분, 이름에 들어가는 말) — 위에서부터 먼저 맞는 것
     ("PEF", ("사모투자합자회사", "기관전용사모", "사모투자전문회사", " PEF", "프라이빗에쿼티")),
     ("자산운용", ("자산운용", "투자신탁", "투자자문", "펀드", "신탁업자", "전문투자형사모", "일반사모")),
@@ -398,12 +398,16 @@ def mezz_doc(xml):
             if p and 0 < float(p.group(1)) <= 100:
                 out["call_pct"] = float(p.group(1))
             out["call_m"], out["call_from"] = _start(seg)
+    if out["call_pct"] is None:
+        p = re.search(r"(?:Call\s*Option|콜\s*옵션|매도\s*청구)[^%\d]{0,40}?(\d{1,3}(?:\.\d+)?)\s*%", t)
+        if p and 0 < float(p.group(1)) <= 100:
+            out["call_pct"] = float(p.group(1))
     m = re.search(r"조기\s*상환\s*청구권\s*\(?\s*Put\s*Option\s*\)?\s*에\s*관한\s*사항\s*\]?", t)
     if m:
         seg = t[m.end(): m.end() + 1200]
         if not re.match(r"\s*[-:：]?\s*(해당\s*사항\s*(없음|없습니다)|없음)", seg):
             out["put_m"], out["put_from"] = _start(seg)
-    m = re.search(r"기준\s*주가의\s*(\d{2,3}(?:\.\d+)?)\s*%", t)
+    m = re.search(r"기준\s*(?:주가|가격|가액)\s*의\s*(\d{2,3}(?:\.\d+)?)\s*%", t)
     if m:
         out["premium"] = round(float(m.group(1)) - 100, 1)
     m = None if out["premium"] is not None else re.search(r"할증\s*률?\s*[:：]?\s*(\d{1,3}(?:\.\d+)?)\s*%", t) or re.search(r"(\d{1,3}(?:\.\d+)?)\s*%\s*(?:를|을)?\s*할증", t)
