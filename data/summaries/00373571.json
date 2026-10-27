@@ -1,0 +1,76 @@
+{
+ "corp_code": "00373571",
+ "name": "스타코링크",
+ "source_rcept": "20260330001629",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "스타코링크는 선박 내부 거주공간용 벽·천장 패널, 선실 문, 화장실·선실 유닛을 만들어 한화오션·삼성중공업과 미국 조선소 등에 공급하는 회사로, 모바일게임 사업도 합니다.",
+ "facts": "2024.10 스타코 흡수합병 · 2025 매출 248억 · 영업손실 54억 · 순손실 131억",
+ "mix_line": "매출 조선·해양플랜트 92.1% · 모바일게임 7.2%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "선실 기자재 원재료",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "스타코링크",
+   "note": "선실 기자재"
+  },
+  "customers": [
+   {
+    "name": "한화오션·삼성중공업·HJ중공업",
+    "note": "국내 조선소"
+   },
+   {
+    "name": "Jamestown Metal(미국)",
+    "note": "28년 거래"
+   },
+   {
+    "name": "Chevron·Saudi Aramco",
+    "note": "해양 에너지"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "조선 선실 제품",
+    "amount": 18738000000,
+    "share": 75.6
+   },
+   {
+    "name": "조선 선실 상품",
+    "amount": 4084000000,
+    "share": 16.5
+   },
+   {
+    "name": "모바일게임",
+    "amount": 1786000000,
+    "share": 7.2
+   },
+   {
+    "name": "임대 등",
+    "amount": 172000000,
+    "share": 0.7
+   }
+  ],
+  "basis": "2025"
+ },
+ "caption": "스타코 합병 효과로 조선 매출이 104억 원에서 228억 원으로 늘었지만 순손실 131억 원을 냈다.",
+ "business": "WALL PANEL·CEILING PANEL·MARINE DOOR·UNIT TOILET·UNIT CABIN을 TOTAL TURNKEY로 공급하고 건축 모듈하우스 사업도 합니다. 2024년 미국 미시시피 조선소에 신규 등록했습니다.",
+ "products": [
+  {
+   "name": "선실 패널·도어·유닛",
+   "segment": "조선 선실",
+   "desc": "세계일류상품 5종",
+   "share": 92.1
+  },
+  {
+   "name": "모바일게임",
+   "segment": "게임",
+   "desc": "",
+   "share": 7.2
+  }
+ ],
+ "customers": "국내외 조선소와 해양 에너지 기업이 주요 고객입니다.",
+ "written": "2026-10-27"
+}
