@@ -1,0 +1,56 @@
+{
+ "corp_code": "01325429",
+ "name": "지아이에스",
+ "source_rcept": "20260701000705",
+ "source_name": "[기재정정]사업보고서 (2025.12)",
+ "one_liner": "지아이에스(옛 네온테크)는 반도체·LED·MLCC를 자르는 다이싱 쏘·MLCC 커터·Saw & Sorter 같은 절단 장비를 만드는 회사입니다.",
+ "facts": "코스닥 상장 2018.10 · 2025 연결 매출 758억 · 영업이익 16억 · 순손실 37억",
+ "mix_line": "매출 절단 장비 등 (품목 비중 미기재)",
+ "flow": {
+  "inputs": [
+   {
+    "name": "원재료",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "지아이에스",
+   "note": "절단 장비"
+  },
+  "customers": [
+   {
+    "name": "반도체·디스플레이·MLCC 업체",
+    "note": ""
+   }
+  ],
+  "revenue": [
+   {
+    "name": "매출 합계",
+    "amount": 75810000000,
+    "share": 100.0
+   }
+  ],
+  "basis": "2025 연결 (품목 비중 미기재)"
+ },
+ "caption": "2025년 연결 매출 758억 원, 영업이익 16억 원을 냈다.",
+ "business": "2000년 설립돼 반도체·LED용 Dicing·Singulator, FC-BGA용 Saw & Sorter, MLCC Cutter, 레이저 스크라이빙·칩 전사기·카메라모듈 세정 장비를 만들며 푸드테크 시장 진출을 추진합니다.",
+ "products": [
+  {
+   "name": "MLCC Cutter",
+   "segment": "장비",
+   "desc": ""
+  },
+  {
+   "name": "Dicing Saw",
+   "segment": "장비",
+   "desc": ""
+  },
+  {
+   "name": "Saw & Sorter",
+   "segment": "장비",
+   "desc": "FC-BGA"
+  }
+ ],
+ "customers": "반도체·디스플레이·MLCC 제조사가 고객입니다.",
+ "written": "2026-10-27"
+}

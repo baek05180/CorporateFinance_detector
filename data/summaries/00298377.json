@@ -1,0 +1,71 @@
+{
+ "corp_code": "00298377",
+ "name": "아이씨디",
+ "source_rcept": "20260320000723",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "아이씨디는 OLED 패널 회로를 플라즈마로 깎는 HDP 건식 식각장비와 OLED 증착 공정용 진공 물류장비를 만들어 중국·대만·국내 패널 업체에 공급하는 회사입니다.",
+ "facts": "코스닥 상장 2011.08 · 2025 연결 매출 1,970억 · 영업이익 45억 · 순손실 20억",
+ "mix_line": "매출 HDP Etcher 64.8% · 증착기·증착전 Asher 17.6% · 그 외 17.7%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "주문형 부품",
+    "note": "일부 사급"
+   }
+  ],
+  "company": {
+   "name": "아이씨디",
+   "note": "디스플레이 장비"
+  },
+  "customers": [
+   {
+    "name": "중국·대만 패널업체",
+    "note": "HDP Etcher 939억"
+   },
+   {
+    "name": "국내 패널업체",
+    "note": "337억"
+   },
+   {
+    "name": "일본·중국 업체",
+    "note": "증착 장비 346억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "HDP Etcher",
+    "amount": 127627000000,
+    "share": 64.8
+   },
+   {
+    "name": "증착기·증착전 Asher",
+    "amount": 34649000000,
+    "share": 17.6
+   },
+   {
+    "name": "그 외(표 미표시)",
+    "amount": 34765000000,
+    "share": 17.6
+   }
+  ],
+  "basis": "2025 연결 (그 외는 매출과의 차액)"
+ },
+ "caption": "매출이 2023년 623억 원에서 2025년 1,970억 원으로 늘었고, 수출이 1,330억 원이다.",
+ "business": "2000년 설립돼 LCD·OLED TFT와 터치센서 박막 식각용 HDP Dry Etcher, OLED 진공물류장비, Plasma Asher를 개발합니다. 중국·대만 사무소가 현지 고객을 관리합니다.",
+ "products": [
+  {
+   "name": "HE1800",
+   "segment": "HDP Etcher",
+   "desc": "AM-OLED",
+   "share": 64.8
+  },
+  {
+   "name": "V300·VT1500",
+   "segment": "증착 장비",
+   "desc": "",
+   "share": 17.6
+  }
+ ],
+ "customers": "고객사별 사양에 맞춘 주문형 수주로, 영업에 3~6개월이 걸립니다.",
+ "written": "2026-10-27"
+}
