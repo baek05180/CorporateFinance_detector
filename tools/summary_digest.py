@@ -29,6 +29,10 @@ def pick(text, limit, keep_all_lines=False):
     return " / ".join(out)
 
 
+SHORT = os.environ.get("DIGEST_SHORT") == "1"
+LIM = dict(ov=300, pr=480, ma=90, sa=380) if SHORT else dict(ov=450, pr=650, ma=150, sa=650)
+
+
 def digest(corp):
     listed = load_json("ref/listed.json", {})
     corp_to_code = {v: k for k, v in load_json("ref/corpcodes.json", {}).get("map", {}).items()}
@@ -39,10 +43,10 @@ def digest(corp):
     raw = prof.get("biz_raw") or {}
     return "\n".join([
         f"##### {p['corp_code']} {p['name']} | {p['market']} | {p['industry']} | KIND:{p['kind_products']} | 상장 {p['listed']} | {p['annual_rcept']} {p['annual_name']} | 재무(억) {p['financials_eok']}",
-        "[개요] " + (raw.get("overview") or "")[:450].replace("\n", " / "),
-        "[제품] " + pick(raw.get("products"), 650, keep_all_lines=True),
-        "[원재료] " + (raw.get("materials") or "")[:150].replace("\n", " / "),
-        "[매출] " + pick(raw.get("sales"), 650),
+        "[개요] " + (raw.get("overview") or "")[:LIM["ov"]].replace("\n", " / "),
+        "[제품] " + pick(raw.get("products"), LIM["pr"], keep_all_lines=True),
+        "[원재료] " + (raw.get("materials") or "")[:LIM["ma"]].replace("\n", " / "),
+        "[매출] " + pick(raw.get("sales"), LIM["sa"]),
     ])
 
 
