@@ -1,0 +1,76 @@
+{
+ "corp_code": "00152385",
+ "name": "에이프로젠",
+ "source_rcept": "20260323001476",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "에이프로젠은 제철소 설비 부품의 표면을 단단하게 덧입히는 Hardfacing과 원전 특수보온 같은 단열사업을 하면서, 에이프로젠바이오로직스 등 제약 자회사를 둔 회사입니다.",
+ "facts": "유가증권 상장 1995.07 · 2025 연결 매출 1,180억 · 영업손실 956억 · 순손실 1,406억",
+ "mix_line": "매출 의약품 등 자회사 67.8% · Hardfacing 28.6% · 단열 2.1% · 철강판매 1.5%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "용접 소재 등",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "에이프로젠",
+   "note": "Hardfacing + 제약 지주"
+  },
+  "customers": [
+   {
+    "name": "POSCO 등 제철소",
+    "note": "Hardfacing 내수 94%"
+   },
+   {
+    "name": "원자력발전소",
+    "note": "NUKON 보온"
+   },
+   {
+    "name": "병·의원",
+    "note": "자회사 의약품"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "의약품 등(자회사, 표 일부 미표시)",
+    "amount": 80000000000,
+    "share": 67.8
+   },
+   {
+    "name": "Hardfacing",
+    "amount": 33723000000,
+    "share": 28.6
+   },
+   {
+    "name": "단열(NUKON·Foamglas 등)",
+    "amount": 2423000000,
+    "share": 2.1
+   },
+   {
+    "name": "철강판매",
+    "amount": 1768000000,
+    "share": 1.5
+   }
+  ],
+  "basis": "2025 연결 (의약품 등은 연결 매출과의 차액)"
+ },
+ "caption": "Hardfacing 매출 337억 원이 안정적이지만, 바이오 사업 손실로 2025년 연결 순손실 1,406억 원을 냈다.",
+ "business": "금속사업부(Hardfacing·철강판매), 의약품사업(에이프로젠바이오로직스·앱토크롬), 단열사업(에이프로젠아이앤씨, 원전용 Nukon System), 바이오의약품사업부로 구성됩니다. 1973년 포항제철 설비 Hardfacing으로 시작했습니다.",
+ "products": [
+  {
+   "name": "Hardfacing",
+   "segment": "금속",
+   "desc": "제철·발전·시멘트 설비",
+   "share": 28.6
+  },
+  {
+   "name": "NUKON·Foamglas",
+   "segment": "단열",
+   "desc": "",
+   "share": 2.1
+  }
+ ],
+ "customers": "Hardfacing은 국내 제철소 등에, 의약품은 자회사를 통해 국내에 팝니다.",
+ "written": "2026-10-27"
+}
