@@ -101,6 +101,13 @@ def main():
             for k in ("investors", "call_pct", "call_m", "put_m", "premium", "base_price"):
                 if md_.get(k) not in (None, []):
                     row[k] = md_[k]
+            base = r.get("pay_dt") or r.get("board_dt")
+            for k in ("call", "put"):
+                f = md_.get(k + "_from")
+                if f and base and not row.get(k + "_m"):
+                    mo = (int(f[:4]) - int(base[:4])) * 12 + int(f[5:7]) - int(base[5:7])
+                    if 0 < mo < 240:
+                        row[k + "_m"] = mo
             tgt = r.get("stock_code") if r.get("type") != "EB" else name2code.get(A.norm_target(r.get("exchange_target")))
             px = (prices.get(tgt) or {}).get("close") if tgt else None
             if px and r.get("price"):

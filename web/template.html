@@ -519,7 +519,7 @@ function openDeal(r) {
       + field('대표주관', esc(r.lead))
       + field('현재가', r.cur_px ? int(r.cur_px) + '원' + (r.parity != null ? ` <span class="muted">패리티 ${r.parity.toFixed(0)}%</span>` : '') : null)
       + field('할증률', r.premium != null ? pct(r.premium, 0) : null) + field('기준주가', r.base_price ? int(r.base_price) + '원' : null)
-      + field('Call 비율', r.call_pct != null ? pct(r.call_pct, 1) : null) + field('Call 시작', r.call_m ? r.call_m + '개월' : null)
+      + field('Call 비율', r.call_pct != null ? (r.call_pct === 0 ? '없음' : pct(r.call_pct, 1)) : null) + field('Call 시작', r.call_m ? r.call_m + '개월' : null)
       + field('Put 시작', r.put_m ? r.put_m + '개월' : null)
       + field('투자자 구분', r.investors?.length ? esc(invKinds(r.investors)) : null);
     if (r.investors?.length) extra = invTable(r.investors);

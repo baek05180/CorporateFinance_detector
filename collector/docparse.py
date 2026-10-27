@@ -299,7 +299,7 @@ def bond_schedule(xml):
 
 
 # ── 메자닌(CB·BW·EB) 주요사항보고서: 투자자·콜/풋·할증률 ──
-MEZZ_DOC_VERSION = 1
+MEZZ_DOC_VERSION = 2
 _KINDS = [  # (구분, 이름에 들어가는 말) — 위에서부터 먼저 맞는 것
     ("PEF", ("사모투자합자회사", "기관전용사모", "사모투자전문회사", " PEF", "프라이빗에쿼티")),
     ("자산운용", ("자산운용", "투자신탁", "투자자문", "펀드", "신탁업자", "전문투자형사모", "일반사모")),
@@ -343,16 +343,35 @@ def _months(seg):
     return int(m.group(1)) * 12 if m else None
 
 
+def _start(seg):
+    """'발행일로부터 12개월이 되는 날부터' → (12, None) · '2027년 10월 29일부터' → (None, '2027-10-29')"""
+    m = re.search(r"발행일\s*(?:로부터|부터|이후)\s*(\d{1,3})\s*개월", seg)
+    if m:
+        return int(m.group(1)), None
+    d = re.search(DATE + r"\s*일?\s*(?:부터|이후)", seg)
+    m = re.search(r"(?<!매)(?<!매 )(\d{1,3})\s*개월\s*(?:이|째)\s*되는\s*날", seg)
+    if m and (not d or m.start() < d.start()):
+        return int(m.group(1)), None
+    m = re.search(r"발행일\s*(?:로부터|부터)\s*(\d{1,2})\s*년", seg)
+    if m:
+        return int(m.group(1)) * 12, None
+    m = re.search(DATE + r"\s*일?\s*(?:부터|이후)", seg)
+    if m:
+        y, mo, d = (int(x) for x in m.groups()[:3])
+        return None, f"{y:04d}-{mo:02d}-{d:02d}"
+    return None, None
+
+
 def mezz_doc(xml):
     """전환·신주인수권부·교환사채 발행결정 원문 → 투자자 목록·콜옵션 비율/시작·풋 시작·할증률."""
-    out = {"investors": [], "call_pct": None, "call_m": None, "put_m": None, "premium": None, "base_price": None,
+    out = {"investors": [], "call_pct": None, "call_m": None, "call_from": None, "put_m": None, "put_from": None, "premium": None, "base_price": None,
            "v": MEZZ_DOC_VERSION}
     seen = set()
     for kind, rows in blocks(xml):
         if kind != "table" or len(rows) < 2:
             continue
         head = " ".join(rows[0]).replace(" ", "")
-        if "대상자" not in head or not any(k in head for k in ("권면", "총액", "금액", "발행")):
+        if "대상자" not in head or "매도청구" in head or "권면" not in head and "발행대상자" not in head:
             continue
         hcells = [c.replace(" ", "") for c in rows[0]]
         rel_i = next((i for i, c in enumerate(hcells) if "관계" in c), None)
@@ -368,22 +387,26 @@ def mezz_doc(xml):
             k = investor_kind(name, rel)
             out["investors"].append({"name": None if k == "개인" else name, "kind": k, "rel": (rel[:30] if rel not in ("-", "—", "") else None), "amt": amt})
     t = text_of(xml)
-    i = t.find("매도청구권")
-    if i < 0:
-        i = t.find("Call Option")
-    if i >= 0:
-        seg = t[i: i + 1500]
-        m = (re.search(r"(\d{1,3}(?:\.\d+)?)\s*%\s*(?:에\s*해당|를\s*초과하지|를\s*한도|범위|이내|까지|이하)", seg)
-             or re.search(r"(?:권면|총액|원금)[^%]{0,40}?(\d{1,3}(?:\.\d+)?)\s*%", seg))
-        if m and 0 < float(m.group(1)) <= 100:
-            out["call_pct"] = float(m.group(1))
-        out["call_m"] = _months(seg)
-    j = t.find("조기상환청구권")
-    if j < 0:
-        j = t.find("Put Option")
-    if j >= 0:
-        out["put_m"] = _months(t[j: j + 1200])
-    m = re.search(r"할증\s*률?\s*[:：]?\s*(\d{1,3}(?:\.\d+)?)\s*%", t) or re.search(r"(\d{1,3}(?:\.\d+)?)\s*%\s*(?:를|을)?\s*할증", t)
+    m = re.search(r"매도\s*청구권\s*\(?\s*Call\s*Option\s*\)?\s*에\s*관한\s*사항\s*\]?", t)
+    if m:
+        seg = t[m.end(): m.end() + 1500]
+        if re.match(r"\s*[-:：]?\s*(해당\s*사항\s*(없음|없습니다)|없음|-\s*\d)", seg):
+            out["call_pct"] = 0.0
+        else:
+            p = (re.search(r"(?:권면|총액|원금|전자등록\s*(?:총액|금액)|발행\s*금액|사채\s*금액)[^%]{0,25}?(\d{1,3}(?:\.\d+)?)\s*%", seg)
+                 or re.search(r"(\d{1,3}(?:\.\d+)?)\s*%\s*(?:에\s*해당|를\s*초과하지|를\s*총\s*한도|를\s*한도|범위|이내|까지|이하)", seg))
+            if p and 0 < float(p.group(1)) <= 100:
+                out["call_pct"] = float(p.group(1))
+            out["call_m"], out["call_from"] = _start(seg)
+    m = re.search(r"조기\s*상환\s*청구권\s*\(?\s*Put\s*Option\s*\)?\s*에\s*관한\s*사항\s*\]?", t)
+    if m:
+        seg = t[m.end(): m.end() + 1200]
+        if not re.match(r"\s*[-:：]?\s*(해당\s*사항\s*(없음|없습니다)|없음)", seg):
+            out["put_m"], out["put_from"] = _start(seg)
+    m = re.search(r"기준\s*주가의\s*(\d{2,3}(?:\.\d+)?)\s*%", t)
+    if m:
+        out["premium"] = round(float(m.group(1)) - 100, 1)
+    m = None if out["premium"] is not None else re.search(r"할증\s*률?\s*[:：]?\s*(\d{1,3}(?:\.\d+)?)\s*%", t) or re.search(r"(\d{1,3}(?:\.\d+)?)\s*%\s*(?:를|을)?\s*할증", t)
     if m:
         out["premium"] = float(m.group(1))
     m = re.search(r"기준\s*주가\s*[:：]?\s*([\d,]{3,})\s*원", t)
