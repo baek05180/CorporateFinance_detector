@@ -1,0 +1,70 @@
+{
+ "corp_code": "01364747",
+ "name": "가온칩스",
+ "source_rcept": "20260319001147",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "가온칩스는 삼성 파운드리 디자인솔루션파트너(DSP)로 팹리스의 AI·자동차용 주문형 반도체(ASIC) 설계부터 양산까지 맡는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2012년 설립 · 2022-05 상장 · 2025 연결 매출 685억 · 영업손실 167억 · 순손실 144억",
+ "mix_line": "매출 제품(ASIC 양산) 88.4% · 용역(설계) 11.6%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "FAB 외주가공",
+    "note": "국내 224억·수입 90억"
+   },
+   {
+    "name": "패키징 외주",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "가온칩스",
+   "note": "디자인솔루션"
+  },
+  "customers": [
+   {
+    "name": "국내 팹리스",
+    "note": "내수 461억"
+   },
+   {
+    "name": "해외 팹리스",
+    "note": "일본·미국 법인, 수출 224억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "제품매출",
+    "amount": 60565000000,
+    "share": 88.4
+   },
+   {
+    "name": "용역매출",
+    "amount": 7945000000,
+    "share": 11.6
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 636.0억 원, 964.9억 원, 685.1억 원으로 움직였다. 수출이 370.6억 원에서 223.8억 원으로 줄었다.",
+ "business": "삼성 파운드리 DSP이자 Arm Approved Design Partner로 AI 가속기·데이터센터·Edge AI 칩, ADAS·Digital Cockpit·Vision Processor 등 차량용 반도체, 로봇·무인기용 반도체의 Custom ASIC 개발을 선단공정·첨단 패키징으로 지원합니다.",
+ "products": [
+  {
+   "name": "AI/HPC ASIC",
+   "segment": "제품",
+   "desc": ""
+  },
+  {
+   "name": "Automotive ASIC",
+   "segment": "제품",
+   "desc": "ADAS·Cockpit"
+  },
+  {
+   "name": "설계 용역",
+   "segment": "용역",
+   "desc": "",
+   "share": 11.6
+  }
+ ],
+ "customers": "대리점 없이 직접 영업하며 2022년 일본, 2024년 미국 법인을 세웠습니다."
+}
