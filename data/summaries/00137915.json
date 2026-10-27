@@ -1,0 +1,60 @@
+{
+ "corp_code": "00137915",
+ "name": "엠엑스로보틱스",
+ "source_rcept": "20260319001365",
+ "source_name": "[첨부추가]사업보고서 (2025.12)",
+ "one_liner": "엠엑스로보틱스는 자동화 창고(랙·스태커크레인)와 컨베이어·AGV 같은 물류 자동화 시스템을 주문 제작해 국내외에 공급하는 회사입니다.",
+ "facts": "코스닥 상장 2011.11 · 2025 연결 매출 1,491억 · 영업손실 80억 · 수출 64%",
+ "mix_line": "매출 자동화 설비 88.9% · A/S 등 11.1%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "원자재·외주",
+    "note": "주문생산"
+   }
+  ],
+  "company": {
+   "name": "엠엑스로보틱스",
+   "note": "물류 자동화"
+  },
+  "customers": [
+   {
+    "name": "해외 고객",
+    "note": "수출 956억"
+   },
+   {
+    "name": "국내 제조·물류 기업",
+    "note": "내수 535억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "자동화 설비",
+    "amount": 132534000000,
+    "share": 88.9
+   },
+   {
+    "name": "A/S 등",
+    "amount": 16560000000,
+    "share": 11.1
+   }
+  ],
+  "basis": "2025"
+ },
+ "caption": "내수가 2023년 947억 원에서 2025년 535억 원으로 줄어 매출이 1,738억 원에서 1,491억 원으로 줄었다.",
+ "business": "Rack, Stacker Crane, Conveyor, RGV, AGV, LGV, Gantry Robot, EMS 등 일반물류 자동화 설비와 자동화 공정설비를 주문 생산합니다.",
+ "products": [
+  {
+   "name": "AS/RS(Rack·Stacker Crane)",
+   "segment": "물류 자동화",
+   "desc": ""
+  },
+  {
+   "name": "Conveyor·AGV·LGV",
+   "segment": "물류 자동화",
+   "desc": ""
+  }
+ ],
+ "customers": "국내외 제조·물류 기업에 공급하며 수출 비중이 큽니다.",
+ "written": "2026-10-27"
+}

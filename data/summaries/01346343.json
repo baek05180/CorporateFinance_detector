@@ -1,0 +1,62 @@
+{
+ "corp_code": "01346343",
+ "name": "펀진",
+ "source_rcept": "20260331004320",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "펀진은 이동통신 품질 측정·분석 솔루션과, 다중 로봇 임무 할당·국방 AI 참모 같은 AIoT 솔루션을 개발하는 회사입니다.",
+ "facts": "2025 매출 102억 (전년 115억) · 방산혁신기업 100 선정",
+ "mix_line": "매출 AIoT 솔루션 53% · 6G 솔루션 47%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "개발 인력",
+    "note": "용역 중심"
+   }
+  ],
+  "company": {
+   "name": "펀진",
+   "note": "통신 측정 + 국방 AI"
+  },
+  "customers": [
+   {
+    "name": "통신사업자",
+    "note": "품질 측정"
+   },
+   {
+    "name": "국방 기관",
+    "note": "AI 솔루션"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "AIoT 솔루션",
+    "amount": 5363000000,
+    "share": 52.5
+   },
+   {
+    "name": "6G 솔루션",
+    "amount": 4848000000,
+    "share": 47.5
+   }
+  ],
+  "basis": "2025"
+ },
+ "caption": "매출이 2023년 141억 원에서 2025년 102억 원으로 줄었다. 전량 국내 고객에 직접 납품한다.",
+ "business": "6G사업본부는 이동통신 주파수 품질 측정·분석을, AIoT 솔루션 사업부는 RANZA·ESPER(다중 로봇), KWM(AI 참모), 국방용 소형 언어모델, FAIP Edge·vision 등을 제공합니다.",
+ "products": [
+  {
+   "name": "RANZA·KWM·FAIP",
+   "segment": "AIoT",
+   "desc": "로봇·국방 AI",
+   "share": 52.5
+  },
+  {
+   "name": "품질 측정·분석",
+   "segment": "6G",
+   "desc": "",
+   "share": 47.5
+  }
+ ],
+ "customers": "별도 유통망 없이 고객사에 직접 납품합니다.",
+ "written": "2026-10-27"
+}
