@@ -1,0 +1,77 @@
+{
+ "corp_code": "01119651",
+ "name": "엘리비젼",
+ "source_rcept": "20260323000763",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "엘리비젼은 무인결제 키오스크와 디지털 사이니지(전자 광고판)를 만들고 유지보수하는 코넥스 회사입니다.",
+ "facts": "코넥스 · 2004년 설립 · 2018-07 상장 · 2025 매출 22.5억",
+ "mix_line": "매출 KIOSK 70.9% · 디지털 사이니지 20.4% · 유지보수 8.7%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "패널",
+    "note": "국내 조달"
+   },
+   {
+    "name": "터치",
+    "note": "국내 조달"
+   }
+  ],
+  "company": {
+   "name": "엘리비젼",
+   "note": "키오스크 · 사이니지"
+  },
+  "customers": [
+   {
+    "name": "무인결제·발권 수요처",
+    "note": "MIRAVO·SELFCUBE"
+   },
+   {
+    "name": "사이니지 설치처",
+    "note": "해피스테이션·AHAK"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Interaction KIOSK",
+    "amount": 1595000000,
+    "share": 70.9
+   },
+   {
+    "name": "Intelligent Digital Signage",
+    "amount": 459000000,
+    "share": 20.4
+   },
+   {
+    "name": "유지보수",
+    "amount": 197000000,
+    "share": 8.7
+   }
+  ],
+  "basis": "2025"
+ },
+ "caption": "매출이 2023년 31.4억 원, 2024년 19.2억 원, 2025년 22.5억 원으로 움직였다.",
+ "business": "양방향 KIOSK·무인결제시스템·무인티켓발권기·스마트미러(MIRAVO, SELFCUBE)와 CMS를 탑재한 디지털 사이니지(해피스테이션, AHAK)를 만들고 정기·비정기 유지보수를 합니다.",
+ "products": [
+  {
+   "name": "MIRAVO·SELFCUBE",
+   "segment": "KIOSK",
+   "desc": "무인결제·발권·스마트미러",
+   "share": 70.9
+  },
+  {
+   "name": "해피스테이션·AHAK",
+   "segment": "디지털 사이니지",
+   "desc": "CMS 원격관리",
+   "share": 20.4
+  },
+  {
+   "name": "유지보수",
+   "segment": "서비스",
+   "desc": "",
+   "share": 8.7
+  }
+ ],
+ "customers": "키오스크·사이니지 설치처에 제품을 공급하고 유지보수 계약을 맺습니다."
+}
