@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-10-27T07:23+09:00",
+  "data_updated": "2026-10-27T09:59+09:00",
   "last_daily": "2026-10-26T22:17+09:00"
  },
  "records": {
@@ -298910,6 +298910,35 @@
    "type": "RIGHTS",
    "updated": "2026-10-25T18:19+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261002000284"
+  },
+  "RIGHTS:01195624:20261027000048": {
+   "amended": false,
+   "amount": 71800000000,
+   "board_dt": "2026-10-27",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "E",
+   "corp_code": "01195624",
+   "corp_name": "뉴스테이허브제2호위탁관리부동산투자회사",
+   "dilution": 17.32,
+   "first_seen": "2026-10-27T09:59+09:00",
+   "id": "RIGHTS:01195624:20261027000048",
+   "method": "주주배정증자",
+   "new_common": 718000,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 10000,
+   "purposes": {
+    "타법인증권": 71800000000
+   },
+   "rcept_dt": "2026-10-27",
+   "rcept_no": "20261027000048",
+   "source": "DART",
+   "stock_code": null,
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-10-27T09:59+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261027000048"
   },
   "RIGHTS:01201970:20240424000539": {
    "amended": true,
