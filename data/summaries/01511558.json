@@ -1,0 +1,51 @@
+{
+ "corp_code": "01511558",
+ "name": "네오이뮨텍",
+ "source_rcept": "20260319001392",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "네오이뮨텍은 T세포를 늘리는 장기지속형 IL-7 면역치료제 NT-I7을 개발하는 바이오 회사로, 아직 제품 매출은 없고 희귀질환약 엔다리의 북미 판권을 확보했습니다.",
+ "facts": "코스닥 상장 2021.03 · 2025 매출 없음 · NT-I7 임상 진행",
+ "mix_line": "매출 없음 (임상 단계)",
+ "flow": {
+  "inputs": [
+   {
+    "name": "시료·CRO",
+    "note": "주요 비용"
+   }
+  ],
+  "company": {
+   "name": "네오이뮨텍",
+   "note": "T세포 면역치료제"
+  },
+  "customers": [
+   {
+    "name": "북미 시장",
+    "note": "엔다리 상업화 예정"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "매출 없음",
+    "amount": 0,
+    "share": null
+   }
+  ],
+  "basis": "2025"
+ },
+ "caption": "제품 매출은 없고, 2025년 12월 엔다리의 미국·캐나다 독점 판권을 확보했다.",
+ "business": "NT-I7으로 급성 방사선 증후군(영장류 실험)과 거대 B세포 림프종·고형암·교모세포종 임상을 하며, Heterodimer Fc 플랫폼으로 NT2020·NT3020·NT5010을 개발합니다.",
+ "products": [
+  {
+   "name": "NT-I7",
+   "segment": "T세포 증폭제",
+   "desc": "임상"
+  },
+  {
+   "name": "엔다리(Endari)",
+   "segment": "희귀질환",
+   "desc": "북미 판권"
+  }
+ ],
+ "customers": "엔다리는 별도 Commercial Business Unit이 현지 파트너와 판매할 예정입니다.",
+ "written": "2026-10-27"
+}
