@@ -1,0 +1,62 @@
+{
+ "corp_code": "00793155",
+ "name": "폴라리스AI핸디",
+ "source_rcept": "20260313001353",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "폴라리스AI핸디는 공공기관·기업용 그룹웨어 'HANDY Smart Office'를 만들고 마이크로소프트 클라우드를 판매하는 코스닥 소프트웨어 회사입니다.",
+ "facts": "코스닥 · 2016-11 상장 · 2025 연결 매출 314억 · 영업손실 5억 · 순이익 6억",
+ "mix_line": "매출 소프트웨어 88.1% · 클라우드 11.9%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "개발 인력",
+    "note": "원재료 없음"
+   }
+  ],
+  "company": {
+   "name": "폴라리스AI핸디",
+   "note": "그룹웨어 · 클라우드"
+  },
+  "customers": [
+   {
+    "name": "정부·공공기관",
+    "note": "전자정부 프레임워크"
+   },
+   {
+    "name": "기업",
+    "note": "지역협력사 경유"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "소프트웨어(그룹웨어 구축·유지보수)",
+    "amount": 27693000000,
+    "share": 88.1
+   },
+   {
+    "name": "클라우드(Microsoft 365·Azure)",
+    "amount": 3750000000,
+    "share": 11.9
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 2023년 261.2억 원, 2024년 283.8억 원, 2025년 314.4억 원으로 늘었다. 소프트웨어 부문이 248.0억 원에서 276.9억 원으로 증가했다.",
+ "business": "그룹웨어·포털·모바일·협업 솔루션(HANDY Smart Office, HANDY RMS) 공급과 구축·유지보수, 클라우드 기반 Big Data·AI 업무 자동화 플랫폼 구축, Microsoft 365·Azure 판매를 합니다.",
+ "products": [
+  {
+   "name": "HANDY Smart Office",
+   "segment": "소프트웨어",
+   "desc": "그룹웨어",
+   "share": 88.1
+  },
+  {
+   "name": "Microsoft 365·Azure",
+   "segment": "클라우드",
+   "desc": "",
+   "share": 11.9
+  }
+ ],
+ "customers": "정부·공공기관 비중이 크며 본사와 지역협력사가 함께 구축합니다."
+}

@@ -1,0 +1,86 @@
+{
+ "corp_code": "00938721",
+ "name": "필옵틱스",
+ "source_rcept": "20260324000644",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "필옵틱스는 레이저 광학기술로 OLED 패널 절단장비, 배터리 스태킹·노칭 장비, 반도체 유리기판(TGV) 장비를 만드는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2017-06 상장 · 2025 연결 매출 1,034억 · 영업손실 349억 · 순손실 264억 · 매출 75% 감소",
+ "mix_line": "매출 OLED 장비 52.6% · 2차전지 장비 32.1% · 반도체 장비 11.7% · 기타 3.5%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "STAGE·기구가공품",
+    "note": "매입 48.5%"
+   },
+   {
+    "name": "LASER·광학부품",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "필옵틱스",
+   "note": "레이저 응용장비"
+  },
+  "customers": [
+   {
+    "name": "OLED 패널 제조사",
+    "note": "544억"
+   },
+   {
+    "name": "배터리 제조사",
+    "note": "332억"
+   },
+   {
+    "name": "반도체 기판 업체",
+    "note": "수출 119억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "OLED 디스플레이 장비",
+    "amount": 54426000000,
+    "share": 52.6
+   },
+   {
+    "name": "이차전지 공정장비",
+    "amount": 33194000000,
+    "share": 32.1
+   },
+   {
+    "name": "반도체 공정장비",
+    "amount": 12151000000,
+    "share": 11.7
+   },
+   {
+    "name": "태양광·개조개선 등",
+    "amount": 3670000000,
+    "share": 3.5
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 2024년 4,108.9억 원에서 2025년 1,034.4억 원으로 75% 줄었다. 이차전지 장비가 2,854.0억 원에서 331.9억 원으로 급감했다.",
+ "business": "세계 최초 OLED Laser 가공 표준 설비를 양산했고, Rigid·Flexible OLED 공정장비, Stacking·Laser Notching·원통형 배터리·전극 공정 설비, Laser TGV·Drilling·Singulation·DI 노광기, 태양광 Laser Doping 장비를 만듭니다.",
+ "products": [
+  {
+   "name": "OLED Laser Cutting 등",
+   "segment": "OLED",
+   "desc": "",
+   "share": 52.6
+  },
+  {
+   "name": "Stacking·Laser Notching",
+   "segment": "이차전지",
+   "desc": "",
+   "share": 32.1
+  },
+  {
+   "name": "Laser TGV",
+   "segment": "반도체",
+   "desc": "유리기판",
+   "share": 11.7
+  }
+ ],
+ "customers": "대부분 고객사에서 직접 수주해 납품하고, 중국 등 해외는 현지 에이전트를 통하기도 합니다."
+}
