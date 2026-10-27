@@ -1,0 +1,58 @@
+{
+ "corp_code": "00965512",
+ "name": "라온텍",
+ "source_rcept": "20260318001644",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "라온텍은 AR·VR 스마트안경과 차량 HUD에 들어가는 초소형 마이크로디스플레이(LCoS)와 구동칩을 설계하는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2009년 설립 · 2023-03 상장 · 2025 매출 87억 · 영업손실 58억 · 순손실 66억",
+ "mix_line": "마이크로디스플레이·컨트롤러 SoC · 모바일TV SoC",
+ "flow": {
+  "inputs": [
+   {
+    "name": "WAFER 외주가공",
+    "note": "30.7억"
+   }
+  ],
+  "company": {
+   "name": "라온텍",
+   "note": "마이크로디스플레이"
+  },
+  "customers": [
+   {
+    "name": "광학부품 설계·제조사",
+    "note": "XR 패널"
+   },
+   {
+    "name": "자동차 HUD 업체",
+    "note": ""
+   },
+   {
+    "name": "국내 대기업",
+    "note": "직접 영업"
+   }
+  ],
+  "revenue": [],
+  "basis": "2025 별도"
+ },
+ "caption": "매출이 2023년 107.4억 원, 2024년 89.0억 원, 2025년 87.5억 원으로 줄었다.",
+ "business": "반도체 기판 위에 만드는 LCoS 마이크로디스플레이와 컨트롤러 SoC, 모바일TV SoC를 설계합니다. 차세대 Micro-OLED(OLEDoS)·Micro-LED(LEDoS)를 글로벌 파트너와 개발 중입니다.",
+ "products": [
+  {
+   "name": "LCoS 마이크로디스플레이",
+   "segment": "마이크로디스플레이",
+   "desc": "XR 안경·HUD"
+  },
+  {
+   "name": "컨트롤러 SoC",
+   "segment": "반도체",
+   "desc": ""
+  },
+  {
+   "name": "모바일TV SoC",
+   "segment": "반도체",
+   "desc": ""
+  }
+ ],
+ "customers": "디스플레이 패널을 광학부품 업체에 공급하면 ODM·IDH·VAR을 거쳐 완제품 제조사에 전달됩니다."
+}

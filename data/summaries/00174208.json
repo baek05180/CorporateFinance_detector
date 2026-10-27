@@ -1,0 +1,59 @@
+{
+ "corp_code": "00174208",
+ "name": "진성티이씨",
+ "source_rcept": "20260316000068",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "진성티이씨는 굴착기 같은 건설중장비의 무한궤도 하부를 받치는 롤러·아이들러·트랙을 만들어 캐터필러 등에 공급하는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2025 연결 매출 4,638억 · 영업이익 479억(+96%) · 순이익 326억",
+ "mix_line": "매출 건설중장비 하부주행체 부품 100%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "단조·주조·가공품",
+    "note": "철강재"
+   }
+  ],
+  "company": {
+   "name": "진성티이씨",
+   "note": "하부주행체 부품"
+  },
+  "customers": [
+   {
+    "name": "Caterpillar",
+    "note": "주요 매출처"
+   },
+   {
+    "name": "Hitachi",
+    "note": ""
+   },
+   {
+    "name": "HD건설기계·밥캣",
+    "note": ""
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Roller류 등 하부주행체 부품",
+    "amount": 463820000000,
+    "share": 100.0
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 2024년 3,905억 원에서 2025년 4,638억 원으로 18.8% 늘었고, 영업이익은 244억 원에서 479억 원으로 96% 증가했다.",
+ "business": "크롤러형 건설중장비의 상부·하부 Roller, Idler, Sprocket, Steel Track(TRACK LINK A'SSY)을 생산하며 미국·중국·일본 자회사가 현지 판매합니다.",
+ "products": [
+  {
+   "name": "Roller·Idler·Sprocket",
+   "segment": "하부주행체",
+   "desc": ""
+  },
+  {
+   "name": "TRACK LINK A'SSY",
+   "segment": "하부주행체",
+   "desc": ""
+  }
+ ],
+ "customers": "Caterpillar, Hitachi, HD건설기계, 밥캣이 주요 매출처이며 본사 매출의 약 92%가 수출입니다."
+}
