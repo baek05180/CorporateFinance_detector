@@ -1,0 +1,51 @@
+{
+ "corp_code": "01290132",
+ "name": "인터로이드",
+ "source_rcept": "20260326000677",
+ "source_name": "[첨부추가]사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "인터로이드는 음성인식·LLM·음성합성을 묶어 콜센터 전화 업무를 자동화하는 Voice AI 솔루션 'Seiren Suite'를 만드는 코넥스 회사입니다.",
+ "facts": "코넥스 · 2022-11 상장 · 2025 매출 42억 · AI솔루션 100%",
+ "mix_line": "매출 AI솔루션 100%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "외부솔루션·AI용역",
+    "note": "외주가공비"
+   }
+  ],
+  "company": {
+   "name": "인터로이드",
+   "note": "Voice AI"
+  },
+  "customers": [
+   {
+    "name": "기업 콜센터",
+    "note": "직접·IT계열사·주사업자"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "AI솔루션·용역·유지보수",
+    "amount": 4178000000,
+    "share": 100.0
+   }
+  ],
+  "basis": "2025"
+ },
+ "caption": "매출이 72.7억 원, 91.2억 원, 103.4억 원에서 2025년 41.8억 원으로 줄었다. 건강기능식품 사업 매출은 없어졌다.",
+ "business": "실시간 음성인식 Seiren STT(CER 3.5%), LLM 챗봇, 음성합성 Seiren TTS를 통합한 통화 자동화 Seiren Suite를 PBX·CTI·녹취 시스템과 연동해 공급하고, AutoML·Vision·가상피팅 솔루션도 있습니다.",
+ "products": [
+  {
+   "name": "Seiren Suite",
+   "segment": "AI솔루션",
+   "desc": "통화 자동화"
+  },
+  {
+   "name": "Seiren STT",
+   "segment": "AI솔루션",
+   "desc": "음성인식"
+  }
+ ],
+ "customers": "고객사 직접, 고객사 IT 계열사, 주사업자를 통해 계약합니다."
+}

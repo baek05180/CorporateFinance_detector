@@ -1,0 +1,92 @@
+{
+ "corp_code": "01119244",
+ "name": "넥스콘테크놀러지",
+ "source_rcept": "20260331002066",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "넥스콘테크놀러지는 배터리 과충전·과방전을 막는 보호회로(PCM)와 배터리관리시스템(BMS)을 LG에너지솔루션·삼성SDI 등에 공급하는 회사입니다.",
+ "facts": "2025 연결 매출 1,552억 · 영업손실 122억 · 순손실 189억",
+ "mix_line": "매출 BMS 38.7% · PCM 23.0% · PACK 16.0% · TOOL 12.4% · 기타 6.0%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "BMS Ass'y 부품",
+    "note": "케이스·버스바 등, 26%"
+   },
+   {
+    "name": "FET",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "넥스콘테크놀러지",
+   "note": "배터리 보호회로"
+  },
+  "customers": [
+   {
+    "name": "LGES·삼성SDI",
+    "note": "국내·LOCAL 수출"
+   },
+   {
+    "name": "해외 배터리팩 제조사",
+    "note": "직수출"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "BMS",
+    "amount": 60066000000,
+    "share": 38.7
+   },
+   {
+    "name": "PCM",
+    "amount": 35736000000,
+    "share": 23.0
+   },
+   {
+    "name": "PACK",
+    "amount": 24774000000,
+    "share": 16.0
+   },
+   {
+    "name": "TOOL",
+    "amount": 19187000000,
+    "share": 12.4
+   },
+   {
+    "name": "기타",
+    "amount": 9351000000,
+    "share": 6.0
+   },
+   {
+    "name": "PCA·VCMS",
+    "amount": 6124000000,
+    "share": 3.9
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 1,531.0억 원, 1,591.5억 원, 1,552.4억 원으로 움직였다. BMS 평균단가는 198,691원에서 189,748원으로 낮아졌다.",
+ "business": "2차전지 보호회로(PCM·PCA), 배터리팩(PACK), 배터리관리시스템(BMS), 전동공구용(TOOL)·VCMS 제품을 개발 단계부터 고객과 협의해 만듭니다.",
+ "products": [
+  {
+   "name": "BMS",
+   "segment": "2차전지보호회로",
+   "desc": "",
+   "share": 38.7
+  },
+  {
+   "name": "PCM",
+   "segment": "2차전지보호회로",
+   "desc": "",
+   "share": 23.0
+  },
+  {
+   "name": "PACK",
+   "segment": "2차전지보호회로",
+   "desc": "",
+   "share": 16.0
+  }
+ ],
+ "customers": "영업1팀이 삼성SDI·LG 계열과 배터리팩업체를, 영업2팀이 전장을 맡습니다."
+}

@@ -1,0 +1,61 @@
+{
+ "corp_code": "00231354",
+ "name": "파워넷",
+ "source_rcept": "20260318001673",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "파워넷은 TV·모니터·사운드바·가전에 들어가는 전원공급장치(SMPS)와 어댑터를 중국·베트남 공장에서 만드는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2018-06 상장 · 2025 연결 매출 4,470억 · 영업이익 246억 · 순이익 213억",
+ "mix_line": "주요 제품 매출 가전기기(SMPS·ADAPTOR·PD) 82.0% · 기타 18.0%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "PWM-IC 등 반도체",
+    "note": "418.2억"
+   }
+  ],
+  "company": {
+   "name": "파워넷",
+   "note": "SMPS"
+  },
+  "customers": [
+   {
+    "name": "Display·AV·생활가전 업체",
+    "note": "B2B 직접 매출"
+   },
+   {
+    "name": "ESS·소형가전",
+    "note": "배터리 팩"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "가전기기(ADAPTOR·SMPS·PD BOARD)",
+    "amount": 202618000000,
+    "share": 82.0
+   },
+   {
+    "name": "기타",
+    "amount": 44546000000,
+    "share": 18.0
+   }
+  ],
+  "basis": "주요 제품 매출 표"
+ },
+ "caption": "주요 제품 매출이 1,861.6억 원, 2,302.3억 원, 2,471.6억 원으로 늘었다.",
+ "business": "서울 본사가 연구개발을 하고 중국 심양·베트남 하노이 법인에서 Display·AV·생활/환경가전·조명·OA용 SMPS, Adaptor, PD board를 생산하며, EMS 완제품과 ESS·소형가전용 배터리 팩도 공급합니다. Digital GaN 솔루션을 개발 중입니다.",
+ "products": [
+  {
+   "name": "SMPS",
+   "segment": "가전기기",
+   "desc": "TV·모니터",
+   "share": 82.0
+  },
+  {
+   "name": "배터리 팩",
+   "segment": "신사업",
+   "desc": "ESS·소형가전"
+  }
+ ],
+ "customers": "관계회사·대리점 없이 전부 직접 매출합니다."
+}

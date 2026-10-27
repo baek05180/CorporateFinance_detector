@@ -1,0 +1,91 @@
+{
+ "corp_code": "00409681",
+ "name": "아스트",
+ "source_rcept": "20260318001569",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "아스트는 보잉 B737 후미동체(Section 48)와 엠브라에르 E-Jet II 동체 같은 민항기 구조물을 만드는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2014-12 상장 · 2025 연결 매출 2,544억 · 영업이익 74억 · 순손실 88억 · 매출 48% 증가",
+ "mix_line": "매출 Section48 33.2% · Fuselage 33.1% · 기타(Skin·MDCD 등) 24.2% · Bulkhead 5.8%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "Bulkhead 원재료",
+    "note": "수입 76.0억"
+   }
+  ],
+  "company": {
+   "name": "아스트",
+   "note": "민항기 동체"
+  },
+  "customers": [
+   {
+    "name": "보잉",
+    "note": "B737"
+   },
+   {
+    "name": "엠브라에르",
+    "note": "E-Jet II"
+   },
+   {
+    "name": "화물기 개조",
+    "note": "MDCD"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Section48(B737 후미동체)",
+    "amount": 84872000000,
+    "share": 33.2
+   },
+   {
+    "name": "Fuselage(E-Jet II 동체)",
+    "amount": 84602000000,
+    "share": 33.1
+   },
+   {
+    "name": "기타(Skin·MDCD·APU Door·Stringer)",
+    "amount": 61884000000,
+    "share": 24.2
+   },
+   {
+    "name": "Bulkhead",
+    "amount": 14876000000,
+    "share": 5.8
+   },
+   {
+    "name": "U/L Deck",
+    "amount": 9328000000,
+    "share": 3.7
+   },
+   {
+    "name": "내부제거",
+    "amount": -1176000000,
+    "share": -0.5
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 1,684.8억 원, 1,713.8억 원, 2,543.9억 원으로 늘었다. 수출이 2,352.7억 원이다.",
+ "business": "민항기 부품·구조물·동체(Section 48, Fuselage, Bulkhead, Stringer)를 만들고, 여객기를 화물기로 바꾸는 데 필요한 화물용 도어(MDCD)와 구조물을 납품합니다. 종속회사 카프에어로가 항공기부품을 제조합니다.",
+ "products": [
+  {
+   "name": "Section 48",
+   "segment": "항공기동체",
+   "desc": "B737",
+   "share": 33.2
+  },
+  {
+   "name": "Fuselage",
+   "segment": "항공기동체",
+   "desc": "E-Jet II",
+   "share": 33.1
+  },
+  {
+   "name": "MDCD",
+   "segment": "항공기 개조",
+   "desc": "화물기 도어"
+  }
+ ],
+ "customers": "보잉·엠브라에르 기종용 구조물을 대부분 수출합니다."
+}
