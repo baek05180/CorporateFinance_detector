@@ -1,0 +1,75 @@
+{
+ "corp_code": "01575839",
+ "name": "플라즈맵",
+ "source_rcept": "20260319000954",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "플라즈맵은 KAIST 창업 기업으로, 7분 만에 저온 멸균하는 플라즈마 멸균기(STERLINK)와 치과 임플란트 표면처리기(ACTILINK)를 만들어 국내외에 파는 회사입니다.",
+ "facts": "코스닥 상장 2022.10 · 2015 설립 · 2025 연결 매출 85억 · 영업손실 76억",
+ "mix_line": "매출 멸균기·표면처리기 38.0% · 소모품 33.5% · 기타 28.6%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "부품·원재료",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "플라즈맵",
+   "note": "바이오 플라즈마"
+  },
+  "customers": [
+   {
+    "name": "중소병원·동물병원·안과",
+    "note": "STERLINK"
+   },
+   {
+    "name": "임플란트 제조사",
+    "note": "ACTILINK"
+   },
+   {
+    "name": "북미·유럽·일본",
+    "note": "수출 46억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "ACTILINK·STERLINK",
+    "amount": 3224000000,
+    "share": 38.0
+   },
+   {
+    "name": "소모품·액세서리",
+    "amount": 2838000000,
+    "share": 33.5
+   },
+   {
+    "name": "기타",
+    "amount": 2422000000,
+    "share": 28.6
+   }
+  ],
+  "basis": "2025"
+ },
+ "caption": "장비 매출이 84억 원에서 32억 원으로 줄어 매출이 101억 원에서 85억 원이 됐고, 영업손실 76억 원을 냈다.",
+ "business": "생물학적 비활성화·재생활성·자극치료의 바이오 플라즈마 기술로 FDA 인증 고속 멸균 파우치(STERPACK) 방식 멸균기와 임플란트 표면처리기를 만듭니다.",
+ "products": [
+  {
+   "name": "STERLINK Plus·Mini",
+   "segment": "멸균기",
+   "desc": "FDA 인증"
+  },
+  {
+   "name": "ACTILINK",
+   "segment": "표면처리기",
+   "desc": "치과 임플란트"
+  },
+  {
+   "name": "STERPACK 등 소모품",
+   "segment": "소모품",
+   "desc": "",
+   "share": 33.5
+  }
+ ],
+ "customers": "국내 병원과 임플란트 제조사, 북미·유럽·일본 유통망에 공급합니다.",
+ "written": "2026-10-27"
+}
