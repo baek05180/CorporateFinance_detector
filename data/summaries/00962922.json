@@ -1,0 +1,77 @@
+{
+ "corp_code": "00962922",
+ "name": "팬젠",
+ "source_rcept": "20260422000484",
+ "source_name": "[기재정정]사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "팬젠은 만성 신부전 빈혈치료 바이오시밀러 EPO를 만들어 말레이시아 등에 팔고 바이오의약품 위탁개발·생산(CDMO)을 하는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2016-03 상장 · 2025 매출 134억 · 영업이익 15억 · 순이익 21억 · 수출 53%",
+ "mix_line": "매출 EPO 56.0% · CMO 14.2% · CDO 14.1% · 기타 9.7% · 로열티 6.0%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "재료비",
+    "note": "국내 조달"
+   }
+  ],
+  "company": {
+   "name": "팬젠",
+   "note": "바이오시밀러 · CDMO"
+  },
+  "customers": [
+   {
+    "name": "말레이시아 등 해외",
+    "note": "EPO 수출 68.9억"
+   },
+   {
+    "name": "국내 바이오사",
+    "note": "CMO·CDO"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "EPO의약품",
+    "amount": 7516000000,
+    "share": 56.0
+   },
+   {
+    "name": "위탁생산(CMO)",
+    "amount": 1900000000,
+    "share": 14.2
+   },
+   {
+    "name": "기술이전(CDO)",
+    "amount": 1890000000,
+    "share": 14.1
+   },
+   {
+    "name": "기타",
+    "amount": 1303000000,
+    "share": 9.7
+   },
+   {
+    "name": "로열티",
+    "amount": 808000000,
+    "share": 6.0
+   }
+  ],
+  "basis": "2025 별도"
+ },
+ "caption": "매출이 73.2억 원, 146.7억 원, 134.2억 원으로 움직였다. EPO가 56.4억 원에서 75.2억 원으로 늘고 CMO는 56.5억 원에서 19.0억 원으로 줄었다.",
+ "business": "원천기술 PanGen CHO-TECH와 GMP 시설로 바이오시밀러 EPO(말레이시아 제품명 Erysaa)를 생산·판매하고, 바이오의약품 CMO·CDO를 하며, 혈우병A Factor VIII, Aflibercept, 항SFTSV항체를 개발합니다.",
+ "products": [
+  {
+   "name": "EPO(Erysaa)",
+   "segment": "바이오시밀러",
+   "desc": "만성 신부전 빈혈",
+   "share": 56.0
+  },
+  {
+   "name": "CDMO",
+   "segment": "위탁개발·생산",
+   "desc": "",
+   "share": 28.3
+  }
+ ],
+ "customers": "EPO는 수시 발주로 수출하며 2025년 말 수주잔고는 44.5억 원입니다."
+}
