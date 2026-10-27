@@ -198,7 +198,7 @@ def collect_private_bonds(store, mode):
 
 def main(argv=None):
     ap = argparse.ArgumentParser()
-    ap.add_argument("--mode", choices=["watch", "daily", "backfill", "profiles", "prices"], default="watch")
+    ap.add_argument("--mode", choices=["watch", "daily", "backfill", "profiles", "prices", "mezz"], default="watch")
     ap.add_argument("--days", type=int, default=7)
     args = ap.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
@@ -227,6 +227,16 @@ def main(argv=None):
                 f.write(summary + "\n")
         return 0
 
+    if args.mode == "mezz":
+        import json
+        from .profiles import mezz_step
+        diag = {}
+        try:
+            mezz_step(dart, store, today, diag)
+        finally:
+            dump_json("diag_mezz.json", diag)
+        log.info("mode=mezz · %s", json.dumps(diag.get("mezz_docs"), ensure_ascii=False))
+        return 0
     if args.mode == "profiles":
         from . import profiles
         profiles.run(dart, store, today)
