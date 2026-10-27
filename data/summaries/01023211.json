@@ -6,7 +6,7 @@
  "written": "2026-10-27",
  "one_liner": "와이제이링크는 전자부품을 기판에 붙이는 SMT 생산라인에서 기판을 옮기고 쌓고 바코드를 새기는 컨베이어·로더·레이저마킹 장비를 만들어 주로 해외 공장에 파는 회사입니다.",
  "facts": "코스닥 상장 2024.10 · 8개국 법인 · 2025 연결 매출 461억 · 영업손실 35억 · 수출 87%",
- "mix_line": "매출(별도) Conveyor 32.4% · Loader/Unloader 17.8% · Laser Marking 17.4% · Buffer 11.3%",
+ "mix_line": "매출 Conveyor 32.4% · Loader 17.8% · Laser Marking 17.4% · Buffer 11.3%",
  "flow": {
   "inputs": [
    {

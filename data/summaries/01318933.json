@@ -1,0 +1,65 @@
+{
+ "corp_code": "01318933",
+ "name": "지니틱스",
+ "source_rcept": "20260325000837",
+ "source_name": "[기재정정]사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "지니틱스는 스마트폰·웨어러블 터치 컨트롤러 IC, 카메라 초점 구동(AF) IC, 삼성페이용 MST IC 같은 시스템 반도체를 설계해 파운드리에 맡겨 만드는 팹리스 회사입니다.",
+ "facts": "코스닥 상장 2018.08 · 2025 매출 364억 · 영업손실 86억 · 순손실 96억 · 수출 99%",
+ "mix_line": "매출 반도체 IC 제품 99.0% · 용역 1.0%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "파운드리 100% 위탁",
+    "note": "생산설비 없음"
+   }
+  ],
+  "company": {
+   "name": "지니틱스",
+   "note": "팹리스"
+  },
+  "customers": [
+   {
+    "name": "휴대폰 제조사·1차 협력사",
+    "note": "모듈 형태 납품"
+   },
+   {
+    "name": "해외 고객",
+    "note": "Agent 경유, 중국 사업부"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "IC 제품(Touch·AF·MST 등)",
+    "amount": 36004815000,
+    "share": 99.0
+   },
+   {
+    "name": "용역",
+    "amount": 375208000,
+    "share": 1.0
+   }
+  ],
+  "basis": "2025"
+ },
+ "caption": "제품 매출이 530억 원에서 360억 원으로 줄어 매출이 541억 원에서 364억 원이 됐고, 영업손실 86억 원을 냈다.",
+ "business": "터치 컨트롤러 IC(스마트폰·웨어러블), AF·OIS Driver IC, Haptic IC, Fintech MST IC, AMOLED DC-DC IC 등을 자체 개발하며, 가전용 시스템 반도체도 공급합니다.",
+ "products": [
+  {
+   "name": "Touch IC",
+   "segment": "시스템 반도체",
+   "desc": "ZT 시리즈"
+  },
+  {
+   "name": "AF Driver IC",
+   "segment": "시스템 반도체",
+   "desc": "ZC 시리즈"
+  },
+  {
+   "name": "MST IC",
+   "segment": "시스템 반도체",
+   "desc": "모바일 결제"
+  }
+ ],
+ "customers": "매출 대부분이 수출이며 세트 제조사와 1차 공급업체에 납품합니다."
+}
