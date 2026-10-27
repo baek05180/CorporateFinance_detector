@@ -1,0 +1,75 @@
+{
+ "corp_code": "01344831",
+ "name": "딥노이드",
+ "source_rcept": "20260323000942",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "딥노이드는 뇌 MRA·흉부 X-ray를 AI로 판독해 의사를 돕는 의료 AI와, 공항 X-ray 위험물 자동 판독·공장 비전검사 같은 산업 AI를 만드는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2021-08 상장 · 2025 매출 75억 · 영업손실 106억 · 순손실 108억",
+ "mix_line": "매출 산업 AI 상품 78.1% · 용역 12.0% · 의료 AI 9.9%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "3D센서 등 상품",
+    "note": "산업 AI 판매용"
+   }
+  ],
+  "company": {
+   "name": "딥노이드",
+   "note": "의료·산업 AI"
+  },
+  "customers": [
+   {
+    "name": "의료기관·검진센터",
+    "note": "판독 보조 7.4억"
+   },
+   {
+    "name": "기업·항공",
+    "note": "보안 X-ray AI"
+   },
+   {
+    "name": "제조업체",
+    "note": "비전 검사"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "산업 AI 상품",
+    "amount": 5838375000,
+    "share": 78.1
+   },
+   {
+    "name": "개발용역 외",
+    "amount": 896052000,
+    "share": 12.0
+   },
+   {
+    "name": "의료 AI 서비스",
+    "amount": 737564000,
+    "share": 9.9
+   }
+  ],
+  "basis": "2025 별도"
+ },
+ "caption": "매출이 2024년 108.5억 원에서 2025년 74.7억 원으로 31% 줄었다. 의료 AI 매출은 4.8억 원에서 7.4억 원으로 늘었다.",
+ "business": "뇌동맥류 탐지 DEEP:NEURO, 흉부 X-ray 폐질환 표시 DEEP:CHEST, 저선량 CT 폐결절 검출 DEEP:LUNG 등 의료 AI와, 위해물품 약 20종을 자동 판독하는 보안 X-ray AI, 비전검사 솔루션 DEEP:FACTORY를 공급합니다.",
+ "products": [
+  {
+   "name": "DEEP:NEURO·CHEST·LUNG",
+   "segment": "의료 AI",
+   "desc": "영상 판독 보조",
+   "share": 9.9
+  },
+  {
+   "name": "보안 X-ray AI",
+   "segment": "산업 AI",
+   "desc": "위해물품 자동 판독"
+  },
+  {
+   "name": "DEEP:FACTORY",
+   "segment": "산업 AI",
+   "desc": "AI 비전 검사"
+  }
+ ],
+ "customers": "의료 AI는 의료기관·검진센터에 일시 납품·연 사용료·사용량 과금으로 팔고, 산업 AI는 기업·항공 분야와 제조 현장에 공급합니다. 전량 내수입니다."
+}
