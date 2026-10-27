@@ -1,0 +1,50 @@
+{
+ "corp_code": "01201970",
+ "name": "셀레스트라",
+ "source_rcept": "20260407002850",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "셀레스트라는 유전체 분석 검사와 혈액 속 암세포(CTC)·DNA를 함께 잡아내는 액체생검 플랫폼으로 암 진단 서비스를 하는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2020-12 상장 · 2025 연결 매출 20억 · 영업손실 78억 · 순손실 118억",
+ "mix_line": "게놈 헬스케어 · 액체생검 · 암 진단·모니터링",
+ "flow": {
+  "inputs": [
+   {
+    "name": "바이오 빅데이터 센터",
+    "note": "자체 구축"
+   }
+  ],
+  "company": {
+   "name": "셀레스트라",
+   "note": "유전체 · 액체생검"
+  },
+  "customers": [
+   {
+    "name": "검사 의뢰처",
+    "note": "대리인 영업"
+   }
+  ],
+  "revenue": [],
+  "basis": "2025 연결"
+ },
+ "caption": "2025년 연결 매출 20.1억 원, 영업손실 77.6억 원이다.",
+ "business": "Geno-D·Geno-Dx 등 10여 종 유전체 검사, CTC·cfDNA 동시 추출 의료기기 CD-Prime, 암 변이 진단·모니터링 Cancer-Prime을 판매하고, 다중오믹스 기반 대장암·폐암 조기진단을 개발합니다.",
+ "products": [
+  {
+   "name": "Geno 시리즈",
+   "segment": "게놈 헬스케어",
+   "desc": "유전체 검사"
+  },
+  {
+   "name": "CD-Prime",
+   "segment": "액체생검",
+   "desc": "CTC·cfDNA"
+  },
+  {
+   "name": "Cancer-Prime",
+   "segment": "암 진단",
+   "desc": ""
+  }
+ ],
+ "customers": "영업팀이 홍보·마케팅과 대리인 발굴·계약을 맡습니다."
+}

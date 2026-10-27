@@ -1,0 +1,86 @@
+{
+ "corp_code": "00591441",
+ "name": "어보브반도체",
+ "source_rcept": "20260319000019",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "어보브반도체는 세탁기·냉장고 같은 가전의 두뇌 역할을 하는 MCU를 설계하고, 자회사 윈팩이 반도체 패키징·테스트를 하는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2009-06 상장 · 2025 연결 매출 2,441억 · 영업이익 102억 · 순이익 20억",
+ "mix_line": "매출 Consumer MCU 52.8% · 패키징 21.2% · 테스트 6.9% · 리모컨 6.3% · Industrial 5.7%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "Wafer",
+    "note": "SK키파운드리·삼성파운드리"
+   }
+  ],
+  "company": {
+   "name": "어보브반도체",
+   "note": "MCU 팹리스"
+  },
+  "customers": [
+   {
+    "name": "삼성전자·LG전자",
+    "note": "국내 가전"
+   },
+   {
+    "name": "Midea·XIAOMI",
+    "note": "중국"
+   },
+   {
+    "name": "후공정 고객",
+    "note": "윈팩"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Consumer MCU",
+    "amount": 128808000000,
+    "share": 52.8
+   },
+   {
+    "name": "패키징(PKG)",
+    "amount": 51674000000,
+    "share": 21.2
+   },
+   {
+    "name": "테스트(TEST)",
+    "amount": 16941000000,
+    "share": 6.9
+   },
+   {
+    "name": "Remote Controller",
+    "amount": 15472000000,
+    "share": 6.3
+   },
+   {
+    "name": "Industrial",
+    "amount": 14031000000,
+    "share": 5.7
+   },
+   {
+    "name": "Mobile·Power 등",
+    "amount": 16252000000,
+    "share": 6.7
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 2,324.4억 원, 2,321.2억 원, 2,441.2억 원으로 움직였다. Consumer MCU가 1,160.8억 원에서 1,288.1억 원으로 늘었다.",
+ "business": "가전·산업용 8-bit·32-bit MCU와 Touch·Ambient Light Sensor, High Voltage 전력반도체를 설계하며 아날로그 IP를 자체 설계합니다. 종속회사 윈팩이 패키징·테스트 후공정 외주를 합니다.",
+ "products": [
+  {
+   "name": "8-bit·32-bit MCU",
+   "segment": "Consumer",
+   "desc": "가전",
+   "share": 52.8
+  },
+  {
+   "name": "PKG·TEST",
+   "segment": "윈팩",
+   "desc": "후공정",
+   "share": 28.1
+  }
+ ],
+ "customers": "삼성전자·LG전자와 중국 Midea·XIAOMI, 일본·유럽·미국 업체에 공급합니다."
+}
