@@ -1,0 +1,82 @@
+{
+ "corp_code": "00351092",
+ "name": "삼보모터스",
+ "source_rcept": "20260323000719",
+ "source_name": "[기재정정]사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "삼보모터스는 자동차 범퍼·인스트루먼트 패널 같은 플라스틱 부품과 변속기 Plate, 엔진룸 Pipe를 만드는 코스닥 부품 회사입니다.",
+ "facts": "코스닥 · 2001-11 상장 · 2025 연결 매출 1.68조 · 영업이익 617억 · 순이익 203억",
+ "mix_line": "매출 플라스틱부품 63.5% · Pipe 26.5% · Plate 7.4% · 금형 2.6%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "철판",
+    "note": "완성차 업계 공급"
+   }
+  ],
+  "company": {
+   "name": "삼보모터스",
+   "note": "자동차 부품"
+  },
+  "customers": [
+   {
+    "name": "기아·현대모비스·현대차",
+    "note": "국내"
+   },
+   {
+    "name": "북경현대·강소열달기아",
+    "note": "중국 법인"
+   },
+   {
+    "name": "체코",
+    "note": "프라코체코"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "플라스틱부품(BUMPER·I/P·PILLAR)",
+    "amount": 1068904030000,
+    "share": 63.5
+   },
+   {
+    "name": "Pipe Part",
+    "amount": 447157851000,
+    "share": 26.5
+   },
+   {
+    "name": "Plate(자동변속기)",
+    "amount": 125435587000,
+    "share": 7.4
+   },
+   {
+    "name": "금형",
+    "amount": 43084684000,
+    "share": 2.6
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "Pipe 제품 매출이 3,555.1억 원에서 4,147.8억 원으로, 플라스틱 수출이 2,952.7억 원에서 3,537.3억 원으로 늘었다.",
+ "business": "자동변속기 Plate류와 엔진룸·연료계통 Pipe류를 만들고, 종속회사 프라코가 화성·아산·서산·진천·당진과 체코에서 범퍼·I/P·필러·가니쉬와 금형을, 중국 일조삼보가 Pipe류를 생산합니다.",
+ "products": [
+  {
+   "name": "BUMPER·I/P",
+   "segment": "플라스틱부품",
+   "desc": "",
+   "share": 63.5
+  },
+  {
+   "name": "Water/Heater Pipe",
+   "segment": "Pipe Part",
+   "desc": "",
+   "share": 26.5
+  },
+  {
+   "name": "CLUTCH PLATE",
+   "segment": "Auto Part",
+   "desc": "",
+   "share": 7.4
+  }
+ ],
+ "customers": "기아·현대모비스·현대차 등 국내 완성차·부품사와 중국 현대·기아 합작사에 OEM으로 납품합니다."
+}

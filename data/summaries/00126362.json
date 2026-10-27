@@ -1,0 +1,70 @@
+{
+ "corp_code": "00126362",
+ "name": "삼성SDI",
+ "source_rcept": "20260310002954",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "삼성SDI는 전기차·ESS·스마트폰용 리튬이온 2차전지와 반도체·OLED 소재를 만드는 코스피 회사입니다.",
+ "facts": "코스피 · 1979-02 상장 · 2025 연결 매출 13.27조 · 영업손실 1.72조 · 순손실 5,849억 · 매출 20% 감소",
+ "mix_line": "매출 에너지솔루션 93% · 전자재료 7%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "극판자재",
+    "note": "유미코아·에코프로이엠 등, 58%"
+   },
+   {
+    "name": "조립자재",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "삼성SDI",
+   "note": "2차전지 · 전자재료"
+  },
+  "customers": [
+   {
+    "name": "BMW·Volkswagen·Stellantis",
+    "note": "EV 배터리"
+   },
+   {
+    "name": "AES",
+    "note": "ESS"
+   },
+   {
+    "name": "삼성전자",
+    "note": ""
+   }
+  ],
+  "revenue": [
+   {
+    "name": "에너지솔루션(PRiMX)",
+    "amount": 12384169000000,
+    "share": 93.3
+   },
+   {
+    "name": "전자재료(EMC·CMP 슬러리)",
+    "amount": 882562000000,
+    "share": 6.7
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 21.44조 원, 16.59조 원, 13.27조 원으로 2년 연속 줄었다. 에너지솔루션 영업손실이 1.85조 원으로 전체 적자를 이끌었다.",
+ "business": "PRiMX 브랜드로 전기자동차용·ESS용 중대형전지와 스마트폰 등 소형전지를 만들고, 전자재료 부문에서 반도체 EMC·CMP 슬러리와 OLED 소재(스타콤 등)를 생산합니다. 편광필름 사업은 양도했습니다.",
+ "products": [
+  {
+   "name": "PRiMX",
+   "segment": "에너지솔루션",
+   "desc": "EV·ESS·소형전지",
+   "share": 93.3
+  },
+  {
+   "name": "EMC·CMP 슬러리",
+   "segment": "전자재료",
+   "desc": "반도체·OLED 소재",
+   "share": 6.7
+  }
+ ],
+ "customers": "에너지솔루션은 97%를 거래선에 직접 공급하며, 주요 매출처는 BMW, VWG, 삼성전자, Stellantis, AES입니다."
+}

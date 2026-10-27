@@ -1,0 +1,83 @@
+{
+ "corp_code": "01309421",
+ "name": "제이엔비",
+ "source_rcept": "20260318000375",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "제이엔비는 반도체 공장의 진공펌프를 받쳐 주는 'Stacker system' 장비를 만들고 진공펌프 핵심 부품을 정밀가공하는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2023-11 상장 · 2025 연결 매출 149억 · 영업이익 2억 · 순손실 5억 · 전량 내수",
+ "mix_line": "매출 임가공 55.7% · Stacker 24.8% · On tool 8.6% · 기타 제품 6.5% · 임대 4.4%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "Rack",
+    "note": "국내 조달"
+   }
+  ],
+  "company": {
+   "name": "제이엔비",
+   "note": "진공펌프 유틸리티"
+  },
+  "customers": [
+   {
+    "name": "반도체 fab",
+    "note": "Stacker"
+   },
+   {
+    "name": "진공펌프 제조사",
+    "note": "부품 임가공, E사 On tool"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "임가공(Head Plate·Stator)",
+    "amount": 8292650000,
+    "share": 55.7
+   },
+   {
+    "name": "Stacker",
+    "amount": 3695944000,
+    "share": 24.8
+   },
+   {
+    "name": "On tool kit",
+    "amount": 1278880000,
+    "share": 8.6
+   },
+   {
+    "name": "기타 제품",
+    "amount": 972933000,
+    "share": 6.5
+   },
+   {
+    "name": "임대료",
+    "amount": 661238000,
+    "share": 4.4
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 153.1억 원, 160.3억 원, 149.0억 원으로 움직였다. 임가공이 110.6억 원에서 82.9억 원으로 줄고 Stacker는 26.5억 원에서 37.0억 원으로 늘었다.",
+ "business": "2003년 개발한 Stacker system은 진공펌프에 유틸리티를 공급하고 배관 지지·소음·진동 억제를 합니다. On tool 진공펌프 설치 키트, 파워 박스·쿨링 트랩·매니폴드를 만들고 초고진공 펌프 부품을 정밀가공합니다.",
+ "products": [
+  {
+   "name": "Stacker system",
+   "segment": "신기술장비",
+   "desc": "",
+   "share": 24.8
+  },
+  {
+   "name": "On tool kit",
+   "segment": "신기술장비",
+   "desc": "",
+   "share": 8.6
+  },
+  {
+   "name": "진공펌프 부품 가공",
+   "segment": "정밀가공",
+   "desc": "",
+   "share": 55.7
+  }
+ ],
+ "customers": "매출 100%가 내수입니다."
+}

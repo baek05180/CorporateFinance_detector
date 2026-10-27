@@ -1,0 +1,84 @@
+{
+ "corp_code": "01573284",
+ "name": "코닉오토메이션",
+ "source_rcept": "20260318001087",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "코닉오토메이션은 반도체·디스플레이 장비 제어 소프트웨어 'EasyCluster'와 공장·물류 자동화, IT 인프라 구축을 하는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2021-10 상장(SPAC) · 2025 매출 301억 · 영업손실 27억 · 순손실 29억 · 매출 46% 감소",
+ "mix_line": "매출 IT인프라 45.0% · 제어SW 23.3% · 로봇물류 18.8% · 스마트팩토리 12.9%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "네트워크·보안장비",
+    "note": "IT인프라 상품"
+   },
+   {
+    "name": "SW개발 외주",
+    "note": "티디엔에이 등"
+   }
+  ],
+  "company": {
+   "name": "코닉오토메이션",
+   "note": "제어SW · 자동화"
+  },
+  "customers": [
+   {
+    "name": "반도체·디스플레이 장비사",
+    "note": "EasyCluster"
+   },
+   {
+    "name": "제조·유통물류 공장",
+    "note": "자동화"
+   },
+   {
+    "name": "기업 IT",
+    "note": "인프라 구축"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "IT인프라",
+    "amount": 13545000000,
+    "share": 45.0
+   },
+   {
+    "name": "제어SW",
+    "amount": 7015000000,
+    "share": 23.3
+   },
+   {
+    "name": "로봇물류",
+    "amount": 5649000000,
+    "share": 18.8
+   },
+   {
+    "name": "스마트팩토리",
+    "amount": 3891000000,
+    "share": 12.9
+   }
+  ],
+  "basis": "2025 별도"
+ },
+ "caption": "매출이 2024년 555.1억 원에서 2025년 301.0억 원으로 46% 줄었다. 로봇물류가 257.1억 원에서 56.5억 원으로 급감했다.",
+ "business": "EasyCluster(EasyCTC·EasyGEM·EasyTMC·EasyPMC)와 i-EDA로 반도체·FPD·LED 설비를 제어하고 데이터를 모읍니다. 물류·검사 설비 자동화, AGV·AMR·협동로봇 기반 물류 자동화, 네트워크·보안 IT 인프라 구축도 합니다.",
+ "products": [
+  {
+   "name": "EasyCluster",
+   "segment": "제어SW",
+   "desc": "설비 통합 제어"
+  },
+  {
+   "name": "i-EDA",
+   "segment": "제어SW",
+   "desc": "장비 데이터 수집"
+  },
+  {
+   "name": "물류자동화",
+   "segment": "로봇물류",
+   "desc": "",
+   "share": 18.8
+  }
+ ],
+ "customers": "EasyCluster는 약 30년간 삼성전자·SK하이닉스 등의 설비에서 운용됐습니다."
+}
