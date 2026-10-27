@@ -1,0 +1,70 @@
+{
+ "corp_code": "01571107",
+ "name": "오픈엣지테크놀로지",
+ "source_rcept": "20260319001410",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "오픈엣지테크놀로지는 자율주행차·보안카메라 같은 기기 안에서 AI를 돌리는 반도체를 만들 때 필요한 NPU·메모리 시스템 설계 IP를 라이선스로 파는 회사입니다.",
+ "facts": "코스닥 상장 2022.09 · 2025 연결 매출 161억 · 영업손실 289억 · 순손실 301억",
+ "mix_line": "매출 라이선스 67.6% · 유지보수 26.1% · 기타 5.6% · 로열티 0.6%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "설계 인력",
+    "note": "원재료 없음"
+   }
+  ],
+  "company": {
+   "name": "오픈엣지테크놀로지",
+   "note": "반도체 설계 IP"
+  },
+  "customers": [
+   {
+    "name": "해외 반도체 설계사",
+    "note": "수출 82억"
+   },
+   {
+    "name": "국내 팹리스·SoC 기업",
+    "note": "내수 79억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "라이선스",
+    "amount": 10858000000,
+    "share": 67.6
+   },
+   {
+    "name": "유지보수",
+    "amount": 4198000000,
+    "share": 26.1
+   },
+   {
+    "name": "기타",
+    "amount": 901000000,
+    "share": 5.6
+   },
+   {
+    "name": "로열티",
+    "amount": 102000000,
+    "share": 0.6
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출은 160억 원 안팎으로 비슷했지만 수출 비중이 18%에서 51%로 커졌다. 영업손실 289억 원을 냈다.",
+ "business": "NPU(ENLIGHT), On-chip Interconnect(OIC), Memory Interface IP를 통합한 Total Memory System IP와 엣지용 AI Platform IP를 개발합니다.",
+ "products": [
+  {
+   "name": "ENLIGHT NPU IP",
+   "segment": "AI Platform IP",
+   "desc": ""
+  },
+  {
+   "name": "Total Memory System IP",
+   "segment": "메모리 IP",
+   "desc": "OIC·Memory Interface"
+  }
+ ],
+ "customers": "국내외 시스템반도체 설계 기업에 IP를 라이선스합니다."
+}
