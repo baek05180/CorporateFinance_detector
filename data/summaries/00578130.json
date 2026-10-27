@@ -1,0 +1,63 @@
+{
+ "corp_code": "00578130",
+ "name": "아퓨어스",
+ "source_rcept": "20260323001445",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "아퓨어스는 신약·의료기기 시험에 쓰는 의료·실험용 미니돼지 'MICROPIG'와 생체재료를 공급하는 바이오 회사입니다.",
+ "facts": "2025 매출 7.1억 · 전량 내수 · MICROPIG FAO 등재(2015-12)",
+ "mix_line": "매출 MICROPIG 55.2% · 생체재료 42.7% · CRO 2.1%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "사료",
+    "note": "국내 0.7억"
+   }
+  ],
+  "company": {
+   "name": "아퓨어스",
+   "note": "실험용 미니돼지"
+  },
+  "customers": [
+   {
+    "name": "제약·의료기기 연구자",
+    "note": "직접 계약"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "MICROPIG",
+    "amount": 389990000,
+    "share": 55.2
+   },
+   {
+    "name": "생체재료",
+    "amount": 301686000,
+    "share": 42.7
+   },
+   {
+    "name": "CRO(연구용역)",
+    "amount": 15020000,
+    "share": 2.1
+   }
+  ],
+  "basis": "2025"
+ },
+ "caption": "매출이 6.6억 원, 6.4억 원, 7.1억 원으로 움직였다. MICROPIG 매출이 2.0억 원에서 3.9억 원으로 늘었다.",
+ "business": "여러 소형 돼지 품종을 교배해 표준화한 MICROPIG(L·M·T·ET-type)를 CV·SPF 시설에서 양산하고, in vitro 시험 소재와 생체재료, 유효성·안전성 평가 연구용역을 제공합니다.",
+ "products": [
+  {
+   "name": "MICROPIG",
+   "segment": "실험동물",
+   "desc": "",
+   "share": 55.2
+  },
+  {
+   "name": "생체재료",
+   "segment": "소재",
+   "desc": "",
+   "share": 42.7
+  }
+ ],
+ "customers": "고객 요청에 따라 직접 계약하며, 기간·물량을 정한 공급계약 고객은 없습니다."
+}

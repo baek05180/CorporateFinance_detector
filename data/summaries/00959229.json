@@ -1,0 +1,78 @@
+{
+ "corp_code": "00959229",
+ "name": "세종메디칼",
+ "source_rcept": "20260319001342",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "세종메디칼은 복강경 수술용 일회용 투관침(Trocar)·장기적출주머니·단일공 개창기구를 만들어 36여 개국에 수출하는 코스닥 의료기기 회사입니다.",
+ "facts": "코스닥 · 1996년 출발 · 2018-05 상장 · 2025 연결 매출 185억 · 영업이익 23억 · 순손실 0.3억",
+ "mix_line": "매출 Trocar 38.4% · LapBag 23.2% · LapSingle 14.7% · 기타 23.7%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "칼날 등",
+    "note": "Trocar 원재료"
+   }
+  ],
+  "company": {
+   "name": "세종메디칼",
+   "note": "복강경 수술기구"
+  },
+  "customers": [
+   {
+    "name": "국내 병원",
+    "note": ""
+   },
+   {
+    "name": "해외",
+    "note": "36여 개국"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Trocar(Laport·Mini Port)",
+    "amount": 7118467000,
+    "share": 38.4
+   },
+   {
+    "name": "기타",
+    "amount": 4392000000,
+    "share": 23.7
+   },
+   {
+    "name": "LapBag(장기적출주머니)",
+    "amount": 4299468000,
+    "share": 23.2
+   },
+   {
+    "name": "LapSingle(단일공)",
+    "amount": 2729762000,
+    "share": 14.7
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "LapBag 매출이 2024년 38.0억 원에서 2025년 43.0억 원으로, LapSingle이 23.2억 원에서 27.3억 원으로 늘었다.",
+ "business": "수입품이 차지하던 국내 복강경 시장을 국산으로 대체하며 일회용 투관침 Laport, 단일공 개창기구 LapSingle, 장기적출주머니 LapBag, 흡수성 봉합사 봉합기(Suture Loop), 세척·소작기 등을 만듭니다.",
+ "products": [
+  {
+   "name": "Laport",
+   "segment": "Trocar",
+   "desc": "일회용 투관침",
+   "share": 38.4
+  },
+  {
+   "name": "LapBag",
+   "segment": "Specimen Bag",
+   "desc": "",
+   "share": 23.2
+  },
+  {
+   "name": "LapSingle",
+   "segment": "Single Port",
+   "desc": "",
+   "share": 14.7
+  }
+ ],
+ "customers": "국내 병원과 36여 개 해외 국가에 판매합니다."
+}
