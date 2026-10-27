@@ -11,10 +11,10 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "watch / daily / backfill / profiles"
+        description: "watch / daily / backfill / profiles / prices"
         default: "daily"
         type: choice
-        options: [watch, daily, backfill, profiles]
+        options: [watch, daily, backfill, profiles, prices]
       days:
         description: "daily·backfill 때 거슬러 올라갈 일수 (backfill은 1095 = 3년)"
         default: "7"

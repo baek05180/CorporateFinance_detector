@@ -198,7 +198,7 @@ def collect_private_bonds(store, mode):
 
 def main(argv=None):
     ap = argparse.ArgumentParser()
-    ap.add_argument("--mode", choices=["watch", "daily", "backfill", "profiles"], default="watch")
+    ap.add_argument("--mode", choices=["watch", "daily", "backfill", "profiles", "prices"], default="watch")
     ap.add_argument("--days", type=int, default=7)
     args = ap.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
@@ -206,6 +206,23 @@ def main(argv=None):
     store = Store()
     dart = DartClient()
     today = now_kst().date()
+
+    if args.mode == "prices":
+        # 주가 API만 빠르게 확인·갱신 (DART 호출 없음)
+        import json
+        from .refdata import StockPriceError, stock_prices
+        try:
+            bas, prices = stock_prices(today)
+            if prices:
+                dump_json("ref/prices.json", {"date": bas, "prices": prices}, indent=None)
+            summary = f"mode=prices · 기준일 {bas} · {len(prices)}종목"
+        except (StockPriceError, Exception) as e:  # noqa: BLE001
+            summary = f"mode=prices · 실패: {redact(e)[:300]}"
+        log.info(summary)
+        if os.environ.get("GITHUB_STEP_SUMMARY"):
+            with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as f:
+                f.write(summary + "\n")
+        return 0
 
     if args.mode == "profiles":
         from . import profiles
