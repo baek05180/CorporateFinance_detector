@@ -1,0 +1,60 @@
+{
+ "corp_code": "01723366",
+ "name": "오스템바스큘라",
+ "source_rcept": "20260331003103",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "오스템바스큘라는 심장 혈관을 넓히는 약물방출 관상동맥 스텐트(CENTUM)와 풍선카테터를 만들고, 뇌동맥류 치료용 코일을 들여와 병원에 파는 혈관 의료기기 회사입니다.",
+ "facts": "2025 매출 151억 (전년 54억) · 영업손실 43억",
+ "mix_line": "매출 혈관용 의료기기 (스텐트·카테터·색전 코일)",
+ "flow": {
+  "inputs": [
+   {
+    "name": "Co-Cr 금속·약물",
+    "note": "Everolimus"
+   }
+  ],
+  "company": {
+   "name": "오스템바스큘라",
+   "note": "심혈관 스텐트"
+  },
+  "customers": [
+   {
+    "name": "병원 심혈관 시술",
+    "note": "스텐트·카테터"
+   },
+   {
+    "name": "영상의학과·신경외과",
+    "note": "Balt 코일 총판"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "혈관용 의료기기",
+    "amount": 15132000000,
+    "share": 100.0
+   }
+  ],
+  "basis": "2025"
+ },
+ "caption": "매출이 2024년 54억 원에서 2025년 151억 원으로 늘었지만 영업손실 43억 원을 냈다.",
+ "business": "국내 최초로 3세대 약물방출 관상동맥 스텐트(CENTUM)를 개발·양산하고, PTCA 풍선카테터(BeMotion)를 만듭니다. 프랑스 Balt와 국내 총판 계약을 맺어 OPTIMA COIL을 공급합니다.",
+ "products": [
+  {
+   "name": "CENTUM",
+   "segment": "관상동맥 스텐트",
+   "desc": "Everolimus 방출"
+  },
+  {
+   "name": "BeMotion",
+   "segment": "풍선카테터",
+   "desc": ""
+  },
+  {
+   "name": "OPTIMA COIL",
+   "segment": "뇌혈관 색전 코일",
+   "desc": "Balt 총판"
+  }
+ ],
+ "customers": "국내 병원의 심혈관·뇌혈관 시술 부서에 공급합니다.",
+ "written": "2026-10-27"
+}

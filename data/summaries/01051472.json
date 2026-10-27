@@ -1,0 +1,61 @@
+{
+ "corp_code": "01051472",
+ "name": "젠큐릭스",
+ "source_rcept": "20260316001142",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "젠큐릭스는 유방암 재발 가능성을 예측하는 'GenesWell BCT'와 폐암·대장암 표적치료제 대상 환자를 가리는 동반진단 키트를 만드는 암 분자진단 회사입니다.",
+ "facts": "코스닥 상장 2020.06 · 2025 매출 75억 · 영업손실 66억 · 순손실 74억",
+ "mix_line": "매출 암진단 97.2% · 기타 2.8%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "시약 원재료",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "젠큐릭스",
+   "note": "암 분자진단"
+  },
+  "customers": [
+   {
+    "name": "국내 병원",
+    "note": "내수 73억"
+   },
+   {
+    "name": "해외",
+    "note": "수출 2억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "암진단(BCT·Droplex)",
+    "amount": 7333768000,
+    "share": 97.2
+   },
+   {
+    "name": "장비 소모품·연구용역",
+    "amount": 214452000,
+    "share": 2.8
+   }
+  ],
+  "basis": "2025"
+ },
+ "caption": "매출이 2023년 26억 원에서 2025년 75억 원으로 늘었지만 영업손실 66억 원을 냈다.",
+ "business": "액체생검 기반 분자진단 검사제품을 개발합니다. GenesWell BCT(조기 유방암 10년 내 전이·재발 예측), Droplex BRAF·EGFR·POLE 돌연변이 동반진단 검사가 주력입니다.",
+ "products": [
+  {
+   "name": "GenesWell BCT",
+   "segment": "유방암 예후진단",
+   "desc": "",
+   "share": null
+  },
+  {
+   "name": "Droplex EGFR·BRAF·POLE",
+   "segment": "동반진단",
+   "desc": ""
+  }
+ ],
+ "customers": "매출 대부분이 국내 병원이며 수출은 일부입니다.",
+ "written": "2026-10-27"
+}
