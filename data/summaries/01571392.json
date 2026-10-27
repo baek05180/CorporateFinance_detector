@@ -1,0 +1,66 @@
+{
+ "corp_code": "01571392",
+ "name": "에이치로보틱스",
+ "source_rcept": "20260324000287",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "에이치로보틱스는 뇌졸중 환자의 상·하지 재활훈련을 돕는 재활로봇 'rebless'와 원격재활 솔루션을 만드는 회사입니다.",
+ "facts": "2025 매출 21억 · 재활로봇 2종",
+ "mix_line": "매출 rebless Planar 63% · rebless 37%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "기계·전장부품",
+    "note": "맥슨모터코리아 등"
+   }
+  ],
+  "company": {
+   "name": "에이치로보틱스",
+   "note": "재활로봇"
+  },
+  "customers": [
+   {
+    "name": "국내외 대리점",
+    "note": "8.3억"
+   },
+   {
+    "name": "조달청",
+    "note": "2.9억"
+   },
+   {
+    "name": "병원기관",
+    "note": ""
+   }
+  ],
+  "revenue": [
+   {
+    "name": "rebless Planar",
+    "amount": 1291762000,
+    "share": 63.0
+   },
+   {
+    "name": "rebless",
+    "amount": 760143000,
+    "share": 37.0
+   }
+  ],
+  "basis": "2025 별도"
+ },
+ "caption": "매출이 11.0억 원, 17.8억 원, 20.5억 원으로 늘었다. 내수가 8.7억 원에서 14.6억 원으로 커졌다.",
+ "business": "고가 재활로봇과 대면 치료 위주의 재활 방식을 보완하기 위해 재활로봇과 원격재활 솔루션을 결합한 재활 플랫폼을 개발해, 외래와 가정에서도 재활훈련을 이어갈 수 있게 합니다.",
+ "products": [
+  {
+   "name": "rebless",
+   "segment": "의료기기",
+   "desc": "재활로봇",
+   "share": 37.0
+  },
+  {
+   "name": "rebless Planar",
+   "segment": "의료기기",
+   "desc": "재활로봇",
+   "share": 63.0
+  }
+ ],
+ "customers": "고객사의 연간 예상 수량 발주에 따라 납품합니다."
+}

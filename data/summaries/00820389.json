@@ -1,0 +1,54 @@
+{
+ "corp_code": "00820389",
+ "name": "한울비앤씨",
+ "source_rcept": "20260325001268",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "한울비앤씨는 대사항암제(KAT)·표적항암제(탈레트레트닙) 신약개발을 주력으로 하고 CCTV와 화장품 OEM, 더마 브랜드 'WISMIN'도 하는 회사입니다.",
+ "facts": "2025 매출 63억 · 수출 13억 · 2025 화장품 진출",
+ "mix_line": "매출 NVR·DVR·화장품 등 상품",
+ "flow": {
+  "inputs": [
+   {
+    "name": "OEM 제조업체",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "한울비앤씨",
+   "note": "신약 · CCTV · 화장품"
+  },
+  "customers": [
+   {
+    "name": "국내 유통 고객사",
+    "note": "내수 50.0억"
+   },
+   {
+    "name": "해외 ODM Distributor",
+    "note": "수출 12.9억"
+   }
+  ],
+  "revenue": [],
+  "basis": "2025"
+ },
+ "caption": "상품 매출이 2024년 2.0억 원에서 2025년 63.0억 원으로 늘었다.",
+ "business": "KAT(대사항암제)와 탈레트레트닙(표적항암제) 신약을 개발하고, CCTV(NVR·DVR)와 화장품 OEM을 하며, 엑소좀·식물세포수·마이크로바이옴 원료의 더마 화장품 브랜드 WISMIN을 2025년 내놓았습니다.",
+ "products": [
+  {
+   "name": "KAT",
+   "segment": "신약",
+   "desc": "대사항암제"
+  },
+  {
+   "name": "탈레트레트닙",
+   "segment": "신약",
+   "desc": "표적항암제"
+  },
+  {
+   "name": "WISMIN",
+   "segment": "화장품",
+   "desc": "더마 브랜드"
+  }
+ ],
+ "customers": "해외 ODM 유통사와 B2C 총판, 쇼핑몰 등을 통해 판매합니다."
+}
