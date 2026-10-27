@@ -1,0 +1,80 @@
+{
+ "corp_code": "00317487",
+ "name": "티에스넥스젠",
+ "source_rcept": "20260407003639",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "티에스넥스젠은 발전소용 댐퍼와 선박 탈황설비 SOx Damper, 전력배전용 부스웨이를 만드는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2001-07 상장 · 2025 연결 매출 145억 · 영업손실 59억 · 순손실 377억",
+ "mix_line": "매출 산업설비(Damper) 74.2% · 에너지(Busway) 16.7% · 기타 8.6% · 의료기기 0.6%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "Damper",
+    "note": "와이지에스, 91%"
+   }
+  ],
+  "company": {
+   "name": "티에스넥스젠",
+   "note": "댐퍼 · 부스웨이"
+  },
+  "customers": [
+   {
+    "name": "발전플랜트",
+    "note": "대기업 협력·입찰"
+   },
+   {
+    "name": "조선",
+    "note": "SOx Damper"
+   },
+   {
+    "name": "전력배전",
+    "note": "Busway"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "산업설비(SOx·Plant Damper)",
+    "amount": 10171801000,
+    "share": 74.2
+   },
+   {
+    "name": "에너지(Busway)",
+    "amount": 2286897000,
+    "share": 16.7
+   },
+   {
+    "name": "기타",
+    "amount": 1176154000,
+    "share": 8.6
+   },
+   {
+    "name": "의료기기",
+    "amount": 79902000,
+    "share": 0.6
+   }
+  ],
+  "basis": "2025 연결, 계속영업"
+ },
+ "caption": "계속영업 매출이 265.5억 원, 209.6억 원, 137.1억 원으로 줄었고 순손실은 377.4억 원이다.",
+ "business": "원자력·화력·복합화력 발전소 덕트의 기류를 제어하는 Plant Damper와 선박 탈황설비 SOx Damper, 전력배전 부스웨이를 만들고 의료기기를 판매합니다.",
+ "products": [
+  {
+   "name": "SOx Damper",
+   "segment": "산업설비",
+   "desc": "선박 탈황"
+  },
+  {
+   "name": "Plant Damper",
+   "segment": "산업설비",
+   "desc": "발전소"
+  },
+  {
+   "name": "Busway",
+   "segment": "에너지",
+   "desc": "",
+   "share": 16.7
+  }
+ ],
+ "customers": "발전플랜트 댐퍼는 대기업 협력업체 등록과 입찰로 직접 수주합니다."
+}
