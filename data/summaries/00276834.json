@@ -1,0 +1,67 @@
+{
+ "corp_code": "00276834",
+ "name": "KX하이텍",
+ "source_rcept": "20260318001546",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "KX하이텍은 반도체를 담아 옮기는 IC 트레이·캐리어 테이프 같은 포장재와 SSD 케이스를 만들어 주로 수출하는 회사입니다.",
+ "facts": "코스닥 상장 2005.01 · 2025 연결 매출 1,263억 · 영업이익 54억 · 순이익 43억",
+ "mix_line": "매출 SSD 케이스 36.2% · 반도체 포장재(IC-Tray 등) 33.2% · 기타 사업",
+ "flow": {
+  "inputs": [
+   {
+    "name": "Resin",
+    "note": "주요 원재료"
+   }
+  ],
+  "company": {
+   "name": "KX하이텍",
+   "note": "반도체 포장재 + SSD 케이스"
+  },
+  "customers": [
+   {
+    "name": "반도체 제조사",
+    "note": "Tray·Carrier Tape"
+   },
+   {
+    "name": "SSD 제조사",
+    "note": "케이스 수출 369억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "SSD 케이스",
+    "amount": 45675000000,
+    "share": 36.2
+   },
+   {
+    "name": "반도체재료(IC-Tray 등)",
+    "amount": 41895000000,
+    "share": 33.2
+   },
+   {
+    "name": "그 외(기타 사업, 표 미표시)",
+    "amount": 38710000000,
+    "share": 30.6
+   }
+  ],
+  "basis": "2025 연결 (그 외는 연결 매출과의 차액)"
+ },
+ "caption": "SSD 케이스 제품 매출이 2023년 157억 원에서 2025년 442억 원으로 늘었고, 영업이익 54억 원을 냈다.",
+ "business": "반도체재료 부문은 IC-Tray, Module-Tray, Carrier Tape, Blank Mask Box·Wafer Ring Carrier를 만들고, SSD 부문은 SSD용 칩 장착 케이스를 만듭니다.",
+ "products": [
+  {
+   "name": "SSD Case",
+   "segment": "SSD",
+   "desc": "",
+   "share": 36.2
+  },
+  {
+   "name": "IC-Tray·Carrier Tape",
+   "segment": "반도체재료",
+   "desc": "",
+   "share": 33.2
+  }
+ ],
+ "customers": "반도체·SSD 제조사에 공급하며 매출 대부분이 수출입니다.",
+ "written": "2026-10-27"
+}
