@@ -1,0 +1,72 @@
+{
+ "corp_code": "01182550",
+ "name": "EDGC",
+ "source_rcept": "20260407003694",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "EDGC는 임산부 혈액으로 태아 이상을 보는 NIPT, 유전성 유방암 검사 같은 NGS 유전체 분석과 신생아·개인 맞춤형 유전자 검사 서비스를 하는 회사입니다.",
+ "facts": "코스닥 상장 2018.06 · 2025 연결 매출 79억 · 영업손실 16억 · 순이익 282억",
+ "mix_line": "매출 NGS 67.8% · GSA 16.6% · 기타 유전체 서비스 13.2%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "DNA Chip 등",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "EDGC",
+   "note": "유전체 분석"
+  },
+  "customers": [
+   {
+    "name": "국내 의료기관·소비자",
+    "note": ""
+   },
+   {
+    "name": "해외",
+    "note": "NGS 28억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "NGS(NICE·BRCARE)",
+    "amount": 5350085000,
+    "share": 67.8
+   },
+   {
+    "name": "GSA(bebegene 등)",
+    "amount": 1312361000,
+    "share": 16.6
+   },
+   {
+    "name": "기타 유전체 서비스",
+    "amount": 1037185000,
+    "share": 13.2
+   },
+   {
+    "name": "그 외(표 미표시)",
+    "amount": 190369000,
+    "share": 2.4
+   }
+  ],
+  "basis": "2025 연결 (그 외는 매출과의 차액)"
+ },
+ "caption": "NGS 매출이 61억 원에서 54억 원으로 줄었고, 순이익 282억 원은 영업 외에서 났다.",
+ "business": "2013년 이원의료재단과 미국 Diagnomics의 한미합작법인으로 설립됐고, NGS·생명정보학 기술로 유전체 빅데이터와 맞춤형 의료서비스를 개발합니다.",
+ "products": [
+  {
+   "name": "NICE·Verifi·BRCARE",
+   "segment": "NGS",
+   "desc": "산전·유방암",
+   "share": 67.8
+  },
+  {
+   "name": "bebegene·gene2me",
+   "segment": "GSA",
+   "desc": "신생아·개인맞춤",
+   "share": 16.6
+  }
+ ],
+ "customers": "NGS 매출의 약 절반이 해외입니다.",
+ "written": "2026-10-27"
+}
