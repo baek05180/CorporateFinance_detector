@@ -1,0 +1,76 @@
+{
+ "corp_code": "00445160",
+ "name": "APS이노베이션",
+ "source_rcept": "20260319000618",
+ "source_name": "[첨부추가]사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "APS이노베이션은 2차전지 전극을 레이저로 자르는 노칭장비와 OLED 검사장비를 만들어 대부분 해외 고객에 공급하는 코스닥 장비 회사입니다.",
+ "facts": "코스닥 · 2001-08 설립 · 2005-01 상장 · 2025 연결 매출 740억 · 영업이익 26억 · 순이익 1억 · 수출 94%",
+ "mix_line": "매출 이차전지 부품·용역 49.2% · Laser Notching 43.3% · 디스플레이 부품 등 5.6% · Aging Tester 1.9%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "외주가공",
+    "note": "99.9억"
+   },
+   {
+    "name": "가공품·Probe Unit",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "APS이노베이션",
+   "note": "2차전지 · OLED 장비"
+  },
+  "customers": [
+   {
+    "name": "국내외 Major 배터리사",
+    "note": "이차전지 수출 672.7억"
+   },
+   {
+    "name": "디스플레이 패널사",
+    "note": "검사장비"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "이차전지 부품·기술·용역",
+    "amount": 36403000000,
+    "share": 49.2
+   },
+   {
+    "name": "Laser Notching",
+    "amount": 32018000000,
+    "share": 43.3
+   },
+   {
+    "name": "디스플레이 부품·용역",
+    "amount": 4159000000,
+    "share": 5.6
+   },
+   {
+    "name": "Aging Tester",
+    "amount": 1405000000,
+    "share": 1.9
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 1,273.5억 원, 1,463.7억 원, 739.9억 원으로 움직였다. 이차전지 수출이 1,282.6억 원에서 672.7억 원으로 줄었다.",
+ "business": "TFT LCD 검사장비로 출발해 OLED 공정·검사장비, Micro-LED 검사장비로 넓혔고, 2차전지 양·음극 Roll을 레이저로 Notching하는 장비를 상용화했습니다. OLED Cell 불량을 찾는 Aging Tester와 Array Tester도 만듭니다.",
+ "products": [
+  {
+   "name": "Laser Notching",
+   "segment": "이차전지",
+   "desc": "",
+   "share": 43.3
+  },
+  {
+   "name": "Aging Tester",
+   "segment": "디스플레이",
+   "desc": "OLED Cell",
+   "share": 1.9
+  }
+ ],
+ "customers": "고객사와 사양 미팅으로 제품 사양을 정해 직접 또는 Agent를 통해 납품합니다."
+}

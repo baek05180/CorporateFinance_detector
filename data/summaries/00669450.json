@@ -1,0 +1,54 @@
+{
+ "corp_code": "00669450",
+ "name": "바이오프로테크",
+ "source_rcept": "20260330001644",
+ "source_name": "[기재정정]사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "바이오프로테크는 심전도 측정 전극(ECG)과 저주파 자극기용 전극(TENS), 수술용 전극 같은 일회용 의료용 전극을 만드는 코넥스 회사입니다.",
+ "facts": "코넥스 · 2016-12 상장 · 의료용 바이오센서",
+ "mix_line": "제품 심전도 전극 · TENS 전극 · SpO2 센서 · 고주파 수술 전극",
+ "flow": {
+  "inputs": [
+   {
+    "name": "Hydrogel",
+    "note": "수입"
+   }
+  ],
+  "company": {
+   "name": "바이오프로테크",
+   "note": "의료용 전극"
+  },
+  "customers": [
+   {
+    "name": "해외 의료기기 업체",
+    "note": "수출 중심"
+   },
+   {
+    "name": "국내 병원",
+    "note": ""
+   }
+  ],
+  "revenue": [],
+  "basis": "2025"
+ },
+ "caption": "근전도 전극 시장은 Natus·Ambu·Technomed 3사가 주도하며 회사는 원가경쟁력으로 점유율 확대를 노린다.",
+ "business": "심장 상태 진단·감시용 일회용 심전도 전극(ECG), 통증 완화용 전기자극기 전극(TENS), 혈중산소포화도 센서, 고주파 수술칼(ESU Pencil)과 수술용 전극(ESU Plate)을 만들고 의료용 바이오센서를 연구합니다.",
+ "products": [
+  {
+   "name": "심전도 전극(ECG)",
+   "segment": "의료용 전극",
+   "desc": "일회용"
+  },
+  {
+   "name": "TENS 전극",
+   "segment": "의료용 전극",
+   "desc": ""
+  },
+  {
+   "name": "ESU Pencil",
+   "segment": "수술용 기구",
+   "desc": ""
+  }
+ ],
+ "customers": "전시회로 글로벌 주요 업체에 제품 공급과 주문을 진행하고 있습니다."
+}

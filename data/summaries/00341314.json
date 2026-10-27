@@ -1,0 +1,54 @@
+{
+ "corp_code": "00341314",
+ "name": "엔더블유시",
+ "source_rcept": "20260323001549",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "엔더블유시는 FTTH 드롭 케이블·광커넥터와 5G 기지국용 CPRI 케이블 같은 패시브 광통신 부품을 만드는 코넥스 회사입니다.",
+ "facts": "코넥스 · 2025-12 상장 · 광통신 부품",
+ "mix_line": "제품 DROP Cable · 커넥터류 · 5G CPRI · FTTH MDU",
+ "flow": {
+  "inputs": [
+   {
+    "name": "반제품 원재료",
+    "note": "절단·조립·경화"
+   }
+  ],
+  "company": {
+   "name": "엔더블유시",
+   "note": "패시브 광부품"
+  },
+  "customers": [
+   {
+    "name": "국내외 통신사업자",
+    "note": "FTTH"
+   },
+   {
+    "name": "5G 장비 제조사",
+    "note": "CPRI"
+   }
+  ],
+  "revenue": [],
+  "basis": "2025"
+ },
+ "caption": "보고서 매출 표의 단위와 구성이 분명하지 않아 금액은 표시하지 않았다.",
+ "business": "Pre-Connectorized 광케이블 커넥터 원천기술로 설치 시간을 줄인 FTTH Drop Cable, MDU(다세대주택)용 케이블, 광커넥터, 5G 기지국에 광통신과 전력을 함께 연결하는 CPRI 제품과 광접속함체를 만듭니다.",
+ "products": [
+  {
+   "name": "FTTH Drop Cable",
+   "segment": "FTTH",
+   "desc": "Pre-Connectorized"
+  },
+  {
+   "name": "5G CPRI",
+   "segment": "5G",
+   "desc": ""
+  },
+  {
+   "name": "광커넥터",
+   "segment": "FTTH",
+   "desc": ""
+  }
+ ],
+ "customers": "1Gbps 이상 인터넷 확산과 통신사 변경에 따른 교체 수요가 있습니다."
+}
