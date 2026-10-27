@@ -1,0 +1,67 @@
+{
+ "corp_code": "00923516",
+ "name": "메가터치",
+ "source_rcept": "20260318001084",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "메가터치는 배터리 활성화 공정의 충방전 테스트 핀과 반도체 검사용 프로브 핀을 만드는 회사입니다.",
+ "facts": "코스닥 상장 2023.11 · 2025 매출 432억 · 영업손실 42억 · 순손실 29억",
+ "mix_line": "매출 반도체 PIN 55.6% · 배터리 PIN 22.8% · 임가공 21.5%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "원재료",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "메가터치",
+   "note": "테스트 핀"
+  },
+  "customers": [
+   {
+    "name": "해외 반도체 검사 고객",
+    "note": "반도체 PIN 수출 197억"
+   },
+   {
+    "name": "배터리 제조사",
+    "note": "활성화 공정"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "반도체 TEST PIN",
+    "amount": 24032739000,
+    "share": 55.6
+   },
+   {
+    "name": "배터리 충방전 PIN",
+    "amount": 9875653000,
+    "share": 22.8
+   },
+   {
+    "name": "임가공 용역",
+    "amount": 9305302000,
+    "share": 21.5
+   }
+  ],
+  "basis": "2025 별도"
+ },
+ "caption": "배터리 PIN 매출이 2023년 329억 원에서 2025년 99억 원으로 줄고 반도체 PIN이 132억 원에서 240억 원으로 늘었다.",
+ "business": "배터리 부문은 셀에 충방전을 걸어 활성화하는 공정의 PIN·CLIP을, 반도체 부문은 비메모리 후공정 테스트용 PROBE PIN·ICT PIN을 MEGATOUCH 브랜드로 만듭니다.",
+ "products": [
+  {
+   "name": "PROBE PIN",
+   "segment": "반도체",
+   "desc": "",
+   "share": 55.6
+  },
+  {
+   "name": "충방전 PIN·CLIP",
+   "segment": "배터리",
+   "desc": "",
+   "share": 22.8
+  }
+ ],
+ "customers": "반도체 PIN은 대부분 수출합니다.",
+ "written": "2026-10-27"
+}
