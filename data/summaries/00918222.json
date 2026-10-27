@@ -1,0 +1,76 @@
+{
+ "corp_code": "00918222",
+ "name": "엘앤케이바이오",
+ "source_rcept": "20260312001180",
+ "source_name": "[기재정정]사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "엘앤케이바이오는 척추 수술에 쓰는 고정 나사·케이지·로드 같은 척추 임플란트를 만들어 매출의 97%를 미국 등 해외에서 올리는 의료기기 회사입니다.",
+ "facts": "코스닥 상장 2016.11 · 2025 연결 매출 389억 · 영업이익 7억 · 순손실 168억",
+ "mix_line": "매출 흉요추용 80.9% · 경추용 10.7% · 상품 7.4%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "PEEK OPTIMA ROD 등",
+    "note": "수입"
+   }
+  ],
+  "company": {
+   "name": "엘앤케이바이오",
+   "note": "척추 임플란트"
+  },
+  "customers": [
+   {
+    "name": "미주 병원·유통",
+    "note": "67.3%"
+   },
+   {
+    "name": "아시아",
+    "note": "28.9%"
+   },
+   {
+    "name": "국내",
+    "note": "2.7%"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Thoraco Lumbar(흉요추)",
+    "amount": 31470000000,
+    "share": 80.9
+   },
+   {
+    "name": "Cervical(경추)",
+    "amount": 4148000000,
+    "share": 10.7
+   },
+   {
+    "name": "상품(DBM·Knee 등)",
+    "amount": 2882000000,
+    "share": 7.4
+   },
+   {
+    "name": "기타 제품·임대",
+    "amount": 421000000,
+    "share": 1.1
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 361억 원에서 389억 원으로 늘었고 아시아 매출이 85억 원에서 113억 원으로 늘었다. 순손실 168억 원을 냈다.",
+ "business": "정형외과·신경외과용 3등급 척추고정장치(Cage·Screw·Plate)를 경추·흉요추용으로 설계·개발·제조하며 LNK 브랜드로 판매합니다.",
+ "products": [
+  {
+   "name": "흉요추 Screw·Cage",
+   "segment": "Thoraco Lumbar",
+   "desc": "LNK",
+   "share": 80.9
+  },
+  {
+   "name": "경추 Cage·Plate",
+   "segment": "Cervical",
+   "desc": "",
+   "share": 10.7
+  }
+ ],
+ "customers": "매출 대부분이 미주 지역에서 나옵니다."
+}

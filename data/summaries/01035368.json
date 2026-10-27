@@ -1,0 +1,73 @@
+{
+ "corp_code": "01035368",
+ "name": "티에프이",
+ "source_rcept": "20260323000809",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "티에프이는 반도체 완성품을 검사할 때 쓰는 테스트 보드·소켓·교체 키트(COK)를 만들어 국내외 반도체 회사에 공급하는 검사 부품 회사입니다.",
+ "facts": "코스닥 상장 2022.11 · 2025 연결 매출 1,117억 · 영업이익 191억 · 순이익 181억",
+ "mix_line": "매출 Board 52.5% · Test Socket 24.3% · COK 23.1%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "SOCKET 등",
+    "note": "협력업체 생산"
+   }
+  ],
+  "company": {
+   "name": "티에프이",
+   "note": "반도체 테스트 부품"
+  },
+  "customers": [
+   {
+    "name": "국내 반도체 기업",
+    "note": "내수 785억"
+   },
+   {
+    "name": "해외 반도체 기업",
+    "note": "수출 333억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Board(번인 보드 등)",
+    "amount": 58688000000,
+    "share": 52.5
+   },
+   {
+    "name": "Test Socket",
+    "amount": 27208000000,
+    "share": 24.3
+   },
+   {
+    "name": "COK",
+    "amount": 25846000000,
+    "share": 23.1
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "Board 매출이 286억 원에서 587억 원으로 늘어 매출이 736억 원에서 1,117억 원이 됐고 영업이익 191억 원을 냈다.",
+ "business": "Final Test, 신뢰성 테스트, SLT, SET 모사 테스트 등 4개 테스트 공정에 필요한 테스트 자원(메모리·로직 COK, 번인 보드, 테스트 소켓)을 모두 공급합니다.",
+ "products": [
+  {
+   "name": "번인 보드",
+   "segment": "Board",
+   "desc": "신뢰성 테스트",
+   "share": 52.5
+  },
+  {
+   "name": "Test Socket",
+   "segment": "Socket",
+   "desc": "",
+   "share": 24.3
+  },
+  {
+   "name": "COK",
+   "segment": "COK",
+   "desc": "메모리·로직",
+   "share": 23.1
+  }
+ ],
+ "customers": "국내외 반도체 기업에 공급합니다."
+}

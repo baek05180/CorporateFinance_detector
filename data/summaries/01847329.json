@@ -1,0 +1,71 @@
+{
+ "corp_code": "01847329",
+ "name": "WEBTOONENTERTAINMENTINC.",
+ "source_rcept": "20260313001231",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "웹툰엔터테인먼트는 네이버웹툰에서 출발한 글로벌 웹툰·웹소설 플랫폼을 운영하는 네이버 계열 미국 회사로, 유료 콘텐츠와 광고, IP 영상화로 매출을 냅니다.",
+ "facts": "2016 미국 설립 · 2025 매출 13.8억 달러 (전년 13.5억 달러)",
+ "mix_line": "매출 유료 콘텐츠 78.6% · 광고 11.9% · IP Adaptations 9.5%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "창작자 콘텐츠",
+    "note": "원재료 없음"
+   }
+  ],
+  "company": {
+   "name": "웹툰엔터테인먼트",
+   "note": "글로벌 웹툰 플랫폼"
+  },
+  "customers": [
+   {
+    "name": "웹툰·웹소설 독자",
+    "note": "코인 결제"
+   },
+   {
+    "name": "광고주",
+    "note": "5개 광고 상품"
+   },
+   {
+    "name": "영상·IP 파트너",
+    "note": "IP Adaptations"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "유료 콘텐츠",
+    "amount": null,
+    "share": 78.6
+   },
+   {
+    "name": "광고",
+    "amount": null,
+    "share": 11.9
+   },
+   {
+    "name": "IP Adaptations",
+    "amount": null,
+    "share": 9.5
+   }
+  ],
+  "basis": "2025 (USD 기준)"
+ },
+ "caption": "매출이 2.5% 늘어 13.8억 달러가 됐고, IP Adaptations 수익이 31.8% 늘었다.",
+ "business": "네이버웹툰에서 출발해 창작자와 사용자가 콘텐츠를 만들고 공유하는 글로벌 스토리텔링 플랫폼을 운영하며, 디스플레이·Achievement-based·프리롤·참여형·창작자 콘텐츠 광고를 판매합니다.",
+ "products": [
+  {
+   "name": "웹코믹·웹소설",
+   "segment": "유료 콘텐츠",
+   "desc": "",
+   "share": 78.6
+  },
+  {
+   "name": "광고",
+   "segment": "광고",
+   "desc": "",
+   "share": 11.9
+  }
+ ],
+ "customers": "전 세계 사용자와 광고주, IP 파트너가 고객입니다."
+}

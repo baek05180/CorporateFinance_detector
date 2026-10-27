@@ -1,0 +1,55 @@
+{
+ "corp_code": "00153621",
+ "name": "참엔지니어링",
+ "source_rcept": "20260318001238",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "참엔지니어링은 LCD·OLED 패널 제조 중 생긴 결함을 레이저·잉크로 고치는 리페어 장비와 검사·분석 장비를 만들어 국내외 패널 공장에 공급하는 회사입니다.",
+ "facts": "유가증권 상장 1987.11 · 2025 연결 매출 598억 · 영업손실 75억 · 순손실 136억",
+ "mix_line": "매출 디스플레이 리페어·검사 장비 외",
+ "flow": {
+  "inputs": [
+   {
+    "name": "Laser·Gantry Stage 등",
+    "note": "99억"
+   }
+  ],
+  "company": {
+   "name": "참엔지니어링",
+   "note": "패널 리페어 장비"
+  },
+  "customers": [
+   {
+    "name": "국내 패널 제조사",
+    "note": "본사 영업"
+   },
+   {
+    "name": "중국·대만·베트남 팹",
+    "note": "상해 법인 경유"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "연결 매출",
+    "amount": 59840000000,
+    "share": null
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "2025년 연결 매출 598억 원에 영업손실 75억 원, 순손실 136억 원을 냈다.",
+ "business": "Open/Short 리페어, BM/DM 리페어, 잉크 리페어 장비와 OLED 셀 검사장비 AVI, 대기압 주사전자현미경 air SEM을 만들며, 패널 종류·기판 세대·공정별로 장비를 맞춤 제작합니다.",
+ "products": [
+  {
+   "name": "Laser Repair",
+   "segment": "리페어 장비",
+   "desc": "Open/Short·BM/DM"
+  },
+  {
+   "name": "AVI·air SEM",
+   "segment": "검사·분석",
+   "desc": ""
+  }
+ ],
+ "customers": "고객사의 팹 투자 일정에 따라 지역별 매출 비중이 바뀝니다."
+}
