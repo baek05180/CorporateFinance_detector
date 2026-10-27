@@ -1,0 +1,61 @@
+{
+ "corp_code": "01037542",
+ "name": "엔피엑스",
+ "source_rcept": "20260320001395",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "엔피엑스는 완성된 PCB의 단락·합선을 전수 검사하는 BBT 장비를 만드는 국내 유일 업체로, 한국·중국·대만·베트남 PCB 공장에 공급합니다.",
+ "facts": "2025 매출 36억 · 영업손실 146억 · 순손실 157억 · 수출 68%",
+ "mix_line": "매출 반도체기판 전기검사기(BBT) 85.1% · 나사 체결기 0.6%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "판금·프레임 가공품",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "엔피엑스",
+   "note": "PCB 검사장비"
+  },
+  "customers": [
+   {
+    "name": "해외 PCB 제조사",
+    "note": "수출 25억"
+   },
+   {
+    "name": "국내 PCB 제조사",
+    "note": ""
+   }
+  ],
+  "revenue": [
+   {
+    "name": "BBT 장비",
+    "amount": 3103000000,
+    "share": 85.1
+   },
+   {
+    "name": "그 외",
+    "amount": 524000000,
+    "share": 14.4
+   },
+   {
+    "name": "Screw 자동 체결기",
+    "amount": 21000000,
+    "share": 0.6
+   }
+  ],
+  "basis": "2025"
+ },
+ "caption": "BBT 내수 매출이 54억 원에서 6억 원으로 줄어 매출이 83억 원에서 36억 원이 됐고, 영업손실 146억 원을 냈다.",
+ "business": "HDI·FPC·Package Substrate 3대 PCB용 BBT 장비 라인업을 모두 갖추고, 2003년 일본이 독점하던 시장에 진입해 20여 년간 경쟁해 왔습니다.",
+ "products": [
+  {
+   "name": "BBT(Bare Board Tester)",
+   "segment": "검사장비",
+   "desc": "",
+   "share": 85.1
+  }
+ ],
+ "customers": "전방 PCB 업체의 대규모 발주에 따라 매출이 크게 움직입니다."
+}
