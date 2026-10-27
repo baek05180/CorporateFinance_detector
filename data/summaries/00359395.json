@@ -1,0 +1,80 @@
+{
+ "corp_code": "00359395",
+ "name": "헬릭스미스",
+ "source_rcept": "20260320001142",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "헬릭스미스는 유전자치료제 신약을 개발하는 바이오 회사로, 천연물 기능성 원료와 건강기능식품 '큐비앤'을 팔아 매출을 냅니다.",
+ "facts": "코스닥 · 1996년 설립 · 2005-12 상장 · 2025 연결 매출 26억 · 영업손실 99억 · 순손실 5억",
+ "mix_line": "매출 천연물 원료 46.0% · 건강기능식품 37.7% · 화장품 원료 11.1% · 기술이전 등 5.3%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "냉동다래",
+    "note": "건강기능식품 원료"
+   }
+  ],
+  "company": {
+   "name": "헬릭스미스",
+   "note": "바이오 R&D"
+  },
+  "customers": [
+   {
+    "name": "Nutramax Laboratories",
+    "note": "37.7%"
+   },
+   {
+    "name": "동아제약",
+    "note": "20.1%"
+   },
+   {
+    "name": "H.Holstein",
+    "note": "10.3%"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "천연물 원료 외",
+    "amount": 1194688000,
+    "share": 46.0
+   },
+   {
+    "name": "건강기능식품(큐비앤 등)",
+    "amount": 978870000,
+    "share": 37.7
+   },
+   {
+    "name": "화장품 원료 외",
+    "amount": 287111000,
+    "share": 11.1
+   },
+   {
+    "name": "기술이전·연구용역",
+    "amount": 137480000,
+    "share": 5.3
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 43.1억 원, 49.7억 원, 26.0억 원으로 움직였다.",
+ "business": "FDA 희귀의약품·Fast Track·RMAT 지정을 받은 미국 3상 경험을 바탕으로 Plasmid DNA·Retrovirus·AAV 플랫폼 개발 서비스를 하고, 다래추출물 등 천연물 신소재로 건강기능식품(큐비앤, 아토라떼)과 화장품 원료 B2B 사업을 합니다.",
+ "products": [
+  {
+   "name": "큐비앤 다래추출물",
+   "segment": "천연물",
+   "desc": "건강기능식품",
+   "share": 37.7
+  },
+  {
+   "name": "아토라떼 크림",
+   "segment": "천연물",
+   "desc": ""
+  },
+  {
+   "name": "유전자치료제 플랫폼",
+   "segment": "R&D",
+   "desc": "Plasmid DNA·AAV"
+  }
+ ],
+ "customers": "주요 매출처는 Nutramax Laboratories, 동아제약, H.Holstein, 뉴트리얼입니다."
+}
