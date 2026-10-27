@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-10-27T17:51+09:00",
+  "data_updated": "2026-10-27T18:02+09:00",
   "last_daily": "2026-10-26T22:17+09:00"
  },
  "records": {
@@ -45717,6 +45717,42 @@
    "type": "CB",
    "updated": "2026-10-25T18:18+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261022000505",
+   "ytm": 4.0
+  },
+  "CB:00109286:60": {
+   "amended": true,
+   "amount": 6000000000,
+   "board_dt": "2026-10-22",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "Y",
+   "corp_code": "00109286",
+   "corp_name": "대동",
+   "coupon": 1.5,
+   "dilution": 2.85,
+   "exercise_from": "2027-10-30",
+   "exercise_to": "2031-09-30",
+   "first_seen": "2026-10-27T18:02+09:00",
+   "id": "CB:00109286:60",
+   "lead": null,
+   "maturity": "2031-10-30",
+   "method_raw": "사모",
+   "offering": "사모",
+   "pay_dt": "2026-10-30",
+   "price": 7105,
+   "purposes": {
+    "운영": 6000000000
+   },
+   "rcept_dt": "2026-10-27",
+   "rcept_no": "20261027000375",
+   "refix_floor": 5684,
+   "series": "60",
+   "shares": 844475,
+   "source": "DART",
+   "stock_code": "000490",
+   "type": "CB",
+   "updated": "2026-10-27T18:02+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261027000375",
    "ytm": 4.0
   },
   "CB:00109310:6": {
