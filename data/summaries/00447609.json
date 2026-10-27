@@ -1,0 +1,96 @@
+{
+ "corp_code": "00447609",
+ "name": "비에이치",
+ "source_rcept": "20260323001134",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "비에이치는 스마트폰 디스플레이·배터리 등에 들어가는 휘어지는 회로기판(FPCB)과 차량용 무선충전기를 만드는 코스피 부품 회사입니다.",
+ "facts": "코스피 · 2025 연결 매출 1.79조 · 영업이익 540억 · 순이익 407억 · 수출 99%",
+ "mix_line": "매출 RF·BU FPCB 69.9% · 차량용 무선충전기 19.3% · 양면 FPCB 9.0%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "CCL",
+    "note": "㎡당 19,611원"
+   },
+   {
+    "name": "C/L·B/S",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "비에이치",
+   "note": "FPCB · 무선충전기"
+  },
+  "customers": [
+   {
+    "name": "삼성전자 계열",
+    "note": "수출·Local L/C"
+   },
+   {
+    "name": "LG전자 계열",
+    "note": ""
+   },
+   {
+    "name": "완성차",
+    "note": "무선충전기"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "RF·BU FPCB",
+    "amount": 1252743000000,
+    "share": 69.9
+   },
+   {
+    "name": "차량용 무선충전기",
+    "amount": 345835000000,
+    "share": 19.3
+   },
+   {
+    "name": "양면 FPCB",
+    "amount": 160988000000,
+    "share": 9.0
+   },
+   {
+    "name": "단면 FPCB",
+    "amount": 18226000000,
+    "share": 1.0
+   },
+   {
+    "name": "다층 FPCB",
+    "amount": 12440000000,
+    "share": 0.7
+   },
+   {
+    "name": "기타·상품",
+    "amount": 2428000000,
+    "share": 0.1
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 2024년 1.75조 원에서 2025년 1.79조 원으로 2% 늘었다. 고부가 RF·BU 제품이 1.19조 원에서 1.25조 원으로 증가했다.",
+ "business": "스마트폰·태블릿·노트북·디스플레이 모듈·카메라 모듈·배터리·웨어러블용 FPCB와 빌드업·RF Type FPCB를 만들고, 전장사업부(BH EVS)가 차량용 휴대폰 무선충전기를 판매합니다.",
+ "products": [
+  {
+   "name": "RF·BU FPCB",
+   "segment": "FPCB",
+   "desc": "고부가가치",
+   "share": 69.9
+  },
+  {
+   "name": "차량용 무선충전기",
+   "segment": "전장",
+   "desc": "BH EVS",
+   "share": 19.3
+  },
+  {
+   "name": "단·양면·다층 FPCB",
+   "segment": "FPCB",
+   "desc": "",
+   "share": 10.7
+  }
+ ],
+ "customers": "삼성전자·LG전자 계열 업체와 거래하며 매출의 98.98%가 수출·Local L/C입니다."
+}

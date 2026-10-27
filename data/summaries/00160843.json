@@ -1,0 +1,76 @@
+{
+ "corp_code": "00160843",
+ "name": "DB하이텍",
+ "source_rcept": "20260601001661",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "DB하이텍은 팹리스가 설계한 전력·아날로그 반도체를 대신 생산해 주는 파운드리 전문 코스피 회사입니다.",
+ "facts": "코스피 · 2025 연결 매출 1.40조 · 영업이익 2,773억 · 순이익 2,526억 · 중국 매출 63%",
+ "mix_line": "매출 Wafer 95.3% · 합금철 2.9% · 골프장·자산관리 1.6%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "공정용 Wafer",
+    "note": "Siltron·Shin-Etsu 등, 959억"
+   }
+  ],
+  "company": {
+   "name": "DB하이텍",
+   "note": "Specialty Foundry"
+  },
+  "customers": [
+   {
+    "name": "중국 고객",
+    "note": "8,767억"
+   },
+   {
+    "name": "국내 고객",
+    "note": "2,315억"
+   },
+   {
+    "name": "대만·일본·유럽·미주",
+    "note": "직거래·해외법인"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Wafer 등",
+    "amount": 1331736000000,
+    "share": 95.3
+   },
+   {
+    "name": "합금철",
+    "amount": 40064000000,
+    "share": 2.9
+   },
+   {
+    "name": "골프장·자산관리",
+    "amount": 22435000000,
+    "share": 1.6
+   },
+   {
+    "name": "건축·환경플랜트 도급",
+    "amount": 2998000000,
+    "share": 0.2
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 2024년 1.13조 원에서 2025년 1.40조 원으로 24% 늘었다. 중국 매출이 7,448억 원에서 8,767억 원으로 증가했다.",
+ "business": "Analog&Power, Mixed Signal 등 시스템반도체 Wafer를 위탁 생산하는 Specialty Foundry로, 고객에게 Library·PDK 등 설계 지원도 제공합니다. 종속회사가 합금철, 골프장·부동산 개발, 도급공사 사업을 합니다.",
+ "products": [
+  {
+   "name": "System-LSI Wafer",
+   "segment": "파운드리",
+   "desc": "0.13~0.35㎛ 등",
+   "share": 95.3
+  },
+  {
+   "name": "FeMn·SiMn",
+   "segment": "합금철",
+   "desc": "",
+   "share": 2.9
+  }
+ ],
+ "customers": "국내·중국 일부 고객은 대리점을, 대만·일본·유럽 고객은 직거래를, 미주·중국 고객은 해외법인을 통해 거래합니다."
+}
