@@ -1,0 +1,51 @@
+{
+ "corp_code": "01292291",
+ "name": "파두",
+ "source_rcept": "20260318001002",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "파두는 데이터센터용 고성능 SSD의 두뇌인 기업용 SSD 컨트롤러와 이를 탑재한 SSD를 설계해 해외 고객에 파는 팹리스 반도체 회사입니다.",
+ "facts": "코스닥 상장 2023.08 · 2025 연결 매출 924억 · 영업손실 655억 · 순손실 762억",
+ "mix_line": "매출 기업용 SSD 컨트롤러·SSD · 수출 99.8%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "NAND·전자부품",
+    "note": "SSD 완제품용"
+   }
+  ],
+  "company": {
+   "name": "파두",
+   "note": "SSD 컨트롤러 팹리스"
+  },
+  "customers": [
+   {
+    "name": "글로벌 데이터센터·메모리 업체",
+    "note": "미국·중국 법인 경유"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "SSD 컨트롤러·SSD",
+    "amount": 92419000000,
+    "share": 100.0
+   }
+  ],
+  "basis": "2025"
+ },
+ "caption": "매출이 2023년 225억 원에서 2025년 924억 원으로 늘었지만 영업손실 655억 원을 냈다.",
+ "business": "PCIe NVMe 기업용 SSD 컨트롤러 솔루션과 이를 탑재한 기업용 SSD를 만들며, 메모리 제조사별 다양한 NAND에 대응합니다. 미국 FADU Technology와 중국 법인이 판매를 맡습니다.",
+ "products": [
+  {
+   "name": "기업용 SSD 컨트롤러",
+   "segment": "시스템 반도체",
+   "desc": "PCIe NVMe"
+  },
+  {
+   "name": "기업용 SSD",
+   "segment": "SSD",
+   "desc": ""
+  }
+ ],
+ "customers": "하이퍼스케일 데이터센터 등 해외 고객이 대부분입니다.",
+ "written": "2026-10-27"
+}
