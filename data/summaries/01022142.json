@@ -1,0 +1,60 @@
+{
+ "corp_code": "01022142",
+ "name": "엠디바이스",
+ "source_rcept": "20260313001373",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "엠디바이스는 데이터센터용 기업 SSD를 설계부터 조립·검사까지 직접 해 주로 중국 고객에 파는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2025-03 상장 · 2025 연결 매출 965억 · 영업이익 115억 · 순이익 107억 · 중국 H사 93%",
+ "mix_line": "매출 수출 99.9% · 내수 0.1% (기업용 SSD 중심)",
+ "flow": {
+  "inputs": [
+   {
+    "name": "WAFER(NAND 등)",
+    "note": "국내 448억"
+   }
+  ],
+  "company": {
+   "name": "엠디바이스",
+   "note": "SSD"
+  },
+  "customers": [
+   {
+    "name": "중국 H사",
+    "note": "899억, 93.2%"
+   },
+   {
+    "name": "중국 C사",
+    "note": "33억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "수출",
+    "amount": 96385000000,
+    "share": 99.9
+   },
+   {
+    "name": "내수",
+    "amount": 106000000,
+    "share": 0.1
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 2023년 98.5억 원, 2024년 483.1억 원, 2025년 964.9억 원으로 급증했다. 중국 H사 매출이 410.9억 원에서 899.3억 원으로 늘었다.",
+ "business": "DRAM·NAND와 SSD Controller를 결합한 SSD를 설계·제조·조립·검사·판매합니다. 데이터센터용 PCIe Gen5x4 U.2·E1.S·E3.S 기업용 SSD, 소비자용 Gen5 SSD, BGA SSD를 출시했습니다.",
+ "products": [
+  {
+   "name": "기업용 SSD",
+   "segment": "데이터센터",
+   "desc": "PCIe Gen5 U.2·E1.S·E3.S"
+  },
+  {
+   "name": "소비자용 SSD",
+   "segment": "소비자",
+   "desc": "Dram-less·고성능"
+  }
+ ],
+ "customers": "중국 H사 한 곳이 매출의 93.2%를 차지하며, 직접 판매합니다."
+}
