@@ -1,0 +1,77 @@
+{
+ "corp_code": "01626391",
+ "name": "오가노이드사이언스",
+ "source_rcept": "20260318001661",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "오가노이드사이언스는 사람 장기를 닮은 3차원 세포 구조체(오가노이드)로 신약·식품·화장품 효능을 평가하는 서비스 ODISEI를 팔고, 장 질환 재생치료제 ATORM을 개발하는 회사입니다.",
+ "facts": "코스닥 상장 2025.05 · 2025 연결 매출 24억 · 영업손실 162억 · 순손실 157억",
+ "mix_line": "매출 신소재 평가(ODISEI) 78.7% · 연구용 제품(organoEZ) 20.9%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "인체 조직 유래 오가노이드",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "오가노이드사이언스",
+   "note": "오가노이드 플랫폼"
+  },
+  "customers": [
+   {
+    "name": "해외 고객",
+    "note": "ODISEI 수출 11억"
+   },
+   {
+    "name": "국내 제약·식품·화장품사",
+    "note": ""
+   }
+  ],
+  "revenue": [
+   {
+    "name": "ODISEI 수출",
+    "amount": 1060874000,
+    "share": 44.1
+   },
+   {
+    "name": "ODISEI 내수",
+    "amount": 833120000,
+    "share": 34.6
+   },
+   {
+    "name": "organoEZ(연구용)",
+    "amount": 502845000,
+    "share": 20.9
+   },
+   {
+    "name": "그 외",
+    "amount": 11161000,
+    "share": 0.5
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "ODISEI 수출이 2억 원에서 11억 원으로 늘었지만 영업손실 162억 원을 냈다.",
+ "business": "난치성 장궤양 치료제 ATORM-C는 2022년 첨단재생의료 임상연구 승인을 받았고, 20종 이상의 장기별 오가노이드로 phase 0 유사 평가를 제공하며 2020년 면역항암제 평가 ODISEI-ONC를 상용화했습니다.",
+ "products": [
+  {
+   "name": "ODISEI",
+   "segment": "신소재 평가",
+   "desc": "",
+   "share": 78.7
+  },
+  {
+   "name": "ATORM-C",
+   "segment": "재생치료제",
+   "desc": "임상연구"
+  },
+  {
+   "name": "organoEZ",
+   "segment": "RUO",
+   "desc": "",
+   "share": 20.9
+  }
+ ],
+ "customers": "2025년 매출의 44%가 수출입니다.",
+ "written": "2026-10-27"
+}
