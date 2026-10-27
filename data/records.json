@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-10-27T16:00+09:00",
+  "data_updated": "2026-10-27T16:41+09:00",
   "last_daily": "2026-10-26T22:17+09:00"
  },
  "records": {
@@ -100642,6 +100642,43 @@
    "type": "EB",
    "updated": "2026-10-26T09:25+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20241011000438",
+   "ytm": 0.0
+  },
+  "EB:01205709:19": {
+   "amended": false,
+   "amount": 588667443000,
+   "board_dt": "2026-10-27",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "Y",
+   "corp_code": "01205709",
+   "corp_name": "HD현대",
+   "coupon": 0.0,
+   "dilution": null,
+   "exchange_target": "에이치디현대마린솔루션 주식회사 기명식 보통주",
+   "exercise_from": "2026-11-27",
+   "exercise_to": "2031-10-26",
+   "first_seen": "2026-10-27T16:41+09:00",
+   "id": "EB:01205709:19",
+   "lead": null,
+   "maturity": "2031-11-26",
+   "method_raw": "사모",
+   "offering": "사모",
+   "pay_dt": "2026-11-26",
+   "price": 247000,
+   "purposes": {
+    "채무상환": 588667443000
+   },
+   "rcept_dt": "2026-10-27",
+   "rcept_no": "20261027000277",
+   "refix_floor": null,
+   "series": "19",
+   "shares": 2383269,
+   "source": "DART",
+   "stock_code": "267250",
+   "type": "EB",
+   "updated": "2026-10-27T16:41+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261027000277",
    "ytm": 0.0
   },
   "EB:01210066:1": {
@@ -270811,6 +270848,35 @@
    "updated": "2026-10-26T09:15+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251218000440"
   },
+  "RIGHTS:00234971:20261027000284": {
+   "amended": false,
+   "amount": 220000012048,
+   "board_dt": "2026-10-27",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "E",
+   "corp_code": "00234971",
+   "corp_name": "제이비우리캐피탈",
+   "dilution": 10.56,
+   "first_seen": "2026-10-27T16:41+09:00",
+   "id": "RIGHTS:00234971:20261027000284",
+   "method": "주주배정증자",
+   "new_common": 14525288,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 5000,
+   "purposes": {
+    "운영": 220000012048
+   },
+   "rcept_dt": "2026-10-27",
+   "rcept_no": "20261027000284",
+   "source": "DART",
+   "stock_code": null,
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-10-27T16:41+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261027000284"
+  },
   "RIGHTS:00241236:20241101000137": {
    "amended": false,
    "amount": 870000000,
@@ -271197,7 +271263,7 @@
   "RIGHTS:00252269:20260929000566": {
    "amended": true,
    "amount": 10267500000,
-   "board_dt": "2026-09-29",
+   "board_dt": "2026-10-27",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
@@ -271210,18 +271276,19 @@
    "new_common": 3700000,
    "new_other": null,
    "offering": "사모·주주배정",
+   "original_rcept": "20260929000566",
    "par_value": 1000,
    "purposes": {
     "운영": 10267500000
    },
-   "rcept_dt": "2026-09-29",
-   "rcept_no": "20260929000566",
+   "rcept_dt": "2026-10-27",
+   "rcept_no": "20261027000237",
    "source": "DART",
    "stock_code": "038880",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-10-25T18:18+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260929000566"
+   "updated": "2026-10-27T16:41+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261027000237"
   },
   "RIGHTS:00255105:20260706000429": {
    "amended": false,
@@ -313240,7 +313307,7 @@
   "RIGHTS:01689266:20261012000456": {
    "amended": true,
    "amount": 2998991250,
-   "board_dt": "2026-10-12",
+   "board_dt": "2026-10-27",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
@@ -313253,18 +313320,19 @@
    "new_common": 784050,
    "new_other": null,
    "offering": "사모·주주배정",
+   "original_rcept": "20261012000456",
    "par_value": 500,
    "purposes": {
     "운영": 2998991250
    },
-   "rcept_dt": "2026-10-12",
-   "rcept_no": "20261012000456",
+   "rcept_dt": "2026-10-27",
+   "rcept_no": "20261027000274",
    "source": "DART",
    "stock_code": "431190",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-10-25T18:20+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261012000456"
+   "updated": "2026-10-27T16:41+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261027000274"
   },
   "RIGHTS:01694903:20240205000067": {
    "amended": true,
