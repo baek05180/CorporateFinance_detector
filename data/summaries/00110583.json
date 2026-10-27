@@ -1,0 +1,82 @@
+{
+ "corp_code": "00110583",
+ "name": "DH오토웨어",
+ "source_rcept": "20260324000394",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "DH오토웨어는 차량용 디스플레이·오디오·AVN 같은 인포테인먼트 기기와 차체 자동화설비를 만드는 코스닥 부품 회사입니다.",
+ "facts": "코스닥 · 1995-05 상장 · 2025 연결 매출 4,944억 · 영업손실 49억 · 순손실 235억 · 매출 33% 증가",
+ "mix_line": "매출 IVI(STLA·D-Audio·AVN) 89.3% · 자동화설비 7.0% · AMP·VESS 3.1% · 기타 0.6%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "디스플레이 패널·LCD·IC·PCB",
+    "note": "일본·중국·홍콩·싱가폴"
+   }
+  ],
+  "company": {
+   "name": "DH오토웨어",
+   "note": "카 인포테인먼트"
+  },
+  "customers": [
+   {
+    "name": "ALPINE",
+    "note": "AVNC·AUDIO·AMP"
+   },
+   {
+    "name": "Renault",
+    "note": "MCH·AVN"
+   },
+   {
+    "name": "ALJ·THACO·HMC 등",
+    "note": "AVN/AV"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "전장 IVI(STLA·KEYBOARD·D-Audio·AVN)",
+    "amount": 441507000000,
+    "share": 89.3
+   },
+   {
+    "name": "자동화(차체설비)",
+    "amount": 34596000000,
+    "share": 7.0
+   },
+   {
+    "name": "AMP·VESS 등",
+    "amount": 15247000000,
+    "share": 3.1
+   },
+   {
+    "name": "기타",
+    "amount": 3016000000,
+    "share": 0.6
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 3,931.3억 원, 3,719.3억 원, 4,943.7억 원으로 움직였다. 2025년은 전년보다 33% 늘었지만 순손실 234.6억 원을 냈다.",
+ "business": "디스플레이, D-Audio, AMP, AVNC, Audio Front Panel 등 Car-IVI 제품과 차체 자동화설비·조립용 지그를 한국 본사와 멕시코 법인에서 만듭니다.",
+ "products": [
+  {
+   "name": "디스플레이·D-Audio·AVN",
+   "segment": "전장",
+   "desc": "",
+   "share": 89.3
+  },
+  {
+   "name": "AMP",
+   "segment": "전장",
+   "desc": "",
+   "share": 3.1
+  },
+  {
+   "name": "차체 자동화설비",
+   "segment": "자동화",
+   "desc": "",
+   "share": 7.0
+  }
+ ],
+ "customers": "ALPINE·Renault 등에 직수출하며, 4개 영업팀 24명이 판매를 맡습니다."
+}
