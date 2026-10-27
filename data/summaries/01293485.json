@@ -1,0 +1,83 @@
+{
+ "corp_code": "01293485",
+ "name": "제닉스로보틱스",
+ "source_rcept": "20260313000454",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "제닉스로보틱스는 반도체·디스플레이 공장에서 반송물을 자동으로 보관하고 옮기는 스토커와 물류로봇(AGV/AMR)을 만드는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2024-09 상장 · 2025 연결 매출 227억 · 영업손실 123억 · 순손실 73억",
+ "mix_line": "매출 Stocker 69.4% · AGV/AMR 12.1% · Job Change 8.9% · 기타장비 6.6%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "SHELF 등",
+    "note": "Stocker 부품"
+   }
+  ],
+  "company": {
+   "name": "제닉스로보틱스",
+   "note": "공장 물류 자동화"
+  },
+  "customers": [
+   {
+    "name": "국내 반도체·디스플레이 공장",
+    "note": "Stocker 내수 148억"
+   },
+   {
+    "name": "해외",
+    "note": "Stocker·AGV 수출"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Stocker",
+    "amount": 15735000000,
+    "share": 69.4
+   },
+   {
+    "name": "AGV/AMR",
+    "amount": 2734000000,
+    "share": 12.1
+   },
+   {
+    "name": "Job Change",
+    "amount": 2018000000,
+    "share": 8.9
+   },
+   {
+    "name": "기타장비",
+    "amount": 1498000000,
+    "share": 6.6
+   },
+   {
+    "name": "부품·소재 등",
+    "amount": 685000000,
+    "share": 3.0
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "Stocker 매출이 2024년 473.7억 원에서 2025년 157.5억 원으로 67% 줄었고, 영업손실 123.1억 원을 냈다.",
+ "business": "반도체·디스플레이 공정의 반송물 보관·반출입을 자동화하는 Stocker, 경로 주행 AGV와 자율주행 AMR, Conveyor·Buffer 등 물류 장비를 만들고, 설비 개조(Job Change)·A/S와 금속 분말 소재 사업도 합니다.",
+ "products": [
+  {
+   "name": "Stocker",
+   "segment": "AMHS",
+   "desc": "자동 보관·반출입",
+   "share": 69.4
+  },
+  {
+   "name": "AGV/AMR",
+   "segment": "물류로봇",
+   "desc": "",
+   "share": 12.1
+  },
+  {
+   "name": "Job Change",
+   "segment": "서비스",
+   "desc": "개조·A/S",
+   "share": 8.9
+  }
+ ],
+ "customers": "반도체·2차전지·디스플레이 등 첨단 제조 공장이 고객이며 대부분 내수입니다."
+}

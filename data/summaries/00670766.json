@@ -1,0 +1,88 @@
+{
+ "corp_code": "00670766",
+ "name": "엠엑스온",
+ "source_rcept": "20260320001321",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "엠엑스온은 공장 설비를 화면으로 보고 조작하는 산업용 HMI와 반도체 공장 물류 자동화 시스템을 공급하는 코스닥 스마트팩토리 회사입니다.",
+ "facts": "코스닥 · 2020-07 상장 · 2025 연결 매출 623억 · 영업손실 58억 · 순손실 28억",
+ "mix_line": "매출 물류 자동화 48.5% · 스마트HMI 45.7% · 솔루션 2.0% · DEVICE 1.5%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "전자부품",
+    "note": "국내 57억"
+   }
+  ],
+  "company": {
+   "name": "엠엑스온",
+   "note": "HMI · 물류 자동화"
+  },
+  "customers": [
+   {
+    "name": "국내 제조업체",
+    "note": "HMI 내수 262억"
+   },
+   {
+    "name": "해외",
+    "note": "물류 자동화 수출 190억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "물류 로봇·자동화 시스템",
+    "amount": 29709770000,
+    "share": 48.5
+   },
+   {
+    "name": "스마트HMI",
+    "amount": 28027301000,
+    "share": 45.7
+   },
+   {
+    "name": "스마트팩토리 솔루션",
+    "amount": 1197660000,
+    "share": 2.0
+   },
+   {
+    "name": "스마트DEVICE",
+    "amount": 927575000,
+    "share": 1.5
+   },
+   {
+    "name": "기타",
+    "amount": 825434000,
+    "share": 1.3
+   },
+   {
+    "name": "스마트SCADA",
+    "amount": 610762000,
+    "share": 1.0
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "2025년 물류 로봇·자동화 시스템 매출 297.1억 원이 새로 생겼다. 스마트HMI는 302.8억 원에서 280.3억 원으로 줄었다.",
+ "business": "산업용 HMI, 원격 감시제어 SCADA, 산업용 DEVICE, 스마트팩토리 솔루션을 자체 개발합니다. AGV·Stocker·FOUP Conveyor·Gantry Robot 등 공정 물류와 일반 물류 자동화 사업을 더했고, 글로벌 로봇 기업과 엑스퍼트 파트너십을 맺었습니다.",
+ "products": [
+  {
+   "name": "물류 자동화 시스템",
+   "segment": "물류 로봇",
+   "desc": "AGV·Stocker·FOUP Conveyor",
+   "share": 48.5
+  },
+  {
+   "name": "스마트HMI",
+   "segment": "제품",
+   "desc": "설비 모니터링·제어",
+   "share": 45.7
+  },
+  {
+   "name": "스마트SCADA",
+   "segment": "제품",
+   "desc": "원격 감시제어 S/W",
+   "share": 1.0
+  }
+ ],
+ "customers": "HMI는 대부분 국내 제조업체에, 물류 자동화는 수출 비중이 높습니다."
+}
