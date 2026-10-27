@@ -1,0 +1,83 @@
+{
+ "corp_code": "01407909",
+ "name": "원텍",
+ "source_rcept": "20260319000649",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "원텍은 고주파 리프팅 장비 '올리지오'와 피코 레이저 '피코케어' 같은 피부미용 의료기기와 시술용 소모품 팁을 만들어 국내외 피부과에 파는 회사입니다.",
+ "facts": "코스닥 상장 2019.12 · 2025 연결 매출 1,568억 · 영업이익 517억 · 순이익 352억",
+ "mix_line": "매출 Oligio 등 전기수술기 37.6% · 레이저 30.7% · 소모품 Tip 24.1%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "전기전자류 원재료",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "원텍",
+   "note": "미용 의료기기"
+  },
+  "customers": [
+   {
+    "name": "해외 피부과·대리점",
+    "note": "수출 1,019억"
+   },
+   {
+    "name": "국내 병의원",
+    "note": "내수 444억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "범용전기수술기(Oligio 등)",
+    "amount": 58891022000,
+    "share": 37.6
+   },
+   {
+    "name": "레이저(Picocare·Lavieen 등)",
+    "amount": 48221591000,
+    "share": 30.7
+   },
+   {
+    "name": "소모품(Tip)",
+    "amount": 37835177000,
+    "share": 24.1
+   },
+   {
+    "name": "기타·홈케어(상품 포함)",
+    "amount": 10597433000,
+    "share": 6.8
+   },
+   {
+    "name": "서지컬(Holinwon 등)",
+    "amount": 1292880000,
+    "share": 0.8
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "에스테틱 수출이 2023년 552억 원에서 2025년 1,015억 원으로 늘었고 영업이익 517억 원을 냈다.",
+ "business": "모노폴라 방식 6.78MHz 안면거상 치료기 Oligio, 엔디야그 레이저 Picocare·Lavieen·Sandro Dual, 일회용 전극 팁, 서지컬 레이저와 홈케어 제품을 만듭니다.",
+ "products": [
+  {
+   "name": "Oligio·Oligio X",
+   "segment": "피부미용",
+   "desc": "고주파 리프팅",
+   "share": 37.6
+  },
+  {
+   "name": "Picocare·Lavieen",
+   "segment": "피부미용",
+   "desc": "레이저",
+   "share": 30.7
+  },
+  {
+   "name": "시술용 Tip",
+   "segment": "소모품",
+   "desc": "",
+   "share": 24.1
+  }
+ ],
+ "customers": "매출의 약 65%가 수출입니다.",
+ "written": "2026-10-27"
+}

@@ -1,0 +1,77 @@
+{
+ "corp_code": "00617314",
+ "name": "타이거일렉",
+ "source_rcept": "20260317000532",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "타이거일렉은 반도체 웨이퍼·패키지를 검사할 때 쓰는 프로브카드·로드보드용 인쇄회로기판(PCB)을 만드는 회사입니다.",
+ "facts": "코스닥 상장 2015.09 · 2025 매출 807억 · 영업이익 72억 · 순이익 53억",
+ "mix_line": "매출 ProbeCard용 PCB 50.5% · LoadBoard용 26.5% · 일반 Board용 13.0% · Socket용 9.4%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "PCB 원자재",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "타이거일렉",
+   "note": "반도체 검사용 PCB"
+  },
+  "customers": [
+   {
+    "name": "국내 프로브카드·검사장비 업체",
+    "note": "내수"
+   },
+   {
+    "name": "해외",
+    "note": "수출 201억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "ProbeCard용 PCB",
+    "amount": 40748000000,
+    "share": 50.5
+   },
+   {
+    "name": "LoadBoard용 PCB",
+    "amount": 21384000000,
+    "share": 26.5
+   },
+   {
+    "name": "일반 Board용 PCB",
+    "amount": 10512000000,
+    "share": 13.0
+   },
+   {
+    "name": "SocketBoard용 PCB",
+    "amount": 7586000000,
+    "share": 9.4
+   },
+   {
+    "name": "그 외",
+    "amount": 450000000,
+    "share": 0.6
+   }
+  ],
+  "basis": "2025 별도 (그 외는 매출과의 차액)"
+ },
+ "caption": "ProbeCard용 PCB 매출이 2023년 217억 원에서 2025년 407억 원으로 늘었다.",
+ "business": "1991년 신화산업으로 설립됐고, Rigid PCB 중 반도체 후공정 검사용 PCB를 주로 생산합니다. 웨이퍼 검사용 프로브카드와 패키지 검사용 로드보드에 들어갑니다.",
+ "products": [
+  {
+   "name": "Probe Card PCB",
+   "segment": "검사용 PCB",
+   "desc": "웨이퍼",
+   "share": 50.5
+  },
+  {
+   "name": "Load Board PCB",
+   "segment": "검사용 PCB",
+   "desc": "패키지",
+   "share": 26.5
+  }
+ ],
+ "customers": "매출의 약 75%가 내수입니다.",
+ "written": "2026-10-27"
+}
