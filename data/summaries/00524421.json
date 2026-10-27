@@ -1,0 +1,70 @@
+{
+ "corp_code": "00524421",
+ "name": "테스",
+ "source_rcept": "20260313000585",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "테스는 반도체 웨이퍼 위에 얇은 막을 입히는 PECVD 장비와 가스 식각·세정 장비를 만들어 국내 반도체 회사에 공급하는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2008-05 상장 · 2025 연결 매출 3,511억 · 영업이익 578억 · 순이익 569억 · 수출 21%",
+ "mix_line": "매출 장비 85.5% · 부품·CS 14.5%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "플랫폼",
+    "note": "라온로보틱스 등, 매입 20.6%"
+   },
+   {
+    "name": "제너레이터",
+    "note": "AE 등"
+   }
+  ],
+  "company": {
+   "name": "테스",
+   "note": "반도체 전공정 장비"
+  },
+  "customers": [
+   {
+    "name": "국내 반도체 소자 업체",
+    "note": "내수 2,785억"
+   },
+   {
+    "name": "해외",
+    "note": "수출 726억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "장비(PECVD·GPE 등)",
+    "amount": 300268000000,
+    "share": 85.5
+   },
+   {
+    "name": "부품·서비스",
+    "amount": 50848000000,
+    "share": 14.5
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 2023년 1,469.4억 원, 2024년 2,400.8억 원, 2025년 3,511.2억 원으로 늘었다. 장비 매출이 1,912.6억 원에서 3,002.7억 원으로 증가했다.",
+ "business": "박막 증착 PECVD(Challenger300HTi·HTx)와 건식식각 Gas Phase Etch & Cleaning(CUMAX) 장비를 100% 주문생산하며, 디스플레이 박막봉지장비와 UVC LED용 MOCVD 장비도 개발합니다.",
+ "products": [
+  {
+   "name": "PECVD",
+   "segment": "반도체 장비",
+   "desc": "Challenger 시리즈"
+  },
+  {
+   "name": "Gas Phase Etcher",
+   "segment": "반도체 장비",
+   "desc": "CUMAX 시리즈"
+  },
+  {
+   "name": "부품·CS",
+   "segment": "기타",
+   "desc": "",
+   "share": 14.5
+  }
+ ],
+ "customers": "국내 반도체 소자 업체에 직접 판매하고 고객 사이트에 상주 인력을 두며, 해외는 필요 시 Agent를 씁니다."
+}
