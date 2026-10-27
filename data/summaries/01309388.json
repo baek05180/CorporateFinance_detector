@@ -1,0 +1,86 @@
+{
+ "corp_code": "01309388",
+ "name": "LS티라유텍",
+ "source_rcept": "20260311003536",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "LS티라유텍은 제조업체용 스마트팩토리(MES·SCM·자동화) 솔루션을 구축하고 CAD 소프트웨어 총판과 물류로봇(AMR)을 하는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2019-10 상장 · 2025 연결 매출 589억 · 영업손실 43억 · 순손실 114억",
+ "mix_line": "매출 S/F·SCM 용역 48.8% · CAD·SERVO 등 상품 22.5% · 로봇 제품 20.8% · 기타 용역 4.4%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "개발 인력",
+    "note": "인건비 중심"
+   }
+  ],
+  "company": {
+   "name": "LS티라유텍",
+   "note": "스마트팩토리"
+  },
+  "customers": [
+   {
+    "name": "제조 고객사",
+    "note": "MES·자동화"
+   },
+   {
+    "name": "중소·중견기업",
+    "note": "클라우드 MES"
+   },
+   {
+    "name": "CAD 사용자",
+    "note": "총판·직판"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "S/F·SCM 용역",
+    "amount": 28761000000,
+    "share": 48.8
+   },
+   {
+    "name": "상품(CAD·SERVO·PLC 등)",
+    "amount": 13248000000,
+    "share": 22.5
+   },
+   {
+    "name": "제품(AMR·직교로봇)",
+    "amount": 12251000000,
+    "share": 20.8
+   },
+   {
+    "name": "기타 용역(컨설팅 등)",
+    "amount": 2568000000,
+    "share": 4.4
+   },
+   {
+    "name": "임대 등",
+    "amount": 2113000000,
+    "share": 3.6
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 543.6억 원, 574.7억 원, 589.4억 원으로 늘었지만 순손실 114.1억 원을 냈다.",
+ "business": "IT서비스부문이 SCM·MES·물류/설비 자동화·빅데이터·AI·클라우드 Total Smart Factory 솔루션을 납품·구축·운영하고, ESD부문이 CAD SW 총판·직판을 하며, 종속회사 티라로보틱스가 AMR·직교로봇을 만듭니다.",
+ "products": [
+  {
+   "name": "MES·SCM",
+   "segment": "IT서비스",
+   "desc": "",
+   "share": 48.8
+  },
+  {
+   "name": "CAD 솔루션",
+   "segment": "ESD",
+   "desc": "총판"
+  },
+  {
+   "name": "AMR",
+   "segment": "티라로보틱스",
+   "desc": "물류로봇",
+   "share": 20.8
+  }
+ ],
+ "customers": "다양한 제조 고객사에 프로젝트 단위로 공급하며 매출의 97.9%가 내수입니다."
+}

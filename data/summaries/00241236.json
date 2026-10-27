@@ -1,0 +1,58 @@
+{
+ "corp_code": "00241236",
+ "name": "에이치씨코퍼레이션",
+ "source_rcept": "20260331003381",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "에이치씨코퍼레이션은 KT·SKB·LGU+에 전화망을 IP망으로 바꾸는 게이트웨이(AGW·TGW·MGW) 장비를 공급하고 농축수산물 유통도 하는 회사입니다.",
+ "facts": "2025 매출 272억 · 영업이익 13억 · 순이익 32억 · 전량 내수",
+ "mix_line": "네트워크 장비 · 농축수산물 유통",
+ "flow": {
+  "inputs": [
+   {
+    "name": "전자부품 등",
+    "note": "33.3억"
+   }
+  ],
+  "company": {
+   "name": "에이치씨코퍼레이션",
+   "note": "통신 게이트웨이"
+  },
+  "customers": [
+   {
+    "name": "KT·SKB·LGU+",
+    "note": "기간통신사업자"
+   },
+   {
+    "name": "관공서",
+    "note": ""
+   },
+   {
+    "name": "유통 거래처",
+    "note": "에이치씨유통"
+   }
+  ],
+  "revenue": [],
+  "basis": "2025"
+ },
+ "caption": "매출이 304.3억 원, 282.2억 원, 271.7억 원으로 2년 연속 줄었다.",
+ "business": "LG정보통신 유선통신사업부를 모태로, 로컬교환기 트렁크를 IP망에 연결하는 Trunk Gateway, 이동통신 음성을 패킷화하는 Media Gateway, 전화가입자를 VoIP로 바꾸는 중·소용량 Access Gateway를 만듭니다. 에이치씨유통이 농축수산물 도매를 합니다.",
+ "products": [
+  {
+   "name": "Access Gateway",
+   "segment": "네트워크",
+   "desc": "KT 공급"
+  },
+  {
+   "name": "Trunk Gateway",
+   "segment": "네트워크",
+   "desc": "KT·SKB·LGU+"
+  },
+  {
+   "name": "Media Gateway",
+   "segment": "네트워크",
+   "desc": "LGU+"
+  }
+ ],
+ "customers": "통신사업자에 직접 납품하거나 그 계열회사에 납품하며, 국사최적화·All-Optic으로 소용량 장비 수요가 늘 것으로 봅니다."
+}
