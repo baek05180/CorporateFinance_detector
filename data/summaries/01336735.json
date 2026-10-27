@@ -1,0 +1,67 @@
+{
+ "corp_code": "01336735",
+ "name": "펨토바이오메드",
+ "source_rcept": "20260330001474",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "펨토바이오메드는 세포·유전자치료제 제조에 쓰는 비바이러스 유전자 전달 플랫폼 'CellShot'을 개발하는 바이오 회사입니다.",
+ "facts": "2025 매출 3.6억 · CellShot Badger 미국 FDA DMF 등록(2024-08) · 생산 외주",
+ "mix_line": "매출 CellShot 카트리지 64.4% · SmartDrop 35.6%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "외주 생산",
+    "note": "아이소밸리·밸리드"
+   }
+  ],
+  "company": {
+   "name": "펨토바이오메드",
+   "note": "유전자 전달 플랫폼"
+  },
+  "customers": [
+   {
+    "name": "국내 연구기관·기업",
+    "note": "내수 3.5억"
+   },
+   {
+    "name": "해외 공동연구",
+    "note": "수출 0.04억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "CellShot 카트리지",
+    "amount": 229399200,
+    "share": 64.4
+   },
+   {
+    "name": "SmartDrop(접촉각 측정기)",
+    "amount": 126987060,
+    "share": 35.6
+   }
+  ],
+  "basis": "2025"
+ },
+ "caption": "매출이 3.3억 원, 1.6억 원, 3.6억 원으로 움직였다. 카트리지 매출이 2024년 0.02억 원에서 2.3억 원으로 늘었다.",
+ "business": "미세유체 기반 전기천공 기술로 mRNA·DNA를 세포에 직접 전달하는 CellShot 플랫폼(장비 BADGER·카트리지)을 개발해 면역항암제·CRISPR·iPSC 분야에 적용하고, 접촉각 측정기 SmartDrop도 팝니다.",
+ "products": [
+  {
+   "name": "CellShot 카트리지",
+   "segment": "제품",
+   "desc": "전기천공 모듈",
+   "share": 64.4
+  },
+  {
+   "name": "CellShot Badger",
+   "segment": "장비",
+   "desc": "FDA DMF 등록"
+  },
+  {
+   "name": "SmartDrop",
+   "segment": "제품",
+   "desc": "",
+   "share": 35.6
+  }
+ ],
+ "customers": "매출 대부분이 국내이며, 해외는 공동연구협약으로 카트리지를 공급합니다."
+}

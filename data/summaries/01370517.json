@@ -1,0 +1,65 @@
+{
+ "corp_code": "01370517",
+ "name": "스트라드비젼",
+ "source_rcept": "20260331003309",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "스트라드비젼은 저가 차량용 반도체에서도 돌아가는 딥러닝 카메라 영상인식 소프트웨어 'SVNet'을 완성차·Tier-1에 공급하는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2026-06 상장 · 2025 연결 매출 181억 · 영업손실 586억 · 순손실 622억 · 수출 86%",
+ "mix_line": "매출 수출 86% · 내수 14%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "개발 인력",
+    "note": "원재료 없음"
+   }
+  ],
+  "company": {
+   "name": "스트라드비젼",
+   "note": "차량 AI 영상인식"
+  },
+  "customers": [
+   {
+    "name": "글로벌 Tier-1",
+    "note": "라이선스"
+   },
+   {
+    "name": "완성차(OEM)",
+    "note": "일본·독일·미국·중국 법인"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "수출",
+    "amount": 15616000000,
+    "share": 86.2
+   },
+   {
+    "name": "내수",
+    "amount": 2493000000,
+    "share": 13.8
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 71.7억 원, 115.4억 원, 181.1억 원으로 늘었지만 영업손실 586.0억 원을 냈다. 수출 비중은 77%에서 86%로 높아졌다.",
+ "business": "AI 엔진 SVNet을 경량화해 보급형 SoC에서 ADAS용 영상인식을 구현하고, 데이터 자동화 플랫폼 SVDataFlow를 바탕으로 FrontVision·SurroundVision·MultiVision 제품을 공급합니다.",
+ "products": [
+  {
+   "name": "SVNet",
+   "segment": "AI 엔진",
+   "desc": "경량 딥러닝"
+  },
+  {
+   "name": "FrontVision",
+   "segment": "제품",
+   "desc": "전방 카메라"
+  },
+  {
+   "name": "SurroundVision·MultiVision",
+   "segment": "제품",
+   "desc": ""
+  }
+ ],
+ "customers": "제품 소개와 평가용 라이선스 공급 등 4단계로 Tier-1·OEM과 프로젝트를 수행합니다."
+}
