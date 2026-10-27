@@ -1,0 +1,77 @@
+{
+ "corp_code": "00447487",
+ "name": "제주반도체",
+ "source_rcept": "20260323001029",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "제주반도체는 스마트폰·IoT 기기용 저전력 메모리(NAND MCP·DRAM·셀룰라램)를 설계해 파운드리에 맡겨 만들고, 대부분 해외 세트업체에 파는 팹리스 메모리 회사입니다.",
+ "facts": "코스닥 상장 2005.02 · 2025 연결 매출 3,022억 · 영업이익 359억 · 순이익 395억 · 수출 94%",
+ "mix_line": "매출 NAND MCP 39.2% · DRAM 22.8% · TLC NAND 19.6% · LPDDR4 8.8%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "웨이퍼",
+    "note": "위탁 파운드리"
+   }
+  ],
+  "company": {
+   "name": "제주반도체",
+   "note": "모바일 메모리 팹리스"
+  },
+  "customers": [
+   {
+    "name": "휴대폰 세트업체",
+    "note": "공식 벤더"
+   },
+   {
+    "name": "종합반도체 회사·딜러",
+    "note": ""
+   }
+  ],
+  "revenue": [
+   {
+    "name": "NAND MCP",
+    "amount": 119269000000,
+    "share": 39.2
+   },
+   {
+    "name": "DRAM(LPDRAM 포함)",
+    "amount": 69239000000,
+    "share": 22.8
+   },
+   {
+    "name": "TLC NAND",
+    "amount": 59664000000,
+    "share": 19.6
+   },
+   {
+    "name": "LPDDR4",
+    "amount": 26788000000,
+    "share": 8.8
+   },
+   {
+    "name": "DDR5·DDR4·NAND·CRAM 등",
+    "amount": 28850000000,
+    "share": 9.5
+   }
+  ],
+  "basis": "2025 연결 (제품·상품 합산)"
+ },
+ "caption": "매출이 1,606억 원에서 3,040억 원으로 늘고 상품 매출 701억 원이 새로 생겼다. 영업이익 359억 원을 냈다.",
+ "business": "NAND MCP, 셀룰라램(CRAM), DRAM 등 모바일용 메모리를 개발해 자체 브랜드로 판매하며, 양산 승인 후 위탁 파운드리에서 생산합니다.",
+ "products": [
+  {
+   "name": "NAND MCP",
+   "segment": "모바일 메모리",
+   "desc": "",
+   "share": 39.2
+  },
+  {
+   "name": "LPDRAM·LPDDR4",
+   "segment": "모바일 메모리",
+   "desc": "",
+   "share": 31.6
+  }
+ ],
+ "customers": "2~3개월 전 발주를 받아 국내외 고객에 직접 공급합니다."
+}

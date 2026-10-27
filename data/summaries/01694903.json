@@ -1,0 +1,65 @@
+{
+ "corp_code": "01694903",
+ "name": "뷰텔",
+ "source_rcept": "20260330001066",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "뷰텔은 스마트폰 생산라인에서 와이파이 성능을 검사하는 계측기와 VoIP 게이트웨이를 만들어 삼성전자·통신사에 공급하고, 비침습 혈당기를 개발하는 회사입니다.",
+ "facts": "2004 설립 · 2025 매출 2.1억 · 영업손실 24억 · 순손실 32억",
+ "mix_line": "매출 Wi-Fi 계측기 등 제품 87.9% · 유지보수 12.1%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "전자부품",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "뷰텔",
+   "note": "무선 계측기"
+  },
+  "customers": [
+   {
+    "name": "삼성전자",
+    "note": "Wi-Fi 계측기 3종 독점"
+   },
+   {
+    "name": "SK브로드밴드 등 통신사",
+    "note": "VoIP"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Wi-Fi 계측기 등",
+    "amount": 181082000,
+    "share": 87.9
+   },
+   {
+    "name": "유지보수 용역",
+    "amount": 24840000,
+    "share": 12.1
+   }
+  ],
+  "basis": "2025"
+ },
+ "caption": "매출이 2.1억 원으로 작고 영업손실 24억 원을 냈다.",
+ "business": "Wi-Fi Test Station·Wi-Fi AMP·Air CMD 등 스마트기기 계측기, VT-G Series VoIP Gateway 같은 멀티미디어 통신장비를 만들고 스마트 바이오의료기기(비침습 혈당기)를 개발합니다.",
+ "products": [
+  {
+   "name": "Wi-Fi Test Station",
+   "segment": "계측기",
+   "desc": "삼성전자 생산용"
+  },
+  {
+   "name": "VoIP Gateway",
+   "segment": "멀티미디어통신",
+   "desc": ""
+  },
+  {
+   "name": "비침습 혈당기",
+   "segment": "의료기기",
+   "desc": "개발 중"
+  }
+ ],
+ "customers": "삼성전자와 통신사업자에 자체 개발 장비를 공급합니다."
+}

@@ -1,0 +1,59 @@
+{
+ "corp_code": "01516456",
+ "name": "인벤티지랩",
+ "source_rcept": "20260323001390",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "인벤티지랩은 유체역학 기술로 한 번 맞으면 한 달 이상 가는 장기지속형 주사제와 mRNA용 지질나노입자(LNP)를 만드는 약물전달 플랫폼 회사입니다.",
+ "facts": "코스닥 상장 2022.11 · 2025 연결 매출 29억 · 영업손실 284억 · 순손실 159억",
+ "mix_line": "매출 기술이전·공동개발·CDMO·LNP 장비",
+ "flow": {
+  "inputs": [
+   {
+    "name": "원료 등",
+    "note": "제조설비용"
+   }
+  ],
+  "company": {
+   "name": "인벤티지랩",
+   "note": "DDS 플랫폼"
+  },
+  "customers": [
+   {
+    "name": "국내 대형 제약사",
+    "note": "개량신약 라이선싱"
+   },
+   {
+    "name": "공동개발 파트너",
+    "note": "신약물질 탑재"
+   },
+   {
+    "name": "LNP 연구기관",
+    "note": "HANDYGENE 장비"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "기술이전·용역·장비 등",
+    "amount": 2940000000,
+    "share": null
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출 29억 원에 영업손실 284억 원을 냈다.",
+ "business": "Laminar-FLUIDigm 원천 플랫폼을 바탕으로 장기지속형 주사제(IVL-DrugFluidic), 유전물질 전달(IVL-GeneFluidic, LNP CDMO), 항체 피하주사 전환(BioFluidic) 기술을 개발하며, LNP 제조장비 HANDYGENE GMP·Lab을 출시했습니다.",
+ "products": [
+  {
+   "name": "장기지속형 주사제",
+   "segment": "IVL-DrugFluidic",
+   "desc": "개량신약"
+  },
+  {
+   "name": "HANDYGENE",
+   "segment": "LNP 장비",
+   "desc": "CE 인증"
+  }
+ ],
+ "customers": "제약사에 라이선스·공동개발로 사업화하고 CMO 파트너와 위탁생산을 추진합니다."
+}

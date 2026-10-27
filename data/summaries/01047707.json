@@ -1,0 +1,73 @@
+{
+ "corp_code": "01047707",
+ "name": "포톤",
+ "source_rcept": "20260409001053",
+ "source_name": "[기재정정]사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "포톤은 스마트폰 카메라의 초점·손떨림 방지(AF/OIS)와 줌(F/Z) 구동부에 들어가는 FPCB 조립품을 베트남에서 만들어 카메라 액추에이터 업체에 공급하는 회사입니다.",
+ "facts": "코스닥 상장 2014.12 · 2025 연결 매출 1,287억 · 영업손실 0.5억 · 순손실 64억",
+ "mix_line": "매출 AF/OIS FPCB 45.9% · F/Z FPCB 45.8% · 권선코일 5.1% · ISM 3.1%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "FPCB·Driver IC",
+    "note": "원재료"
+   }
+  ],
+  "company": {
+   "name": "포톤",
+   "note": "카메라 FPCB Assy"
+  },
+  "customers": [
+   {
+    "name": "액추에이터 제조사",
+    "note": "대기업 1차 벤더, 주요 고객 92%"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "AF/OIS FPCB Assy",
+    "amount": 59043000000,
+    "share": 45.9
+   },
+   {
+    "name": "F/Z FPCB Assy",
+    "amount": 58917000000,
+    "share": 45.8
+   },
+   {
+    "name": "권선코일",
+    "amount": 6593000000,
+    "share": 5.1
+   },
+   {
+    "name": "ISM SMT",
+    "amount": 3934000000,
+    "share": 3.1
+   },
+   {
+    "name": "기타",
+    "amount": 247000000,
+    "share": 0.2
+   }
+  ],
+  "basis": "2025"
+ },
+ "caption": "F/Z FPCB 매출이 842억 원에서 589억 원으로 줄고 AF/OIS가 435억 원에서 590억 원으로 늘었다. 순손실 64억 원을 냈다.",
+ "business": "휴대폰 카메라 Actuator에 탑재되는 AF/OIS·F/Z(Folded Zoom) FPCB Assy와 ISM 모듈 SMT를 하며, 베트남 법인에서 임가공해 본사가 고객사에 판매합니다.",
+ "products": [
+  {
+   "name": "AF/OIS FPCB Assy",
+   "segment": "카메라 부품",
+   "desc": "",
+   "share": 45.9
+  },
+  {
+   "name": "F/Z FPCB Assy",
+   "segment": "카메라 부품",
+   "desc": "폴디드 줌",
+   "share": 45.8
+  }
+ ],
+ "customers": "3개월 예측과 1개월 발주를 받아 주요 고객사에 납품합니다."
+}
