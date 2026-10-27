@@ -1,0 +1,79 @@
+{
+ "corp_code": "00605124",
+ "name": "알파칩스",
+ "source_rcept": "20260316001038",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "알파칩스는 삼성 파운드리 공식 디자인 파트너로, 고객 주문을 받아 카메라·멀티미디어용 시스템반도체를 설계해 납품하는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2002년 설립 · 2025 매출 823억 · 영업손실 20억 · 순손실 15억 · 삼성 SAFE-DSP",
+ "mix_line": "매출 Multimedia IC 55.4% · Mixed Signal 16.1% · Others 13.8% · Security 10.7%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "외주가공",
+    "note": "삼성 파운드리 등"
+   }
+  ],
+  "company": {
+   "name": "알파칩스",
+   "note": "ASIC·SoC 디자인하우스"
+  },
+  "customers": [
+   {
+    "name": "팹리스·Set 업체",
+    "note": "개발 의뢰 고객"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Mobile Multimedia IC",
+    "amount": 45555000000,
+    "share": 55.4
+   },
+   {
+    "name": "Mixed Signal IC",
+    "amount": 13225000000,
+    "share": 16.1
+   },
+   {
+    "name": "Others(메모리 외)",
+    "amount": 11360000000,
+    "share": 13.8
+   },
+   {
+    "name": "Security IC",
+    "amount": 8831000000,
+    "share": 10.7
+   },
+   {
+    "name": "SoC 설계 개발용역",
+    "amount": 3309000000,
+    "share": 4.0
+   }
+  ],
+  "basis": "2025 별도"
+ },
+ "caption": "매출이 2024년 852.7억 원에서 2025년 822.8억 원으로 줄었다. 개발용역이 62.0억 원에서 33.1억 원으로 감소했다.",
+ "business": "2003년 삼성 파운드리 최초 디자인 하우스로 지정됐고 2019년 SAFE-DSP로 승격됐습니다. ASIC·SoC 설계 서비스와 고속 인터페이스 IP를 바탕으로 멀티미디어·카메라·보안·가전 IoT용 칩을 개발해 양산 납품합니다.",
+ "products": [
+  {
+   "name": "Mobile Multimedia IC",
+   "segment": "제품",
+   "desc": "Camera Signal Processor 등",
+   "share": 55.4
+  },
+  {
+   "name": "Mixed Signal IC",
+   "segment": "제품",
+   "desc": "가전·IoT",
+   "share": 16.1
+  },
+  {
+   "name": "Security IC",
+   "segment": "제품",
+   "desc": "보안카메라·암호화",
+   "share": 10.7
+  }
+ ],
+ "customers": "판매대리점 없이 직접 영업하며, 삼성 파운드리로 칩을 만들려는 고객에게 One Stop 서비스를 제공합니다."
+}

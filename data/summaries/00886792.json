@@ -1,0 +1,87 @@
+{
+ "corp_code": "00886792",
+ "name": "루켄테크놀러지스",
+ "source_rcept": "20260323000759",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "루켄테크놀러지스는 디스플레이 패널 결함 검사장비와 HBM 등 반도체 검사용 핀(M-POGO Pin)·테스트소켓을 만드는 코넥스 회사입니다.",
+ "facts": "코넥스 · 2017-07 상장 · 2025 매출 173억 · 수출 42% · 삼성전자 검사부품 공급사 등록",
+ "mix_line": "매출 디스플레이 검사장비 47% · 반도체부품 23% · 검사부품 20% · 용역 7%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "AREASCAN CAMERA 등",
+    "note": "검사장비 원재료"
+   }
+  ],
+  "company": {
+   "name": "루켄테크놀러지스",
+   "note": "디스플레이·반도체 검사"
+  },
+  "customers": [
+   {
+    "name": "디스플레이 패널 업체",
+    "note": "삼성디스플레이 등"
+   },
+   {
+    "name": "메모리 업체",
+    "note": "삼성전자·SK하이닉스·CXMT"
+   },
+   {
+    "name": "해외",
+    "note": "중국·미국·일본 등"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "디스플레이 검사장비",
+    "amount": 8201000000,
+    "share": 47.4
+   },
+   {
+    "name": "반도체 부품",
+    "amount": 4034000000,
+    "share": 23.3
+   },
+   {
+    "name": "디스플레이 검사부품",
+    "amount": 3464000000,
+    "share": 20.0
+   },
+   {
+    "name": "검사장비 용역",
+    "amount": 1187000000,
+    "share": 6.9
+   },
+   {
+    "name": "Parts 등",
+    "amount": 422000000,
+    "share": 2.4
+   }
+  ],
+  "basis": "2025"
+ },
+ "caption": "매출이 2023년 385.0억 원, 2024년 209.8억 원, 2025년 173.1억 원으로 줄었다. 디스플레이 고객사 투자 지연 탓이며 반도체 부품 매출은 늘었다.",
+ "business": "디스플레이 Cell·Module 결함 검사장비(AMI, Auto Prober)와 점등검사용 Probe Unit·Block, MEMS 기반 M-POGO Pin·Test Socket·Test Interface Board 등 반도체 패키지 테스트 부품을 만듭니다.",
+ "products": [
+  {
+   "name": "AMI·Auto Prober",
+   "segment": "디스플레이 검사장비",
+   "desc": "",
+   "share": 47.4
+  },
+  {
+   "name": "M-POGO Pin·Test Socket",
+   "segment": "반도체 부품",
+   "desc": "HBM 검사용",
+   "share": 23.3
+  },
+  {
+   "name": "Probe Unit·Block",
+   "segment": "디스플레이 검사부품",
+   "desc": "",
+   "share": 20.0
+  }
+ ],
+ "customers": "삼성전자 검사 부품 공급사로 등록됐고 SK하이닉스, 중국 CXMT에도 업체 등록을 했습니다."
+}

@@ -1,0 +1,92 @@
+{
+ "corp_code": "00838500",
+ "name": "엘브이엠씨",
+ "source_rcept": "20260428000679",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "엘브이엠씨는 라오스·베트남·미얀마·캄보디아에서 'DAEHAN' 브랜드 자동차를 조립·판매하는 자회사를 둔 케이먼제도 설립 코스피 지주회사입니다.",
+ "facts": "코스피 · 케이먼제도 역외지주 · 핵심 자회사 Auto World(KOLAO) 매출 비중 61.7%",
+ "mix_line": "매출 자동차 제품(DAEHAN) 90.6% · 자동차 상품 5.5% · A/S 1.6% · 부품 1.3%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "완성차",
+    "note": "현대차·기아 등"
+   },
+   {
+    "name": "SKD/CKD 부품",
+    "note": "현대차·기아·현대위아"
+   }
+  ],
+  "company": {
+   "name": "엘브이엠씨",
+   "note": "동남아 자동차 유통"
+  },
+  "customers": [
+   {
+    "name": "라오스·미얀마 개인 고객",
+    "note": "직영 쇼룸·할부판매"
+   },
+   {
+    "name": "딜러·프랜차이즈",
+    "note": "신용판매"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "자동차 제품(DAEHAN)",
+    "amount": null,
+    "share": 90.6
+   },
+   {
+    "name": "자동차 상품(신차·중고차)",
+    "amount": null,
+    "share": 5.5
+   },
+   {
+    "name": "A/S",
+    "amount": null,
+    "share": 1.6
+   },
+   {
+    "name": "Wholesale(액세서리·소모품)",
+    "amount": null,
+    "share": 1.3
+   },
+   {
+    "name": "오토바이(KOLAO)",
+    "amount": null,
+    "share": 0.5
+   },
+   {
+    "name": "기타(렌탈 등)",
+    "amount": null,
+    "share": 0.5
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출의 90.6%가 자체 설계 후 부품을 조립하거나 CKD로 들여와 조립한 DAEHAN 브랜드 차량에서 나온다.",
+ "business": "라오스 자회사 Auto World(KOLAO Developing)를 중심으로 DAEHAN 브랜드 차량 조립·판매, 신차·중고차 수입 유통, KOLAO 오토바이, 부품·액세서리 도매, A/S, 렌탈과 자동차 할부금융을 합니다.",
+ "products": [
+  {
+   "name": "DAEHAN 차량",
+   "segment": "자동차",
+   "desc": "자체 설계·CKD 조립",
+   "share": 90.6
+  },
+  {
+   "name": "신차·중고차",
+   "segment": "자동차 상품",
+   "desc": "수입·현지 매입",
+   "share": 5.5
+  },
+  {
+   "name": "KOLAO 오토바이",
+   "segment": "오토바이",
+   "desc": "",
+   "share": 0.5
+  }
+ ],
+ "customers": "라오스 전역과 미얀마의 직영 쇼룸에서 팔며, 36~60개월 자체할부·금융할부를 제공합니다."
+}
