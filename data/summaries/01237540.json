@@ -1,0 +1,81 @@
+{
+ "corp_code": "01237540",
+ "name": "이녹스첨단소재",
+ "source_rcept": "20260318001197",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "이녹스첨단소재는 OLED 패널, 연성회로기판, 반도체 패키지에 들어가는 필름형 소재를 만드는 코스닥 IT소재 회사입니다.",
+ "facts": "코스닥 · 2025 연결 매출 4,396억 · 영업이익 819억 · 순이익 560억 · 수출 92%",
+ "mix_line": "매출 OLED 소재 66.3% · 회로기판 소재 25.4% · 반도체 패키지 소재 8.3%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "특수필름 등",
+    "note": "원재료 매입의 82%"
+   },
+   {
+    "name": "접착제용 약품",
+    "note": "부재료"
+   }
+  ],
+  "company": {
+   "name": "이녹스첨단소재",
+   "note": "IT 소재"
+  },
+  "customers": [
+   {
+    "name": "S社·L社 등",
+    "note": "디스플레이·전자"
+   },
+   {
+    "name": "Lead Frame 업체",
+    "note": "SK Hynix 승인 LOC Tape"
+   },
+   {
+    "name": "해외 고객",
+    "note": "수출 4,023억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "디스플레이 OLED 소재",
+    "amount": 291464000000,
+    "share": 66.3
+   },
+   {
+    "name": "회로기판 소재",
+    "amount": 111616000000,
+    "share": 25.4
+   },
+   {
+    "name": "반도체 패키지 소재",
+    "amount": 36554000000,
+    "share": 8.3
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 4,228억 원에서 4,396억 원으로 4.0% 늘었지만 영업이익은 5.6% 줄었다. OLED 소재 평균 판가가 10% 초반 하락했다.",
+ "business": "고분자 합성·배합기술로 OLED 소재(INNOLED), 회로기판 소재(SMARTFLEX), 반도체 패키지 소재(INNOSEM), 배터리 소재를 만듭니다. 중국·베트남 법인이 있고, 종속회사 이녹스리튬이 2025년 11월 준공돼 샘플을 생산합니다.",
+ "products": [
+  {
+   "name": "INNOLED",
+   "segment": "OLED 소재",
+   "desc": "디스플레이용",
+   "share": 66.3
+  },
+  {
+   "name": "SMARTFLEX",
+   "segment": "회로기판 소재",
+   "desc": "FPCB용",
+   "share": 25.4
+  },
+  {
+   "name": "INNOSEM",
+   "segment": "반도체 패키지",
+   "desc": "LOC Tape 등",
+   "share": 8.3
+  }
+ ],
+ "customers": "주요 고객은 S社·L社 등이고, 반도체 패키지 소재는 SK Hynix 승인을 받아 Lead Frame 업체에 공급합니다."
+}

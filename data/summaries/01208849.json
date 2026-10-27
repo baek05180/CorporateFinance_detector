@@ -1,0 +1,98 @@
+{
+ "corp_code": "01208849",
+ "name": "나인테크",
+ "source_rcept": "20260723000380",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "나인테크는 배터리 셀을 만드는 라미네이션·스태킹 장비와 디스플레이 공정 장비를 만들고, 자회사 탈로스를 통해 군용 2차전지도 생산하는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2017-06 상장 · 2025 연결 매출 824억 · 영업손실 89억 · 순손실 174억",
+ "mix_line": "매출 Lamination 68.8% · 군용 2차전지 17.7% · 디스플레이 5.5% · Stacking 3.6%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "장비 원재료",
+    "note": "주문생산, 2025 매입 279억"
+   }
+  ],
+  "company": {
+   "name": "나인테크",
+   "note": "2차전지 · 디스플레이 장비"
+  },
+  "customers": [
+   {
+    "name": "2차전지 제조업체",
+    "note": "조립공정 장비"
+   },
+   {
+    "name": "디스플레이 패널 제조업체",
+    "note": "LCD·OLED 공정"
+   },
+   {
+    "name": "군",
+    "note": "TICN 통신장비용 전지"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Lamination",
+    "amount": 56631000000,
+    "share": 68.8
+   },
+   {
+    "name": "군용 리튬이온 2차전지",
+    "amount": 14548000000,
+    "share": 17.7
+   },
+   {
+    "name": "디스플레이 장비",
+    "amount": 4539000000,
+    "share": 5.5
+   },
+   {
+    "name": "Stacking",
+    "amount": 2987000000,
+    "share": 3.6
+   },
+   {
+    "name": "PLP WET(반도체)",
+    "amount": 2916000000,
+    "share": 3.5
+   },
+   {
+    "name": "수수료 수익",
+    "amount": 748000000,
+    "share": 0.9
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "원재료 매입이 2023년 978.6억 원에서 2025년 278.9억 원으로 줄었고, 2025년 순손실 174.2억 원을 냈다.",
+ "business": "양극·음극·분리막으로 셀을 만드는 Lamination 장비와 셀 적층 Stacking 장비, 디스플레이 Vac/N2 Logistics·Wet Station, 반도체 패널 세정용 PLP WET를 만듭니다. 종속회사 탈로스가 군용 리튬이온 2차전지·충전기·ESS를 생산합니다.",
+ "products": [
+  {
+   "name": "Lamination",
+   "segment": "2차전지 장비",
+   "desc": "셀 제조",
+   "share": 68.8
+  },
+  {
+   "name": "Stacking",
+   "segment": "2차전지 장비",
+   "desc": "셀 적층",
+   "share": 3.6
+  },
+  {
+   "name": "Vac/N2 Logistics·Wet Station",
+   "segment": "디스플레이 장비",
+   "desc": "",
+   "share": 5.5
+  },
+  {
+   "name": "군용 2차전지",
+   "segment": "탈로스",
+   "desc": "TICN 비상전원",
+   "share": 17.7
+  }
+ ],
+ "customers": "2차전지 제조업체와 디스플레이 패널 제조업체에 사양 협의 후 주문 제작해 공급하고, 군용 전지는 군 통신장비용으로 납품합니다."
+}
