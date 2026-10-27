@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-10-27T18:02+09:00",
+  "data_updated": "2026-10-27T18:07+09:00",
   "last_daily": "2026-10-26T22:17+09:00"
  },
  "records": {
@@ -57976,6 +57976,42 @@
    "updated": "2026-10-25T18:19+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261002000375",
    "ytm": 0.0
+  },
+  "CB:00369569:8": {
+   "amended": false,
+   "amount": 2000000000,
+   "board_dt": "2026-10-27",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "K",
+   "corp_code": "00369569",
+   "corp_name": "비케이홀딩스",
+   "coupon": 2.0,
+   "dilution": 9.43,
+   "exercise_from": "2027-11-27",
+   "exercise_to": "2029-10-27",
+   "first_seen": "2026-10-27T18:07+09:00",
+   "id": "CB:00369569:8",
+   "lead": null,
+   "maturity": "2029-11-27",
+   "method_raw": "사모",
+   "offering": "사모",
+   "pay_dt": "2026-11-27",
+   "price": 2810,
+   "purposes": {
+    "타법인증권": 2000000000
+   },
+   "rcept_dt": "2026-10-27",
+   "rcept_no": "20261027000379",
+   "refix_floor": 1967,
+   "series": "8",
+   "shares": 711743,
+   "source": "DART",
+   "stock_code": "050090",
+   "type": "CB",
+   "updated": "2026-10-27T18:07+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261027000379",
+   "ytm": 4.0
   },
   "CB:00372226:1": {
    "amended": false,
