@@ -1,0 +1,86 @@
+{
+ "corp_code": "00535676",
+ "name": "테크윙",
+ "source_rcept": "20260623000173",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "테크윙은 반도체 칩을 검사장비에 자동으로 넣고 빼는 테스트 핸들러와 교체 부품(C.O.K)을 만들어 세계 반도체 회사에 파는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2002년 설립 · 2025 연결 매출 1,591억 · 영업이익 158억 · 순이익 90억 · 반도체장비 수출 70%",
+ "mix_line": "매출 C.O.K 36.8% · 검사장비 36.0% · Parts·Board 20.3% · 디스플레이 6.9%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "Frame",
+    "note": "매입 126.9억"
+   },
+   {
+    "name": "공압실린더 등",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "테크윙",
+   "note": "반도체 검사장비"
+  },
+  "customers": [
+   {
+    "name": "SK하이닉스·삼성전자",
+    "note": "국내"
+   },
+   {
+    "name": "Micron·Intel·Infineon",
+    "note": "해외"
+   },
+   {
+    "name": "디스플레이 업체",
+    "note": "이엔씨테크놀로지"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "C.O.K",
+    "amount": 58557000000,
+    "share": 36.8
+   },
+   {
+    "name": "검사장비(Test Handler 등)",
+    "amount": 57299000000,
+    "share": 36.0
+   },
+   {
+    "name": "Parts·Board 등",
+    "amount": 32297000000,
+    "share": 20.3
+   },
+   {
+    "name": "디스플레이 평가장비",
+    "amount": 10976000000,
+    "share": 6.9
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 2024년 1,855.1억 원에서 2025년 1,591.3억 원으로 14% 줄었다. 검사장비 수출이 702.7억 원에서 297.3억 원으로 감소한 반면 C.O.K는 481.8억 원에서 585.6억 원으로 늘었다.",
+ "business": "Memory·SOC Test Handler, Cube Prober, Probe Station 등 반도체 검사장비와 핸들러 교체 부품 C.O.K, Parts·Board를 만들고, 자회사 이엔씨테크놀로지가 OLED·LCD 평가장비를 만듭니다.",
+ "products": [
+  {
+   "name": "C.O.K",
+   "segment": "반도체 검사장비",
+   "desc": "Change Over Kit",
+   "share": 36.8
+  },
+  {
+   "name": "Test Handler·Cube Prober",
+   "segment": "반도체 검사장비",
+   "desc": "",
+   "share": 36.0
+  },
+  {
+   "name": "OLED/LCD 평가장비",
+   "segment": "디스플레이",
+   "desc": "",
+   "share": 6.9
+  }
+ ],
+ "customers": "SK하이닉스, 삼성전자, Micron, Intel, Infineon 등 글로벌 반도체 기업에 공급합니다."
+}

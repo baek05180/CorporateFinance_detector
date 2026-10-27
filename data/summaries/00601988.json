@@ -1,0 +1,98 @@
+{
+ "corp_code": "00601988",
+ "name": "코난테크놀로지",
+ "source_rcept": "20260323000784",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "코난테크놀로지는 검색엔진·빅데이터 분석·자체 LLM 같은 AI 소프트웨어를 공공기관과 기업에 공급하는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2022-07 상장 · 2025 매출 340억 · 영업손실 99억 · 순손실 97억 · 전량 내수",
+ "mix_line": "매출 Analytics 30.5% · LLM 25.8% · Search 21.1% · Watcher 14.0%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "원재료비",
+    "note": "국내 41.6억"
+   }
+  ],
+  "company": {
+   "name": "코난테크놀로지",
+   "note": "Text·Vision AI"
+  },
+  "customers": [
+   {
+    "name": "공공기관",
+    "note": "국민건강보험공단 등"
+   },
+   {
+    "name": "국방",
+    "note": "국방AI사업부"
+   },
+   {
+    "name": "기업",
+    "note": ""
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Konan Analytics",
+    "amount": 10373000000,
+    "share": 30.5
+   },
+   {
+    "name": "Konan LLM",
+    "amount": 8771000000,
+    "share": 25.8
+   },
+   {
+    "name": "Konan Search",
+    "amount": 7176000000,
+    "share": 21.1
+   },
+   {
+    "name": "Konan Watcher",
+    "amount": 4751000000,
+    "share": 14.0
+   },
+   {
+    "name": "pulseK",
+    "amount": 1671000000,
+    "share": 4.9
+   },
+   {
+    "name": "Chatbot·Listener",
+    "amount": 1237000000,
+    "share": 3.6
+   }
+  ],
+  "basis": "2025 별도"
+ },
+ "caption": "매출이 2024년 263.2억 원에서 2025년 339.8억 원으로 29% 늘었다. Konan LLM이 11.0억 원에서 87.7억 원으로, Analytics가 23.8억 원에서 103.7억 원으로 커졌다.",
+ "business": "Text AI(코난서치, 코난애널리틱스, 펄스케이, 코난챗봇, 코난 LLM)와 Vision AI(코난와처, 코난보이스, 코난리스너) 8개 제품을 AI서비스·빅데이터·국방AI 등 6개 사업부가 공급합니다.",
+ "products": [
+  {
+   "name": "Konan Analytics",
+   "segment": "Text AI",
+   "desc": "빅데이터 분석",
+   "share": 30.5
+  },
+  {
+   "name": "Konan LLM",
+   "segment": "Text AI",
+   "desc": "",
+   "share": 25.8
+  },
+  {
+   "name": "Konan Search",
+   "segment": "Text AI",
+   "desc": "멀티모달 검색엔진",
+   "share": 21.1
+  },
+  {
+   "name": "Konan Watcher",
+   "segment": "Vision AI",
+   "desc": "",
+   "share": 14.0
+  }
+ ],
+ "customers": "매출은 전량 내수로, 국민건강보험공단 지능형 고객상담 플랫폼 같은 공공 사업을 수주합니다."
+}
