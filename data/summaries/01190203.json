@@ -1,0 +1,66 @@
+{
+ "corp_code": "01190203",
+ "name": "진켐",
+ "source_rcept": "20260326000335",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "진켐은 효소 당쇄 전환기술로 모유올리고당 시알릴락토스와 화장품 보습제 원료 AquaGG를 만드는 바이오 소재 회사입니다.",
+ "facts": "2025 매출 8억 · 영업손실 75억 · 순손실 84억 · 3'-SL 미국 GRAS(2018)",
+ "mix_line": "매출 AquaGG 58.4% · 시알릴락토스 41.6%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "포도당·N-아세틸글루코사민·락토스·CMP",
+    "note": "시알릴락토스 원료"
+   }
+  ],
+  "company": {
+   "name": "진켐",
+   "note": "바이오 기능성 소재"
+  },
+  "customers": [
+   {
+    "name": "화장품 OEM/ODM",
+    "note": "대리상 경유"
+   },
+   {
+    "name": "해외 수입상",
+    "note": "시알릴락토스"
+   },
+   {
+    "name": "Amazon 소비자",
+    "note": "B2C"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "AquaGG(Glyceryl Glucoside)",
+    "amount": 449310000,
+    "share": 58.4
+   },
+   {
+    "name": "Sialyllactose",
+    "amount": 319590000,
+    "share": 41.6
+   }
+  ],
+  "basis": "2025"
+ },
+ "caption": "매출이 13.9억 원, 7.1억 원, 7.7억 원으로 움직였다. 시알릴락토스가 1.5억 원에서 3.2억 원으로 늘었다.",
+ "business": "One Pot Enzymatic Glycosylation 플랫폼으로 HMO(3'-SL·6'-SL)와 화장품 소재를 생산하며, 2023년 1월 세종첨단산업단지 공장을 준공했습니다. AquaGG는 2024년 7월 출고분부터 약 15% 인상했습니다.",
+ "products": [
+  {
+   "name": "AquaGG",
+   "segment": "화장품 소재",
+   "desc": "보습제",
+   "share": 58.4
+  },
+  {
+   "name": "3'-SL·6'-SL",
+   "segment": "HMO",
+   "desc": "모유올리고당",
+   "share": 41.6
+  }
+ ],
+ "customers": "AquaGG는 대리상을 거쳐 OEM/ODM에, 시알릴락토스는 수입상과 Amazon으로 팝니다."
+}
