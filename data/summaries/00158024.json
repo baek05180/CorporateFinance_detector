@@ -1,0 +1,77 @@
+{
+ "corp_code": "00158024",
+ "name": "KBI메탈",
+ "source_rcept": "20260319000983",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "KBI메탈은 전선 원료인 동(구리) 로드를 만드는 메탈사업이 대부분이고, 자동차용 모터 코어·블로어 모터 같은 전장품과 전선·물류 사업도 하는 회사입니다.",
+ "facts": "코스닥 상장 1994.12 · 2025 연결 매출 7,586억 · 영업이익 243억 · 순이익 14억",
+ "mix_line": "매출 동 ROD 87.8% · 전장품 3.6% · 동 상품 3.2% · CORE 1.6%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "전기동",
+    "note": ""
+   }
+  ],
+  "company": {
+   "name": "KBI메탈",
+   "note": "동 ROD + 전장"
+  },
+  "customers": [
+   {
+    "name": "전선 제조사",
+    "note": "동 ROD"
+   },
+   {
+    "name": "보그워너PDS 등",
+    "note": "전장품"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "동 ROD",
+    "amount": 665846000000,
+    "share": 87.8
+   },
+   {
+    "name": "전장품(Blow motor·Alternator)",
+    "amount": 27310000000,
+    "share": 3.6
+   },
+   {
+    "name": "동 상품",
+    "amount": 24485000000,
+    "share": 3.2
+   },
+   {
+    "name": "CORE",
+    "amount": 11820000000,
+    "share": 1.6
+   },
+   {
+    "name": "그 외(전선·물류 등, 표 미표시)",
+    "amount": 29109000000,
+    "share": 3.8
+   }
+  ],
+  "basis": "2025 연결 (그 외는 매출과의 차액)"
+ },
+ "caption": "메탈사업부 매출이 6,353억 원에서 6,908억 원으로 늘었고 수출은 296억 원에서 828억 원이 됐다.",
+ "business": "전장사업부(코어·BLDC 모터·발전기), 메탈사업부(동 ROD), 전선사업부, 물류사업부로 나뉩니다.",
+ "products": [
+  {
+   "name": "동 ROD",
+   "segment": "메탈",
+   "desc": "전선 원료",
+   "share": 87.8
+  },
+  {
+   "name": "Blow motor·Alternator",
+   "segment": "전장",
+   "desc": "",
+   "share": 3.6
+  }
+ ],
+ "customers": "동 ROD는 전선 제조용으로 팔고, 전장품은 보그워너PDS 등에 공급합니다.",
+ "written": "2026-10-27"
+}
