@@ -1,0 +1,71 @@
+{
+ "corp_code": "00367482",
+ "name": "빛과전자",
+ "source_rcept": "20260320001115",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "빛과전자는 기지국용 광트랜시버와 초고속 인터넷(FTTH)용 광부품 같은 광통신 모듈을 만들어 통신장비 업체에 파는 회사입니다.",
+ "facts": "코스닥 상장 2004.02 · 2025 연결 매출 318억 · 영업손실 165억 · 순손실 197억",
+ "mix_line": "매출 이동통신용 광모듈 49.8% · FTTH 광부품 49.5%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "광소자 등",
+    "note": "원재료"
+   }
+  ],
+  "company": {
+   "name": "빛과전자",
+   "note": "광통신 모듈"
+  },
+  "customers": [
+   {
+    "name": "이동통신 장비 업체",
+    "note": "SFP·QSFP"
+   },
+   {
+    "name": "초고속 인터넷 장비 업체",
+    "note": "PON OLT/ONU"
+   },
+   {
+    "name": "CATV 방송사업자",
+    "note": ""
+   }
+  ],
+  "revenue": [
+   {
+    "name": "ODL(이동통신용 광모듈)",
+    "amount": 14962000000,
+    "share": 49.8
+   },
+   {
+    "name": "FTTH(PON용 OLT/ONU)",
+    "amount": 14876000000,
+    "share": 49.5
+   },
+   {
+    "name": "RF·기타",
+    "amount": 212000000,
+    "share": 0.7
+   }
+  ],
+  "basis": "2025 (제품 합계 300억 기준)"
+ },
+ "caption": "FTTH 매출이 0원대에서 149억 원으로 생겨 매출이 160억 원에서 301억 원으로 늘었지만, 영업손실 165억 원을 냈다.",
+ "business": "광송신기·광수신기·광송수신기 모듈을 연구개발·제조하며 기지국·중계기용, Telecom/Datacom용, FTTH용, 방송 전송용, CATV용 광모듈을 만듭니다. 데이터센터 시장도 준비합니다.",
+ "products": [
+  {
+   "name": "SFP·SFP+·QSFP",
+   "segment": "ODL",
+   "desc": "이동통신용",
+   "share": 49.8
+  },
+  {
+   "name": "PON OLT/ONU",
+   "segment": "FTTH",
+   "desc": "",
+   "share": 49.5
+  }
+ ],
+ "customers": "End User 직접 판매와 장비업체를 통한 간접 판매를 병행합니다.",
+ "written": "2026-10-27"
+}

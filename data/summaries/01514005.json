@@ -1,0 +1,86 @@
+{
+ "corp_code": "01514005",
+ "name": "크라우드웍스",
+ "source_rcept": "20260323001402",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "크라우드웍스는 다수의 크라우드워커를 활용해 LLM·AI 학습 데이터를 구축해 주고, 기업용 AI 솔루션도 공급하는 AI 데이터 회사입니다.",
+ "facts": "코스닥 상장 2023.08 · 2025 연결 매출 105억 · 영업손실 134억 · 순손실 217억",
+ "mix_line": "매출 LLM 데이터 35.5% · AI 데이터 34.0% · Enterprise AI 14.7%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "크라우드워커 외주비",
+    "note": "매입원가 대부분"
+   }
+  ],
+  "company": {
+   "name": "크라우드웍스",
+   "note": "AI 데이터 구축"
+  },
+  "customers": [
+   {
+    "name": "LLM 개발 기업",
+    "note": "학습 데이터"
+   },
+   {
+    "name": "기업 고객",
+    "note": "Enterprise AI"
+   },
+   {
+    "name": "개인",
+    "note": "Consumer AI·아카데미"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "LLM Data",
+    "amount": 3727000000,
+    "share": 35.5
+   },
+   {
+    "name": "AI Data",
+    "amount": 3564000000,
+    "share": 34.0
+   },
+   {
+    "name": "Enterprise AI Solution",
+    "amount": 1541000000,
+    "share": 14.7
+   },
+   {
+    "name": "기타",
+    "amount": 753000000,
+    "share": 7.2
+   },
+   {
+    "name": "Consumer AI Solution",
+    "amount": 589000000,
+    "share": 5.6
+   },
+   {
+    "name": "Crowd Academy",
+    "amount": 310000000,
+    "share": 3.0
+   }
+  ],
+  "basis": "2025"
+ },
+ "caption": "아카데미 매출이 2023년 108억 원에서 2025년 3억 원으로 줄어 매출이 240억 원에서 105억 원으로 줄었고, 순손실 217억 원을 냈다.",
+ "business": "AI 학습용 데이터를 가공·정제하는 Data 사업(LLM·AI Data), 기업·산업·소비자용 AI 솔루션 사업, 크라우드워커 교육(Crowd Academy)을 합니다.",
+ "products": [
+  {
+   "name": "LLM·AI 학습 데이터",
+   "segment": "Data",
+   "desc": "",
+   "share": 69.5
+  },
+  {
+   "name": "Enterprise AI Solution",
+   "segment": "AI",
+   "desc": "",
+   "share": 14.7
+  }
+ ],
+ "customers": "국내 기업과 기관에 팔며 수출은 없습니다.",
+ "written": "2026-10-27"
+}

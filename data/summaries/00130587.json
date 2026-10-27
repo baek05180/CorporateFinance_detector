@@ -1,0 +1,64 @@
+{
+ "corp_code": "00130587",
+ "name": "서울전자통신",
+ "source_rcept": "20260320001349",
+ "source_name": "사업보고서 (2025.12)",
+ "one_liner": "서울전자통신은 산업용·전기차용 파워 트랜스와 SMPS 같은 전원부품을 만들고, 키오스크·전기차충전기를 ODM으로 생산하는 회사입니다.",
+ "facts": "코스닥 상장 1999.12 · 2025 연결 매출 337억 · 영업손실 16억 · 순손실 53억",
+ "mix_line": "매출 전원부품(파워 트랜스·SMPS) + ODM(키오스크·충전기)",
+ "flow": {
+  "inputs": [
+   {
+    "name": "트랜스포머 자재",
+    "note": "베트남 법인 생산"
+   }
+  ],
+  "company": {
+   "name": "서울전자통신",
+   "note": "전원부품 + ODM"
+  },
+  "customers": [
+   {
+    "name": "세라젬·청호나이스·LG이노텍",
+    "note": "전원부품"
+   },
+   {
+    "name": "LG전자·K-golf·NICE인프라",
+    "note": "ODM"
+   },
+   {
+    "name": "SONY·YAMAHA 등",
+    "note": "해외"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "전원·ODM 사업",
+    "amount": 33729253000,
+    "share": 100.0
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 358억 원에서 337억 원으로 줄었고 순손실 53억 원을 냈다.",
+ "business": "전원사업 부문은 산업용 POWER TRANS, EV용 저전압 DC-DC 컨버터 트랜스, SMPS를 만들고, ODM 부문은 키오스크와 전기차충전기를 생산합니다. 베트남 SET VINA가 생산 거점입니다.",
+ "products": [
+  {
+   "name": "POWER TRANS·전장용 트랜스",
+   "segment": "전원",
+   "desc": ""
+  },
+  {
+   "name": "SMPS",
+   "segment": "전원",
+   "desc": ""
+  },
+  {
+   "name": "키오스크·전기차충전기",
+   "segment": "ODM",
+   "desc": ""
+  }
+ ],
+ "customers": "대리점 없이 100% 직판으로 국내(세라젬·린나이·청호나이스 등)와 해외 전자업체에 팝니다.",
+ "written": "2026-10-27"
+}
