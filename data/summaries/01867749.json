@@ -1,0 +1,70 @@
+{
+ "corp_code": "01867749",
+ "name": "유비씨",
+ "source_rcept": "20260323000238",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "유비씨는 공장 데이터를 모아 3D 가상공장(디지털 트윈)으로 보여주고 시뮬레이션·예지보전까지 하는 AI 플랫폼 'OCTOPUS'를 파는 코넥스 소프트웨어 회사입니다.",
+ "facts": "코넥스 · 2010년 설립 · 2024-12 상장 · 2025 매출 36억 · 수출 6%",
+ "mix_line": "매출 국내 93.8% · 수출 6.2%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "개발 인력",
+    "note": "간접비 방식 원가"
+   }
+  ],
+  "company": {
+   "name": "유비씨",
+   "note": "AI 디지털 트윈"
+  },
+  "customers": [
+   {
+    "name": "국내 일반기업체",
+    "note": "33.6억"
+   },
+   {
+    "name": "해외 기업",
+    "note": "2.2억"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "국내",
+    "amount": 3364095000,
+    "share": 93.8
+   },
+   {
+    "name": "수출",
+    "amount": 221011000,
+    "share": 6.2
+   }
+  ],
+  "basis": "2025"
+ },
+ "caption": "매출이 2024년 52.2억 원에서 2025년 35.9억 원으로 31% 줄었다.",
+ "business": "자율제조용 Full Cycle AI 디지털 트윈 플랫폼 OCTOPUS를 공급합니다. Simulator, AI Hub, Data Hub(구 Flexing CPS), Agentic AI 등 8개 솔루션으로 데이터 수집부터 3D 가상화·시뮬레이션·예지보전까지 다룹니다.",
+ "products": [
+  {
+   "name": "OCTOPUS Simulator",
+   "segment": "솔루션",
+   "desc": "What-if 시뮬레이션·병목 분석"
+  },
+  {
+   "name": "OCTOPUS AI Hub",
+   "segment": "솔루션",
+   "desc": "No-Code AI 모델 생성"
+  },
+  {
+   "name": "OCTOPUS Data Hub",
+   "segment": "솔루션",
+   "desc": "산업 데이터 통합"
+  },
+  {
+   "name": "OCTOPUS Agentic AI",
+   "segment": "솔루션",
+   "desc": "LLM·RAG 기반 자율 판단"
+  }
+ ],
+ "customers": "국내 일반기업체가 매출의 대부분이며, 일부 해외 수출이 있습니다."
+}
