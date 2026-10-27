@@ -1,0 +1,83 @@
+{
+ "corp_code": "00604426",
+ "name": "인터로조",
+ "source_rcept": "20260615000326",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "인터로조는 하루용·2주 이상용 콘택트렌즈를 만들어 국내에선 '클라렌' 브랜드로, 해외에선 OEM/ODM으로 파는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2010-07 상장 · 2025 연결 매출 1,184억 · 영업이익 195억 · 순이익 129억 · 해외 83%",
+ "mix_line": "매출 하이드로겔 1-Day 70.1% · 하이드로겔 FRP 18.8% · 실리콘 FRP 8.9%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "HEMA 등",
+    "note": "렌즈 원재료"
+   }
+  ],
+  "company": {
+   "name": "인터로조",
+   "note": "콘택트렌즈"
+  },
+  "customers": [
+   {
+    "name": "해외 Distributor",
+    "note": "OEM/ODM, 83.2%"
+   },
+   {
+    "name": "국내 안경원",
+    "note": "클라렌, 16.8%"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Hydrogel 1-Day",
+    "amount": 82021000000,
+    "share": 70.1
+   },
+   {
+    "name": "Hydrogel FRP",
+    "amount": 21966000000,
+    "share": 18.8
+   },
+   {
+    "name": "Silicone Hydrogel FRP",
+    "amount": 10440000000,
+    "share": 8.9
+   },
+   {
+    "name": "Silicone Hydrogel 1-Day",
+    "amount": 2477000000,
+    "share": 2.1
+   },
+   {
+    "name": "기타",
+    "amount": 117000000,
+    "share": 0.1
+   }
+  ],
+  "basis": "2025 별도"
+ },
+ "caption": "별도 매출이 1,150.3억 원에서 1,170.2억 원으로 늘었다. 하이드로겔 1-Day가 718.8억 원에서 820.2억 원으로 증가했다.",
+ "business": "Clear·Color 렌즈를 1-Day와 FRP(2주 이상), Hydrogel과 Si-Hydrogel 재질로 생산하고 노안·난시·블루라이트 차단 등 기능성 렌즈도 만듭니다. 2021년 국내 최초 실리콘 1-Day Color를 출시했습니다.",
+ "products": [
+  {
+   "name": "Clalen Iris 등",
+   "segment": "Hydrogel 1-Day",
+   "desc": "자체 브랜드·ODM",
+   "share": 70.1
+  },
+  {
+   "name": "Hydrogel FRP",
+   "segment": "FRP",
+   "desc": "",
+   "share": 18.8
+  },
+  {
+   "name": "Si-Hydrogel",
+   "segment": "실리콘",
+   "desc": "",
+   "share": 11.0
+  }
+ ],
+ "customers": "해외는 Distributor를 거쳐 안경원으로, 국내는 본사가 안경원에 직접 공급합니다."
+}
