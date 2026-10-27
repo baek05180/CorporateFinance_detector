@@ -1,0 +1,92 @@
+{
+ "corp_code": "00273439",
+ "name": "메디아나",
+ "source_rcept": "20260311004653",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "메디아나는 병원용 환자감시장치와 산소포화도측정기, 자동심장충격기(AED)를 만들어 국내외에 팔고 글로벌 업체에 ODM 공급하는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2014-10 상장 · 2025 연결 매출 649억 · 영업이익 60억 · 순이익 53억 · 수출 68%",
+ "mix_line": "매출 산소포화도측정기 25.0% · 상품 등 24.0% · AED 22.2% · 환자감시장치 14.9%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "전자부품",
+    "note": "미국 C사·일본 O사, 수입 40~50%"
+   }
+  ],
+  "company": {
+   "name": "메디아나",
+   "note": "의료기기"
+  },
+  "customers": [
+   {
+    "name": "Medtronic·Siemens",
+    "note": "ODM 파트너"
+   },
+   {
+    "name": "해외 대리점",
+    "note": "수출 441.6억"
+   },
+   {
+    "name": "국내 병원",
+    "note": "수도권 직판"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "Pulse Oximeter",
+    "amount": 16215010000,
+    "share": 25.0
+   },
+   {
+    "name": "상품 및 기타",
+    "amount": 15560372000,
+    "share": 24.0
+   },
+   {
+    "name": "AED",
+    "amount": 14412982000,
+    "share": 22.2
+   },
+   {
+    "name": "Patient Monitor",
+    "amount": 9686712000,
+    "share": 14.9
+   },
+   {
+    "name": "기타제품",
+    "amount": 6437405000,
+    "share": 9.9
+   },
+   {
+    "name": "defibrillator",
+    "amount": 2632337000,
+    "share": 4.1
+   }
+  ],
+  "basis": "2025 연결"
+ },
+ "caption": "매출이 784.2억 원, 570.4억 원, 649.4억 원으로 움직였다.",
+ "business": "심전도·혈압·산소포화도·호흡수를 모니터링하는 환자감시장치, 산소포화도측정기, 자동심장충격기(AED)와 제세동기를 만들어 해외 대리점에 직판 수출하고 Medtronic·Siemens 등에 ODM으로 공급합니다.",
+ "products": [
+  {
+   "name": "Pulse Oximeter",
+   "segment": "환자감시",
+   "desc": "",
+   "share": 25.0
+  },
+  {
+   "name": "AED",
+   "segment": "심장충격기",
+   "desc": "",
+   "share": 22.2
+  },
+  {
+   "name": "Patient Monitor",
+   "segment": "환자감시",
+   "desc": "",
+   "share": 14.9
+  }
+ ],
+ "customers": "국내는 서울·경기 직판, 그 외 지역은 대리점을 통해 판매합니다."
+}

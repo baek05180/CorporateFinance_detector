@@ -1,0 +1,49 @@
+{
+ "corp_code": "01576102",
+ "name": "미래에셋글로벌리츠",
+ "source_rcept": "20260616000171",
+ "source_name": "사업보고서 (2026.03)",
+ "written": "2026-10-27",
+ "one_liner": "미래에셋글로벌리츠는 미국 FedEx·Amazon 물류센터를 현지 SPC를 통해 보유하고 임대수익을 배당하는 코스피 상장 리츠입니다.",
+ "facts": "코스피 · 2021-12 상장 · 2025 연결 매출 122억 · 영업손실 25억 · 순손실 61억",
+ "mix_line": "자산 FedEx Indianapolis · FedEx Tampa · Amazon Houston",
+ "flow": {
+  "inputs": [
+   {
+    "name": "투자자 자금",
+    "note": "공모 리츠"
+   }
+  ],
+  "company": {
+   "name": "미래에셋글로벌리츠",
+   "note": "해외 물류 리츠"
+  },
+  "customers": [
+   {
+    "name": "FedEx",
+    "note": "Triple Net 100%"
+   },
+   {
+    "name": "Amazon",
+    "note": "Triple Net 100%"
+   }
+  ],
+  "revenue": [],
+  "basis": "2025 연결"
+ },
+ "caption": "2025년 매출 121.9억 원에 영업손실 25.1억 원, 순손실 60.9억 원을 냈다.",
+ "business": "자리츠와 펀드, 다수 현지 SPC를 통해 미국 FedEx Indianapolis(2035년 만기), FedEx Tampa(2032년), Amazon Houston(2032년) 물류센터를 보유하고 Triple Net 방식으로 임대합니다.",
+ "products": [
+  {
+   "name": "FedEx Indianapolis",
+   "segment": "물류센터",
+   "desc": "955,844 sq.ft"
+  },
+  {
+   "name": "Amazon Houston",
+   "segment": "물류센터",
+   "desc": "856,605 sq.ft"
+  }
+ ],
+ "customers": "세 자산 모두 임대율 100%입니다."
+}

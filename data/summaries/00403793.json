@@ -1,0 +1,70 @@
+{
+ "corp_code": "00403793",
+ "name": "바이브컴퍼니",
+ "source_rcept": "20260320001232",
+ "source_name": "사업보고서 (2025.12)",
+ "written": "2026-10-27",
+ "one_liner": "바이브컴퍼니는 한국어 특화 LLM 'VAIV GeM' 기반 AI 에이전트·검색 솔루션과 소셜 분석 서비스 '썸트렌드'를 하는 코스닥 회사입니다.",
+ "facts": "코스닥 · 2000년 설립 · 2020-10 상장 · 2025 연결 매출 190억 · 영업손실 38억 · 순손실 184억",
+ "mix_line": "별도 매출 SI/SM 36.9% · AI솔루션 32.3% · AI서비스 30.8%",
+ "flow": {
+  "inputs": [
+   {
+    "name": "원재료비",
+    "note": "국내"
+   }
+  ],
+  "company": {
+   "name": "바이브컴퍼니",
+   "note": "AI 솔루션"
+  },
+  "customers": [
+   {
+    "name": "기업·공공기관",
+    "note": "AI솔루션 61곳"
+   },
+   {
+    "name": "썸트렌드 구독자",
+    "note": "B2C·B2B"
+   }
+  ],
+  "revenue": [
+   {
+    "name": "SI/SM",
+    "amount": 5435000000,
+    "share": 36.9
+   },
+   {
+    "name": "AI솔루션",
+    "amount": 4754000000,
+    "share": 32.3
+   },
+   {
+    "name": "AI서비스",
+    "amount": 4535000000,
+    "share": 30.8
+   }
+  ],
+  "basis": "2025 별도"
+ },
+ "caption": "별도 매출이 345.9억 원, 278.6억 원, 215.7억 원, 147.3억 원으로 줄었다. SI/SM이 268.0억 원에서 54.4억 원으로 축소됐다.",
+ "business": "자체 LLM VAIV GeM과 데이터 자산으로 업무를 스스로 분해·실행하는 VAIV Agent, 에이전틱 RAG 검색 VAIV Search, AI 지식관리 VAIV KMS를 만들고, 소셜 리스닝 서비스 썸트렌드를 운영합니다. 2025년 사업 구조를 재편했습니다.",
+ "products": [
+  {
+   "name": "VAIV Agent",
+   "segment": "AI솔루션",
+   "desc": "AI 에이전트"
+  },
+  {
+   "name": "VAIV Search",
+   "segment": "AI솔루션",
+   "desc": "에이전틱 RAG"
+  },
+  {
+   "name": "썸트렌드",
+   "segment": "AI서비스",
+   "desc": "소셜 리스닝"
+  }
+ ],
+ "customers": "AI솔루션과 인프라를 결합한 어플라이언스를 월 구독 방식으로 제공합니다."
+}
