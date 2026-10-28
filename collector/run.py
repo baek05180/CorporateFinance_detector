@@ -230,10 +230,14 @@ def main(argv=None):
     if args.mode == "bonds":
         import json
         from .profiles import bond_doc_step, link_bond_filings
-        diag = {"linked": link_bond_filings(dart, store, today)}
-        store.save(args.mode)
+        import traceback
+        diag = {}
         try:
+            diag["linked"] = link_bond_filings(dart, store, today)
+            store.save(args.mode)
             bond_doc_step(dart, store, today, diag)
+        except Exception as e:  # noqa: BLE001
+            diag["error"] = redact(traceback.format_exc())[-1500:]
         finally:
             dump_json("diag_bonds.json", diag)
         log.info("mode=bonds · %s", json.dumps({k: diag.get(k) for k in ("linked", "bond_docs")}, ensure_ascii=False))
