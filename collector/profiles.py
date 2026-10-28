@@ -551,7 +551,7 @@ def bond_doc_step(dart, store, today, diag):
             sr = r.get("series_raw") or r.get("series") or ""
             for rno in {r["rcept_no"], r.get("original_rcept") or r["rcept_no"]}:
                 series_of.setdefault(rno, set()).add(sr)
-    originals = {r.get("original_rcept") or r["rcept_no"] for r in store.records.values() if r.get("type") == "BOND"}
+    originals = {r.get("original_rcept") or r.get("rcept_no") for r in store.records.values() if r.get("type") == "BOND"}
     todo = sorted(series_of, reverse=True)
     todo = [rno for rno in todo if (bond_docs.get(rno) or {}).get("v") != docparse.BOND_DOC_VERSION]
 
