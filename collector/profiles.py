@@ -508,7 +508,12 @@ def link_bond_filings(dart, store, today, days=None):
     fl, cur = [], start
     while cur <= end:
         ce = min(cur + timedelta(days=60), end)
-        fl += dart.list_filings(ymd(cur), ymd(ce), "C", "C002")
+        for _ in range(3):
+            try:
+                fl += dart.list_filings(ymd(cur), ymd(ce), "C", "C002")
+                break
+            except DartError:
+                time.sleep(20)
         cur = ce + timedelta(days=1)
     by_corp = {}
     for f in fl:
