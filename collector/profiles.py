@@ -398,41 +398,7 @@ def run(dart, store, today=None):
         fin = refresh_multi(dart, listed_cc, fin, today)
         dump_json("fin/multi.json", fin, indent=None)
 
-        # 5) 공모채 수요예측일·신용등급 (최근 것만, 병렬)
-        t0 = time.time()
-        bond_docs = load_json("ref/bond_docs.json", {})
-        since_doc = (today - timedelta(days=config.BOND_DOC_DAYS)).isoformat()
-        todo = sorted({r.get("original_rcept") or r["rcept_no"] for r in store.records.values()
-                       if r.get("type") == "BOND" and r.get("offering") == "공모" and r.get("rcept_no")
-                       and (r.get("rcept_dt") or "") >= since_doc}, reverse=True)
-        todo = [rno for rno in todo if (bond_docs.get(rno) or {}).get("v") != docparse.BOND_DOC_VERSION]
-
-        def bond_job(rno):
-            try:
-                docs = dart.document(rno)
-            except DartError as e:
-                return rno, {"demand_dt": None, "error": redact(e)[:100], "v": docparse.BOND_DOC_VERSION}, None
-            main = max(docs.values(), key=len) if docs else ""
-            got = docparse.bond_schedule(main)
-            miss = None
-            if not got.get("demand_dt") or not got.get("rating"):
-                t = docparse.text_of(main)
-                i, j = t.find("수요예측"), t.find("신용등급")
-                miss = {"rcept": rno, "got": got, "demand": t[max(0, i - 80): i + 220] if i >= 0 else "",
-                        "rating": t[max(0, j - 40): j + 300] if j >= 0 else ""}
-            return rno, got, miss
-
-        try:
-            for rno, got, miss in parallel(todo, bond_job):
-                bond_docs[rno] = got
-                if miss and len(diag.setdefault("demand_miss", [])) < 6:
-                    diag["demand_miss"].append(miss)
-        finally:
-            dump_json("ref/bond_docs.json", bond_docs)
-            diag["bond_docs"] = {"todo": len(todo), "found_demand": sum(1 for v in bond_docs.values() if v.get("demand_dt")),
-                                 "found_rating": sum(1 for v in bond_docs.values() if v.get("rating")),
-                                 "sec": round(time.time() - t0)}
-
+        bond_doc_step(dart, store, today, diag)
         mezz_step(dart, store, today, diag)
 
         # 6) 조달 대상 회사 상세 (병렬)
@@ -532,3 +498,88 @@ def mezz_step(dart, store, today, diag):
         diag["mezz_docs"] = {"todo": len(mtodo), "total": len(mezz_docs), "with_inv": sum(1 for v in vals if v["investors"]),
                              "with_call": sum(1 for v in vals if v["call_pct"] is not None),
                              "with_prem": sum(1 for v in vals if v["premium"] is not None), "sec": round(time.time() - t0)}
+
+
+def link_bond_filings(dart, store, today, days=None):
+    """공모채 레코드(회차별, 최신 공시만 남음)에 최초공시·정정·발행조건확정 이력을 붙인다."""
+    from .run import ymd
+    days = days or config.BOND_DOC_DAYS
+    start, end = today - timedelta(days=days), today
+    fl, cur = [], start
+    while cur <= end:
+        ce = min(cur + timedelta(days=60), end)
+        fl += dart.list_filings(ymd(cur), ymd(ce), "C", "C002")
+        cur = ce + timedelta(days=1)
+    by_corp = {}
+    for f in fl:
+        nm = (f.get("report_nm") or "").replace(" ", "")
+        if any(k.replace(" ", "") in nm for k in config.BOND_REPORT_KEYWORDS):
+            by_corp.setdefault(f.get("corp_code"), []).append((f["rcept_no"], f.get("report_nm") or ""))
+    recs = {}
+    since = start.isoformat()
+    for r in store.records.values():
+        if r.get("type") == "BOND" and r.get("offering") == "공모" and r.get("rcept_no") and (r.get("rcept_dt") or "") >= since:
+            recs.setdefault(r["corp_code"], []).append(r)
+    n = 0
+    for cc, rs in recs.items():
+        heads = sorted({r["rcept_no"] for r in rs})
+        groups = {h: [] for h in heads}
+        for rno, nm in sorted(set(by_corp.get(cc, []))):
+            h = next((x for x in heads if x >= rno), None)
+            if h:
+                groups[h].append([rno, nm])
+        for r in rs:
+            g = groups.get(r["rcept_no"]) or []
+            if not g:
+                continue
+            orig = next((x[0] for x in g if "정정" not in x[1] and "발행조건" not in x[1]), g[0][0])
+            if r.get("filings") != g or r.get("original_rcept") != orig:
+                r["filings"], r["original_rcept"] = g, orig
+                store.changed = True
+                n += 1
+    return n
+
+
+def bond_doc_step(dart, store, today, diag):
+    """공모채 원문: 수요예측일·신용등급 + 회차별 희망금리 밴드·확정금리 (최신 공시와 최초공시)."""
+    t0 = time.time()
+    bond_docs = load_json("ref/bond_docs.json", {})
+    since_doc = (today - timedelta(days=config.BOND_DOC_DAYS)).isoformat()
+    series_of = {}
+    for r in store.records.values():
+        if r.get("type") == "BOND" and r.get("offering") == "공모" and r.get("rcept_no") and (r.get("rcept_dt") or "") >= since_doc:
+            sr = r.get("series_raw") or r.get("series") or ""
+            for rno in {r["rcept_no"], r.get("original_rcept") or r["rcept_no"]}:
+                series_of.setdefault(rno, set()).add(sr)
+    todo = sorted(series_of, reverse=True)
+    todo = [rno for rno in todo if (bond_docs.get(rno) or {}).get("v") != docparse.BOND_DOC_VERSION]
+
+    def bond_job(rno):
+        try:
+            docs = dart.document(rno)
+        except DartError as e:
+            return rno, {"demand_dt": None, "error": redact(e)[:100], "v": docparse.BOND_DOC_VERSION}, None
+        main = max(docs.values(), key=len) if docs else ""
+        got = docparse.bond_schedule(main)
+        got["series"] = docparse.bond_rates(main, sorted(series_of[rno]))
+        miss = None
+        if not any(v.get("band") or v.get("rate") for v in got["series"].values()):
+            t = docparse.text_of(main)
+            i, j = t.find("희망"), t.find("이자율")
+            miss = {"rcept": rno, "band": t[max(0, i - 80): i + 300] if i >= 0 else "",
+                    "rate": t[max(0, j - 60): j + 200] if j >= 0 else ""}
+        return rno, got, miss
+
+    try:
+        for rno, got, miss in parallel(todo, bond_job):
+            bond_docs[rno] = got
+            if miss and len(diag.setdefault("bond_rate_miss", [])) < 8:
+                diag["bond_rate_miss"].append(miss)
+    finally:
+        dump_json("ref/bond_docs.json", bond_docs)
+        vals = [v for v in bond_docs.values() if "error" not in v]
+        diag["bond_docs"] = {"todo": len(todo), "found_demand": sum(1 for v in vals if v.get("demand_dt")),
+                             "found_rating": sum(1 for v in vals if v.get("rating")),
+                             "with_band": sum(1 for v in vals if any(x.get("band") for x in (v.get("series") or {}).values())),
+                             "with_rate": sum(1 for v in vals if any(x.get("rate") for x in (v.get("series") or {}).values())),
+                             "sec": round(time.time() - t0)}

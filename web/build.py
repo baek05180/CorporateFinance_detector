@@ -91,11 +91,27 @@ def main():
         row = {k: v for k, v in r.items() if k in KEEP and v not in (None, "", [], {})}
         row["key"] = key_of(r)
         if r.get("type") == "BOND" and r.get("offering") == "공모":
-            doc = bond_docs.get(r.get("original_rcept") or r.get("rcept_no"), {})
+            orig = r.get("original_rcept") or r.get("rcept_no")
+            dl, do = bond_docs.get(r.get("rcept_no"), {}), bond_docs.get(orig, {})
+            doc = do if do.get("demand_dt") else dl
             if doc.get("demand_dt"):
                 row["demand_dt"] = doc["demand_dt"]
-            if doc.get("rating") and not A.grade_of(row.get("rating")):
-                row["rating"] = doc["rating"]
+            rt = do.get("rating") or dl.get("rating")
+            if rt and not A.grade_of(row.get("rating")):
+                row["rating"] = rt
+            sr = r.get("series_raw") or r.get("series") or ""
+            so, sl = (do.get("series") or {}).get(sr) or {}, (dl.get("series") or {}).get(sr) or {}
+            if so.get("band") or sl.get("band"):
+                row["band"] = so.get("band") or sl.get("band")
+            fl = r.get("filings") or []
+            last_nm = fl[-1][1] if fl else ""
+            row["stage"] = "발행확정" if "발행조건" in last_nm else "정정" if (r.get("rcept_no") != orig or r.get("amended")) else "최초"
+            if row["stage"] != "최초" and sl.get("rate"):
+                row["fix_rate"] = sl["rate"]
+            if orig != r.get("rcept_no"):
+                row["original_url"] = "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=" + orig
+            if fl:
+                row["filings"] = fl
         if r.get("type") in ("CB", "BW", "EB"):
             md_ = mezz_docs.get(r.get("rcept_no")) or {}
             for k in ("investors", "call_pct", "call_m", "put_m", "premium", "base_price"):

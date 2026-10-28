@@ -198,7 +198,7 @@ def collect_private_bonds(store, mode):
 
 def main(argv=None):
     ap = argparse.ArgumentParser()
-    ap.add_argument("--mode", choices=["watch", "daily", "backfill", "profiles", "prices", "mezz"], default="watch")
+    ap.add_argument("--mode", choices=["watch", "daily", "backfill", "profiles", "prices", "mezz", "bonds"], default="watch")
     ap.add_argument("--days", type=int, default=7)
     args = ap.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
@@ -227,6 +227,17 @@ def main(argv=None):
                 f.write(summary + "\n")
         return 0
 
+    if args.mode == "bonds":
+        import json
+        from .profiles import bond_doc_step, link_bond_filings
+        diag = {"linked": link_bond_filings(dart, store, today)}
+        store.save(args.mode)
+        try:
+            bond_doc_step(dart, store, today, diag)
+        finally:
+            dump_json("diag_bonds.json", diag)
+        log.info("mode=bonds · %s", json.dumps({k: diag.get(k) for k in ("linked", "bond_docs")}, ensure_ascii=False))
+        return 0
     if args.mode == "mezz":
         import json
         from .profiles import mezz_step
@@ -291,6 +302,12 @@ def main(argv=None):
             log.error("사모채 수집 실패: %s", e)
             store.diag["private_bond_status"]["error"] = redact(e)[:500]
 
+    if mode == "daily":
+        try:
+            from .profiles import link_bond_filings
+            store.diag["bond_linked"] = link_bond_filings(dart, store, today)
+        except Exception as e:  # noqa: BLE001
+            store.diag["bond_linked_error"] = redact(e)[:200]
     wrote = store.save(mode)
     summary = f"mode={args.mode} 신규 {len(store.added)}건 · DART 호출 {dart.calls}회 · 파일 변경={'예' if wrote else '아니오'}"
     log.info(summary)

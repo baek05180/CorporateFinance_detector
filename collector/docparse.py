@@ -274,7 +274,7 @@ def _iso(m):
 
 AGENCY = r"(한국기업평가|한국신용평가|NICE\s*신용평가|나이스신용평가|서울신용평가|한기평|한신평|NICE)"
 GRADE = r"(?<![A-Za-z])(AAA|AA[+\-]|AA0|AA|A[+\-]|A0|BBB[+\-]|BBB0|BBB|BB[+\-]|BB0|BB|B[+\-]|B0)(?![A-Za-z0-9가-힣])"
-BOND_DOC_VERSION = 2
+BOND_DOC_VERSION = 3
 
 
 def bond_schedule(xml):
@@ -416,4 +416,72 @@ def mezz_doc(xml):
     m = re.search(r"기준\s*주가\s*[:：]?\s*([\d,]{3,})\s*원", t)
     if m:
         out["base_price"] = int(m.group(1).replace(",", ""))
+    return out
+
+
+
+# ── 공모채: 회차별 공모희망금리(밴드)·확정금리 ──
+_BAND_KEY = r"(?:공모\s*희망\s*금리|희망\s*금리|금리\s*밴드|공모\s*금리\s*밴드)"
+_NUM = r"([+\-－−]?\s*\d+(?:\.\d+)?)"
+_RATE_PATS = [
+    r"확정\s*(?:공모\s*)?(?:발행\s*)?(?:금리|이자율|수익률)\s*[:：은는]?\s*(?:연\s*)?(\d{1,2}\.\d{1,4})\s*%",
+    r"(?:표면\s*)?이자율\s*[:：]?\s*연\s*(\d{1,2}\.\d{1,4})\s*%",
+    r"(?:발행\s*)?금리\s*[:：]\s*연\s*(\d{1,2}\.\d{1,4})\s*%",
+]
+
+
+def _f(x):
+    return float(x.replace(" ", "").replace("－", "-").replace("−", "-"))
+
+
+def _band(seg):
+    """'개별민평 수익률 평균 -0.30%p ~ +0.30%p' → '개별민평 -30~+30bp' · '연 3.00%~3.50%' → '3.00~3.50%'"""
+    m = re.search(_NUM + r"\s*(%p|％p|bp|bps|%|％)\s*[~∼～\-]\s*" + _NUM + r"\s*(%p|％p|bp|bps|%|％)", seg)
+    if not m:
+        return None
+    a, ua, b, ub = _f(m.group(1)), m.group(2), _f(m.group(3)), m.group(4)
+    base = re.search(r"(개별\s*민평|등급\s*민평|민평|국고채|회사채)", seg[: m.start() + 1])
+    base = base.group(1).replace(" ", "") if base else ""
+    if "p" in ua or "bp" in ua or "p" in ub or "bp" in ub or base:
+        k = 100 if "%" in ua else 1
+        lo, hi = round(a * k), round(b * k)
+        return f"{base + ' ' if base else ''}{lo:+d}~{hi:+d}bp".strip()
+    return f"{a:.2f}~{b:.2f}%"
+
+
+def _series_windows(t, series):
+    """회차 표기('제59-1회') 뒤 구간들"""
+    s = re.escape(series).replace("\\-", "\\s*-\\s*")
+    return [t[m.start(): m.start() + 900] for m in re.finditer(r"제\s*" + s + r"\s*회", t)]
+
+
+def bond_rates(xml, series_list):
+    """증권신고서(채무증권) 원문 → {회차: {"band": str|None, "rate": float|None}}"""
+    t = text_of(xml)
+    out = {}
+    one = len(series_list) <= 1
+    for sr in series_list:
+        wins = _series_windows(t, sr) if sr else []
+        band = rate = None
+        for w in wins:
+            k = re.search(_BAND_KEY, w)
+            if k and not band:
+                band = _band(w[k.end(): k.end() + 250])
+            if rate is None:
+                for p in _RATE_PATS:
+                    m = re.search(p, w)
+                    if m and 0 < float(m.group(1)) < 30:
+                        rate = float(m.group(1))
+                        break
+        if one or not wins:
+            if not band:
+                k = re.search(_BAND_KEY, t)
+                band = _band(t[k.end(): k.end() + 250]) if k else None
+            if rate is None:
+                for p in _RATE_PATS:
+                    m = re.search(p, t)
+                    if m and 0 < float(m.group(1)) < 30:
+                        rate = float(m.group(1))
+                        break
+        out[sr or ""] = {"band": band, "rate": rate}
     return out

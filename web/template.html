@@ -376,7 +376,7 @@ const offer = o => o === '공모' ? '<span class="badge b-pub">공모</span>' : 
 const dartLink = r => r.url ? `<a class="dart" href="${r.url}" target="_blank" rel="noopener" data-stop>원문</a>` : DASH;
 const series = r => r.series ? esc(r.series) + '회' : DASH;
 const priceOrRate = r => ['CB','BW','EB'].includes(r.type) ? int(r.price) + '<span class="muted"> 원</span>'
-  : r.type === 'BOND' ? (r.coupon != null ? pct(r.coupon, 3) : /수요예측/.test(r.coupon_raw || '') ? '<span class="muted">수요예측 후</span>' : DASH)
+  : r.type === 'BOND' ? (r.coupon != null ? pct(r.coupon, 3) : r.fix_rate != null ? pct(r.fix_rate, 3) + `<span class="muted"> ${r.stage === '발행확정' ? '발행' : '확정'}</span>` : r.band ? `<span class="muted">희망 ${esc(r.band)}</span>` : /수요예측/.test(r.coupon_raw || '') ? '<span class="muted">수요예측 후</span>' : DASH)
   : r.type === 'RIGHTS' ? (r.dilution != null ? pct(r.dilution) + '<span class="muted"> 증자</span>' : DASH) : DASH;
 
 let ROWS_BY_ID = {};
@@ -528,8 +528,12 @@ function openDeal(r) {
       + field('신주(보통)', r.new_common ? int(r.new_common) + '주' : null) + field('신주(기타)', r.new_other ? int(r.new_other) + '주' : null)
       + field('증자 비율', pct(r.dilution, 2)) + field('접수일', md(r.rcept_dt)) + field('액면가', r.par_value ? int(r.par_value) + '원' : null);
   } else if (r.offering === '공모') {
-    f = field('모집 금액', won(r.amount)) + field('금리', priceOrRate(r)) + field('만기일', md(r.maturity))
-      + field('수요예측일', md(r.demand_dt)) + field('청약일', md(r.sub_dt)) + field('납입(발행)일', md(r.pay_dt))
+    f = field('모집 금액', won(r.amount)) + field('진행 단계', r.stage ? esc(r.stage === '최초' ? '최초 신고' : r.stage === '정정' ? '정정 (금리 확정)' : '발행조건 확정') : null)
+      + field('희망금리 밴드', r.band ? esc(r.band) : null)
+      + field(r.stage === '발행확정' ? '발행금리' : r.stage === '정정' ? '결정금리' : '금리', priceOrRate(r)) + field('만기일', md(r.maturity))
+      + field('수요예측일', md(r.demand_dt)) + (r.stage === '최초' ? '' : field('청약일', md(r.sub_dt))) + field('납입(발행)일', md(r.pay_dt))
+      + field('최초공시', r.original_url ? `<a class="dart" href="${r.original_url}" target="_blank" rel="noopener">${esc(r.filings?.[0]?.[0] || '원문')}</a>` : null)
+      + field('공시 이력', r.filings?.length > 1 ? r.filings.map(x => `<a class="dart" href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=${x[0]}" target="_blank" rel="noopener">${esc(md(x[0].slice(0, 4) + '-' + x[0].slice(4, 6) + '-' + x[0].slice(6, 8)))} ${esc(/발행조건/.test(x[1]) ? '발행조건확정' : /정정/.test(x[1]) ? '정정' : '최초')}</a>`).join('<br>') : null)
       + field('신용등급', esc(r.rating)) + field('대표주관', esc(r.lead)) + field('보증기관', esc(r.guarantor))
       + field('인수단', r.underwriters?.length ? esc(r.underwriters.join(', ')) : null) + field('종목명', esc(r.name));
   } else {
@@ -571,10 +575,10 @@ function openTranches(g) {
   box.innerHTML = `<div class="modal-h"><span class="badge b-pub" style="margin:0">공모채</span><h2>${esc(r.corp_name)} ${esc(g.series ? g.series + '회' : '')}</h2>
     <span class="note">${g.rows.length}개 트랜치 · 합계 ${esc(wonTxt(g.amount))}</span><button class="x" aria-label="닫기">×</button></div>
     <div class="modal-b">
-      <div class="fields">${field('수요예측일', md(r.demand_dt))}${field('청약일', md(r.sub_dt))}${field('발행(납입)일', md(r.pay_dt))}${field('신용등급', esc(r.rating))}${field('대표주관', esc(r.lead))}${field('합계 금액', won(g.amount))}</div>
+      <div class="fields">${field('진행 단계', r.stage ? esc(r.stage === '최초' ? '최초 신고' : r.stage === '정정' ? '정정 (금리 확정)' : '발행조건 확정') : null)}${field('수요예측일', md(r.demand_dt))}${r.stage === '최초' ? '' : field('청약일', md(r.sub_dt))}${field('발행(납입)일', md(r.pay_dt))}${field('최초공시', r.original_url ? `<a class="dart" href="${r.original_url}" target="_blank" rel="noopener">원문</a>` : null)}${field('신용등급', esc(r.rating))}${field('대표주관', esc(r.lead))}${field('합계 금액', won(g.amount))}</div>
       <h3>트랜치</h3>
-      <div class="scroll"><table style="min-width:440px"><thead><tr><th>회차</th><th class="r">금액</th><th class="r">금리</th><th>만기</th><th>대표주관</th></tr></thead><tbody>
-        ${g.rows.map(t => `<tr class="click" data-tr="${esc(t.id)}"><td><b>${esc(t.series_raw || t.series || '-')}</b></td><td class="r num">${won(t.amount)}</td><td class="r num">${priceOrRate(t)}</td><td>${md(t.maturity)}</td><td>${esc(t.lead || '-')}</td></tr>`).join('')}
+      <div class="scroll"><table style="min-width:440px"><thead><tr><th>회차</th><th class="r">금액</th><th class="r">금리</th><th>희망밴드</th><th>만기</th><th>대표주관</th></tr></thead><tbody>
+        ${g.rows.map(t => `<tr class="click" data-tr="${esc(t.id)}"><td><b>${esc(t.series_raw || t.series || '-')}</b></td><td class="r num">${won(t.amount)}</td><td class="r num">${priceOrRate(t)}</td><td class="muted">${esc(t.band || '-')}</td><td>${md(t.maturity)}</td><td>${esc(t.lead || '-')}</td></tr>`).join('')}
       </tbody></table></div>
       <p class="note">트랜치를 누르면 상세가 열립니다.</p>
       <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">
