@@ -274,7 +274,7 @@ def _iso(m):
 
 AGENCY = r"(한국기업평가|한국신용평가|NICE\s*신용평가|나이스신용평가|서울신용평가|한기평|한신평|NICE)"
 GRADE = r"(?<![A-Za-z])(AAA|AA[+\-]|AA0|AA|A[+\-]|A0|BBB[+\-]|BBB0|BBB|BB[+\-]|BB0|BB|B[+\-]|B0)(?![A-Za-z0-9가-힣])"
-BOND_DOC_VERSION = 4
+BOND_DOC_VERSION = 5
 
 
 def bond_schedule(xml):
@@ -424,12 +424,10 @@ def mezz_doc(xml):
 _BAND_KEY = r"(?:공모\s*희망\s*금리|희망\s*금리|금리\s*밴드|공모\s*금리\s*밴드)"
 _NUM = r"([+\-－−]?\s*\d+(?:\.\d+)?)"
 _RATE_PATS = [
-    r"확정\s*(?:공모\s*)?(?:발행\s*)?(?:금리|이자율|수익률)\s*[:：은는]?\s*(?:연\s*)?(\d{1,2}\.\d{1,4})\s*%",
-    r"(?:표면\s*)?이자율\s*[:：]?\s*연\s*(\d{1,2}\.\d{1,4})\s*%",
-    r"(?:발행\s*)?금리\s*[:：]\s*연\s*(\d{1,2}\.\d{1,4})\s*%",
-    r"이자율\s*[:：]?\s*(?:연\s*)?(\d{1,2}\.\d{1,4})\s*%?\s*(?:발행\s*수익률|\()",
-    r"발행\s*수익률\s*[:：]?\s*(?:연\s*)?(\d{1,2}\.\d{1,4})\s*%?",
+    r"확정\s*(?:공모\s*)?(?:발행\s*)?(?:금리|이자율)\s*[:：은는]?\s*(?:연\s*)?(\d{1,2}\.\d{1,4})\s*%",
 ]
+_SPREAD = re.compile(r"(?:산술\s*평균|수익률)[^~∼～%]{0,60}?에\s*([+\-－−]?\s*\d+(?:\.\d+)?)\s*(%p|％p|bp)\.?\s*(?:를|을)\s*가산")
+
 
 
 def _f(x):
@@ -485,5 +483,12 @@ def bond_rates(xml, series_list):
                     if m and 0 < float(m.group(1)) < 30:
                         rate = float(m.group(1))
                         break
-        out[sr or ""] = {"band": band, "rate": rate}
+        spread = None
+        for w in (wins or []) + ([t] if one or not wins else []):
+            m = _SPREAD.search(w)
+            if m:
+                v = _f(m.group(1))
+                spread = round(v * 100) if "%" in m.group(2) else round(v)
+                break
+        out[sr or ""] = {"band": band, "rate": rate, "spread": spread}
     return out

@@ -11,6 +11,7 @@ public/data/co/{key}.json     회사 화면·제안 보고서 데이터
 """
 import json
 import os
+import re
 import shutil
 import sys
 from datetime import date, timedelta
@@ -67,6 +68,8 @@ def main():
     ph_dates, ph_close = ph.get("dates") or [], ph.get("close") or {}
     bond_docs = load_json("ref/bond_docs.json", {})
     mezz_docs = load_json("ref/mezz_docs.json", {})
+    out_bonds = (load_json("bonds/outstanding.json", {}) or {}).get("bonds") or []
+    issued_cpn = {(b.get("name") or "").replace(" ", ""): b for b in out_bonds if b.get("method") == "공모" and b.get("cpn")}
     name2code = {v.get("name"): c for c, v in listed.items() if v.get("name")}
     outstanding = load_json("bonds/outstanding.json", {}).get("bonds", [])
 
@@ -106,8 +109,15 @@ def main():
             fl = r.get("filings") or []
             last_nm = fl[-1][1] if fl else ""
             row["stage"] = "발행확정" if "발행조건" in last_nm else "정정" if (r.get("rcept_no") != orig or r.get("amended")) else "최초"
-            if row["stage"] != "최초" and sl.get("rate"):
-                row["fix_rate"] = sl["rate"]
+            if row["stage"] != "최초":
+                if sl.get("spread") is not None:
+                    row["fix_spread"] = sl["spread"]
+                if sl.get("rate"):
+                    row["fix_rate"] = sl["rate"]
+            nm = re.sub(r"\(주\)|㈜|주식회사|\s", "", r.get("corp_name") or "") + sr
+            ib = issued_cpn.get(nm)
+            if ib and (not r.get("maturity") or ib.get("mat") == r.get("maturity")):
+                row["issue_rate"], row["stage"] = ib["cpn"], "발행"
             if orig != r.get("rcept_no"):
                 row["original_url"] = "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=" + orig
             if fl:
