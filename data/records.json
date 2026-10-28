@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-10-28T16:38+09:00",
+  "data_updated": "2026-10-28T18:11+09:00",
   "last_daily": "2026-10-27T20:23+09:00"
  },
  "records": {
@@ -72972,7 +72972,7 @@
    "ytm": 3.0
   },
   "CB:00787057:27": {
-   "amended": false,
+   "amended": true,
    "amount": 5000000000,
    "board_dt": "2026-10-22",
    "captured_by": "daily",
@@ -72981,7 +72981,7 @@
    "corp_code": "00787057",
    "corp_name": "휴맥스",
    "coupon": 0.0,
-   "dilution": 12.49,
+   "dilution": 11.1,
    "exercise_from": "2027-10-30",
    "exercise_to": "2029-09-30",
    "first_seen": "2026-10-25T18:19+09:00",
@@ -72995,16 +72995,16 @@
    "purposes": {
     "운영": 5000000000
    },
-   "rcept_dt": "2026-10-22",
-   "rcept_no": "20261022000365",
+   "rcept_dt": "2026-10-28",
+   "rcept_no": "20261028000399",
    "refix_floor": 5000,
    "series": "27",
    "shares": 939849,
    "source": "DART",
    "stock_code": "115160",
    "type": "CB",
-   "updated": "2026-10-25T18:19+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261022000365",
+   "updated": "2026-10-28T18:11+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261028000399",
    "ytm": 3.5
   },
   "CB:00791209:17": {
@@ -272983,6 +272983,35 @@
    "updated": "2026-10-26T09:16+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260511000595"
   },
+  "RIGHTS:00258102:20261028000430": {
+   "amended": false,
+   "amount": 2999999520,
+   "board_dt": "2026-10-28",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "K",
+   "corp_code": "00258102",
+   "corp_name": "지엔코",
+   "dilution": 19.87,
+   "first_seen": "2026-10-28T18:11+09:00",
+   "id": "RIGHTS:00258102:20261028000430",
+   "method": "제3자배정증자",
+   "new_common": 1190476,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 2500,
+   "purposes": {
+    "채무상환": 2999999520
+   },
+   "rcept_dt": "2026-10-28",
+   "rcept_no": "20261028000430",
+   "source": "DART",
+   "stock_code": "065060",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-10-28T18:11+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261028000430"
+  },
   "RIGHTS:00258360:20231204000329": {
    "amended": false,
    "amount": 4999999920,
@@ -287203,9 +287232,9 @@
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261019000322"
   },
   "RIGHTS:00787057:20261014000405": {
-   "amended": false,
+   "amended": true,
    "amount": 4999996680,
-   "board_dt": "2026-10-14",
+   "board_dt": "2026-10-28",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
@@ -287218,18 +287247,19 @@
    "new_common": 939849,
    "new_other": null,
    "offering": "사모·주주배정",
+   "original_rcept": "20261014000405",
    "par_value": 5000,
    "purposes": {
     "운영": 4999996680
    },
-   "rcept_dt": "2026-10-14",
-   "rcept_no": "20261014000405",
+   "rcept_dt": "2026-10-28",
+   "rcept_no": "20261028000375",
    "source": "DART",
    "stock_code": "115160",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-10-25T18:19+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261014000405"
+   "updated": "2026-10-28T18:11+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261028000375"
   },
   "RIGHTS:00790839:20241213000632": {
    "amended": false,
