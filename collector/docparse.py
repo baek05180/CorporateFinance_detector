@@ -274,7 +274,7 @@ def _iso(m):
 
 AGENCY = r"(한국기업평가|한국신용평가|NICE\s*신용평가|나이스신용평가|서울신용평가|한기평|한신평|NICE)"
 GRADE = r"(?<![A-Za-z])(AAA|AA[+\-]|AA0|AA|A[+\-]|A0|BBB[+\-]|BBB0|BBB|BB[+\-]|BB0|BB|B[+\-]|B0)(?![A-Za-z0-9가-힣])"
-BOND_DOC_VERSION = 5
+BOND_DOC_VERSION = 6
 
 
 def bond_schedule(xml):
@@ -440,8 +440,8 @@ def _band(seg):
     if not m:
         return None
     a, ua, b, ub = _f(m.group(1)), m.group(2), _f(m.group(3)), m.group(4)
-    base = re.search(r"(개별\s*민평|등급\s*민평|민평|국고채|회사채)", seg[: m.start() + 1])
-    base = base.group(1).replace(" ", "") if base else ""
+    pre = seg[: m.start() + 1]
+    base = next((b for b in ("개별민평", "등급민평", "민평", "국고채") if b in pre.replace(" ", "")), "")
     if "p" in ua or "bp" in ua or "p" in ub or "bp" in ub or base:
         k = 100 if "%" in ua else 1
         lo, hi = round(a * k), round(b * k)
