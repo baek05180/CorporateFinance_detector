@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-10-28T20:23+09:00",
+  "data_updated": "2026-10-29T08:08+09:00",
   "last_daily": "2026-10-28T20:23+09:00"
  },
  "records": {
@@ -262973,33 +262973,33 @@
   },
   "RIGHTS:00104120:20260929000377": {
    "amended": true,
-   "amount": 1999997550,
-   "board_dt": "2026-10-22",
+   "amount": 3000004530,
+   "board_dt": "2026-10-29",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
    "corp_code": "00104120",
    "corp_name": "광진실업",
-   "dilution": 10.8,
+   "dilution": 13.21,
    "first_seen": "2026-10-25T18:18+09:00",
    "id": "RIGHTS:00104120:20260929000377",
    "method": "제3자배정증자",
-   "new_common": 856530,
+   "new_common": 1047122,
    "new_other": null,
    "offering": "사모·주주배정",
    "original_rcept": "20260929000377",
    "par_value": 500,
    "purposes": {
-    "운영": 1999997550
+    "운영": 3000004530
    },
-   "rcept_dt": "2026-10-22",
-   "rcept_no": "20261022000279",
+   "rcept_dt": "2026-10-29",
+   "rcept_no": "20261029000002",
    "source": "DART",
    "stock_code": "026910",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-10-25T18:18+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261022000279"
+   "updated": "2026-10-29T08:08+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261029000002"
   },
   "RIGHTS:00104120:20261020000324": {
    "amended": true,
