@@ -9,7 +9,7 @@
   "rating": "AA-",
   "series": {
    "6-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -11
    },
@@ -19,223 +19,223 @@
     "spread": -11
    }
   },
-  "v": 5
+  "v": 6
  },
  "20250924000263": {
   "demand_dt": "2025-09-25",
   "rating": "AA-",
   "series": {
    "7-3": {
-    "band": "회사채 -40~+40bp",
+    "band": "등급민평 -40~+40bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20250924000279": {
   "demand_dt": "2025-09-22",
   "rating": "A-",
   "series": {
    "139-1": {
-    "band": "회사채 -50~+30bp",
+    "band": "등급민평 -50~+30bp",
     "rate": null,
     "spread": -60
    },
    "139-2": {
-    "band": "회사채 -50~+30bp",
+    "band": "등급민평 -50~+30bp",
     "rate": null,
     "spread": -60
    }
   },
-  "v": 5
+  "v": 6
  },
  "20250924000322": {
   "demand_dt": "2025-09-22",
   "rating": "A+",
   "series": {
    "7": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -18
    }
   },
-  "v": 5
+  "v": 6
  },
  "20250924000369": {
   "demand_dt": "2025-09-24",
   "rating": "AA",
   "series": {
    "119-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -1
    },
    "119-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -1
    }
   },
-  "v": 5
+  "v": 6
  },
  "20250924000379": {
   "demand_dt": "2025-09-23",
   "rating": "A+",
   "series": {
    "12-1": {
-    "band": "회사채 -50~+50bp",
+    "band": "개별민평 -50~+50bp",
     "rate": null,
     "spread": 11
    },
    "12-2": {
-    "band": "회사채 -50~+50bp",
+    "band": "개별민평 -50~+50bp",
     "rate": null,
     "spread": 11
    }
   },
-  "v": 5
+  "v": 6
  },
  "20250924000418": {
   "demand_dt": "2025-09-23",
   "rating": "A",
   "series": {
    "112-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -26
    },
    "112-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -55
    },
    "112-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -26
    }
   },
-  "v": 5
+  "v": 6
  },
  "20250926000530": {
   "demand_dt": "2025-09-25",
   "rating": "AA-",
   "series": {
    "7-3": {
-    "band": "회사채 -40~+40bp",
+    "band": "등급민평 -40~+40bp",
     "rate": null,
     "spread": 35
    }
   },
-  "v": 5
+  "v": 6
  },
  "20250929000477": {
   "demand_dt": "2025-09-23",
   "rating": "A+",
   "series": {
    "12-1": {
-    "band": "회사채 -50~+50bp",
+    "band": "개별민평 -50~+50bp",
     "rate": null,
     "spread": 11
    },
    "12-2": {
-    "band": "회사채 -50~+50bp",
+    "band": "개별민평 -50~+50bp",
     "rate": null,
     "spread": 11
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251002000505": {
   "demand_dt": "2025-10-14",
   "rating": "A+",
   "series": {
    "8-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "8-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251002000587": {
   "demand_dt": "2025-10-14",
   "rating": "AAA",
   "series": {
    "27-1": {
-    "band": "회사채 -50~+50bp",
+    "band": "개별민평 -50~+50bp",
     "rate": null,
     "spread": null
    },
    "27-2": {
-    "band": "회사채 -50~+50bp",
+    "band": "개별민평 -50~+50bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251015000232": {
   "demand_dt": "2025-10-14",
   "rating": "A+",
   "series": {
    "8-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": -23
    },
    "8-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": -23
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251015000363": {
   "demand_dt": "2025-10-14",
   "rating": "A+",
   "series": {
    "27-1": {
-    "band": "회사채 -50~+50bp",
+    "band": "개별민평 -50~+50bp",
     "rate": null,
     "spread": 50
    },
    "27-2": {
-    "band": "회사채 -50~+50bp",
+    "band": "개별민평 -50~+50bp",
     "rate": null,
     "spread": 50
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251016000280": {
   "demand_dt": "2025-10-20",
   "rating": "AA+",
   "series": {
    "65-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "65-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "65-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251016000316": {
   "demand_dt": "2025-10-20",
@@ -252,7 +252,7 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251016000327": {
   "demand_dt": "2025-10-21",
@@ -274,63 +274,63 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251017000408": {
   "demand_dt": "2025-10-21",
   "rating": "AA",
   "series": {
    "13-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "13-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251017000472": {
   "demand_dt": "2025-10-20",
   "rating": "AA-",
   "series": {
    "7-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "7-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "7-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251020000152": {
   "demand_dt": "2025-10-23",
   "rating": "A+",
   "series": {
    "6-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "6-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251020000244": {
   "demand_dt": "2025-10-22",
@@ -347,24 +347,24 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251021000251": {
   "demand_dt": "2025-10-24",
   "rating": "AA-",
   "series": {
    "189-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "189-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251021000410": {
   "demand_dt": null,
@@ -376,19 +376,19 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251022000298": {
   "demand_dt": "2025-10-20",
   "rating": "AA",
   "series": {
    "65-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 2
    },
    "65-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 1
    },
@@ -398,7 +398,7 @@
     "spread": 2
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251022000300": {
   "demand_dt": "2025-10-20",
@@ -415,7 +415,7 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251022000318": {
   "demand_dt": "2025-10-21",
@@ -437,46 +437,46 @@
     "spread": -30
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251023000399": {
   "demand_dt": "2025-10-27",
   "rating": "AAA",
   "series": {
    "45-1": {
-    "band": "회사채 -40~+20bp",
+    "band": "등급민평 -40~+20bp",
     "rate": null,
     "spread": null
    },
    "45-2": {
-    "band": "회사채 -40~+20bp",
+    "band": "등급민평 -40~+20bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251023000409": {
   "demand_dt": "2025-10-20",
   "rating": "AA-",
   "series": {
    "7-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -15
    },
    "7-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -15
    },
    "7-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -15
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251024000443": {
   "demand_dt": "2025-10-22",
@@ -488,12 +488,12 @@
     "spread": -16
    },
    "15-2": {
-    "band": "회사채 -18~+30bp",
+    "band": "개별민평 -18~+30bp",
     "rate": null,
     "spread": -16
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251024000524": {
   "demand_dt": "2025-10-28",
@@ -505,41 +505,41 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251027000349": {
   "demand_dt": "2025-10-24",
   "rating": "AA-",
   "series": {
    "189-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -10
    },
    "189-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -8
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251028000401": {
   "demand_dt": "2025-10-21",
   "rating": "AA+",
   "series": {
    "13-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -26
    },
    "13-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -26
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251030000494": {
   "demand_dt": null,
@@ -551,7 +551,7 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251030000520": {
   "demand_dt": "2025-10-28",
@@ -563,58 +563,58 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251103000258": {
   "demand_dt": "2025-11-05",
   "rating": "AA-",
   "series": {
    "4-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "4-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251103000259": {
   "demand_dt": "2025-10-27",
   "rating": "AAA",
   "series": {
    "45-1": {
-    "band": "회사채 -40~+20bp",
+    "band": "등급민평 -40~+20bp",
     "rate": null,
     "spread": -35
    },
    "45-2": {
-    "band": "회사채 -40~+20bp",
+    "band": "등급민평 -40~+20bp",
     "rate": null,
     "spread": -35
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251107000508": {
   "demand_dt": "2025-11-05",
   "rating": "AA-",
   "series": {
    "4-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -13
    },
    "4-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -13
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251117000225": {
   "demand_dt": "2025-11-19",
@@ -626,51 +626,51 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251117000227": {
   "demand_dt": "2025-11-17",
   "rating": "AAA",
   "series": {
    "202-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "202-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "202-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "202-4": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251117000253": {
   "demand_dt": "2025-11-19",
   "rating": "AAA",
   "series": {
    "11-1": {
-    "band": "회사채 -40~+40bp",
+    "band": "개별민평 -40~+40bp",
     "rate": null,
     "spread": null
    },
    "11-2": {
-    "band": "회사채 -40~+40bp",
+    "band": "개별민평 -40~+40bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251121000307": {
   "demand_dt": "2025-11-19",
@@ -682,7 +682,7 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251121000314": {
   "demand_dt": "2025-11-19",
@@ -699,185 +699,185 @@
     "spread": 40
    }
   },
-  "v": 5
+  "v": 6
  },
  "20251121000442": {
   "demand_dt": "2025-11-17",
   "rating": "AAA",
   "series": {
    "202-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -5
    },
    "202-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -5
    },
    "202-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -5
    },
    "202-4": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -5
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260105000349": {
   "demand_dt": "2026-01-08",
   "rating": "AA-",
   "series": {
    "23-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "23-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260105000355": {
   "demand_dt": "2026-01-08",
   "rating": "AA",
   "series": {
    "74-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "74-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260105000379": {
   "demand_dt": "2026-01-07",
   "rating": "AA",
   "series": {
    "130-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "130-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "130-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260109000552": {
   "demand_dt": "2026-01-08",
   "rating": "AA",
   "series": {
    "74-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -3
    },
    "74-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -3
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260109000596": {
   "demand_dt": "2026-01-07",
   "rating": "AA",
   "series": {
    "130-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -14
    },
    "130-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -14
    },
    "130-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -14
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260109000612": {
   "demand_dt": "2026-01-08",
   "rating": "AA-",
   "series": {
    "23-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 18
    },
    "23-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 18
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260109000638": {
   "demand_dt": "2026-01-15",
   "rating": "AAA",
   "series": {
    "29-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "29-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "29-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260112000452": {
   "demand_dt": "2026-01-15",
   "rating": "BBB+",
   "series": {
    "126-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "126-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260112000464": {
   "demand_dt": "2026-01-15",
@@ -899,243 +899,243 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260115000305": {
   "demand_dt": "2026-01-15",
   "rating": "AAA",
   "series": {
    "29-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -11
    },
    "29-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -11
    },
    "29-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -11
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260115000334": {
   "demand_dt": "2026-01-20",
   "rating": "AA",
   "series": {
    "145-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "145-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260115000403": {
   "demand_dt": "2026-01-19",
   "rating": "AA-",
   "series": {
    "30-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "30-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260116000344": {
   "demand_dt": "2026-01-21",
   "rating": "AA-",
   "series": {
    "80-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "80-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260116000381": {
   "demand_dt": "2026-01-19",
   "rating": "AAA",
   "series": {
    "33-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "33-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260116000428": {
   "demand_dt": "2026-01-15",
   "rating": "BBB+",
   "series": {
    "126-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -27
    },
    "126-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -27
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260116000447": {
   "demand_dt": "2026-01-20",
   "rating": "AA",
   "series": {
    "120-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "120-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "120-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260119000188": {
   "demand_dt": "2026-01-20",
   "rating": "AAA",
   "series": {
    "23-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "23-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260119000207": {
   "demand_dt": "2026-01-23",
   "rating": "AA-",
   "series": {
    "6": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260119000224": {
   "demand_dt": "2026-01-22",
   "rating": "AA-",
   "series": {
    "149-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "149-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260119000247": {
   "demand_dt": "2026-01-22",
   "rating": "AAA",
   "series": {
    "6-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "6-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260119000250": {
   "demand_dt": "2026-01-20",
   "rating": "AAA",
   "series": {
    "50-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "50-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "50-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260119000279": {
   "demand_dt": "2026-01-21",
   "rating": "AA-",
   "series": {
    "311-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "311-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "311-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260119000284": {
   "demand_dt": "2026-01-22",
@@ -1157,7 +1157,7 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260119000300": {
   "demand_dt": "2026-01-21",
@@ -1169,7 +1169,7 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260120000212": {
   "demand_dt": "2026-01-21",
@@ -1181,58 +1181,58 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260120000258": {
   "demand_dt": "2026-01-23",
   "rating": "AA-",
   "series": {
    "108-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "108-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260120000343": {
   "demand_dt": "2026-01-26",
   "rating": "A+",
   "series": {
    "18-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "18-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260121000389": {
   "demand_dt": "2026-01-26",
   "rating": "AA-",
   "series": {
    "80-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "80-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260121000464": {
   "demand_dt": "2026-01-15",
@@ -1254,24 +1254,24 @@
     "spread": 1
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260121000472": {
   "demand_dt": "2026-01-19",
   "rating": "AA-",
   "series": {
    "30-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -5
    },
    "30-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -5
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260121000483": {
   "demand_dt": "2026-01-20",
@@ -1288,46 +1288,46 @@
     "spread": -1
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260122000375": {
   "demand_dt": "2026-01-22",
   "rating": "AA",
   "series": {
    "120-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -1
    },
    "120-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -1
    },
    "120-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -30
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260122000491": {
   "demand_dt": "2026-01-26",
   "rating": "A",
   "series": {
    "146-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "146-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260123000021": {
   "demand_dt": "2026-01-21",
@@ -1339,119 +1339,119 @@
     "spread": 5
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260123000365": {
   "demand_dt": "2026-01-29",
   "rating": "AA-",
   "series": {
    "104-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "104-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "104-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260123000389": {
   "demand_dt": "2026-01-20",
   "rating": "A",
   "series": {
    "23-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": -24
    },
    "23-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": -24
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260123000394": {
   "demand_dt": "2026-01-20",
   "rating": "AA-",
   "series": {
    "50-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "50-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -9
    },
    "50-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -9
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260123000486": {
   "demand_dt": "2026-01-23",
   "rating": "AA-",
   "series": {
    "6": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -6
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260123000513": {
   "demand_dt": "2026-01-21",
   "rating": "AA-",
   "series": {
    "311-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -5
    },
    "311-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -5
    },
    "311-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -5
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260123000529": {
   "demand_dt": "2026-01-22",
   "rating": "AA-",
   "series": {
    "149-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -3
    },
    "149-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -3
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260123000533": {
   "demand_dt": "2026-01-22",
@@ -1468,29 +1468,29 @@
     "spread": -4
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260123000560": {
   "demand_dt": "2026-01-27",
   "rating": "AA-",
   "series": {
    "65-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "65-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "65-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260123000564": {
   "demand_dt": "2026-01-22",
@@ -1512,7 +1512,7 @@
     "spread": 4
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260126000258": {
   "demand_dt": "2026-01-27",
@@ -1524,24 +1524,24 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260126000437": {
   "demand_dt": "2026-01-23",
   "rating": "AA-",
   "series": {
    "108-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -3
    },
    "108-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -3
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260126000467": {
   "demand_dt": "2026-01-21",
@@ -1553,41 +1553,41 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260126000530": {
   "demand_dt": "2026-01-26",
   "rating": "A+",
   "series": {
    "18-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -14
    },
    "18-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -14
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260127000359": {
   "demand_dt": "2026-01-26",
   "rating": "AA-",
   "series": {
    "80-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "80-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260127000387": {
   "demand_dt": "2026-01-29",
@@ -1599,75 +1599,75 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260127000399": {
   "demand_dt": "2026-01-21",
   "rating": "AA-",
   "series": {
    "80-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -1
    },
    "80-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -1
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260127000438": {
   "demand_dt": "2026-01-19",
   "rating": "AAA",
   "series": {
    "33-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -1
    },
    "33-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -1
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260129000668": {
   "demand_dt": "2026-02-03",
   "rating": "AA-",
   "series": {
    "5": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260129000739": {
   "demand_dt": "2026-01-27",
   "rating": "AA-",
   "series": {
    "104-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -1
    },
    "104-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -1
    },
    "104-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -1
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260130000363": {
   "demand_dt": "2026-01-27",
@@ -1679,114 +1679,114 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260130000637": {
   "demand_dt": "2026-01-26",
   "rating": "A",
   "series": {
    "146-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "146-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260130000664": {
   "demand_dt": "2026-02-03",
   "rating": "AAA",
   "series": {
    "12-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "12-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260130000676": {
   "demand_dt": "2026-02-02",
   "rating": "AA",
   "series": {
    "10-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "10-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260130000697": {
   "demand_dt": "2026-02-02",
   "rating": "AA",
   "series": {
    "8-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "8-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "8-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260130000723": {
   "demand_dt": "2026-02-03",
   "rating": "AA-",
   "series": {
    "132-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "132-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260202000920": {
   "demand_dt": "2026-02-04",
   "rating": "A+",
   "series": {
    "1-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "1-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260202001105": {
   "demand_dt": "2026-01-29",
@@ -1798,7 +1798,7 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260202001212": {
   "demand_dt": "2026-02-05",
@@ -1810,48 +1810,48 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260202001272": {
   "demand_dt": "2026-02-04",
   "rating": "AAA",
   "series": {
    "59-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "59-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260202001289": {
   "demand_dt": "2026-02-03",
   "rating": "AAA",
   "series": {
    "4": {
-    "band": "회사채 -10~+10bp",
+    "band": "등급민평 -10~+10bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260202001298": {
   "demand_dt": "2026-02-04",
   "rating": "AAA",
   "series": {
    "75": {
-    "band": "회사채 -20~+20bp",
+    "band": "개별민평 -20~+20bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260203000349": {
   "demand_dt": "2026-02-05",
@@ -1863,99 +1863,99 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260204000503": {
   "demand_dt": "2026-02-03",
   "rating": "AA-",
   "series": {
    "5": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 25
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260204000508": {
   "demand_dt": "2026-02-09",
   "rating": "AA-",
   "series": {
    "29-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "29-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "29-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260205000556": {
   "demand_dt": "2026-02-03",
   "rating": "A-",
   "series": {
    "12-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -5
    },
    "12-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -5
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260205000576": {
   "demand_dt": "2026-02-03",
   "rating": "AA-",
   "series": {
    "132-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 5
    },
    "132-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 5
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260206001700": {
   "demand_dt": "2026-02-04",
   "rating": "A+",
   "series": {
    "1-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": -14
    },
    "1-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": -14
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260206002005": {
   "demand_dt": "2026-02-04",
   "rating": "AAA",
   "series": {
    "59-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 10
    },
@@ -1965,7 +1965,7 @@
     "spread": 10
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260206002040": {
   "demand_dt": "2026-02-04",
@@ -1977,24 +1977,24 @@
     "spread": 15
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260209000586": {
   "demand_dt": "2026-02-12",
   "rating": "A",
   "series": {
    "7-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "7-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260209000639": {
   "demand_dt": "2026-02-05",
@@ -2006,97 +2006,97 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260209000696": {
   "demand_dt": "2026-02-11",
   "rating": "AAA",
   "series": {
    "185-1": {
-    "band": "회사채 -40~+100bp",
+    "band": "개별민평 -40~+100bp",
     "rate": null,
     "spread": null
    },
    "185-2": {
-    "band": "회사채 -40~+100bp",
+    "band": "개별민평 -40~+100bp",
     "rate": null,
     "spread": null
    },
    "185-3": {
-    "band": "회사채 -40~+100bp",
+    "band": "개별민평 -40~+100bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260210000815": {
   "demand_dt": "2026-02-05",
   "rating": "AA",
   "series": {
    "8-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "8-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "8-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260210000859": {
   "demand_dt": "2026-02-11",
   "rating": "AAA",
   "series": {
    "14": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260210000871": {
   "demand_dt": "2026-02-12",
   "rating": "AAA",
   "series": {
    "28-1": {
-    "band": "회사채 -40~+40bp",
+    "band": "개별민평 -40~+40bp",
     "rate": null,
     "spread": null
    },
    "28-2": {
-    "band": "회사채 -40~+40bp",
+    "band": "개별민평 -40~+40bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260210000899": {
   "demand_dt": "2026-02-02",
   "rating": "AA",
   "series": {
    "10-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": -4
    },
    "10-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": -4
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260210000904": {
   "demand_dt": "2026-02-09",
@@ -2118,7 +2118,7 @@
     "spread": 5
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260211000648": {
   "demand_dt": "2026-02-05",
@@ -2130,7 +2130,7 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260211000897": {
   "demand_dt": "2026-02-12",
@@ -2142,58 +2142,58 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260213002477": {
   "demand_dt": "2026-02-23",
   "rating": "A+",
   "series": {
    "27-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "27-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260213002731": {
   "demand_dt": "2026-02-23",
   "rating": "A+",
   "series": {
    "135-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "135-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260219002292": {
   "demand_dt": "2026-02-12",
   "rating": "A+",
   "series": {
    "28-1": {
-    "band": "회사채 -40~+40bp",
+    "band": "개별민평 -40~+40bp",
     "rate": null,
     "spread": 30
    },
    "28-2": {
-    "band": "회사채 -40~+40bp",
+    "band": "개별민평 -40~+40bp",
     "rate": null,
     "spread": 30
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260219002378": {
   "demand_dt": "2026-02-23",
@@ -2210,7 +2210,7 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260219002444": {
   "demand_dt": "2026-02-24",
@@ -2227,46 +2227,46 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260219002537": {
   "demand_dt": "2026-02-11",
   "rating": "A+",
   "series": {
    "14": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -1
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260219002759": {
   "demand_dt": "2026-02-19",
   "rating": "AAA",
   "series": {
    "203-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "203-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "203-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "203-4": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260220001418": {
   "demand_dt": "2026-02-12",
@@ -2278,192 +2278,192 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260220001803": {
   "demand_dt": "2026-02-26",
   "rating": "AA",
   "series": {
    "5-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "5-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "5-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "5-4": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260220002021": {
   "demand_dt": "2026-02-26",
   "rating": "AA-",
   "series": {
    "9-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "9-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "9-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260220002376": {
   "demand_dt": "2026-02-25",
   "rating": "AAA",
   "series": {
    "254-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "254-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260223003530": {
   "demand_dt": "2026-02-25",
   "rating": "A",
   "series": {
    "23-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "23-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260223003629": {
   "demand_dt": "2026-02-12",
   "rating": "A",
   "series": {
    "7-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -20
    },
    "7-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -20
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260223003636": {
   "demand_dt": "2026-02-26",
   "rating": "A+",
   "series": {
    "43": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260223004065": {
   "demand_dt": "2026-02-25",
   "rating": "AAA",
   "series": {
    "33-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "33-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260223004172": {
   "demand_dt": "2026-02-11",
   "rating": "AAA",
   "series": {
    "185-1": {
-    "band": "회사채 -40~+100bp",
+    "band": "개별민평 -40~+100bp",
     "rate": null,
     "spread": -30
    },
    "185-2": {
-    "band": "회사채 -40~+100bp",
+    "band": "개별민평 -40~+100bp",
     "rate": null,
     "spread": -35
    },
    "185-3": {
-    "band": "회사채 -40~+100bp",
+    "band": "개별민평 -40~+100bp",
     "rate": null,
     "spread": -25
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260224004295": {
   "demand_dt": "2026-02-23",
   "rating": "A+",
   "series": {
    "135-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -10
    },
    "135-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -10
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260224004307": {
   "demand_dt": "2026-02-23",
   "rating": "A+",
   "series": {
    "27-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -5
    },
    "27-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -5
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260225004587": {
   "demand_dt": "2026-02-23",
@@ -2475,12 +2475,12 @@
     "spread": -5
    },
    "16-2": {
-    "band": "회사채 -15~+30bp",
+    "band": "개별민평 -15~+30bp",
     "rate": null,
     "spread": -5
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260225005274": {
   "demand_dt": "2026-02-25",
@@ -2497,168 +2497,168 @@
     "spread": 40
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260225005381": {
   "demand_dt": "2026-02-19",
   "rating": "AAA",
   "series": {
    "203-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -3
    },
    "203-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -3
    },
    "203-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -3
    },
    "203-4": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -3
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260225005851": {
   "demand_dt": "2026-03-03",
   "rating": "A-",
   "series": {
    "115-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "115-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260226004715": {
   "demand_dt": "2026-02-26",
   "rating": "AA",
   "series": {
    "5-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": 7
    },
    "5-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": 9
    },
    "5-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": 5
    },
    "5-4": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": -15
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260226005340": {
   "demand_dt": "2026-02-23",
   "rating": "AA-",
   "series": {
    "9-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 5
    },
    "9-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 5
    },
    "9-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 5
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260226006104": {
   "demand_dt": "2026-02-25",
   "rating": "A+",
   "series": {
    "254-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -9
    },
    "254-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -9
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260226006697": {
   "demand_dt": "2026-03-04",
   "rating": "A+",
   "series": {
    "45-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "45-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260227007543": {
   "demand_dt": "2026-03-04",
   "rating": "AA",
   "series": {
    "15-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "15-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260227008210": {
   "demand_dt": "2026-02-25",
   "rating": "A",
   "series": {
    "23-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -8
    },
    "23-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -8
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260227008523": {
   "demand_dt": "2026-02-26",
@@ -2670,87 +2670,87 @@
     "spread": -16
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260227008708": {
   "demand_dt": "2026-02-25",
   "rating": "A+",
   "series": {
    "33-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -10
    },
    "33-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -10
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260304001557": {
   "demand_dt": "2026-03-06",
   "rating": "A+",
   "series": {
    "1-1": {
-    "band": "회사채 -40~+40bp",
+    "band": "등급민평 -40~+40bp",
     "rate": null,
     "spread": null
    },
    "1-2": {
-    "band": "회사채 -40~+40bp",
+    "band": "등급민평 -40~+40bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260304001571": {
   "demand_dt": "2026-03-03",
   "rating": "A",
   "series": {
    "115-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 20
    },
    "115-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 20
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260304001593": {
   "demand_dt": "2026-03-06",
   "rating": "A+",
   "series": {
    "7-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "7-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260305001097": {
   "demand_dt": "2026-03-10",
   "rating": "A",
   "series": {
    "21": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260305001411": {
   "demand_dt": "2026-03-04",
@@ -2767,41 +2767,41 @@
     "spread": -13
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260305001575": {
   "demand_dt": "2026-03-09",
   "rating": "A",
   "series": {
    "43-1": {
-    "band": "회사채 -50~+30bp",
+    "band": "개별민평 -50~+30bp",
     "rate": null,
     "spread": null
    },
    "43-2": {
-    "band": "회사채 -50~+30bp",
+    "band": "개별민평 -50~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260306000611": {
   "demand_dt": "2026-03-04",
   "rating": "AA",
   "series": {
    "15-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -4
    },
    "15-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -4
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260310002897": {
   "demand_dt": "2026-03-06",
@@ -2818,155 +2818,155 @@
     "spread": 30
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260311004378": {
   "demand_dt": "2026-03-10",
   "rating": "A",
   "series": {
    "21": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -22
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260311004412": {
   "demand_dt": "2026-03-09",
   "rating": "A",
   "series": {
    "43-1": {
-    "band": "회사채 -50~+30bp",
+    "band": "개별민평 -50~+30bp",
     "rate": null,
     "spread": -18
    },
    "43-2": {
-    "band": "회사채 -50~+30bp",
+    "band": "개별민평 -50~+30bp",
     "rate": null,
     "spread": -18
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260312001277": {
   "demand_dt": "2026-03-16",
   "rating": "BBB+",
   "series": {
    "93-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "93-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260318000813": {
   "demand_dt": "2026-03-16",
   "rating": "BBB+",
   "series": {
    "93-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -46
    },
    "93-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -46
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260326001383": {
   "demand_dt": "2026-03-31",
   "rating": "A+",
   "series": {
    "10-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "10-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260330001612": {
   "demand_dt": "2026-04-03",
   "rating": "AA",
   "series": {
    "6-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "6-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260330001643": {
   "demand_dt": "2026-04-03",
   "rating": "AAA",
   "series": {
    "50-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "50-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260401004755": {
   "demand_dt": "2026-03-31",
   "rating": "A+",
   "series": {
    "10-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": -5
    },
    "10-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": -5
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260403003090": {
   "demand_dt": "2026-04-09",
   "rating": "AAA",
   "series": {
    "16-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "16-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260403003245": {
   "demand_dt": "2026-04-03",
@@ -2983,7 +2983,7 @@
     "spread": 5
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260406004181": {
   "demand_dt": "2026-04-08",
@@ -3000,41 +3000,41 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260408003227": {
   "demand_dt": "2026-04-03",
   "rating": "AAA",
   "series": {
    "50-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -3
    },
    "50-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -3
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260409002502": {
   "demand_dt": "2026-04-09",
   "rating": "A",
   "series": {
    "16-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -5
    },
    "16-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -5
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260410003359": {
   "demand_dt": "2026-04-08",
@@ -3051,53 +3051,53 @@
     "spread": -1
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260410003558": {
   "demand_dt": "2026-04-14",
   "rating": "AA-",
   "series": {
    "77-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "77-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260413002644": {
   "demand_dt": "2026-04-16",
   "rating": "AAA",
   "series": {
    "99-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "99-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260413002678": {
   "demand_dt": "2026-04-15",
   "rating": "BBB",
   "series": {
    "108": {
-    "band": "회사채 -35~+35bp",
+    "band": "개별민평 -35~+35bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260413002809": {
   "demand_dt": "2026-04-15",
@@ -3114,41 +3114,41 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260413002868": {
   "demand_dt": "2026-04-16",
   "rating": "AAA",
   "series": {
    "64-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "64-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260413002981": {
   "demand_dt": "2026-04-15",
   "rating": "AA",
   "series": {
    "37-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "37-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260414002420": {
   "demand_dt": "2026-04-16",
@@ -3165,70 +3165,70 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260414002448": {
   "demand_dt": "2026-04-16",
   "rating": "AA-",
   "series": {
    "16-1": {
-    "band": "회사채 -50~+30bp",
+    "band": "개별민평 -50~+30bp",
     "rate": null,
     "spread": null
    },
    "16-2": {
-    "band": "회사채 -50~+30bp",
+    "band": "개별민평 -50~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260414002542": {
   "demand_dt": "2026-04-16",
   "rating": "A+",
   "series": {
    "110": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260416000495": {
   "demand_dt": "2026-04-20",
   "rating": "A+",
   "series": {
    "13-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "13-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260416000525": {
   "demand_dt": "2026-04-14",
   "rating": "AA-",
   "series": {
    "77-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "77-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260417000580": {
   "demand_dt": "2026-04-16",
@@ -3245,24 +3245,24 @@
     "spread": -2
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260417000600": {
   "demand_dt": "2026-04-16",
   "rating": "AAA",
   "series": {
    "99-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -30
    },
    "99-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -30
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260417000608": {
   "demand_dt": "2026-04-15",
@@ -3274,41 +3274,41 @@
     "spread": -3
    },
    "37-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -3
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260417000654": {
   "demand_dt": "2026-04-15",
   "rating": "BBB",
   "series": {
    "108": {
-    "band": "회사채 -35~+35bp",
+    "band": "개별민평 -35~+35bp",
     "rate": null,
     "spread": -17
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260417000676": {
   "demand_dt": "2026-04-21",
   "rating": "AA-",
   "series": {
    "17-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "17-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260417000685": {
   "demand_dt": "2026-04-15",
@@ -3325,7 +3325,7 @@
     "spread": -15
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260420000262": {
   "demand_dt": "2026-04-22",
@@ -3337,36 +3337,36 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260420000286": {
   "demand_dt": "2026-04-16",
   "rating": "AA-",
   "series": {
    "16-1": {
-    "band": "회사채 -50~+30bp",
+    "band": "개별민평 -50~+30bp",
     "rate": null,
     "spread": -22
    },
    "16-2": {
-    "band": "회사채 -50~+30bp",
+    "band": "개별민평 -50~+30bp",
     "rate": null,
     "spread": -22
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260420000427": {
   "demand_dt": "2026-04-16",
   "rating": "AA-",
   "series": {
    "110": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -10
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260420000476": {
   "demand_dt": "2026-04-16",
@@ -3383,36 +3383,36 @@
     "spread": -6
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260420000489": {
   "demand_dt": "2026-04-21",
   "rating": "AAA",
   "series": {
    "63": {
-    "band": "회사채 -40~+40bp",
+    "band": "등급민평 -40~+40bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260421000454": {
   "demand_dt": "2026-04-23",
   "rating": "AA-",
   "series": {
    "15-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "15-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260422000604": {
   "demand_dt": "2026-04-21",
@@ -3424,41 +3424,41 @@
     "spread": 33
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260422000614": {
   "demand_dt": "2026-04-20",
   "rating": "A+",
   "series": {
    "13-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 20
    },
    "13-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 20
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260423000643": {
   "demand_dt": "2026-04-21",
   "rating": "AA-",
   "series": {
    "17-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -10
    },
    "17-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -10
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260424000553": {
   "demand_dt": "2026-04-22",
@@ -3470,114 +3470,114 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260424000794": {
   "demand_dt": "2026-04-28",
   "rating": "AAA",
   "series": {
    "33-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "33-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260427000623": {
   "demand_dt": "2026-04-23",
   "rating": "AA-",
   "series": {
    "15-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 2
    },
    "15-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 2
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260430001725": {
   "demand_dt": "2026-04-28",
   "rating": "AA+",
   "series": {
    "33-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -17
    },
    "33-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -17
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260515002687": {
   "demand_dt": "2026-05-19",
   "rating": "AAA",
   "series": {
    "26-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "26-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260515002746": {
   "demand_dt": "2026-05-19",
   "rating": "AA",
   "series": {
    "107-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "107-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "107-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260519000189": {
   "demand_dt": "2026-05-21",
   "rating": "AA",
   "series": {
    "146-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "146-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260519000212": {
   "demand_dt": "2026-05-21",
@@ -3589,46 +3589,46 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260521000489": {
   "demand_dt": "2026-05-19",
   "rating": "AA",
   "series": {
    "107-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -3
    },
    "107-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -3
    },
    "107-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -3
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260521000626": {
   "demand_dt": "2026-05-19",
   "rating": "AA+",
   "series": {
    "26-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -6
    },
    "26-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -6
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260526000348": {
   "demand_dt": "2026-05-21",
@@ -3645,7 +3645,7 @@
     "spread": -7
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260526000367": {
   "demand_dt": "2026-05-21",
@@ -3657,235 +3657,235 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260528001026": {
   "demand_dt": "2026-06-01",
   "rating": "AA-",
   "series": {
    "109-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "109-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260529002276": {
   "demand_dt": "2026-06-01",
   "rating": "A",
   "series": {
    "118-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "118-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260601001952": {
   "demand_dt": "2026-06-04",
   "rating": "AAA",
   "series": {
    "60-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "60-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260604000500": {
   "demand_dt": "2026-06-01",
   "rating": "AA-",
   "series": {
    "109-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -1
    },
    "109-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -1
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260605000465": {
   "demand_dt": "2026-06-01",
   "rating": "A",
   "series": {
    "118-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -3
    },
    "118-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -3
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260605000663": {
   "demand_dt": "2026-06-09",
   "rating": "AA-",
   "series": {
    "20-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "20-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260608000326": {
   "demand_dt": "2026-06-04",
   "rating": "AAA",
   "series": {
    "60-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 5
    },
    "60-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 5
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260611000599": {
   "demand_dt": "2026-06-09",
   "rating": "AA-",
   "series": {
    "20-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -1
    },
    "20-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -1
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260615000382": {
   "demand_dt": "2026-06-17",
   "rating": "A+",
   "series": {
    "9-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "9-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260619000632": {
   "demand_dt": "2026-06-24",
   "rating": "A+",
   "series": {
    "4-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "4-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260619000677": {
   "demand_dt": "2026-06-23",
   "rating": "AAA",
   "series": {
    "81-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "81-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260624000433": {
   "demand_dt": "2026-06-17",
   "rating": "A+",
   "series": {
    "9-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -1
    },
    "9-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -1
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260625000522": {
   "demand_dt": "2026-06-25",
   "rating": "AA-",
   "series": {
    "81-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 3
    },
    "81-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 3
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260625000581": {
   "demand_dt": "2026-06-24",
   "rating": "A+",
   "series": {
    "4-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": -3
    },
@@ -3895,148 +3895,148 @@
     "spread": -3
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260706000373": {
   "demand_dt": "2026-07-08",
   "rating": "A",
   "series": {
    "19-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "19-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260710000676": {
   "demand_dt": "2026-07-14",
   "rating": "BBB+",
   "series": {
    "127-1": {
-    "band": "회사채 -50~+50bp",
+    "band": "개별민평 -50~+50bp",
     "rate": null,
     "spread": null
    },
    "127-2": {
-    "band": "회사채 -50~+50bp",
+    "band": "개별민평 -50~+50bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260716000533": {
   "demand_dt": "2026-07-14",
   "rating": "BBB+",
   "series": {
    "127-1": {
-    "band": "회사채 -50~+50bp",
+    "band": "개별민평 -50~+50bp",
     "rate": null,
     "spread": 50
    },
    "127-2": {
-    "band": "회사채 -50~+50bp",
+    "band": "개별민평 -50~+50bp",
     "rate": null,
     "spread": 50
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260720000296": {
   "demand_dt": "2026-07-22",
   "rating": "AAA",
   "series": {
    "186-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "186-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "186-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260720000318": {
   "demand_dt": "2026-07-23",
   "rating": "AA-",
   "series": {
    "81-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "81-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260722000570": {
   "demand_dt": "2026-07-23",
   "rating": "AAA",
   "series": {
    "64": {
-    "band": "회사채 -40~+40bp",
+    "band": "등급민평 -40~+40bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260724000284": {
   "demand_dt": "2026-07-22",
   "rating": "A-",
   "series": {
    "186-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -35
    },
    "186-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -65
    },
    "186-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -60
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260724000427": {
   "demand_dt": "2026-07-23",
   "rating": "AA-",
   "series": {
    "81-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -2
    },
    "81-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -2
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260724000457": {
   "demand_dt": "2026-07-23",
@@ -4048,7 +4048,7 @@
     "spread": 35
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260806000320": {
   "demand_dt": null,
@@ -4065,53 +4065,53 @@
     "spread": 40
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260813001665": {
   "demand_dt": "2026-08-19",
   "rating": "A",
   "series": {
    "156-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "156-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260814004144": {
   "demand_dt": "2026-08-19",
   "rating": "BBB",
   "series": {
    "111": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260820000384": {
   "demand_dt": "2026-08-19",
   "rating": "A",
   "series": {
    "156-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 30
    },
    "156-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 30
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260821000350": {
   "demand_dt": "2026-08-19",
@@ -4123,177 +4123,177 @@
     "spread": 30
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260825000302": {
   "demand_dt": "2026-08-28",
   "rating": "A-",
   "series": {
    "4": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260825000452": {
   "demand_dt": "2026-08-28",
   "rating": "A+",
   "series": {
    "3-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "3-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260831001261": {
   "demand_dt": "2026-08-28",
   "rating": "A-",
   "series": {
    "4": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 12
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260831001435": {
   "demand_dt": "2026-09-04",
   "rating": "AA-",
   "series": {
    "10-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "10-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "10-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260903000290": {
   "demand_dt": "2026-08-28",
   "rating": "A+",
   "series": {
    "3-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": 20
    },
    "3-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "등급민평 -30~+30bp",
     "rate": null,
     "spread": 20
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260904000464": {
   "demand_dt": "2026-09-08",
   "rating": "A",
   "series": {
    "122-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "122-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260909000458": {
   "demand_dt": "2026-09-02",
   "rating": "AA-",
   "series": {
    "10-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -5
    },
    "10-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -5
    },
    "10-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -5
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260910000414": {
   "demand_dt": "2026-09-08",
   "rating": "A",
   "series": {
    "122-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -3
    },
    "122-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -3
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260910000506": {
   "demand_dt": "2026-09-15",
   "rating": "A",
   "series": {
    "155-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "155-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260910000550": {
   "demand_dt": "2026-09-14",
   "rating": "AAA",
   "series": {
    "8-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "8-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260910000582": {
   "demand_dt": "2026-09-15",
@@ -4310,41 +4310,41 @@
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260916000455": {
   "demand_dt": "2026-09-15",
   "rating": "A",
   "series": {
    "155-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 6
    },
    "155-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 6
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260916000474": {
   "demand_dt": "2026-09-14",
   "rating": "AA-",
   "series": {
    "8-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "8-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260921000241": {
   "demand_dt": "2026-09-15",
@@ -4361,150 +4361,150 @@
     "spread": 38
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260922000458": {
   "demand_dt": "2026-09-29",
   "rating": "A",
   "series": {
    "20-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "20-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260928000374": {
   "demand_dt": "2026-09-30",
   "rating": "AAA",
   "series": {
    "51-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "51-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260929000558": {
   "demand_dt": "2026-10-01",
   "rating": "AA",
   "series": {
    "14": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20260930000816": {
   "demand_dt": "2026-10-06",
   "rating": "A+",
   "series": {
    "9-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "9-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20261002000569": {
   "demand_dt": "2026-09-30",
   "rating": "AA-",
   "series": {
    "51-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -3
    },
    "51-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -3
    }
   },
-  "v": 5
+  "v": 6
  },
  "20261007000467": {
   "demand_dt": "2026-10-08",
   "rating": "AA-",
   "series": {
    "10-1": {
-    "band": "회사채 -40~+40bp",
+    "band": "등급민평 -40~+40bp",
     "rate": null,
     "spread": null
    },
    "10-2": {
-    "band": "회사채 -40~+40bp",
+    "band": "등급민평 -40~+40bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20261007000489": {
   "demand_dt": "2026-10-06",
   "rating": "A+",
   "series": {
    "9-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 27
    },
    "9-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 27
    }
   },
-  "v": 5
+  "v": 6
  },
  "20261008000688": {
   "demand_dt": "2026-10-13",
   "rating": "AAA",
   "series": {
    "121-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "121-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20261012000405": {
   "demand_dt": "2026-10-01",
   "rating": "AA",
   "series": {
    "14": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -5
    }
   },
-  "v": 5
+  "v": 6
  },
  "20261012000412": {
   "demand_dt": "2026-10-08",
@@ -4521,79 +4521,79 @@
     "spread": 36
    }
   },
-  "v": 5
+  "v": 6
  },
  "20261015000362": {
   "demand_dt": "2026-10-15",
   "rating": "AA+",
   "series": {
    "121-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -2
    },
    "121-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": -2
    }
   },
-  "v": 5
+  "v": 6
  },
  "20261023000404": {
   "demand_dt": "2026-10-27",
   "rating": "AA-",
   "series": {
    "82-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "82-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  },
  "20261023000435": {
   "demand_dt": "2026-10-20",
   "rating": "A+",
   "series": {
    "65-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 5
    },
    "65-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 5
    },
    "65-3": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": 5
    }
   },
-  "v": 5
+  "v": 6
  },
  "20261026000244": {
   "demand_dt": "2026-10-28",
   "rating": "A",
   "series": {
    "59-1": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    },
    "59-2": {
-    "band": "회사채 -30~+30bp",
+    "band": "개별민평 -30~+30bp",
     "rate": null,
     "spread": null
    }
   },
-  "v": 5
+  "v": 6
  }
 }
