@@ -274,7 +274,7 @@ def _iso(m):
 
 AGENCY = r"(한국기업평가|한국신용평가|NICE\s*신용평가|나이스신용평가|서울신용평가|한기평|한신평|NICE)"
 GRADE = r"(?<![A-Za-z])(AAA|AA[+\-]|AA0|AA|A[+\-]|A0|BBB[+\-]|BBB0|BBB|BB[+\-]|BB0|BB|B[+\-]|B0)(?![A-Za-z0-9가-힣])"
-BOND_DOC_VERSION = 3
+BOND_DOC_VERSION = 4
 
 
 def bond_schedule(xml):
@@ -427,6 +427,8 @@ _RATE_PATS = [
     r"확정\s*(?:공모\s*)?(?:발행\s*)?(?:금리|이자율|수익률)\s*[:：은는]?\s*(?:연\s*)?(\d{1,2}\.\d{1,4})\s*%",
     r"(?:표면\s*)?이자율\s*[:：]?\s*연\s*(\d{1,2}\.\d{1,4})\s*%",
     r"(?:발행\s*)?금리\s*[:：]\s*연\s*(\d{1,2}\.\d{1,4})\s*%",
+    r"이자율\s*[:：]?\s*(?:연\s*)?(\d{1,2}\.\d{1,4})\s*%?\s*(?:발행\s*수익률|\()",
+    r"발행\s*수익률\s*[:：]?\s*(?:연\s*)?(\d{1,2}\.\d{1,4})\s*%?",
 ]
 
 
@@ -436,7 +438,7 @@ def _f(x):
 
 def _band(seg):
     """'개별민평 수익률 평균 -0.30%p ~ +0.30%p' → '개별민평 -30~+30bp' · '연 3.00%~3.50%' → '3.00~3.50%'"""
-    m = re.search(_NUM + r"\s*(%p|％p|bp|bps|%|％)\s*[~∼～\-]\s*" + _NUM + r"\s*(%p|％p|bp|bps|%|％)", seg)
+    m = re.search(_NUM + r"\s*(%p|％p|bp|bps|%|％)\.?\s*[~∼～\-]\s*" + _NUM + r"\s*(%p|％p|bp|bps|%|％)", seg)
     if not m:
         return None
     a, ua, b, ub = _f(m.group(1)), m.group(2), _f(m.group(3)), m.group(4)
@@ -466,7 +468,7 @@ def bond_rates(xml, series_list):
         for w in wins:
             k = re.search(_BAND_KEY, w)
             if k and not band:
-                band = _band(w[k.end(): k.end() + 250])
+                band = _band(w[k.end(): k.end() + 450])
             if rate is None:
                 for p in _RATE_PATS:
                     m = re.search(p, w)
@@ -476,7 +478,7 @@ def bond_rates(xml, series_list):
         if one or not wins:
             if not band:
                 k = re.search(_BAND_KEY, t)
-                band = _band(t[k.end(): k.end() + 250]) if k else None
+                band = _band(t[k.end(): k.end() + 450]) if k else None
             if rate is None:
                 for p in _RATE_PATS:
                     m = re.search(p, t)

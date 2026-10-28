@@ -551,6 +551,7 @@ def bond_doc_step(dart, store, today, diag):
             sr = r.get("series_raw") or r.get("series") or ""
             for rno in {r["rcept_no"], r.get("original_rcept") or r["rcept_no"]}:
                 series_of.setdefault(rno, set()).add(sr)
+    originals = {r.get("original_rcept") or r["rcept_no"] for r in store.records.values() if r.get("type") == "BOND"}
     todo = sorted(series_of, reverse=True)
     todo = [rno for rno in todo if (bond_docs.get(rno) or {}).get("v") != docparse.BOND_DOC_VERSION]
 
@@ -563,11 +564,13 @@ def bond_doc_step(dart, store, today, diag):
         got = docparse.bond_schedule(main)
         got["series"] = docparse.bond_rates(main, sorted(series_of[rno]))
         miss = None
-        if not any(v.get("band") or v.get("rate") for v in got["series"].values()):
+        if not all(v.get("band") for v in got["series"].values()) or (rno not in originals and not any(v.get("rate") for v in got["series"].values())):
             t = docparse.text_of(main)
-            i, j = t.find("희망"), t.find("이자율")
+            i, j = t.find("공모희망금리"), t.find("이자율")
+            k = t.find("확정")
             miss = {"rcept": rno, "band": t[max(0, i - 80): i + 300] if i >= 0 else "",
-                    "rate": t[max(0, j - 60): j + 200] if j >= 0 else ""}
+                    "rate": t[max(0, j - 60): j + 200] if j >= 0 else "", "fixed": t[max(0, k - 60): k + 300] if k >= 0 else "",
+                    "orig": rno in originals}
         return rno, got, miss
 
     try:
