@@ -198,7 +198,7 @@ def collect_private_bonds(store, mode):
 
 def main(argv=None):
     ap = argparse.ArgumentParser()
-    ap.add_argument("--mode", choices=["watch", "daily", "backfill", "profiles", "prices", "mezz", "bonds"], default="watch")
+    ap.add_argument("--mode", choices=["watch", "daily", "backfill", "profiles", "prices", "mezz", "bonds", "probe"], default="watch")
     ap.add_argument("--days", type=int, default=7)
     args = ap.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
@@ -227,6 +227,40 @@ def main(argv=None):
                 f.write(summary + "\n")
         return 0
 
+    if args.mode == "probe":
+        # 공모채 증권신고서 원문 파일 구성·신용평가서 트리거 문구 확인용 (시험)
+        import re as _re
+        from .docparse import text_of
+        recs = sorted([r for r in store.records.values() if r.get("type") == "BOND" and r.get("offering") == "공모"
+                       and r.get("rcept_no") and r.get("original_rcept")], key=lambda r: r["rcept_no"], reverse=True)
+        picked, seen_c = [], set()
+        for r in recs:
+            if r["corp_code"] not in seen_c:
+                seen_c.add(r["corp_code"]); picked.append(r)
+            if len(picked) >= 4:
+                break
+        out = []
+        kw = ["상향 검토", "하향 검토", "상향검토", "하향검토", "트리거", "Trigger", "등급전망", "등급 전망", "Outlook"]
+        for r in picked:
+            for rno in {r["rcept_no"], r["original_rcept"]}:
+                try:
+                    docs = dart.document(rno)
+                except Exception as e:  # noqa: BLE001
+                    out.append({"rcept": rno, "error": redact(e)[:200]}); continue
+                files = []
+                for n, x in docs.items():
+                    t = text_of(x)
+                    hits = {}
+                    for k in kw:
+                        i = t.find(k)
+                        if i >= 0:
+                            hits[k] = t[max(0, i - 150): i + 350]
+                    title = _re.search(r"<TITLE[^>]*>(.*?)</TITLE>", x, _re.S)
+                    files.append({"file": n, "len": len(t), "title": text_of(title.group(1))[:60] if title else "",
+                                  "has_평가": t.count("신용평가"), "hits": hits})
+                out.append({"rcept": rno, "corp": r["corp_name"], "files": files})
+        dump_json("diag_probe.json", out)
+        return 0
     if args.mode == "bonds":
         import json
         from .profiles import bond_doc_step, link_bond_filings
