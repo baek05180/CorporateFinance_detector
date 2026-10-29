@@ -5224,6 +5224,17 @@
   "products": "디펜플라스타, 맥스케어, 트레스, 리피칸",
   "region": "충청북도"
  },
+ "0127E0": {
+  "ceo": "김동완",
+  "fiscal_month": "12월",
+  "homepage": "",
+  "industry": "금융 지원 서비스업",
+  "listed": "2026-10-30",
+  "market": "K",
+  "name": "한화플러스제6호스팩",
+  "products": "기업인수합병",
+  "region": "서울특별시"
+ },
  "012800": {
   "ceo": "조시영, 조정호",
   "fiscal_month": "12월",
@@ -27873,6 +27884,17 @@
   "products": "화장품 원료(천연소재 바이오소재 등)",
   "region": "충청북도"
  },
+ "420610": {
+  "ceo": "장정훈",
+  "fiscal_month": "12월",
+  "homepage": "http://www.intellivix.ai",
+  "industry": "소프트웨어 개발 및 공급업",
+  "listed": "2026-10-30",
+  "market": "K",
+  "name": "인텔리빅스",
+  "products": "AI 관제 인프라, AI 관제 플랫폼 등",
+  "region": "서울특별시"
+ },
  "420770": {
   "ceo": "강해철",
   "fiscal_month": "12월",
@@ -28114,6 +28136,17 @@
   "name": "대한조선",
   "products": "선박 및 보트 건조업",
   "region": "전남광주통합특별시"
+ },
+ "439270": {
+  "ceo": "석재호",
+  "fiscal_month": "12월",
+  "homepage": "http://mycreatz.com",
+  "industry": "그외 기타 제품 제조업",
+  "listed": "2026-10-30",
+  "market": "K",
+  "name": "크리에이츠",
+  "products": "골프 론치모니터",
+  "region": "경기도"
  },
  "439580": {
   "ceo": "김준석",
