@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-10-29T08:08+09:00",
+  "data_updated": "2026-10-29T11:51+09:00",
   "last_daily": "2026-10-28T20:23+09:00"
  },
  "records": {
@@ -266941,6 +266941,35 @@
    "type": "RIGHTS",
    "updated": "2026-10-26T09:12+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251027000120"
+  },
+  "RIGHTS:00127158:20261029000183": {
+   "amended": false,
+   "amount": 2000004000,
+   "board_dt": "2026-10-29",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "Y",
+   "corp_code": "00127158",
+   "corp_name": "씨아이테크",
+   "dilution": 6.39,
+   "first_seen": "2026-10-29T11:51+09:00",
+   "id": "RIGHTS:00127158:20261029000183",
+   "method": "제3자배정증자",
+   "new_common": 333334,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 5000,
+   "purposes": {
+    "운영": 2000004000
+   },
+   "rcept_dt": "2026-10-29",
+   "rcept_no": "20261029000183",
+   "source": "DART",
+   "stock_code": "004920",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-10-29T11:51+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261029000183"
   },
   "RIGHTS:00129280:20231205000041": {
    "amended": true,
