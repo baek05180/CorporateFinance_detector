@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-10-30T07:29+09:00",
+  "data_updated": "2026-10-30T08:11+09:00",
   "last_daily": "2026-10-29T20:30+09:00"
  },
  "records": {
@@ -273856,33 +273856,34 @@
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20241226000319"
   },
   "RIGHTS:00266961:20260727000001": {
-   "amended": false,
+   "amended": true,
    "amount": 1480899838000,
-   "board_dt": "2026-07-27",
+   "board_dt": "2026-10-30",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "Y",
    "corp_code": "00266961",
    "corp_name": "NAVER",
-   "dilution": 4.61,
+   "dilution": 4.76,
    "first_seen": "2026-10-25T18:18+09:00",
    "id": "RIGHTS:00266961:20260727000001",
    "method": "제3자배정증자",
    "new_common": 7241564,
    "new_other": null,
    "offering": "사모·주주배정",
+   "original_rcept": "20260727000001",
    "par_value": 100,
    "purposes": {
     "기타": 1480899838000
    },
-   "rcept_dt": "2026-07-27",
-   "rcept_no": "20260727000001",
+   "rcept_dt": "2026-10-30",
+   "rcept_no": "20261030000001",
    "source": "DART",
    "stock_code": "035420",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-10-25T18:18+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260727000001"
+   "updated": "2026-10-30T08:11+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261030000001"
   },
   "RIGHTS:00268002:20260706000425": {
    "amended": false,
