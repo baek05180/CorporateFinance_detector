@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-10-29T17:32+09:00",
+  "data_updated": "2026-10-29T18:22+09:00",
   "last_daily": "2026-10-28T20:23+09:00"
  },
  "records": {
@@ -68807,6 +68807,43 @@
    "updated": "2026-10-26T09:19+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250811000481",
    "ytm": 2.0
+  },
+  "CB:00561723:1": {
+   "amended": false,
+   "amount": 10000000000,
+   "board_dt": "2026-10-29",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "K",
+   "corp_code": "00561723",
+   "corp_name": "쏘닉스",
+   "coupon": 0.0,
+   "dilution": 10.72,
+   "exercise_from": "2027-11-09",
+   "exercise_to": "2031-10-09",
+   "first_seen": "2026-10-29T18:22+09:00",
+   "id": "CB:00561723:1",
+   "lead": null,
+   "maturity": "2031-11-09",
+   "method_raw": "사모",
+   "offering": "사모",
+   "pay_dt": "2026-11-09",
+   "price": 4813,
+   "purposes": {
+    "시설": 3000000000,
+    "운영": 7000000000
+   },
+   "rcept_dt": "2026-10-29",
+   "rcept_no": "20261029000654",
+   "refix_floor": null,
+   "series": "1",
+   "shares": 2077706,
+   "source": "DART",
+   "stock_code": "088280",
+   "type": "CB",
+   "updated": "2026-10-29T18:22+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261029000654",
+   "ytm": 0.0
   },
   "CB:00562245:2": {
    "amended": false,
@@ -291117,7 +291154,7 @@
   "RIGHTS:00963000:20261026000385": {
    "amended": true,
    "amount": 1499926610,
-   "board_dt": "2026-10-27",
+   "board_dt": "2026-10-29",
    "captured_by": "watch",
    "confirmed": false,
    "corp_cls": "N",
@@ -291137,14 +291174,14 @@
     "운영": 201008390,
     "타법인증권": 798991600
    },
-   "rcept_dt": "2026-10-27",
-   "rcept_no": "20261027000238",
+   "rcept_dt": "2026-10-29",
+   "rcept_no": "20261029000630",
    "source": "DART",
    "stock_code": "217320",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-10-27T16:00+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261027000238"
+   "updated": "2026-10-29T18:22+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261029000630"
   },
   "RIGHTS:00963000:20261027000238": {
    "amended": true,
