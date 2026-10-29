@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-10-29T16:47+09:00",
+  "data_updated": "2026-10-29T17:32+09:00",
   "last_daily": "2026-10-28T20:23+09:00"
  },
  "records": {
@@ -1681,8 +1681,8 @@
    }
   },
   "BOND:00105271:82-1": {
-   "amended": false,
-   "amount": 80000000000,
+   "amended": true,
+   "amount": 150000000000,
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "Y",
@@ -1690,20 +1690,6 @@
    "corp_name": "케이씨씨",
    "coupon": null,
    "coupon_raw": "-",
-   "filings": [
-    [
-     "20260724000448",
-     "[발행조건확정]증권신고서(채무증권)"
-    ],
-    [
-     "20260729000524",
-     "[발행조건확정]증권신고서(채무증권)"
-    ],
-    [
-     "20261023000404",
-     "증권신고서(채무증권)"
-    ]
-   ],
    "first_seen": "2026-10-25T18:18+09:00",
    "guarantor": null,
    "id": "BOND:00105271:82-1",
@@ -1715,8 +1701,8 @@
    "original_rcept": "20261023000404",
    "pay_dt": "2026-11-04",
    "rating": "-",
-   "rcept_dt": "2026-10-23",
-   "rcept_no": "20261023000404",
+   "rcept_dt": "2026-10-29",
+   "rcept_no": "20261029000575",
    "series": "82-1",
    "series_raw": "82-1",
    "source": "DART",
@@ -1724,16 +1710,16 @@
    "sub_dt": "2026-11-04",
    "type": "BOND",
    "underwriters": [],
-   "updated": "2026-10-28T20:11+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261023000404",
+   "updated": "2026-10-29T17:32+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261029000575",
    "uses": {
-    "발행제비용": 239511600,
-    "채무상환자금": 80000000000
+    "발행제비용": 422011600,
+    "채무상환자금": 150000000000
    }
   },
   "BOND:00105271:82-2": {
-   "amended": false,
-   "amount": 120000000000,
+   "amended": true,
+   "amount": 250000000000,
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "Y",
@@ -1741,20 +1727,6 @@
    "corp_name": "케이씨씨",
    "coupon": null,
    "coupon_raw": "-",
-   "filings": [
-    [
-     "20260724000448",
-     "[발행조건확정]증권신고서(채무증권)"
-    ],
-    [
-     "20260729000524",
-     "[발행조건확정]증권신고서(채무증권)"
-    ],
-    [
-     "20261023000404",
-     "증권신고서(채무증권)"
-    ]
-   ],
    "first_seen": "2026-10-25T18:18+09:00",
    "guarantor": null,
    "id": "BOND:00105271:82-2",
@@ -1766,8 +1738,8 @@
    "original_rcept": "20261023000404",
    "pay_dt": "2026-11-04",
    "rating": "-",
-   "rcept_dt": "2026-10-23",
-   "rcept_no": "20261023000404",
+   "rcept_dt": "2026-10-29",
+   "rcept_no": "20261029000575",
    "series": "82-2",
    "series_raw": "82-2",
    "source": "DART",
@@ -1777,11 +1749,11 @@
    "underwriters": [
     "DB증권"
    ],
-   "updated": "2026-10-28T20:11+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261023000404",
+   "updated": "2026-10-29T17:32+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261029000575",
    "uses": {
-    "발행제비용": 356911600,
-    "채무상환자금": 120000000000
+    "발행제비용": 708611600,
+    "채무상환자금": 250000000000
    }
   },
   "BOND:00105466:32-1": {
