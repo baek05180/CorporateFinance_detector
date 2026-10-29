@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-10-29T20:30+09:00",
+  "data_updated": "2026-10-30T07:29+09:00",
   "last_daily": "2026-10-29T20:30+09:00"
  },
  "records": {
@@ -77592,6 +77592,42 @@
    "updated": "2026-10-25T18:19+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260903000385",
    "ytm": 3.0
+  },
+  "CB:01022902:12": {
+   "amended": false,
+   "amount": 1000000000,
+   "board_dt": "2026-10-29",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "K",
+   "corp_code": "01022902",
+   "corp_name": "애드바이오텍",
+   "coupon": 6.0,
+   "dilution": 1.58,
+   "exercise_from": "2027-11-06",
+   "exercise_to": "2029-10-06",
+   "first_seen": "2026-10-30T07:29+09:00",
+   "id": "CB:01022902:12",
+   "lead": null,
+   "maturity": "2029-11-06",
+   "method_raw": "사모",
+   "offering": "사모",
+   "pay_dt": "2026-11-06",
+   "price": 1999,
+   "purposes": {
+    "타법인증권": 1000000000
+   },
+   "rcept_dt": "2026-10-29",
+   "rcept_no": "20261029000674",
+   "refix_floor": null,
+   "series": "12",
+   "shares": 500250,
+   "source": "DART",
+   "stock_code": "179530",
+   "type": "CB",
+   "updated": "2026-10-30T07:29+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261029000674",
+   "ytm": 6.0
   },
   "CB:01022902:6": {
    "amended": false,
@@ -305326,6 +305362,35 @@
    "type": "RIGHTS",
    "updated": "2026-10-26T09:26+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261016000204"
+  },
+  "RIGHTS:01284751:20261029000669": {
+   "amended": false,
+   "amount": 1999999680,
+   "board_dt": "2026-10-29",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "K",
+   "corp_code": "01284751",
+   "corp_name": "시지트로닉스",
+   "dilution": 10.6,
+   "first_seen": "2026-10-30T07:29+09:00",
+   "id": "RIGHTS:01284751:20261029000669",
+   "method": "제3자배정증자",
+   "new_common": 762195,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 500,
+   "purposes": {
+    "운영": 1999999680
+   },
+   "rcept_dt": "2026-10-29",
+   "rcept_no": "20261029000669",
+   "source": "DART",
+   "stock_code": "429270",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-10-30T07:29+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261029000669"
   },
   "RIGHTS:01290132:20240712000431": {
    "amended": true,
