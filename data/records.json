@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-10-30T11:11+09:00",
+  "data_updated": "2026-10-30T14:40+09:00",
   "last_daily": "2026-10-29T20:30+09:00"
  },
  "records": {
@@ -302919,34 +302919,35 @@
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260211001095"
   },
   "RIGHTS:01231786:20261022000486": {
-   "amended": false,
-   "amount": 1999997900,
-   "board_dt": "2026-10-22",
+   "amended": true,
+   "amount": 1999995446,
+   "board_dt": "2026-10-30",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
    "corp_code": "01231786",
    "corp_name": "엑스페릭스",
-   "dilution": 2.35,
+   "dilution": 2.47,
    "first_seen": "2026-10-25T18:19+09:00",
    "id": "RIGHTS:01231786:20261022000486",
    "method": "제3자배정증자",
-   "new_common": 870700,
+   "new_common": 914911,
    "new_other": null,
    "offering": "사모·주주배정",
+   "original_rcept": "20261022000486",
    "par_value": 500,
    "purposes": {
-    "운영": 999997900,
+    "운영": 999995446,
     "타법인증권": 1000000000
    },
-   "rcept_dt": "2026-10-22",
-   "rcept_no": "20261022000486",
+   "rcept_dt": "2026-10-30",
+   "rcept_no": "20261030000225",
    "source": "DART",
    "stock_code": "317770",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-10-25T18:19+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261022000486"
+   "updated": "2026-10-30T14:40+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261030000225"
   },
   "RIGHTS:01235296:20240730000061": {
    "amended": true,
