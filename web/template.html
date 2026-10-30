@@ -171,7 +171,7 @@ tbody tr.click:hover{background:var(--line-2)}
 .cgrid .card + .card{margin-top:0}
 .sec{border-left:4px solid var(--s1); scroll-margin-top:110px}
 .c-sum{border-left-color:var(--s1)} .c-ov{border-left-color:var(--c-ov)} .c-hold{border-left-color:var(--s5)} .c-biz{border-left-color:var(--c-biz)}
-.c-pl{border-left-color:var(--s3)} .c-bs{border-left-color:var(--s2)} .c-peer{border-left-color:var(--s7)} .c-px{border-left-color:var(--neg)} .c-deal{border-left-color:var(--s2)} .c-bond{border-left-color:var(--s1)}
+.c-pl{border-left-color:var(--s3)} .c-bs{border-left-color:var(--s2)} .c-peer{border-left-color:var(--s7)} .c-px{border-left-color:var(--neg)} .c-cr{border-left-color:var(--warn)} .c-deal{border-left-color:var(--s2)} .c-bond{border-left-color:var(--s1)}
 .sec .sec-title{flex-wrap:wrap}
 .sec .sec-title .sub{color:var(--ink-2); font-size:13px; font-weight:600}
 .src-note{font-size:12px; color:var(--ink-3); margin:12px 0 0}
@@ -481,6 +481,21 @@ function stackChart(rows, keys, colors) {
     s += `<text x="${cx}" y="${H - 7}" text-anchor="middle">${esc(r.year)}</text>`;
   });
   return s + '</svg>' + `<div class="legend">${keys.map((k, i) => `<span><i style="background:${colors[i]}"></i>${k}</span>`).join('')}</div>`;
+}
+
+// ───────────── 신용등급 트리거 ─────────────
+function trigHtml(T) {
+  if (!T) return '<div class="empty" style="padding:18px">신용평가 트리거 정보가 없습니다</div>';
+  const fmtv = (v, u) => v == null ? DASH : (u === '%' ? v.toFixed(1) + '%' : u === '조원' ? v.toFixed(1) + '조원' : v.toFixed(2) + '배');
+  const ag = `<div class="tiles t3">${T.agencies.map(a => `<div class="tile"><div class="l">${esc(a.agency)}${a.eval_date ? ' · ' + md(a.eval_date) : ''}</div><div class="v">${esc(a.rating || '-')}</div><div class="s ${/부정|하향/.test(a.outlook || '') ? 'neg' : ''}">${esc(a.outlook || '')}</div></div>`).join('')}</div>`;
+  const Q = T.items.filter(x => x.metric !== '기타'), O = T.items.filter(x => x.metric === '기타');
+  const st = x => x.cur == null ? '<span class="muted">계산 불가</span>'
+    : x.met ? `<b class="${x.dir === 'down' ? 'neg' : ''}" style="${x.dir === 'up' ? 'color:var(--good)' : ''}">${x.dir === 'down' ? '하향 요인 충족' : '상향 요인 충족'}</b>`
+    : `<span class="muted">여유 ${fmtv(Math.abs(x.gap), x.unit)}</span>`;
+  const rows = Q.map(x => `<tr><td>${x.dir === 'down' ? '<span class="neg">하향</span>' : '<span style="color:var(--good)">상향</span>'}</td><td>${esc(x.agency)}</td><td>${esc(x.metric)} ${esc(x.op || '')} ${x.thr != null ? fmtv(x.thr, x.unit) : ''}</td><td class="r num">${fmtv(x.cur, x.unit)}</td><td>${st(x)}</td></tr>`).join('');
+  return `${ag}${Q.length ? `<div class="scroll"><table class="list" style="min-width:520px;margin-top:10px"><thead><tr><th>방향</th><th>평가사</th><th>트리거</th><th class="r">현재</th><th>상태</th></tr></thead><tbody>${rows}</tbody></table></div>` : ''}
+    ${O.length ? `<details><summary>정성 요인 ${O.length}건</summary><ul style="margin:6px 0 0;padding-left:18px">${O.map(x => `<li><span class="${x.dir === 'down' ? 'neg' : ''}">${x.dir === 'down' ? '하향' : '상향'}</span> · ${esc(x.agency)} · ${esc(x.text || '')}</li>`).join('')}</ul></details>` : ''}
+    <p class="note" style="margin:8px 0 0">현재값은 최근 사업보고서 재무로 계산 · 평가사 기준(조정 EBITDA·리스부채 포함 등)과 차이가 있을 수 있음</p>`;
 }
 
 // ───────────── 팝업: 종목 상세 ─────────────
@@ -1029,7 +1044,7 @@ async function viewCompany(key) {
       <div class="actions noprint"><a class="btn primary" href="#/report/${encodeURIComponent(co.key)}">조달 제안 보고서 →</a></div>
     </div>
     <nav class="secnav sticky" id="secnav">
-      ${[['s-sum', '요약'], ['s-ov', '개요'], ['s-biz', '사업'], ['s-pl', '손익'], ['s-bs', '재무상태'], ...(PH.length > 1 ? [['s-px', '주가']] : []), ['s-hold', '주주'], ['s-peer', '업종'], ['s-deal', '조달 이력'], ['s-bond', '잔존 사채']]
+      ${[['s-sum', '요약'], ['s-ov', '개요'], ['s-biz', '사업'], ['s-pl', '손익'], ['s-bs', '재무상태'], ...(co.triggers ? [['s-cr', '등급 트리거']] : []), ...(PH.length > 1 ? [['s-px', '주가']] : []), ['s-hold', '주주'], ['s-peer', '업종'], ['s-deal', '조달 이력'], ['s-bond', '잔존 사채']]
         .map(([id, t]) => `<a href="#${id}" data-jump>${t}</a>`).join('')}
     </nav>
     ${co.pending ? '<div class="pending" style="margin-bottom:14px">사업보고서 기반 상세 정보(사업 내용·주주·차입금)는 아직 수집 전입니다. 조달 기록이 있는 회사부터 매일 밤 순서대로 채워지며, 저장소 <b>watchlist.txt</b>에 회사명을 적으면 먼저 수집합니다.</div>' : ''}
@@ -1040,6 +1055,7 @@ async function viewCompany(key) {
       ${card('s-biz', 'c-biz span2', '사업', AI?.mix_line ? esc(AI.mix_line) : '', bizBody, annualSrc ? '출처: ' + annualSrc + ' II. 사업의 내용' : '')}
       ${card('s-pl', 'c-pl', '손익', esc(headline + (m.op_margin != null ? ` · 영업이익률 ${m.op_margin.toFixed(1)}%` : '')), plBody, `${ser[ser.length - 1]?.fs === 'OFS' ? '별도' : '연결'} 기준 · 출처: DART 정기보고서 주요계정`)}
       ${card('s-bs', 'c-bs', '재무상태', esc(m.debt_ratio != null ? `부채비율 ${m.debt_ratio.toFixed(0)}%` + (m.cash != null ? ` · 현금성자산 ${wonTxt((m.cash || 0) + (m.st_deposits || 0))}` : '') : ''), bsBody, fd ? `상환능력 ${esc(fd.period)} ${fd.fs === 'OFS' ? '별도' : '연결'} 재무제표 · 차입금은 계정명 합산 추정` : '')}
+      ${co.triggers ? card('s-cr', 'c-cr span2', '신용등급 트리거', esc(co.triggers.agencies.map(a => `${a.agency} ${a.rating || ''}${a.outlook ? '(' + a.outlook + ')' : ''}`).join(' · ')), trigHtml(co.triggers), '출처: 신용평가사 평가보고서 (수기 정리 자료)') : ''}
       ${PH.length > 1 ? card('s-px', 'c-px span2', '주가', esc(`${md(PH[0][0])} 이후 ${pxChg >= 0 ? '+' : ''}${pxChg.toFixed(1)}%`), pxBody, '종가 기준 · 출처: 금융위원회 주식시세정보') : ''}
       ${card('s-peer', 'c-peer span2', '업종', esc(co.industry || ''), peerBody, P.length > 1 ? `같은 업종(KIND 분류) 상장사 중 매출이 가장 가까운 곳 · 사업이 같은 비교기업은 아닐 수 있음${co.price_date ? ' · 시총 ' + md(co.price_date) : ''}` : '')}
       ${card('s-deal', 'c-deal span2', '조달 이력', `${(co.deals || []).length}건 · 행을 누르면 상세`, dealTable(co.deals || []), '출처: DART 주요사항보고서·증권신고서 · 금융위원회 채권기본정보')}
@@ -1130,6 +1146,7 @@ async function viewReport(key) {
     </section>
     <section class="card"><h2>3. 재무 체크포인트</h2><table class="kv"><tbody>${checks.map(([l, v, c]) => `<tr><td>${l}</td><td class="${c}">${v}</td></tr>`).join('')}</tbody></table>
       <p class="note" style="margin:8px 0 0">${esc(m.period ? m.period + '년 사업보고서' : '')}${m.detail_period ? ' · 세부 항목 ' + esc(m.detail_period) : ''} 기준</p></section>
+    ${co.triggers ? `<section class="card"><h2>3-1. 신용등급 트리거</h2>${trigHtml(co.triggers)}</section>` : ''}
     <section class="card"><h2>4. 조달 이력과 만기</h2>
       ${H.length ? `<p class="ink2" style="margin:0 0 10px">최근 3년: ${H.map(h => `${esc(h.label)} ${h.count}건 ${wonTxt(h.amount)} (최근 ${md(h.last)})`).join(' · ')}</p>` : '<p class="muted">최근 3년 수집된 조달 기록이 없습니다.</p>'}
       ${BP.count ? stackChart(BP.ladder || [], ['공모', '사모', '주식연계'], ['var(--s1)', 'var(--s2)', 'var(--s3)']) : ''}

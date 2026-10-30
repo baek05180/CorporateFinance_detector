@@ -102,6 +102,7 @@ def key_metrics(series, prof, price):
     if fa.get("op") is not None:
         ebitda = fa["op"] + (fa.get("dep") or 0) + (fa.get("amort") or 0)
     m["ebitda"] = ebitda
+    m["ebitda_ok"] = bool(fa.get("dep") or fa.get("amort"))  # 감가상각비를 못 받았으면 EBITDA = 영업이익이라 과소
     m["net_debt_ebitda"] = safe_div(m["net_debt"], ebitda, 1) if ebitda and ebitda > 0 else None
     # 이자보상배율: 현금흐름표의 이자 지급액(없으면 손익계산서 이자비용, 그것도 없으면 금융원가)
     cost = fa.get("interest_paid") or fa.get("interest") or fa.get("fin_cost")
@@ -498,3 +499,81 @@ def norm_target(s):
         if t.startswith(a):
             t = b + t[len(a):]
     return t
+
+
+
+def load_triggers(path):
+    """data/manual/rating_triggers.csv → {종목코드 또는 회사명: [행...]}"""
+    import csv
+    import os
+    out = {}
+    if not os.path.exists(path):
+        return out
+    with open(path, encoding="utf-8-sig") as f:
+        for r in csv.DictReader(f):
+            k = (r.get("stock_code") or "").strip() or (r.get("corp_name") or "").strip()
+            if k:
+                out.setdefault(k, []).append({k2: (v or "").strip() for k2, v in r.items()})
+    return out
+
+
+def _cur_metric(metric, unit, m):
+    """트리거 지표의 현재값 (계산 못 하면 None). unit이 %면 백분율, 배면 배수."""
+    e = m.get("ebitda") if m.get("ebitda_ok") else None
+    rev, debt, nd, eq, assets = (m.get("revenue"), m.get("debt"), m.get("net_debt"), m.get("equity"), m.get("assets"))
+    cov = m.get("interest_coverage")
+    cost = (m.get("op") / cov) if cov and m.get("op") else None
+    v = None
+    if metric == "순차입금/EBITDA":
+        v = nd / e if nd is not None and e and e > 0 else None
+    elif metric == "차입금/EBITDA":
+        v = debt / e if debt is not None and e and e > 0 else None
+    elif metric == "부채비율":
+        v = m.get("debt_ratio")
+    elif metric == "차입금의존도":
+        v = debt / assets * 100 if debt is not None and assets else None
+    elif metric == "EBITDA/금융비용":
+        v = e / cost if e is not None and cost else None
+    elif metric == "영업이익/금융비용":
+        v = cov
+    elif metric == "EBITDA마진":
+        v = e / rev * 100 if e is not None and rev else None
+    elif metric == "영업이익률":
+        v = m.get("op_margin")
+    elif metric == "순차입금/자본":
+        v = nd / eq * 100 if nd is not None and eq and eq > 0 else None
+    elif metric == "매출액":
+        div = {"조원": 1e12, "억원": 1e8}.get(unit)
+        v = rev / div if rev is not None and div else None
+    if v is None:
+        return None
+    if unit == "배" and metric in ("부채비율", "차입금의존도", "EBITDA마진", "영업이익률", "순차입금/자본"):
+        v = v / 100
+    elif unit == "%" and metric in ("순차입금/EBITDA", "차입금/EBITDA", "EBITDA/금융비용", "영업이익/금융비용"):
+        v = v * 100
+    return round(v, 2)
+
+
+def trigger_status(rows, m):
+    """평가사별 등급·전망 + 트리거별 현재값·충족 여부·여유"""
+    if not rows:
+        return None
+    ags, items = {}, []
+    for r in rows:
+        ags.setdefault(r["agency"], {k: r.get(k) for k in ("agency", "rating", "outlook", "eval_date", "source_url")})
+        if r.get("metric") in ("", "없음"):
+            continue
+        it = {"agency": r["agency"], "dir": r.get("direction"), "metric": r["metric"], "op": r.get("operator"),
+              "unit": r.get("unit"), "text": r.get("condition_text"), "url": r.get("source_url")}
+        try:
+            thr = float(r["threshold"]) if r.get("threshold") else None
+        except ValueError:
+            thr = None
+        it["thr"] = thr
+        cur = _cur_metric(r["metric"], r.get("unit"), m) if thr is not None else None
+        if cur is not None and it["op"] in (">", ">=", "<", "<="):
+            met = {">": cur > thr, ">=": cur >= thr, "<": cur < thr, "<=": cur <= thr}[it["op"]]
+            it.update(cur=cur, met=met, gap=round(thr - cur, 2))
+        items.append(it)
+    items.sort(key=lambda x: (x["metric"] == "기타", x.get("dir") != "down", x["agency"]))
+    return {"agencies": list(ags.values()), "items": items}

@@ -68,6 +68,7 @@ def main():
     ph_dates, ph_close = ph.get("dates") or [], ph.get("close") or {}
     bond_docs = load_json("ref/bond_docs.json", {})
     mezz_docs = load_json("ref/mezz_docs.json", {})
+    triggers = A.load_triggers(os.path.join(config.DATA_DIR, "manual", "rating_triggers.csv"))
     out_bonds = (load_json("bonds/outstanding.json", {}) or {}).get("bonds") or []
     issued_cpn = {(b.get("name") or "").replace(" ", ""): b for b in out_bonds if b.get("method") == "공모" and b.get("cpn")}
     name2code = {v.get("name"): c for c, v in listed.items() if v.get("name")}
@@ -243,6 +244,9 @@ def main():
             "summary": A.summary_line(name, industry, metrics, hist, bp, options),
             "price_date": prices_doc.get("date"),
         }
+        tg = A.trigger_status(triggers.get(code) or triggers.get(name), metrics)
+        if tg:
+            co["triggers"] = tg
         pc = ph_close.get(code) if code else None
         if pc and sum(v is not None for v in pc) >= 5:
             co["price_hist"] = [[d, v] for d, v in zip(ph_dates, pc) if v is not None]
