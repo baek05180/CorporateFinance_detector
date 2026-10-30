@@ -492,3 +492,55 @@ def bond_rates(xml, series_list):
                 break
         out[sr or ""] = {"band": band, "rate": rate, "spread": spread}
     return out
+
+
+# ── 사업보고서 주석: 현금흐름 조정 항목의 감가상각비 (재무제표 API에 조정 항목이 없는 회사용) ──
+_UNIT = re.compile(r"단위\s*[:：]?\s*(백만원|천원|억원|원)")
+_UNIT_MUL = {"원": 1, "천원": 1e3, "백만원": 1e6, "억원": 1e8}
+
+
+def _first_num(cells):
+    for c in cells[1:]:
+        s = c.replace(",", "").replace(" ", "").replace("(", "-").replace(")", "")
+        if re.fullmatch(r"-?\d+(\.\d+)?", s):
+            return float(s)
+    return None
+
+
+def dep_from_notes(xml):
+    """주석의 '영업에서 창출된 현금' 류 표에서 감가상각비·상각비 합계(원) → (dep, amort) 또는 None"""
+    unit = None
+    for kind, val in blocks(xml):
+        if kind == "p":
+            u = _UNIT.search(val)
+            if u:
+                unit = u.group(1)
+            continue
+        rows = val
+        flat = " ".join(" ".join(r) for r in rows[:3])
+        u = _UNIT.search(flat)
+        if u:
+            unit = u.group(1)
+        names = [r[0].replace(" ", "") for r in rows if r]
+        if not any("감가상각비" in n for n in names):
+            continue
+        if not any(k in "".join(names) for k in ("당기순이익", "당기순손익", "조정", "영업에서창출", "영업활동", "법인세비용")):
+            continue
+        lines = []
+        for r in rows:
+            n = r[0].replace(" ", "") if r else ""
+            if "상각" in n and not any(x in n for x in ("환입", "처분", "손상", "상각후원가", "대손", "할인", "할증", "사채", "이연", "충당")):
+                v = _first_num(r)
+                if v is not None:
+                    lines.append(("", n, v))
+        if not lines or not unit:
+            continue
+        combo = [v for _, n, v in lines if "감가" in n and ("무형" in n or "상각비" in n.replace("감가상각비", ""))]
+        mul = _UNIT_MUL[unit]
+        if combo:
+            return abs(combo[0]) * mul, 0
+        dep = sum(abs(v) for _, n, v in lines if "감가" in n or "사용권" in n or "투자부동산" in n)
+        amort = sum(abs(v) for _, n, v in lines if "무형" in n and "감가" not in n)
+        if dep or amort:
+            return dep * mul, amort * mul
+    return None

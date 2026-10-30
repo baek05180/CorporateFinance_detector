@@ -122,6 +122,23 @@ def _dep_amort(lines):
     return dep, amort
 
 
+def fill_dep_from_notes(fa, main):
+    """재무제표 API에 상각비 조정 항목이 없으면 사업보고서 주석에서 보충 (합리성 검사 통과 시)."""
+    if not fa or fa.get("dep") or fa.get("amort") or not main:
+        return
+    got = docparse.dep_from_notes(main)
+    if not got:
+        return
+    d, a = got
+    rev = fa.get("revenue") or 0
+    if 0 < d + a and (not rev or d + a < rev * 0.8):
+        if d:
+            fa["dep"] = d
+        if a:
+            fa["amort"] = a
+        fa["dep_src"] = "notes"
+
+
 def fs_detail(rows):
     out = {}
     dep_lines = []
@@ -264,6 +281,7 @@ def build_profile(dart, corp_code, old, today):
 
     if annual and prof.get("annual_rcept") != annual["rcept_no"]:
         ay, _ = classify_report(annual["report_nm"])
+        main = ""
         try:
             docs = dart.document(annual["rcept_no"])
             main = max(docs.values(), key=len) if docs else ""
@@ -274,6 +292,7 @@ def build_profile(dart, corp_code, old, today):
             prof["business"] = prof.get("business") or {}
         rows, fs = dart.full_statements(corp_code, ay, "11011")
         prof["fs_annual"] = {"period": f"{ay} 연간", "fs": fs, **fs_detail(rows)} if rows else {}
+        fill_dep_from_notes(prof["fs_annual"], main)
         prof["annual_rcept"] = annual["rcept_no"]
         prof["annual_name"] = annual["report_nm"]
 
@@ -632,6 +651,13 @@ def fs_refresh(dart, corp_codes, diag):
                 rows2, fs2 = dart.full_statements(cc, y, code)
                 if rows2:
                     prof["fs_interim"] = {"period": fi["period"], "fs": fs2, **fs_detail(rows2)}
+        fa = prof["fs_annual"]
+        if not (fa.get("dep") or fa.get("amort")) and prof.get("annual_rcept"):
+            try:
+                docs = dart.document(prof["annual_rcept"])
+                fill_dep_from_notes(fa, max(docs.values(), key=len) if docs else "")
+            except DartError:
+                pass
         dump_json(f"co/{cc}.json", prof)
         miss = None
         if rows and not (prof["fs_annual"].get("dep") or prof["fs_annual"].get("amort")):
