@@ -106,8 +106,25 @@ DEBT_KEYS = ("차입금", "사채", "유동성장기부채", "상환우선주부
 DEBT_SKIP = ("할인", "할증", "조정", "이자", "미지급", "파생", "전환권", "상환권", "증가", "감소", "상환", "발행")
 
 
+DEP_IDS = {"ifrs-full_AdjustmentsForDepreciationExpense", "ifrs-full_AdjustmentsForAmortisationExpense",
+           "ifrs-full_AdjustmentsForDepreciationAndAmortisationExpense",
+           "ifrs-full_AdjustmentsForDepreciationAndAmortisationExpenseAndImpairmentLossReversalOfImpairmentLossRecognisedInProfitOrLoss"}
+DEP_SKIP = ("환입", "처분", "손상", "상각후원가", "대손", "할인", "할증", "사채", "이연", "충당")
+
+
+def _dep_amort(lines):
+    """현금흐름표 조정 항목의 상각비 줄들 → (감가상각비, 무형자산상각비). 합계 줄이 있으면 그것만 쓴다."""
+    combo = [v for a, n, v in lines if ("감가" in n and ("무형" in n or "상각비" in n.replace("감가상각비", ""))) or "AndAmortisation" in a]
+    if combo:
+        return abs(combo[0]), 0
+    dep = sum(abs(v) for a, n, v in lines if "감가" in n or "Depreciation" in a or ("사용권" in n) or ("투자부동산" in n))
+    amort = sum(abs(v) for a, n, v in lines if ("무형" in n or "Amortisation" in a) and "감가" not in n)
+    return dep, amort
+
+
 def fs_detail(rows):
     out = {}
+    dep_lines = []
     debt_names = set()
     debt = 0
     debt_prev = [0, 0]      # 전기, 전전기 (연간 보고서의 비교 기간)
@@ -153,14 +170,18 @@ def fs_detail(rows):
         elif sj == "CF":
             if aid == "ifrs-full_CashFlowsFromUsedInOperatingActivities":
                 out.setdefault("ocf", v)
-            elif aid == "ifrs-full_AdjustmentsForDepreciationExpense" or nm.startswith("감가상각비"):
-                out.setdefault("dep", v)
-            elif aid == "ifrs-full_AdjustmentsForAmortisationExpense" or nm.startswith("무형자산상각비"):
-                out.setdefault("amort", v)
+            elif ("상각" in nm or aid in DEP_IDS) and not any(x in nm for x in DEP_SKIP) and v is not None:
+                dep_lines.append((aid, nm, v))
             elif aid == "ifrs-full_PurchaseOfPropertyPlantAndEquipment" or nm.startswith("유형자산의취득"):
                 out.setdefault("capex", abs(v))
             elif aid.startswith("ifrs-full_InterestPaid") or nm in ("이자의지급", "이자지급", "이자의지급(영업)", "이자지급액"):
                 out["interest_paid"] = out.get("interest_paid", 0) + abs(v)
+    if dep_lines:
+        d, a = _dep_amort(dep_lines)
+        if d:
+            out["dep"] = d
+        if a:
+            out["amort"] = a
     if debt_names:
         out["debt"] = debt
         out["debt_items"] = sorted(debt_names)
@@ -591,3 +612,40 @@ def bond_doc_step(dart, store, today, diag):
                              "with_band": sum(1 for v in vals if any(x.get("band") for x in (v.get("series") or {}).values())),
                              "with_rate": sum(1 for v in vals if any(x.get("rate") for x in (v.get("series") or {}).values())),
                              "sec": round(time.time() - t0)}
+
+
+def fs_refresh(dart, corp_codes, diag):
+    """지정한 회사들의 재무제표(연간·최근 분기)만 다시 받아 co/{corp}.json의 fs_annual·fs_interim을 갱신."""
+    def job(cc):
+        prof = load_json(f"co/{cc}.json", None)
+        if not prof or not (prof.get("fs_annual") or {}).get("period"):
+            return cc, None
+        ay = int(prof["fs_annual"]["period"][:4])
+        rows, fs = dart.full_statements(cc, ay, "11011")
+        if rows:
+            prof["fs_annual"] = {"period": f"{ay} 연간", "fs": fs, **fs_detail(rows)}
+        fi = prof.get("fs_interim") or {}
+        if fi.get("period"):
+            y = int(fi["period"][:4])
+            code = next((c for c, nm in config.REPORT_CODES.items() if fi["period"].endswith(nm)), None)
+            if code:
+                rows2, fs2 = dart.full_statements(cc, y, code)
+                if rows2:
+                    prof["fs_interim"] = {"period": fi["period"], "fs": fs2, **fs_detail(rows2)}
+        dump_json(f"co/{cc}.json", prof)
+        miss = None
+        if rows and not (prof["fs_annual"].get("dep") or prof["fs_annual"].get("amort")):
+            miss = [r.get("account_nm") for r in rows if r.get("sj_div") == "CF"][:40]
+        return cc, miss
+
+    done = with_dep = 0
+    for cc, miss in parallel(corp_codes, job):
+        if miss is None and cc is None:
+            continue
+        done += 1
+        p = load_json(f"co/{cc}.json", {}) or {}
+        if (p.get("fs_annual") or {}).get("dep") or (p.get("fs_annual") or {}).get("amort"):
+            with_dep += 1
+        elif miss and len(diag.setdefault("dep_miss", [])) < 6:
+            diag["dep_miss"].append({"corp": cc, "cf": miss})
+    diag["fs_refresh"] = {"targets": len(corp_codes), "done": done, "with_dep": with_dep}

@@ -198,7 +198,7 @@ def collect_private_bonds(store, mode):
 
 def main(argv=None):
     ap = argparse.ArgumentParser()
-    ap.add_argument("--mode", choices=["watch", "daily", "backfill", "profiles", "prices", "mezz", "bonds", "probe"], default="watch")
+    ap.add_argument("--mode", choices=["watch", "daily", "backfill", "profiles", "prices", "mezz", "bonds", "probe", "fsfix"], default="watch")
     ap.add_argument("--days", type=int, default=7)
     args = ap.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
@@ -227,6 +227,24 @@ def main(argv=None):
                 f.write(summary + "\n")
         return 0
 
+    if args.mode == "fsfix":
+        # 신용등급 트리거 대상 회사의 재무제표만 다시 받아 감가상각비(EBITDA) 보강
+        import csv
+        import traceback
+        from .profiles import fs_refresh
+        from .store import load_json as _lj
+        cmap = (_lj("ref/corpcodes.json", {}) or {}).get("map", {})
+        names = {}
+        for r in csv.DictReader(open(os.path.join(config.DATA_DIR, "manual", "rating_triggers.csv"), encoding="utf-8-sig")):
+            names[(r.get("stock_code") or "").strip()] = 1
+        ccs = sorted({cmap[c] for c in names if c in cmap})
+        diag = {}
+        try:
+            fs_refresh(dart, ccs, diag)
+        except Exception:  # noqa: BLE001
+            diag["error"] = redact(traceback.format_exc())[-1200:]
+        dump_json("diag_fsfix.json", diag)
+        return 0
     if args.mode == "probe":
         # 공모채 증권신고서 원문 파일 구성·신용평가서 트리거 문구 확인용 (시험)
         import re as _re
