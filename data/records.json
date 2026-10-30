@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-10-30T16:18+09:00",
+  "data_updated": "2026-10-30T17:14+09:00",
   "last_daily": "2026-10-29T20:30+09:00"
  },
  "records": {
@@ -21937,8 +21937,8 @@
    }
   },
   "BOND:00201450:59-1": {
-   "amended": false,
-   "amount": 40000000000,
+   "amended": true,
+   "amount": 140000000000,
    "captured_by": "watch",
    "confirmed": true,
    "corp_cls": "E",
@@ -21946,12 +21946,6 @@
    "corp_name": "에스케이렌터카",
    "coupon": null,
    "coupon_raw": "-",
-   "filings": [
-    [
-     "20261026000244",
-     "증권신고서(채무증권)"
-    ]
-   ],
    "first_seen": "2026-10-26T16:42+09:00",
    "guarantor": null,
    "id": "BOND:00201450:59-1",
@@ -21963,8 +21957,8 @@
    "original_rcept": "20261026000244",
    "pay_dt": "2026-11-05",
    "rating": "-",
-   "rcept_dt": "2026-10-26",
-   "rcept_no": "20261026000244",
+   "rcept_dt": "2026-10-30",
+   "rcept_no": "20261030000579",
    "series": "59-1",
    "series_raw": "59-1",
    "source": "DART",
@@ -21975,15 +21969,15 @@
     "SK증권",
     "현대차증권"
    ],
-   "updated": "2026-10-29T20:25+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261026000244",
+   "updated": "2026-10-30T17:14+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261030000579",
    "uses": {
-    "발행제비용": 159311600,
-    "채무상환자금": 40000000000
+    "발행제비용": 354333600,
+    "채무상환자금": 140000000000
    }
   },
   "BOND:00201450:59-2": {
-   "amended": false,
+   "amended": true,
    "amount": 60000000000,
    "captured_by": "watch",
    "confirmed": true,
@@ -21992,12 +21986,6 @@
    "corp_name": "에스케이렌터카",
    "coupon": null,
    "coupon_raw": "-",
-   "filings": [
-    [
-     "20261026000244",
-     "증권신고서(채무증권)"
-    ]
-   ],
    "first_seen": "2026-10-26T16:42+09:00",
    "guarantor": null,
    "id": "BOND:00201450:59-2",
@@ -22009,8 +21997,8 @@
    "original_rcept": "20261026000244",
    "pay_dt": "2026-11-05",
    "rating": "-",
-   "rcept_dt": "2026-10-26",
-   "rcept_no": "20261026000244",
+   "rcept_dt": "2026-10-30",
+   "rcept_no": "20261030000579",
    "series": "59-2",
    "series_raw": "59-2",
    "source": "DART",
@@ -22022,10 +22010,10 @@
     "키움증권",
     "한국투자증권"
    ],
-   "updated": "2026-10-29T20:25+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261026000244",
+   "updated": "2026-10-30T17:14+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261030000579",
    "uses": {
-    "발행제비용": 175020000,
+    "발행제비용": 241298000,
     "채무상환자금": 60000000000
    }
   },
@@ -102971,7 +102959,7 @@
    "ytm": 0.0
   },
   "EB:00683283:34": {
-   "amended": false,
+   "amended": true,
    "amount": 500000000000,
    "board_dt": "2026-09-10",
    "captured_by": "daily",
@@ -102982,29 +102970,29 @@
    "coupon": 0.0,
    "dilution": null,
    "exchange_target": "가온전선(주) 기명식 보통주",
-   "exercise_from": "2026-11-10",
-   "exercise_to": "2031-10-09",
+   "exercise_from": "2026-11-09",
+   "exercise_to": "2031-10-06",
    "first_seen": "2026-10-25T18:19+09:00",
    "id": "EB:00683283:34",
    "lead": null,
-   "maturity": "2031-11-09",
+   "maturity": "2031-11-06",
    "method_raw": "사모",
    "offering": "사모",
-   "pay_dt": "2026-11-09",
+   "pay_dt": "2026-11-06",
    "price": 270000,
    "purposes": {
     "기타": 500000000000
    },
-   "rcept_dt": "2026-09-11",
-   "rcept_no": "20260911000411",
+   "rcept_dt": "2026-10-30",
+   "rcept_no": "20261030000651",
    "refix_floor": null,
    "series": "34",
    "shares": 1851851,
    "source": "DART",
    "stock_code": null,
    "type": "EB",
-   "updated": "2026-10-25T18:19+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260911000411",
+   "updated": "2026-10-30T17:14+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261030000651",
    "ytm": 0.0
   },
   "EB:00755739:10": {
@@ -103338,6 +103326,43 @@
    "type": "EB",
    "updated": "2026-10-26T09:21+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251223000603",
+   "ytm": 0.0
+  },
+  "EB:00876908:11": {
+   "amended": false,
+   "amount": 59000000000,
+   "board_dt": "2026-10-30",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "K",
+   "corp_code": "00876908",
+   "corp_name": "모트렉스",
+   "coupon": 0.0,
+   "dilution": null,
+   "exchange_target": "전진건설로봇(주) 기명식 보통주",
+   "exercise_from": "2026-12-03",
+   "exercise_to": "2029-11-02",
+   "first_seen": "2026-10-30T17:14+09:00",
+   "id": "EB:00876908:11",
+   "lead": null,
+   "maturity": "2029-12-02",
+   "method_raw": "사모",
+   "offering": "사모",
+   "pay_dt": "2026-12-02",
+   "price": 45193,
+   "purposes": {
+    "운영": 59000000000
+   },
+   "rcept_dt": "2026-10-30",
+   "rcept_no": "20261030000477",
+   "refix_floor": null,
+   "series": "11",
+   "shares": 1305511,
+   "source": "DART",
+   "stock_code": "118990",
+   "type": "EB",
+   "updated": "2026-10-30T17:14+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261030000477",
    "ytm": 0.0
   },
   "EB:00904672:3": {
@@ -310835,31 +310860,32 @@
   "RIGHTS:01423837:20261023000402": {
    "amended": true,
    "amount": 1999999255,
-   "board_dt": "2026-10-23",
+   "board_dt": "2026-10-30",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
    "corp_code": "01423837",
    "corp_name": "모아데이타",
-   "dilution": 10.43,
+   "dilution": 10.11,
    "first_seen": "2026-10-25T18:20+09:00",
    "id": "RIGHTS:01423837:20261023000402",
    "method": "제3자배정증자",
    "new_common": 759013,
    "new_other": null,
    "offering": "사모·주주배정",
+   "original_rcept": "20261023000402",
    "par_value": 2500,
    "purposes": {
     "운영": 1999999255
    },
-   "rcept_dt": "2026-10-23",
-   "rcept_no": "20261023000402",
+   "rcept_dt": "2026-10-30",
+   "rcept_no": "20261030000520",
    "source": "DART",
    "stock_code": "288980",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-10-25T18:20+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261023000402"
+   "updated": "2026-10-30T17:14+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261030000520"
   },
   "RIGHTS:01423916:20231030000305": {
    "amended": true,
