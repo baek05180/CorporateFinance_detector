@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-10-30T14:40+09:00",
+  "data_updated": "2026-10-30T16:18+09:00",
   "last_daily": "2026-10-29T20:30+09:00"
  },
  "records": {
@@ -302941,13 +302941,13 @@
     "타법인증권": 1000000000
    },
    "rcept_dt": "2026-10-30",
-   "rcept_no": "20261030000225",
+   "rcept_no": "20261030000447",
    "source": "DART",
    "stock_code": "317770",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-10-30T14:40+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261030000225"
+   "updated": "2026-10-30T16:18+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261030000447"
   },
   "RIGHTS:01235296:20240730000061": {
    "amended": true,
