@@ -69,6 +69,8 @@
   "debt_items": [
    "차입금및사채"
   ],
+  "dep": 1202383000.0,
+  "dep_src": "notes",
   "equity": 1444314941553,
   "fin_cost": 58707457120,
   "fs": "CFS",

@@ -27,6 +27,8 @@
   "debt_items": [
    "리스부채"
   ],
+  "dep": 69290000000.0,
+  "dep_src": "notes",
   "equity": 1763769240472,
   "fin_cost": 93786595176,
   "fs": "CFS",
