@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-10-30T18:01+09:00",
+  "data_updated": "2026-10-30T19:29+09:00",
   "last_daily": "2026-10-29T20:30+09:00"
  },
  "records": {
@@ -95011,7 +95011,7 @@
    "ytm": 0.0
   },
   "CB:01559637:2": {
-   "amended": false,
+   "amended": true,
    "amount": 36000000000,
    "board_dt": "2026-10-08",
    "captured_by": "daily",
@@ -95035,16 +95035,16 @@
     "운영": 31000000000,
     "채무상환": 5000000000
    },
-   "rcept_dt": "2026-10-08",
-   "rcept_no": "20261008000732",
+   "rcept_dt": "2026-10-30",
+   "rcept_no": "20261030000718",
    "refix_floor": 2265,
    "series": "2",
    "shares": 11128284,
    "source": "DART",
    "stock_code": "439580",
    "type": "CB",
-   "updated": "2026-10-25T18:20+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261008000732",
+   "updated": "2026-10-30T19:29+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261030000718",
    "ytm": 0.0
   },
   "CB:01565054:6": {
