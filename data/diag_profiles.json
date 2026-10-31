@@ -17,11 +17,13 @@
   "with_inv": 1180,
   "with_prem": 676
  },
- "prices_error": "HTTPSConnectionPool(host='apis.data.go.kr', port=443): Max retries exceeded with url: /1160100/GetStockSecuritiesInfoService_V2/getStockPriceInfo_V2?serviceKey=***&resultType=json&numOfRows=1000&pageNo=1&basDt=20261030 (Caused by ConnectTimeoutError(<HTTPSConnection(host='apis.data.go.kr', port=443)",
+ "price_hist_days": 120,
+ "price_hist_fetched": 1,
+ "prices": 2872,
  "profiles_done": 0,
  "profiles_fresh": 1506,
  "profiles_left": 0,
  "profiles_sec": 0,
- "run": "2026-10-31T06:10+09:00",
+ "run": "2026-10-31T22:22+09:00",
  "targets": 1506
 }
