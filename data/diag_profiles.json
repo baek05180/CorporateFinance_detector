@@ -7,7 +7,7 @@
   "with_band": 270,
   "with_rate": 0
  },
- "dart_calls": 0,
+ "dart_calls": 644,
  "listed": 2762,
  "mezz_docs": {
   "sec": 0,
@@ -20,10 +20,10 @@
  "price_hist_days": 119,
  "price_hist_fetched": 1,
  "prices": 2872,
- "profiles_done": 0,
- "profiles_fresh": 1506,
+ "profiles_done": 528,
+ "profiles_fresh": 977,
  "profiles_left": 0,
- "profiles_sec": 0,
- "run": "2026-11-01T22:23+09:00",
- "targets": 1506
+ "profiles_sec": 48,
+ "run": "2026-11-02T00:05+09:00",
+ "targets": 1505
 }
