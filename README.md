@@ -1,4 +1,4 @@
-# ECM BOARD
+# Capital Market Radar
 
 메자닌(CB·BW·EB) 발행결정, 유상증자 결정, 일반 회사채(공모·사모) 발행을 모아 보여주는 사이트.
 서버 없이 **GitHub Actions(수집) + Cloudflare Pages(호스팅)** 로 돌아가며 비용은 0원.

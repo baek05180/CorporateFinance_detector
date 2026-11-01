@@ -22,7 +22,7 @@ from collector.store import load_json, now_kst  # noqa: E402
 from web import analysis as A  # noqa: E402
 from web import score_v2 as S2  # noqa: E402
 
-SITE_NAME = "ECM BOARD"
+SITE_NAME = "Capital Market Radar"
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 KEEP = {
