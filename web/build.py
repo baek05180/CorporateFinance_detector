@@ -20,6 +20,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from collector import config  # noqa: E402
 from collector.store import load_json, now_kst  # noqa: E402
 from web import analysis as A  # noqa: E402
+from web import score_v2 as S2  # noqa: E402
 
 SITE_NAME = "ECM BOARD"
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -179,6 +180,7 @@ def main():
             if fn(r):
                 pools[ok].append((r, meta))
 
+    mctx = S2.market_ctx(rows, today)
     for key in keys:
         deals = by_co.get(key, [])
         inf = info.get(key, {})
@@ -250,6 +252,8 @@ def main():
         pc = ph_close.get(code) if code else None
         if pc and sum(v is not None for v in pc) >= 5:
             co["price_hist"] = [[d, v] for d, v in zip(ph_dates, pc) if v is not None]
+        co["proposal"] = S2.apply(options, co, mctx, today)
+        co["summary"] = A.summary_line(name, industry, metrics, hist, bp, co["proposal"])
         if not key.startswith("b") and not prof:
             co["pending"] = True
         write(os.path.join(out_dir, "co", f"{key}.json"), jdump(co))

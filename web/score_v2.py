@@ -58,11 +58,17 @@ def score(co, mctx, today):
                                     if d.get("type") == t and (off is None or d.get("offering") == off)), default="")
     cnt3 = lambda t, off=None: sum(1 for d in deals if d.get("type") == t and (off is None or d.get("offering") == off)
                                    and _years_since(d.get("board_dt") or d.get("rcept_dt") or d.get("issue_dt"), today) <= 3)
+    ph = co.get("price_hist") or []
+    vol = None
+    if len(ph) > 20:
+        rets = [math.log(ph[i][1] / ph[i - 1][1]) for i in range(1, len(ph)) if ph[i - 1][1] and ph[i][1]]
+        vol = (sum(r * r for r in rets) / len(rets)) ** .5 * math.sqrt(250) * 100 if rets else None
+    halted = vol is not None and vol < 3 and mk in ("K", "Y", "N")
     out = {}
 
     # ── 공모채 ──
     P = []
-    gate = "등급 없음" if gi is None else ("자본잠식" if impaired else None)
+    gate = "신용등급 미확인 — 평가사 등급 확인 필요" if gi is None else ("자본잠식" if impaired else None)
     down = [x for x in T.get("items", []) if x.get("dir") == "down" and "cur" in x]
     if down:
         if any(x["met"] for x in down):
@@ -118,6 +124,8 @@ def score(co, mctx, today):
     gate = None if mk in ("K", "Y", "N") else "비상장"
     if full_imp:
         gate = "완전자본잠식"
+    if halted:
+        gate = "6개월간 주가 변동 없음 — 거래정지 여부 확인"
     tp = H.get("total_pct")
     if tp is not None:
         after = tp / 1.1
@@ -129,20 +137,16 @@ def score(co, mctx, today):
         P.append(("재무", 15 if oh < 5 else 8 if oh < 15 else 0, "최근 3년 메자닌 발행(미만기)", f"시총의 {oh:.0f}%"))
     P.append(("재무", 10 if loss or (m.get("op_margin") or 0) < 3 else 5, "수익성", "저수익·적자 → 저쿠폰 CB 유리" if loss or (m.get("op_margin") or 0) < 3 else "흑자"))
     P.append(("시장", {"K": 20, "N": 10, "Y": 10}.get(mk, 0), "상장 시장", {"K": "코스닥", "N": "코넥스", "Y": "유가증권"}.get(mk, "비상장")))
-    ph = co.get("price_hist") or []
-    if len(ph) > 20:
-        rets = [math.log(ph[i][1] / ph[i - 1][1]) for i in range(1, len(ph)) if ph[i - 1][1]]
-        vol = (sum(r * r for r in rets) / len(rets)) ** .5 * math.sqrt(250) * 100
-        if vol < 3:
-            P.append(("시장", -20, "주가 변동성(연)", f"{vol:.0f}% — 거래정지·관리종목 여부 확인"))
-        else:
-            P.append(("시장", 10 if 30 <= vol <= 80 else 5, "주가 변동성(연)", f"{vol:.0f}%"))
+    if vol is not None and not halted:
+        P.append(("시장", 10 if 30 <= vol <= 80 else 5, "주가 변동성(연)", f"{vol:.0f}%"))
     if mcap:
         P.append(("조건", 10 if mcap >= 5e10 else 5 if mcap >= 2e10 else 0, "시가총액", f"{mcap/1e8:,.0f}억"))
     if dr is not None:
         P.append(("조건", 10 if dr > 200 else 5, "부채비율", f"{dr:.0f}% {'→ 전환 시 자본 확충 효과' if dr > 200 else ''}".strip()))
     if gi is not None and gi <= 6:
         P.append(("조건", -25, "신용등급", f"{grade} — 일반 사채로 희석 없이 조달 가능"))
+    elif gi is None and (mcap or 0) >= 5e12:
+        P.append(("조건", -25, "시가총액", f"{mcap/1e12:,.0f}조 — 대형 우량주는 희석 없는 사채가 일반적"))
     n = cnt3("CB")
     P.append(("이력", 10 if 1 <= n <= 2 else 3 if n >= 3 else 5, "최근 3년 CB", f"{n}건" + (" (누적 오버행)" if n >= 3 else "")))
     out["CB"] = (gate, _sum(P), P)
@@ -151,6 +155,8 @@ def score(co, mctx, today):
     P = []
     ts, sh = co.get("treasury_shares"), m.get("shares")
     gate = None if ts else "자기주식 없음"
+    if halted:
+        gate = "6개월간 주가 변동 없음 — 거래정지 여부 확인"
     if ts and sh:
         r = ts / sh * 100
         P.append(("재무", 40 if r >= 5 else 30 if r >= 3 else 15, "자기주식 비율", f"{r:.1f}%"))
@@ -162,9 +168,9 @@ def score(co, mctx, today):
         P.append(("이력", 10, "최근 3년 EB", f"{cnt3('EB')}건"))
     out["EB"] = (gate, _sum(P), P)
 
-    # ── 유상증자 ──
+    # ── 유상증자 (상장: 주주배정·일반공모·제3자배정 / 비상장·적자 성장기업: 제3자배정 RCPS) ──
     P = []
-    gate = None if mk in ("K", "Y", "N") else "비상장(제3자배정·RCPS 별도 검토)"
+    gate = "6개월간 주가 변동 없음 — 거래정지 여부 확인" if halted else None
     f = 0
     if impaired:
         f += 30
@@ -172,16 +178,90 @@ def score(co, mctx, today):
         f += 15
     if (m.get("loss_years") or 0) >= 2:
         f += 10
-    P.append(("재무", min(40, f), "자본 확충 필요", ("자본잠식 " if impaired else "") + (f"부채비율 {dr:.0f}% " if dr else "") + (f"{m.get('loss_years')}년 연속 적자" if (m.get('loss_years') or 0) >= 2 else "")))
-    if tp is not None:
-        P.append(("시장", 15 if tp >= 30 else 8 if tp >= 20 else 3, "최대주주 지분(참여 여력)", f"{tp:.1f}%"))
-    if len(ph) > 20:
-        dd = (ph[-1][1] / max(p[1] for p in ph) - 1) * 100
-        P.append(("시장", 5 if dd < -30 else 15, "6개월 고점 대비", f"{dd:.0f}%"))
-    if mcap:
-        P.append(("조건", 10 if mcap >= 3e10 else 5, "시가총액", f"{mcap/1e8:,.0f}억"))
+    P.append(("재무", min(40, f), "자본 확충 필요", (("자본잠식 " if impaired else "") + (f"부채비율 {dr:.0f}% " if dr else "")
+                                                   + (f"{m.get('loss_years')}년 연속 적자" if (m.get('loss_years') or 0) >= 2 else "")).strip() or "낮음"))
+    if mk in ("K", "Y", "N"):
+        if tp is not None:
+            P.append(("시장", 15 if tp >= 30 else 8 if tp >= 20 else 3, "최대주주 지분(참여 여력)", f"{tp:.1f}%"))
+        if len(ph) > 20 and not halted:
+            dd = (ph[-1][1] / max(p[1] for p in ph) - 1) * 100
+            P.append(("시장", 5 if dd < -30 else 15, "6개월 고점 대비", f"{dd:.0f}%"))
+        if mcap:
+            P.append(("조건", 10 if mcap >= 3e10 else 5, "시가총액", f"{mcap/1e8:,.0f}억"))
+    else:
+        g = m.get("revenue_growth")
+        P.append(("시장", 15 if (g or 0) >= 20 else 8 if (g or 0) >= 0 else 3, "매출 성장률(RCPS 투자 매력)", f"{g:.0f}%" if g is not None else "정보 없음"))
+        vc = sum(1 for d in deals if d.get("type") in ("CB", "BW", "EB") for i in (d.get("investors") or []) if i.get("kind") in ("신기사·VC", "PEF"))
+        P.append(("시장", 10 if vc else 3, "VC·PEF 투자 이력", f"{vc}건" if vc else "확인 안 됨"))
+        P.append(("조건", 5, "방식", "비상장 — 제3자배정 RCPS·CPS"))
     lr = last("RIGHTS")
     yrs = _years_since(lr, today) if lr else 99
     P.append(("이력", -20 if yrs < 1 else -10 if yrs < 2 else 10, "최근 유상증자", f"{lr[:10]} ({yrs:.1f}년 전)" if lr else "없음"))
     out["유상증자"] = (gate, _sum(P), P)
+
+    # ── P-CBO (신용보증기금 유동화 보증) ──
+    P = []
+    big = rev >= 3e11 or assets >= 5e11 or (mcap or 0) >= 1e12
+    gate = "재무정보 없음" if not rev else "자본잠식 — 보증 심사 통과 어려움" if impaired else ("대기업·우량 등급 — 지원 대상 아님" if big or (gi is not None and gi <= 6) else None)
+    P.append(("재무", 15 if icr is not None and icr >= 1.5 else 8 if icr is not None and icr >= 1 else 0, "이자보상배율", f"{icr:.1f}배" if icr is not None else "정보 없음"))
+    ly = m.get("loss_years") or 0
+    P.append(("재무", 15 if ly == 0 else 5 if ly == 1 else 0, "영업손실 연수", f"{ly}년"))
+    if dr is not None:
+        P.append(("재무", 10 if dr <= 300 else 3, "부채비율", f"{dr:.0f}%"))
+    P.append(("시장", 20 if gi is None or gi >= 7 else 5, "등급 구간", (grade or "등급 없음") + " — 단독 사모보다 보증부가 금리 유리" if gi is None or gi >= 7 else grade))
+    P.append(("시장", 10, "규모", f"중소·중견 (매출 {rev/1e8:,.0f}억)"))
+    P.append(("조건", 10 if (BP.get("due12") or 0) > 0 else 5, "12개월 내 사채 만기", f"{(BP.get('due12') or 0)/1e8:,.0f}억"))
+    if BP.get("has_cbo") or any(d.get("pcbo") for d in deals):
+        P.append(("이력", 10, "P-CBO 편입 이력", "있음"))
+    out["P-CBO"] = (gate, _sum(P), P)
+
+    # ── 영구채 (신종자본증권) ──
+    P = []
+    gate = None if gi is not None and gi <= 8 else "신용등급 BBB+ 미만·미확인 — 기관 수요 제한"
+    if impaired:
+        gate = "자본잠식"
+    lev = [x for x in T.get("items", []) if x.get("dir") == "down" and "cur" in x and x["metric"] in ("부채비율", "차입금의존도", "순차입금/자본")]
+    if lev:
+        rel = min(abs(x["gap"]) / abs(x["thr"]) for x in lev if x["thr"])
+        P.append(("재무", 30 if rel < .1 or any(x["met"] for x in lev) else 15 if rel < .3 else 5, "레버리지 트리거 여유", "충족" if any(x["met"] for x in lev) else f"{rel*100:.0f}%"))
+    elif dr is not None:
+        P.append(("재무", 30 if dr > 300 else 15 if dr > 200 else 0, "부채비율(자본 인정 효과)", f"{dr:.0f}%"))
+    if icr is not None:
+        P.append(("재무", 10 if icr >= 2 else 3, "이자보상배율", f"{icr:.1f}배"))
+    if gi is not None:
+        P.append(("시장", 20 if gi <= 6 else 10, "신용등급", grade))
+    P.append(("시장", 10 if mk == "Y" else 5, "상장 시장", {"Y": "유가증권", "K": "코스닥", "N": "코넥스"}.get(mk, "비상장")))
+    P.append(("조건", 5, "금리", "일반 사채보다 높고 콜(통상 5년) 이후 step-up 조건 확인"))
+    out["영구채"] = (gate, _sum(P), P)
     return out
+
+
+KEY = {"공모채": "public_bond", "사모채": "private_bond", "P-CBO": "pcbo", "CB": "cb", "EB": "eb", "유상증자": "rights", "영구채": "hybrid"}
+TIE = ["public_bond", "private_bond", "pcbo", "hybrid", "cb", "eb", "rights"]
+
+
+def apply(options, co, mctx, today):
+    """기존 제안 목록(규모·비교 사례 유지)에 v2 점수를 덮어쓰고 순위를 다시 매긴다."""
+    sc = score(co, mctx, today)
+    by = {o["key"]: o for o in options}
+    for name, (gate, total, parts) in sc.items():
+        o = by.get(KEY[name])
+        if not o:
+            continue
+        if KEY[name] == "hybrid":
+            o["title"] = "영구채 (신종자본증권)"
+        if KEY[name] == "rights" and co.get("market") not in ("K", "Y", "N"):
+            o["title"] = "제3자배정 증자 (RCPS·CPS)"
+        o["base"] = 0
+        o["factors"] = [{"pts": p, "text": f"[{cat}] {lab}: {val}"} for cat, p, lab, val in parts]
+        o["reasons"] = [f"{lab}: {val}" for _, p, lab, val in parts if p > 0][:5]
+        o["cautions"] = [f"{lab}: {val}" for _, p, lab, val in parts if p <= 0][:4]
+        if gate:
+            o["score"], o["fit"], o["gate"] = 0, "부적합", gate
+            o["cautions"] = [gate] + o["cautions"]
+        else:
+            o["score"] = max(0, min(100, round(total)))
+            o["fit"] = "높음" if o["score"] >= 65 else "보통" if o["score"] >= 45 else "낮음"
+    profitable = (co.get("metrics") or {}).get("interest_coverage") or 0
+    options.sort(key=lambda o: (-o["score"], TIE.index(o["key"]) if o["key"] in TIE and profitable >= 3 else 0))
+    return options
