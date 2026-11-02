@@ -40,7 +40,7 @@
    }
   ]
  },
- "checked": "2026-11-02T01:29+09:00",
+ "checked": "2026-11-02T23:03+09:00",
  "corp_code": "00815086",
  "fs_annual": {},
  "fs_interim": {},
@@ -64,6 +64,6 @@
  },
  "latest_name": "반기보고서 (2026.06)",
  "latest_rcept": "20260814001091",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": null
 }

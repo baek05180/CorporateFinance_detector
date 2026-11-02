@@ -27,13 +27,15 @@
    }
   ]
  },
- "checked": "2026-11-02T01:29+09:00",
+ "checked": "2026-11-02T22:50+09:00",
  "corp_code": "01502587",
  "fs_annual": {
   "assets": 25911960699,
   "capex": 71061340,
   "capital": 7002112900,
   "cash": 22000103,
+  "cur_assets": 390223175,
+  "cur_liab": 32926296811,
   "debt": 23159043540,
   "debt_hist": [
    12992264008,
@@ -104,6 +106,6 @@
  },
  "latest_name": "반기보고서 (2026.06)",
  "latest_rcept": "20260814003683",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": null
 }

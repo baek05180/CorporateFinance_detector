@@ -28,7 +28,7 @@
    }
   ]
  },
- "checked": "2026-11-02T01:29+09:00",
+ "checked": "2026-11-02T23:06+09:00",
  "corp_code": "01507810",
  "fs_annual": {},
  "holders": {
@@ -57,6 +57,6 @@
  },
  "latest_name": "사업보고서 (2025.12)",
  "latest_rcept": "20260324000083",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": null
 }

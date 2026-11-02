@@ -34,13 +34,18 @@
    }
   ]
  },
- "checked": "2026-11-02T01:29+09:00",
+ "checked": "2026-11-02T23:05+09:00",
  "corp_code": "00356802",
  "fs_annual": {
+  "amort": 355305265.0,
   "assets": 101137762292,
   "capex": 2483850592,
   "capital": 20544995000,
   "cash": 18688000180,
+  "cur_assets": 87129368433,
+  "cur_liab": 4211479677,
+  "dep": 2430046024.0,
+  "dep_src": "notes",
   "equity": 96248964468,
   "fin_cost": 1226675033,
   "fs": "CFS",
@@ -57,6 +62,8 @@
   "capex": 202753773,
   "capital": 20629895000,
   "cash": 16708826326,
+  "cur_assets": 97098951134,
+  "cur_liab": 9620688677,
   "debt": 414306963,
   "debt_hist": [
    null,
@@ -91,6 +98,6 @@
  },
  "latest_name": "반기보고서 (2026.06)",
  "latest_rcept": "20260813001022",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": null
 }

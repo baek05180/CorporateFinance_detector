@@ -33,11 +33,14 @@
    }
   ]
  },
- "checked": "2026-11-02T01:29+09:00",
+ "checked": "2026-11-02T22:53+09:00",
  "corp_code": "00681373",
  "fs_annual": {
+  "amort": 460847971.0,
   "assets": 75880001736,
   "cash": 18384590892,
+  "cur_assets": 31804526392,
+  "cur_liab": 16302209374,
   "debt": 2500000000,
   "debt_hist": [
    null,
@@ -47,6 +50,8 @@
   "debt_items": [
    "단기차입금"
   ],
+  "dep": 607770466.0,
+  "dep_src": "notes",
   "equity": 56507427435,
   "fin_cost": 657745471,
   "fs": "OFS",
@@ -63,6 +68,8 @@
   "assets": 88958707491,
   "capital": 6506577000,
   "cash": 22612676959,
+  "cur_assets": 37897451778,
+  "cur_liab": 20958191182,
   "debt": 10336840163,
   "debt_hist": [
    null,
@@ -122,6 +129,6 @@
  },
  "latest_name": "반기보고서 (2026.06)",
  "latest_rcept": "20260814000999",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": 162500
 }

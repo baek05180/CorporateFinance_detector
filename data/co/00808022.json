@@ -29,13 +29,15 @@
    }
   ]
  },
- "checked": "2026-11-02T01:29+09:00",
+ "checked": "2026-11-02T23:01+09:00",
  "corp_code": "00808022",
  "fs_annual": {
   "assets": 98024514218,
   "capex": 137391703,
   "capital": 15181957000,
   "cash": 25573850001,
+  "cur_assets": 45585908235,
+  "cur_liab": 79572430230,
   "debt": 9909505862,
   "debt_hist": [
    null,
@@ -45,6 +47,8 @@
   "debt_items": [
    "전환사채"
   ],
+  "dep": 988116000.0,
+  "dep_src": "notes",
   "equity": 17194549713,
   "fin_cost": 27586030226,
   "fs": "CFS",
@@ -60,6 +64,8 @@
   "capex": 7499764,
   "capital": 15302997000,
   "cash": 40308187935,
+  "cur_assets": 58067770017,
+  "cur_liab": 85127837938,
   "debt": 15583293086,
   "debt_hist": [
    null,
@@ -124,6 +130,6 @@
  },
  "latest_name": "반기보고서 (2026.06)",
  "latest_rcept": "20260814003105",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": null
 }
