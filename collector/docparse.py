@@ -552,7 +552,7 @@ _AUD_IDS = {"자산총계": "ifrs-full_Assets", "부채총계": "ifrs-full_Liabi
             "자본금": "ifrs-full_IssuedCapital", "현금및현금성자산": "ifrs-full_CashAndCashEquivalents",
             "영업활동현금흐름": "ifrs-full_CashFlowsFromUsedInOperatingActivities",
             "영업활동으로인한현금흐름": "ifrs-full_CashFlowsFromUsedInOperatingActivities"}
-_UNIT = re.compile(r"단위\s*[:：]?\s*(백만원|천원|원)")
+_AUNIT = re.compile(r"단위[:：]?(백만원|천원|원)")
 _LEAD = re.compile(r"^(?:[ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩIVX]+\s*[.\s]|\(?\d{1,2}\)\s*|\d{1,2}\.\s*|[가-하]\.\s*|[①-⑳]\s*)+")
 
 
@@ -561,32 +561,40 @@ def _acct(s):
     return _LEAD.sub("", s.replace(" ", "")).strip()
 
 
+def _sj_of(names):
+    j = "|".join(names)
+    if "자산총계" in j and ("부채총계" in j or "자본총계" in j):
+        return "BS"
+    if ("영업이익" in j or "영업손실" in j or "당기순이익" in j or "당기순손실" in j) and ("매출" in j or "영업수익" in j or "수익" in j) \
+            and "자산총계" not in j and "영업활동" not in j:
+        return "IS"
+    if "영업활동" in j and ("투자활동" in j or "재무활동" in j):
+        return "CF"
+    return None
+
+
 def audit_rows(xml):
-    """감사보고서 본문의 재무제표 표 → DART 재무 API와 같은 모양의 행 [{sj_div, account_id, account_nm, thstrm_amount, frmtrm_amount}]."""
-    rows, sj, mult, done = [], None, 1, set()
+    """감사보고서 본문의 재무제표 표 → DART 재무 API와 같은 모양의 행 [{sj_div, account_id, account_nm, thstrm_amount, frmtrm_amount}].
+    표 제목이 문단·표·제목 태그 어디에 있든 상관없도록, 표 안의 계정 구성(자산총계·영업이익·영업활동)으로 종류를 판단한다.
+    종류마다 처음 나온 표만 쓴다 (주석의 비슷한 표는 뒤에 나온다)."""
+    rows, mult, done = [], 1, set()
     for kind, b in blocks(xml):
-        txt = b if kind == "p" else " ".join(" ".join(r) for r in b[:3])
-        flat = txt.replace(" ", "")
-        if kind == "p" and "주석" in flat[:6] and len(done) >= 2:
-            break
-        if "자본변동표" in flat[:40]:
-            sj = None
-            continue
-        for k, keys in _SJ_KEYS:
-            if any(x in flat[:40] for x in keys) and k not in done:
-                sj = k
-                break
-        u = _UNIT.search(txt)
+        txt = b if kind == "p" else " ".join(" ".join(r) for r in b)
+        u = _AUNIT.search(txt.replace(" ", ""))
         if u:
             mult = {"원": 1, "천원": 1e3, "백만원": 1e6}[u.group(1)]
-        if kind != "table" or not sj:
+        if kind != "table":
             continue
+        names = [_acct(r[0]) for r in b if r and r[0]]
+        sj = _sj_of(names)
+        if not sj or sj in done or len(names) < 8:
+            continue
+        done.add(sj)
         skip = set()
         for r in b[:3]:
             for i, c in enumerate(r):
                 if c.replace(" ", "") in ("주석", "주"):
                     skip.add(i)
-        got = 0
         for r in b:
             if not r or not r[0]:
                 continue
@@ -595,20 +603,16 @@ def audit_rows(xml):
                 continue
             vals = []
             for i, c in enumerate(r[1:], 1):
-                if i in skip:
+                if i in skip or c.strip() in ("-", ""):
                     continue
                 v = _num(c)
-                if v is not None and c.strip() not in ("-",):
+                if v is not None:
                     vals.append(v)
-            if not vals:
-                continue
-            got += 1
-            rows.append({"sj_div": sj, "account_id": _AUD_IDS.get(nm, ""), "account_nm": nm,
-                         "thstrm_amount": str(vals[0] * mult), "frmtrm_amount": str(vals[1] * mult) if len(vals) > 1 else ""})
-        if got >= 5:
-            done.add(sj)
-            if sj == "CF":
-                break
+            if vals:
+                rows.append({"sj_div": sj, "account_id": _AUD_IDS.get(nm, ""), "account_nm": nm,
+                             "thstrm_amount": str(vals[0] * mult), "frmtrm_amount": str(vals[1] * mult) if len(vals) > 1 else ""})
+        if len(done) == 3:
+            break
     return rows
 
 
