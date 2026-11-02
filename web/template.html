@@ -954,7 +954,7 @@ async function viewCompany(key) {
     ${facts ? `<p class="facts">${esc(facts)}</p>` : ''}
     <p class="oneliner">${esc(AI?.one_liner || fallbackOne)}</p>
     ${(AI?.flow || fallbackFlow) ? `<h3 class="flow-title">돈 버는 구조 ${AI?.mix_line ? `<span class="muted">${esc(AI.mix_line)}</span>` : ''}</h3>${flowHtml(AI?.flow || fallbackFlow)}` : ''}
-    ${AI?.caption ? `<p class="caption">${esc(AI.caption)}</p>` : (!AI && !co.pending ? '<p class="caption muted">쉬운 말 요약과 돈 버는 구조 그림은 준비 중입니다 (사업보고서를 읽고 순서대로 작성).</p>' : '')}
+    ${AI?.caption ? `<p class="caption">${esc(AI.caption)}</p>` : (!AI && !co.pending && Object.keys(co.business||{}).length ? '<p class="caption muted">쉬운 말 요약과 돈 버는 구조 그림은 준비 중입니다 (사업보고서를 읽고 순서대로 작성).</p>' : '')}
     <h3 style="margin-top:16px">한눈에</h3>
     <div class="glance">${glance.map(([l, id, t]) => id === 'report'
       ? `<a href="#/report/${encodeURIComponent(co.key)}"><span class="gl">${l}</span><span class="gt">${esc(t)}</span><span class="gc">›</span></a>`

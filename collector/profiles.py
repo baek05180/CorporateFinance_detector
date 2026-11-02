@@ -279,16 +279,26 @@ def build_profile(dart, corp_code, old, today):
     annual = next((r for r in reports if "사업보고서" in r["report_nm"]), None)
     ly, lrc = classify_report(latest["report_nm"])
 
-    if annual and prof.get("annual_rcept") != annual["rcept_no"]:
+    if annual and (prof.get("annual_rcept") != annual["rcept_no"] or not prof.get("business")):
         ay, _ = classify_report(annual["report_nm"])
         main = ""
-        try:
-            docs = dart.document(annual["rcept_no"])
-            main = max(docs.values(), key=len) if docs else ""
-            prof["business"] = docparse.annual_business(main)
-            prof["biz_raw"] = docparse.business_raw(main)   # AI 요약 재료 (사이트에는 내보내지 않음)
-        except (DartError, ValueError) as e:
-            log.warning("사업보고서 원문 실패 %s: %s", corp_code, e)
+        # [첨부정정]·[기재정정] 본문에는 사업의 내용이 빠진 경우가 많다 → 같은 연도의 원본 보고서로 내려가며 찾는다
+        same = [r for r in reports if "사업보고서" in r["report_nm"] and classify_report(r["report_nm"])[0] == ay][:4]
+        for cand in same:
+            try:
+                docs = dart.document(cand["rcept_no"])
+                body = max(docs.values(), key=len) if docs else ""
+                biz = docparse.annual_business(body)
+            except (DartError, ValueError) as e:
+                log.warning("사업보고서 원문 실패 %s: %s", corp_code, e)
+                continue
+            main = main or body
+            if biz:
+                main = body
+                prof["business"] = biz
+                prof["biz_raw"] = docparse.business_raw(body)   # AI 요약 재료 (사이트에는 내보내지 않음)
+                break
+        else:
             prof["business"] = prof.get("business") or {}
         rows, fs = dart.full_statements(corp_code, ay, "11011")
         prof["fs_annual"] = {"period": f"{ay} 연간", "fs": fs, **fs_detail(rows)} if rows else {}
