@@ -20,13 +20,18 @@
    }
   ]
  },
- "checked": "2026-10-27T04:38+09:00",
+ "checked": "2026-11-03T04:37+09:00",
  "corp_code": "00249502",
  "fs_annual": {
+  "amort": 428198000.0,
   "assets": 16544466943,
   "capex": 962635945,
   "capital": 11919120000,
   "cash": 916293767,
+  "cur_assets": 11291858857,
+  "cur_liab": 2836983060,
+  "dep": 633442000.0,
+  "dep_src": "notes",
   "equity": 11503761486,
   "fin_cost": 238994494,
   "fs": "OFS",
@@ -43,6 +48,8 @@
   "capex": 0,
   "capital": 11919120000,
   "cash": 2289527356,
+  "cur_assets": 10904312720,
+  "cur_liab": 9672356826,
   "equity": 13396782503,
   "fin_cost": 154464207,
   "fs": "OFS",
@@ -68,6 +75,6 @@
  },
  "latest_name": "반기보고서 (2026.06)",
  "latest_rcept": "20260814000934",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": 17638
 }

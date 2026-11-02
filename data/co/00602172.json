@@ -4,12 +4,14 @@
  "biz_raw": {},
  "biz_retry": true,
  "business": {},
- "checked": "2026-11-02T09:19+09:00",
+ "checked": "2026-11-03T04:32+09:00",
  "corp_code": "00602172",
  "fs_annual": {
   "assets": 373640252264,
   "capital": 8812005000,
   "cash": 64191025749,
+  "cur_assets": 120660042705,
+  "cur_liab": 108141830694,
   "debt": 109744599805,
   "debt_hist": [
    68999844545,
@@ -43,6 +45,8 @@
   "capex": 6646540532,
   "capital": 9142678500,
   "cash": 54645379206,
+  "cur_assets": 115730791313,
+  "cur_liab": 105766778332,
   "debt": 98913996581,
   "debt_hist": [
    null,
@@ -114,6 +118,6 @@
  },
  "latest_name": "반기보고서 (2026.06)",
  "latest_rcept": "20260814003727",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": 0
 }

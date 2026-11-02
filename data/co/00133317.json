@@ -4,7 +4,7 @@
  "biz_raw": {},
  "biz_retry": true,
  "business": {},
- "checked": "2026-11-02T09:19+09:00",
+ "checked": "2026-11-03T04:35+09:00",
  "corp_code": "00133317",
  "fs_annual": {},
  "fs_interim": {},
@@ -22,6 +22,6 @@
  },
  "latest_name": "반기보고서 (2026.06)",
  "latest_rcept": "20260814000571",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": 1668
 }

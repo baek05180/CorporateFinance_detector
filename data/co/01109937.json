@@ -4,12 +4,14 @@
  "biz_raw": {},
  "biz_retry": true,
  "business": {},
- "checked": "2026-11-02T09:19+09:00",
+ "checked": "2026-11-03T04:35+09:00",
  "corp_code": "01109937",
  "fs_annual": {
   "assets": 92713948686,
   "capital": 23784524000,
   "cash": 7760524310,
+  "cur_assets": 18355963364,
+  "cur_liab": 13860003562,
   "debt": 22485781546,
   "debt_hist": [
    45517994223,
@@ -40,6 +42,8 @@
   "assets": 92754320480,
   "capital": 23832252000,
   "cash": 6028636221,
+  "cur_assets": 17896085440,
+  "cur_liab": 54042622334,
   "debt": 30325819500,
   "debt_hist": [
    null,
@@ -96,6 +100,6 @@
  },
  "latest_name": "반기보고서 (2026.06)",
  "latest_rcept": "20260831001010",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": 4248
 }
