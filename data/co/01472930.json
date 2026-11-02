@@ -24,13 +24,16 @@
    }
   ]
  },
- "checked": "2026-10-27T02:17+09:00",
+ "checked": "2026-11-03T00:39+09:00",
  "corp_code": "01472930",
  "fs_annual": {
+  "amort": 40502000.0,
   "assets": 53754266387,
   "capex": 91135113,
   "capital": 2348453000,
   "cash": 21954635674,
+  "cur_assets": 35106806888,
+  "cur_liab": 34554513094,
   "debt": 7348324024,
   "debt_hist": [
    1100000000,
@@ -42,6 +45,8 @@
    "전환사채",
    "차입금"
   ],
+  "dep": 1124468000.0,
+  "dep_src": "notes",
   "equity": 10529233934,
   "fin_cost": 4538863766,
   "fs": "CFS",
@@ -53,50 +58,79 @@
   "period": "2025 연간",
   "revenue": 23411536664
  },
+ "fs_interim": {
+  "assets": 50634860071,
+  "capex": 95182714,
+  "capital": 2353453000,
+  "cash": 19293738691,
+  "cur_assets": 32947955267,
+  "cur_liab": 27291870145,
+  "debt": 8267567492,
+  "debt_hist": [
+   null,
+   7348324024,
+   8267567492
+  ],
+  "debt_items": [
+   "신주인수권부사채",
+   "전환사채",
+   "차입금"
+  ],
+  "equity": 14938963153,
+  "fin_cost": 1633703768,
+  "fs": "CFS",
+  "interest_paid": 19562790,
+  "liab": 35695896918,
+  "ni": 3838953416,
+  "ocf": -1553318544,
+  "op": -1114970092,
+  "period": "2026 반기",
+  "revenue": 25599820546
+ },
  "holders": {
-  "as_of": "2025-12-31",
+  "as_of": "2026-06-30",
   "top": [
    {
     "name": "전배문",
-    "pct": 34.14,
+    "pct": 34.07,
     "relation": "본인",
     "shares": 1603740
    },
    {
     "name": "이상준",
-    "pct": 2.31,
-    "relation": "계열회사 임원",
+    "pct": 2.3,
+    "relation": "특수관계인",
     "shares": 108460
    },
    {
     "name": "유용희",
-    "pct": 2.3,
+    "pct": 2.29,
     "relation": "등기임원",
     "shares": 108000
    },
    {
     "name": "안명찬",
     "pct": 0.77,
-    "relation": "계열회사 임원",
+    "relation": "특수관계인",
     "shares": 36153
    },
    {
     "name": "김명석",
     "pct": 0.77,
-    "relation": "계열회사 임원",
+    "relation": "특수관계인",
     "shares": 36153
    },
    {
-    "name": "장등수",
-    "pct": 0.11,
+    "name": "김태완",
+    "pct": 0.13,
     "relation": "미등기임원",
-    "shares": 5021
+    "shares": 6086
    }
   ],
-  "total_pct": 40.67
+  "total_pct": 40.58
  },
- "latest_name": "[기재정정]사업보고서 (2025.12)",
- "latest_rcept": "20260928000253",
- "pv": 3,
+ "latest_name": "반기보고서 (2026.06)",
+ "latest_rcept": "20260814003882",
+ "pv": 4,
  "treasury_shares": null
 }

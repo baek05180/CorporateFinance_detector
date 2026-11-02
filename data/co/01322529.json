@@ -10,7 +10,7 @@
  "business": {
   "overview": "당사는 2014년 창업이후 타석스크린골프 분야 점유율 상위권 차지, 스크린골프 소프트웨어와 센서관련 하드웨어의 모든 원천 기술 보유하고 있습니다.\n실제 골프장과 가장 유사한 그래픽 구현과, 스크린 듀얼 센서를 장착한 기술력과 특허를 보유하고 있는 기술 중심의 회사입니다.\n주로 관공서, 협회, 아파트내 커뮤니티시설에 납품을 하고 있으며 지속적인 해외 수출과 가속화되는 성장속도를 기반으로 공신력있는 회사가 되어가고 있습니다.\n스크린골프가 가지고 있는 핵심 기술은 공을 타격했을 때 탄도 및 스피드 등 공의 구질을 파악하여 화면 상에 보여주는 역할을 하는 센서입니다. 뉴센서 개발 Wi-Fi/Hi-Fi/Bluetooth를 활용한 Golf Ball 및 Golf Club의 Image Data로 Golf Ball 궤적 (Velocity, Direction, Lunch Angle, Side Spin, Back Spin)을 추출하여 무선(Wi-Fi/Hi-Fi/Bluetooth)으로 전송하고, Gig E방식의 카메라에 자체개발 한 Embedded 보드를 장착하여 무선 (Wi-Fi/Hi-Fi/ Bluetooth) 으로 내보내는 기술과 카메라 센서부를 Embedded System 으로 하여 PC 없이 기존의 Simulation Game을 보다 간편하고 보편성 있게 운용할 수 있도록 해야하며 카메라센서의 간소화 및 가격 경쟁력으로 Simulation Game등 산업의 개발의욕 고취 및 시장성이 확대 될 수 있도록 노력하고 있습니다."
  },
- "checked": "2026-10-27T02:16+09:00",
+ "checked": "2026-11-03T00:35+09:00",
  "corp_code": "01322529",
  "fs_annual": {},
  "fs_interim": {},
@@ -58,6 +58,6 @@
  },
  "latest_name": "반기보고서 (2026.06)",
  "latest_rcept": "20260814004248",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": null
 }

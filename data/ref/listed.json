@@ -5631,6 +5631,17 @@
   "products": "토목,건축,전기,환경사업,준설공사,포장공사,주택,중기임대",
   "region": "서울특별시"
  },
+ "0147B0": {
+  "ceo": "신정규",
+  "fiscal_month": "12월",
+  "homepage": "http://www.lablup.com/ko",
+  "industry": "소프트웨어 개발 및 공급업",
+  "listed": "2026-11-03",
+  "market": "K",
+  "name": "래블업",
+  "products": "Backend.AI(AI 인프라 운영플랫폼)",
+  "region": "서울특별시"
+ },
  "014820": {
   "ceo": "조점근, 정용욱, 신동만, 윤성노",
   "fiscal_month": "12월",
@@ -24338,7 +24349,7 @@
   "industry": "의료용품 및 기타 의약 관련제품 제조업",
   "listed": "2020-10-19",
   "market": "K",
-  "name": "피플바이오",
+  "name": "타임X AI",
   "products": "올리고머화 베타-아밀로이드 검사제품(알츠하이머병 진단)",
   "region": "경기도"
  },

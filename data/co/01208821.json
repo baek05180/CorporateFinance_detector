@@ -21,11 +21,16 @@
    }
   ]
  },
- "checked": "2026-10-27T02:16+09:00",
+ "checked": "2026-11-03T00:35+09:00",
  "corp_code": "01208821",
  "fs_annual": {
+  "amort": 20838000.0,
   "capital": 6314785000,
   "cash": 10150683,
+  "cur_assets": 787405461,
+  "cur_liab": 11394593591,
+  "dep": 11142000.0,
+  "dep_src": "notes",
   "equity": -10419656853,
   "fin_cost": 952591726,
   "fs": "CFS",
@@ -75,6 +80,6 @@
  },
  "latest_name": "[기재정정]사업보고서 (2025.12)",
  "latest_rcept": "20260327000506",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": null
 }

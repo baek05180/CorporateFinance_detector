@@ -25,13 +25,15 @@
    }
   ]
  },
- "checked": "2026-10-27T02:18+09:00",
+ "checked": "2026-11-03T00:44+09:00",
  "corp_code": "01492217",
  "fs_annual": {
   "assets": 15721418187,
   "capex": 866717343,
   "capital": 8647197000,
   "cash": 2093846116,
+  "cur_assets": 9637232295,
+  "cur_liab": 5331851882,
   "debt": 5486757418,
   "debt_hist": [
    6505581920,
@@ -62,6 +64,8 @@
   "capex": 19080000,
   "capital": 8647197000,
   "cash": 3928453335,
+  "cur_assets": 6598205703,
+  "cur_liab": 5162148704,
   "debt": 5383851558,
   "debt_hist": [
    null,
@@ -107,6 +111,6 @@
  },
  "latest_name": "반기보고서 (2026.06)",
  "latest_rcept": "20260814003874",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": null
 }
