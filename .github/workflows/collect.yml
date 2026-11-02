@@ -58,6 +58,8 @@ jobs:
         env:
           DART_API_KEY: ${{ secrets.DART_API_KEY }}
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          KRX_ID: ${{ secrets.KRX_ID || secrets.ID }}
+          KRX_PW: ${{ secrets.KRX_PW || secrets.PW }}
         run: python -m collector.run --mode ${{ steps.mode.outputs.mode }} --days ${{ steps.mode.outputs.days }}
 
       - name: 변경분 커밋
@@ -65,6 +67,8 @@ jobs:
         env:
           DART_API_KEY: ${{ secrets.DART_API_KEY }}
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          KRX_ID: ${{ secrets.KRX_ID || secrets.ID }}
+          KRX_PW: ${{ secrets.KRX_PW || secrets.PW }}
         run: |
           # 인증키가 데이터 파일에 섞여 들어가면 커밋하지 않는다
           if grep -rqF "$DART_API_KEY" data; then echo "::error::DART 키가 data/에 있음" && exit 1; fi

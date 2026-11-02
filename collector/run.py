@@ -249,31 +249,36 @@ def main(argv=None):
         dump_json("diag_fsfix.json", diag)
         return 0
     if args.mode == "probe":
-        # 1) 주식대차 API 오퍼레이션 이름 찾기  2) KRX 공매도 통계 접속 시험
+        # 1) 주식대차 API 응답 모양  2) KRX 로그인 후 공매도 통계
         import requests as _rq
         from .refdata import _key
         base = "https://apis.data.go.kr/1160100/service/GetCMStckLnbInfoService/"
-        ops = ["getStckLnbTrdeDtls", "getStckLnbTrdeTrnd", "getInvpnClsfStckLnbTrdeDtls", "getStckLnbTrdeInfo",
-               "getStckLnbTrdeTrndInfo", "getStckLnbTrdeDtlsInfo", "getLnbTrdeDtls", "getStckLnbTrde", "getPtcpClsfStckLnbTrdeDtls",
-               "getInvpnStckLnbTrdeDtls", "getStckLnbTrdeHist", "getStckLnbTrdeCnts", "getStckLnbTrdeItms", "getStckItmsLnbTrdeDtls",
-               "getStckLnbTrdeStts", "getStckItmsLnbTrdeStts", "getStckLnbTrnsDtlsList", "getStckLnbDtlsInfo"]
-        out = {}
-        for op in ops:
+        out = {"krx_id_set": bool(os.environ.get("KRX_ID")), "krx_pw_set": bool(os.environ.get("KRX_PW"))}
+        for op in ("getStckLnbDetail", "getStckLnbProgress"):
             try:
-                r = _rq.get(base + op, timeout=30, params=dict(serviceKey=_key(), resultType="json", numOfRows=2, pageNo=1, basDt="20261030"))
-                out[op] = [r.status_code, redact(r.text[:400])]
+                r = _rq.get(base + op, timeout=40, params=dict(serviceKey=_key(), resultType="json", numOfRows=3, pageNo=1, basDt="20261030"))
+                out[op] = [r.status_code, redact(r.text[:1500])]
             except Exception as e:  # noqa: BLE001
                 out[op] = ["err", redact(e)[:200]]
-        out = {k: v for k, v in out.items() if "NO_OPENAPI_SERVICE" not in v[1]} or {"lnb": "모두 없음"}
-        h = {"User-Agent": "Mozilla/5.0", "Referer": "https://data.krx.co.kr/contents/MDC/MDI/mdiLoader/index.cmd"}
-        for bld, extra in (("dbms/MDC/STAT/srt/MDCSTAT30101", {"searchType": "1", "mktId": "STK", "trdDd": "20261030", "inqCond": "STMFRTSCIFDRFS"}),
-                           ("dbms/MDC/STAT/srt/MDCSTAT30501", {"searchType": "1", "mktId": "STK", "trdDd": "20261028"})):
-            try:
-                r = _rq.post("https://data.krx.co.kr/comm/bldAttendant/getJsonData.cmd", headers=h, timeout=30,
-                             data={"bld": bld, "locale": "ko_KR", "share": "1", "money": "1", "csvxls_isNo": "false", **extra})
-                out[bld] = [r.status_code, r.text[:600]]
-            except Exception as e:  # noqa: BLE001
-                out[bld] = ["err", str(e)[:200]]
+        s = _rq.Session()
+        s.headers.update({"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36",
+                          "Referer": "https://data.krx.co.kr/contents/MDC/MDI/mdiLoader/index.cmd"})
+        try:
+            s.get("https://data.krx.co.kr/contents/MDC/MDI/mdiLoader/index.cmd", timeout=30)
+            s.get("https://data.krx.co.kr/contents/MDC/COMS/client/MDCCOMS001.cmd", timeout=30)
+            lg = dict(mbrNm="", telNo="", di="", certType="", mbrId=os.environ.get("KRX_ID", ""), pw=os.environ.get("KRX_PW", ""))
+            r = s.post("https://data.krx.co.kr/contents/MDC/COMS/client/MDCCOMS001D1.cmd", data=lg, timeout=30)
+            out["login"] = [r.status_code, r.text[:300]]
+            if "CD011" in r.text:
+                r = s.post("https://data.krx.co.kr/contents/MDC/COMS/client/MDCCOMS001D1.cmd", data={**lg, "skipDup": "Y"}, timeout=30)
+                out["login2"] = [r.status_code, r.text[:300]]
+            for bld, extra in (("dbms/MDC/STAT/srt/MDCSTAT30101", {"searchType": "1", "mktId": "STK", "trdDd": "20261030", "inqCond": "STMFRTSCIFDRFS"}),
+                               ("dbms/MDC/STAT/srt/MDCSTAT30501", {"searchType": "1", "mktId": "STK", "trdDd": "20261028"})):
+                r = s.post("https://data.krx.co.kr/comm/bldAttendant/getJsonData.cmd", timeout=30,
+                           data={"bld": bld, "locale": "ko_KR", "share": "1", "money": "1", "csvxls_isNo": "false", **extra})
+                out[bld] = [r.status_code, r.text[:800]]
+        except Exception as e:  # noqa: BLE001
+            out["krx_err"] = str(e)[:300]
         dump_json("diag_probe.json", out)
         return 0
     if args.mode == "bonds":
