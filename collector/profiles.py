@@ -174,7 +174,7 @@ def fs_detail(rows):
                         debt_prev[i] += pv
                         has_prev[i] = True
         elif sj in ("IS", "CIS"):
-            if aid in ("ifrs-full_Revenue",) or nm in ("매출액", "수익(매출액)", "영업수익"):
+            if aid in ("ifrs-full_Revenue",) or nm in ("매출액", "매출", "수익(매출액)", "영업수익", "매출액(주석)"):
                 out.setdefault("revenue", v)
             elif aid == "dart_OperatingIncomeLoss" or nm.startswith("영업이익"):
                 out.setdefault("op", v)
@@ -206,7 +206,7 @@ def fs_detail(rows):
     return out
 
 
-PROFILE_VERSION = 3   # 추출 규칙이 바뀌면 올린다 → 기존 프로필을 다음 실행 때 다시 만든다
+PROFILE_VERSION = 4   # 추출 규칙이 바뀌면 올린다 → 기존 프로필을 다음 실행 때 다시 만든다
 
 
 def _pct(v):
@@ -259,6 +259,41 @@ def classify_report(nm):
     return (y, "11013" if mo <= 4 else "11014")
 
 
+AUDIT_RE = re.compile(r"감사보고서\s*\((\d{4})\.(\d{2})\)")
+
+
+def audit_profile(dart, corp_code, prof, today):
+    """사업보고서가 없는 회사(사모채만 낸 비상장사 등): 최근 감사보고서에서 재무·회사 개요를 채운다."""
+    try:
+        fl = dart.audit_reports(corp_code, (today - timedelta(days=550)).strftime("%Y%m%d"), today.strftime("%Y%m%d"))
+    except DartError as e:
+        log.warning("감사보고서 목록 실패 %s: %s", corp_code, e)
+        return
+    cands = [r for r in fl if AUDIT_RE.search(r["report_nm"]) and "연결" not in r["report_nm"]]
+    if not cands:
+        return
+    rep = max(cands, key=lambda r: (AUDIT_RE.search(r["report_nm"]).group(1), r["rcept_no"]))
+    if prof.get("annual_rcept") == rep["rcept_no"] and prof.get("fs_annual"):
+        return
+    try:
+        docs = dart.document(rep["rcept_no"])
+    except (DartError, ValueError) as e:
+        log.warning("감사보고서 원문 실패 %s: %s", corp_code, e)
+        return
+    main = max(docs.values(), key=len) if docs else ""
+    rows = docparse.audit_rows(main)
+    y = AUDIT_RE.search(rep["report_nm"]).group(1)
+    fd = fs_detail(rows) if rows else {}
+    if fd.get("assets") or fd.get("revenue"):
+        prof["fs_annual"] = {"period": f"{y} 연간", "fs": "OFS", "src": "감사보고서", **fd}
+    ov = docparse.audit_overview(main)
+    if ov:
+        prof["business"] = {"overview": ov}
+        prof["biz_raw"] = {"overview": ov}
+    prof["annual_rcept"], prof["annual_name"] = rep["rcept_no"], rep["report_nm"]
+    prof["audit_only"] = True
+
+
 def build_profile(dart, corp_code, old, today):
     """회사 1곳 프로필 갱신. 바뀐 정기보고서가 없으면 목록 조회 1회로 끝난다."""
     reports = dart.periodic_reports(corp_code, ymd(today - timedelta(days=550)), ymd(today))
@@ -273,17 +308,22 @@ def build_profile(dart, corp_code, old, today):
     prof["checked"] = now_kst().isoformat(timespec="minutes")
     if not reports:
         prof["no_periodic"] = True
+        audit_profile(dart, corp_code, prof, today)
         return prof
     prof.pop("no_periodic", None)
-    latest = reports[0]
-    annual = next((r for r in reports if "사업보고서" in r["report_nm"]), None)
+    _rank = {"11013": 1, "11012": 2, "11014": 3, "11011": 4}
+    latest = max(reports, key=lambda r: ((classify_report(r["report_nm"]) or (0, ""))[0],
+                                         _rank.get((classify_report(r["report_nm"]) or (0, ""))[1], 0), r["rcept_no"]))
+    # 최근 접수순이라 옛 연도의 정정 보고서가 앞에 올 수 있다 → 가장 최근 회계연도의 사업보고서를 고른다
+    annuals = [r for r in reports if "사업보고서" in r["report_nm"]]
+    annual = max(annuals, key=lambda r: ((classify_report(r["report_nm"]) or (0,))[0], r["rcept_no"]), default=None)
     ly, lrc = classify_report(latest["report_nm"])
 
     if annual and (prof.get("annual_rcept") != annual["rcept_no"] or not prof.get("business")):
         ay, _ = classify_report(annual["report_nm"])
         main = ""
         # [첨부정정]·[기재정정] 본문에는 사업의 내용이 빠진 경우가 많다 → 같은 연도의 원본 보고서로 내려가며 찾는다
-        same = [r for r in reports if "사업보고서" in r["report_nm"] and classify_report(r["report_nm"])[0] == ay][:4]
+        same = [r for r in reports if "사업보고서" in r["report_nm"] and (classify_report(r["report_nm"]) or (0,))[0] == ay][:4]
         for cand in same:
             try:
                 docs = dart.document(cand["rcept_no"])

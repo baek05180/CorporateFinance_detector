@@ -544,3 +544,92 @@ def dep_from_notes(xml):
         if dep or amort:
             return dep * mul, amort * mul
     return None
+
+
+# ── 감사보고서 (사업보고서를 내지 않는 비상장사) ──
+_SJ_KEYS = [("BS", ("재무상태표", "대차대조표")), ("IS", ("포괄손익계산서", "손익계산서")), ("CF", ("현금흐름표",))]
+_AUD_IDS = {"자산총계": "ifrs-full_Assets", "부채총계": "ifrs-full_Liabilities", "자본총계": "ifrs-full_Equity",
+            "자본금": "ifrs-full_IssuedCapital", "현금및현금성자산": "ifrs-full_CashAndCashEquivalents",
+            "영업활동현금흐름": "ifrs-full_CashFlowsFromUsedInOperatingActivities",
+            "영업활동으로인한현금흐름": "ifrs-full_CashFlowsFromUsedInOperatingActivities"}
+_UNIT = re.compile(r"단위\s*[:：]?\s*(백만원|천원|원)")
+_LEAD = re.compile(r"^(?:[ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩIVX]+\s*[.\s]|\(?\d{1,2}\)\s*|\d{1,2}\.\s*|[가-하]\.\s*|[①-⑳]\s*)+")
+
+
+def _acct(s):
+    s = re.sub(r"\(주석[^)]*\)|\(주\s*[\d,\s]+\)|주석\s*[\d,\s]+$", "", s or "")
+    return _LEAD.sub("", s.replace(" ", "")).strip()
+
+
+def audit_rows(xml):
+    """감사보고서 본문의 재무제표 표 → DART 재무 API와 같은 모양의 행 [{sj_div, account_id, account_nm, thstrm_amount, frmtrm_amount}]."""
+    rows, sj, mult, done = [], None, 1, set()
+    for kind, b in blocks(xml):
+        txt = b if kind == "p" else " ".join(" ".join(r) for r in b[:3])
+        flat = txt.replace(" ", "")
+        if kind == "p" and "주석" in flat[:6] and len(done) >= 2:
+            break
+        if "자본변동표" in flat[:40]:
+            sj = None
+            continue
+        for k, keys in _SJ_KEYS:
+            if any(x in flat[:40] for x in keys) and k not in done:
+                sj = k
+                break
+        u = _UNIT.search(txt)
+        if u:
+            mult = {"원": 1, "천원": 1e3, "백만원": 1e6}[u.group(1)]
+        if kind != "table" or not sj:
+            continue
+        skip = set()
+        for r in b[:3]:
+            for i, c in enumerate(r):
+                if c.replace(" ", "") in ("주석", "주"):
+                    skip.add(i)
+        got = 0
+        for r in b:
+            if not r or not r[0]:
+                continue
+            nm = _acct(r[0])
+            if not nm or nm in ("과목", "구분", "계정과목"):
+                continue
+            vals = []
+            for i, c in enumerate(r[1:], 1):
+                if i in skip:
+                    continue
+                v = _num(c)
+                if v is not None and c.strip() not in ("-",):
+                    vals.append(v)
+            if not vals:
+                continue
+            got += 1
+            rows.append({"sj_div": sj, "account_id": _AUD_IDS.get(nm, ""), "account_nm": nm,
+                         "thstrm_amount": str(vals[0] * mult), "frmtrm_amount": str(vals[1] * mult) if len(vals) > 1 else ""})
+        if got >= 5:
+            done.add(sj)
+            if sj == "CF":
+                break
+    return rows
+
+
+def audit_overview(xml, limit=700):
+    """주석 '일반사항·회사의 개요' 첫 문단들 → 사업 설명."""
+    out, on = [], False
+    for kind, b in blocks(xml):
+        if kind != "p":
+            continue
+        flat = b.replace(" ", "")
+        if not on and re.search(r"(일반사항|회사의개요|당사의개요)", flat[:20]):
+            on = True
+            rest = re.sub(r"^.*?(일반사항|회사의\s*개요|당사의\s*개요)\s*[:：]?", "", b, count=1).strip()
+            if len(rest) > 20:
+                out.append(rest)
+            continue
+        if on:
+            if re.match(r"^\(?\d{1,2}[).]|^2\.", b) and out and sum(map(len, out)) > 150:
+                break
+            out.append(b)
+            if sum(map(len, out)) > limit:
+                break
+    t = " ".join(out).strip()
+    return t[:limit] if t else ""

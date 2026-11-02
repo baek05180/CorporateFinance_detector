@@ -246,37 +246,32 @@ def main(argv=None):
         dump_json("diag_fsfix.json", diag)
         return 0
     if args.mode == "probe":
-        # 공모채 증권신고서 원문 파일 구성·신용평가서 트리거 문구 확인용 (시험)
-        import re as _re
-        from .docparse import text_of
-        recs = sorted([r for r in store.records.values() if r.get("type") == "BOND" and r.get("offering") == "공모"
-                       and r.get("rcept_no") and r.get("original_rcept")], key=lambda r: r["rcept_no"], reverse=True)
-        picked, seen_c = [], set()
-        for r in recs:
-            if r["corp_code"] not in seen_c:
-                seen_c.add(r["corp_code"]); picked.append(r)
-            if len(picked) >= 4:
+        # 감사보고서 파싱 시험: 사업보고서 없는 회사 몇 곳
+        import glob as _g
+        from . import docparse as _dp
+        from .profiles import AUDIT_RE, audit_profile
+        corps = ["00157292", "00220084"]
+        for f in sorted(_g.glob(os.path.join(config.DATA_DIR, "co", "*.json"))):
+            d = load_json(os.path.relpath(f, config.DATA_DIR), {})
+            if d.get("no_periodic") and d.get("corp_code") not in corps:
+                corps.append(d["corp_code"])
+            if len(corps) >= 6:
                 break
         out = []
-        kw = ["상향 검토", "하향 검토", "상향검토", "하향검토", "트리거", "Trigger", "등급전망", "등급 전망", "Outlook"]
-        for r in picked:
-            for rno in {r["rcept_no"], r["original_rcept"]}:
-                try:
-                    docs = dart.document(rno)
-                except Exception as e:  # noqa: BLE001
-                    out.append({"rcept": rno, "error": redact(e)[:200]}); continue
-                files = []
-                for n, x in docs.items():
-                    t = text_of(x)
-                    hits = {}
-                    for k in kw:
-                        i = t.find(k)
-                        if i >= 0:
-                            hits[k] = t[max(0, i - 150): i + 350]
-                    title = _re.search(r"<TITLE[^>]*>(.*?)</TITLE>", x, _re.S)
-                    files.append({"file": n, "len": len(t), "title": text_of(title.group(1))[:60] if title else "",
-                                  "has_평가": t.count("신용평가"), "hits": hits})
-                out.append({"rcept": rno, "corp": r["corp_name"], "files": files})
+        for cc in corps:
+            prof = {}
+            try:
+                audit_profile(dart, cc, prof, today)
+                item = {"corp": cc, "name": prof.get("annual_name"), "fs": prof.get("fs_annual"),
+                        "biz": (prof.get("business") or {}).get("overview", "")[:300]}
+                if prof.get("annual_rcept"):
+                    docs = dart.document(prof["annual_rcept"])
+                    main = max(docs.values(), key=len) if docs else ""
+                    item["rows"] = [[r["sj_div"], r["account_nm"], r["thstrm_amount"]] for r in _dp.audit_rows(main)][:60]
+                    item["files"] = {k: len(v) for k, v in docs.items()}
+                out.append(item)
+            except Exception as e:  # noqa: BLE001
+                out.append({"corp": cc, "error": redact(e)[:300]})
         dump_json("diag_probe.json", out)
         return 0
     if args.mode == "bonds":

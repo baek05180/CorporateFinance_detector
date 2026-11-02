@@ -118,6 +118,10 @@ class DartClient:
                          pblntf_ty="A", page_count=100, last_reprt_at="Y")
         return data.get("list", [])
 
+    def audit_reports(self, corp_code, bgn_de, end_de):
+        data = self._get("list", corp_code=corp_code, bgn_de=bgn_de, end_de=end_de, pblntf_ty="F", page_count=100)
+        return data.get("list", [])
+
     # ── 원문 파일 (zip 안의 XML들) ──
     def _download(self, endpoint, **params):
         params["crtfc_key"] = self.api_key
