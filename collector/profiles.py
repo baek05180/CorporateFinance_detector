@@ -300,6 +300,7 @@ def build_profile(dart, corp_code, old, today):
                 break
         else:
             prof["business"] = prof.get("business") or {}
+            prof["biz_retry"] = True     # 원본까지 봐도 없으면 다시 시도하지 않는다
         rows, fs = dart.full_statements(corp_code, ay, "11011")
         prof["fs_annual"] = {"period": f"{ay} 연간", "fs": fs, **fs_detail(rows)} if rows else {}
         fill_dep_from_notes(prof["fs_annual"], main)
@@ -459,7 +460,8 @@ def run(dart, store, today=None):
         todo = []
         for corp in targets:
             old = load_json(f"co/{corp}.json", None)
-            if old and old.get("pv") == PROFILE_VERSION and not _stale(old.get("checked"), config.PROFILE_RECHECK_DAYS):
+            if old and old.get("pv") == PROFILE_VERSION and not _stale(old.get("checked"), config.PROFILE_RECHECK_DAYS) \
+                    and (old.get("business") or not old.get("annual_name") or old.get("biz_retry")):
                 continue
             todo.append((corp, old))
         diag["profiles_fresh"] = len(targets) - len(todo)
