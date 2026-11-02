@@ -1,14 +1,14 @@
 {
- "lnb_fetched": 60,
+ "lnb_fetched": 671,
  "lnb_sample": {
-  "balnStckAmt": "376480580",
-  "balnStckCnt": "164402",
-  "basDt": "20261030",
-  "cclStckCnt": "100",
+  "balnStckAmt": "1311467400",
+  "balnStckCnt": "423054",
+  "basDt": "20260731",
+  "cclStckCnt": "4695",
   "mrktClsfNm": "코스닥",
-  "rdptStckCnt": "100",
-  "stckItmsCd": "214610",
-  "stckItmsNm": "롤링스톤"
+  "rdptStckCnt": "0",
+  "stckItmsCd": "461030",
+  "stckItmsNm": "아이엠비디엑스"
  },
- "short_fetched": 60
+ "short_fetched": 671
 }
