@@ -7,8 +7,9 @@
   "with_band": 270,
   "with_rate": 0
  },
- "crno_matched": 370,
- "dart_calls": 899,
+ "budget_exhausted": true,
+ "crno_matched": 404,
+ "dart_calls": 4000,
  "listed": 2762,
  "mezz_docs": {
   "sec": 0,
@@ -21,10 +22,10 @@
  "price_hist_days": 119,
  "price_hist_fetched": 1,
  "prices": 2872,
- "profiles_done": 377,
- "profiles_fresh": 1505,
- "profiles_left": 0,
- "profiles_sec": 171,
- "run": "2026-11-02T09:25+09:00",
- "targets": 1882
+ "profiles_done": 656,
+ "profiles_fresh": 0,
+ "profiles_left": 1634,
+ "profiles_sec": 2858,
+ "run": "2026-11-02T10:09+09:00",
+ "targets": 2290
 }

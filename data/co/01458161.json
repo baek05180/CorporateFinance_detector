@@ -21,13 +21,16 @@
    }
   ]
  },
- "checked": "2026-11-02T01:28+09:00",
+ "checked": "2026-11-02T10:24+09:00",
  "corp_code": "01458161",
  "fs_annual": {
+  "amort": 112593000.0,
   "assets": 94806334681,
   "capex": 1985883814,
   "capital": 7725457500,
   "cash": 12500409385,
+  "dep": 1059958000.0,
+  "dep_src": "notes",
   "equity": 55285147159,
   "fin_cost": 988158408,
   "fs": "OFS",
@@ -75,6 +78,6 @@
  },
  "latest_name": "반기보고서 (2026.06)",
  "latest_rcept": "20260811000123",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": null
 }

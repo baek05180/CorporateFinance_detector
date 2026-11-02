@@ -4,7 +4,7 @@
  "biz_raw": {},
  "biz_retry": true,
  "business": {},
- "checked": "2026-11-02T09:18+09:00",
+ "checked": "2026-11-02T10:21+09:00",
  "corp_code": "00121686",
  "fs_annual": {
   "amort": 2501311065,
@@ -96,6 +96,6 @@
  },
  "latest_name": "반기보고서 (2026.06)",
  "latest_rcept": "20260813000602",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": 772191
 }

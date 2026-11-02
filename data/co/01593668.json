@@ -3,7 +3,7 @@
  "annual_rcept": "20260318000217",
  "biz_retry": true,
  "business": {},
- "checked": "2026-11-02T09:18+09:00",
+ "checked": "2026-11-02T10:43+09:00",
  "corp_code": "01593668",
  "fs_annual": {
   "amort": 225389329,
@@ -53,7 +53,7 @@
    "유동신주인수권부사채",
    "장기차입금"
   ],
-  "dep": 696236430,
+  "dep": 793011430,
   "equity": 13017065227,
   "fin_cost": 1155382825,
   "fs": "CFS",
@@ -109,6 +109,6 @@
  },
  "latest_name": "반기보고서 (2026.06)",
  "latest_rcept": "20260814002382",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": null
 }

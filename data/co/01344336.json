@@ -28,9 +28,10 @@
    }
   ]
  },
- "checked": "2026-11-02T01:29+09:00",
+ "checked": "2026-11-02T10:37+09:00",
  "corp_code": "01344336",
  "fs_annual": {
+  "amort": 100782000.0,
   "assets": 46534749599,
   "capex": 11005796,
   "capital": 12129237500,
@@ -44,6 +45,8 @@
   "debt_items": [
    "유동성전환사채"
   ],
+  "dep": 1922641000.0,
+  "dep_src": "notes",
   "equity": 31779056306,
   "fin_cost": 8674116781,
   "fs": "CFS",
@@ -125,6 +128,6 @@
  },
  "latest_name": "반기보고서 (2026.06)",
  "latest_rcept": "20260814004304",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": null
 }

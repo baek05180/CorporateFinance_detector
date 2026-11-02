@@ -37,7 +37,7 @@
    }
   ]
  },
- "checked": "2026-11-02T01:29+09:00",
+ "checked": "2026-11-02T10:34+09:00",
  "corp_code": "00671783",
  "fs_annual": {
   "assets": 4040206733,
@@ -136,6 +136,6 @@
  },
  "latest_name": "반기보고서 (2026.06)",
  "latest_rcept": "20260814000701",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": null
 }

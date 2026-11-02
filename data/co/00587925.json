@@ -30,9 +30,10 @@
    }
   ]
  },
- "checked": "2026-11-02T01:28+09:00",
+ "checked": "2026-11-02T10:15+09:00",
  "corp_code": "00587925",
  "fs_annual": {
+  "amort": 33698000.0,
   "assets": 42606784656,
   "capex": 107223043,
   "capital": 19949204000,
@@ -46,6 +47,8 @@
   "debt_items": [
    "차입금및사채"
   ],
+  "dep": 6205000.0,
+  "dep_src": "notes",
   "equity": 30565041777,
   "fin_cost": 7545245371,
   "fs": "CFS",
@@ -102,6 +105,6 @@
  },
  "latest_name": "반기보고서 (2026.06)",
  "latest_rcept": "20260814002812",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": null
 }

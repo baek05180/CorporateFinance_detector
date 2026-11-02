@@ -3,7 +3,7 @@
  "annual_rcept": "20260331003563",
  "biz_retry": true,
  "business": {},
- "checked": "2026-11-02T09:18+09:00",
+ "checked": "2026-11-02T10:32+09:00",
  "corp_code": "01075126",
  "fs_annual": {
   "assets": 69196205413,
@@ -97,6 +97,6 @@
  },
  "latest_name": "반기보고서 (2026.06)",
  "latest_rcept": "20260814003580",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": 3868
 }

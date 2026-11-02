@@ -27,7 +27,7 @@
    }
   ]
  },
- "checked": "2026-11-02T01:28+09:00",
+ "checked": "2026-11-02T10:21+09:00",
  "corp_code": "01363818",
  "fs_annual": {
   "assets": 2871825466968,
@@ -42,6 +42,8 @@
   "debt_items": [
    "차입금및사채"
   ],
+  "dep": 20085851000.0,
+  "dep_src": "notes",
   "equity": 1127725590182,
   "fin_cost": 32410960723,
   "fs": "OFS",
@@ -79,6 +81,6 @@
  },
  "latest_name": "사업보고서 (2026.06)",
  "latest_rcept": "20260921000222",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": null
 }

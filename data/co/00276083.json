@@ -4,7 +4,7 @@
  "biz_raw": {},
  "biz_retry": true,
  "business": {},
- "checked": "2026-11-02T09:18+09:00",
+ "checked": "2026-11-02T10:39+09:00",
  "corp_code": "00276083",
  "fs_annual": {
   "amort": 12337,
@@ -34,7 +34,6 @@
   "revenue": 264760884474
  },
  "fs_interim": {
-  "amort": 0,
   "assets": 234975176218,
   "capex": 41655818,
   "capital": 41660943500,
@@ -82,6 +81,6 @@
  },
  "latest_name": "반기보고서 (2026.06)",
  "latest_rcept": "20260814001415",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": 120000
 }

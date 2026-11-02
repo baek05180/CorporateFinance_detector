@@ -17,7 +17,7 @@
    }
   ]
  },
- "checked": "2026-11-02T01:28+09:00",
+ "checked": "2026-11-02T10:31+09:00",
  "corp_code": "01141599",
  "fs_annual": {
   "assets": 29781550830,
@@ -33,6 +33,8 @@
   "debt_items": [
    "전환사채(유동)"
   ],
+  "dep": 45149000.0,
+  "dep_src": "notes",
   "equity": 11859049755,
   "fin_cost": 2980751425,
   "fs": "OFS",
@@ -89,6 +91,6 @@
  },
  "latest_name": "반기보고서 (2026.06)",
  "latest_rcept": "20260814001240",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": null
 }

@@ -32,7 +32,7 @@
    }
   ]
  },
- "checked": "2026-11-02T01:29+09:00",
+ "checked": "2026-11-02T10:51+09:00",
  "corp_code": "00910202",
  "fs_annual": {},
  "holders": {
@@ -61,6 +61,6 @@
  },
  "latest_name": "사업보고서 (2026.06)",
  "latest_rcept": "20260922000230",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": null
 }

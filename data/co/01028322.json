@@ -50,7 +50,7 @@
    }
   ]
  },
- "checked": "2026-11-02T01:28+09:00",
+ "checked": "2026-11-02T10:22+09:00",
  "corp_code": "01028322",
  "fs_annual": {
   "amort": 49507897,
@@ -113,6 +113,6 @@
  },
  "latest_name": "반기보고서 (2026.06)",
  "latest_rcept": "20260814002844",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": null
 }

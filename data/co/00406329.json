@@ -37,7 +37,7 @@
    }
   ]
  },
- "checked": "2026-11-02T01:28+09:00",
+ "checked": "2026-11-02T10:19+09:00",
  "corp_code": "00406329",
  "fs_annual": {
   "assets": 156110248230,
@@ -53,6 +53,8 @@
   "debt_items": [
    "유동차입금(사채포함)"
   ],
+  "dep": 764092000.0,
+  "dep_src": "notes",
   "equity": 105936884258,
   "fin_cost": 236313452,
   "fs": "CFS",
@@ -103,6 +105,6 @@
  },
  "latest_name": "반기보고서 (2026.06)",
  "latest_rcept": "20260813000742",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": null
 }

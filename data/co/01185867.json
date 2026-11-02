@@ -25,9 +25,10 @@
    }
   ]
  },
- "checked": "2026-11-02T01:29+09:00",
+ "checked": "2026-11-02T10:52+09:00",
  "corp_code": "01185867",
  "fs_annual": {
+  "amort": 114264000.0,
   "assets": 674417838,
   "capital": 5266602500,
   "cash": 212457864,
@@ -40,6 +41,8 @@
   "debt_items": [
    "단기차입금"
   ],
+  "dep": 121879000.0,
+  "dep_src": "notes",
   "equity": -3540375582,
   "fin_cost": 165502224,
   "fs": "OFS",
@@ -70,6 +73,6 @@
  },
  "latest_name": "사업보고서 (2025.12)",
  "latest_rcept": "20260323000687",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": null
 }
