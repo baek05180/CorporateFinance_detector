@@ -249,32 +249,21 @@ def main(argv=None):
         dump_json("diag_fsfix.json", diag)
         return 0
     if args.mode == "probe":
-        # 감사보고서 파싱 시험: 사업보고서 없는 회사 몇 곳
-        import glob as _g
-        from . import docparse as _dp
-        from .profiles import AUDIT_RE, audit_profile
-        corps = ["00157292", "00220084"]
-        for f in sorted(_g.glob(os.path.join(config.DATA_DIR, "co", "*.json"))):
-            d = load_json(os.path.relpath(f, config.DATA_DIR), {})
-            if d.get("no_periodic") and d.get("corp_code") not in corps:
-                corps.append(d["corp_code"])
-            if len(corps) >= 6:
-                break
-        out = []
-        for cc in corps:
-            prof = {}
+        # 주식대차거래정보 API 오퍼레이션 이름 찾기
+        import requests as _rq
+        from .refdata import _key
+        base = "https://apis.data.go.kr/1160100/service/GetCMStckLnbInfoService/"
+        ops = ["getStckLnbTrnsDtls", "getStckLnbTrnsTrnd", "getInvpnClsfStckLnbTrnsDtls", "getStckLnbInfo", "getStckLnbDtl",
+               "getStckLnbTrnd", "getStckLnbTrnsInfo", "getStckLnbTrnsDtl", "getStckLnbItmsInfo", "getItmsStckLnbTrnsDtls",
+               "getStockLendingInfo", "getStckLnbTrnsDtlsInfo", "getStckLnbList", "getCMStckLnbInfo", "getStckLnbTrnsTrndInfo",
+               "getStckLnbDtls", "getStckLnbTrnsCtnt", "getStckLnbTrnsCnts"]
+        out = {}
+        for op in ops:
             try:
-                audit_profile(dart, cc, prof, today)
-                item = {"corp": cc, "name": prof.get("annual_name"), "fs": prof.get("fs_annual"),
-                        "biz": (prof.get("business") or {}).get("overview", "")[:300]}
-                if prof.get("annual_rcept"):
-                    docs = dart.document(prof["annual_rcept"])
-                    main = max(docs.values(), key=len) if docs else ""
-                    item["rows"] = [[r["sj_div"], r["account_nm"], r["thstrm_amount"]] for r in _dp.audit_rows(main)][:60]
-                    item["files"] = {k: len(v) for k, v in docs.items()}
-                out.append(item)
+                r = _rq.get(base + op, timeout=30, params=dict(serviceKey=_key(), resultType="json", numOfRows=2, pageNo=1, basDt="20261030"))
+                out[op] = [r.status_code, redact(r.text[:400])]
             except Exception as e:  # noqa: BLE001
-                out.append({"corp": cc, "error": redact(e)[:300]})
+                out[op] = ["err", redact(e)[:200]]
         dump_json("diag_probe.json", out)
         return 0
     if args.mode == "bonds":
