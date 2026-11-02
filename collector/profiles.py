@@ -353,6 +353,56 @@ def resolve_watchlist(items, listed, corpcodes):
     return out
 
 
+def norm_corp(n):
+    n = re.sub(r"\(주\)|㈜|주식회사|\(株\)|\s", "", n or "")
+    return n.upper()
+
+
+def match_crno(dart, records, info, today, cap=500):
+    """예탁원·금융위 자료처럼 법인등록번호만 있는 발행사(비상장 포함)를 이름으로 DART 고유번호에 잇는다.
+    후보의 기업개황 법인등록번호가 같을 때만 연결 (오연결 방지). 확인한 이름은 기억해 다시 조회하지 않는다."""
+    names = load_json("ref/corpnames.json", {})
+    if not names:
+        return 0
+    jur = {v.get("jurir_no") for v in info.values() if v.get("jurir_no")}
+    tried = load_json("ref/crno_tried.json", {})
+    cutoff = (today - timedelta(days=config.PROFILE_TARGET_DAYS)).isoformat()
+    want = {}
+    for r in records.values():
+        cr = r.get("crno")
+        d = r.get("board_dt") or r.get("sub_dt") or r.get("issue_dt") or r.get("rcept_dt") or ""
+        if cr and not r.get("corp_code") and cr not in jur and cr not in tried and d >= cutoff:
+            nm = r.get("issuer") or r.get("corp_name")
+            if nm and (cr not in want or d > want[cr][1]):
+                want[cr] = (nm, d)
+    n = calls = 0
+    for cr, (nm, _) in sorted(want.items(), key=lambda x: x[1][1], reverse=True):
+        if calls >= cap:
+            break
+        cands = names.get(norm_corp(nm), [])[:3]
+        hit = None
+        for cc in cands:
+            if cc in info:
+                if info[cc].get("jurir_no") == cr:
+                    hit = cc
+                continue
+            calls += 1
+            c = dart.company(cc)
+            info[cc] = {k: c.get(k) for k in ("corp_name", "stock_name", "stock_code", "ceo_nm", "corp_cls",
+                                               "jurir_no", "adres", "hm_url", "induty_code", "est_dt", "acc_mt")}
+            info[cc]["checked"] = now_kst().isoformat(timespec="minutes")
+            if c.get("jurir_no") == cr:
+                hit = cc
+                break
+        if hit:
+            n += 1
+        else:
+            tried[cr] = today.isoformat()
+    dump_json("ref/crno_tried.json", tried, indent=None)
+    dump_json("ref/company_info.json", info)
+    return n
+
+
 def pick_targets(records, info, watch, today):
     """[(우선순위키, corp_code)] — 최근 조달이 있는 회사부터"""
     cutoff = (today - timedelta(days=config.PROFILE_TARGET_DAYS)).isoformat()
@@ -417,11 +467,15 @@ def run(dart, store, today=None):
 
     # 2) 종목코드 → 고유번호
     cc = load_json("ref/corpcodes.json", {})
-    if not cc.get("map") or _stale(cc.get("updated"), 7):
+    if not cc.get("map") or _stale(cc.get("updated"), 7) or not load_json("ref/corpnames.json", {}):
         try:
             rows = dart.corp_codes()
+            names = {}
+            for r in rows:
+                names.setdefault(norm_corp(r["corp_name"]), []).append(r["corp_code"])
             cc = {"updated": now_kst().isoformat(timespec="minutes"),
                   "map": {r["stock_code"]: r["corp_code"] for r in rows if r["stock_code"]}}
+            dump_json("ref/corpnames.json", names, indent=None)   # 비상장사 포함 이름 → 고유번호
             dump_json("ref/corpcodes.json", cc)
         except (DartError, DartBudgetExceeded) as e:
             diag["corpcode_error"] = redact(e)[:200]
@@ -455,6 +509,7 @@ def run(dart, store, today=None):
         # 6) 조달 대상 회사 상세 (병렬)
         t0 = time.time()
         watch = resolve_watchlist(read_watchlist(), listed, corpcodes)
+        diag["crno_matched"] = match_crno(dart, store.records, info, today)
         targets = pick_targets(store.records, info, watch, today)
         diag["targets"] = len(targets)
         todo = []
