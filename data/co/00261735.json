@@ -43,13 +43,16 @@
    }
   ]
  },
- "checked": "2026-10-27T04:27+09:00",
+ "checked": "2026-11-03T02:54+09:00",
  "corp_code": "00261735",
  "fs_annual": {
+  "amort": 7140000.0,
   "assets": 8658072245,
   "capex": 9530000,
   "capital": 159805500,
   "cash": 52949121,
+  "cur_assets": 1461822022,
+  "cur_liab": 9377714246,
   "debt": 30343392,
   "debt_hist": [
    561261304,
@@ -60,6 +63,8 @@
    "비유동리스부채",
    "유동리스부채"
   ],
+  "dep": 501783000.0,
+  "dep_src": "notes",
   "equity": -1716045349,
   "fin_cost": 517782289,
   "fs": "OFS",
@@ -71,38 +76,48 @@
   "period": "2025 연간",
   "revenue": 7698587953
  },
+ "fs_interim": {
+  "assets": 8916207641,
+  "capex": 14160000,
+  "capital": 859805500,
+  "cash": 5945230,
+  "cur_assets": 1805182507,
+  "cur_liab": 9296902947,
+  "debt": 28647492,
+  "debt_hist": [
+   null,
+   30343392,
+   28647492
+  ],
+  "debt_items": [
+   "비유동리스부채",
+   "유동리스부채"
+  ],
+  "equity": -1274643061,
+  "fin_cost": 2932603,
+  "fs": "OFS",
+  "interest_paid": 664110,
+  "liab": 10190850702,
+  "ni": -258597712,
+  "ocf": -100812101,
+  "op": -275067762,
+  "period": "2026 1Q",
+  "revenue": 1860784358
+ },
  "holders": {
-  "as_of": "2025-12-31",
+  "as_of": "2026-03-31",
   "top": [
    {
-    "name": "(주)디와이디",
-    "pct": 31.13,
-    "relation": "타인",
-    "shares": 99509
-   },
-   {
-    "name": "고연우",
-    "pct": 18.5,
-    "relation": "타인",
-    "shares": 59123
-   },
-   {
-    "name": "(주)옵트론텍",
-    "pct": 13.64,
-    "relation": "타인",
-    "shares": 43580
-   },
-   {
-    "name": "장영기",
-    "pct": 1.83,
-    "relation": "임원",
-    "shares": 5848
+    "name": "이용남",
+    "pct": 69.78,
+    "relation": "대표이사",
+    "shares": 1200000
    }
   ],
-  "total_pct": 65.1
+  "total_pct": 69.78
  },
- "latest_name": "[기재정정]사업보고서 (2025.12)",
- "latest_rcept": "20260731000140",
- "pv": 3,
+ "latest_name": "분기보고서 (2026.03)",
+ "latest_rcept": "20260515001228",
+ "pv": 4,
  "treasury_shares": 2502
 }

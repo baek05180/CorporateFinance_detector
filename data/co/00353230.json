@@ -17,12 +17,14 @@
    }
   ]
  },
- "checked": "2026-10-27T04:29+09:00",
+ "checked": "2026-11-03T02:55+09:00",
  "corp_code": "00353230",
  "fs_annual": {
   "assets": 1478495400,
   "capital": 886798000,
   "cash": 744904316,
+  "cur_assets": 1066764146,
+  "cur_liab": 618508981,
   "debt": 562469003,
   "debt_hist": [
    669296597,
@@ -33,6 +35,8 @@
    "리스부채",
    "장기리스부채"
   ],
+  "dep": 69838106.0,
+  "dep_src": "notes",
   "equity": 239702659,
   "fin_cost": 16378722,
   "fs": "OFS",
@@ -47,6 +51,8 @@
   "assets": 1316668240,
   "capital": 886798000,
   "cash": 9513333,
+  "cur_assets": 1011589560,
+  "cur_liab": 662044997,
   "debt": 456936944,
   "debt_hist": [
    null,
@@ -105,6 +111,6 @@
  },
  "latest_name": "반기보고서 (2026.06)",
  "latest_rcept": "20260814001480",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": null
 }

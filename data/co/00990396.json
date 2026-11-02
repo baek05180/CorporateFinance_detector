@@ -24,13 +24,15 @@
    }
   ]
  },
- "checked": "2026-10-27T04:26+09:00",
+ "checked": "2026-11-03T02:53+09:00",
  "corp_code": "00990396",
  "fs_annual": {
   "assets": 27073748185,
   "capex": 0,
   "capital": 383573000,
   "cash": 230995839,
+  "cur_assets": 26232570431,
+  "cur_liab": 13294726371,
   "debt": 16477918630,
   "debt_hist": [
    14259647277,
@@ -77,6 +79,6 @@
  },
  "latest_name": "사업보고서 (2025.12)",
  "latest_rcept": "20260407001696",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": null
 }

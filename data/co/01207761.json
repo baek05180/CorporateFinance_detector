@@ -1,10 +1,12 @@
 {
- "checked": "2026-10-27T02:20+09:00",
+ "checked": "2026-11-03T02:32+09:00",
  "corp_code": "01207761",
  "fs_interim": {
   "assets": 44803549383,
   "capital": 14315292000,
   "cash": 10154602,
+  "cur_assets": 29075227698,
+  "cur_liab": 45862680251,
   "debt": 18215409916,
   "debt_hist": [
    null,
@@ -44,6 +46,6 @@
  },
  "latest_name": "분기보고서 (2025.03)",
  "latest_rcept": "20250515003010",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": null
 }

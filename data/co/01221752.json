@@ -3,13 +3,15 @@
  "annual_rcept": "20260319000878",
  "biz_retry": true,
  "business": {},
- "checked": "2026-11-02T09:19+09:00",
+ "checked": "2026-11-03T02:35+09:00",
  "corp_code": "01221752",
  "fs_annual": {
   "assets": 33833189088,
   "capex": 7711548012,
   "capital": 2626654500,
   "cash": 7470180311,
+  "cur_assets": 11313808929,
+  "cur_liab": 2020763307,
   "debt": 7522462989,
   "debt_hist": [
    6700815745,
@@ -39,6 +41,8 @@
   "capex": 3872905785,
   "capital": 2662691500,
   "cash": 6568283971,
+  "cur_assets": 11128823100,
+  "cur_liab": 2262847912,
   "debt": 9716971514,
   "debt_hist": [
    null,
@@ -105,6 +109,6 @@
  },
  "latest_name": "[기재정정]반기보고서 (2026.06)",
  "latest_rcept": "20260907000314",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": 12500
 }

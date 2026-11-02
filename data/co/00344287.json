@@ -1,11 +1,13 @@
 {
- "checked": "2026-10-27T04:22+09:00",
+ "checked": "2026-11-03T02:49+09:00",
  "corp_code": "00344287",
  "fs_interim": {
   "assets": 4519166820016,
   "capex": 107927026323,
   "capital": 199538618000,
   "cash": 314236644000,
+  "cur_assets": 2810649300487,
+  "cur_liab": 1538416548651,
   "debt": 99978195860,
   "debt_hist": [
    null,
@@ -53,6 +55,6 @@
  },
  "latest_name": "분기보고서 (2025.09)",
  "latest_rcept": "20251114001481",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": 0
 }

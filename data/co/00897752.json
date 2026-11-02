@@ -4,7 +4,7 @@
  "biz_raw": {},
  "biz_retry": true,
  "business": {},
- "checked": "2026-11-02T09:19+09:00",
+ "checked": "2026-11-03T02:57+09:00",
  "corp_code": "00897752",
  "fs_annual": {
   "amort": 245656563.0,
@@ -12,6 +12,8 @@
   "capex": 21517053393,
   "capital": 5905231000,
   "cash": 15491196283,
+  "cur_assets": 125882707064,
+  "cur_liab": 320278904496,
   "debt": 63077993,
   "debt_hist": [
    112941321,
@@ -40,6 +42,8 @@
   "capex": 19356448677,
   "capital": 6186512500,
   "cash": 16049398048,
+  "cur_assets": 169196694112,
+  "cur_liab": 379877666549,
   "debt": 49471216,
   "debt_hist": [
    null,
@@ -105,6 +109,6 @@
  },
  "latest_name": "[첨부추가]반기보고서 (2026.06)",
  "latest_rcept": "20260814001466",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": 68086
 }

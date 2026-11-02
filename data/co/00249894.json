@@ -4,7 +4,7 @@
  "biz_raw": {},
  "biz_retry": true,
  "business": {},
- "checked": "2026-11-02T09:19+09:00",
+ "checked": "2026-11-03T02:48+09:00",
  "corp_code": "00249894",
  "fs_annual": {
   "amort": 922856788.0,
@@ -12,6 +12,8 @@
   "capex": 2575996092,
   "capital": 18576188000,
   "cash": 35354921769,
+  "cur_assets": 173611788882,
+  "cur_liab": 89159736290,
   "debt": 41645151138,
   "debt_hist": [
    36296782450,
@@ -42,6 +44,8 @@
   "capex": 2202939299,
   "capital": 18576188000,
   "cash": 39524010562,
+  "cur_assets": 161259570705,
+  "cur_liab": 90529988665,
   "debt": 40153391713,
   "debt_hist": [
    null,
@@ -90,6 +94,6 @@
  },
  "latest_name": "반기보고서 (2026.06)",
  "latest_rcept": "20260814002914",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": 469056
 }

@@ -8,7 +8,7 @@
   "with_rate": 0
  },
  "budget_exhausted": true,
- "crno_matched": 392,
+ "crno_matched": 398,
  "dart_calls": 4000,
  "listed": 2763,
  "mezz_docs": {
@@ -19,19 +19,11 @@
   "with_inv": 1182,
   "with_prem": 677
  },
- "price_hist_days": 119,
- "price_hist_fetched": 1,
- "prices": 2874,
- "profiles_done": 772,
- "profiles_fresh": 1458,
- "profiles_left": 842,
- "profiles_sec": 2152,
- "px_fetched": 1,
- "run": "2026-11-03T00:22+09:00",
- "short_lnb": {
-  "lnb_fetched": 1,
-  "lnb_sample": null,
-  "short_fetched": 0
- },
- "targets": 3072
+ "prices_error": "연결 실패: HTTPSConnectionPool(host='apis.data.go.kr', port=443): Max retries exceeded with url: /1160100/GetStockSecuritiesInfoService_V2/getStockPriceInfo_V2?serviceKey=***&resultType=json&numOfRows=1000&pageN",
+ "profiles_done": 910,
+ "profiles_fresh": 2177,
+ "profiles_left": 383,
+ "profiles_sec": 1873,
+ "run": "2026-11-03T02:24+09:00",
+ "targets": 3470
 }

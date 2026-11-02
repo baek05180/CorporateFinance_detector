@@ -1,0 +1,37 @@
+{
+ "annual_name": "감사보고서 (2025.12)",
+ "annual_rcept": "20260413000062",
+ "audit_only": true,
+ "checked": "2026-11-03T02:48+09:00",
+ "corp_code": "01742024",
+ "fs_annual": {
+  "assets": 2858785049,
+  "capital": 210000000,
+  "cash": 3167021,
+  "cur_assets": 832855518,
+  "cur_liab": 5128104556,
+  "debt": 6814970980,
+  "debt_hist": [
+   null,
+   7566005964,
+   6814970980
+  ],
+  "debt_items": [
+   "단기차입금",
+   "사채",
+   "장기차입금"
+  ],
+  "equity": -8586819507,
+  "fs": "OFS",
+  "interest": 477476836,
+  "liab": 11445604556,
+  "ni": -6324792090,
+  "op": -5829991771,
+  "period": "2025 연간",
+  "revenue": 5423799598,
+  "src": "감사보고서",
+  "st_deposits": 30000000
+ },
+ "no_periodic": true,
+ "pv": 4
+}

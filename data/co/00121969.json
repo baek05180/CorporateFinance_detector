@@ -3,13 +3,15 @@
  "annual_rcept": "20260319000744",
  "biz_retry": true,
  "business": {},
- "checked": "2026-11-02T09:19+09:00",
+ "checked": "2026-11-03T02:56+09:00",
  "corp_code": "00121969",
  "fs_annual": {
   "assets": 136355564807,
   "capex": 11202335424,
   "capital": 19017987500,
   "cash": 47441965845,
+  "cur_assets": 71651343168,
+  "cur_liab": 79211123994,
   "debt": 30426075963,
   "debt_hist": [
    9292262314,
@@ -38,6 +40,8 @@
   "capex": 12868854087,
   "capital": 19017987500,
   "cash": 11987222586,
+  "cur_assets": 40574280951,
+  "cur_liab": 55746048338,
   "debt": 31495252962,
   "debt_hist": [
    null,
@@ -75,6 +79,6 @@
  },
  "latest_name": "반기보고서 (2026.06)",
  "latest_rcept": "20260814003051",
- "pv": 3,
+ "pv": 4,
  "treasury_shares": null
 }

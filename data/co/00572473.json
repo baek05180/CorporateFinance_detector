@@ -1,0 +1,38 @@
+{
+ "annual_name": "감사보고서 (2025.12)",
+ "annual_rcept": "20260401003525",
+ "audit_only": true,
+ "checked": "2026-11-03T02:44+09:00",
+ "corp_code": "00572473",
+ "fs_annual": {
+  "assets": 21579380107,
+  "capex": 175196719,
+  "capital": 499995000,
+  "cash": 475053670,
+  "cur_assets": 7566470490,
+  "cur_liab": 17294332193,
+  "debt": 10526050463,
+  "debt_hist": [
+   null,
+   11196653996,
+   10526050463
+  ],
+  "debt_items": [
+   "장기차입금",
+   "차입금"
+  ],
+  "equity": 1744884740,
+  "fin_cost": 632338617,
+  "fs": "OFS",
+  "interest_paid": 553165068,
+  "liab": 19834495367,
+  "ni": 904989957,
+  "ocf": 1958198588,
+  "op": 1272356613,
+  "period": "2025 연간",
+  "revenue": 32231008545,
+  "src": "감사보고서"
+ },
+ "no_periodic": true,
+ "pv": 4
+}

@@ -41,7 +41,7 @@
    }
   ]
  },
- "checked": "2026-10-27T04:28+09:00",
+ "checked": "2026-11-03T02:55+09:00",
  "corp_code": "00378363",
  "fs_annual": {
   "amort": 141198502,
@@ -49,6 +49,8 @@
   "capex": 446200445,
   "capital": 26529520000,
   "cash": 7041589036,
+  "cur_assets": 21768377771,
+  "cur_liab": 11923057894,
   "debt": 7152063713,
   "debt_hist": [
    3112902496,
@@ -73,12 +75,20 @@
   "period": "2026 연간",
   "revenue": 28386681783
  },
- "fs_interim": {},
  "holders": {
-  "top": []
+  "as_of": "2026-03-31",
+  "top": [
+   {
+    "name": "한국웨이퍼홀딩스",
+    "pct": 12.0,
+    "relation": "최대주주",
+    "shares": 6365399
+   }
+  ],
+  "total_pct": 12.0
  },
- "latest_name": "분기보고서 (2026.06)",
- "latest_rcept": "20260812000330",
- "pv": 3,
+ "latest_name": "사업보고서 (2026.03)",
+ "latest_rcept": "20260617000470",
+ "pv": 4,
  "treasury_shares": null
 }
