@@ -536,6 +536,8 @@ def run(dart, store, today=None):
         dump_json("ref/price_hist.json", ph, indent=None)
         diag["price_hist_days"], diag["price_hist_fetched"] = len(ph["dates"]), n
         diag["px_fetched"] = update_px(today, (bas, prices) if prices else None, max_fetch=60)
+        from .refdata import update_short_lnb
+        diag["short_lnb"] = update_short_lnb(today, max_fetch=20)
     except StockPriceError as e:
         diag["prices_error"] = redact(e)[:300]
     except Exception as e:  # noqa: BLE001

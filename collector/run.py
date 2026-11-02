@@ -219,6 +219,8 @@ def main(argv=None):
                                          max_fetch=140)
             dump_json("ref/price_hist.json", ph, indent=None)
             n += update_px(today, (bas, prices) if prices else None, max_fetch=args.days or 300)
+            from .refdata import update_short_lnb
+            dump_json("diag_prices.json", update_short_lnb(today, max_fetch=args.days or 300))
             summary = f"mode=prices · 기준일 {bas} · {len(prices)}종목 · 이력 {len(ph['dates'])}일 (이번 조회 {n}일)"
         except (StockPriceError, Exception) as e:  # noqa: BLE001
             import traceback

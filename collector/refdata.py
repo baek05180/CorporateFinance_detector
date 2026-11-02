@@ -207,3 +207,148 @@ def update_px(today, latest=None, years=3, max_fetch=40, session=None):
         dump_json(f"ref/px/{m}.json", months[m], indent=None)
     dump_json("ref/px/closed.json", sorted(tried), indent=None)
     return fetched
+
+
+# ── 공매도(KRX, 로그인 필요)·대차잔고(금융위) 일별 → 월별 파일 ──
+LNB_URL = "https://apis.data.go.kr/1160100/service/GetCMStckLnbInfoService/getStckLnbDetail"
+KRX_JSON = "https://data.krx.co.kr/comm/bldAttendant/getJsonData.cmd"
+
+
+def krx_session():
+    import os
+    s = requests.Session()
+    s.headers.update({"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36",
+                      "Referer": "https://data.krx.co.kr/contents/MDC/MDI/mdiLoader/index.cmd"})
+    s.get("https://data.krx.co.kr/contents/MDC/MDI/mdiLoader/index.cmd", timeout=30)
+    s.get("https://data.krx.co.kr/contents/MDC/COMS/client/MDCCOMS001.cmd", timeout=30)
+    lg = dict(mbrNm="", telNo="", di="", certType="", mbrId=os.environ.get("KRX_ID", ""), pw=os.environ.get("KRX_PW", ""))
+    url = "https://data.krx.co.kr/contents/MDC/COMS/client/MDCCOMS001D1.cmd"
+    r = s.post(url, data=lg, timeout=30)
+    if "CD011" in r.text:
+        r = s.post(url, data={**lg, "skipDup": "Y"}, timeout=30)
+    if "CD001" not in r.text:
+        raise StockPriceError(f"KRX 로그인 실패: {r.text[:120]}")
+    return s
+
+
+def _int(x):
+    try:
+        return int(str(x).replace(",", ""))
+    except (TypeError, ValueError):
+        return None
+
+
+def short_on(d, s):
+    """그날 전 종목 공매도 거래량 {종목코드: 주수} (유가증권+코스닥)."""
+    out = {}
+    for mkt in ("STK", "KSQ"):
+        for attempt in range(3):
+            try:
+                r = s.post(KRX_JSON, timeout=40, data={"bld": "dbms/MDC/STAT/srt/MDCSTAT30101", "locale": "ko_KR", "searchType": "1",
+                                                        "mktId": mkt, "trdDd": d.strftime("%Y%m%d"), "inqCond": "STMFRTSCIFDRFS",
+                                                        "share": "1", "money": "1", "csvxls_isNo": "false"})
+                rows = r.json().get("OutBlock_1") or []
+                break
+            except (requests.RequestException, ValueError):
+                time.sleep(5 * (attempt + 1))
+        else:
+            raise StockPriceError("KRX 공매도 조회 실패")
+        for it in rows:
+            v = _int(it.get("CVSRTSELL_TRDVOL"))
+            if it.get("ISU_CD") and v is not None:
+                out[it["ISU_CD"]] = v
+        time.sleep(0.5)
+    return out
+
+
+def lnb_on(d, s, key):
+    """그날 전 종목 대차잔고 {종목코드: 잔고주수}."""
+    out, page, sample = {}, 1, None
+    while page <= 8:
+        for attempt in range(4):
+            time.sleep(0.2 if attempt == 0 else 5 * attempt)
+            try:
+                r = s.get(LNB_URL, timeout=40, params=dict(serviceKey=key, resultType="json", numOfRows=1000, pageNo=page,
+                                                            basDt=d.strftime("%Y%m%d")))
+            except requests.RequestException:
+                continue
+            if r.status_code in (502, 503, 504) or "SERVICETIMEOUT" in r.text[:400]:
+                continue
+            break
+        else:
+            raise StockPriceError("대차 API 일시 오류")
+        if r.status_code >= 400 or r.text.lstrip().startswith("<"):
+            raise StockPriceError(f"대차 HTTP {r.status_code}: {redact(r.text[:200])}")
+        body = r.json().get("response", {}).get("body", {})
+        items = (body.get("items") or {})
+        items = items.get("item", []) if isinstance(items, dict) else (items or [])
+        if isinstance(items, dict):
+            items = [items]
+        sample = sample or (items[0] if items else None)
+        for it in items:
+            code = str(it.get("srtnCd") or it.get("stckItmsCd") or it.get("itmsCd") or "").strip()
+            if not code and it.get("isinCd"):
+                code = it["isinCd"][3:9]
+            if code.startswith("A") and len(code) == 7:
+                code = code[1:]
+            v = _int(it.get("balnStckCnt"))
+            if code and v is not None:
+                out[code] = v
+        total = int(body.get("totalCount") or 0)
+        if not items or page * 1000 >= total:
+            break
+        page += 1
+    return out, sample
+
+
+def update_short_lnb(today, max_fetch=30, diag=None):
+    """px에 있는 거래일 중 아직 없는 날의 공매도 거래량(ref/short)·대차잔고(ref/lnb)를 최근부터 채운다."""
+    import glob
+    import os
+    from .store import dump_json, load_json
+    days = sorted({x for f in glob.glob(os.path.join(config.DATA_DIR, "ref", "px", "2*.json"))
+                   for x in load_json(os.path.relpath(f, config.DATA_DIR), {}).get("dates", [])}, reverse=True)
+    diag = diag if diag is not None else {}
+    for kind in ("short", "lnb"):
+        months, n, fails = {}, 0, 0
+        try:
+            sess = krx_session() if kind == "short" else requests.Session()
+        except Exception as e:  # noqa: BLE001
+            diag[kind + "_error"] = redact(e)[:200]
+            continue
+        key = _key()
+        for iso in days:
+            if n >= max_fetch or fails >= 8:
+                break
+            m = iso[:7]
+            if m not in months:
+                months[m] = load_json(f"ref/{kind}/{m}.json", {"dates": [], "v": {}})
+            f = months[m]
+            if iso in f["dates"]:
+                continue
+            from datetime import date as _date
+            d = _date.fromisoformat(iso)
+            try:
+                if kind == "short":
+                    vals = short_on(d, sess)
+                else:
+                    vals, sample = lnb_on(d, sess, key)
+                    diag.setdefault("lnb_sample", sample)
+            except Exception as e:  # noqa: BLE001
+                fails += 1
+                diag[kind + "_error"] = redact(e)[:200]
+                continue
+            n += 1
+            if not vals:
+                continue
+            f["dates"].append(iso)
+            f["dates"].sort()
+            i, L = f["dates"].index(iso), len(f["dates"])
+            for code in set(f["v"]) | set(vals):
+                f["v"].setdefault(code, [None] * (L - 1)).insert(i, vals.get(code))
+            f["dirty"] = True
+        for m, f in months.items():
+            if f.pop("dirty", None):
+                dump_json(f"ref/{kind}/{m}.json", f, indent=None)
+        diag[kind + "_fetched"] = n
+    return diag

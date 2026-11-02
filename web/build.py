@@ -82,6 +82,17 @@ def main():
                 if len(dst[c]) < n0 + n:
                     dst[c].extend([None] * (n0 + n - len(dst[c])))
         px_sh.update(f.get("sh", {}))
+    aux = {}
+    for kind in ("short", "lnb"):
+        dd = {}
+        kdir = os.path.join(config.DATA_DIR, "ref", kind)
+        for fn in sorted(os.listdir(kdir)) if os.path.isdir(kdir) else []:
+            f = load_json(f"ref/{kind}/{fn}", {})
+            for c, arr in f.get("v", {}).items():
+                for d, v in zip(f.get("dates", []), arr):
+                    if v is not None:
+                        dd.setdefault(c, {})[d] = v
+        aux[kind] = dd
     ph_dates, ph_close = ph.get("dates") or [], ph.get("close") or {}
     bond_docs = load_json("ref/bond_docs.json", {})
     mezz_docs = load_json("ref/mezz_docs.json", {})
@@ -269,7 +280,9 @@ def main():
             cs = px_c[code]
             co["px"] = {"d": [d for d, v in zip(px_d, cs) if v is not None], "c": [v for v in cs if v is not None]}
             co["px_stats"] = A.px_stats(px_d, cs, px_v.get(code) or [None] * len(px_d), px_a.get(code) or [None] * len(px_d),
-                                        px_sh.get(code), today)
+                                        px_sh.get(code), today,
+                                        [aux["short"].get(code, {}).get(d) for d in px_d] if aux["short"] else None,
+                                        [aux["lnb"].get(code, {}).get(d) for d in px_d] if aux["lnb"] else None)
         mc = (metrics or {}).get("mcap")
         if mc:
             ann = next((r for r in reversed(series) if r.get("kind") == "annual"), {})

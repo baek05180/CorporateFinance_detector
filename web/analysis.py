@@ -666,7 +666,7 @@ def fill_product_shares(ai, raw=None):
     return ai
 
 
-def px_stats(dates, close, vol, val, shares, today):
+def px_stats(dates, close, vol, val, shares, today, short=None, lnb=None):
     """기간별(3개월·6개월·1년·3년) 주가 변동·평균 거래량·거래대금·회전율."""
     from datetime import timedelta as _td
     out = {}
@@ -685,4 +685,15 @@ def px_stats(dates, close, vol, val, shares, today):
                     "avg_val": round(sum(av) / len(av) * 1e6) if av else None,
                     "turnover": round(avg_v / shares * 100, 3) if avg_v and shares else None,
                     "days": len(idx), "partial": not span_ok}
+        if short:
+            pair = [(short[i], vol[i]) for i in idx if short[i] is not None and vol[i]]
+            if len(pair) >= 5:
+                out[lab]["short"] = round(sum(a for a, _ in pair) / sum(b for _, b in pair) * 100, 2)
+                out[lab]["short_days"] = len(pair)
+        if lnb and shares:
+            ls = [lnb[i] for i in idx if lnb[i] is not None]
+            if len(ls) >= 5:
+                out[lab]["lnb_avg"] = round(sum(ls) / len(ls) / shares * 100, 2)
+                out[lab]["lnb_end"] = round(ls[-1] / shares * 100, 2)
+                out[lab]["lnb_days"] = len(ls)
     return out
