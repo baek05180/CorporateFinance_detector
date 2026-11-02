@@ -74,9 +74,20 @@ def prices_on(d, session=None, key=None):
     s = session or requests.Session()
     out, page = {}, 1
     while True:
-        time.sleep(0.2)
-        r = s.get(config.STOCK_PRICE_URL, timeout=40, params=dict(
-            serviceKey=key, resultType="json", numOfRows=1000, pageNo=page, basDt=d.strftime("%Y%m%d")))
+        for attempt in range(4):
+            time.sleep(0.2 if attempt == 0 else 5 * attempt)
+            try:
+                r = s.get(config.STOCK_PRICE_URL, timeout=40, params=dict(
+                    serviceKey=key, resultType="json", numOfRows=1000, pageNo=page, basDt=d.strftime("%Y%m%d")))
+            except requests.RequestException as e:
+                err = StockPriceError(f"연결 실패: {redact(e)[:200]}")
+                continue
+            if r.status_code in (502, 503, 504) or "SERVICETIMEOUT" in r.text[:400]:
+                err = StockPriceError(f"HTTP {r.status_code}: 일시 오류")
+                continue
+            break
+        else:
+            raise err
         if r.status_code >= 400 or r.text.lstrip().startswith("<"):
             raise StockPriceError(f"HTTP {r.status_code}: {redact(r.text[:300])}")
         body = r.json().get("response", {}).get("body", {})
@@ -175,10 +186,16 @@ def update_px(today, latest=None, years=3, max_fetch=40, session=None):
     start = today - timedelta(days=365 * years + 5)
     fetched, d = 0, today - timedelta(days=1)
     dirty = set(months)
-    while d >= start and fetched < max_fetch:
+    fails = 0
+    while d >= start and fetched < max_fetch and fails < 15:
         iso = d.isoformat()
         if d.weekday() < 5 and iso not in tried and iso not in month(iso[:7])["dates"]:
-            out = prices_on(d, s, key)
+            try:
+                out = prices_on(d, s, key)
+            except StockPriceError:
+                fails += 1          # 이 날은 다음 실행에서 다시
+                d -= timedelta(days=1)
+                continue
             fetched += 1
             if out:
                 put(iso, out)
