@@ -2,8 +2,9 @@
  "annual_name": "[기재정정]사업보고서 (2020.12)",
  "annual_rcept": "20250819000044",
  "biz_raw": {},
+ "biz_retry": true,
  "business": {},
- "checked": "2026-10-27T04:33+09:00",
+ "checked": "2026-11-02T09:19+09:00",
  "corp_code": "01114559",
  "fs_annual": {},
  "holders": {
