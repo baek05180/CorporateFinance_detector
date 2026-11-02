@@ -296,6 +296,15 @@ footer p{margin:4px 0}
   main{padding:0}
   .top3{grid-template-columns:repeat(3,1fr)}
 }
+.bsv{margin:6px 0 14px}.bsh .eq{margin:6px 0 10px}
+.bsg{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.bsc{display:flex;flex-direction:column;height:240px;border-radius:12px;overflow:hidden;gap:0}
+.bsb{display:flex;justify-content:space-between;align-items:center;padding:0 14px;color:#fff;min-height:34px;font-size:13px}
+.bsb b{font-variant-numeric:tabular-nums}
+.bsl span{text-align:center;color:var(--ink2);font-size:12px;margin-top:4px}
+:root{--bs-a1:#0e9f8e;--bs-a2:#5cc4b4;--bs-l1:#d9720b;--bs-l2:#f0ad6a;--bs-e:#4a5568}
+.pxtabs{display:flex;gap:6px;margin:0 0 8px}.pxtabs button{border:1px solid var(--line);background:transparent;color:var(--ink2);border-radius:999px;padding:3px 12px;cursor:pointer;font:inherit;font-size:12px}
+.pxtabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 </style>
 </head>
 <body>
@@ -448,6 +457,52 @@ function lineChart(pts, {height = 180, label = ''} = {}) {
   const ticks = [0, Math.floor((pts.length - 1) / 2), pts.length - 1];
   ticks.forEach((i, k) => { s += `<text x="${x(i)}" y="${H - 6}" text-anchor="${k === 0 ? 'start' : k === 2 ? 'end' : 'middle'}">${esc(md(pts[i][0]))}</text>`; });
   return s + '</svg>';
+}
+
+// 주가 기간 전환
+function pxCut(PH, k) {
+  const days = {'3M': 91, '6M': 182, '1Y': 365, '3Y': 1095}[k];
+  const last = new Date(PH[PH.length - 1][0]); last.setDate(last.getDate() - days);
+  const cut = last.toISOString().slice(0, 10);
+  const pts = PH.filter(p => p[0] >= cut);
+  const step = Math.ceil(pts.length / 260);
+  return step > 1 ? pts.filter((p, i) => i % step === 0 || i === pts.length - 1) : pts;
+}
+function pxView(k, PH = window.__PH || []) {
+  const pts = pxCut(PH, k);
+  if (pts.length < 2) return '<div class="empty">이 기간의 시세가 아직 쌓이지 않았습니다</div>';
+  const ch = (pts[pts.length - 1][1] / pts[0][1] - 1) * 100;
+  return `${lineChart(pts, {label: '주가 추이'})}<p class="note">${esc(md(pts[0][0]))} 이후 ${ch >= 0 ? '+' : ''}${ch.toFixed(1)}% · 최고 ${int(Math.max(...pts.map(p => p[1])))}원 · 최저 ${int(Math.min(...pts.map(p => p[1])))}원</p>`;
+}
+window.pxSet = k => {
+  document.querySelectorAll('[data-px]').forEach(b => b.classList.toggle('on', b.dataset.px === k));
+  const el = document.getElementById('pxchart'); if (el) el.innerHTML = pxView(k);
+};
+function pxStatsTable(S) {
+  if (!S || !Object.keys(S).length) return '';
+  const ks = ['3M', '6M', '1Y', '3Y'].filter(k => S[k]);
+  const lab = {'3M': '3개월', '6M': '6개월', '1Y': '1년', '3Y': '3년'};
+  const row = (name, f) => `<tr><td>${name}</td>${ks.map(k => `<td class="num">${f(S[k])}</td>`).join('')}</tr>`;
+  return `<div class="scroll"><table style="min-width:420px;margin-top:10px"><thead><tr><th>기간</th>${ks.map(k => `<th class="num">${lab[k]}${S[k].partial ? '<span class="muted">*</span>' : ''}</th>`).join('')}</tr></thead><tbody>
+    ${row('주가 변동', x => x.ret == null ? DASH : (x.ret >= 0 ? '+' : '') + x.ret.toFixed(1) + '%')}
+    ${row('일평균 거래량', x => x.avg_vol == null ? DASH : int(x.avg_vol) + '주')}
+    ${row('일평균 거래대금', x => x.avg_val == null ? DASH : wonTxt(x.avg_val))}
+    ${row('일평균 회전율', x => x.turnover == null ? DASH : x.turnover.toFixed(2) + '%')}
+  </tbody></table></div>${ks.some(k => S[k].partial) ? '<p class="note">* 시세가 아직 그 기간만큼 쌓이지 않아 쌓인 날만 계산 · 회전율 = 거래량 ÷ 상장주식수</p>' : '<p class="note">회전율 = 일 거래량 ÷ 상장주식수</p>'}`;
+}
+
+// 재무상태 블록: 자산(유동·비유동) | 부채(유동·비유동) + 자본
+function bsBlocks(r) {
+  const A = r.assets, L = r.liab, E = r.equity;
+  if (!A || L == null || E == null) return '';
+  const ca = r.cur_assets, cl = r.cur_liab;
+  const left = ca != null ? [['유동자산', ca, 'var(--bs-a1)'], ['비유동자산', A - ca, 'var(--bs-a2)']] : [['자산총계', A, 'var(--bs-a1)']];
+  const right = (cl != null ? [['유동부채', cl, 'var(--bs-l1)'], ['비유동부채', L - cl, 'var(--bs-l2)']] : [['부채총계', L, 'var(--bs-l1)']]).concat([['자본', E, 'var(--bs-e)']]);
+  const tot = Math.max(A, L + Math.max(E, 0));
+  const col = (parts) => `<div class="bsc">${parts.filter(p => p[1] > 0).map(([n, v, c]) => `<div class="bsb" style="flex:${Math.max(v / tot, 0.08)};background:${c}"><span>${n}</span><b>${wonTxt(v)}</b></div>`).join('')}</div>`;
+  return `<div class="bsv"><div class="bsh"><span class="chip">${r.fs === 'OFS' ? '별도' : '연결'}</span> <span class="muted">${esc(yy(r.period))} 말</span>
+    <div class="eq">자산 <b>${wonTxt(A)}</b> = 부채 ${wonTxt(L)} + 자본 ${wonTxt(E)}</div></div>
+    <div class="bsg">${col(left)}${col(right)}</div><div class="bsg bsl"><span>자산</span><span>부채 + 자본</span></div></div>`;
 }
 
 // 누적 막대: 만기 구조 (공모 / 사모 / 주식연계)
@@ -908,8 +963,14 @@ function glanceRows(co) {
   const est = I.est_dt ? I.est_dt.slice(0, 4) + ' 설립' : '';
   const lst = L.listed ? L.listed.slice(0, 4) + ' 상장' : (co.market === 'E' ? '비상장' : '');
   rows.push(['개요', 's-ov', [I.ceo_nm || L.ceo ? '대표 ' + (I.ceo_nm || L.ceo) : '', est, lst].filter(Boolean).join(' · ')]);
-  if (m.revenue != null) rows.push(['손익', 's-pl', `${yy(m.period)} 매출 ${wonTxt(m.revenue)}${m.revenue_growth != null ? ` (${m.revenue_growth > 0 ? '+' : ''}${m.revenue_growth.toFixed(1)}%)` : ''} · 영업이익률 ${pct(m.op_margin).replace(/<[^>]+>/g, '')}`]);
-  if (m.debt_ratio != null) rows.push(['재무상태', 's-bs', `부채비율 ${m.debt_ratio.toFixed(0)}%${m.cash != null ? ' · 현금성자산 ' + wonTxt((m.cash || 0) + (m.st_deposits || 0)) : ''}${m.debt != null ? ' · 차입금 ' + wonTxt(m.debt) : ''}`]);
+  const IQ = (co.series || []).find(r => r.kind === 'interim'), PQ = (co.series || []).find(r => r.kind === 'interim_prev');
+  const g = (a, b) => a != null && b ? ` (전년 같은 기간 ${a >= b ? '+' : ''}${((a / b - 1) * 100).toFixed(1)}%)` : '';
+  const annTxt = m.revenue != null ? `${yy(m.period)} 연간 매출 ${wonTxt(m.revenue)}${m.revenue_growth != null ? ` (${m.revenue_growth > 0 ? '+' : ''}${m.revenue_growth.toFixed(1)}%)` : ''} · 영업이익률 ${pct(m.op_margin).replace(/<[^>]+>/g, '')}` : '';
+  if (IQ && IQ.revenue != null) rows.push(['손익', 's-pl', `${yy(IQ.period)} 누적 매출 ${wonTxt(IQ.revenue)}${g(IQ.revenue, PQ?.revenue)} · 영업이익률 ${pct(IQ.op_margin).replace(/<[^>]+>/g, '')}${annTxt ? ` (${annTxt})` : ''}`]);
+  else if (m.revenue != null) rows.push(['손익', 's-pl', annTxt]);
+  const V = co.valuation;
+  if (V && (V.per != null || V.pbr != null || V.per_note)) rows.push(['밸류에이션', 's-px', `PER ${V.per != null ? V.per.toFixed(1) + '배' : (V.per_note || DASH)} (${V.per_basis || ''} 순이익) · PBR ${V.pbr != null ? V.pbr.toFixed(2) + '배' : DASH} (${V.pbr_basis || ''} 자본)`]);
+  if (m.debt_ratio != null) rows.push(['재무상태', 's-bs', `${m.bs_period ? yy(m.bs_period) + ' 말 ' : ''}부채비율 ${m.debt_ratio.toFixed(0)}%${m.cash != null ? ' · 현금성자산 ' + wonTxt((m.cash || 0) + (m.st_deposits || 0)) : ''}${m.debt != null ? ' · 차입금 ' + wonTxt(m.debt) : ''}`]);
   if (H.top?.length) rows.push(['주주', 's-hold', `${H.top[0].name} 외 ${(H.total_pct ?? 0).toFixed(1)}%${H.as_of ? ' · ' + H.as_of.replace(/-/g, '.') + ' 기준' : ''}`]);
   const P = co.peers || [];
   if (P.length > 1) { const rank = [...P].sort((a, b) => (b.revenue || 0) - (a.revenue || 0)).findIndex(p => p.me) + 1; rows.push(['업종', 's-peer', `${co.industry} · 매출 비슷한 ${P.length}곳 중 매출 ${rank}위`]); }
@@ -962,7 +1023,7 @@ async function viewCompany(key) {
 
   // ── 사업 (돈 버는 방식 상세) ──
   const prod = AI?.products?.length ? AI.products : (B.products || []);
-  const prodHtml = prod.length ? `<div class="scroll"><table style="min-width:480px"><thead><tr><th>부문·제품</th><th>설명</th><th style="width:30%">매출 비중</th></tr></thead><tbody>${prod.map(p => `<tr><td style="white-space:normal"><b>${esc(p.name)}</b>${p.segment ? `<div class="note">${esc(p.segment)}</div>` : ''}</td><td style="white-space:normal" class="ink2">${esc(p.desc || '')}</td><td>${p.share != null ? `<div class="share"><div class="track"><div class="fill" style="width:${Math.min(100, p.share)}%"></div></div><span class="num">${pct(p.share)}</span></div>` : DASH}</td></tr>`).join('')}</tbody></table></div>` : '';
+  const prodHtml = prod.length ? `<div class="scroll"><table style="min-width:480px"><thead><tr><th>부문·제품</th><th>설명</th><th style="width:30%">매출 비중</th></tr></thead><tbody>${prod.map(p => `<tr><td style="white-space:normal"><b>${esc(p.name)}</b>${p.segment ? `<div class="note">${esc(p.segment)}</div>` : ''}</td><td style="white-space:normal" class="ink2">${esc(p.desc || '')}</td><td>${(p.share ?? p.seg_share) != null ? `<div class="share"><div class="track"><div class="fill" style="width:${Math.min(100, p.share ?? p.seg_share)}%"></div></div><span class="num">${p.share == null ? '부문 ' : ''}${pct(p.share ?? p.seg_share)}</span></div>` : DASH}</td></tr>`).join('')}</tbody></table></div>${prod.some(p => (p.share ?? p.seg_share) == null) && AI?.mix_line ? `<p class="note">${esc(AI.mix_line)}</p>` : ''}` : '';
   const bizText = AI?.business || B.overview_short;
   const custText = AI?.customers || B.customers_short;
   const bizBody = (bizText || prodHtml || custText) ? `
@@ -991,7 +1052,7 @@ async function viewCompany(key) {
     ${DS.some(r => r.liab != null) ? groupChart(DS.map(r => yy(r.period)), [
       {name: '부채총계', color: 'var(--s2)', values: DS.map(r => r.liab)},
       {name: '차입금', color: 'var(--s7)', values: DS.map(r => r.debt)}]) : ''}
-    ${bsLast ? `<p class="eq">자산 <b>${wonTxt(bsLast.assets)}</b> = 부채 <b>${wonTxt(bsLast.liab)}</b> + 자본 <b>${wonTxt(bsLast.equity)}</b> <span class="muted">(${esc(yy(bsLast.period))})</span></p>` : ''}
+    ${bsLast ? bsBlocks(bsLast) : ''}
     <div class="tiles t3">
       ${tile('부채비율', pct(m.debt_ratio, 0), '부채 ÷ 자본')}${tile('유동비율', pct(m.current_ratio, 0), '유동자산 ÷ 유동부채')}${tile('현금성자산', won(m.cash != null ? (m.cash || 0) + (m.st_deposits || 0) : null), '현금 + 단기금융상품')}
       ${tile('차입금', won(m.debt), fd?.debt_items ? esc(fd.debt_items.slice(0, 3).join('·')) : '계정명 합산 추정')}${tile('순차입금', won(m.net_debt), m.net_debt != null && m.net_debt < 0 ? '순현금' : '차입금 − 현금성자산')}${tile('이자보상배율', m.interest_coverage != null ? ratio(m.interest_coverage) : DASH, '영업이익 ÷ ' + esc(m.interest_basis || '금융원가'))}
@@ -1031,11 +1092,14 @@ async function viewCompany(key) {
       <tr><td>홈페이지</td><td>${(I.hm_url || L.homepage) ? `<a class="dart" href="${esc(/^https?:/.test(I.hm_url || L.homepage) ? (I.hm_url || L.homepage) : 'http://' + (I.hm_url || L.homepage))}" target="_blank" rel="noopener">${esc(I.hm_url || L.homepage)}</a>` : DASH}</td></tr>
     </tbody></table>`;
 
-  const PH = co.price_hist || [];
+  const PX = co.px ? co.px.d.map((d, i) => [d, co.px.c[i]]) : null;
+  const PH = PX && PX.length > (co.price_hist || []).length ? PX : (co.price_hist || []);
   const pxChg = PH.length > 1 ? (PH[PH.length - 1][1] / PH[0][1] - 1) * 100 : null;
-  const pxBody = PH.length > 1 ? `${lineChart(PH, {label: '주가 추이'})}
-    <p class="note">기간 최고 ${int(Math.max(...PH.map(p => p[1])))}원 · 최저 ${int(Math.min(...PH.map(p => p[1])))}원 · ${PH.length}거래일</p>` : '';
-  const price = m.close ? `<div class="price"><b>${int(m.close)}<small>원</small></b><span>시가총액 ${wonTxt(m.mcap)}${co.price_date ? ' · ' + md(co.price_date) : ''}</span></div>` : '';
+  const pxBody = PH.length > 1 ? `<div class="pxtabs noprint">${['3M', '6M', '1Y', '3Y'].map(k => `<button data-px="${k}" class="${k === '6M' ? 'on' : ''}" onclick="pxSet('${k}')">${{'3M': '3개월', '6M': '6개월', '1Y': '1년', '3Y': '3년'}[k]}</button>`).join('')}</div>
+    <div id="pxchart">${pxView('6M', PH)}</div>
+    ${pxStatsTable(co.px_stats)}` : '';
+  window.__PH = PH;
+  const price = m.close ? `<div class="price"><b>${int(m.close)}<small>원</small></b><span>시가총액 ${wonTxt(m.mcap)}${co.valuation?.per != null ? ' · PER ' + co.valuation.per.toFixed(1) + '배' : ''}${co.valuation?.pbr != null ? ' · PBR ' + co.valuation.pbr.toFixed(2) + '배' : ''}${co.price_date ? ' · ' + md(co.price_date) : ''}</span></div>` : '';
   app.innerHTML = `
     <div class="co-hero">
       <div><h1>${esc(co.name)} <span class="mk mk-lg">${MKF[co.market] || '비상장'}</span></h1>

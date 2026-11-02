@@ -66,6 +66,22 @@ def main():
     prices_doc = load_json("ref/prices.json", {})
     prices = prices_doc.get("prices", {})
     ph = load_json("ref/price_hist.json", {})
+    # 3년 일별 시세 (월별 파일)
+    px_d, px_c, px_v, px_a, px_sh = [], {}, {}, {}, {}
+    pxdir = os.path.join(config.DATA_DIR, "ref", "px")
+    for fn in sorted(os.listdir(pxdir)) if os.path.isdir(pxdir) else []:
+        if not re.fullmatch(r"\d{4}-\d{2}\.json", fn):
+            continue
+        f = load_json(f"ref/px/{fn}", {})
+        n0, n = len(px_d), len(f.get("dates", []))
+        px_d += f.get("dates", [])
+        for src, dst in ((f.get("c", {}), px_c), (f.get("v", {}), px_v), (f.get("a", {}), px_a)):
+            for c, arr in src.items():
+                dst.setdefault(c, [None] * n0).extend(arr)
+            for c in dst:
+                if len(dst[c]) < n0 + n:
+                    dst[c].extend([None] * (n0 + n - len(dst[c])))
+        px_sh.update(f.get("sh", {}))
     ph_dates, ph_close = ph.get("dates") or [], ph.get("close") or {}
     bond_docs = load_json("ref/bond_docs.json", {})
     mezz_docs = load_json("ref/mezz_docs.json", {})
@@ -214,7 +230,7 @@ def main():
                           | {"date": A.deal_date(d), "basis": basis}
                           for d, basis in A.pick_comps(o["key"], me, pools[o["key"]])]
 
-        ai = load_json(f"summaries/{key}.json", None)
+        ai = A.fill_product_shares(load_json(f"summaries/{key}.json", None), ((prof or {}).get("biz_raw") or {}).get("products"))
         biz = dict((prof or {}).get("business") or {})
         if biz.get("overview"):
             biz["overview_short"] = A.clip_sentences(biz["overview"], 320)
@@ -249,6 +265,18 @@ def main():
         tg = A.trigger_status(triggers.get(code) or triggers.get(name), metrics)
         if tg:
             co["triggers"] = tg
+        if code and code in px_c and sum(v is not None for v in px_c[code]) >= 5:
+            cs = px_c[code]
+            co["px"] = {"d": [d for d, v in zip(px_d, cs) if v is not None], "c": [v for v in cs if v is not None]}
+            co["px_stats"] = A.px_stats(px_d, cs, px_v.get(code) or [None] * len(px_d), px_a.get(code) or [None] * len(px_d),
+                                        px_sh.get(code), today)
+        mc = (metrics or {}).get("mcap")
+        if mc:
+            ann = next((r for r in reversed(series) if r.get("kind") == "annual"), {})
+            co["valuation"] = {"per": round(mc / ann["ni"], 1) if (ann.get("ni") or 0) > 0 else None,
+                               "per_note": "적자" if (ann.get("ni") or 0) < 0 else None, "per_basis": ann.get("period"),
+                               "pbr": round(mc / metrics["equity"], 2) if (metrics.get("equity") or 0) > 0 else None,
+                               "pbr_basis": metrics.get("bs_period")}
         pc = ph_close.get(code) if code else None
         if pc and sum(v is not None for v in pc) >= 5:
             co["price_hist"] = [[d, v] for d, v in zip(ph_dates, pc) if v is not None]

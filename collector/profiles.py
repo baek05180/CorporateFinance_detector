@@ -19,7 +19,7 @@ from . import config, docparse
 from .dart import DartBudgetExceeded, DartError, DartQuotaExceeded
 from .normalize import num
 from .datagokr import redact
-from .refdata import StockPriceError, kind_listed, stock_prices, update_price_history
+from .refdata import StockPriceError, kind_listed, stock_prices, update_price_history, update_px
 from .store import dump_json, load_json, now_kst
 
 log = logging.getLogger("profiles")
@@ -157,6 +157,10 @@ def fs_detail(rows):
                 out["cash"] = v
             elif ("ShorttermDeposits" in aid or nm == "단기금융상품") and "st_deposits" not in out:
                 out["st_deposits"] = v
+            elif aid == "ifrs-full_CurrentAssets" or nm == "유동자산":
+                out.setdefault("cur_assets", v)
+            elif aid == "ifrs-full_CurrentLiabilities" or nm == "유동부채":
+                out.setdefault("cur_liab", v)
             elif aid == "ifrs-full_Assets":
                 out.setdefault("assets", v)
             elif aid == "ifrs-full_Liabilities":
@@ -531,6 +535,7 @@ def run(dart, store, today=None):
         ph, n = update_price_history(load_json("ref/price_hist.json", {}), today, (bas, prices) if prices else None)
         dump_json("ref/price_hist.json", ph, indent=None)
         diag["price_hist_days"], diag["price_hist_fetched"] = len(ph["dates"]), n
+        diag["px_fetched"] = update_px(today, (bas, prices) if prices else None, max_fetch=60)
     except StockPriceError as e:
         diag["prices_error"] = redact(e)[:300]
     except Exception as e:  # noqa: BLE001

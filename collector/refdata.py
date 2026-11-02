@@ -91,7 +91,8 @@ def prices_on(d, session=None, key=None):
                 code = code[1:]
             try:
                 out[code] = {"close": int(float(it.get("clpr"))), "mcap": int(float(it.get("mrktTotAmt"))),
-                             "shares": int(float(it.get("lstgStCnt")))}
+                             "shares": int(float(it.get("lstgStCnt"))),
+                             "vol": int(float(it.get("trqu") or 0)), "val": int(float(it.get("trPrc") or 0))}
             except (TypeError, ValueError):
                 continue
         if not items or len(out) >= total or page >= 6:
@@ -139,3 +140,53 @@ def update_price_history(hist, today, latest=None, days=180, max_fetch=40, sessi
     codes = sorted({c for x in dates for c in rows[x]})
     close = {c: [rows[x].get(c) for x in dates] for c in codes}
     return {"dates": dates, "close": close, "closed": sorted(x for x in tried if x >= start.isoformat())}, fetched
+
+
+def update_px(today, latest=None, years=3, max_fetch=40, session=None):
+    """3년 일별 시세를 월별 파일(ref/px/YYYY-MM.json)에 쌓는다: {"dates", "c": 종가, "v": 거래량, "a": 거래대금(백만원), "sh": 상장주식수}.
+    지난 달 파일은 다 차면 다시 쓰지 않으므로 저장소가 크게 늘지 않는다. 최근 날짜부터 채운다."""
+    from .store import dump_json, load_json
+    key, s = _key(), session or requests.Session()
+    months, tried_all = {}, load_json("ref/px/closed.json", [])
+    tried = set(tried_all)
+
+    def month(m):
+        if m not in months:
+            months[m] = load_json(f"ref/px/{m}.json", {"dates": [], "c": {}, "v": {}, "a": {}, "sh": {}})
+        return months[m]
+
+    def put(iso, out):
+        f = month(iso[:7])
+        if iso in f["dates"]:
+            return
+        f["dates"].append(iso)
+        f["dates"].sort()
+        i = f["dates"].index(iso)
+        n = len(f["dates"])
+        for k, fld in (("c", "close"), ("v", "vol"), ("a", "val")):
+            for code in set(f[k]) | set(out):
+                arr = f[k].setdefault(code, [None] * (n - 1))
+                arr.insert(i, (out[code][fld] // 1_000_000 if fld == "val" else out[code][fld]) if code in out else None)
+        for code, v in out.items():
+            f["sh"][code] = v["shares"]
+
+    if latest and latest[0]:
+        put(latest[0], latest[1])
+    start = today - timedelta(days=365 * years + 5)
+    fetched, d = 0, today - timedelta(days=1)
+    dirty = set(months)
+    while d >= start and fetched < max_fetch:
+        iso = d.isoformat()
+        if d.weekday() < 5 and iso not in tried and iso not in month(iso[:7])["dates"]:
+            out = prices_on(d, s, key)
+            fetched += 1
+            if out:
+                put(iso, out)
+                dirty.add(iso[:7])
+            elif d < today - timedelta(days=4):
+                tried.add(iso)
+        d -= timedelta(days=1)
+    for m in dirty:
+        dump_json(f"ref/px/{m}.json", months[m], indent=None)
+    dump_json("ref/px/closed.json", sorted(tried), indent=None)
+    return fetched

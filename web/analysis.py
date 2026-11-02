@@ -61,7 +61,7 @@ def financial_series(multi_row, annual_year, interim_row, interim_period, prof):
     elif prof and prof.get("fs_annual"):
         fa = prof["fs_annual"]
         out.append({"period": fa["period"].split()[0], "kind": "annual", "fs": fa.get("fs"),
-                    **{k: fa.get(k) for k in ("revenue", "op", "ni", "assets", "liab", "equity", "capital")}})
+                    **{k: fa.get(k) for k in ("revenue", "op", "ni", "assets", "liab", "equity", "capital", "cur_assets", "cur_liab")}})
     if interim_row and interim_row.get("cur"):
         out.append({"period": interim_period, "kind": "interim", "fs": interim_row.get("fs"), **interim_row["cur"]})
         if interim_row.get("prev"):
@@ -93,6 +93,7 @@ def key_metrics(series, prof, price):
         "bs_period": bs.get("period"),
         "assets": bs.get("assets"), "liab": bs.get("liab"), "equity": bs.get("equity"), "capital": bs.get("capital"),
         "debt_ratio": bs.get("debt_ratio"), "current_ratio": bs.get("current_ratio"),
+        "cur_assets": bs.get("cur_assets"), "cur_liab": bs.get("cur_liab"), "bs_fs": bs.get("fs"),
         "cash": fd.get("cash"), "st_deposits": fd.get("st_deposits"), "debt": fd.get("debt"),
         "detail_period": fd.get("period"),
     }
@@ -577,3 +578,111 @@ def trigger_status(rows, m):
         items.append(it)
     items.sort(key=lambda x: (x["metric"] == "기타", x.get("dir") != "down", x["agency"]))
     return {"agencies": list(ags.values()), "items": items}
+
+
+def _nk(x):
+    return re.sub(r"[\s·,()/\-]", "", (x or "")).lower()
+
+
+def _row_ratio(cells):
+    """행에서 (매출액, 비율) 첫 쌍의 비율 — 당기 값."""
+    for i in range(len(cells) - 1):
+        a, b = cells[i].replace(",", "").strip(), cells[i + 1].replace("%", "").strip()
+        if re.fullmatch(r"-?\d{2,}", a) and re.fullmatch(r"-?\d{1,3}(\.\d+)?", b) and abs(float(b)) <= 100:
+            return float(b)
+    return None
+
+
+def segment_shares(raw, segments):
+    """사업보고서 '주요 제품' 표 원문에서 알려진 부문 이름으로 행을 묶어 부문별 비율 합계를 구한다.
+    부문 이름으로 시작하지 않는 행(종속회사·매출유형 줄)은 앞 부문에 붙인다."""
+    segs = [x for x in dict.fromkeys(segments) if x]
+    if not raw or len(segs) < 2:
+        return {}
+    keyed = {_nk(x): x for x in segs}
+    out, cur = {}, None
+    for line in raw.split("\n"):
+        cells = [c.strip() for c in line.split(" | ")]
+        if len(cells) < 3:
+            continue
+        head = _nk(cells[0])
+        if head.endswith("계") and len(head) <= 6:
+            if cur and out:
+                break
+            continue
+        hit = keyed.get(head) or next((v for k, v in keyed.items() if len(k) >= 3 and head.startswith(k)), None)
+        if hit:
+            cur = hit
+        if not cur:
+            continue
+        r = _row_ratio(cells)
+        if r is not None:
+            out[cur] = round(out.get(cur, 0) + r, 1)
+    return out if len(out) >= 2 and 80 <= sum(out.values()) <= 120 else {}
+
+
+def fill_product_shares(ai, raw=None):
+    """요약의 주요 제품에 비중이 없으면 매출 구성(flow.revenue)에서 같은 부문을 찾아 채운다.
+    한 부문에 제품이 여럿이면 제품 비중 대신 부문 비중(seg_share)으로 표시."""
+    if not ai or not ai.get("products"):
+        return ai
+    P = ai["products"]
+    if raw and any(p.get("share") is None for p in P):
+        ss = segment_shares(raw, [p.get("segment") for p in P])
+        if ss:
+            cover = all(p.get("segment") in ss for p in P)
+            cnt = {}
+            for p in P:
+                cnt[p.get("segment")] = cnt.get(p.get("segment"), 0) + 1
+            for p in P:
+                if p.get("segment") in ss and (cover or p.get("share") is None):
+                    p.pop("share", None) if cover else None
+                    if cnt[p["segment"]] == 1:
+                        p["share"] = ss[p["segment"]]
+                    else:
+                        p["seg_share"] = ss[p["segment"]]
+            for r in ((ai.get("flow") or {}).get("revenue") or []):
+                if r.get("share") is None and r.get("name") in ss:
+                    r["share"] = ss[r["name"]]
+    rev = [r for r in ((ai.get("flow") or {}).get("revenue") or []) if r.get("share") is not None]
+    if not rev:
+        return ai
+    hits = {}
+    for i, p in enumerate(ai["products"]):
+        if p.get("share") is not None:
+            continue
+        keys = [k for k in (_nk(p.get("segment")), _nk(p.get("name"))) if len(k) >= 2]
+        for j, r in enumerate(rev):
+            rn = _nk(r["name"])
+            if any(k in rn or rn in k or k[:2] == rn[:2] and len(rn) >= 2 for k in keys):
+                hits.setdefault(j, []).append(i)
+                break
+    for j, idx in hits.items():
+        for i in idx:
+            if len(idx) == 1:
+                ai["products"][i]["share"] = rev[j]["share"]
+            else:
+                ai["products"][i]["seg_share"] = rev[j]["share"]
+    return ai
+
+
+def px_stats(dates, close, vol, val, shares, today):
+    """기간별(3개월·6개월·1년·3년) 주가 변동·평균 거래량·거래대금·회전율."""
+    from datetime import timedelta as _td
+    out = {}
+    for lab, days in (("3M", 91), ("6M", 182), ("1Y", 365), ("3Y", 1095)):
+        cut = (today - _td(days=days)).isoformat()
+        idx = [i for i, d in enumerate(dates) if d >= cut and close[i] is not None]
+        if len(idx) < 5:
+            continue
+        cs = [close[i] for i in idx]
+        vs = [vol[i] for i in idx if vol[i] is not None]
+        av = [val[i] for i in idx if val[i] is not None]
+        span_ok = dates[idx[0]] <= (today - _td(days=days - 20)).isoformat()
+        avg_v = sum(vs) / len(vs) if vs else None
+        out[lab] = {"ret": round((cs[-1] / cs[0] - 1) * 100, 1) if cs[0] else None, "hi": max(cs), "lo": min(cs),
+                    "avg_vol": round(avg_v) if avg_v is not None else None,
+                    "avg_val": round(sum(av) / len(av) * 1e6) if av else None,
+                    "turnover": round(avg_v / shares * 100, 3) if avg_v and shares else None,
+                    "days": len(idx), "partial": not span_ok}
+    return out

@@ -210,7 +210,7 @@ def main(argv=None):
     if args.mode == "prices":
         # 주가 API만 빠르게 확인·갱신 (DART 호출 없음)
         import json
-        from .refdata import StockPriceError, stock_prices, update_price_history
+        from .refdata import StockPriceError, stock_prices, update_price_history, update_px
         try:
             bas, prices = stock_prices(today)
             if prices:
@@ -218,6 +218,7 @@ def main(argv=None):
             ph, n = update_price_history(load_json("ref/price_hist.json", {}), today, (bas, prices) if prices else None,
                                          max_fetch=140)
             dump_json("ref/price_hist.json", ph, indent=None)
+            n += update_px(today, (bas, prices) if prices else None, max_fetch=args.days or 300)
             summary = f"mode=prices · 기준일 {bas} · {len(prices)}종목 · 이력 {len(ph['dates'])}일 (이번 조회 {n}일)"
         except (StockPriceError, Exception) as e:  # noqa: BLE001
             summary = f"mode=prices · 실패: {redact(e)[:300]}"
