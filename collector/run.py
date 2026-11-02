@@ -221,7 +221,9 @@ def main(argv=None):
             n += update_px(today, (bas, prices) if prices else None, max_fetch=args.days or 300)
             summary = f"mode=prices · 기준일 {bas} · {len(prices)}종목 · 이력 {len(ph['dates'])}일 (이번 조회 {n}일)"
         except (StockPriceError, Exception) as e:  # noqa: BLE001
+            import traceback
             summary = f"mode=prices · 실패: {redact(e)[:300]}"
+            dump_json("diag_prices.json", {"error": redact(traceback.format_exc())[-1500:]})
         log.info(summary)
         if os.environ.get("GITHUB_STEP_SUMMARY"):
             with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as f:
