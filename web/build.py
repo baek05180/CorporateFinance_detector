@@ -100,6 +100,12 @@ def main():
     triggers = A.load_triggers(os.path.join(config.DATA_DIR, "manual", "rating_triggers.csv"))
     out_bonds = (load_json("bonds/outstanding.json", {}) or {}).get("bonds") or []
     issued_cpn = {(b.get("name") or "").replace(" ", ""): b for b in out_bonds if b.get("method") == "공모" and b.get("cpn")}
+    # 약칭(롯데리츠)과 예탁원 법인명(롯데위탁관리부동산투자회사)이 달라도 맞도록 법인등록번호+회차로도 찾는다
+    issued_by_crno = {}
+    for b in out_bonds:
+        if b.get("method") == "공모" and b.get("cpn") and b.get("crno"):
+            sr = re.sub(r"\(.*?\)", "", (b.get("name") or "").replace(" ", "")[len((b.get("issuer") or "").replace(" ", "")):])
+            issued_by_crno[(b["crno"], sr)] = b
     name2code = {v.get("name"): c for c, v in listed.items() if v.get("name")}
     outstanding = load_json("bonds/outstanding.json", {}).get("bonds", [])
 
@@ -145,7 +151,7 @@ def main():
                 if sl.get("rate"):
                     row["fix_rate"] = sl["rate"]
             nm = re.sub(r"\(주\)|㈜|주식회사|\s", "", r.get("corp_name") or "") + sr
-            ib = issued_cpn.get(nm)
+            ib = issued_cpn.get(nm) or issued_by_crno.get(((info.get(r.get("corp_code")) or {}).get("jurir_no") or r.get("crno"), sr))
             if ib and (not r.get("maturity") or ib.get("mat") == r.get("maturity")):
                 row["issue_rate"], row["stage"] = ib["cpn"], "발행"
             if orig != r.get("rcept_no"):
