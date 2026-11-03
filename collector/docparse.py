@@ -640,19 +640,12 @@ def audit_overview(xml, limit=700):
 
 
 # ── 유상증자 결정 주요사항보고서: 발행가·할인율·일정 ──
-RIGHTS_DOC_VERSION = 1
-_R_DATES = [  # (키, 행 머리말 정규식) — 표 행 앞쪽 셀에서 찾는다
-    ("record_dt", r"신주\s*배정\s*기준일"),
-    ("sub_from", r"(?:구주주|주주)?\s*청약\s*(?:예정)?일"),
-    ("pay_dt", r"납입\s*(?:예정)?일"),
-    ("list_dt", r"상장\s*예정일"),
-    ("ex_dt", r"권리\s*락"),
-]
+RIGHTS_DOC_VERSION = 2
+_ITEM = re.compile(r"^\s*\d{1,2}(?:-\d)?\s*[.)]")
 
 
-def _date_in(s):
-    m = re.search(DATE, s)
-    return _iso(m) if m else None
+def _ints(s, lo=50):
+    return [x for x in (int(v.replace(",", "")) for v in re.findall(r"(?<![\d.])(\d{1,3}(?:,\d{3})+|\d{2,7})(?![\d.%])", s)) if x >= lo]
 
 
 def rights_doc(xml):
@@ -662,41 +655,54 @@ def rights_doc(xml):
     for kind, rows in blocks(xml):
         if kind != "table":
             continue
-        carry = ""
+        flat = " ".join(" ".join(r) for r in rows[:3]).replace(" ", "")
+        if "정정전" in flat or "정정후" in flat:
+            continue  # 정정 대비표는 건너뛰고 본문 표(정정 후 값)를 쓴다
+        item, grp = "", ""
         for r in rows:
-            cells = [c.strip() for c in r]
-            head = " ".join(cells[:2]).replace(" ", "")
-            if cells and cells[0] and not re.search(r"\d{4}", cells[0]):
-                carry = cells[0].replace(" ", "")
-            lab = carry + head
-            joined = " ".join(cells)
-            if out["issue_px"] is None and re.search(r"발행가", lab) and "보통" in joined.replace(" ", "") + lab:
-                n = [int(x.replace(",", "")) for x in re.findall(r"(?<![\d.])(\d{1,3}(?:,\d{3})+|\d{2,7})(?![\d.%])", " ".join(cells[1:]))]
-                n = [x for x in n if x >= 10]
+            cells = [c.strip() for c in r if c is not None]
+            if not cells:
+                continue
+            c0 = cells[0].replace(" ", "")
+            if _ITEM.match(cells[0]):
+                item, grp = c0, ""
+            elif c0 in ("우리사주조합", "구주주", "일반공모", "일반", "제3자배정"):
+                grp = c0
+            rest = " ".join(cells[1:])
+            nr = rest.replace(" ", "")
+            if "발행가" in item and out["issue_px"] is None and ("보통" in nr or "보통" in item):
+                n = _ints(rest)
                 if n:
                     out["issue_px"] = n[-1]
-            if out["base_px"] is None and "기준주가" in lab and "할인" not in lab and "할증" not in lab:
-                n = [int(x.replace(",", "")) for x in re.findall(r"(\d{1,3}(?:,\d{3})+|\d{2,7})(?![\d.%])", " ".join(cells[1:]))]
+            elif "기준주가" in item and "할인" not in item and "할증" not in item and "산정" not in item and out["base_px"] is None and "보통" in nr + item:
+                n = _ints(rest)
                 if n:
                     out["base_px"] = n[-1]
-            if out["discount"] is None and re.search(r"할인율|할증율|할인\s*또는", lab):
+            elif re.search(r"할인율|할증율", item) and "근거" not in item and out["discount"] is None:
                 m = re.search(r"([+\-−]?\d{1,2}(?:\.\d+)?)\s*%?\s*$", " ".join(c for c in cells[1:] if c and c != "-"))
                 if m:
                     out["discount"] = abs(float(m.group(1).replace("−", "-")))
-            for k, pat in _R_DATES:
-                if k == "ex_dt" or not re.search(pat, lab):
-                    continue
-                ds = [_iso(m) for m in re.finditer(DATE, joined)]
-                if not ds:
-                    continue
-                if k == "sub_from":
-                    if "우리사주" in lab or out["sub_from"]:
-                        continue
-                    out["sub_from"], out["sub_to"] = ds[0], ds[-1] if len(ds) > 1 else None
-                elif out[k] is None:
-                    out[k] = ds[0]
-    if out["discount"] is None and out["issue_px"] and out["base_px"] and out["base_px"] > out["issue_px"]:
+            ds = [_iso(m) for m in re.finditer(DATE, rest)]
+            if not ds:
+                continue
+            if "청약" in item and "공매도" not in item and "우리사주" not in grp + c0:
+                if ("시작" in nr or "시작" in c0) and out["sub_from"] is None:
+                    out["sub_from"] = ds[0]
+                elif ("종료" in nr or "종료" in c0) and out["sub_to"] is None and out["sub_from"]:
+                    out["sub_to"] = ds[0]
+            elif re.search(r"배정기준일", item) and out["record_dt"] is None:
+                out["record_dt"] = ds[0]
+            elif re.search(r"^\d+[.)]?납입일", item) and out["pay_dt"] is None:
+                out["pay_dt"] = ds[0]
+            elif "상장예정일" in item and out["list_dt"] is None:
+                out["list_dt"] = ds[0]
+    t = text_of(xml)
+    if out["discount"] is None:
+        m = re.search(r"할인율\s*(?:은|는|을|를)?\s*(\d{1,2}(?:\.\d+)?)\s*%", t)
+        if m:
+            out["discount"] = float(m.group(1))
+    if out["discount"] is None and out["issue_px"] and out["base_px"] and out["base_px"] >= out["issue_px"]:
         out["discount"] = round((1 - out["issue_px"] / out["base_px"]) * 100, 1)
-    if out["sub_to"] is None and out["sub_from"]:
+    if out["sub_to"] is None:
         out.pop("sub_to")
     return out
