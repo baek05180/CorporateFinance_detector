@@ -6830,6 +6830,17 @@
   "products": "PB/CPVC 파이프, 연결구",
   "region": "충청북도"
  },
+ "0222E0": {
+  "ceo": "구상모",
+  "fiscal_month": "12월",
+  "homepage": "",
+  "industry": "금융 지원 서비스업",
+  "listed": "2026-11-04",
+  "market": "K",
+  "name": "아이엠스팩1호",
+  "products": "기업인수합병",
+  "region": "서울특별시"
+ },
  "023000": {
   "ceo": "남상문, 박민희(각자대표)",
   "fiscal_month": "12월",
@@ -30104,6 +30115,17 @@
   "market": "N",
   "name": "유비씨",
   "products": "디지털트윈 구현 플랫폼(Flexing CPS, Flexing DT 등)",
+  "region": "경기도"
+ },
+ "495910": {
+  "ceo": "김영곤",
+  "fiscal_month": "12월",
+  "homepage": "http://www.estech.asia",
+  "industry": "특수 목적용 기계 제조업",
+  "listed": "2026-11-04",
+  "market": "K",
+  "name": "이에스티",
+  "products": "디스플레이 및 반도체 제조공정용 정전척",
   "region": "경기도"
  },
  "496070": {
