@@ -13,7 +13,7 @@ from collections import defaultdict
 from datetime import date, timedelta
 
 from . import config, normalize
-from .dart import DartClient, DartQuotaExceeded
+from .dart import DartClient, DartError, DartQuotaExceeded
 from .datagokr import BondInfoClient, DataGoKrError, redact
 from .store import Store, dump_json, load_json, now_kst
 
@@ -356,6 +356,8 @@ def main(argv=None):
         process_filings(dart, store, filings, mode)
     except DartQuotaExceeded as e:
         log.error("OpenDART 일일 한도 초과: %s (지금까지 받은 데이터는 저장)", e)
+    except DartError as e:  # DART 접속 장애여도 나머지(사모채·사이트 빌드)는 계속
+        log.error("OpenDART 호출 실패 — 이번 회차 공시 수집 건너뜀: %s", e)
 
     if mode == "daily":
         store.diag["private_bond_status"] = {"run": now_kst().isoformat(timespec="minutes")}
