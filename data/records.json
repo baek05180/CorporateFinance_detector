@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-03T21:12+09:00",
+  "data_updated": "2026-11-04T07:30+09:00",
   "last_daily": "2026-11-03T21:12+09:00"
  },
  "records": {
@@ -79164,7 +79164,7 @@
    "ytm": 3.0
   },
   "CB:01022902:12": {
-   "amended": false,
+   "amended": true,
    "amount": 1000000000,
    "board_dt": "2026-10-29",
    "captured_by": "watch",
@@ -79174,29 +79174,29 @@
    "corp_name": "애드바이오텍",
    "coupon": 6.0,
    "dilution": 1.58,
-   "exercise_from": "2027-11-06",
-   "exercise_to": "2029-10-06",
+   "exercise_from": "2027-11-11",
+   "exercise_to": "2029-10-11",
    "first_seen": "2026-10-30T07:29+09:00",
    "id": "CB:01022902:12",
    "lead": null,
-   "maturity": "2029-11-06",
+   "maturity": "2029-11-11",
    "method_raw": "사모",
    "offering": "사모",
-   "pay_dt": "2026-11-06",
+   "pay_dt": "2026-11-11",
    "price": 1999,
    "purposes": {
     "타법인증권": 1000000000
    },
-   "rcept_dt": "2026-10-29",
-   "rcept_no": "20261029000674",
-   "refix_floor": null,
+   "rcept_dt": "2026-11-03",
+   "rcept_no": "20261103000389",
+   "refix_floor": 1400,
    "series": "12",
    "shares": 500250,
    "source": "DART",
    "stock_code": "179530",
    "type": "CB",
-   "updated": "2026-10-30T07:29+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261029000674",
+   "updated": "2026-11-04T07:30+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261103000389",
    "ytm": 6.0
   },
   "CB:01022902:6": {
