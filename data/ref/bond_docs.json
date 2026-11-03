@@ -4540,6 +4540,28 @@
   },
   "v": 6
  },
+ "20261019000362": {
+  "demand_dt": "2026-10-20",
+  "rating": "A+",
+  "series": {
+   "65-1": {
+    "band": "개별민평 -30~+30bp",
+    "rate": null,
+    "spread": null
+   },
+   "65-2": {
+    "band": "개별민평 -30~+30bp",
+    "rate": null,
+    "spread": null
+   },
+   "65-3": {
+    "band": "개별민평 -30~+30bp",
+    "rate": null,
+    "spread": null
+   }
+  },
+  "v": 6
+ },
  "20261023000404": {
   "demand_dt": "2026-10-27",
   "rating": "AA-",
