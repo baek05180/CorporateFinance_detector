@@ -1,5 +1,5 @@
 {
- "bond_linked": 209,
+ "bond_linked": 6,
  "offer_methods": {
   "CBO기초사모": 4858,
   "공모": 18985,
@@ -29,6 +29,6 @@
  "private_bond_status": {
   "basDt_20261102": 29160,
   "outstanding": 9336,
-  "run": "2026-11-03T17:25+09:00"
+  "run": "2026-11-03T20:59+09:00"
  }
 }
