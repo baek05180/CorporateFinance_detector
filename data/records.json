@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-03T11:22+09:00",
+  "data_updated": "2026-11-03T15:21+09:00",
   "last_daily": "2026-11-02T20:42+09:00"
  },
  "records": {
@@ -303143,33 +303143,33 @@
   },
   "RIGHTS:01259311:20260729000348": {
    "amended": true,
-   "amount": 19999999240,
-   "board_dt": "2026-08-04",
+   "amount": 19999999615,
+   "board_dt": "2026-11-03",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
    "corp_code": "01259311",
    "corp_name": "푸드나무",
-   "dilution": 23.12,
+   "dilution": 51.45,
    "first_seen": "2026-10-25T18:20+09:00",
    "id": "RIGHTS:01259311:20260729000348",
    "method": "제3자배정증자",
-   "new_common": 8196721,
+   "new_common": 19627085,
    "new_other": null,
    "offering": "사모·주주배정",
    "original_rcept": "20260729000348",
    "par_value": 500,
    "purposes": {
-    "운영": 19999999240
+    "운영": 19999999615
    },
-   "rcept_dt": "2026-08-04",
-   "rcept_no": "20260804000291",
+   "rcept_dt": "2026-11-03",
+   "rcept_no": "20261103000174",
    "source": "DART",
    "stock_code": "290720",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-10-25T18:20+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260804000291"
+   "updated": "2026-11-03T15:21+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261103000174"
   },
   "RIGHTS:01259311:20260729000359": {
    "amended": true,
