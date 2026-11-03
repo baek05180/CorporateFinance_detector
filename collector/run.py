@@ -158,7 +158,9 @@ def collect_private_bonds(store, mode):
         for it in items:
             method = str(it.get("bondOffrMcdNm") or "")
             store.note_diag("offer_methods", method)
-            if str(it.get("scrsItmsKcdNm") or "") in config.PRIVATE_BOND_KINDS:
+            # 잔존 사채 목록: 일반회사채 + 리츠·펀드 발행채(유사집합투자기구채, 주식연계 제외) — 공모채 발행금리 확인에도 쓴다
+            if (str(it.get("scrsItmsKcdNm") or "") in config.PRIVATE_BOND_KINDS
+                    or str(it.get("scrsItmsKcdNm") or "") == "유사집합투자기구채" and str(it.get("pclrBondKcdNm") or "") in config.PRIVATE_BOND_PCLR_OK):
                 outstanding.append(compact_bond(it))
             if method not in config.PRIVATE_BOND_METHODS:
                 continue
