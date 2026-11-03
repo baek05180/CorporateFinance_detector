@@ -697,3 +697,8 @@ def px_stats(dates, close, vol, val, shares, today, short=None, lnb=None):
                 out[lab]["lnb_end"] = round(ls[-1] / shares * 100, 2)
                 out[lab]["lnb_days"] = len(ls)
     return out
+
+
+def rcpt_date(rno):
+    """접수번호 앞 8자리 → YYYY-MM-DD"""
+    return f"{rno[:4]}-{rno[4:6]}-{rno[6:8]}" if rno and len(rno) >= 8 else None

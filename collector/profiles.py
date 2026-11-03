@@ -552,6 +552,7 @@ def run(dart, store, today=None):
 
         bond_doc_step(dart, store, today, diag)
         mezz_step(dart, store, today, diag)
+        rights_step(dart, store, today, diag, max_docs=60)
 
         # 6) 조달 대상 회사 상세 (병렬)
         t0 = time.time()
@@ -681,14 +682,17 @@ def link_bond_filings(dart, store, today, days=None):
             recs.setdefault(r["corp_code"], []).append(r)
     n = 0
     for cc, rs in recs.items():
-        heads = sorted({r["rcept_no"] for r in rs})
-        groups = {h: [] for h in heads}
-        for rno, nm in sorted(set(by_corp.get(cc, []))):
-            h = next((x for x in heads if x >= rno), None)
-            if h:
-                groups[h].append([rno, nm])
+        # 최초 신고서(정정·발행조건확정이 아닌 것)마다 한 묶음 — 뒤따르는 정정·확정은 직전 최초 신고서에 붙인다
+        fl_c = sorted(set(map(tuple, by_corp.get(cc, []))))
+        origs = [x[0] for x in fl_c if "정정" not in x[1] and "발행조건" not in x[1]]
+        groups = {o: [] for o in origs}
+        for rno, nm in fl_c:
+            o = max((x for x in origs if x <= rno), default=None)
+            if o:
+                groups[o].append([rno, nm])
         for r in rs:
-            g = groups.get(r["rcept_no"]) or []
+            o = max((x for x in origs if x <= r["rcept_no"]), default=None)
+            g = groups.get(o) or []
             if not g:
                 continue
             orig = next((x[0] for x in g if "정정" not in x[1] and "발행조건" not in x[1]), g[0][0])
@@ -789,3 +793,40 @@ def fs_refresh(dart, corp_codes, diag):
         elif miss and len(diag.setdefault("dep_miss", [])) < 6:
             diag["dep_miss"].append({"corp": cc, "cf": miss})
     diag["fs_refresh"] = {"targets": len(corp_codes), "done": done, "with_dep": with_dep}
+
+
+def rights_step(dart, store, today, diag, max_docs=400):
+    """유상증자 원문: 발행가·할인율·일정 (최근 것부터)."""
+    t0 = time.time()
+    docs_ = load_json("ref/rights_docs.json", {})
+    since = (today - timedelta(days=config.MEZZ_DOC_DAYS)).isoformat()
+    todo = sorted({r["rcept_no"] for r in store.records.values()
+                   if r.get("type") == "RIGHTS" and r.get("rcept_no") and (r.get("rcept_dt") or "") >= since}, reverse=True)
+    todo = [x for x in todo if (docs_.get(x) or {}).get("v") != docparse.RIGHTS_DOC_VERSION][:max_docs]
+
+    def job(rno):
+        try:
+            d = dart.document(rno)
+        except DartError as e:
+            return rno, {"error": redact(e)[:100], "v": docparse.RIGHTS_DOC_VERSION}, None
+        main = max(d.values(), key=len) if d else ""
+        got = docparse.rights_doc(main)
+        miss = None
+        if got["issue_px"] is None or got["discount"] is None or got["pay_dt"] is None:
+            t = docparse.text_of(main)
+            miss = {"rcept": rno, "got": {k: got.get(k) for k in ("issue_px", "discount", "pay_dt", "record_dt", "sub_from")}}
+            for key, w in (("발행가", 300), ("할인", 250), ("납입", 150), ("청약", 250)):
+                i = t.find(key)
+                miss[key] = t[max(0, i - 40): i + w] if i >= 0 else ""
+        return rno, got, miss
+
+    try:
+        for rno, got, miss in parallel(todo, job):
+            docs_[rno] = got
+            if miss and len(diag.setdefault("rights_miss", [])) < 8:
+                diag["rights_miss"].append(miss)
+    finally:
+        dump_json("ref/rights_docs.json", docs_, indent=None)
+        vals = [v for v in docs_.values() if "error" not in v]
+        diag["rights_docs"] = {"todo": len(todo), "total": len(docs_), **{k: sum(1 for v in vals if v.get(k)) for k in
+                               ("issue_px", "discount", "pay_dt", "record_dt", "sub_from", "list_dt")}, "sec": round(time.time() - t0)}

@@ -96,6 +96,7 @@ def main():
     ph_dates, ph_close = ph.get("dates") or [], ph.get("close") or {}
     bond_docs = load_json("ref/bond_docs.json", {})
     mezz_docs = load_json("ref/mezz_docs.json", {})
+    rights_docs = load_json("ref/rights_docs.json", {})
     triggers = A.load_triggers(os.path.join(config.DATA_DIR, "manual", "rating_triggers.csv"))
     out_bonds = (load_json("bonds/outstanding.json", {}) or {}).get("bonds") or []
     issued_cpn = {(b.get("name") or "").replace(" ", ""): b for b in out_bonds if b.get("method") == "공모" and b.get("cpn")}
@@ -151,9 +152,13 @@ def main():
                 row["original_url"] = "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=" + orig
             if fl:
                 row["filings"] = fl
+                row["orig_dt"] = A.rcpt_date(orig)
+                fx = next((x[0] for x in fl if "발행조건" in x[1]), None)
+                if fx:
+                    row["fix_dt"] = A.rcpt_date(fx)
         if r.get("type") in ("CB", "BW", "EB"):
             md_ = mezz_docs.get(r.get("rcept_no")) or {}
-            for k in ("investors", "call_pct", "call_m", "put_m", "premium", "base_price"):
+            for k in ("investors", "call_pct", "call_m", "put_m", "premium", "base_price", "call_from", "put_from"):
                 if md_.get(k) not in (None, []):
                     row[k] = md_[k]
             base = r.get("pay_dt") or r.get("board_dt")
@@ -167,6 +172,11 @@ def main():
             px = (prices.get(tgt) or {}).get("close") if tgt else None
             if px and r.get("price"):
                 row["cur_px"], row["parity"] = px, round(px / r["price"] * 100, 1)
+        if r.get("type") == "RIGHTS":
+            rd = rights_docs.get(r.get("rcept_no")) or {}
+            for k in ("issue_px", "base_px", "discount", "record_dt", "sub_from", "sub_to", "pay_dt", "list_dt"):
+                if rd.get(k) not in (None, "") and not row.get(k):
+                    row[k] = rd[k]
         if row.get("rating") in ("-", "—"):
             row.pop("rating")
         if row["key"] in info and not row.get("corp_cls"):

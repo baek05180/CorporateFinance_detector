@@ -296,6 +296,7 @@ footer p{margin:4px 0}
   main{padding:0}
   .top3{grid-template-columns:repeat(3,1fr)}
 }
+.sch{border:1px solid var(--line);border-radius:12px;padding:4px;margin:10px 0 4px}.sch div{display:flex;align-items:center;gap:10px;padding:9px 12px;border-bottom:1px solid var(--line)}.sch div:last-child{border-bottom:0}.sch i{width:7px;height:7px;border-radius:50%;flex:none;background:var(--c-ov)}.sch b{flex:1;font-weight:600}.sch .d{font-variant-numeric:tabular-nums;color:var(--ink-3)}.sch .dd{width:64px;text-align:right;font-variant-numeric:tabular-nums;color:var(--ink-3);font-size:12px}.sch .now{background:var(--line-2);border-radius:8px}.sch .now i{background:var(--ink)}.sch .past{opacity:.55}
 .bsv{margin:6px 0 14px}.bsh .eq{margin:6px 0 10px}
 .bsg{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .bsc{display:flex;flex-direction:column;height:240px;border-radius:12px;overflow:hidden;gap:0}
@@ -575,6 +576,33 @@ function invTable(L) {
 }
 window.openDeal = r => openDeal(r);
 const STAGE = {'최초': '최초 신고 (수요예측 전)', '정정': '정정 (금리 결정)', '발행확정': '발행조건 확정', '발행': '발행 완료'};
+const TODAY = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
+const addM = (d, m) => { if (!d || !m) return null; const x = new Date(d + 'T00:00:00Z'); x.setUTCMonth(x.getUTCMonth() + m); return x.toISOString().slice(0, 10); };
+function dealSched(r) {
+  let ev = [];
+  if (['CB', 'BW', 'EB'].includes(r.type)) {
+    const base = r.pay_dt || r.board_dt;
+    const call = r.call_from || (r.call_pct ? addM(base, r.call_m) : null), put = r.put_from || addM(base, r.put_m);
+    const lab = r.type === 'CB' ? '전환' : r.type === 'BW' ? '행사' : '교환';
+    ev = [['이사회 결의', r.board_dt, 'c-ov'], ['납입', r.pay_dt, 'c-ov'], [lab + '개시', r.exercise_from, 's3'], ['Call개시', call, 's7'], ['Put개시', put, 's2'],
+      [lab + '종료', r.exercise_to, 's3'], ['만기', r.maturity, 'c-ov']];
+  } else if (r.type === 'RIGHTS') {
+    ev = [['이사회 결의', r.board_dt || r.rcept_dt, 'c-ov'], ['신주배정기준일', r.record_dt, 's7'], ['청약' + (r.sub_to && r.sub_to !== r.sub_from ? ' 시작' : ''), r.sub_from, 's1'],
+      ['청약 종료', r.sub_to !== r.sub_from ? r.sub_to : null, 's1'], ['납입', r.pay_dt, 's3'], ['신주 상장', r.list_dt, 's2']];
+  } else if (r.type === 'BOND' && r.offering === '공모') {
+    ev = [['최초 공시', r.orig_dt || r.rcept_dt, 'c-ov'], ['수요예측', r.demand_dt, 's1'], ['금리 결정', r.fix_dt, 's7'], ['발행(납입)', r.pay_dt, 's3'], ['만기', r.maturity, 'c-ov']];
+  } else return '';
+  ev = ev.filter(e => e[1]);
+  if (ev.length < 2) return '';
+  const m = new Map();
+  ev.forEach(([n, d, c]) => { const k = d; if (m.has(k)) m.get(k)[0] += ' · ' + n; else m.set(k, [n, d, c]); });
+  ev = [...m.values(), ['오늘', TODAY, 'now']].sort((a, b) => a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : (a[2] === 'now' ? -1 : 1));
+  const dd = d => { const n = Math.round((Date.parse(d) - Date.parse(TODAY)) / 864e5); return n === 0 ? '' : n > 0 ? 'D+' + n.toLocaleString() : 'D-' + (-n).toLocaleString(); };
+  return '<h3>일정</h3><div class="sch">' + ev.map(([n, d, c]) => `<div class="${c === 'now' ? 'now' : d < TODAY ? 'past' : ''}"><i${c !== 'now' ? ` style="background:var(--${c})"` : ''}></i><b>${esc(n)}</b><span class="d">${d.replace(/-/g, '.')}</span><span class="dd">${c === 'now' ? '' : dd(d)}</span></div>`).join('') + '</div>';
+}
+const otherRate = d => d.type === 'RIGHTS' ? (d.discount != null ? '할인율 ' + pct(d.discount, 1) : DASH)
+  : d.type === 'BOND' ? ((d.issue_rate ?? d.coupon ?? d.fix_rate) != null ? pct(d.issue_rate ?? d.coupon ?? d.fix_rate, 3) + (d.fix_spread != null ? `<span class="muted">(민평${d.fix_spread >= 0 ? '+' : ''}${d.fix_spread}bp)</span>` : '') : d.fix_spread != null ? `<span class="muted">결정</span> 민평${d.fix_spread >= 0 ? '+' : ''}${d.fix_spread}bp` : d.band ? `<span class="muted">희망 ${esc(d.band)}</span>` : DASH)
+  : priceOrRate(d);
 function openDeal(r) {
   const head = `<span class="badge ${r.type === 'BOND' ? (r.offering === '공모' ? 'b-pub' : 'b-pvt') : 'b-amd'}" style="margin:0">${esc(kindKey(r))}</span>
     <h2>${esc(r.corp_name)} ${r.series ? esc(r.series) + '회' : ''} ${r.type !== 'BOND' && r.type !== 'RIGHTS' ? esc(r.type) : ''}</h2>
@@ -599,6 +627,7 @@ function openDeal(r) {
   } else if (r.type === 'RIGHTS') {
     f = field('조달 금액', won(r.amount)) + field('증자 방식', esc(r.method)) + field('주식 종류', esc(r.stock_kind))
       + field('신주(보통)', r.new_common ? int(r.new_common) + '주' : null) + field('신주(기타)', r.new_other ? int(r.new_other) + '주' : null)
+      + field('발행가', r.issue_px ? int(r.issue_px) + '원' : null) + field('기준주가', r.base_px ? int(r.base_px) + '원' : null) + field('할인율', r.discount != null ? pct(r.discount, 1) : null)
       + field('증자 비율', pct(r.dilution, 2)) + field('접수일', md(r.rcept_dt)) + field('액면가', r.par_value ? int(r.par_value) + '원' : null);
   } else if (r.offering === '공모') {
     f = field('모집 금액', won(r.amount)) + field('진행 단계', r.stage ? esc(STAGE[r.stage] || r.stage) : null)
@@ -624,7 +653,7 @@ function openDeal(r) {
       `<div class="share" style="margin:4px 0"><span style="width:90px">${esc(k)}</span><div class="track"><div class="fill" style="width:${v / tot * 100}%"></div></div><span class="num" style="width:70px;text-align:right">${won(v)}</span></div>`).join('');
   }
   box.innerHTML = `<div class="modal-h">${head}</div><div class="modal-b">
-    <div class="fields">${f}</div>${extra}${useHtml}
+    <div class="fields">${f}</div>${dealSched(r)}${extra}${useHtml}
     <div id="m-more"></div>
     <div style="display:flex;gap:8px;margin-top:18px;flex-wrap:wrap">
       <a class="btn primary" href="#/company/${encodeURIComponent(r.key)}">회사 정보 보기 →</a>
@@ -639,7 +668,7 @@ function openDeal(r) {
     if (!others.length) return;
     remember(others);
     $('#m-more').innerHTML = '<h3>이 회사의 다른 조달</h3><table><tbody>' + others.map(d =>
-      `<tr class="click" data-pop="${esc(d.id)}"><td>${md(dealDate(d))}</td><td>${esc(kindKey(d))}</td><td>${series(d)}</td><td class="r num">${won(d.amount)}</td></tr>`).join('') + '</tbody></table>';
+      `<tr class="click" data-pop="${esc(d.id)}"><td>${md(dealDate(d))}</td><td>${esc(kindKey(d))}</td><td>${series(d)}</td><td class="r num">${won(d.amount)}</td><td class="r num">${otherRate(d)}</td></tr>`).join('') + '</tbody></table>';
     $$('#m-more [data-pop]').forEach(tr => tr.onclick = () => openDeal(ROWS_BY_ID[tr.dataset.pop]));
   }).catch(() => {});
 }
@@ -650,6 +679,7 @@ function openTranches(g) {
     <span class="note">${g.rows.length}개 트랜치 · 합계 ${esc(wonTxt(g.amount))}</span><button class="x" aria-label="닫기">×</button></div>
     <div class="modal-b">
       <div class="fields">${field('진행 단계', r.stage ? esc(STAGE[r.stage] || r.stage) : null)}${field('수요예측일', md(r.demand_dt))}${r.stage === '최초' ? '' : field('청약일', md(r.sub_dt))}${field('발행(납입)일', md(r.pay_dt))}${field('최초공시', r.original_url ? `<a class="dart" href="${r.original_url}" target="_blank" rel="noopener">원문</a>` : null)}${field('신용등급', esc(r.rating))}${field('대표주관', esc(r.lead))}${field('합계 금액', won(g.amount))}</div>
+      ${dealSched(r)}
       <h3>트랜치</h3>
       <div class="scroll"><table style="min-width:440px"><thead><tr><th>회차</th><th class="r">금액</th><th class="r">금리</th><th>희망밴드</th><th>만기</th><th>대표주관</th></tr></thead><tbody>
         ${g.rows.map(t => `<tr class="click" data-tr="${esc(t.id)}"><td><b>${esc(t.series_raw || t.series || '-')}</b></td><td class="r num">${won(t.amount)}</td><td class="r num">${priceOrRate(t)}</td><td class="muted">${esc(t.band || '-')}</td><td>${md(t.maturity)}</td><td>${esc(t.lead || '-')}</td></tr>`).join('')}

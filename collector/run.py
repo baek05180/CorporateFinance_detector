@@ -300,9 +300,10 @@ def main(argv=None):
         return 0
     if args.mode == "mezz":
         import json
-        from .profiles import mezz_step
+        from .profiles import mezz_step, rights_step
         diag = {}
         try:
+            rights_step(dart, store, today, diag, max_docs=args.days or 400)
             mezz_step(dart, store, today, diag)
         finally:
             dump_json("diag_mezz.json", diag)

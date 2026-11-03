@@ -637,3 +637,66 @@ def audit_overview(xml, limit=700):
                 break
     t = " ".join(out).strip()
     return t[:limit] if t else ""
+
+
+# ── 유상증자 결정 주요사항보고서: 발행가·할인율·일정 ──
+RIGHTS_DOC_VERSION = 1
+_R_DATES = [  # (키, 행 머리말 정규식) — 표 행 앞쪽 셀에서 찾는다
+    ("record_dt", r"신주\s*배정\s*기준일"),
+    ("sub_from", r"(?:구주주|주주)?\s*청약\s*(?:예정)?일"),
+    ("pay_dt", r"납입\s*(?:예정)?일"),
+    ("list_dt", r"상장\s*예정일"),
+    ("ex_dt", r"권리\s*락"),
+]
+
+
+def _date_in(s):
+    m = re.search(DATE, s)
+    return _iso(m) if m else None
+
+
+def rights_doc(xml):
+    """유상증자결정 원문 → 발행가·기준주가·할인율·배정기준일·청약·납입·상장예정일 (못 찾으면 None)."""
+    out = {"issue_px": None, "base_px": None, "discount": None, "record_dt": None, "sub_from": None, "sub_to": None,
+           "pay_dt": None, "list_dt": None, "v": RIGHTS_DOC_VERSION}
+    for kind, rows in blocks(xml):
+        if kind != "table":
+            continue
+        carry = ""
+        for r in rows:
+            cells = [c.strip() for c in r]
+            head = " ".join(cells[:2]).replace(" ", "")
+            if cells and cells[0] and not re.search(r"\d{4}", cells[0]):
+                carry = cells[0].replace(" ", "")
+            lab = carry + head
+            joined = " ".join(cells)
+            if out["issue_px"] is None and re.search(r"발행가", lab) and "보통" in joined.replace(" ", "") + lab:
+                n = [int(x.replace(",", "")) for x in re.findall(r"(?<![\d.])(\d{1,3}(?:,\d{3})+|\d{2,7})(?![\d.%])", " ".join(cells[1:]))]
+                n = [x for x in n if x >= 10]
+                if n:
+                    out["issue_px"] = n[-1]
+            if out["base_px"] is None and "기준주가" in lab and "할인" not in lab and "할증" not in lab:
+                n = [int(x.replace(",", "")) for x in re.findall(r"(\d{1,3}(?:,\d{3})+|\d{2,7})(?![\d.%])", " ".join(cells[1:]))]
+                if n:
+                    out["base_px"] = n[-1]
+            if out["discount"] is None and re.search(r"할인율|할증율|할인\s*또는", lab):
+                m = re.search(r"([+\-−]?\d{1,2}(?:\.\d+)?)\s*%?\s*$", " ".join(c for c in cells[1:] if c and c != "-"))
+                if m:
+                    out["discount"] = abs(float(m.group(1).replace("−", "-")))
+            for k, pat in _R_DATES:
+                if k == "ex_dt" or not re.search(pat, lab):
+                    continue
+                ds = [_iso(m) for m in re.finditer(DATE, joined)]
+                if not ds:
+                    continue
+                if k == "sub_from":
+                    if "우리사주" in lab or out["sub_from"]:
+                        continue
+                    out["sub_from"], out["sub_to"] = ds[0], ds[-1] if len(ds) > 1 else None
+                elif out[k] is None:
+                    out[k] = ds[0]
+    if out["discount"] is None and out["issue_px"] and out["base_px"] and out["base_px"] > out["issue_px"]:
+        out["discount"] = round((1 - out["issue_px"] / out["base_px"]) * 100, 1)
+    if out["sub_to"] is None and out["sub_from"]:
+        out.pop("sub_to")
+    return out
