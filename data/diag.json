@@ -1,34 +1,9 @@
 {
  "bond_linked": 6,
- "offer_methods": {
-  "CBO기초사모": 4858,
-  "공모": 18985,
-  "사모": 5317
- },
- "private_bond_kinds": {
-  "MBS | 주식관련해당사항없음": 456,
-  "SLBS | 주식관련해당사항없음": 14,
-  "금융채 | ": 4,
-  "금융채 | CB": 9,
-  "금융채 | EB": 2,
-  "금융채 | 비분리형BW": 1,
-  "금융채 | 주식관련해당사항없음": 402,
-  "유동화SPC채 | CB": 1,
-  "유동화SPC채 | 주식관련해당사항없음": 1765,
-  "유사집합투자기구채 | CB": 150,
-  "유사집합투자기구채 | 주식관련해당사항없음": 17,
-  "일반회사채 | CB": 1283,
-  "일반회사채 | EB": 287,
-  "일반회사채 | 분리형BW": 9,
-  "일반회사채 | 비분리형BW": 71,
-  "일반회사채 | 이익참가": 2,
-  "일반회사채 | 주식관련해당사항없음": 5698,
-  "특수채 | EB": 1,
-  "특수채 | 주식관련해당사항없음": 3
- },
+ "offer_methods": {},
+ "private_bond_kinds": {},
  "private_bond_status": {
-  "basDt_20261102": 29160,
-  "outstanding": 9336,
-  "run": "2026-11-03T20:59+09:00"
+  "error": "채권기본정보 호출 실패: HTTPSConnectionPool(host='apis.data.go.kr', port=443): Max retries exceeded with url: /1160100/GetBondIssuInfoService_V2/getBondBasiInfo_V2?serviceKey=***&resultType=json&numOfRows=1000&pageNo=1&basDt=20261103 (Caused by ConnectTimeoutError(<HTTPSConnection(host='apis.data.go.kr', port=443) at 0x78ee7f8e8c80>, 'Connection to apis.data.go.kr timed out. (connect timeout=30)'))",
+  "run": "2026-11-04T20:35+09:00"
  }
 }
