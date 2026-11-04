@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-04T14:36+09:00",
+  "data_updated": "2026-11-04T16:48+09:00",
   "last_daily": "2026-11-03T21:12+09:00"
  },
  "records": {
@@ -290710,6 +290710,35 @@
    "type": "RIGHTS",
    "updated": "2026-10-25T18:19+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261020000316"
+  },
+  "RIGHTS:00896753:20261104000261": {
+   "amended": false,
+   "amount": 2999999338,
+   "board_dt": "2026-11-04",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "K",
+   "corp_code": "00896753",
+   "corp_name": "에코글로우",
+   "dilution": 9.85,
+   "first_seen": "2026-11-04T16:48+09:00",
+   "id": "RIGHTS:00896753:20261104000261",
+   "method": "일반공모증자",
+   "new_common": 1031282,
+   "new_other": null,
+   "offering": "공모",
+   "par_value": 500,
+   "purposes": {
+    "타법인증권": 2999999338
+   },
+   "rcept_dt": "2026-11-04",
+   "rcept_no": "20261104000261",
+   "source": "DART",
+   "stock_code": "159910",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-11-04T16:48+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261104000261"
   },
   "RIGHTS:00908021:20260529002036": {
    "amended": false,
