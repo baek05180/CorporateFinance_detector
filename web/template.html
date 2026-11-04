@@ -179,15 +179,15 @@ tbody tr.click:hover{background:var(--line-2)}
 .oneliner{font-size:16px; font-weight:700; line-height:1.6; margin:0 0 16px; letter-spacing:-.005em}
 .flow-title{display:flex; gap:8px; align-items:baseline; flex-wrap:wrap}
 .flow-title .muted{font-weight:500; font-size:12px}
-.flow{display:flex; align-items:stretch; gap:6px; margin:8px 0 10px; overflow-x:auto; padding-bottom:4px}
-.fcol{display:flex; flex-direction:column; gap:6px; min-width:120px; flex:1}
+.flow{display:flex; align-items:flex-start; gap:6px; margin:8px 0 10px; overflow-x:auto; padding-bottom:4px}
+.fcol{display:flex; flex-direction:column; gap:6px; min-width:120px; flex:1 1 0}
 .fcol .fh{font-size:11px; font-weight:700; color:var(--ink-3); letter-spacing:.02em}
-.fbox{position:relative; border:1px solid var(--line); border-radius:8px; padding:7px 9px; background:var(--bg); overflow:hidden}
-.fbox b{display:block; font-size:13px; line-height:1.35}
-.fbox span{display:block; font-size:11px; color:var(--ink-2); margin-top:1px}
-.fbox.me{background:var(--accent-soft); border-color:transparent; flex:1; display:flex; flex-direction:column; justify-content:center}
+.fbox{position:relative; box-sizing:border-box; height:54px; flex:0 0 54px; border:1px solid var(--line); border-radius:8px; padding:7px 9px; background:var(--bg); overflow:hidden; display:flex; flex-direction:column; justify-content:center}
+.fbox b{display:block; font-size:13px; line-height:1.35; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.fbox span{display:block; font-size:11px; color:var(--ink-2); margin-top:1px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.fbox.me{background:var(--accent-soft); border-color:transparent}
 .fbox.rev i{position:absolute; left:0; bottom:0; height:3px; background:var(--s1); border-radius:0 2px 2px 0}
-.farrow{width:18px; flex:0 0 18px; position:relative}
+.farrow{width:18px; flex:0 0 18px; position:relative; align-self:stretch}
 .farrow::before{content:""; position:absolute; top:50%; left:2px; right:4px; height:2px; background:var(--line)}
 .farrow::after{content:""; position:absolute; top:calc(50% - 4px); right:2px; border:5px solid transparent; border-left:6px solid var(--line); border-right:0}
 .caption{color:var(--ink-2); font-size:13px; margin:6px 0 0; line-height:1.65}
@@ -983,7 +983,7 @@ function groupChart(cats, series, {height = 200, labelFirst = true} = {}) {
 // 돈 버는 구조 그림 (사 오는 것 → 회사 → 누구에게 파나 / 어떤 매출)
 function flowHtml(f) {
   if (!f) return '';
-  const box = (b, cls = '') => `<div class="fbox ${cls}"><b>${esc(b.name)}</b>${b.note ? `<span>${esc(b.note)}</span>` : ''}</div>`;
+  const box = (b, cls = '') => `<div class="fbox ${cls}" title="${esc(b.name + (b.note ? ' — ' + b.note : ''))}"><b>${esc(b.name)}</b>${b.note ? `<span>${esc(b.note)}</span>` : ''}</div>`;
   const rev = (f.revenue || []).slice(0, 6);
   const col = (title, inner) => inner ? `<div class="fcol"><div class="fh">${title}</div>${inner}</div>` : '';
   return `<div class="flow">
@@ -992,7 +992,7 @@ function flowHtml(f) {
     ${col('회사', f.company ? box(f.company, 'me') : '')}
     <div class="farrow" aria-hidden="true"></div>
     ${col('누구에게 파나', (f.customers || []).map(b => box(b)).join(''))}
-    ${rev.length ? col(`어떤 매출${f.basis ? ` <span class="muted">(${esc(f.basis)})</span>` : ''}`, rev.map(r => `<div class="fbox rev"><b>${esc(r.name)}</b><span>${r.amount ? esc(wonTxt(r.amount)) + ' · ' : ''}${r.share != null ? pct(r.share) : ''}</span>${r.share != null ? `<i style="width:${Math.min(100, r.share)}%"></i>` : ''}</div>`).join('')) : ''}
+    ${rev.length ? col(`어떤 매출${f.basis ? ` <span class="muted">(${esc(f.basis)})</span>` : ''}`, rev.map(r => `<div class="fbox rev" title="${esc(r.name)}"><b>${esc(r.name)}</b><span>${r.amount ? esc(wonTxt(r.amount)) + ' · ' : ''}${r.share != null ? pct(r.share) : ''}</span>${r.share != null ? `<i style="width:${Math.min(100, r.share)}%"></i>` : ''}</div>`).join('')) : ''}
   </div>`;
 }
 
