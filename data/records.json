@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-04T17:40+09:00",
+  "data_updated": "2026-11-04T18:33+09:00",
   "last_daily": "2026-11-03T21:12+09:00"
  },
  "records": {
@@ -270060,6 +270060,35 @@
    "type": "RIGHTS",
    "updated": "2026-10-26T09:13+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20231219000285"
+  },
+  "RIGHTS:00149813:20261104000378": {
+   "amended": false,
+   "amount": 520000005000,
+   "board_dt": "2026-11-04",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "E",
+   "corp_code": "00149813",
+   "corp_name": "중앙일보",
+   "dilution": 1573.47,
+   "first_seen": "2026-11-04T18:33+09:00",
+   "id": "RIGHTS:00149813:20261104000378",
+   "method": "제3자배정증자",
+   "new_common": 104000001,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 5000,
+   "purposes": {
+    "채무상환": 520000005000
+   },
+   "rcept_dt": "2026-11-04",
+   "rcept_no": "20261104000378",
+   "source": "DART",
+   "stock_code": null,
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-11-04T18:33+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261104000378"
   },
   "RIGHTS:00151605:20240502000340": {
    "amended": false,
