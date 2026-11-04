@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-04T20:39+09:00",
+  "data_updated": "2026-11-05T08:24+09:00",
   "last_daily": "2026-11-04T20:39+09:00"
  },
  "records": {
@@ -274849,6 +274849,36 @@
    "type": "RIGHTS",
    "updated": "2026-10-25T18:19+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260828001955"
+  },
+  "RIGHTS:00276083:20261105000001": {
+   "amended": false,
+   "amount": 182999913066,
+   "board_dt": "2026-11-05",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "K",
+   "corp_code": "00276083",
+   "corp_name": "피노",
+   "dilution": 26.65,
+   "first_seen": "2026-11-05T08:24+09:00",
+   "id": "RIGHTS:00276083:20261105000001",
+   "method": "제3자배정증자",
+   "new_common": null,
+   "new_other": 22923702,
+   "offering": "사모·주주배정",
+   "par_value": 500,
+   "purposes": {
+    "시설": 119899913066,
+    "타법인증권": 63100000000
+   },
+   "rcept_dt": "2026-11-05",
+   "rcept_no": "20261105000001",
+   "source": "DART",
+   "stock_code": "033790",
+   "stock_kind": "종류주",
+   "type": "RIGHTS",
+   "updated": "2026-11-05T08:24+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261105000001"
   },
   "RIGHTS:00278373:20250331002138": {
    "amended": false,
