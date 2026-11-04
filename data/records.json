@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-04T10:32+09:00",
+  "data_updated": "2026-11-04T14:36+09:00",
   "last_daily": "2026-11-03T21:12+09:00"
  },
  "records": {
@@ -285898,34 +285898,34 @@
   },
   "RIGHTS:00618410:20260922000240": {
    "amended": true,
-   "amount": 4999999059,
-   "board_dt": "2026-11-02",
+   "amount": 3999998836,
+   "board_dt": "2026-11-04",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
    "corp_code": "00618410",
    "corp_name": "KS인더스트리",
-   "dilution": 27.84,
+   "dilution": 20.81,
    "first_seen": "2026-10-25T18:19+09:00",
    "id": "RIGHTS:00618410:20260922000240",
    "method": "제3자배정증자",
-   "new_common": 4170141,
+   "new_common": 3117692,
    "new_other": null,
    "offering": "사모·주주배정",
    "original_rcept": "20260922000240",
    "par_value": 500,
    "purposes": {
-    "운영": 2399999059,
-    "채무상환": 2600000000
+    "운영": 1999998836,
+    "채무상환": 2000000000
    },
-   "rcept_dt": "2026-11-02",
-   "rcept_no": "20261102000212",
+   "rcept_dt": "2026-11-04",
+   "rcept_no": "20261104000158",
    "source": "DART",
    "stock_code": "101000",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-11-02T17:45+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261102000212"
+   "updated": "2026-11-04T14:36+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261104000158"
   },
   "RIGHTS:00618410:20261020000377": {
    "amended": true,
@@ -303694,33 +303694,33 @@
   },
   "RIGHTS:01235296:20260922000158": {
    "amended": true,
-   "amount": 2409996005,
-   "board_dt": "2026-10-29",
+   "amount": 9999999855,
+   "board_dt": "2026-11-04",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
    "corp_code": "01235296",
    "corp_name": "셀리드",
-   "dilution": 3.74,
+   "dilution": 16.26,
    "first_seen": "2026-10-25T18:20+09:00",
    "id": "RIGHTS:01235296:20260922000158",
    "method": "제3자배정증자",
-   "new_common": 1102973,
+   "new_common": 4796163,
    "new_other": null,
    "offering": "사모·주주배정",
    "original_rcept": "20260922000158",
    "par_value": 500,
    "purposes": {
-    "운영": 2409996005
+    "운영": 9999999855
    },
-   "rcept_dt": "2026-10-29",
-   "rcept_no": "20261029000334",
+   "rcept_dt": "2026-11-04",
+   "rcept_no": "20261104000135",
    "source": "DART",
    "stock_code": "299660",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-10-29T15:56+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261029000334"
+   "updated": "2026-11-04T14:36+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261104000135"
   },
   "RIGHTS:01235296:20261014000414": {
    "amended": true,
