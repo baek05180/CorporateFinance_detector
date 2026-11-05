@@ -3,7 +3,7 @@
  "offer_methods": {},
  "private_bond_kinds": {},
  "private_bond_status": {
-  "error": "채권기본정보 호출 실패: HTTPSConnectionPool(host='apis.data.go.kr', port=443): Max retries exceeded with url: /1160100/GetBondIssuInfoService_V2/getBondBasiInfo_V2?serviceKey=***&resultType=json&numOfRows=1000&pageNo=1&basDt=20261103 (Caused by ConnectTimeoutError(<HTTPSConnection(host='apis.data.go.kr', port=443) at 0x78ee7f8e8c80>, 'Connection to apis.data.go.kr timed out. (connect timeout=30)'))",
-  "run": "2026-11-04T20:35+09:00"
+  "error": "채권기본정보 호출 실패: HTTPSConnectionPool(host='apis.data.go.kr', port=443): Read timed out. (read timeout=30)",
+  "run": "2026-11-05T20:28+09:00"
  }
 }
