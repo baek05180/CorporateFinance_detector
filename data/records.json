@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-05T15:19+09:00",
+  "data_updated": "2026-11-05T16:38+09:00",
   "last_daily": "2026-11-04T20:39+09:00"
  },
  "records": {
@@ -50604,7 +50604,7 @@
    "ytm": 0.0
   },
   "CB:00104120:5": {
-   "amended": false,
+   "amended": true,
    "amount": 10000000000,
    "board_dt": "2026-11-02",
    "captured_by": "watch",
@@ -50614,29 +50614,29 @@
    "corp_name": "광진실업",
    "coupon": 3.0,
    "dilution": 35.23,
-   "exercise_from": "2027-11-16",
-   "exercise_to": "2029-10-15",
+   "exercise_from": "2027-11-26",
+   "exercise_to": "2029-10-25",
    "first_seen": "2026-11-02T17:45+09:00",
    "id": "CB:00104120:5",
    "lead": null,
-   "maturity": "2029-11-16",
+   "maturity": "2029-11-26",
    "method_raw": "사모",
    "offering": "사모",
-   "pay_dt": "2026-11-16",
+   "pay_dt": "2026-11-26",
    "price": 3580,
    "purposes": {
     "타법인증권": 10000000000
    },
-   "rcept_dt": "2026-11-02",
-   "rcept_no": "20261102000267",
+   "rcept_dt": "2026-11-05",
+   "rcept_no": "20261105000368",
    "refix_floor": null,
    "series": "5",
    "shares": 2793296,
    "source": "DART",
    "stock_code": "026910",
    "type": "CB",
-   "updated": "2026-11-02T17:45+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261102000267",
+   "updated": "2026-11-05T16:38+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261105000368",
    "ytm": 0.0
   },
   "CB:00104519:17": {
@@ -290805,7 +290805,7 @@
   "RIGHTS:00877059:20261001000449": {
    "amended": true,
    "amount": 2664980000000,
-   "board_dt": "2026-10-01",
+   "board_dt": "2026-11-05",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "Y",
@@ -290818,18 +290818,19 @@
    "new_common": 2270000,
    "new_other": null,
    "offering": "공모",
+   "original_rcept": "20261001000449",
    "par_value": 2500,
    "purposes": {
     "타법인증권": 2664980000000
    },
-   "rcept_dt": "2026-10-01",
-   "rcept_no": "20261001000449",
+   "rcept_dt": "2026-11-05",
+   "rcept_no": "20261105000355",
    "source": "DART",
    "stock_code": "207940",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-10-25T18:19+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261001000449"
+   "updated": "2026-11-05T16:38+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261105000355"
   },
   "RIGHTS:00879020:20250627000874": {
    "amended": false,
@@ -303719,33 +303720,34 @@
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260814000799"
   },
   "RIGHTS:01230255:20261103000310": {
-   "amended": false,
-   "amount": 2199556619,
-   "board_dt": "2026-11-03",
+   "amended": true,
+   "amount": 2199556612,
+   "board_dt": "2026-11-05",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
    "corp_code": "01230255",
    "corp_name": "한울앤제주",
-   "dilution": 15.25,
+   "dilution": 11.45,
    "first_seen": "2026-11-03T17:25+09:00",
    "id": "RIGHTS:01230255:20261103000310",
    "method": "일반공모증자",
-   "new_common": 3599929,
+   "new_common": 2702158,
    "new_other": null,
    "offering": "공모",
+   "original_rcept": "20261103000310",
    "par_value": 100,
    "purposes": {
-    "운영": 2199556619
+    "운영": 2199556612
    },
-   "rcept_dt": "2026-11-03",
-   "rcept_no": "20261103000310",
+   "rcept_dt": "2026-11-05",
+   "rcept_no": "20261105000386",
    "source": "DART",
    "stock_code": "276730",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-11-03T17:25+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261103000310"
+   "updated": "2026-11-05T16:38+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261105000386"
   },
   "RIGHTS:01231786:20241015000352": {
    "amended": false,
