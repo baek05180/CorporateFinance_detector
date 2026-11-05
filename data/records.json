@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-05T16:38+09:00",
+  "data_updated": "2026-11-05T17:39+09:00",
   "last_daily": "2026-11-04T20:39+09:00"
  },
  "records": {
@@ -274239,33 +274239,34 @@
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260511000595"
   },
   "RIGHTS:00258102:20261028000430": {
-   "amended": false,
-   "amount": 2999999520,
-   "board_dt": "2026-10-28",
+   "amended": true,
+   "amount": 2999998495,
+   "board_dt": "2026-11-05",
    "captured_by": "watch",
    "confirmed": true,
    "corp_cls": "K",
    "corp_code": "00258102",
    "corp_name": "지엔코",
-   "dilution": 19.87,
+   "dilution": 18.79,
    "first_seen": "2026-10-28T18:11+09:00",
    "id": "RIGHTS:00258102:20261028000430",
    "method": "제3자배정증자",
-   "new_common": 1190476,
+   "new_common": 1125703,
    "new_other": null,
    "offering": "사모·주주배정",
+   "original_rcept": "20261028000430",
    "par_value": 2500,
    "purposes": {
-    "채무상환": 2999999520
+    "채무상환": 2999998495
    },
-   "rcept_dt": "2026-10-28",
-   "rcept_no": "20261028000430",
+   "rcept_dt": "2026-11-05",
+   "rcept_no": "20261105000436",
    "source": "DART",
    "stock_code": "065060",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-10-28T18:11+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261028000430"
+   "updated": "2026-11-05T17:38+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261105000436"
   },
   "RIGHTS:00258360:20231204000329": {
    "amended": false,
@@ -291036,33 +291037,34 @@
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261020000316"
   },
   "RIGHTS:00896753:20261104000261": {
-   "amended": false,
-   "amount": 2999999338,
-   "board_dt": "2026-11-04",
+   "amended": true,
+   "amount": 2999998860,
+   "board_dt": "2026-11-05",
    "captured_by": "watch",
    "confirmed": true,
    "corp_cls": "K",
    "corp_code": "00896753",
    "corp_name": "에코글로우",
-   "dilution": 9.85,
+   "dilution": 9.67,
    "first_seen": "2026-11-04T16:48+09:00",
    "id": "RIGHTS:00896753:20261104000261",
    "method": "일반공모증자",
-   "new_common": 1031282,
+   "new_common": 1011804,
    "new_other": null,
    "offering": "공모",
+   "original_rcept": "20261104000261",
    "par_value": 500,
    "purposes": {
-    "타법인증권": 2999999338
+    "타법인증권": 2999998860
    },
-   "rcept_dt": "2026-11-04",
-   "rcept_no": "20261104000261",
+   "rcept_dt": "2026-11-05",
+   "rcept_no": "20261105000495",
    "source": "DART",
    "stock_code": "159910",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-11-04T16:48+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261104000261"
+   "updated": "2026-11-05T17:39+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261105000495"
   },
   "RIGHTS:00908021:20260529002036": {
    "amended": false,
@@ -303899,7 +303901,7 @@
   "RIGHTS:01231786:20261022000486": {
    "amended": true,
    "amount": 1999993958,
-   "board_dt": "2026-11-03",
+   "board_dt": "2026-11-05",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
@@ -303918,14 +303920,14 @@
     "운영": 999993958,
     "타법인증권": 1000000000
    },
-   "rcept_dt": "2026-11-03",
-   "rcept_no": "20261103000246",
+   "rcept_dt": "2026-11-05",
+   "rcept_no": "20261105000466",
    "source": "DART",
    "stock_code": "317770",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-11-03T16:36+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261103000246"
+   "updated": "2026-11-05T17:39+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261105000466"
   },
   "RIGHTS:01231786:20261030000447": {
    "amended": true,
@@ -311356,33 +311358,32 @@
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250930000806"
   },
   "RIGHTS:01406751:20261023000350": {
-   "amended": false,
-   "amount": 2000010000,
-   "board_dt": "2026-10-23",
+   "amended": true,
+   "amount": null,
+   "board_dt": "2026-11-05",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "E",
    "corp_code": "01406751",
    "corp_name": "메를로랩",
-   "dilution": 1.69,
+   "dilution": null,
    "first_seen": "2026-10-25T18:20+09:00",
    "id": "RIGHTS:01406751:20261023000350",
    "method": "제3자배정증자",
-   "new_common": 133334,
+   "new_common": null,
    "new_other": null,
    "offering": "사모·주주배정",
-   "par_value": 15000,
-   "purposes": {
-    "운영": 2000010000
-   },
-   "rcept_dt": "2026-10-23",
-   "rcept_no": "20261023000350",
+   "original_rcept": "20261023000350",
+   "par_value": null,
+   "purposes": {},
+   "rcept_dt": "2026-11-05",
+   "rcept_no": "20261105000528",
    "source": "DART",
    "stock_code": null,
-   "stock_kind": "보통주",
+   "stock_kind": null,
    "type": "RIGHTS",
-   "updated": "2026-10-25T18:20+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261023000350"
+   "updated": "2026-11-05T17:39+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261105000528"
   },
   "RIGHTS:01409022:20250616000371": {
    "amended": false,
