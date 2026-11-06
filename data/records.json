@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-05T20:41+09:00",
+  "data_updated": "2026-11-06T14:17+09:00",
   "last_daily": "2026-11-05T20:41+09:00"
  },
  "records": {
@@ -78516,6 +78516,42 @@
    "updated": "2026-10-26T09:23+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251001000122",
    "ytm": 3.0
+  },
+  "CB:00991298:1": {
+   "amended": false,
+   "amount": 10000000000,
+   "board_dt": "2026-11-06",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "K",
+   "corp_code": "00991298",
+   "corp_name": "씨이랩",
+   "coupon": 0.0,
+   "dilution": 11.62,
+   "exercise_from": "2027-11-16",
+   "exercise_to": "2031-10-16",
+   "first_seen": "2026-11-06T14:17+09:00",
+   "id": "CB:00991298:1",
+   "lead": null,
+   "maturity": "2031-11-16",
+   "method_raw": "사모",
+   "offering": "사모",
+   "pay_dt": "2026-11-16",
+   "price": 8106,
+   "purposes": {
+    "운영": 10000000000
+   },
+   "rcept_dt": "2026-11-06",
+   "rcept_no": "20261106000150",
+   "refix_floor": null,
+   "series": "1",
+   "shares": 1233654,
+   "source": "DART",
+   "stock_code": "189330",
+   "type": "CB",
+   "updated": "2026-11-06T14:17+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000150",
+   "ytm": 0.0
   },
   "CB:01011368:1": {
    "amended": true,
