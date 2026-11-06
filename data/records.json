@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-06T15:14+09:00",
+  "data_updated": "2026-11-06T16:27+09:00",
   "last_daily": "2026-11-05T20:41+09:00"
  },
  "records": {
@@ -14727,8 +14727,8 @@
    }
   },
   "BOND:00155276:24-1": {
-   "amended": false,
-   "amount": 40000000000,
+   "amended": true,
+   "amount": 50000000000,
    "captured_by": "watch",
    "confirmed": true,
    "corp_cls": "Y",
@@ -14736,12 +14736,6 @@
    "corp_name": "포스코퓨처엠",
    "coupon": null,
    "coupon_raw": "-",
-   "filings": [
-    [
-     "20261102000322",
-     "증권신고서(채무증권)"
-    ]
-   ],
    "first_seen": "2026-11-02T17:45+09:00",
    "guarantor": null,
    "id": "BOND:00155276:24-1",
@@ -14753,8 +14747,8 @@
    "original_rcept": "20261102000322",
    "pay_dt": "2026-11-12",
    "rating": "-",
-   "rcept_dt": "2026-11-02",
-   "rcept_no": "20261102000322",
+   "rcept_dt": "2026-11-06",
+   "rcept_no": "20261106000275",
    "series": "24-1",
    "series_raw": "24-1",
    "source": "DART",
@@ -14764,16 +14758,16 @@
    "underwriters": [
     "우리투자증권"
    ],
-   "updated": "2026-11-05T20:28+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261102000322",
+   "updated": "2026-11-06T16:27+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000275",
    "uses": {
-    "발행제비용": 142500000,
-    "채무상환자금": 40000000000
+    "발행제비용": 233810000,
+    "채무상환자금": 50000000000
    }
   },
   "BOND:00155276:24-2": {
-   "amended": false,
-   "amount": 60000000000,
+   "amended": true,
+   "amount": 150000000000,
    "captured_by": "watch",
    "confirmed": true,
    "corp_cls": "Y",
@@ -14781,12 +14775,6 @@
    "corp_name": "포스코퓨처엠",
    "coupon": null,
    "coupon_raw": "-",
-   "filings": [
-    [
-     "20261102000322",
-     "증권신고서(채무증권)"
-    ]
-   ],
    "first_seen": "2026-11-02T17:45+09:00",
    "guarantor": null,
    "id": "BOND:00155276:24-2",
@@ -14798,8 +14786,8 @@
    "original_rcept": "20261102000322",
    "pay_dt": "2026-11-12",
    "rating": "-",
-   "rcept_dt": "2026-11-02",
-   "rcept_no": "20261102000322",
+   "rcept_dt": "2026-11-06",
+   "rcept_no": "20261106000275",
    "series": "24-2",
    "series_raw": "24-2",
    "source": "DART",
@@ -14809,11 +14797,11 @@
    "underwriters": [
     "신한투자증권"
    ],
-   "updated": "2026-11-05T20:28+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261102000322",
+   "updated": "2026-11-06T16:27+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000275",
    "uses": {
-    "발행제비용": 182820000,
-    "채무상환자금": 60000000000
+    "발행제비용": 330820000,
+    "채무상환자금": 150000000000
    }
   },
   "BOND:00155355:72": {
@@ -308799,7 +308787,7 @@
   "RIGHTS:01344336:20260904000221": {
    "amended": true,
    "amount": 1999998918,
-   "board_dt": "2026-09-04",
+   "board_dt": "2026-11-06",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
@@ -308812,18 +308800,19 @@
    "new_common": 1616814,
    "new_other": null,
    "offering": "사모·주주배정",
+   "original_rcept": "20260904000221",
    "par_value": 500,
    "purposes": {
     "운영": 1999998918
    },
-   "rcept_dt": "2026-09-04",
-   "rcept_no": "20260904000221",
+   "rcept_dt": "2026-11-06",
+   "rcept_no": "20261106000242",
    "source": "DART",
    "stock_code": "226330",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-10-25T18:20+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260904000221"
+   "updated": "2026-11-06T16:27+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000242"
   },
   "RIGHTS:01344831:20251204000242": {
    "amended": true,
