@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-06T14:17+09:00",
+  "data_updated": "2026-11-06T15:14+09:00",
   "last_daily": "2026-11-05T20:41+09:00"
  },
  "records": {
@@ -63880,6 +63880,43 @@
    "updated": "2026-10-26T09:17+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260629000588",
    "ytm": 0.0
+  },
+  "CB:00381756:2": {
+   "amended": false,
+   "amount": 30000000000,
+   "board_dt": "2026-11-06",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "K",
+   "corp_code": "00381756",
+   "corp_name": "티씨머티리얼즈",
+   "coupon": 0.0,
+   "dilution": 16.64,
+   "exercise_from": "2027-11-16",
+   "exercise_to": "2031-10-16",
+   "first_seen": "2026-11-06T15:14+09:00",
+   "id": "CB:00381756:2",
+   "lead": null,
+   "maturity": "2031-11-16",
+   "method_raw": "사모",
+   "offering": "사모",
+   "pay_dt": "2026-11-16",
+   "price": 4290,
+   "purposes": {
+    "기타": 20000000000,
+    "운영": 10000000000
+   },
+   "rcept_dt": "2026-11-06",
+   "rcept_no": "20261106000165",
+   "refix_floor": null,
+   "series": "2",
+   "shares": 6993006,
+   "source": "DART",
+   "stock_code": "125020",
+   "type": "CB",
+   "updated": "2026-11-06T15:14+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000165",
+   "ytm": 1.0
   },
   "CB:00384717:21": {
    "amended": true,
@@ -279123,6 +279160,35 @@
    "type": "RIGHTS",
    "updated": "2026-10-26T09:17+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20241120000237"
+  },
+  "RIGHTS:00381756:20261106000157": {
+   "amended": false,
+   "amount": 9999996864,
+   "board_dt": "2026-11-06",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "K",
+   "corp_code": "00381756",
+   "corp_name": "티씨머티리얼즈",
+   "dilution": 7.42,
+   "first_seen": "2026-11-06T15:14+09:00",
+   "id": "RIGHTS:00381756:20261106000157",
+   "method": "제3자배정증자",
+   "new_common": 2601456,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 500,
+   "purposes": {
+    "운영": 9999996864
+   },
+   "rcept_dt": "2026-11-06",
+   "rcept_no": "20261106000157",
+   "source": "DART",
+   "stock_code": "125020",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-11-06T15:14+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000157"
   },
   "RIGHTS:00390408:20240717000240": {
    "amended": true,
