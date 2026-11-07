@@ -24,7 +24,7 @@
  "profiles_done": 114,
  "profiles_fresh": 3568,
  "profiles_left": 0,
- "profiles_sec": 18,
+ "profiles_sec": 19,
  "px_fetched": 1,
  "rights_docs": {
   "discount": 809,
@@ -37,7 +37,7 @@
   "todo": 0,
   "total": 1316
  },
- "run": "2026-11-08T00:11+09:00",
+ "run": "2026-11-08T02:09+09:00",
  "short_lnb": {
   "lnb_fetched": 1,
   "lnb_sample": null,
