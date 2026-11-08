@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-09T07:26+09:00",
+  "data_updated": "2026-11-09T08:03+09:00",
   "last_daily": "2026-11-06T20:31+09:00"
  },
  "records": {
@@ -75847,7 +75847,7 @@
    "ytm": 2.0
   },
   "CB:00838005:45": {
-   "amended": false,
+   "amended": true,
    "amount": 60000000000,
    "board_dt": "2026-11-06",
    "captured_by": "watch",
@@ -75868,18 +75868,18 @@
    "pay_dt": "2026-11-16",
    "price": 30391,
    "purposes": {
-    "타법인증권": 60000000000
+    "기타": 60000000000
    },
-   "rcept_dt": "2026-11-06",
-   "rcept_no": "20261106000482",
+   "rcept_dt": "2026-11-09",
+   "rcept_no": "20261109000003",
    "refix_floor": null,
    "series": "45",
    "shares": 1974268,
    "source": "DART",
    "stock_code": "178320",
    "type": "CB",
-   "updated": "2026-11-09T07:26+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261106000482",
+   "updated": "2026-11-09T08:03+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261109000003",
    "ytm": 5.0
   },
   "CB:00838500:3": {
