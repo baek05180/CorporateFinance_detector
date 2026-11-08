@@ -135,6 +135,8 @@ def score(co, mctx, today):
     if mcap:
         oh = link_bal / mcap * 100
         P.append(("재무", 15 if oh < 5 else 8 if oh < 15 else 0, "최근 3년 메자닌 발행(미만기)", f"시총의 {oh:.0f}%"))
+        if (link_bal + mcap * 0.1) / mcap > 0.2:
+            P.append(("재무", -10, "발행 후 메자닌 잔액", f"시총의 {(link_bal / mcap + 0.1) * 100:.0f}% (20% 초과 — 오버행)"))
     P.append(("재무", 10 if loss or (m.get("op_margin") or 0) < 3 else 5, "수익성", "저수익·적자 → 저쿠폰 CB 유리" if loss or (m.get("op_margin") or 0) < 3 else "흑자"))
     P.append(("시장", {"K": 20, "N": 10, "Y": 10}.get(mk, 0), "상장 시장", {"K": "코스닥", "N": "코넥스", "Y": "유가증권"}.get(mk, "비상장")))
     if vol is not None and not halted:
@@ -154,12 +156,16 @@ def score(co, mctx, today):
     # ── EB ──
     P = []
     ts, sh = co.get("treasury_shares"), m.get("shares")
+    tv = ts * m["close"] if ts and m.get("close") else None  # 자사주 시가
     gate = None if ts else "자기주식 없음"
+    if ts and tv is not None and tv < 30e8:
+        gate = f"자사주 시가 {tv/1e8:,.0f}억 — 30억 미만이라 EB 실익 낮음"
+    elif ts and sh and ts / sh < 0.01:
+        gate = f"자사주 {ts / sh * 100:.2f}% — 발행주식의 1% 미만이라 EB 실익 낮음"
     if halted:
         gate = "6개월간 주가 변동 없음 — 거래정지 여부 확인"
-    if ts and sh:
-        r = ts / sh * 100
-        P.append(("재무", 40 if r >= 5 else 30 if r >= 3 else 15, "자기주식 비율", f"{r:.1f}%"))
+    if tv is not None:
+        P.append(("재무", 40 if tv >= 300e8 else 30 if tv >= 100e8 else 20 if tv >= 50e8 else 10, "자사주 시가", f"{tv/1e8:,.0f}억" + (f" (발행주식의 {ts / sh * 100:.1f}%)" if sh else "")))
     P.append(("시장", 20 if mk in ("K", "Y") else 5, "상장 시장", mk or "-"))
     if mcap:
         P.append(("시장", 10 if mcap >= 1e11 else 5, "시가총액", f"{mcap/1e8:,.0f}억"))
@@ -240,6 +246,51 @@ KEY = {"공모채": "public_bond", "사모채": "private_bond", "P-CBO": "pcbo",
 TIE = ["public_bond", "private_bond", "pcbo", "hybrid", "cb", "eb", "rights"]
 
 
+def _r(v, unit=10e8):
+    return max(unit, round(v / unit) * unit) if v and v > 0 else None
+
+
+def _eok(v):
+    return f"{v/1e8:,.0f}억" if v < 1e12 else f"{v/1e12:,.1f}조".replace(".0조", "조")
+
+
+def sizes(co, today):
+    """상품별 예상 발행 규모 — 공모·사모채는 같은 '조달 필요액'에서 출발하고 시장 제약만 달리 적용."""
+    m, B, deals = co.get("metrics") or {}, co.get("bonds") or {}, co.get("deals") or []
+    assets, mcap, close = m.get("assets"), m.get("mcap"), m.get("close")
+    out = {}
+    due = sum((B.get("due12_by") or {}).get(k, 0) or 0 for k in ("공모", "사모"))
+    past = [d.get("amount") for d in deals if d.get("type") == "BOND" and not d.get("pcbo") and d.get("amount")
+            and _years_since(d.get("issue_dt") or d.get("rcept_dt"), today) <= 3]
+    avg = sum(past) / len(past) if past else 0
+    need, basis = (due, "12개월 내 회사채 만기") if due >= avg else (avg, "최근 3년 회사채 평균 발행액")
+    if need and assets:
+        if need > assets * 0.1:
+            need, basis = assets * 0.1, "총자산의 10% 상한"
+    elif not need and assets:
+        need, basis = assets * 0.05, "총자산의 5% (발행 이력·만기 없음)"
+    if need:
+        pub = _r(max(need, 300e8), 50e8)
+        out["public_bond"] = f"{_eok(pub)} ({basis}" + (", 공모 최소 300억" if need < 300e8 else "") + ")"
+        out["_pub_short"] = need < 300e8
+        cap = min(1000e8, assets * 0.05) if assets else 1000e8
+        pv = _r(min(need, cap))
+        out["private_bond"] = f"{_eok(pv)} ({basis}" + (", 사모 상한 적용" if need > cap else "") + ")"
+    ts = co.get("treasury_shares")
+    if ts and close:
+        eb = ts * close * 0.9
+        out["eb"] = f"{_eok(_r(eb))} (자사주 시가의 약 90%)"
+    if mcap:
+        rs = mcap * 0.1
+        eq, cap_ = m.get("equity"), m.get("capital")
+        note = "시총의 약 10%"
+        if eq is not None and cap_ and eq < cap_:
+            rs, note = max(rs, cap_ - eq), "자본잠식 보전액 이상"
+        rs = min(max(rs, mcap * 0.05), mcap * 0.2) if note.startswith("시총") else min(rs, mcap * 0.3)
+        out["rights"] = f"{_eok(_r(rs))} ({note})"
+    return out
+
+
 def apply(options, co, mctx, today):
     """기존 제안 목록(규모·비교 사례 유지)에 v2 점수를 덮어쓰고 순위를 다시 매긴다."""
     sc = score(co, mctx, today)
@@ -261,6 +312,15 @@ def apply(options, co, mctx, today):
             o["cautions"] = [gate] + o["cautions"]
         else:
             o["score"] = max(0, min(100, round(total)))
+            o["fit"] = "높음" if o["score"] >= 65 else "보통" if o["score"] >= 45 else "낮음"
+    sz = sizes(co, today)
+    for o in options:
+        if o["key"] in sz:
+            o["size"] = sz[o["key"]]
+        if o["key"] == "public_bond" and sz.get("_pub_short") and not o.get("gate"):
+            o["score"] = max(0, o["score"] - 15)
+            o["factors"].append({"pts": -15, "text": "[조건] 공모 최소 규모: 조달 필요액이 300억 미만"})
+            o["cautions"].append("조달 필요액이 공모 최소 규모(300억)에 못 미침")
             o["fit"] = "높음" if o["score"] >= 65 else "보통" if o["score"] >= 45 else "낮음"
     profitable = (co.get("metrics") or {}).get("interest_coverage") or 0
     options.sort(key=lambda o: (-o["score"], TIE.index(o["key"]) if o["key"] in TIE and profitable >= 3 else 0))
