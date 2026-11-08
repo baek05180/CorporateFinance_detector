@@ -1,47 +1,15 @@
 {
- "bond_docs": {
-  "found_demand": 274,
-  "found_rating": 277,
-  "sec": 0,
-  "todo": 0,
-  "with_band": 273,
-  "with_rate": 0
- },
- "crno_matched": 0,
- "dart_calls": 265,
+ "crash": "Traceback (most recent call last):\n  File \"/home/runner/work/CorporateFinance_detector/CorporateFinance_detector/collector/profiles.py\", line 550, in run\n    fin = refresh_multi(dart, listed_cc, fin, today)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/CorporateFinance_detector/CorporateFinance_detector/collector/profiles.py\", line 91, in refresh_multi\n    fin[\"annual\"].update(parse_multi(dart.multi_accounts(chunk, annual, \"11011\")))\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/CorporateFinance_detector/CorporateFinance_detector/collector/dart.py\", line 179, in multi_accounts\n    data = self._get(\"fnlttMultiAcnt\", corp_code=\",\".join(corp_codes), bsns_year=str(year), reprt_code=reprt_code)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/CorporateFinance_detector/CorporateFinance_detector/collector/dart.py\", line 71, in _get\n    raise DartError(f\"{endpoint} 호출 실패: {_redact(last_err)}\")\ncollector.dart.DartError: fnlttMultiAcnt 호출 실패: Expecting value: line 1 column 1 (char 0)\n",
+ "dart_calls": 23,
  "listed": 2765,
- "mezz_docs": {
-  "sec": 0,
-  "todo": 0,
-  "total": 1244,
-  "with_call": 510,
-  "with_inv": 1195,
-  "with_prem": 686
- },
- "price_hist_days": 120,
+ "price_hist_days": 119,
  "price_hist_fetched": 1,
  "prices": 2876,
- "profiles_done": 114,
- "profiles_fresh": 3568,
- "profiles_left": 0,
- "profiles_sec": 18,
  "px_fetched": 1,
- "rights_docs": {
-  "discount": 809,
-  "issue_px": 1086,
-  "list_dt": 959,
-  "pay_dt": 1216,
-  "record_dt": 180,
-  "sec": 0,
-  "sub_from": 235,
-  "todo": 0,
-  "total": 1316
- },
- "run": "2026-11-08T22:25+09:00",
+ "run": "2026-11-09T00:09+09:00",
  "short_lnb": {
   "lnb_fetched": 1,
   "lnb_sample": null,
   "short_fetched": 0
- },
- "targets": 3682
+ }
 }
