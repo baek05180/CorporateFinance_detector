@@ -223,7 +223,7 @@ def score(co, mctx, today):
 
     # ── 영구채 (신종자본증권) ──
     P = []
-    gate = None if gi is not None and gi <= 8 else "신용등급 BBB+ 미만·미확인 — 기관 수요 제한"
+    gate = None if gi is not None else "신용등급 평정 이력 없음 — 영구채는 등급 보유 회사 대상"
     if impaired:
         gate = "자본잠식"
     lev = [x for x in T.get("items", []) if x.get("dir") == "down" and "cur" in x and x["metric"] in ("부채비율", "차입금의존도", "순차입금/자본")]
@@ -276,6 +276,25 @@ def sizes(co, today):
         cap = min(1000e8, assets * 0.05) if assets else 1000e8
         pv = _r(min(need, cap))
         out["private_bond"] = f"{_eok(pv)} ({basis}" + (", 사모 상한 적용" if need > cap else "") + ")"
+    # 영구채: 자본 인정 효과가 의미 있는 규모 — 조달액으로 차입금을 갚는다고 보고 부채비율을 20%p 낮추는 금액
+    L, E = m.get("liab"), m.get("equity")
+    if L and E and E > 0:
+        d = L / E
+        tgt = d - 0.2
+        lev = [x for x in ((co.get("triggers") or {}).get("items") or []) if x.get("metric") == "부채비율" and x.get("thr")]
+        if lev and lev[0]["thr"] / 100 * 0.9 < tgt:
+            tgt, why = lev[0]["thr"] / 100 * 0.9, f"부채비율 {d*100:.0f}%→{lev[0]['thr']*0.9:.0f}% (트리거 {lev[0]['thr']:.0f}%의 90%)"
+        else:
+            why = f"부채비율 {d*100:.0f}%→{tgt*100:.0f}% (20%p 인하)"
+        x = (L - tgt * E) / (1 + tgt) if tgt > 0 else None
+        if x:
+            hi = E * 0.3
+            if x > hi:
+                x, why = hi, why + ", 자본의 30% 상한"
+            x = max(x, 300e8)
+            nd = (L - x) / (E + x) * 100
+            out["hybrid"] = f"{_eok(_r(x, 50e8))} ({why}; 발행 후 약 {nd:.0f}%)"
+            out["_hy_small"] = d < 1.0
     ts = co.get("treasury_shares")
     if ts and close:
         eb = ts * close * 0.9
@@ -321,6 +340,11 @@ def apply(options, co, mctx, today):
             o["score"] = max(0, o["score"] - 15)
             o["factors"].append({"pts": -15, "text": "[조건] 공모 최소 규모: 조달 필요액이 300억 미만"})
             o["cautions"].append("조달 필요액이 공모 최소 규모(300억)에 못 미침")
+            o["fit"] = "높음" if o["score"] >= 65 else "보통" if o["score"] >= 45 else "낮음"
+        if o["key"] == "hybrid" and sz.get("_hy_small") and not o.get("gate"):
+            o["score"] = max(0, o["score"] - 15)
+            o["factors"].append({"pts": -15, "text": "[재무] 부채비율 100% 미만: 자본 인정 필요성 낮음"})
+            o["cautions"].append("부채비율 100% 미만 — 자본 인정 효과가 크게 필요하지 않은 구간")
             o["fit"] = "높음" if o["score"] >= 65 else "보통" if o["score"] >= 45 else "낮음"
     profitable = (co.get("metrics") or {}).get("interest_coverage") or 0
     options.sort(key=lambda o: (-o["score"], TIE.index(o["key"]) if o["key"] in TIE and profitable >= 3 else 0))
