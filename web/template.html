@@ -179,15 +179,15 @@ tbody tr.click:hover{background:var(--line-2)}
 .oneliner{font-size:16px; font-weight:700; line-height:1.6; margin:0 0 16px; letter-spacing:-.005em}
 .flow-title{display:flex; gap:8px; align-items:baseline; flex-wrap:wrap}
 .flow-title .muted{font-weight:500; font-size:12px}
-.flow{display:flex; align-items:flex-start; gap:6px; margin:8px 0 10px; overflow-x:auto; padding-bottom:4px}
+.flow{display:flex; align-items:stretch; gap:6px; margin:8px 0 10px; overflow-x:auto; padding-bottom:4px}
 .fcol{display:flex; flex-direction:column; gap:6px; min-width:120px; flex:1 1 0}
-.fcol .fh{font-size:11px; font-weight:700; color:var(--ink-3); letter-spacing:.02em}
-.fbox{position:relative; box-sizing:border-box; height:54px; flex:0 0 54px; border:1px solid var(--line); border-radius:8px; padding:7px 9px; background:var(--bg); overflow:hidden; display:flex; flex-direction:column; justify-content:center}
-.fbox b{display:block; font-size:13px; line-height:1.35; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
-.fbox span{display:block; font-size:11px; color:var(--ink-2); margin-top:1px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.fcol .fh{flex:none; font-size:11px; font-weight:700; color:var(--ink-3); letter-spacing:.02em}
+.fbox{position:relative; box-sizing:border-box; min-height:48px; flex:1 1 0; border:1px solid var(--line); border-radius:8px; padding:7px 9px; background:var(--bg); overflow:hidden; display:flex; flex-direction:column; justify-content:center}
+.fbox b{display:block; font-size:13px; line-height:1.35}
+.fbox span{display:block; font-size:11px; color:var(--ink-2); margin-top:1px}
 .fbox.me{background:var(--accent-soft); border-color:transparent}
 .fbox.rev i{position:absolute; left:0; bottom:0; height:3px; background:var(--s1); border-radius:0 2px 2px 0}
-.farrow{width:18px; flex:0 0 18px; position:relative; align-self:stretch}
+.farrow{width:18px; flex:0 0 18px; position:relative}
 .farrow::before{content:""; position:absolute; top:50%; left:2px; right:4px; height:2px; background:var(--line)}
 .farrow::after{content:""; position:absolute; top:calc(50% - 4px); right:2px; border:5px solid transparent; border-left:6px solid var(--line); border-right:0}
 .caption{color:var(--ink-2); font-size:13px; margin:6px 0 0; line-height:1.65}
