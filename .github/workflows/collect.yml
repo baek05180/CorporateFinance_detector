@@ -14,7 +14,7 @@ on:
         description: "watch / daily / backfill / profiles / prices / mezz / bonds / probe / fsfix"
         default: "daily"
         type: choice
-        options: [watch, daily, backfill, profiles, prices, mezz, bonds, probe, fsfix]
+        options: [watch, daily, backfill, profiles, prices, mezz, bonds, probe, fsfix, market]
       days:
         description: "daily·backfill 때 거슬러 올라갈 일수 (backfill은 1095 = 3년)"
         default: "7"

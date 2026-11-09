@@ -706,3 +706,43 @@ def rights_doc(xml):
     if out["sub_to"] is None:
         out.pop("sub_to")
     return out
+
+
+# ── 공모채 [발행조건확정] 정정신고서: 수요예측 참여 내역(트랜치 순서대로) ──
+DEMAND_DOC_VERSION = 1
+_DGRP = [("운용사(집합)", "운용사"), ("투자매매중개업자", "증권사"), ("연기금", "연기금·은행·보험"), ("기타", "기타"),
+         ("거래실적유", "외국(실적유)"), ("거래실적무", "외국(실적무)")]
+
+
+def _num(s):
+    s = (s or "").replace(",", "").strip()
+    try:
+        return float(s)
+    except ValueError:
+        return None
+
+
+def demand_doc(xml):
+    """→ [{"groups":{기관군:수량(억)}, "cnt":{기관군:건수}, "total":수량, "n":건수, "ratio":경쟁률}, ...] 트랜치 순서."""
+    out = []
+    for kind, rows in blocks(xml):
+        if kind != "table" or len(rows) < 4:
+            continue
+        r2 = [c.replace(" ", "").replace("\n", "") for c in rows[1]]
+        labs = [r[0].replace(" ", "") for r in rows]
+        if not any("운용사" in c for c in r2) or "수량" not in labs or "경쟁률" not in labs:
+            continue
+        heads = []
+        for c in r2:
+            nm = next((v for k, v in _DGRP if k in c), None)
+            if nm:
+                heads.append(nm)
+        q = rows[labs.index("수량")][1:]
+        n = rows[labs.index("건수")][1:] if "건수" in labs else []
+        rt = rows[labs.index("경쟁률")][1:]
+        g = {h: _num(q[i]) or 0 for i, h in enumerate(heads) if i < len(q)}
+        c = {h: _num(n[i]) or 0 for i, h in enumerate(heads) if i < len(n)}
+        m = re.match(r"\s*([\d.]+)", rt[-1] if rt else "")
+        out.append({"groups": g, "cnt": c, "total": _num(q[-1]) if q else None, "n": _num(n[-1]) if n else None,
+                    "ratio": float(m.group(1)) if m else None})
+    return out

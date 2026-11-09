@@ -201,7 +201,7 @@ def collect_private_bonds(store, mode):
 
 def main(argv=None):
     ap = argparse.ArgumentParser()
-    ap.add_argument("--mode", choices=["watch", "daily", "backfill", "profiles", "prices", "mezz", "bonds", "probe", "fsfix"], default="watch")
+    ap.add_argument("--mode", choices=["watch", "daily", "backfill", "profiles", "prices", "mezz", "bonds", "probe", "fsfix", "market"], default="watch")
     ap.add_argument("--days", type=int, default=7)
     args = ap.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
@@ -252,6 +252,15 @@ def main(argv=None):
         except Exception:  # noqa: BLE001
             diag["error"] = redact(traceback.format_exc())[-1200:]
         dump_json("diag_fsfix.json", diag)
+        return 0
+    if args.mode == "market":
+        from .market import demand_step, rates_step
+        diag = {}
+        try:
+            rates_step(today, diag)
+            demand_step(dart, store, today, diag)
+        finally:
+            dump_json("diag_market.json", diag)
         return 0
     if args.mode == "probe":
         # 공모채 발행조건확정(정정) 원문에서 수요예측 결과 표 모양 확인
