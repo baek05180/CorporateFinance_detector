@@ -109,8 +109,11 @@ def mezz_events_step(dart, store, today, diag, back_days=400, max_docs=600):
     else:
         db["listed_to"] = today.isoformat()
         db["listed_from"] = min(db.get("listed_from") or date_from.isoformat(), start.isoformat())
+    cands += db.get("pending", [])  # 지난번 한도에 걸려 못 읽은 것
     todo = sorted({f["rcept_no"]: f for f in cands if (db["filings"].get(f["rcept_no"]) or {}).get("v") != docparse.MEZZ_EVENT_VERSION}.values(),
-                  key=lambda f: f["rcept_no"], reverse=True)[:max_docs]
+                  key=lambda f: f["rcept_no"], reverse=True)
+    db["pending"] = [{k: f.get(k) for k in ("rcept_no", "corp_code", "report_nm")} for f in todo[max_docs:]]
+    todo = todo[:max_docs]
     n_ok = 0
     for f in todo:
         try:
@@ -125,4 +128,4 @@ def mezz_events_step(dart, store, today, diag, back_days=400, max_docs=600):
                                        "ev": ev, "v": docparse.MEZZ_EVENT_VERSION}
     dump_json("ref/mezz_events.json", db, indent=None)
     diag["mezz_events"] = {"live_corps": len(live), "cands": len(cands), "todo": len(todo), "parsed": n_ok,
-                           "total": len(db["filings"]), "sec": round(time.time() - t0)}
+                           "total": len(db["filings"]), "pending": len(db["pending"]), "sec": round(time.time() - t0)}
