@@ -1,24 +1,6 @@
 {
- "dbms/MDC/STAT/srt/MDCSTAT30101": [
-  200,
-  "{\"OutBlock_1\":[{\"ISU_CD\":\"095570\",\"ISU_ABBRV\":\"AJ네트웍스\",\"SECUGRP_NM\":\"주권\",\"CVSRTSELL_TRDVOL\":\"5,574\",\"UPTICKRULE_APPL_TRDVOL\":\"5,547\",\"UPTICKRULE_EXCPT_TRDVOL\":\"27\",\"ACC_TRDVOL\":\"101,018\",\"TRDVOL_WT\":\"5.52\",\"CVSRTSELL_TRDVAL\":\"22,060,155\",\"UPTICKRULE_APPL_TRDVAL\":\"21,953,595\",\"UPTICKRULE_EXCPT_TRDVAL\":\"106,560\",\"ACC_TRDVAL\":\"399,488,487\",\"TRDVAL_WT\":\"5.52\"},{\"ISU_CD\":\"006840\",\"ISU_ABBRV\":\"AK홀딩스\",\"SECUGRP_NM\":\"주권\",\"CVSRTSELL_TRDVOL\":\"145\",\"UPTICKRULE_APPL_TRDVOL\":\"87\",\"UPTICKRULE_EXCPT_TRDVOL\":\"58\",\"ACC_TRDVOL\":\"5,469\",\"TRDVOL_WT\":\"2.65\",\"CVSRTSELL_TRDVAL\":\"902,210\",\"UPTICKRULE_APPL_TRDVAL\":\"546,670\",\"UPTICKRULE_EXCPT_TRDVAL\":\"355,540\",\"ACC_TRDVAL\":\"34,269,595\",\"TRDVAL_WT\":\"2.63\"},{\"ISU_CD\":\"027410\",\"ISU_ABBRV\":\"BGF\",\"SECUGRP_NM\":\"주권\",\"CVSRTSELL_TRDVOL\":\"4,784\",\"UPTICKRULE_APPL_TRDVOL\":\"4,10"
- ],
- "dbms/MDC/STAT/srt/MDCSTAT30501": [
-  200,
-  "{\"OutBlock_1\":[],\"CURRENT_DATETIME\":\"2026.11.02 PM 02:59:39\"}"
- ],
- "getStckLnbDetail": [
-  504,
-  "{\n  \"OpenAPI_ServiceResponse\": {\n    \"cmmMsgHeader\": {\n      \"errMsg\": \"SERVICETIMEOUT_ERROR\",\n      \"returnAuthMsg\": \"서비스 연결실패 에러\",\n      \"returnReasonCode\": \"05\"\n    }\n  }\n}\n"
- ],
- "getStckLnbProgress": [
-  200,
-  "{\"response\":{\"header\":{\"resultCode\":\"00\",\"resultMsg\":\"NORMAL SERVICE.\"},\"body\":{\"numOfRows\":3,\"pageNo\":1,\"totalCount\":1,\"items\":{\"item\":[{\"basDt\":\"20261030\",\"cclStckCnt\":\"80982616\",\"rdptStckCnt\":\"60557172\",\"balnStckCnt\":\"3287146722\",\"balnStckAmt\":\"141044925415370\"}]}}}}"
- ],
- "krx_id_set": true,
- "krx_pw_set": true,
- "login": [
-  200,
-  "{\"previousMemberYn\":false,\"MDC_MBR_TP_CD\":\"P\",\"MBR_NO\":\"2000051895\",\"_error_code\":\"CD001\",\"_error_message\":\"정상\"}"
- ]
+ "secrets": {
+  "ECOS_KEY": false,
+  "FRED_KEY": false
+ }
 }
