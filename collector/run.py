@@ -253,26 +253,27 @@ def main(argv=None):
         dump_json("diag_fsfix.json", diag)
         return 0
     if args.mode == "probe":
-        # 한국은행 ECOS·FRED 키 확인 (국고채 3년·회사채 AA- 3년 최근값)
-        import requests as _rq
-        out = {"secrets": {k: bool(os.environ.get(k)) for k in ("ECOS_KEY", "FRED_KEY")}}
-        ek = os.environ.get("ECOS_KEY")
-        if ek:
-            for nm, item in (("국고3년", "010200000"), ("회사채AA-3년", "010300000")):
-                try:
-                    u = f"https://ecos.bok.or.kr/api/StatisticSearch/{ek}/json/kr/1/5/817Y002/D/20261020/20261109/{item}"
-                    j = _rq.get(u, timeout=30).json()
-                    rows = (j.get("StatisticSearch") or {}).get("row") or []
-                    out[nm] = [(r.get("TIME"), r.get("DATA_VALUE")) for r in rows] or str(j)[:200].replace(ek, "***")
-                except Exception as e:  # noqa: BLE001
-                    out[nm] = redact(e)[:200].replace(ek, "***")
-        fk = os.environ.get("FRED_KEY")
-        if fk:
-            try:
-                j = _rq.get("https://api.stlouisfed.org/fred/series/observations", params={"series_id": "DGS10", "api_key": fk, "file_type": "json", "sort_order": "desc", "limit": 3}, timeout=30).json()
-                out["UST10Y"] = [(o["date"], o["value"]) for o in j.get("observations", [])] or str(j)[:200].replace(fk, "***")
-            except Exception as e:  # noqa: BLE001
-                out["UST10Y"] = redact(e)[:200].replace(fk, "***")
+        # 공모채 발행조건확정(정정) 원문에서 수요예측 결과 표 모양 확인
+        from . import docparse
+        out = {}
+        fl = dart.list_filings("20261103", "20261109", "C", "C001")
+        hits = [f for f in fl if "발행조건" in (f.get("report_nm") or "")]
+        out["n"] = len(hits)
+        pick = [f for f in hits if "포스코퓨처엠" in f.get("corp_name", "")][:1] + hits[:1]
+        for f in pick:
+            d = dart.document(f["rcept_no"])
+            main = max(d.values(), key=len) if d else ""
+            t = docparse.text_of(main)
+            segs = []
+            for key in ("수요예측 결과", "수요예측 참여", "참여내역", "경쟁률", "배정"):
+                i = t.find(key)
+                if i >= 0:
+                    segs.append(t[max(0, i - 100): i + 1500])
+            tabs = []
+            for kind, rows in docparse.blocks(main):
+                if kind == "table" and any("수요예측" in " ".join(r) or "참여" in " ".join(r) for r in rows[:3]):
+                    tabs.append(rows[:25])
+            out[f["rcept_no"]] = {"corp": f["corp_name"], "nm": f["report_nm"], "segs": segs[:3], "tabs": tabs[:5]}
         dump_json("diag_probe.json", out)
         return 0
     if args.mode == "bonds":
