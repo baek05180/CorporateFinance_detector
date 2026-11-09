@@ -266,10 +266,9 @@ def main(argv=None):
         # 공모채 발행조건확정(정정) 원문에서 수요예측 결과 표 모양 확인
         from . import docparse
         out = {}
-        fl = dart.list_filings("20261103", "20261109", "C", "C001")
-        hits = [f for f in fl if "발행조건" in (f.get("report_nm") or "")]
-        out["n"] = len(hits)
-        pick = [f for f in hits if "포스코퓨처엠" in f.get("corp_name", "")][:1]
+        import json as _j
+        D = _j.load(open("data/ref/mkt/demand.json"))
+        pick = [{"rcept_no": k, "corp_name": "", "report_nm": ""} for k, v in sorted(D.items(), reverse=True) if not v.get("tranches")][:3]
         for f in pick:
             d = dart.document(f["rcept_no"])
             main = max(d.values(), key=len) if d else ""
@@ -282,7 +281,7 @@ def main(argv=None):
             tabs = []
             for kind, rows in docparse.blocks(main):
                 j = " ".join(" ".join(r) for r in rows)
-                if kind == "table" and re.search(r"운용사|연기금|경쟁률|투자매매|참여금액|참여수량|배정", j) and "기관투자자 1" not in j and len(j) < 6000:
+                if kind == "table" and re.search(r"경쟁률|참여수량|참여금액", j) and "기관투자자 1" not in j and len(j) < 6000:
                     tabs.append([r[:9] for r in rows[:16]])
             out[f["rcept_no"]] = {"corp": f["corp_name"], "nm": f["report_nm"], "segs": segs[:3], "tabs": tabs[:14]}
         dump_json("diag_probe.json", out)
