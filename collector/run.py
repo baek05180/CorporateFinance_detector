@@ -258,11 +258,12 @@ def main(argv=None):
         dump_json("diag_fsfix.json", diag)
         return 0
     if args.mode == "market":
-        from .market import demand_step, rates_step
+        from .market import demand_step, mezz_events_step, rates_step
         diag = {}
         try:
             rates_step(today, diag)
             demand_step(dart, store, today, diag)
+            mezz_events_step(dart, store, today, diag, max_docs=args.days or 600)
         finally:
             dump_json("diag_market.json", diag)
         return 0

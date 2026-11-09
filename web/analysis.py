@@ -704,7 +704,18 @@ def rcpt_date(rno):
     return f"{rno[:4]}-{rno[4:6]}-{rno[6:8]}" if rno and len(rno) >= 8 else None
 
 
-def overhang(deals, shares, close, vol20, holders_pct, today):
+def mezz_event_index(db):
+    """거래소공시 이벤트 → {corp: {회차: {"bal", "price", "shares", "dt"}}} (오래된 것부터 덮어써 최신값)"""
+    idx = {}
+    for rno, f in sorted((db or {}).get("filings", {}).items()):
+        for ser, e in (f.get("ev") or {}).items():
+            cur = idx.setdefault(f.get("corp"), {}).setdefault(ser, {})
+            cur.update({k: v for k, v in e.items() if v is not None})
+            cur["dt"] = f"{rno[:4]}-{rno[4:6]}-{rno[6:8]}"
+    return idx
+
+
+def overhang(deals, shares, close, vol20, holders_pct, today, events=None):
     """미전환 메자닌·미상장 신주가 모두 주식으로 나올 때: 희석률·지금 전환 가능 물량·소화 일수·최대주주 지분율.
     발행 공시 기준이며 이후 전환·상환·리픽싱 공시는 반영하지 않는다."""
     if not shares:
@@ -719,11 +730,21 @@ def overhang(deals, shares, close, vol20, holders_pct, today):
             if (d.get("exercise_to") or d.get("maturity") or "") < t or not d.get("price"):
                 continue
             n = d.get("shares") or (d["amount"] / d["price"] if d.get("amount") else 0)
-            if not n:
+            px, upd = d["price"], None
+            ev = (events or {}).get(re.sub(r"[^\d-]", "", str(d.get("series") or "")))
+            if ev:
+                px = ev.get("price") or px
+                if ev.get("bal") is not None:
+                    n = ev["bal"] / px if px else n
+                elif ev.get("shares"):
+                    n = ev["shares"]
+                upd = ev.get("dt")
+            if not n or n < 1:
                 continue
             seen.add(k)
-            now = (d.get("exercise_from") or "") <= t and close and d["price"] <= close
-            items.append({"type": d["type"], "series": d.get("series"), "shares": round(n), "price": d["price"],
+            now = (d.get("exercise_from") or "") <= t and close and px <= close
+            items.append({"type": d["type"], "series": d.get("series"), "shares": round(n), "price": px, "upd": upd,
+                          "orig_shares": round(d.get("shares") or 0) or None, "orig_price": d["price"] if px != d["price"] else None,
                           "from": d.get("exercise_from"), "to": d.get("exercise_to"), "new": d["type"] != "EB", "now": bool(now)})
         elif d.get("type") == "RIGHTS" and d.get("new_common") and (d.get("list_dt") or d.get("pay_dt") or "") > t:
             seen.add(k)

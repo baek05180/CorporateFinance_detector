@@ -97,6 +97,7 @@ def main():
     bond_docs = load_json("ref/bond_docs.json", {})
     mezz_docs = load_json("ref/mezz_docs.json", {})
     rights_docs = load_json("ref/rights_docs.json", {})
+    mezz_ev = A.mezz_event_index(load_json("ref/mezz_events.json", {}))
     triggers = A.load_triggers(os.path.join(config.DATA_DIR, "manual", "rating_triggers.csv"))
     out_bonds = (load_json("bonds/outstanding.json", {}) or {}).get("bonds") or []
     issued_cpn = {(b.get("name") or "").replace(" ", ""): b for b in out_bonds if b.get("method") == "공모" and b.get("cpn")}
@@ -308,7 +309,7 @@ def main():
                                "pbr_basis": metrics.get("bs_period")}
         vv = [v for v in (px_v.get(code) or []) if v] if code else []
         oh = A.overhang(co.get("deals") or [], (metrics or {}).get("shares"), (metrics or {}).get("close"),
-                        sum(vv[-20:]) / len(vv[-20:]) if vv else None, (co.get("holders") or {}).get("total_pct"), today)
+                        sum(vv[-20:]) / len(vv[-20:]) if vv else None, (co.get("holders") or {}).get("total_pct"), today, mezz_ev.get(key))
         if oh:
             co["overhang"] = oh
         pc = ph_close.get(code) if code else None

@@ -81,3 +81,48 @@ def demand_step(dart, store, today, diag, days=200, max_docs=150):
         n_ok += bool(tr)
     dump_json("ref/mkt/demand.json", dem, indent=None)
     diag["demand"] = {"todo": len(todo), "parsed": n_ok, "total": len(dem), "sec": round(time.time() - t0)}
+
+
+def mezz_events_step(dart, store, today, diag, back_days=400, max_docs=600):
+    """거래소공시의 전환·행사·교환 청구, 가액 조정, 만기 전 취득 → 회차별 잔액·현재 가액 (오버행 계산용)."""
+    import re as _re
+    t0 = time.time()
+    db = load_json("ref/mezz_events.json", {"filings": {}, "listed_to": None, "listed_from": None})
+    live = {r["corp_code"] for r in store.records.values()
+            if r.get("type") in ("CB", "BW", "EB") and (r.get("maturity") or "9") >= today.isoformat()}
+    # 목록: 처음엔 back_days 전부(3개월씩), 이후엔 마지막으로 본 날부터
+    start = date_from = today - timedelta(days=back_days)
+    if db.get("listed_to") and db.get("listed_from") and db["listed_from"] <= date_from.isoformat():
+        start = __import__("datetime").date.fromisoformat(db["listed_to"]) - timedelta(days=3)
+    cands, d = [], start
+    while d <= today:
+        e = min(today, d + timedelta(days=89))
+        try:
+            for f in dart.list_filings(d.strftime("%Y%m%d"), e.strftime("%Y%m%d"), "I"):
+                nm = (f.get("report_nm") or "").replace(" ", "")
+                if docparse.MEZZ_EVENT_RE.search(nm) and "전환주식" not in nm and f.get("corp_code") in live:
+                    cands.append(f)
+        except DartError as ex:
+            diag["mezz_events_list_error"] = redact(ex)[:120]
+            break
+        d = e + timedelta(days=1)
+    else:
+        db["listed_to"] = today.isoformat()
+        db["listed_from"] = min(db.get("listed_from") or date_from.isoformat(), start.isoformat())
+    todo = sorted({f["rcept_no"]: f for f in cands if (db["filings"].get(f["rcept_no"]) or {}).get("v") != docparse.MEZZ_EVENT_VERSION}.values(),
+                  key=lambda f: f["rcept_no"], reverse=True)[:max_docs]
+    n_ok = 0
+    for f in todo:
+        try:
+            dd = dart.document(f["rcept_no"])
+        except DartError as ex:
+            db["filings"][f["rcept_no"]] = {"corp": f["corp_code"], "error": redact(ex)[:80], "v": docparse.MEZZ_EVENT_VERSION}
+            continue
+        main = max(dd.values(), key=len) if dd else ""
+        ev = docparse.mezz_event(main)
+        n_ok += bool(ev)
+        db["filings"][f["rcept_no"]] = {"corp": f["corp_code"], "nm": _re.sub(r"\s+", "", f.get("report_nm") or "")[:40],
+                                       "ev": ev, "v": docparse.MEZZ_EVENT_VERSION}
+    dump_json("ref/mezz_events.json", db, indent=None)
+    diag["mezz_events"] = {"live_corps": len(live), "cands": len(cands), "todo": len(todo), "parsed": n_ok,
+                           "total": len(db["filings"]), "sec": round(time.time() - t0)}

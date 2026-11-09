@@ -746,3 +746,79 @@ def demand_doc(xml):
         out.append({"groups": g, "cnt": c, "total": _num(q[-1]) if q else None, "n": _num(n[-1]) if n else None,
                     "ratio": float(m.group(1)) if m else None})
     return out
+
+
+# ── 거래소공시: 전환·행사·교환 청구, 가액 조정, 만기 전 취득 → 회차별 잔액·현재 가액 ──
+MEZZ_EVENT_VERSION = 1
+MEZZ_EVENT_RE = re.compile(r"전환청구권행사|신주인수권행사|교환청구권행사|가액의조정|가액ㆍ신주인수권행사가액|만기전사채취득")
+
+
+def _n(s):
+    s = re.sub(r"[^\d.\-]", "", s or "")
+    try:
+        return float(s) if s not in ("", "-", ".") else None
+    except ValueError:
+        return None
+
+
+def _ser(s):
+    m = re.search(r"(\d+(?:-\d+)?)", s or "")
+    return m.group(1) if m else None
+
+
+def mezz_event(xml):
+    """→ {회차: {"bal": 미전환·미행사 권면총액, "price": 현재(조정후) 가액, "shares": 전환가능주식수}}"""
+    out = {}
+    for kind, rows in blocks(xml):
+        if kind != "table":
+            continue
+        rows = [[(c or "").strip() for c in r] for r in rows]
+        flat = " ".join(" ".join(r) for r in rows[:3]).replace(" ", "")
+        if "정정전" in flat and "정정후" in flat:
+            continue
+        i = 0
+        while i < len(rows):
+            r = rows[i]
+            h = next((k for k, c in enumerate(r) if c.replace(" ", "") == "회차"), None)
+            if h is None or h == len(r) - 1:
+                i += 1
+                continue
+            head = [c.replace(" ", "") for c in r[h:]]
+            j = i + 1
+            while j < len(rows) and rows[j] and not re.match(r"^\d+\.\s", rows[j][0]):
+                d = [c for c in rows[j] if not re.search(r"[A-Za-z]{3}", c)]
+                if len(d) > len(head):
+                    d = d[-len(head):]
+                if not d or len(d[0]) > 8:
+                    break
+                s = _ser(d[0])
+                if not s:
+                    break
+                e = out.setdefault(s, {})
+                for k, col in enumerate(head[1:], 1):
+                    if k >= len(d):
+                        break
+                    v = _n(d[k])
+                    if v is None:
+                        continue
+                    if "조정후" in col and "주식수" in col or ("가능주식수" in col and "조정전" not in col):
+                        e["shares"] = v
+                    elif ("조정후" in col or (re.search(r"(전환|행사|교환)가액", col) and "조정전" not in col)) and "주식수" not in col:
+                        e["price"] = v
+                    elif re.search(r"미전환|미행사|미교환|잔액|권면", col) and "발행당시" not in col and "발행시" not in col:
+                        e["bal"] = v
+                j += 1
+            i = j
+    # 만기 전 취득: 취득 후 권면총액이 남은 잔액
+    t = text_of(xml).replace(" ", "")
+    m = re.search(r"취득후사채의권면\(?전자등록\)?총액[^\d]{0,30}([\d,]{4,})", t)
+    if m:
+        s = re.search(r"(\d+)\s*\|?\s*회차", " ".join(" ".join(r) for k, rows in blocks(xml) if k == "table" for r in rows)) \
+            or re.search(r"제(\d+)회", t)
+        p = re.search(r"주당(?:전환|행사|교환)가액\(원\)([\d,]+)", t)
+        if s:
+            e = out.setdefault(s.group(1), {})
+            e["bal"] = float(m.group(1).replace(",", ""))
+            if p:
+                e.setdefault("price", float(p.group(1).replace(",", "")))
+    return out

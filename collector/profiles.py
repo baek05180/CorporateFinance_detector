@@ -553,6 +553,8 @@ def run(dart, store, today=None):
         bond_doc_step(dart, store, today, diag)
         mezz_step(dart, store, today, diag)
         rights_step(dart, store, today, diag, max_docs=60)
+        from .market import mezz_events_step
+        mezz_events_step(dart, store, today, diag, max_docs=150)
 
         # 6) 조달 대상 회사 상세 (병렬)
         t0 = time.time()
