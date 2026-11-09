@@ -6,6 +6,7 @@
   python -m collector.run --mode profiles         # 기업 프로필 (매일 밤, 호출 예산 안에서 점진적으로)
 """
 import argparse
+import re
 import logging
 import os
 import sys
@@ -259,7 +260,7 @@ def main(argv=None):
         fl = dart.list_filings("20261103", "20261109", "C", "C001")
         hits = [f for f in fl if "발행조건" in (f.get("report_nm") or "")]
         out["n"] = len(hits)
-        pick = [f for f in hits if "포스코퓨처엠" in f.get("corp_name", "")][:1] + hits[:1]
+        pick = [f for f in hits if "포스코퓨처엠" in f.get("corp_name", "")][:1]
         for f in pick:
             d = dart.document(f["rcept_no"])
             main = max(d.values(), key=len) if d else ""
@@ -271,9 +272,10 @@ def main(argv=None):
                     segs.append(t[max(0, i - 100): i + 1500])
             tabs = []
             for kind, rows in docparse.blocks(main):
-                if kind == "table" and any("수요예측" in " ".join(r) or "참여" in " ".join(r) for r in rows[:3]):
-                    tabs.append(rows[:25])
-            out[f["rcept_no"]] = {"corp": f["corp_name"], "nm": f["report_nm"], "segs": segs[:3], "tabs": tabs[:5]}
+                j = " ".join(" ".join(r) for r in rows)
+                if kind == "table" and re.search(r"운용사|연기금|경쟁률|투자매매|참여금액|참여수량|배정", j) and "기관투자자 1" not in j and len(j) < 6000:
+                    tabs.append([r[:9] for r in rows[:16]])
+            out[f["rcept_no"]] = {"corp": f["corp_name"], "nm": f["report_nm"], "segs": segs[:3], "tabs": tabs[:14]}
         dump_json("diag_probe.json", out)
         return 0
     if args.mode == "bonds":
