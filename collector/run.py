@@ -253,36 +253,26 @@ def main(argv=None):
         dump_json("diag_fsfix.json", diag)
         return 0
     if args.mode == "probe":
-        # 1) 주식대차 API 응답 모양  2) KRX 로그인 후 공매도 통계
+        # 한국은행 ECOS·FRED 키 확인 (국고채 3년·회사채 AA- 3년 최근값)
         import requests as _rq
-        from .refdata import _key
-        base = "https://apis.data.go.kr/1160100/service/GetCMStckLnbInfoService/"
-        out = {"krx_id_set": bool(os.environ.get("KRX_ID")), "krx_pw_set": bool(os.environ.get("KRX_PW"))}
-        for op in ("getStckLnbDetail", "getStckLnbProgress"):
+        out = {"secrets": {k: bool(os.environ.get(k)) for k in ("ECOS_KEY", "FRED_KEY")}}
+        ek = os.environ.get("ECOS_KEY")
+        if ek:
+            for nm, item in (("국고3년", "010200000"), ("회사채AA-3년", "010300000")):
+                try:
+                    u = f"https://ecos.bok.or.kr/api/StatisticSearch/{ek}/json/kr/1/5/817Y002/D/20261020/20261109/{item}"
+                    j = _rq.get(u, timeout=30).json()
+                    rows = (j.get("StatisticSearch") or {}).get("row") or []
+                    out[nm] = [(r.get("TIME"), r.get("DATA_VALUE")) for r in rows] or str(j)[:200].replace(ek, "***")
+                except Exception as e:  # noqa: BLE001
+                    out[nm] = redact(e)[:200].replace(ek, "***")
+        fk = os.environ.get("FRED_KEY")
+        if fk:
             try:
-                r = _rq.get(base + op, timeout=40, params=dict(serviceKey=_key(), resultType="json", numOfRows=3, pageNo=1, basDt="20261030"))
-                out[op] = [r.status_code, redact(r.text[:1500])]
+                j = _rq.get("https://api.stlouisfed.org/fred/series/observations", params={"series_id": "DGS10", "api_key": fk, "file_type": "json", "sort_order": "desc", "limit": 3}, timeout=30).json()
+                out["UST10Y"] = [(o["date"], o["value"]) for o in j.get("observations", [])] or str(j)[:200].replace(fk, "***")
             except Exception as e:  # noqa: BLE001
-                out[op] = ["err", redact(e)[:200]]
-        s = _rq.Session()
-        s.headers.update({"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36",
-                          "Referer": "https://data.krx.co.kr/contents/MDC/MDI/mdiLoader/index.cmd"})
-        try:
-            s.get("https://data.krx.co.kr/contents/MDC/MDI/mdiLoader/index.cmd", timeout=30)
-            s.get("https://data.krx.co.kr/contents/MDC/COMS/client/MDCCOMS001.cmd", timeout=30)
-            lg = dict(mbrNm="", telNo="", di="", certType="", mbrId=os.environ.get("KRX_ID", ""), pw=os.environ.get("KRX_PW", ""))
-            r = s.post("https://data.krx.co.kr/contents/MDC/COMS/client/MDCCOMS001D1.cmd", data=lg, timeout=30)
-            out["login"] = [r.status_code, r.text[:300]]
-            if "CD011" in r.text:
-                r = s.post("https://data.krx.co.kr/contents/MDC/COMS/client/MDCCOMS001D1.cmd", data={**lg, "skipDup": "Y"}, timeout=30)
-                out["login2"] = [r.status_code, r.text[:300]]
-            for bld, extra in (("dbms/MDC/STAT/srt/MDCSTAT30101", {"searchType": "1", "mktId": "STK", "trdDd": "20261030", "inqCond": "STMFRTSCIFDRFS"}),
-                               ("dbms/MDC/STAT/srt/MDCSTAT30501", {"searchType": "1", "mktId": "STK", "trdDd": "20261028"})):
-                r = s.post("https://data.krx.co.kr/comm/bldAttendant/getJsonData.cmd", timeout=30,
-                           data={"bld": bld, "locale": "ko_KR", "share": "1", "money": "1", "csvxls_isNo": "false", **extra})
-                out[bld] = [r.status_code, r.text[:800]]
-        except Exception as e:  # noqa: BLE001
-            out["krx_err"] = str(e)[:300]
+                out["UST10Y"] = redact(e)[:200].replace(fk, "***")
         dump_json("diag_probe.json", out)
         return 0
     if args.mode == "bonds":
