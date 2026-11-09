@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-09T08:03+09:00",
+  "data_updated": "2026-11-09T15:30+09:00",
   "last_daily": "2026-11-06T20:31+09:00"
  },
  "records": {
@@ -306219,6 +306219,35 @@
    "type": "RIGHTS",
    "updated": "2026-10-25T18:19+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260820000375"
+  },
+  "RIGHTS:01169434:20261109000179": {
+   "amended": false,
+   "amount": 101250000000,
+   "board_dt": "2026-11-09",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "K",
+   "corp_code": "01169434",
+   "corp_name": "오가닉티코스메틱",
+   "dilution": 83.66,
+   "first_seen": "2026-11-09T15:30+09:00",
+   "id": "RIGHTS:01169434:20261109000179",
+   "method": "제3자배정증자",
+   "new_common": 50000000,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": null,
+   "purposes": {
+    "운영": 101250000000
+   },
+   "rcept_dt": "2026-11-09",
+   "rcept_no": "20261109000179",
+   "source": "DART",
+   "stock_code": "900300",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-11-09T15:30+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261109000179"
   },
   "RIGHTS:01170962:20250326001131": {
    "amended": true,
