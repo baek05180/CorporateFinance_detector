@@ -295,6 +295,39 @@ def build(args):
     for d_, nm in HOLI.items():
         ev[date.fromisoformat(d_)].append(nm)
 
+    # ── 분석 재료: 시장 스프레드·만기별 수요·펀더멘털·차입구조 ──
+    rt = C["rates"]
+    aa3_, k3_ = dict(map(tuple, rt.get("aa3", []))), dict(map(tuple, rt.get("ktb3", [])))
+    dl = max((d_ for d_ in aa3_ if d_ in k3_), default=None)
+    sp_now = (aa3_[dl] - k3_[dl]) * 100 if dl else None
+    base_r = (rt.get("base") or [[None, None]])[-1][1]
+    since6 = (today - timedelta(days=183)).isoformat()
+    aa_rows = [r for r in C["pubs"] if r.get("_dem") and (r.get("_grade") or "").startswith("AA") and (r.get("pay_dt") or "") >= since6]
+    by_t, rat_t = defaultdict(lambda: defaultdict(float)), defaultdict(list)
+    for r in aa_rows:
+        tt = int(round(r["_tenor"] or 0))
+        k = "2년" if tt <= 2 else "3년" if tt == 3 else "5년 이상"
+        for g, v in r["_dem"]["groups"].items():
+            by_t[k]["운용사" if g == "운용사" else "증권사" if g == "증권사" else "연기금·은행·보험 등"] += v
+        if r["_dem"].get("ratio"):
+            rat_t[k].append(r["_dem"]["ratio"])
+    avg = {k: sum(v) / len(v) for k, v in rat_t.items() if v}
+    m_ = co.get("metrics") or {}
+    fi = co.get("fs_interim") or {}
+    lad = defaultdict(float)
+    for x in (co.get("bonds") or {}).get("ladder") or []:
+        lad[int(x["year"])] += (x.get("공모") or 0) / 1e8
+    basd = C["out"].get("basDt", "")
+    basd = f"{basd[:4]}-{basd[4:6]}-{basd[6:]}" if len(basd) == 8 else ""
+    for r in mine:
+        if (r.get("pay_dt") or "") > basd and r.get("maturity"):
+            lad[int(r["maturity"][:4])] += r["amount"] / 1e8
+    yy = lambda t: issue.year + t  # noqa: E731
+    nd_e, icr = m_.get("net_debt_ebitda"), m_.get("interest_coverage")
+    capex_h, ocf_h = (fi.get("capex") or 0) / 1e8, (fi.get("ocf") or 0) / 1e8
+    dm = {int(round(r["_tenor"])): r["_dem"] for r in prev if r.get("_dem") and r.get("_tenor")}
+    sprd = {int(round(r["_tenor"])): r.get("_spread") for r in prev if r.get("_tenor")}
+
     # p1 표지
     set_text(shape(S(1), "TextBox 3"), f"㈜{name}를 위한\n공모사채 발행 제안서")
     t = shape(S(1), "TextBox 10")
@@ -307,12 +340,16 @@ def build(args):
     due12 = (co.get("bonds") or {}).get("due12") or 0
     prev_txt = f"직전 회차({prev[0]['series_raw'].split('-')[0]}회, {prev[0]['pay_dt'][2:].replace('-', '.')})" if prev else "직전 회차"
     set_text(tb.cell(1, 2), f"{args.base:,}억 (최대 증액 시 {args.max:,}억원까지 가능)")
-    set_text(tb.cell(1, 3), (f"향후 12개월 내 만기 도래 회사채 {due12/1e8:,.0f}억원 차환 수요 고려\n" if due12 else "")
-             + f"최초 {args.base:,}억원으로 신고하고, 수요예측 결과에 따라 최대 {args.max:,}억원까지 증액하는 방향으로 제안")
+    set_text(tb.cell(1, 3), (f"향후 12개월 내 공모채 만기 {due12/1e8:,.0f}억원 차환 수요 — 선제 조달로 차환 리스크 분산\n" if due12 else "")
+             + (f"{fi.get('period', '')} 설비투자 {capex_h:,.0f}억원 > 영업현금흐름 {ocf_h:,.0f}억원 — 투자 집행기 외부조달 수요 지속\n" if capex_h else "")
+             + f"최초 {args.base:,}억원 신고 후 수요예측 결과에 따라 최대 {args.max:,}억원까지 증액 — 11월 발행 공백 속 대기 수요 흡수")
     set_text(tb.cell(3, 2), " / ".join(f"{t}년({split[t]:,}억원)" for t in tenors))
     dm = {int(round(r["_tenor"])): r["_dem"] for r in prev if r.get("_dem") and r.get("_tenor")}
-    set_text(tb.cell(3, 3), f"{prev_txt} 수요예측 경쟁률 " + " / ".join(f"{t}년 {dm[t]['ratio']:.1f}:1" for t in tenors if t in dm)
-             + "\n직전 회차 신고 물량 비율로 최초 물량 배분, 증액 시 경쟁률이 높은 만기 우선" if dm else "2/3년 중심 트랜치")
+    set_text(tb.cell(3, 3), "\n".join(x for x in [
+        (f"시장: AA- 스프레드 {sp_now:.0f}bp 박스권, AA급 경쟁률 " + " / ".join(f"{t}년 {avg[f'{t}년']:.1f}:1" for t in tenors if f"{t}년" in avg)) if sp_now else None,
+        "차입구조: 만기 " + " / ".join(f"’{yy(t) % 100}년 {lad[yy(t)]:,.0f}억" for t in tenors) + " — 증액은 부담 적은 만기 우선",
+        (f"펀더멘털: 순차입/EBITDA {nd_e:.1f}배 — 중기물로 금리·차환 부담 균형") if nd_e else None,
+    ] if x))
     set_text(tb.cell(4, 2), band)
     set_text(tb.cell(4, 3), "이전 발행과 동일하게 책정")
     set_text(tb.cell(5, 2), grade)
@@ -321,7 +358,9 @@ def build(args):
     set_text(tb.cell(6, 3), f"{md(sch['신고'])} 증권신고서 제출, {md(sch['수요예측'])} 수요예측 → {md(sch['정정'])} 발행조건 확정\n"
              + "11/26(목) 금통위 전 수요예측을 마쳐 금리 결정 이벤트 리스크 최소화")
     set_text(tb.cell(7, 2), md(issue))
-    del_rows(tb, [8, 9])
+    set_text(tb.cell(8, 2), "")
+    set_text(tb.cell(8, 3), "전회차와 동일")
+    del_rows(tb, [9])
 
     # p5 발행 일정 달력
     s5 = S(5)
@@ -364,16 +403,24 @@ def build(args):
         if r["_dem"].get("ratio"):
             rat_t[k].append(r["_dem"]["ratio"])
     avg = {k: sum(v) / len(v) for k, v in rat_t.items() if v}
+    lt = min(tenors, key=lambda t: lad[yy(t)])
+    rp6 = run_rpr(tb.cell(1, 2))
     for i, t in enumerate(tenors[:2]):
         set_text(tb.cell(1 + i, 1), f"{t}년 : {split[t]:,}억원\n(최대 {split[t] * args.max // args.base:,}억원)")
         k = f"{t}년"
-        lines = []
-        if t in dm:
-            lines.append(f"직전 회차 {t}년물 수요예측 참여 {dm[t]['total']:,.0f}억원, 경쟁률 {dm[t]['ratio']:.1f}:1")
+        L = []
         if k in avg:
-            lines.append(f"최근 6개월 AA급 공모채 {t}년물 평균 경쟁률 {avg[k]:.1f}:1 (참여 {sum(by_t[k].values()):,.0f}억원)")
-        lines.append("직전 회차와 같은 비율로 최초 물량을 배분하고, 수요예측 결과에 따라 만기별 증액 규모를 유연하게 결정")
-        set_text(tb.cell(1 + i, 2), "\n".join(lines))
+            L.append(f"[수요] 최근 6개월 AA급 {t}년물 평균 경쟁률 {avg[k]:.1f}:1(참여 {sum(by_t[k].values()) / 1e4:,.2f}조원)"
+                     + (" — 북클로징·인상 경계 속 단기물 선호" if t == 2 else " — 벤치마크 만기, ALM 기관 수요"))
+        if t == 2 and base_r:
+            L.append(f"[금리] 11월 인상 가능성은 국고 3년-기준금리 {(k3_[dl] - base_r) * 100:.0f}bp로 선반영 — 단기물 금리 상단 제한")
+        L.append(f"[차입구조] 만기 ’{yy(t) % 100}년 공모채 만기 {lad[yy(t)]:,.0f}억원"
+                 + (" — 상대적 여유, 증액분 우선 배정" if t == lt else " — 만기 집중, 증액은 수요 확인 후"))
+        if t != 2 and nd_e:
+            L.append(f"[펀더멘털] 순차입금/EBITDA {nd_e:.1f}배, 이자보상배율 {icr:.1f}배 — 만기 장기화로 차환 주기 분산")
+        if t in dm:
+            L.append(f"[직전 회차] {t}년물 경쟁률 {dm[t]['ratio']:.1f}:1" + (f", 확정 개평 {sprd[t]:+d}bp" if sprd.get(t) is not None else ""))
+        fill_cell(tb.cell(1 + i, 2), "\n".join(L), rp6)
     ch = shape(s6, "차트 11").chart
     cats = [k for k in ("2년", "3년", "5년 이상") if k in by_t]
     cd = CategoryChartData()
@@ -390,7 +437,7 @@ def build(args):
     set_text(shape(s6, "모서리가 둥근 직사각형 8"), "AA급 공모사채 만기별 수요예측 참여금액 (최근 6개월)")
     set_text(shape(s6, "TextBox 29"), f"자료: 기업공시시스템 ({today.month}/{today.day} 수요예측 완료 건 기준, 단위: 억원)")
     drop(s6, shape(s6, "차트 1"), shape(s6, "표 2"), shape(s6, "TextBox 3"), shape(s6, "모서리가 둥근 직사각형 8", 1))
-    set_text(shape(s6, "TextBox 10"), "만기별 수요 강도를 반영한 " + "/".join(str(t) for t in tenors) + "년 만기 구성")
+    set_text(shape(s6, "TextBox 10"), "연말 우량물 희소성과 만기별 수요·만기 분산을 고려한 " + "/".join(str(t) for t in tenors) + "년 만기 구성")
 
     # p7·8 금통위·연준 위원 (11월 업데이트)
     s7 = S(7)
@@ -447,7 +494,7 @@ def build(args):
                     uses[k] += v
         set_text(tb.cell(5, 1), " · ".join(uses) or "-")
         set_text(tb.cell(6, 1), " " + " / ".join(f"{tenor_lab(r['_tenor']).replace('Y', '년')} 개평 {r['_spread']:+d}bp" + (f" ({r['_rate']:.3f}%)" if r.get("_rate") else "") for r in prev if r.get("_spread") is not None))
-        del_rows(tb, [7])
+        del_rows(tb, [5, 7])
         set_text(shape(s10, "모서리가 둥근 직사각형 8", 0), f"{name}{sn} 발행개요")
         set_text(shape(s10, "모서리가 둥근 직사각형 8", 1), f"{name}{sn} 수요예측 기관군별 참여")
         tb = shape(s10, "표 2").table
@@ -471,7 +518,7 @@ def build(args):
         set_text(shape(s10, "직사각형 24"),
                  f"{big[0]} 중심의 참여\n전체 주문 {tot_d:,.0f}억원 중 {big[0]} {big[1]:,.0f}억원({big[1] / tot_d * 100:.0f}%)으로 최대 투자자군\n\n"
                  + "\n".join(f"{tenor_lab(r['_tenor']).replace('Y', '년물')}: 신고 {r['_dem']['total'] / r['_dem']['ratio']:,.0f}억 → 주문 {r['_dem']['total']:,.0f}억 (경쟁률 {r['_dem']['ratio']:.1f}:1), 확정 개평 {r['_spread']:+d}bp, 발행 {r['amount'] / 1e8:,.0f}억" for r in prev)
-                 + f"\n\n대표주관: {prev[0].get('lead') or '-'}")
+                 )
         set_text(shape(s10, "모서리가 둥근 직사각형 8", 2), f"{name}{sn} 수요예측 결과 분석")
         set_text(shape(s10, "모서리가 둥근 직사각형 8", 3), "이번 회차 시사점")
         set_text(shape(s10, "직사각형 27"),
@@ -522,12 +569,10 @@ def build(args):
         a, b = ds[-1], ds[0]
         sp1, sp0 = (aa3[a] - k3[a]) * 100, (aa3[b] - k3[b]) * 100
         lo = min(ds, key=lambda d_: aa3[d_] - k3[d_])
-        set_bul(shape(s17, "TextBox 17"),
-                 (f"AA- 3년 {aa3[a]:.3f}%, 국고 3년 대비 스프레드 {sp1:.0f}bp ({a[5:].replace('-', '/')} 기준)\n"
-                 f"- 1년 전({b[:7]}) {sp0:.0f}bp 대비 {sp1 - sp0:+.0f}bp, 기간 중 최저 {(aa3[lo] - k3[lo]) * 100:.0f}bp({lo[:7]})\n"
-                 f"- 국고 3년 {k3[b]:.3f}% → {k3[a]:.3f}%로 {(k3[a] - k3[b]) * 100:+.0f}bp 변동 — 기준금리 인상(7·8월)과 美 금리 상승이 반영된 금리 레벨\n"
-                 "절대 금리 상승으로 캐리 매력은 높아진 구간 — 우량물 중심 수요 유입 기대\n"
-                 "- 12월 연말 북클로징 전 발행 수요 집중 가능성을 감안해 11월 말 발행 권고").split("\n"))
+        MC = J("manual", "market_comment.json", default={})
+        cr = list(MC.get("credit", []))
+        cr.insert(1, f"- {a[5:].replace('-', '/')} 기준 AA- 3년 {aa3[a]:.3f}%, 국고 3년 대비 {sp1:.0f}bp — 1년 전({b[:7]}) {sp0:.0f}bp 대비 {sp1 - sp0:+.0f}bp, 기간 중 최저 {(aa3[lo] - k3[lo]) * 100:.0f}bp({lo[:7]})")
+        set_bul(shape(s17, "TextBox 17"), cr)
     drop(s17, shape(s17, "그림 14"), shape(s17, "TextBox 15"), shape(s17, "모서리가 둥근 직사각형 8", 1))
 
     # p18 국고채·기준금리 — 그림을 자동 차트로 교체
@@ -568,12 +613,9 @@ def build(args):
     set_text(shape(s18, "TextBox 53"), "자료: 한국은행 경제통계시스템(ECOS)")
     if ds:
         a = ds[-1]
-        set_bul(shape(s18, "TextBox 25"),
-                 ("10월 금통위 만장일치 기준금리 동결(3.00%), 7·8월 연속 인상 후 숨고르기\n"
-                 "- 결정문: 물가가 3% 내외의 높은 오름세를 이어가는 가운데 두 차례 인상의 파급효과를 점검하며 추가 인상의 시기와 속도를 결정\n"
-                 "- 9월 소비자물가 2.9%로 목표(2.0%) 상회, 8월 점도표상 6개월 후 3.25% 전망이 다수 — 11/26 금통위 인상 가능성 상존\n"
-                 f"국고채 3년 {k3[a]:.3f}% / 10년 {k10[a]:.3f}% ({a[5:].replace('-', '/')} 기준)\n"
-                 f"- 기준금리 대비 국고 3년 {(k3[a] - (bl[-1] or 0)) * 100:+.0f}bp — 추가 인상 기대가 일부 선반영된 수준").split("\n"))
+        kr = list(J("manual", "market_comment.json", default={}).get("kr", []))
+        kr.append(f"- {a[5:].replace('-', '/')} 기준 국고 3년 {k3[a]:.3f}% / 5년 {k5[a]:.3f}% / 10년 {k10[a]:.3f}%, 기준금리 대비 3년물 {(k3[a] - (bl[-1] or 0)) * 100:+.0f}bp")
+        set_bul(shape(s18, "TextBox 25"), kr)
 
     # p19 美 채권시장
     s19 = S(19)
@@ -595,12 +637,8 @@ def build(args):
     set_text(shape(s19, "TextBox 24"), "자료: FRED(St. Louis Fed)")
     if ds:
         a = ds[-1]
-        set_bul(shape(s19, "TextBox 17"),
-                 ("2026년 10월 美 연방기금 목표금리 3.75~4.00% 동결(10:2)\n"
-                 "- 9월 25bp 인상(2023년 7월 이후 첫 인상) 후 동결. Cook 이사·Hammack 총재는 25bp 인상 주장\n"
-                 "- 9월 CPI 전년비 3.7%(근원 2.6%)로 예상 상회, 성명서는 경제활동을 'strong'으로 상향\n"
-                 f"美 국채 2년 {u2[a]:.2f}% / 10년 {u10[a]:.2f}% ({a[5:].replace('-', '/')} 기준)\n"
-                 "- 워시 의장은 포워드 가이던스를 지양 — 12/8~9 FOMC 추가 인상 여부가 연말 금리 변동성의 핵심 변수").split("\n"))
+        us = list(J("manual", "market_comment.json", default={}).get("us", []))
+        set_bul(shape(s19, "TextBox 17"), us)
 
     # p20 만기도래 현황 (공모 회사채, 내년)
     s20 = S(20)
