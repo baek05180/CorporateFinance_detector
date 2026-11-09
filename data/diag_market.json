@@ -6,22 +6,22 @@
   "total": 76
  },
  "mezz_events": {
-  "cands": 2078,
+  "cands": 8,
   "live_corps": 825,
-  "parsed": 1376,
-  "sec": 1083,
-  "todo": 1500,
+  "parsed": 0,
+  "sec": 5,
+  "todo": 0,
   "total": 1500
  },
  "rates": {
-  "aa3": "HTTPSConnectionPool(host='ecos.bok.or.kr', port=443): Max retries exceeded with url: /api/StatisticSearch/RTTDY6A6ZAS8RR",
-  "base": "HTTPSConnectionPool(host='ecos.bok.or.kr', port=443): Max retries exceeded with url: /api/StatisticSearch/RTTDY6A6ZAS8RR",
-  "bbb3": "HTTPSConnectionPool(host='ecos.bok.or.kr', port=443): Max retries exceeded with url: /api/StatisticSearch/RTTDY6A6ZAS8RR",
+  "aa3": 730,
+  "base": 1093,
+  "bbb3": 730,
   "ffr_hi": 1095,
   "ffr_lo": 1095,
-  "ktb10": "HTTPSConnectionPool(host='ecos.bok.or.kr', port=443): Max retries exceeded with url: /api/StatisticSearch/RTTDY6A6ZAS8RR",
-  "ktb3": "HTTPSConnectionPool(host='ecos.bok.or.kr', port=443): Max retries exceeded with url: /api/StatisticSearch/RTTDY6A6ZAS8RR",
-  "ktb5": "HTTPSConnectionPool(host='ecos.bok.or.kr', port=443): Max retries exceeded with url: /api/StatisticSearch/RTTDY6A6ZAS8RR",
+  "ktb10": 730,
+  "ktb3": 730,
+  "ktb5": 730,
   "ust10": 746,
   "ust2": 746
  }
