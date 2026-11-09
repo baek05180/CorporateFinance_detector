@@ -297,6 +297,7 @@ footer p{margin:4px 0}
   .top3{grid-template-columns:repeat(3,1fr)}
 }
 .sch{border:1px solid var(--line);border-radius:12px;padding:4px;margin:10px 0 4px}.sch div{display:flex;align-items:center;gap:10px;padding:9px 12px;border-bottom:1px solid var(--line)}.sch div:last-child{border-bottom:0}.sch i{width:7px;height:7px;border-radius:50%;flex:none;background:var(--c-ov)}.sch b{flex:1;font-weight:600}.sch .d{font-variant-numeric:tabular-nums;color:var(--ink-3)}.sch .dd{width:64px;text-align:right;font-variant-numeric:tabular-nums;color:var(--ink-3);font-size:12px}.sch .now{background:var(--line-2);border-radius:8px}.sch .now i{background:var(--ink)}.sch .past{opacity:.55}
+.oh{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}.oh-h{display:flex;gap:8px;align-items:baseline;margin-bottom:6px}.oh-h span{font-size:12px;color:var(--ink-3)}.oh-r{display:flex;align-items:baseline;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}.oh-r b{font-weight:600;flex:none}.oh-r span{flex:1;text-align:right;font-size:12px;color:var(--ink-3)}.oh-r em{font-style:normal;font-weight:700;font-variant-numeric:tabular-nums;min-width:64px;text-align:right}
 .bsv{margin:6px 0 14px}.bsh .eq{margin:6px 0 10px}
 .bsg{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .bsc{display:flex;flex-direction:column;height:240px;border-radius:12px;overflow:hidden;gap:0}
@@ -1104,6 +1105,14 @@ async function viewCompany(key) {
   const holdBody = H.top?.length ? `${H.top.map(h => `<div class="share" style="margin:7px 0"><span style="width:42%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(h.name)} <span class="note">${esc(h.relation || '')}</span></span><div class="track"><div class="fill" style="width:${Math.min(100, h.pct * 2)}%;background:var(--s5)"></div></div><span class="num" style="width:56px;text-align:right">${pct(h.pct, 2)}</span></div>`).join('')}
     <p class="note" style="margin:10px 0 0">최대주주 및 특수관계인 합계 <b style="color:var(--ink)">${pct(H.total_pct, 2)}</b>${co.treasury_shares ? ` · 자기주식 ${int(co.treasury_shares)}주${m.shares ? ' (' + pct(co.treasury_shares / m.shares * 100, 2) + ')' : ''}` : ''}</p>`
     : '<div class="empty" style="padding:18px">주주 정보가 아직 없습니다</div>';
+  const O = co.overhang;
+  const man = n => n >= 1e4 ? `${Math.round(n / 1e4).toLocaleString()}만주` : `${int(n)}주`;
+  const ohBody = O ? `<div class="oh"><div class="oh-h"><b>오버행</b><span>미전환 메자닌·미상장 신주가 모두 주식으로 나오면</span></div>
+    <div class="oh-r"><b>희석률</b><span>신주 ${man(O.new_shares)} ÷ 전환 후 주식 ${man(O.after_shares)}</span><em>${pct(O.dilution, 1)}</em></div>
+    <div class="oh-r"><b>지금 전환 가능</b><span>전환기간 중 · 패리티 100% 이상</span><em>${man(O.now_shares)}</em></div>
+    <div class="oh-r"><b>시장이 받아 주는 데</b><span>20일 평균 거래량 ${O.vol20 ? man(O.vol20) : DASH} 기준${O.days_all != null ? ` · 전체 물량 ${O.days_all.toLocaleString()}일치` : ''}</span><em>${!O.now_shares ? '해당 없음' : O.days_now != null ? O.days_now.toLocaleString() + '일치' : DASH}</em></div>
+    ${O.holder_after != null ? `<div class="oh-r"><b>모두 전환 시 최대주주</b><span>특수관계인 포함 ${pct(O.holder_pct, 2)} → </span><em>${pct(O.holder_after, 2)}</em></div>` : ''}
+    <p class="note" style="margin:8px 0 0">${O.items.map(x => `${esc(x.type)}${x.series ? ' ' + esc(x.series) + '회' : ''} ${man(x.shares)}${x.price ? ' (' + int(x.price) + '원' + (x.from ? ', ' + x.from.slice(2).replace(/-/g, '.') + '~' : '') + ')' : ''}${x.type === 'EB' ? ' · 자사주 교환' : ''}`).join(' · ')}<br>발행 공시 기준 — 이후 전환·상환·리픽싱 공시는 반영되지 않았습니다.</p></div>` : '';
 
   // ── 업종 ──
   const P = co.peers || [];
@@ -1154,7 +1163,7 @@ async function viewCompany(key) {
     <div class="cgrid">
       ${card('s-sum', 'c-sum span2', '요약', esc(headline), summaryBody, [annualSrc ? '출처: ' + annualSrc : '', AI ? `요약 작성 ${esc(AI.written || '')} · 사업보고서를 AI가 읽고 정리 (원문 확인 권장)` : ''].filter(Boolean).join(' · '))}
       ${card('s-ov', 'c-ov', '개요', esc([I.ceo_nm ? '대표 ' + I.ceo_nm : '', I.est_dt ? I.est_dt.slice(0, 4) + ' 설립' : ''].filter(Boolean).join(' · ')), ovBody, '출처: DART 기업개황 · KIND 상장법인목록')}
-      ${card('s-hold', 'c-hold', '주주', H.top?.length ? esc(`${H.top[0].name} 외 ${(H.total_pct ?? 0).toFixed(1)}%`) : '', holdBody, H.as_of ? `출처: 최대주주 현황 (${esc(H.as_of)} 기준)` : '')}
+      ${card('s-hold', 'c-hold', '주주', H.top?.length ? esc(`${H.top[0].name} 외 ${(H.total_pct ?? 0).toFixed(1)}%`) : '', holdBody + ohBody, H.as_of ? `출처: 최대주주 현황 (${esc(H.as_of)} 기준)` : '')}
       ${card('s-biz', 'c-biz span2', '사업', AI?.mix_line ? esc(AI.mix_line) : '', bizBody, annualSrc ? '출처: ' + annualSrc + ' II. 사업의 내용' : '')}
       ${card('s-pl', 'c-pl', '손익', esc(headline + (m.op_margin != null ? ` · 영업이익률 ${m.op_margin.toFixed(1)}%` : '')), plBody, `${ser[ser.length - 1]?.fs === 'OFS' ? '별도' : '연결'} 기준 · 출처: DART 정기보고서 주요계정`)}
       ${card('s-bs', 'c-bs', '재무상태', esc(m.debt_ratio != null ? `부채비율 ${m.debt_ratio.toFixed(0)}%` + (m.cash != null ? ` · 현금성자산 ${wonTxt((m.cash || 0) + (m.st_deposits || 0))}` : '') : ''), bsBody, fd ? `상환능력 ${esc(fd.period)} ${fd.fs === 'OFS' ? '별도' : '연결'} 재무제표 · 차입금은 계정명 합산 추정` : '')}

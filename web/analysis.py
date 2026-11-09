@@ -702,3 +702,44 @@ def px_stats(dates, close, vol, val, shares, today, short=None, lnb=None):
 def rcpt_date(rno):
     """접수번호 앞 8자리 → YYYY-MM-DD"""
     return f"{rno[:4]}-{rno[4:6]}-{rno[6:8]}" if rno and len(rno) >= 8 else None
+
+
+def overhang(deals, shares, close, vol20, holders_pct, today):
+    """미전환 메자닌·미상장 신주가 모두 주식으로 나올 때: 희석률·지금 전환 가능 물량·소화 일수·최대주주 지분율.
+    발행 공시 기준이며 이후 전환·상환·리픽싱 공시는 반영하지 않는다."""
+    if not shares:
+        return None
+    t = today.isoformat()
+    items, seen = [], set()
+    for d in deals:
+        k = d.get("rcept_no") or d.get("id")
+        if k in seen:
+            continue
+        if d.get("type") in ("CB", "BW", "EB"):
+            if (d.get("exercise_to") or d.get("maturity") or "") < t or not d.get("price"):
+                continue
+            n = d.get("shares") or (d["amount"] / d["price"] if d.get("amount") else 0)
+            if not n:
+                continue
+            seen.add(k)
+            now = (d.get("exercise_from") or "") <= t and close and d["price"] <= close
+            items.append({"type": d["type"], "series": d.get("series"), "shares": round(n), "price": d["price"],
+                          "from": d.get("exercise_from"), "to": d.get("exercise_to"), "new": d["type"] != "EB", "now": bool(now)})
+        elif d.get("type") == "RIGHTS" and d.get("new_common") and (d.get("list_dt") or d.get("pay_dt") or "") > t:
+            seen.add(k)
+            items.append({"type": "유상증자", "series": None, "shares": d["new_common"], "price": d.get("issue_px"),
+                          "from": d.get("list_dt") or d.get("pay_dt"), "to": None, "new": True, "now": False})
+    if not items:
+        return None
+    new = sum(x["shares"] for x in items if x["new"])
+    supply = sum(x["shares"] for x in items)
+    now = sum(x["shares"] for x in items if x["now"])
+    out = {"items": items, "new_shares": new, "supply": supply, "after_shares": shares + new,
+           "dilution": round(new / (shares + new) * 100, 1), "now_shares": now,
+           "vol20": round(vol20) if vol20 else None,
+           "days_now": round(now / vol20, 1) if vol20 and now else (0 if not now else None),
+           "days_all": round(supply / vol20, 1) if vol20 else None}
+    if holders_pct is not None:
+        out["holder_pct"] = holders_pct
+        out["holder_after"] = round(holders_pct * shares / (shares + new), 2)
+    return out

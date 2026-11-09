@@ -306,6 +306,11 @@ def main():
                                "per_note": "적자" if (ann.get("ni") or 0) < 0 else None, "per_basis": ann.get("period"),
                                "pbr": round(mc / metrics["equity"], 2) if (metrics.get("equity") or 0) > 0 else None,
                                "pbr_basis": metrics.get("bs_period")}
+        vv = [v for v in (px_v.get(code) or []) if v] if code else []
+        oh = A.overhang(co.get("deals") or [], (metrics or {}).get("shares"), (metrics or {}).get("close"),
+                        sum(vv[-20:]) / len(vv[-20:]) if vv else None, (co.get("holders") or {}).get("total_pct"), today)
+        if oh:
+            co["overhang"] = oh
         pc = ph_close.get(code) if code else None
         if pc and sum(v is not None for v in pc) >= 5:
             co["price_hist"] = [[d, v] for d, v in zip(ph_dates, pc) if v is not None]
