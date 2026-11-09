@@ -1112,7 +1112,7 @@ async function viewCompany(key) {
     <div class="oh-r"><b>지금 전환 가능</b><span>전환기간 중 · 패리티 100% 이상</span><em>${man(O.now_shares)}</em></div>
     <div class="oh-r"><b>시장이 받아 주는 데</b><span>20일 평균 거래량 ${O.vol20 ? man(O.vol20) : DASH} 기준${O.days_all != null ? ` · 전체 물량 ${O.days_all.toLocaleString()}일치` : ''}</span><em>${!O.now_shares ? '해당 없음' : O.days_now != null ? O.days_now.toLocaleString() + '일치' : DASH}</em></div>
     ${O.holder_after != null ? `<div class="oh-r"><b>모두 전환 시 최대주주</b><span>특수관계인 포함 ${pct(O.holder_pct, 2)} → </span><em>${pct(O.holder_after, 2)}</em></div>` : ''}
-    <p class="note" style="margin:8px 0 0">${O.items.map(x => `${esc(x.type)}${x.series ? ' ' + esc(x.series) + '회' : ''} ${man(x.shares)}${x.price ? ' (' + int(x.price) + '원' + (x.from ? ', ' + x.from.slice(2).replace(/-/g, '.') + '~' : '') + ')' : ''}${x.type === 'EB' ? ' · 자사주 교환' : ''}`).join(' · ')}<br>발행 공시 기준 — 이후 전환·상환·리픽싱 공시는 반영되지 않았습니다.</p></div>` : '';
+    <p class="note" style="margin:8px 0 0">${O.items.map(x => `${esc(x.type)}${x.series ? ' ' + esc(x.series) + '회' : ''} ${man(x.shares)}${x.price ? ' (' + (x.orig_price ? int(x.orig_price) + '→' : '') + int(x.price) + '원' + (x.from ? ', ' + x.from.slice(2).replace(/-/g, '.') + '~' : '') + ')' : ''}${x.type === 'EB' ? ' · 자사주 교환' : ''}${x.upd ? ' · ' + x.upd.slice(2).replace(/-/g, '.') + ' 공시 반영' : ''}`).join(' · ')}<br>전환·행사 청구, 가액 조정(리픽싱), 만기 전 취득 공시의 최신 잔액·가액을 반영합니다. 해당 공시가 없는 회차는 발행 당시 기준입니다.</p></div>` : '';
 
   // ── 업종 ──
   const P = co.peers || [];
