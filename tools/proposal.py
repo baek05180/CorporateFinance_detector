@@ -98,6 +98,32 @@ def set_bul(obj, lines):
         _set_par(x, ln[2:] if ln.startswith("- ") else ln)
 
 
+def shrink(obj, pt):
+    from pptx.util import Pt
+    for p_ in obj.text_frame.paragraphs:
+        for r in p_.runs:
+            r.font.size = Pt(pt)
+
+
+def add_note_box(slide, left, top, width, height, lines, pt=8.5):
+    """간단한 글머리 텍스트 상자 (• 상위 / - 하위)"""
+    from pptx.util import Pt
+    from pptx.dml.color import RGBColor
+    tb = slide.shapes.add_textbox(left, top, width, height)
+    tf = tb.text_frame
+    tf.word_wrap = True
+    for i, ln in enumerate(lines):
+        p_ = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
+        sub = ln.startswith("- ")
+        r = p_.add_run()
+        r.text = ("   - " + ln[2:]) if sub else ("• " + ln)
+        r.font.size = Pt(pt - (0.5 if sub else 0))
+        r.font.bold = not sub
+        r.font.color.rgb = RGBColor(0x33, 0x33, 0x33) if sub else RGBColor(0x05, 0x50, 0x7D)
+        p_.space_after = Pt(2)
+    return tb
+
+
 def run_rpr(cell):
     for p_ in cell.text_frame.paragraphs:
         for r in p_.runs:
@@ -380,11 +406,33 @@ def build(args):
                     else "file" if d_ in (sch["신고"], sch["정정"]) else None)
             set_fill(c, fx[kind] if kind else None)
     set_text(shape(s5, "TextBox 9"), f"국내외 통화정책 이벤트를 고려하여 {md(issue)} 발행일정 제안")
-    set_bul(shape(s5, "TextBox 5"), (
-             f"주요 일정(11/26 韓 금통위, 12/8~9 美 FOMC)을 고려하여 {md(sch['신고'])} 신고, {md(sch['수요예측'])} 수요예측, {md(issue)} 발행/납입 일정 제안\n"
-             "- 韓 기준금리 3.00%(10/22 동결) — 7·8월 연속 인상 후 숨고르기, 결정문에서 '추가 인상의 시기와 속도'를 언급해 11월 인상 가능성 상존\n"
-             "- 美 연방기금금리 3.75~4.00%(10/28 동결, 9월 25bp 인상) — 12월 인상 확률이 높게 반영된 상황\n"
-             f"→ 금통위(11/26) 이전 수요예측({md(sch['수요예측'])})으로 가산금리를 먼저 확정해 이벤트 리스크를 최소화하는 전략 제안").split("\n"))
+    hi_d = max((d_ for d_ in aa3_ if "2026-08-01" <= d_ <= dl), key=lambda d_: aa3_[d_]) if dl else None
+    lo_since = min((d_ for d_ in aa3_ if d_ >= "2026-08-01" and d_ <= dl), key=lambda d_: aa3_[d_]) if dl else None
+    k10_ = dict(map(tuple, rt.get("ktb10", [])))
+    best = "8월 이후 가장 낮은 수준" if lo_since == dl else f"8월 이후 저점({aa3_[lo_since]:.3f}%) 부근"
+    t5 = [
+        f"조달 금리만 보면 8월 이후 가장 좋은 구간 — 연내 조달 시 11월 발행 권고",
+        f"- AA- 3년 {aa3_[dl]:.3f}%({dl[5:].replace('-', '/')})로 9월 말 고점({aa3_[hi_d]:.3f}%) 대비 {(aa3_[hi_d] - aa3_[dl]) * 100:.0f}bp 하락, {best}. 국고 3년 대비 스프레드도 {sp_now:.0f}bp로 안정",
+        "- 지난주 한국투자증권(주문 1.8조원)·케이씨씨(경쟁률 6.8~7.0:1)·동사 24회(4.5:1) 등 우량물 수요예측 흥행 — 기관 대기 자금 두터움",
+        "- 다만 이번 강세는 주식시장 급락에 따른 안전자산 선호에 크게 기대고 있어, 증시가 안정되거나 물가 지표가 높게 나오면 되돌림 가능",
+        "11월 금통위는 인상 자체보다 점도표가 관건 — 금통위 전 수요예측으로 가산금리 선확정",
+        f"- 국고 3년 {k3_[dl]:.2f}%대까지 내려오며 시장에서 레벨 부담 거론. 11월 25bp 인상(3.25%)은 다수 전망으로 상당 부분 선반영",
+        "- 8월 점도표 중심은 3.25% — 11월 점도표가 3.50%까지 올라가는지에 따라 3년 구간 금리 방향이 갈릴 전망",
+        f"- 12/8~9 美 FOMC 인상 확률 77% 내외 → {md(sch['수요예측'])} 수요예측·{md(issue)} 납입으로 국내외 이벤트 이전 발행 완료",
+        f"→ 연내 조달 시 이번 주 안에 일정을 확정하고, {md(sch['신고'])} 신고·{md(sch['수요예측'])} 수요예측·{md(issue)} 발행 일정 제안",
+    ]
+    tb5 = shape(s5, "TextBox 5")
+    set_bul(tb5, t5)
+    shrink(tb5, 8.5)
+    tb5.height = 2250000
+    hd = shape(s5, "모서리가 둥근 직사각형 8")
+    hd.top = tb5.top + tb5.height + 60000
+    tshape = shape(s5, "표 6")
+    tshape.top = hd.top + hd.height + 60000
+    for i, row in enumerate(tshape.table.rows):
+        row.height = 140000 if i == 0 or i % 2 == 1 else 290000
+    fn = shape(s5, "TextBox 8")
+    drop(s5, fn)
 
     # p6 트랜치 구성 제안
     s6 = S(6)
@@ -428,15 +476,29 @@ def build(args):
     for g in ("운용사", "증권사", "연기금·은행·보험 등"):
         cd.add_series(g, [round(by_t[k][g]) for k in cats])
     ch.replace_data(cd)
-    for dl in ch._chartSpace.xpath(".//c:dLbl"):
-        dl.getparent().remove(dl)
+    for lb in ch._chartSpace.xpath(".//c:dLbl"):
+        lb.getparent().remove(lb)
     for x in [x for x in s6.shapes if x.shape_type == 9 or x.name in ("그룹 12", "그룹 17")]:
         drop(s6, x)
     for nm in ("타원 21", "타원 22", "타원 26", "타원 27", "타원 28"):
         drop(s6, shape(s6, nm))
     set_text(shape(s6, "모서리가 둥근 직사각형 8"), "AA급 공모사채 만기별 수요예측 참여금액 (최근 6개월)")
     set_text(shape(s6, "TextBox 29"), f"자료: 기업공시시스템 ({today.month}/{today.day} 수요예측 완료 건 기준, 단위: 억원)")
-    drop(s6, shape(s6, "차트 1"), shape(s6, "표 2"), shape(s6, "TextBox 3"), shape(s6, "모서리가 둥근 직사각형 8", 1))
+    drop(s6, shape(s6, "차트 1"), shape(s6, "표 2"), shape(s6, "TextBox 3"))
+    h2 = shape(s6, "모서리가 둥근 직사각형 8", 1)
+    set_text(h2, "등급·만기별 수요와 트랜치 구성 시사점")
+    r5 = by_t.get("5년 이상", {})
+    t6 = [
+        "AA급은 3년까지 수요가 두터워 증액 여력이 큼",
+        f"- 최근 6개월 AA급 평균 경쟁률 2년 {avg.get('2년', 0):.1f}:1 / 3년 {avg.get('3년', 0):.1f}:1, 동사 직전 회차도 신고 1,000억 → 2,000억 증액",
+        "- A급 이하는 만기별 수요가 크게 갈려 트랜치 구성이 금리를 좌우 — 동사는 AA- 등급으로 2/3년 모두 증액 여지",
+        "5년 이상은 기간 프리미엄 부담은 작지만 회사채 수요가 아직 얇음",
+        f"- 국고 10년-3년 금리차 {(k10_[dl] - k3_[dl]) * 100:.0f}bp로 장기물 부담은 크지 않음. 다만 최근 6개월 AA급 5년 이상 참여는 {sum(r5.values()) / 1e4:,.2f}조원으로 2년({sum(by_t['2년'].values()) / 1e4:,.2f}조)·3년({sum(by_t['3년'].values()) / 1e4:,.2f}조) 대비 얇아, 편입 시 300억 내외 소규모 트랜치가 현실적",
+        "연말 북클로징 — 증권사·운용사 중심 수요, 증액은 2년물 우선",
+        f"- 직전 회차 주문 중 운용사·증권사 비중 {sum(r['_dem']['groups'].get('운용사', 0) + r['_dem']['groups'].get('증권사', 0) for r in prev) / max(1, sum(r['_dem']['total'] for r in prev)) * 100:.0f}% — 듀레이션이 짧은 2년물 선호",
+        f"- 만기 분산 측면에서도 ’{yy(2) % 100}년({lad[yy(2)]:,.0f}억)이 ’{yy(3) % 100}년({lad[yy(3)]:,.0f}억)보다 여유 → 2년물 우선 증액",
+    ]
+    add_note_box(s6, h2.left, h2.top + h2.height + 50000, h2.width, 2300000, t6, 9)
     set_text(shape(s6, "TextBox 10"), "연말 우량물 희소성과 만기별 수요·만기 분산을 고려한 " + "/".join(str(t) for t in tenors) + "년 만기 구성")
 
     # p7·8 금통위·연준 위원 (11월 업데이트)
