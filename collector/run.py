@@ -144,7 +144,7 @@ def collect_private_bonds(store, mode):
     store.reset_diag("offer_methods")
     days_done, d, kept = 0, today, 0
     kept_ids = set()
-    outstanding = []
+    outstanding, mezz_bal = [], []
     tries = 0
     while days_done < config.BOND_INFO_BASDT_DAYS and tries < 14:
         d -= timedelta(days=1)
@@ -163,6 +163,8 @@ def collect_private_bonds(store, mode):
             if (str(it.get("scrsItmsKcdNm") or "") in config.PRIVATE_BOND_KINDS
                     or str(it.get("scrsItmsKcdNm") or "") == "유사집합투자기구채" and str(it.get("pclrBondKcdNm") or "") in config.PRIVATE_BOND_PCLR_OK):
                 outstanding.append(compact_bond(it))
+            elif str(it.get("pclrBondKcdNm") or "") not in config.PRIVATE_BOND_PCLR_OK:
+                mezz_bal.append(compact_bond(it))  # CB·BW·EB 잔액(예탁원) — 전환·상환 반영된 오버행 계산용
             if method not in config.PRIVATE_BOND_METHODS:
                 continue
             store.note_diag("private_bond_kinds", f"{it.get('scrsItmsKcdNm')} | {it.get('pclrBondKcdNm')}")
@@ -193,6 +195,8 @@ def collect_private_bonds(store, mode):
                 store.changed = True
             outstanding.sort(key=lambda b: (b.get("crno") or "", b.get("isin") or ""))
             dump_json("bonds/outstanding.json", {"basDt": ymd(d), "bonds": outstanding}, indent=None)
+            dump_json("bonds/mezz_bal.json", {"basDt": ymd(d), "bonds": mezz_bal}, indent=None)
+            store.diag["private_bond_status"]["mezz_bal"] = len(mezz_bal)
             store.diag["private_bond_status"]["outstanding"] = len(outstanding)
             break
     log.info("사모채 %s건 반영 (공공데이터 호출 %s회)", kept, client.calls)
@@ -263,27 +267,20 @@ def main(argv=None):
             dump_json("diag_market.json", diag)
         return 0
     if args.mode == "probe":
-        # 공모채 발행조건확정(정정) 원문에서 수요예측 결과 표 모양 확인
+        # 거래소공시(I) 중 메자닌 권리행사·가액조정 공시 모양 확인
+        from collections import Counter
         from . import docparse
         out = {}
-        import json as _j
-        D = _j.load(open("data/ref/mkt/demand.json"))
-        pick = [{"rcept_no": k, "corp_name": "", "report_nm": ""} for k, v in sorted(D.items(), reverse=True) if not v.get("tranches")][:3]
-        for f in pick:
+        fl = dart.list_filings("20261102", "20261109", "I", None)
+        out["names"] = Counter(re.sub(r"\[.*?\]|\(.*?\)", "", f.get("report_nm") or "").strip() for f in fl).most_common(60)
+        for key in ("전환청구권행사", "전환가액의조정", "신주인수권행사", "교환청구권행사", "만기전사채취득"):
+            f = next((x for x in fl if key in (x.get("report_nm") or "").replace(" ", "")), None)
+            if not f:
+                continue
             d = dart.document(f["rcept_no"])
             main = max(d.values(), key=len) if d else ""
-            t = docparse.text_of(main)
-            segs = []
-            for key in ("수요예측 결과", "수요예측 참여", "참여내역", "경쟁률", "배정"):
-                i = t.find(key)
-                if i >= 0:
-                    segs.append(t[max(0, i - 100): i + 1500])
-            tabs = []
-            for kind, rows in docparse.blocks(main):
-                j = " ".join(" ".join(r) for r in rows)
-                if kind == "table" and re.search(r"경쟁률|참여수량|참여금액", j) and "기관투자자 1" not in j and len(j) < 6000:
-                    tabs.append([r[:9] for r in rows[:16]])
-            out[f["rcept_no"]] = {"corp": f["corp_name"], "nm": f["report_nm"], "segs": segs[:3], "tabs": tabs[:14]}
+            tabs = [[r[:8] for r in rows[:14]] for kind, rows in docparse.blocks(main) if kind == "table"][:6]
+            out[key] = {"rcept": f["rcept_no"], "corp": f["corp_name"], "nm": f["report_nm"], "tabs": tabs}
         dump_json("diag_probe.json", out)
         return 0
     if args.mode == "bonds":
