@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-10T15:31+09:00",
+  "data_updated": "2026-11-10T16:37+09:00",
   "last_daily": "2026-11-10T14:59+09:00"
  },
  "records": {
@@ -342481,34 +342481,34 @@
   },
   "RIGHTS:00618410:20260922000240": {
    "amended": true,
-   "amount": 3999998836,
-   "board_dt": "2026-11-04",
+   "amount": 4999999059,
+   "board_dt": "2026-11-10",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
    "corp_code": "00618410",
    "corp_name": "KS인더스트리",
-   "dilution": 20.81,
+   "dilution": 27.84,
    "first_seen": "2026-10-25T18:19+09:00",
    "id": "RIGHTS:00618410:20260922000240",
    "method": "제3자배정증자",
-   "new_common": 3117692,
+   "new_common": 4170141,
    "new_other": null,
    "offering": "사모·주주배정",
    "original_rcept": "20260922000240",
    "par_value": 500,
    "purposes": {
-    "운영": 1999998836,
-    "채무상환": 2000000000
+    "운영": 2399999059,
+    "채무상환": 2600000000
    },
-   "rcept_dt": "2026-11-04",
-   "rcept_no": "20261104000158",
+   "rcept_dt": "2026-11-10",
+   "rcept_no": "20261110000317",
    "source": "DART",
    "stock_code": "101000",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-11-04T14:36+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261104000158"
+   "updated": "2026-11-10T16:37+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261110000317"
   },
   "RIGHTS:00618410:20261020000377": {
    "amended": true,
@@ -373893,7 +373893,7 @@
   "RIGHTS:01689266:20261012000456": {
    "amended": true,
    "amount": 2998991250,
-   "board_dt": "2026-10-27",
+   "board_dt": "2026-11-10",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
@@ -373911,14 +373911,14 @@
    "purposes": {
     "운영": 2998991250
    },
-   "rcept_dt": "2026-10-27",
-   "rcept_no": "20261027000274",
+   "rcept_dt": "2026-11-10",
+   "rcept_no": "20261110000252",
    "source": "DART",
    "stock_code": "431190",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-10-27T16:41+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261027000274"
+   "updated": "2026-11-10T16:37+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261110000252"
   },
   "RIGHTS:01689266:20261027000274": {
    "amended": true,
