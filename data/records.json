@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-10T07:59+09:00",
+  "data_updated": "2026-11-10T11:26+09:00",
   "last_daily": "2026-11-09T20:36+09:00"
  },
  "records": {
@@ -317305,33 +317305,33 @@
   },
   "RIGHTS:01440153:20260824000324": {
    "amended": true,
-   "amount": 1999999200,
-   "board_dt": "2026-09-11",
+   "amount": 25000000575,
+   "board_dt": "2026-11-10",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
    "corp_code": "01440153",
    "corp_name": "넥사다이내믹스",
-   "dilution": 4.41,
+   "dilution": 27.83,
    "first_seen": "2026-10-25T18:20+09:00",
    "id": "RIGHTS:01440153:20260824000324",
    "method": "제3자배정증자",
-   "new_common": 1308900,
+   "new_common": 8264463,
    "new_other": null,
    "offering": "사모·주주배정",
    "original_rcept": "20260824000324",
    "par_value": 100,
    "purposes": {
-    "운영": 1999999200
+    "운영": 25000000575
    },
-   "rcept_dt": "2026-09-11",
-   "rcept_no": "20260911000372",
+   "rcept_dt": "2026-11-10",
+   "rcept_no": "20261110000080",
    "source": "DART",
    "stock_code": "351320",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-10-26T09:28+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260911000372"
+   "updated": "2026-11-10T11:26+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261110000080"
   },
   "RIGHTS:01440153:20260909000002": {
    "amended": true,
