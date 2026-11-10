@@ -6,13 +6,13 @@
   "total": 76
  },
  "mezz_events": {
-  "cands": 2078,
-  "live_corps": 825,
-  "parsed": 526,
+  "cands": 2186,
+  "live_corps": 961,
+  "parsed": 88,
   "pending": 0,
-  "sec": 843,
-  "todo": 578,
-  "total": 2078
+  "sec": 1811,
+  "todo": 108,
+  "total": 2186
  },
  "rates": {
   "aa3": 730,
