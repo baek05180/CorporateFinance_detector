@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-10T16:37+09:00",
+  "data_updated": "2026-11-10T17:31+09:00",
   "last_daily": "2026-11-10T14:59+09:00"
  },
  "records": {
@@ -319742,7 +319742,7 @@
   "RIGHTS:00104120:20260929000377": {
    "amended": true,
    "amount": 1600000375,
-   "board_dt": "2026-10-30",
+   "board_dt": "2026-11-10",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
@@ -319760,14 +319760,14 @@
    "purposes": {
     "운영": 1600000375
    },
-   "rcept_dt": "2026-10-30",
-   "rcept_no": "20261030000732",
+   "rcept_dt": "2026-11-10",
+   "rcept_no": "20261110000375",
    "source": "DART",
    "stock_code": "026910",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-10-30T18:01+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261030000732"
+   "updated": "2026-11-10T17:31+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261110000375"
   },
   "RIGHTS:00104120:20261020000324": {
    "amended": true,
@@ -340887,7 +340887,7 @@
   "RIGHTS:00587925:20261014000274": {
    "amended": true,
    "amount": 2000000000,
-   "board_dt": "2026-10-27",
+   "board_dt": "2026-11-10",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
@@ -340905,14 +340905,14 @@
    "purposes": {
     "운영": 2000000000
    },
-   "rcept_dt": "2026-10-27",
-   "rcept_no": "20261027000271",
+   "rcept_dt": "2026-11-10",
+   "rcept_no": "20261110000366",
    "source": "DART",
    "stock_code": "142760",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-10-27T17:21+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261027000271"
+   "updated": "2026-11-10T17:31+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261110000366"
   },
   "RIGHTS:00587925:20261019000262": {
    "amended": true,
@@ -369197,33 +369197,33 @@
   },
   "RIGHTS:01453944:20260928000391": {
    "amended": true,
-   "amount": 8350115530,
-   "board_dt": "2026-10-30",
+   "amount": 7286888445,
+   "board_dt": "2026-11-10",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
    "corp_code": "01453944",
    "corp_name": "벡트로보틱스",
-   "dilution": 26.8,
+   "dilution": 31.81,
    "first_seen": "2026-10-25T18:20+09:00",
    "id": "RIGHTS:01453944:20260928000391",
    "method": "제3자배정증자",
-   "new_common": 3673610,
+   "new_common": 4360795,
    "new_other": null,
    "offering": "사모·주주배정",
    "original_rcept": "20260928000391",
    "par_value": 100,
    "purposes": {
-    "운영": 8350115530
+    "운영": 7286888445
    },
-   "rcept_dt": "2026-10-30",
-   "rcept_no": "20261030000711",
+   "rcept_dt": "2026-11-10",
+   "rcept_no": "20261110000371",
    "source": "DART",
    "stock_code": "457600",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-10-30T18:01+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261030000711"
+   "updated": "2026-11-10T17:31+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261110000371"
   },
   "RIGHTS:01453944:20261030000711": {
    "amended": true,
