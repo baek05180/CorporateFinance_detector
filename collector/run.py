@@ -349,8 +349,14 @@ def main(argv=None):
     else:
         start = today - timedelta(days=args.days)
 
+    end = today
+    old_mezz = args.mode == "backfill" and args.days > 1095
+    if old_mezz:  # 3년보다 오래된 메자닌만 보충 (오버행 계산용) — 아직 만기 전인 회차가 대상
+        end = today - timedelta(days=1090)
     try:
-        filings = list_relevant(dart, start, today)
+        filings = list_relevant(dart, start, end)
+        if old_mezz:
+            filings = [f for f in filings if classify(f) in ("CB", "BW", "EB")]
         log.info("공시 목록 %s건 확인", len(filings))
         process_filings(dart, store, filings, mode)
     except DartQuotaExceeded as e:
