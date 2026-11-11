@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-11T16:51+09:00",
+  "data_updated": "2026-11-11T18:35+09:00",
   "last_daily": "2026-11-10T21:11+09:00"
  },
  "records": {
@@ -83118,29 +83118,29 @@
    "corp_name": "에이전트AI",
    "coupon": 3.0,
    "dilution": 36.43,
-   "exercise_from": "2027-11-12",
-   "exercise_to": "2029-10-12",
+   "exercise_from": "2027-12-10",
+   "exercise_to": "2029-11-10",
    "first_seen": "2026-10-25T18:19+09:00",
    "id": "CB:00367695:36",
    "lead": null,
-   "maturity": "2029-11-12",
+   "maturity": "2029-12-10",
    "method_raw": "사모",
    "offering": "사모",
-   "pay_dt": "2026-11-12",
+   "pay_dt": "2026-12-10",
    "price": 3200,
    "purposes": {
     "타법인증권": 12000000000
    },
-   "rcept_dt": "2026-10-12",
-   "rcept_no": "20261012000152",
+   "rcept_dt": "2026-11-11",
+   "rcept_no": "20261111000409",
    "refix_floor": 2240,
    "series": "36",
    "shares": 3750000,
    "source": "DART",
    "stock_code": "060900",
    "type": "CB",
-   "updated": "2026-10-25T18:19+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261012000152",
+   "updated": "2026-11-11T18:35+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261111000409",
    "ytm": 7.0
   },
   "CB:00367871:3": {
@@ -353021,6 +353021,35 @@
    "type": "RIGHTS",
    "updated": "2026-10-26T09:23+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20240604000133"
+  },
+  "RIGHTS:01054123:20261111000434": {
+   "amended": false,
+   "amount": 1500032385,
+   "board_dt": "2026-11-11",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "E",
+   "corp_code": "01054123",
+   "corp_name": "엠텍비젼",
+   "dilution": 15.01,
+   "first_seen": "2026-11-11T18:35+09:00",
+   "id": "RIGHTS:01054123:20261111000434",
+   "method": "주주배정증자",
+   "new_common": 305817,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 500,
+   "purposes": {
+    "운영": 1500032385
+   },
+   "rcept_dt": "2026-11-11",
+   "rcept_no": "20261111000434",
+   "source": "DART",
+   "stock_code": null,
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-11-11T18:35+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261111000434"
   },
   "RIGHTS:01060735:20250717000445": {
    "amended": false,
