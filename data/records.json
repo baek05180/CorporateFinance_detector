@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-10T21:11+09:00",
+  "data_updated": "2026-11-11T14:42+09:00",
   "last_daily": "2026-11-10T21:11+09:00"
  },
  "records": {
@@ -339034,9 +339034,9 @@
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261012000514"
   },
   "RIGHTS:00528791:20261013000002": {
-   "amended": false,
+   "amended": true,
    "amount": 15500000000,
-   "board_dt": "2026-10-13",
+   "board_dt": "2026-11-11",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
@@ -339049,18 +339049,19 @@
    "new_common": 31000000,
    "new_other": null,
    "offering": "사모·주주배정",
+   "original_rcept": "20261013000002",
    "par_value": 500,
    "purposes": {
     "기타": 15500000000
    },
-   "rcept_dt": "2026-10-13",
-   "rcept_no": "20261013000002",
+   "rcept_dt": "2026-11-11",
+   "rcept_no": "20261111000180",
    "source": "DART",
    "stock_code": "412540",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-10-25T18:19+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261013000002"
+   "updated": "2026-11-11T14:42+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261111000180"
   },
   "RIGHTS:00530413:20260929000203": {
    "amended": true,
