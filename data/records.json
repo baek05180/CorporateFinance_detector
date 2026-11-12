@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-12T08:33+09:00",
+  "data_updated": "2026-11-12T15:26+09:00",
   "last_daily": "2026-11-11T20:30+09:00"
  },
  "records": {
@@ -359293,6 +359293,35 @@
    "type": "RIGHTS",
    "updated": "2026-10-26T09:25+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251204000048"
+  },
+  "RIGHTS:01207169:20261112000389": {
+   "amended": false,
+   "amount": 3000000000,
+   "board_dt": "2026-11-12",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "E",
+   "corp_code": "01207169",
+   "corp_name": "엑심베이",
+   "dilution": 4.72,
+   "first_seen": "2026-11-12T15:26+09:00",
+   "id": "RIGHTS:01207169:20261112000389",
+   "method": "제3자배정증자",
+   "new_common": 500000,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 500,
+   "purposes": {
+    "운영": 3000000000
+   },
+   "rcept_dt": "2026-11-12",
+   "rcept_no": "20261112000389",
+   "source": "DART",
+   "stock_code": null,
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-11-12T15:26+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261112000389"
   },
   "RIGHTS:01207761:20240226006439": {
    "amended": true,
