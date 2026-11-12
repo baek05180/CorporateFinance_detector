@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-12T15:26+09:00",
+  "data_updated": "2026-11-12T16:45+09:00",
   "last_daily": "2026-11-11T20:30+09:00"
  },
  "records": {
@@ -135550,6 +135550,43 @@
    "type": "CB",
    "updated": "2026-10-26T09:26+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260324000486",
+   "ytm": 6.0
+  },
+  "CB:01326792:7": {
+   "amended": false,
+   "amount": 10000000000,
+   "board_dt": "2026-11-12",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "K",
+   "corp_code": "01326792",
+   "corp_name": "비투엔",
+   "coupon": 2.0,
+   "dilution": 11.71,
+   "exercise_from": "2027-11-20",
+   "exercise_to": "2029-10-20",
+   "first_seen": "2026-11-12T16:45+09:00",
+   "id": "CB:01326792:7",
+   "lead": null,
+   "maturity": "2029-11-20",
+   "method_raw": "사모",
+   "offering": "사모",
+   "pay_dt": "2026-11-20",
+   "price": 1015,
+   "purposes": {
+    "운영": 8500000000,
+    "채무상환": 1500000000
+   },
+   "rcept_dt": "2026-11-12",
+   "rcept_no": "20261112000579",
+   "refix_floor": 711,
+   "series": "7",
+   "shares": 9852216,
+   "source": "DART",
+   "stock_code": "307870",
+   "type": "CB",
+   "updated": "2026-11-12T16:45+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261112000579",
    "ytm": 6.0
   },
   "CB:01327092:1": {
@@ -368905,7 +368942,7 @@
   "RIGHTS:01423837:20261023000402": {
    "amended": true,
    "amount": 1999999255,
-   "board_dt": "2026-10-30",
+   "board_dt": "2026-11-12",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
@@ -368923,14 +368960,14 @@
    "purposes": {
     "운영": 1999999255
    },
-   "rcept_dt": "2026-10-30",
-   "rcept_no": "20261030000520",
+   "rcept_dt": "2026-11-12",
+   "rcept_no": "20261112000574",
    "source": "DART",
    "stock_code": "288980",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-10-30T17:14+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261030000520"
+   "updated": "2026-11-12T16:45+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261112000574"
   },
   "RIGHTS:01423837:20261030000520": {
    "amended": true,
