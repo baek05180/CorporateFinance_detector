@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-13T17:49+09:00",
+  "data_updated": "2026-11-13T18:42+09:00",
   "last_daily": "2026-11-12T20:33+09:00"
  },
  "records": {
@@ -345540,33 +345540,33 @@
   },
   "RIGHTS:00781202:20261012000509": {
    "amended": true,
-   "amount": 9999999090,
-   "board_dt": "2026-11-03",
+   "amount": 1999999070,
+   "board_dt": "2026-11-13",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
    "corp_code": "00781202",
    "corp_name": "파이온엑스",
-   "dilution": 178.47,
+   "dilution": 36.24,
    "first_seen": "2026-10-25T18:19+09:00",
    "id": "RIGHTS:00781202:20261012000509",
-   "method": "제3자배정증자",
-   "new_common": 9416195,
+   "method": "일반공모증자",
+   "new_common": 1912045,
    "new_other": null,
-   "offering": "사모·주주배정",
+   "offering": "공모",
    "original_rcept": "20261012000509",
-   "par_value": 206,
+   "par_value": 205,
    "purposes": {
-    "운영": 9999999090
+    "운영": 1999999070
    },
-   "rcept_dt": "2026-11-03",
-   "rcept_no": "20261103000360",
+   "rcept_dt": "2026-11-13",
+   "rcept_no": "20261113001053",
    "source": "DART",
    "stock_code": "900100",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-11-03T18:08+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261103000360"
+   "updated": "2026-11-13T18:42+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261113001053"
   },
   "RIGHTS:00781202:20261019000322": {
    "amended": true,
