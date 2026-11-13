@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-12T20:33+09:00",
+  "data_updated": "2026-11-13T16:58+09:00",
   "last_daily": "2026-11-12T20:33+09:00"
  },
  "records": {
@@ -336366,33 +336366,34 @@
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261112000633"
   },
   "RIGHTS:00403793:20261112000665": {
-   "amended": false,
-   "amount": 2989999012,
-   "board_dt": "2026-11-12",
+   "amended": true,
+   "amount": 2989999408,
+   "board_dt": "2026-11-13",
    "captured_by": "watch",
    "confirmed": true,
    "corp_cls": "K",
    "corp_code": "00403793",
    "corp_name": "바이브컴퍼니",
-   "dilution": 17.84,
+   "dilution": 13.89,
    "first_seen": "2026-11-12T17:42+09:00",
    "id": "RIGHTS:00403793:20261112000665",
    "method": "제3자배정증자",
-   "new_common": 2346938,
+   "new_common": 1827628,
    "new_other": null,
    "offering": "사모·주주배정",
+   "original_rcept": "20261112000665",
    "par_value": 500,
    "purposes": {
-    "타법인증권": 2989999012
+    "타법인증권": 2989999408
    },
-   "rcept_dt": "2026-11-12",
-   "rcept_no": "20261112000665",
+   "rcept_dt": "2026-11-13",
+   "rcept_no": "20261113000828",
    "source": "DART",
    "stock_code": "301300",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-11-12T17:42+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261112000665"
+   "updated": "2026-11-13T16:58+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261113000828"
   },
   "RIGHTS:00406037:20251113000687": {
    "amended": true,
