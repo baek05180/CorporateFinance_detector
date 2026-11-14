@@ -1,12 +1,12 @@
 {
  "crash": "Traceback (most recent call last):\n  File \"/home/runner/work/CorporateFinance_detector/CorporateFinance_detector/collector/profiles.py\", line 550, in run\n    fin = refresh_multi(dart, listed_cc, fin, today)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/CorporateFinance_detector/CorporateFinance_detector/collector/profiles.py\", line 91, in refresh_multi\n    fin[\"annual\"].update(parse_multi(dart.multi_accounts(chunk, annual, \"11011\")))\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/CorporateFinance_detector/CorporateFinance_detector/collector/dart.py\", line 179, in multi_accounts\n    data = self._get(\"fnlttMultiAcnt\", corp_code=\",\".join(corp_codes), bsns_year=str(year), reprt_code=reprt_code)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/CorporateFinance_detector/CorporateFinance_detector/collector/dart.py\", line 71, in _get\n    raise DartError(f\"{endpoint} 호출 실패: {_redact(last_err)}\")\ncollector.dart.DartError: fnlttMultiAcnt 호출 실패: Expecting value: line 1 column 1 (char 0)\n",
- "dart_calls": 24,
+ "dart_calls": 22,
  "listed": 2768,
  "price_hist_days": 120,
  "price_hist_fetched": 1,
  "prices": 2877,
  "px_fetched": 1,
- "run": "2026-11-15T00:12+09:00",
+ "run": "2026-11-15T02:09+09:00",
  "short_lnb": {
   "lnb_fetched": 1,
   "lnb_sample": null,
