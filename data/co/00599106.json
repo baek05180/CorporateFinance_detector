@@ -23,7 +23,7 @@
    }
   ]
  },
- "checked": "2026-11-02T23:10+09:00",
+ "checked": "2026-11-16T00:18+09:00",
  "corp_code": "00599106",
  "fs_annual": {
   "assets": 39886165002,
@@ -56,12 +56,12 @@
   "st_deposits": 44339798
  },
  "fs_interim": {
-  "assets": 59120311007,
-  "capex": 19195240,
+  "assets": 55789474833,
+  "capex": 6551962,
   "capital": 26555007000,
-  "cash": 27652282964,
-  "cur_assets": 42777273994,
-  "cur_liab": 8945478010,
+  "cash": 24162044377,
+  "cur_assets": 40409301118,
+  "cur_liab": 8170882667,
   "debt": 4100000000,
   "debt_hist": [
    null,
@@ -72,20 +72,20 @@
    "단기차입금(사채포함)",
    "유동성전환사채"
   ],
-  "equity": 50055832197,
-  "fin_cost": 1157960322,
+  "equity": 47479934985,
+  "fin_cost": 2499126093,
   "fs": "CFS",
-  "interest_paid": 92920088,
-  "liab": 9064478810,
-  "ni": -390733807,
-  "ocf": -873774046,
-  "op": -2980456516,
-  "period": "2026 반기",
-  "revenue": 10700370487,
-  "st_deposits": 9648300
+  "interest_paid": 513355212,
+  "liab": 8309539848,
+  "ni": -2599921741,
+  "ocf": 297244954,
+  "op": -3936812264,
+  "period": "2026 3Q",
+  "revenue": 14175551565,
+  "st_deposits": 108093
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "Jakota Asia Strategy Limited",
@@ -96,8 +96,8 @@
   ],
   "total_pct": 52.72
  },
- "latest_name": "[기재정정]반기보고서 (2026.06)",
- "latest_rcept": "20261026000306",
+ "latest_name": "[기재정정]분기보고서 (2026.09)",
+ "latest_rcept": "20261113001485",
  "pv": 4,
  "treasury_shares": 15495
 }

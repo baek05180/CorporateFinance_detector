@@ -3,7 +3,7 @@
  "annual_rcept": "20260317000801",
  "biz_retry": true,
  "business": {},
- "checked": "2026-11-02T22:48+09:00",
+ "checked": "2026-11-16T00:17+09:00",
  "corp_code": "00654175",
  "fs_annual": {
   "amort": 91858367,
@@ -36,42 +36,43 @@
   "st_deposits": 0
  },
  "fs_interim": {
-  "amort": 39680041,
-  "assets": 99260375110,
-  "capex": 1048494643,
+  "amort": 64217021,
+  "assets": 91649907011,
+  "capex": 2722205643,
   "capital": 10000000000,
-  "cash": 37446355241,
-  "cur_assets": 64331757791,
-  "cur_liab": 48307084813,
-  "debt": 36871675678,
+  "cash": 32960029626,
+  "cur_assets": 55797752056,
+  "cur_liab": 42370197419,
+  "debt": 35348092279,
   "debt_hist": [
    null,
    31745511005,
-   36871675678
+   35348092279
   ],
   "debt_items": [
    "차입금"
   ],
-  "dep": 2920369503,
-  "equity": 47465190263,
-  "fin_cost": 904480047,
+  "dep": 4321811863,
+  "equity": 46249471390,
+  "fin_cost": 1677545170,
   "fs": "OFS",
-  "interest_paid": 751610316,
-  "liab": 51795184847,
-  "ni": 920290565,
-  "ocf": -3355683114,
-  "op": 1418170682,
-  "period": "2026 반기",
-  "revenue": 34349696257
+  "interest_paid": 1104720624,
+  "liab": 45400435621,
+  "ni": -284759373,
+  "ocf": -2653703157,
+  "op": 656087061,
+  "period": "2026 3Q",
+  "revenue": 47735214750,
+  "st_deposits": 1992175343
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "(주)프로텍",
-    "pct": 48.54,
+    "pct": 49.0,
     "relation": "본인",
-    "shares": 9707708
+    "shares": 9800000
    },
    {
     "name": "이성웅",
@@ -104,10 +105,10 @@
     "shares": 0
    }
   ],
-  "total_pct": 48.75
+  "total_pct": 49.21
  },
- "latest_name": "[기재정정]반기보고서 (2026.06)",
- "latest_rcept": "20260813000347",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261113000431",
  "pv": 4,
  "treasury_shares": null
 }

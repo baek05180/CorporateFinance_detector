@@ -15,7 +15,7 @@
    }
   ]
  },
- "checked": "2026-11-02T10:42+09:00",
+ "checked": "2026-11-16T00:16+09:00",
  "corp_code": "01584934",
  "fs_annual": {
   "amort": 86692000.0,
@@ -46,62 +46,76 @@
   "revenue": 17299515760
  },
  "fs_interim": {
-  "assets": 48791600801,
+  "assets": 58379257919,
   "capex": 9015454,
-  "capital": 1754862000,
-  "cash": 28736757629,
-  "debt": 6046594529,
+  "capital": 2857444500,
+  "cash": 41135759461,
+  "cur_assets": 43779776526,
+  "cur_liab": 17346813241,
+  "debt": 6342140214,
   "debt_hist": [
    null,
    6013499895,
-   6046594529
+   6342140214
   ],
   "debt_items": [
    "전환사채"
   ],
-  "equity": 31571018215,
-  "fin_cost": 750031311,
+  "equity": 40369650009,
+  "fin_cost": 1061211033,
   "fs": "CFS",
-  "interest_paid": 26213450,
-  "liab": 17220582586,
-  "ni": 456116718,
-  "ocf": -969554801,
-  "op": -452476337,
-  "period": "2026 반기",
-  "revenue": 9762835800
+  "interest_paid": 37796720,
+  "liab": 18009607910,
+  "ni": 1104982762,
+  "ocf": -620824079,
+  "op": -740162659,
+  "period": "2026 3Q",
+  "revenue": 14556562473
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "문양근",
-    "pct": 40.51,
+    "pct": 51.25,
     "relation": "최대주주",
-    "shares": 1421813
+    "shares": 2929059
+   },
+   {
+    "name": "김하경",
+    "pct": 4.73,
+    "relation": "친인척",
+    "shares": 270486
+   },
+   {
+    "name": "문지완",
+    "pct": 1.97,
+    "relation": "친인척",
+    "shares": 112454
+   },
+   {
+    "name": "강진원",
+    "pct": 1.59,
+    "relation": "계열회사 임원",
+    "shares": 91054
+   },
+   {
+    "name": "문희영",
+    "pct": 0.49,
+    "relation": "친인척",
+    "shares": 28113
    },
    {
     "name": "라현성",
-    "pct": 0.28,
+    "pct": 0.17,
     "relation": "대표이사",
     "shares": 10000
-   },
-   {
-    "name": "박청희",
-    "pct": 0.28,
-    "relation": "미등기임원",
-    "shares": 10000
-   },
-   {
-    "name": "박지현",
-    "pct": 0.14,
-    "relation": "미등기임원",
-    "shares": 5000
    }
   ],
-  "total_pct": 41.22
+  "total_pct": 60.48
  },
- "latest_name": "[기재정정]반기보고서 (2026.06)",
- "latest_rcept": "20260929000045",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261113000853",
  "pv": 4,
  "treasury_shares": 2532
 }

@@ -48,7 +48,7 @@
    }
   ]
  },
- "checked": "2026-11-02T23:06+09:00",
+ "checked": "2026-11-16T00:18+09:00",
  "corp_code": "01023211",
  "fs_annual": {
   "amort": 154676000.0,
@@ -85,17 +85,16 @@
   "st_deposits": 0
  },
  "fs_interim": {
-  "assets": 163435668732,
-  "capex": 5732070786,
+  "assets": 151140137766,
   "capital": 14261573000,
-  "cash": 14085951374,
-  "cur_assets": 77358646124,
-  "cur_liab": 36440113943,
-  "debt": 55275142866,
+  "cash": 18145660035,
+  "cur_assets": 67561748575,
+  "cur_liab": 35546965171,
+  "debt": 51824401880,
   "debt_hist": [
    null,
    36558937477,
-   55275142866
+   51824401880
   ],
   "debt_items": [
    "단기차입금",
@@ -105,20 +104,20 @@
    "장기차입금",
    "전환사채"
   ],
-  "equity": 92022965005,
-  "fin_cost": 1918805800,
+  "equity": 83161518204,
+  "fin_cost": 8193472048,
   "fs": "CFS",
-  "interest_paid": 805272714,
-  "liab": 71412703727,
-  "ni": 5840960122,
-  "ocf": -344766709,
-  "op": 3615652261,
-  "period": "2026 반기",
-  "revenue": 33173108742,
-  "st_deposits": 14138800906
+  "interest_paid": 1021936610,
+  "liab": 67978619562,
+  "ni": 2557455039,
+  "ocf": 2210055731,
+  "op": 7235106488,
+  "period": "2026 3Q",
+  "revenue": 52718897326,
+  "st_deposits": 2989643836
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "박순일",
@@ -139,7 +138,7 @@
     "shares": 1602000
    },
    {
-    "name": "TAKAHARA\nKUNIHIRO",
+    "name": "TAKAHARA KUNIHIRO",
     "pct": 1.05,
     "relation": "공동보유자",
     "shares": 300000
@@ -159,8 +158,8 @@
   ],
   "total_pct": 43.1
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814000588",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261112000193",
  "pv": 4,
- "treasury_shares": 411500
+ "treasury_shares": 472068
 }

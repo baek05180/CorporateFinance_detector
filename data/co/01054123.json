@@ -31,54 +31,24 @@
    }
   ]
  },
- "checked": "2026-11-03T04:40+09:00",
+ "checked": "2026-11-16T00:14+09:00",
  "corp_code": "01054123",
  "fs_annual": {},
  "fs_interim": {},
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
-    "name": "이성민",
-    "pct": 28.37,
-    "relation": "본인",
-    "shares": 578396
-   },
-   {
-    "name": "(유)자스",
-    "pct": 11.65,
-    "relation": "특수관계법인",
-    "shares": 237479
-   },
-   {
-    "name": "백지선",
-    "pct": 4.94,
-    "relation": "처",
-    "shares": 100640
-   },
-   {
-    "name": "이유남",
-    "pct": 2.36,
-    "relation": "자녀",
-    "shares": 48024
-   },
-   {
-    "name": "이가영",
-    "pct": 2.36,
-    "relation": "자녀",
-    "shares": 48024
-   },
-   {
-    "name": "이성한",
+    "name": "-",
     "pct": 0.0,
-    "relation": "동생",
-    "shares": 21
+    "relation": "-",
+    "shares": null
    }
   ],
-  "total_pct": 49.68
+  "total_pct": 0.0
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814000867",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261112000252",
  "pv": 4,
  "treasury_shares": null
 }

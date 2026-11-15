@@ -3,12 +3,14 @@
  "annual_rcept": "20260330000988",
  "biz_retry": true,
  "business": {},
- "checked": "2026-11-02T10:44+09:00",
+ "checked": "2026-11-16T00:15+09:00",
  "corp_code": "01259311",
  "fs_annual": {
   "assets": 86485313101,
   "capital": 17183427500,
   "cash": 11942343416,
+  "cur_assets": 36268799572,
+  "cur_liab": 40102953703,
   "debt": 25966947900,
   "debt_hist": [
    60018649535,

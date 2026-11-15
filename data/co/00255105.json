@@ -21,7 +21,7 @@
    }
   ]
  },
- "checked": "2026-11-02T10:52+09:00",
+ "checked": "2026-11-16T00:17+09:00",
  "corp_code": "00255105",
  "fs_annual": {
   "amort": 19938000.0,
@@ -44,36 +44,38 @@
   "st_deposits": 22090000000
  },
  "fs_interim": {
-  "assets": 74371535769,
-  "capex": 17141776,
-  "capital": 11571434500,
-  "cash": 2461397275,
-  "equity": 63190894225,
-  "fin_cost": 11225792,
-  "fs": "CFS",
-  "interest_paid": 21592550,
-  "liab": 11180641544,
-  "ni": -39942271780,
-  "ocf": -1309969069,
-  "op": 324015504,
-  "period": "2026 반기",
-  "revenue": 21747790245,
+  "assets": 37872482440,
+  "capex": 20213594,
+  "capital": 12945060000,
+  "cash": 6152879525,
+  "cur_assets": 28543116442,
+  "cur_liab": 6421590351,
+  "equity": 31201689377,
+  "fin_cost": 17229023,
+  "fs": "OFS",
+  "interest_paid": 27404063,
+  "liab": 6670793063,
+  "ni": 0,
+  "ocf": 309984197,
+  "op": 324413844,
+  "period": "2026 3Q",
+  "revenue": 32811370894,
   "st_deposits": 12590000000
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "(주)미래아이앤지",
-    "pct": 27.58,
+    "pct": 40.99,
     "relation": "최대주주",
-    "shares": 6381914
+    "shares": 2122562
    }
   ],
-  "total_pct": 27.58
+  "total_pct": 40.99
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814002429",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261113001239",
  "pv": 4,
- "treasury_shares": 48211
+ "treasury_shares": 217506
 }

@@ -37,7 +37,7 @@
    }
   ]
  },
- "checked": "2026-11-02T23:15+09:00",
+ "checked": "2026-11-16T00:15+09:00",
  "corp_code": "00916659",
  "fs_annual": {
   "amort": 631766,
@@ -71,66 +71,49 @@
   "revenue": 1468468191
  },
  "fs_interim": {
-  "amort": 318101,
-  "assets": 2688123460,
+  "amort": 476151,
+  "assets": 2584330771,
   "capital": 3867219000,
-  "cash": 5155142,
-  "cur_assets": 604274184,
-  "cur_liab": 2728106193,
-  "debt": 2279534780,
+  "cash": 36125457,
+  "cur_assets": 510862873,
+  "cur_liab": 2669910497,
+  "debt": 2243034780,
   "debt_hist": [
    null,
    2647334780,
-   2279534780
+   2243034780
   ],
   "debt_items": [
    "단기사채",
+   "사채,명목금액",
    "유동차입금(사채포함)"
   ],
-  "dep": 20446736,
-  "equity": -636264186,
-  "fin_cost": 74652327,
+  "dep": 30670064,
+  "equity": -696226608,
+  "fin_cost": 112628741,
   "fs": "OFS",
-  "interest_paid": 74652327,
-  "liab": 3324387646,
-  "ni": -96935867,
-  "ocf": -162719479,
-  "op": -37091625,
-  "period": "2026 반기",
-  "revenue": 803131581
+  "interest_paid": 112628741,
+  "liab": 3280557379,
+  "ni": -156898289,
+  "ocf": -95949164,
+  "op": -64957495,
+  "period": "2026 3Q",
+  "revenue": 1156668068
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
-    "name": "성창근",
-    "pct": 14.5,
-    "relation": "최대주주",
-    "shares": 1125000
-   },
-   {
-    "name": "성현협",
-    "pct": 0.56,
-    "relation": "최대주주 자녀",
-    "shares": 41598
-   },
-   {
-    "name": "임경희",
-    "pct": 0.08,
-    "relation": "최대주주 처",
-    "shares": 5554
-   },
-   {
-    "name": "성재연",
-    "pct": 0.03,
-    "relation": "최대주주 자녀",
-    "shares": 2351
+    "name": "-",
+    "pct": 0.0,
+    "relation": "-",
+    "shares": null
    }
   ],
-  "total_pct": 15.19
+  "total_pct": 0.0
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814002869",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261113000354",
  "pv": 4,
  "treasury_shares": null
 }

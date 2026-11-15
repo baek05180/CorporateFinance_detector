@@ -37,7 +37,7 @@
    }
   ]
  },
- "checked": "2026-11-02T10:34+09:00",
+ "checked": "2026-11-16T00:16+09:00",
  "corp_code": "00671783",
  "fs_annual": {
   "assets": 4040206733,
@@ -67,75 +67,78 @@
   "st_deposits": 2050000000
  },
  "fs_interim": {
-  "assets": 3090763836,
-  "capex": 33306400,
-  "capital": 1490000000,
-  "cash": 251509741,
-  "debt": 153499810,
+  "assets": 10740008841,
+  "capex": 85806400,
+  "capital": 1715000000,
+  "cash": 91769069,
+  "cur_assets": 10124722132,
+  "cur_liab": 416019594,
+  "debt": 119057267,
   "debt_hist": [
    null,
    221264281,
-   153499810
+   119057267
   ],
   "debt_items": [
    "비유동리스부채",
    "유동리스부채"
   ],
-  "equity": 2222001094,
-  "fin_cost": 6479033,
-  "fs": "CFS",
-  "liab": 868762742,
-  "ni": -756244407,
-  "ocf": -715585409,
-  "op": -766942710,
-  "period": "2026 반기",
-  "revenue": 991918725,
-  "st_deposits": 1250000000
+  "equity": 9954643904,
+  "fin_cost": 48518583,
+  "fs": "OFS",
+  "interest_paid": 21639298,
+  "liab": 785364937,
+  "ni": -1162762932,
+  "ocf": -1118511997,
+  "op": -1157821299,
+  "period": "2026 3Q",
+  "revenue": 1385236738,
+  "st_deposits": 9050000000
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "문홍연",
-    "pct": 21.49,
+    "pct": 28.48,
     "relation": "본인",
-    "shares": 537199
+    "shares": 840084
    },
    {
     "name": "김민철",
-    "pct": 3.94,
+    "pct": 2.83,
     "relation": "매제",
-    "shares": 98470
+    "shares": 83470
    },
    {
     "name": "문혜민",
-    "pct": 0.96,
+    "pct": 0.82,
     "relation": "자녀",
     "shares": 24100
    },
    {
     "name": "임지송",
-    "pct": 0.92,
+    "pct": 0.78,
     "relation": "사위",
     "shares": 23100
    },
    {
     "name": "문혜정",
-    "pct": 0.82,
+    "pct": 0.7,
     "relation": "자녀",
     "shares": 20570
    },
    {
     "name": "정흥수",
-    "pct": 0.77,
+    "pct": 0.65,
     "relation": "처남",
     "shares": 19250
    }
   ],
-  "total_pct": 29.11
+  "total_pct": 34.43
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814000701",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261113000311",
  "pv": 4,
  "treasury_shares": null
 }

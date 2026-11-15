@@ -38,7 +38,7 @@
    }
   ]
  },
- "checked": "2026-11-02T10:22+09:00",
+ "checked": "2026-11-16T00:15+09:00",
  "corp_code": "01275665",
  "fs_annual": {
   "amort": 86315506,
@@ -58,67 +58,69 @@
   "revenue": 24504879379
  },
  "fs_interim": {
-  "amort": 26990237,
-  "assets": 53793587263,
+  "amort": 32961999,
+  "assets": 53391777657,
   "capital": 3149552800,
-  "cash": 9002213099,
-  "dep": 667292593,
-  "equity": 37173375654,
-  "fin_cost": 1001935867,
+  "cash": 10023797629,
+  "cur_assets": 26421208466,
+  "cur_liab": 11427060297,
+  "dep": 992013556,
+  "equity": 36853311480,
+  "fin_cost": 1198258066,
   "fs": "CFS",
-  "interest_paid": 40475383,
-  "liab": 16620211609,
-  "ni": 1289884978,
-  "ocf": 1981023793,
-  "op": 1629198344,
-  "period": "2026 반기",
-  "revenue": 14545406471,
-  "st_deposits": 17262226
+  "interest_paid": 64221830,
+  "liab": 16538466177,
+  "ni": 1697430769,
+  "ocf": 3542852799,
+  "op": 3252046460,
+  "period": "2026 3Q",
+  "revenue": 22213567592,
+  "st_deposits": 17807209
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "이근용",
-    "pct": 26.2,
+    "pct": 26.79,
     "relation": "최대주주 본인",
     "shares": 8110000
    },
    {
     "name": "홍성필",
-    "pct": 6.1,
+    "pct": 6.24,
     "relation": "임원",
     "shares": 1890000
    },
    {
     "name": "이상용",
-    "pct": 3.2,
+    "pct": 3.3,
     "relation": "최대주주의 친인척",
     "shares": 1000000
    },
    {
     "name": "이상식",
-    "pct": 0.1,
+    "pct": 0.07,
     "relation": "임원",
     "shares": 20000
    },
    {
     "name": "류승권",
-    "pct": 0.1,
+    "pct": 0.03,
     "relation": "임원",
     "shares": 9076
    },
    {
     "name": "송종은",
-    "pct": 0.0,
+    "pct": 0.01,
     "relation": "임원",
     "shares": 3500
    }
   ],
-  "total_pct": 35.7
+  "total_pct": 36.47
  },
- "latest_name": "[첨부추가]반기보고서 (2026.06)",
- "latest_rcept": "20260812000883",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261112000336",
  "pv": 4,
- "treasury_shares": 1151402
+ "treasury_shares": 776519
 }

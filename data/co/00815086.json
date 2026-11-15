@@ -40,12 +40,12 @@
    }
   ]
  },
- "checked": "2026-11-02T23:03+09:00",
+ "checked": "2026-11-16T00:18+09:00",
  "corp_code": "00815086",
  "fs_annual": {},
  "fs_interim": {},
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "정운호",
@@ -62,8 +62,8 @@
   ],
   "total_pct": 76.51
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814001091",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261113000041",
  "pv": 4,
  "treasury_shares": null
 }

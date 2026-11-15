@@ -9,13 +9,15 @@
  },
  "biz_retry": true,
  "business": {},
- "checked": "2026-11-02T10:31+09:00",
+ "checked": "2026-11-16T00:16+09:00",
  "corp_code": "00186939",
  "fs_annual": {
   "assets": 195070766176,
   "capex": 27523863064,
   "capital": 8773165500,
   "cash": 32753764713,
+  "cur_assets": 88641647759,
+  "cur_liab": 76920341244,
   "debt": 19830865471,
   "debt_hist": [
    20572918145,

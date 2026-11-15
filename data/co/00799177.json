@@ -3,13 +3,15 @@
  "annual_rcept": "20260323001170",
  "biz_retry": true,
  "business": {},
- "checked": "2026-11-02T10:30+09:00",
+ "checked": "2026-11-16T00:16+09:00",
  "corp_code": "00799177",
  "fs_annual": {
   "assets": 663256706885,
   "capex": 76706691947,
   "capital": 3833942800,
   "cash": 8945970817,
+  "cur_assets": 192203771743,
+  "cur_liab": 327917818263,
   "debt": 386778749944,
   "debt_hist": [
    310029749753,

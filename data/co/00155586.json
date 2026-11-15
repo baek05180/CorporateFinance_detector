@@ -22,7 +22,7 @@
    }
   ]
  },
- "checked": "2026-11-02T10:39+09:00",
+ "checked": "2026-11-16T00:16+09:00",
  "corp_code": "00155586",
  "fs_annual": {
   "amort": 121201000.0,
@@ -55,77 +55,80 @@
   "revenue": 32263951723
  },
  "fs_interim": {
-  "assets": 307106898622,
-  "capex": 365354324,
-  "capital": 79383860000,
-  "cash": 55385069808,
-  "debt": 40022967933,
+  "assets": 323457987406,
+  "capex": 695090246,
+  "capital": 86405677500,
+  "cash": 37210465535,
+  "cur_assets": 66207743129,
+  "cur_liab": 24262451709,
+  "debt": 49299657558,
   "debt_hist": [
    null,
    36231823397,
-   40022967933
+   49299657558
   ],
   "debt_items": [
    "비유동리스부채",
    "유동리스부채",
    "유동성전환사채",
+   "유동차입금(사채포함)",
    "전환사채"
   ],
-  "equity": 254559737694,
-  "fin_cost": 1180227303,
+  "equity": 261844941288,
+  "fin_cost": 2924846612,
   "fs": "CFS",
-  "interest_paid": 70422424,
-  "liab": 52547160928,
-  "ni": -18823139941,
-  "ocf": -16955590931,
-  "op": -19613805596,
-  "period": "2026 반기",
-  "revenue": 20035570081
+  "interest_paid": 131458469,
+  "liab": 61613046118,
+  "ni": -27434827150,
+  "ocf": -22323418741,
+  "op": -26842983644,
+  "period": "2026 3Q",
+  "revenue": 31965071140
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "HLB",
-    "pct": 16.14,
+    "pct": 15.57,
     "relation": "최대주주",
-    "shares": 5126359
+    "shares": 5381296
+   },
+   {
+    "name": "HLB생명과학",
+    "pct": 8.0,
+    "relation": "특수관계인",
+    "shares": 2764127
    },
    {
     "name": "HLB제약",
-    "pct": 8.26,
+    "pct": 7.59,
     "relation": "특수관계인",
     "shares": 2623262
    },
    {
     "name": "BRYANBYONGJIN.KIM",
-    "pct": 5.1,
+    "pct": 4.73,
     "relation": "계열회사 임원",
-    "shares": 1618323
+    "shares": 1633323
    },
    {
     "name": "HLB바이오스텝",
-    "pct": 2.23,
+    "pct": 2.05,
     "relation": "특수관계인",
     "shares": 709354
    },
    {
-    "name": "HLB생명과학",
-    "pct": 0.8,
+    "name": "에포케(주)",
+    "pct": 0.85,
     "relation": "특수관계인",
-    "shares": 254937
-   },
-   {
-    "name": "HLB테라퓨틱스",
-    "pct": 0.8,
-    "relation": "특수관계인",
-    "shares": 254937
+    "shares": 294412
    }
   ],
-  "total_pct": 35.49
+  "total_pct": 41.37
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260813001458",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261112000434",
  "pv": 4,
- "treasury_shares": 6945
+ "treasury_shares": 7024
 }

@@ -15,7 +15,7 @@
    }
   ]
  },
- "checked": "2026-11-02T10:34+09:00",
+ "checked": "2026-11-16T00:16+09:00",
  "corp_code": "00852096",
  "fs_annual": {
   "amort": 13845000.0,
@@ -49,57 +49,59 @@
   "st_deposits": 30000000
  },
  "fs_interim": {
-  "assets": 637327793,
-  "capital": 4316350000,
-  "cash": 73539732,
-  "debt": 14705979,
+  "assets": 1712342630,
+  "capital": 5256349500,
+  "cash": 966938172,
+  "cur_assets": 1190268299,
+  "cur_liab": 619455108,
+  "debt": 84210825,
   "debt_hist": [
    null,
    64643856,
-   14705979
+   84210825
   ],
   "debt_items": [
    "유동리스부채",
    "유동성장기차입금"
   ],
-  "equity": -16571818614,
-  "fin_cost": 667666395,
+  "equity": 265164730,
+  "fin_cost": 3496072559,
   "fs": "OFS",
-  "interest_paid": 632056,
-  "liab": 17209146407,
-  "ni": -1133375164,
-  "ocf": -167526696,
-  "op": -476792660,
-  "period": "2026 반기",
-  "revenue": 1395130072,
+  "interest_paid": 1231888,
+  "liab": 1447177900,
+  "ni": -4892912559,
+  "ocf": -1212913051,
+  "op": -1412109825,
+  "period": "2026 3Q",
+  "revenue": 1457224805,
   "st_deposits": 30000000
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "(주)동구바이오제약",
-    "pct": 16.81,
+    "pct": 16.52,
     "relation": "본인",
     "shares": 1736905
    },
    {
-    "name": "이태훈",
-    "pct": 7.94,
-    "relation": "대표이사",
-    "shares": 820800
+    "name": "한국투자 Re-Up 펀드",
+    "pct": 7.97,
+    "relation": "특수관계인",
+    "shares": 838095
    },
    {
-    "name": "한국투자 Re-Up 펀드",
-    "pct": 2.3,
-    "relation": "특수관계인",
-    "shares": 238095
+    "name": "이태훈",
+    "pct": 7.81,
+    "relation": "대표이사",
+    "shares": 820800
    }
   ],
-  "total_pct": 27.05
+  "total_pct": 32.3
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814001528",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261113001433",
  "pv": 4,
  "treasury_shares": null
 }

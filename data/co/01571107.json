@@ -33,7 +33,7 @@
    }
   ]
  },
- "checked": "2026-11-02T23:10+09:00",
+ "checked": "2026-11-16T00:18+09:00",
  "corp_code": "01571107",
  "fs_annual": {
   "amort": 4799390275,
@@ -68,39 +68,39 @@
   "st_deposits": 6016523126
  },
  "fs_interim": {
-  "amort": 3441110315,
-  "assets": 56173417547,
-  "capex": 336122174,
+  "amort": 4583713805,
+  "assets": 42097257218,
+  "capex": 340486578,
   "capital": 2749180800,
-  "cash": 12474427731,
-  "cur_assets": 38120761933,
-  "cur_liab": 24405242588,
-  "debt": 16421023600,
+  "cash": 9973850808,
+  "cur_assets": 27182557355,
+  "cur_liab": 22604294065,
+  "debt": 16187224919,
   "debt_hist": [
    null,
    16913311358,
-   16421023600
+   16187224919
   ],
   "debt_items": [
    "단기차입금",
    "비유동리스부채",
    "유동리스부채"
   ],
-  "dep": 976531811,
-  "equity": 24615926099,
-  "fin_cost": 904848240,
+  "dep": 1455657343,
+  "equity": 12512832052,
+  "fin_cost": 1337766917,
   "fs": "CFS",
-  "interest_paid": 316597260,
-  "liab": 31557491448,
-  "ni": -15241610209,
-  "ocf": -9308365004,
-  "op": -15272043496,
-  "period": "2026 반기",
-  "revenue": 5616058455,
-  "st_deposits": 6138542006
+  "interest_paid": 472310422,
+  "liab": 29584425166,
+  "ni": -24658873936,
+  "ocf": -16055219936,
+  "op": -23379603700,
+  "period": "2026 3Q",
+  "revenue": 7322313622,
+  "st_deposits": 4482053039
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "이성현",
@@ -115,34 +115,34 @@
     "shares": 69192
    },
    {
-    "name": "문상훈",
-    "pct": 0.19,
-    "relation": "미등기임원",
-    "shares": 52539
-   },
-   {
-    "name": "LAU RICKY WAI KI",
-    "pct": 0.12,
-    "relation": "계열회사 미등기임원",
-    "shares": 33690
-   },
-   {
     "name": "KIM CHINHYUN",
     "pct": 0.08,
     "relation": "사외이사",
     "shares": 21250
    },
    {
-    "name": "NG JU-TUNG ERIC",
-    "pct": 0.06,
-    "relation": "계열회사 미등기임원",
-    "shares": 15450
+    "name": "이종혜",
+    "pct": 0.01,
+    "relation": "특수관계인",
+    "shares": 1500
+   },
+   {
+    "name": "황인조",
+    "pct": 0.0,
+    "relation": "등기임원",
+    "shares": 0
+   },
+   {
+    "name": "FUNG RICHARD",
+    "pct": 0.0,
+    "relation": "계열회사 등기임원",
+    "shares": 0
    }
   ],
   "total_pct": 14.25
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814003706",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261113001451",
  "pv": 4,
  "treasury_shares": null
 }

@@ -27,54 +27,54 @@
    }
   ]
  },
- "checked": "2026-11-02T10:43+09:00",
+ "checked": "2026-11-16T00:16+09:00",
  "corp_code": "00805539",
  "fs_annual": {},
  "fs_interim": {},
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "박치현",
-    "pct": 28.68,
+    "pct": 25.63,
     "relation": "본인",
     "shares": 10125000
    },
    {
     "name": "고려여객자동차(주)",
-    "pct": 17.0,
+    "pct": 20.76,
     "relation": "특수관계인",
-    "shares": 6000000
+    "shares": 8200000
    },
    {
     "name": "(주)천일정비서비스",
-    "pct": 14.73,
+    "pct": 18.23,
     "relation": "특수관계인",
-    "shares": 5200000
+    "shares": 7200000
    },
    {
     "name": "천일여객(주)",
-    "pct": 12.46,
+    "pct": 11.14,
     "relation": "특수관계인",
     "shares": 4400000
    },
    {
     "name": "(주)천일에너지",
-    "pct": 3.4,
+    "pct": 3.04,
     "relation": "특수관계인",
     "shares": 1200000
    },
    {
     "name": "박재상",
-    "pct": 3.4,
+    "pct": 3.04,
     "relation": "부",
     "shares": 1200000
    }
   ],
-  "total_pct": 81.36
+  "total_pct": 83.35
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260813001131",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261113000073",
  "pv": 4,
  "treasury_shares": null
 }

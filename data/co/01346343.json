@@ -24,36 +24,36 @@
    }
   ]
  },
- "checked": "2026-11-02T10:43+09:00",
+ "checked": "2026-11-16T00:16+09:00",
  "corp_code": "01346343",
  "fs_annual": {},
  "fs_interim": {},
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "김득화",
-    "pct": 23.72,
+    "pct": 21.34,
     "relation": "최대주주",
     "shares": 2047580
    },
    {
     "name": "김정훈",
-    "pct": 9.59,
+    "pct": 8.63,
     "relation": "등기임원",
     "shares": 828140
    },
    {
     "name": "(주)오렌지몬스터즈",
-    "pct": 5.15,
+    "pct": 4.64,
     "relation": "기타특수관계자",
     "shares": 444665
    }
   ],
-  "total_pct": 38.46
+  "total_pct": 34.61
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814003780",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261113001621",
  "pv": 4,
  "treasury_shares": null
 }

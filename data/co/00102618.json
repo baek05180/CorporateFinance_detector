@@ -3,7 +3,7 @@
  "annual_rcept": "20260319001220",
  "biz_retry": true,
  "business": {},
- "checked": "2026-11-02T10:38+09:00",
+ "checked": "2026-11-16T00:16+09:00",
  "corp_code": "00102618",
  "fs_annual": {
   "amort": 61350603,
@@ -11,6 +11,8 @@
   "capex": 24988717539,
   "capital": 14195954000,
   "cash": 8078330696,
+  "cur_assets": 153462706822,
+  "cur_liab": 181381342366,
   "debt": 99680044331,
   "debt_hist": [
    23598864625,

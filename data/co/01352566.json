@@ -28,7 +28,7 @@
    }
   ]
  },
- "checked": "2026-11-02T22:59+09:00",
+ "checked": "2026-11-16T00:18+09:00",
  "corp_code": "01352566",
  "fs_annual": {
   "amort": 29806000.0,
@@ -61,76 +61,46 @@
   "period": "2025 연간"
  },
  "fs_interim": {
-  "assets": 40074998900,
+  "assets": 36283439525,
   "capex": 9990000,
   "capital": 2695604500,
-  "cash": 21883795656,
-  "cur_assets": 34752514859,
-  "cur_liab": 93522429355,
-  "debt": 2192421360,
+  "cash": 19014396994,
+  "cur_assets": 31021436236,
+  "cur_liab": 94597925785,
+  "debt": 2198811776,
   "debt_hist": [
    null,
    2149315942,
-   2192421360
+   2198811776
   ],
   "debt_items": [
    "단기차입금",
    "리스부채"
   ],
-  "equity": -55221768484,
-  "fin_cost": 4886537417,
+  "equity": -59067987107,
+  "fin_cost": 5972717067,
   "fs": "OFS",
-  "interest_paid": 71129918,
-  "liab": 95296767384,
-  "ni": -16312742906,
-  "ocf": -12654640818,
-  "op": -11547323834,
-  "period": "2026 반기"
+  "interest_paid": 56384105,
+  "liab": 95351426632,
+  "ni": -20505933936,
+  "ocf": -15436161976,
+  "op": -14856748683,
+  "period": "2026 3Q"
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
-    "name": "성재영",
-    "pct": 15.44,
-    "relation": "본인",
-    "shares": 1600000
-   },
-   {
-    "name": "김원겸",
-    "pct": 0.3,
-    "relation": "임원",
-    "shares": 31098
-   },
-   {
-    "name": "정인숙",
-    "pct": 0.15,
-    "relation": "처",
-    "shares": 15440
-   },
-   {
-    "name": "성경숙",
-    "pct": 0.08,
-    "relation": "매",
-    "shares": 8000
-   },
-   {
-    "name": "성화숙",
-    "pct": 0.08,
-    "relation": "매",
-    "shares": 8000
-   },
-   {
-    "name": "성경준",
-    "pct": 0.04,
-    "relation": "자",
-    "shares": 4000
+    "name": "-",
+    "pct": 0.0,
+    "relation": "-",
+    "shares": null
    }
   ],
-  "total_pct": 16.17
+  "total_pct": 0.0
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814002742",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261113000052",
  "pv": 4,
  "treasury_shares": null
 }

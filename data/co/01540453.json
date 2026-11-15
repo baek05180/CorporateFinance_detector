@@ -28,7 +28,7 @@
    }
   ]
  },
- "checked": "2026-11-02T23:14+09:00",
+ "checked": "2026-11-16T00:18+09:00",
  "corp_code": "01540453",
  "fs_annual": {
   "amort": 907332000.0,
@@ -66,17 +66,17 @@
   "st_deposits": 0
  },
  "fs_interim": {
-  "assets": 230738502168,
-  "capex": 2982211574,
+  "assets": 238317188132,
+  "capex": 4045857730,
   "capital": 5462829000,
-  "cash": 43698214196,
-  "cur_assets": 120245127252,
-  "cur_liab": 79394173454,
-  "debt": 74231865821,
+  "cash": 20687010910,
+  "cur_assets": 127135891640,
+  "cur_liab": 98330329497,
+  "debt": 74883056640,
   "debt_hist": [
    null,
    47747045200,
-   74231865821
+   74883056640
   ],
   "debt_items": [
    "단기차입금",
@@ -86,50 +86,32 @@
    "장기차입금",
    "전환사채"
   ],
-  "equity": 85302494109,
-  "fin_cost": 2515761262,
+  "equity": 83227263450,
+  "fin_cost": 7733739460,
   "fs": "CFS",
-  "interest_paid": 675140392,
-  "liab": 145436008059,
-  "ni": 6347470896,
-  "ocf": -14138401765,
-  "op": 4988814436,
-  "period": "2026 반기",
-  "revenue": 113727541801,
-  "st_deposits": 5000000000
+  "interest_paid": 1056590460,
+  "liab": 155089924682,
+  "ni": 3342232394,
+  "ocf": -39721193257,
+  "op": 6384009950,
+  "period": "2026 3Q",
+  "revenue": 162069083076,
+  "st_deposits": 4000000000
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
-    "name": "보통주",
-    "pct": 1.31,
-    "relation": "장창은",
-    "shares": 142860
-   },
-   {
-    "name": "보통주",
-    "pct": 0.59,
-    "relation": "이석용",
-    "shares": 64685
-   },
-   {
-    "name": "보통주",
-    "pct": 0.57,
-    "relation": "김준호",
-    "shares": 62278
-   },
-   {
-    "name": "보통주",
+    "name": "-",
     "pct": 0.0,
-    "relation": "최문영",
-    "shares": 0
+    "relation": "-",
+    "shares": null
    }
   ],
-  "total_pct": 2.47
+  "total_pct": 0.0
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814000520",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261113000348",
  "pv": 4,
  "treasury_shares": null
 }
