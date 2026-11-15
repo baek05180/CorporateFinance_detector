@@ -48,7 +48,7 @@
    }
   ]
  },
- "checked": "2026-11-03T04:45+09:00",
+ "checked": "2026-11-16T04:19+09:00",
  "corp_code": "01236532",
  "fs_annual": {
   "assets": 189729510295,
@@ -86,17 +86,17 @@
   "st_deposits": 500000000
  },
  "fs_interim": {
-  "assets": 194777128033,
-  "capex": 162239645,
+  "assets": 198678170922,
+  "capex": 393524082,
   "capital": 5045958200,
-  "cash": 23478213409,
-  "cur_assets": 117975010831,
-  "cur_liab": 121413814440,
-  "debt": 71925997808,
+  "cash": 18656329450,
+  "cur_assets": 120209721059,
+  "cur_liab": 131408002362,
+  "debt": 71710306304,
   "debt_hist": [
    null,
    58039717067,
-   71925997808
+   71710306304
   ],
   "debt_items": [
    "단기차입금",
@@ -106,62 +106,62 @@
    "유동성전환사채",
    "장기차입금"
   ],
-  "equity": 50150707040,
-  "fin_cost": 4261301588,
+  "equity": 52053938748,
+  "fin_cost": 6118849509,
   "fs": "CFS",
-  "interest_paid": 943735230,
-  "liab": 144626420993,
-  "ni": 2211279292,
-  "ocf": 15764954918,
-  "op": 5770008523,
-  "period": "2026 반기",
-  "revenue": 24537713913,
-  "st_deposits": 500000000
+  "interest_paid": 1440709848,
+  "liab": 146624232174,
+  "ni": 4110126277,
+  "ocf": 11209737988,
+  "op": 9457916071,
+  "period": "2026 3Q",
+  "revenue": 38062864197,
+  "st_deposits": 6500000000
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "한국정보인증(주)",
-    "pct": 30.42,
+    "pct": 31.23,
     "relation": "최대주주",
-    "shares": 15349575
+    "shares": 3069915
    },
    {
     "name": "Lezhin Entertainment Corporation",
-    "pct": 11.2,
+    "pct": 11.5,
     "relation": "관계회사",
-    "shares": 5653204
+    "shares": 1130640
    },
    {
     "name": "김종원",
-    "pct": 8.28,
+    "pct": 8.91,
     "relation": "발행회사 임원",
-    "shares": 4176960
+    "shares": 875392
    },
    {
     "name": "(주)다우기술",
-    "pct": 3.8,
+    "pct": 3.9,
     "relation": "관계회사",
-    "shares": 1918690
+    "shares": 383738
    },
    {
     "name": "키움증권(주)",
-    "pct": 3.8,
+    "pct": 3.9,
     "relation": "관계회사",
-    "shares": 1918690
+    "shares": 383738
    },
    {
     "name": "정회창",
-    "pct": 0.08,
+    "pct": 0.09,
     "relation": "계열회사 임원",
-    "shares": 41013
+    "shares": 9102
    }
   ],
-  "total_pct": 57.58
+  "total_pct": 59.53
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260807000056",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261111000395",
  "pv": 4,
- "treasury_shares": 1753747
+ "treasury_shares": 88703
 }

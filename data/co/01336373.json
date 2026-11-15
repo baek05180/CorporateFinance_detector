@@ -37,7 +37,7 @@
    }
   ]
  },
- "checked": "2026-11-03T04:48+09:00",
+ "checked": "2026-11-16T04:20+09:00",
  "corp_code": "01336373",
  "fs_annual": {
   "assets": 48663157624,
@@ -59,56 +59,38 @@
   "st_deposits": 28701181477
  },
  "fs_interim": {
-  "assets": 42268076052,
+  "assets": 38332931541,
   "capex": 43925600,
   "capital": 17137560500,
-  "cash": 6528106633,
-  "cur_assets": 38985436866,
-  "cur_liab": 1690379809,
-  "equity": 39495564045,
-  "fin_cost": 59613958,
+  "cash": 2950039738,
+  "cur_assets": 34965375876,
+  "cur_liab": 1487028305,
+  "equity": 35877512936,
+  "fin_cost": 145411723,
   "fs": "CFS",
   "interest_paid": 0,
-  "liab": 2772512007,
-  "ni": -6953881171,
-  "ocf": -5209302865,
-  "op": -7800660502,
-  "period": "2026 반기",
-  "revenue": 2365726625,
-  "st_deposits": 28963859748
+  "liab": 2455418605,
+  "ni": -10674044562,
+  "ocf": -8763672271,
+  "op": -11434357610,
+  "period": "2026 3Q",
+  "revenue": 3369523649,
+  "st_deposits": 28222855105
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
-    "name": "(주)테라젠이텍스",
-    "pct": 14.39,
-    "relation": "최대주주",
-    "shares": 4931039
-   },
-   {
-    "name": "고진업",
-    "pct": 3.5,
-    "relation": "최대주주의 대표이사",
-    "shares": 1200000
-   },
-   {
-    "name": "고재훈",
-    "pct": 1.55,
-    "relation": "최대주주의 대표이사의\n특수관계인",
-    "shares": 532000
-   },
-   {
-    "name": "고은샘",
-    "pct": 0.17,
-    "relation": "최대주주의 대표이사의\n특수관계인",
-    "shares": 58098
+    "name": "-",
+    "pct": 0.0,
+    "relation": "-",
+    "shares": null
    }
   ],
-  "total_pct": 19.61
+  "total_pct": 0.0
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260813001636",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261113000987",
  "pv": 4,
  "treasury_shares": null
 }

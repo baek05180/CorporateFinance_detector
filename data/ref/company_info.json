@@ -29483,6 +29483,20 @@
   "stock_code": "",
   "stock_name": "마이스터건설"
  },
+ "00579342": {
+  "acc_mt": "12",
+  "adres": "울산광역시 울주군 온산읍 산암로 448",
+  "ceo_nm": "허철기",
+  "checked": "2026-11-16T04:20+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)영광",
+  "est_dt": "19990616",
+  "hm_url": "ykmc.com",
+  "induty_code": "25114",
+  "jurir_no": "1712110020378",
+  "stock_code": "359410",
+  "stock_name": "영광"
+ },
  "00579500": {
   "acc_mt": "12",
   "adres": "경기도 용인시 처인구 양지면 추계리 13-5",
@@ -35418,6 +35432,20 @@
   "jurir_no": "",
   "stock_code": "900070",
   "stock_name": "글로벌에스엠"
+ },
+ "00784184": {
+  "acc_mt": "12",
+  "adres": "경기도 시흥시 공단1대로80번길 140",
+  "ceo_nm": "조덕형",
+  "checked": "2026-11-16T04:20+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)동원파츠",
+  "est_dt": "19970530",
+  "hm_url": "www.dwparts.net/",
+  "induty_code": "29271",
+  "jurir_no": "1101111420746",
+  "stock_code": "0162D0",
+  "stock_name": "동원파츠"
  },
  "00786711": {
   "acc_mt": "12",
@@ -59429,6 +59457,20 @@
   "stock_code": "",
   "stock_name": "펫클럽"
  },
+ "01378005": {
+  "acc_mt": "12",
+  "adres": "경기도 오산시 가장산업서북로 103-14 &nbsp",
+  "ceo_nm": "김영곤",
+  "checked": "2026-11-16T04:20+09:00",
+  "corp_cls": "K",
+  "corp_name": "(주)이에스티",
+  "est_dt": "20160405",
+  "hm_url": "www.estech.asia",
+  "induty_code": "292",
+  "jurir_no": "1760110105393",
+  "stock_code": "495910",
+  "stock_name": "이에스티"
+ },
  "01378573": {
   "acc_mt": "12",
   "adres": "서울특별시 송파구 정의로8길 9 본관 4층 일부(문정동, AJ빌딩)",
@@ -75375,6 +75417,20 @@
   "stock_code": "",
   "stock_name": "아페쎄"
  },
+ "01835829": {
+  "acc_mt": "12",
+  "adres": "서울특별시 동작구 동작대로 77(사당동)",
+  "ceo_nm": "김슬기",
+  "checked": "2026-11-16T04:20+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 바로팜",
+  "est_dt": "20191122",
+  "hm_url": "corp.baropharm.com/",
+  "induty_code": "639",
+  "jurir_no": "1101117302261",
+  "stock_code": "0153R0",
+  "stock_name": "바로팜"
+ },
  "01835944": {
   "acc_mt": "12",
   "adres": "서울특별시 성동구 뚝섬로1길 63, 지하2층 비201호, 비202호(성수동1가, 영창디지털타워)",
@@ -76340,6 +76396,20 @@
   "jurir_no": "1201110774085",
   "stock_code": "",
   "stock_name": "하람코퍼레이션"
+ },
+ "01863318": {
+  "acc_mt": "12",
+  "adres": "서울특별시 송파구 송파대로 201, A동 1613호 (문정동, 송파 테라파워2)",
+  "ceo_nm": "윤경완",
+  "checked": "2026-11-16T04:20+09:00",
+  "corp_cls": "K",
+  "corp_name": "주식회사 넥스아이",
+  "est_dt": "20210412",
+  "hm_url": "nex-i.co.kr/",
+  "induty_code": "70113",
+  "jurir_no": "1101117849370",
+  "stock_code": "493410",
+  "stock_name": "넥스아이"
  },
  "01864821": {
   "acc_mt": "12",
@@ -79015,6 +79085,20 @@
   "stock_code": "",
   "stock_name": "아르디온"
  },
+ "01956751": {
+  "acc_mt": "12",
+  "adres": "서울특별시 강남구 선릉로 577, 7층, 8층 &nbsp",
+  "ceo_nm": "신정규",
+  "checked": "2026-11-16T04:20+09:00",
+  "corp_cls": "K",
+  "corp_name": "래블업 주식회사",
+  "est_dt": "20150421",
+  "hm_url": "www.lablup.com/ko",
+  "induty_code": "58221",
+  "jurir_no": "1101115701382",
+  "stock_code": "0147B0",
+  "stock_name": "래블업"
+ },
  "01957282": {
   "acc_mt": "04",
   "adres": "Unit 1, Enterprise, Cambridge Research Park, Cambridge CB25 9PD UK",
@@ -81044,6 +81128,20 @@
   "jurir_no": "2149110060427",
   "stock_code": "",
   "stock_name": "전주산업"
+ },
+ "02036869": {
+  "acc_mt": "12",
+  "adres": "서울특별시 영등포구 여의대로 66",
+  "ceo_nm": "구상모",
+  "checked": "2026-11-16T04:20+09:00",
+  "corp_cls": "K",
+  "corp_name": "아이엠기업인수목적1호 주식회사",
+  "est_dt": "20260624",
+  "hm_url": "07327",
+  "induty_code": "66199",
+  "jurir_no": "1101110962979",
+  "stock_code": "0222E0",
+  "stock_name": "아이엠스팩1호"
  },
  "02037840": {
   "acc_mt": "12",
