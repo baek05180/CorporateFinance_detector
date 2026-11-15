@@ -21,7 +21,7 @@
    }
   ]
  },
- "checked": "2026-11-03T00:37+09:00",
+ "checked": "2026-11-16T02:13+09:00",
  "corp_code": "01227039",
  "fs_annual": {
   "amort": 37806620,
@@ -54,73 +54,49 @@
   "st_deposits": 980000000
  },
  "fs_interim": {
-  "amort": 6607645,
-  "assets": 57875083198,
-  "capex": 286819369,
+  "amort": 9824443,
+  "assets": 63465584952,
+  "capex": 310613234,
   "capital": 53040823000,
-  "cash": 1093362429,
-  "cur_assets": 2358898376,
-  "cur_liab": 18167572071,
-  "debt": 3246206505,
+  "cash": 1357747959,
+  "cur_assets": 2860203900,
+  "cur_liab": 23558421411,
+  "debt": 3442577604,
   "debt_hist": [
    null,
    2934079999,
-   3246206505
+   3442577604
   ],
   "debt_items": [
    "장기사채"
   ],
-  "dep": 247828454,
-  "equity": 36370240906,
-  "fin_cost": 4098030472,
+  "dep": 306967463,
+  "equity": 36464585937,
+  "fin_cost": 2939802755,
   "fs": "CFS",
-  "interest_paid": 39941050,
-  "liab": 21504842292,
-  "ni": -8181154971,
-  "ocf": -4399607889,
-  "op": -4331342554,
-  "period": "2026 반기",
-  "revenue": 1593042185,
+  "interest_paid": 41445655,
+  "liab": 27000999015,
+  "ni": -8552821391,
+  "ocf": -5828958877,
+  "op": -5872024522,
+  "period": "2026 3Q",
+  "revenue": 2384288619,
   "st_deposits": 402000000
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
-    "name": "PARATAXIS HOLDINGS LLC",
-    "pct": 22.98,
-    "relation": "본인",
-    "shares": 24379206
-   },
-   {
-    "name": "PARATAXIS KOREA FUND I LLC",
-    "pct": 21.96,
-    "relation": "특수관계인",
-    "shares": 23293001
-   },
-   {
-    "name": "이정규",
-    "pct": 3.94,
-    "relation": "임원",
-    "shares": 4183930
-   },
-   {
-    "name": "PARATAXIS KOREA HOLDINGS LLC",
-    "pct": 3.31,
-    "relation": "특수관계인",
-    "shares": 3507790
-   },
-   {
-    "name": "PARATAXIS KOREA FUND Ⅱ LLC",
-    "pct": 2.1,
-    "relation": "특수관계인",
-    "shares": 2227002
+    "name": "-",
+    "pct": 0.0,
+    "relation": "-",
+    "shares": null
    }
   ],
-  "total_pct": 54.29
+  "total_pct": 0.0
  },
- "latest_name": "[기재정정]반기보고서 (2026.06)",
- "latest_rcept": "20260814004297",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261112000433",
  "pv": 4,
  "treasury_shares": null
 }

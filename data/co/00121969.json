@@ -3,7 +3,7 @@
  "annual_rcept": "20260319000744",
  "biz_retry": true,
  "business": {},
- "checked": "2026-11-03T02:56+09:00",
+ "checked": "2026-11-16T02:15+09:00",
  "corp_code": "00121969",
  "fs_annual": {
   "assets": 136355564807,
@@ -36,49 +36,55 @@
   "st_deposits": 10000000
  },
  "fs_interim": {
-  "assets": 111806609870,
-  "capex": 12868854087,
+  "assets": 113045988366,
+  "capex": 14065760684,
   "capital": 19017987500,
-  "cash": 11987222586,
-  "cur_assets": 40574280951,
-  "cur_liab": 55746048338,
-  "debt": 31495252962,
+  "cash": 11223679215,
+  "cur_assets": 41496511528,
+  "cur_liab": 60206794146,
+  "debt": 32052873493,
   "debt_hist": [
    null,
    30426075963,
-   31495252962
+   32052873493
   ],
   "debt_items": [
    "비유동리스부채",
    "유동리스부채",
    "유동성전환사채"
   ],
-  "equity": 39985901912,
-  "fin_cost": 2114391286,
+  "equity": 36596563321,
+  "fin_cost": 3279789946,
   "fs": "CFS",
-  "interest_paid": 491657515,
-  "liab": 71820707958,
-  "ni": -8063983069,
-  "ocf": -19957365879,
-  "op": -5818099766,
-  "period": "2026 반기",
-  "revenue": 33095746655,
-  "st_deposits": 8070000000
+  "interest_paid": 759863306,
+  "liab": 76449425045,
+  "ni": -11834828785,
+  "ocf": -16609691843,
+  "op": -8887074683,
+  "period": "2026 3Q",
+  "revenue": 54138682868,
+  "st_deposits": 11100000000
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "(주)반도홀딩스",
-    "pct": 10.89,
-    "relation": "본인",
-    "shares": 4140224
+    "pct": 21.27,
+    "relation": "최대주주 본인",
+    "shares": 8091164
+   },
+   {
+    "name": "송한규",
+    "pct": 0.14,
+    "relation": "특별관계인",
+    "shares": 53850
    }
   ],
-  "total_pct": 10.89
+  "total_pct": 21.41
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814003051",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261113001499",
  "pv": 4,
- "treasury_shares": null
+ "treasury_shares": 0
 }

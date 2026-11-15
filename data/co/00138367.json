@@ -21,7 +21,7 @@
    }
   ]
  },
- "checked": "2026-11-03T04:38+09:00",
+ "checked": "2026-11-16T02:16+09:00",
  "corp_code": "00138367",
  "fs_annual": {
   "amort": 5243848091,
@@ -57,18 +57,18 @@
   "revenue": 34657760135
  },
  "fs_interim": {
-  "amort": 2527923518,
-  "assets": 28748057540,
-  "capex": 7000000,
+  "amort": 3793178151,
+  "assets": 24648932011,
+  "capex": 12997272,
   "capital": 4473247500,
-  "cash": 4400265094,
-  "cur_assets": 9338273644,
-  "cur_liab": 7088935434,
-  "debt": 3237845102,
+  "cash": 3192576966,
+  "cur_assets": 6329865282,
+  "cur_liab": 5379396436,
+  "debt": 2959275186,
   "debt_hist": [
    null,
    5032045474,
-   3237845102
+   2959275186
   ],
   "debt_items": [
    "단기차입금",
@@ -76,20 +76,20 @@
    "유동성리스부채",
    "유동성전환사채"
   ],
-  "dep": 337251178,
-  "equity": 18583423690,
-  "fin_cost": 531524976,
+  "dep": 499975734,
+  "equity": 16291539937,
+  "fin_cost": 687528694,
   "fs": "OFS",
-  "interest_paid": 137437557,
-  "liab": 10164633850,
-  "ni": 663171774,
-  "ocf": 1382507384,
-  "op": -1992535730,
-  "period": "2026 반기",
-  "revenue": 11998202058
+  "interest_paid": 197472312,
+  "liab": 8357392074,
+  "ni": -1628711979,
+  "ocf": 554293378,
+  "op": -4220960691,
+  "period": "2026 3Q",
+  "revenue": 15819064603
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "(주)드림아크코리아",
@@ -99,39 +99,39 @@
    },
    {
     "name": "(주)플레이위드게임즈",
-    "pct": 9.99,
+    "pct": 11.31,
     "relation": "계열회사",
-    "shares": 894061
+    "shares": 1012102
    },
    {
     "name": "PLAYWITH TAIWAN CO., LTD",
-    "pct": 3.93,
+    "pct": 4.63,
     "relation": "계열회사",
-    "shares": 351760
+    "shares": 414617
    },
    {
     "name": "김학준",
-    "pct": 1.21,
+    "pct": 1.43,
     "relation": "대표이사",
-    "shares": 108235
+    "shares": 128200
+   },
+   {
+    "name": "KIM DANIEL TAEYUN",
+    "pct": 0.36,
+    "relation": "계열회사의 임원",
+    "shares": 32109
    },
    {
     "name": "박정현",
     "pct": 0.34,
     "relation": "계열회사의 임원",
     "shares": 30000
-   },
-   {
-    "name": "이재용",
-    "pct": 0.04,
-    "relation": "계열회사의 임원",
-    "shares": 3241
    }
   ],
-  "total_pct": 34.88
+  "total_pct": 37.86
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814001515",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261113001402",
  "pv": 4,
  "treasury_shares": null
 }

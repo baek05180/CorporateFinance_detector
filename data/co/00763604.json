@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-03T02:46+09:00",
+ "checked": "2026-11-16T02:15+09:00",
  "corp_code": "00763604",
  "fs_interim": {
   "assets": 33746717023,
@@ -74,6 +74,7 @@
  },
  "latest_name": "분기보고서 (2025.03)",
  "latest_rcept": "20250509000439",
+ "no_periodic": true,
  "pv": 4,
  "treasury_shares": null
 }

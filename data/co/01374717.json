@@ -29,7 +29,7 @@
    }
   ]
  },
- "checked": "2026-11-03T00:45+09:00",
+ "checked": "2026-11-16T02:13+09:00",
  "corp_code": "01374717",
  "fs_annual": {
   "amort": 435560000.0,
@@ -66,17 +66,17 @@
   "st_deposits": 12090908750
  },
  "fs_interim": {
-  "assets": 109606782376,
-  "capex": 104468090,
-  "capital": 564652500,
-  "cash": 19990835173,
-  "cur_assets": 84353405503,
-  "cur_liab": 35706128301,
-  "debt": 42318817893,
+  "assets": 109188148901,
+  "capex": 402119905,
+  "capital": 1693957500,
+  "cash": 30829649489,
+  "cur_assets": 84894004069,
+  "cur_liab": 35583461052,
+  "debt": 40794402253,
   "debt_hist": [
    null,
    34516842922,
-   42318817893
+   40794402253
   ],
   "debt_items": [
    "단기차입금",
@@ -85,62 +85,62 @@
    "유동리스부채",
    "장기차입금"
   ],
-  "equity": 38393906833,
-  "fin_cost": 1920653437,
+  "equity": 39013345426,
+  "fin_cost": 2646889994,
   "fs": "CFS",
-  "interest_paid": 1090844960,
-  "liab": 71212875543,
-  "ni": 1128022928,
-  "ocf": -21632953329,
-  "op": 2459910138,
-  "period": "2026 반기",
-  "revenue": 79790652106,
-  "st_deposits": 7103893856
+  "interest_paid": 1681671166,
+  "liab": 70174803475,
+  "ni": 1750340958,
+  "ocf": -8955126596,
+  "op": 3160205782,
+  "period": "2026 3Q",
+  "revenue": 133967782075,
+  "st_deposits": 7069996974
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "김기봉",
     "pct": 20.67,
     "relation": "최대주주 본인",
-    "shares": 1167125
+    "shares": 3501375
    },
    {
     "name": "천용헌",
     "pct": 0.52,
     "relation": "등기임원",
-    "shares": 29242
+    "shares": 87726
    },
    {
     "name": "김만섭",
-    "pct": 0.2,
+    "pct": 0.21,
     "relation": "미등기임원",
-    "shares": 11300
+    "shares": 36000
    },
    {
     "name": "오세흥",
     "pct": 0.19,
     "relation": "미등기임원",
-    "shares": 10756
+    "shares": 32367
    },
    {
     "name": "정재호",
     "pct": 0.17,
     "relation": "등기임원",
-    "shares": 9760
+    "shares": 29280
    },
    {
     "name": "최신",
     "pct": 0.11,
     "relation": "미등기임원",
-    "shares": 5995
+    "shares": 17985
    }
   ],
-  "total_pct": 22.14
+  "total_pct": 22.15
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814000778",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261113000566",
  "pv": 4,
  "treasury_shares": null
 }
