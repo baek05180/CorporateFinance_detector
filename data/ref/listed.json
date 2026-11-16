@@ -2574,7 +2574,7 @@
   "region": "경기도"
  },
  "004770": {
-  "ceo": "차상권",
+  "ceo": "노종섭",
   "fiscal_month": "12월",
   "homepage": "http://www.sunny.co.kr",
   "industry": "전자부품 제조업",
@@ -15850,17 +15850,6 @@
   "products": "모바일 카메라모듈,전장 카메라모듈,블랙박스,IP 카메라",
   "region": "인천광역시"
  },
- "097780": {
-  "ceo": "한재관",
-  "fiscal_month": "12월",
-  "homepage": "http://www.s-mac.co.kr",
-  "industry": "자동차 신품 부품 제조업",
-  "listed": "2008-01-23",
-  "market": "K",
-  "name": "에코볼트",
-  "products": "자동차 신품 부품",
-  "region": "충청남도"
- },
  "097800": {
   "ceo": "신동호(단독대표이사)",
   "fiscal_month": "12월",
@@ -20345,7 +20334,7 @@
   "industry": "실내건축 및 건축마무리 공사업",
   "listed": "2014-12-10",
   "market": "K",
-  "name": "베노티앤알",
+  "name": "아인스팩씨엔에스",
   "products": "웹게임, 모바일게임",
   "region": "서울특별시"
  },
@@ -24244,7 +24233,7 @@
   "region": "경기도"
  },
  "300720": {
-  "ceo": "전근식, 오해근",
+  "ceo": "전근식",
   "fiscal_month": "12월",
   "homepage": "http://www.hanilcement.com",
   "industry": "시멘트, 석회, 플라스터 및 그 제품 제조업",
@@ -30094,6 +30083,17 @@
   "name": "KB제31호스팩",
   "products": "기업인수합병",
   "region": "서울특별시"
+ },
+ "493260": {
+  "ceo": "이용범, 이영우",
+  "fiscal_month": "12월",
+  "homepage": "http://www.optonics.biz",
+  "industry": "측정, 시험, 항해, 제어 및 기타 정밀기기 제조업; 광학기기 제외",
+  "listed": "2026-11-17",
+  "market": "K",
+  "name": "옵토닉스",
+  "products": "링레이저 자이로스코프(RLG) 및 광섬유자이로스코프(FOG) 핵심 부품 제조",
+  "region": "전남광주통합특별시"
  },
  "493280": {
   "ceo": "하경식",
