@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-16T20:55+09:00",
+  "data_updated": "2026-11-17T14:21+09:00",
   "last_daily": "2026-11-16T20:55+09:00"
  },
  "records": {
@@ -57229,6 +57229,42 @@
    "type": "CB",
    "updated": "2026-10-26T09:11+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251202000333",
+   "ytm": 6.0
+  },
+  "CB:00110884:26": {
+   "amended": false,
+   "amount": 10000000000,
+   "board_dt": "2026-11-17",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "K",
+   "corp_code": "00110884",
+   "corp_name": "엠젠솔루션",
+   "coupon": 2.0,
+   "dilution": 23.58,
+   "exercise_from": "2027-11-25",
+   "exercise_to": "2029-10-25",
+   "first_seen": "2026-11-17T14:21+09:00",
+   "id": "CB:00110884:26",
+   "lead": null,
+   "maturity": "2029-11-25",
+   "method_raw": "사모",
+   "offering": "사모",
+   "pay_dt": "2026-11-25",
+   "price": 1046,
+   "purposes": {
+    "운영": 10000000000
+   },
+   "rcept_dt": "2026-11-17",
+   "rcept_no": "20261117000068",
+   "refix_floor": 733,
+   "series": "26",
+   "shares": 9560229,
+   "source": "DART",
+   "stock_code": "032790",
+   "type": "CB",
+   "updated": "2026-11-17T14:21+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261117000068",
    "ytm": 6.0
   },
   "CB:00111111:18": {
