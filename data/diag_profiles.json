@@ -9,7 +9,7 @@
  },
  "crno_matched": 0,
  "dart_calls": 264,
- "listed_error": "403 Client Error: Forbidden for url: https://kind.krx.co.kr/corpgeneral/corpList.do",
+ "listed": 2769,
  "mezz_docs": {
   "sec": 0,
   "todo": 0,
@@ -23,7 +23,7 @@
   "live_corps": 960,
   "parsed": 0,
   "pending": 0,
-  "sec": 2,
+  "sec": 7,
   "todo": 0,
   "total": 2216
  },
@@ -33,7 +33,7 @@
  "profiles_done": 113,
  "profiles_fresh": 3556,
  "profiles_left": 0,
- "profiles_sec": 16,
+ "profiles_sec": 17,
  "px_fetched": 1,
  "rights_docs": {
   "discount": 829,
@@ -46,7 +46,7 @@
   "todo": 0,
   "total": 1347
  },
- "run": "2026-11-18T02:30+09:00",
+ "run": "2026-11-18T04:34+09:00",
  "short_lnb": {
   "lnb_fetched": 1,
   "lnb_sample": null,
