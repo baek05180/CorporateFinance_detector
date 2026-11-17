@@ -23,7 +23,7 @@
   "live_corps": 960,
   "parsed": 0,
   "pending": 0,
-  "sec": 3,
+  "sec": 2,
   "todo": 0,
   "total": 2216
  },
@@ -46,7 +46,7 @@
   "todo": 0,
   "total": 1347
  },
- "run": "2026-11-18T00:22+09:00",
+ "run": "2026-11-18T02:30+09:00",
  "short_lnb": {
   "lnb_fetched": 1,
   "lnb_sample": null,
