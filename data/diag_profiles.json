@@ -23,7 +23,7 @@
   "live_corps": 960,
   "parsed": 0,
   "pending": 0,
-  "sec": 7,
+  "sec": 3,
   "todo": 0,
   "total": 2216
  },
@@ -33,7 +33,7 @@
  "profiles_done": 113,
  "profiles_fresh": 3556,
  "profiles_left": 0,
- "profiles_sec": 17,
+ "profiles_sec": 15,
  "px_fetched": 1,
  "rights_docs": {
   "discount": 829,
@@ -46,7 +46,7 @@
   "todo": 0,
   "total": 1347
  },
- "run": "2026-11-18T04:34+09:00",
+ "run": "2026-11-18T06:21+09:00",
  "short_lnb": {
   "lnb_fetched": 1,
   "lnb_sample": null,
