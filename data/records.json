@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-17T20:31+09:00",
+  "data_updated": "2026-11-18T07:44+09:00",
   "last_daily": "2026-11-17T20:31+09:00"
  },
  "records": {
@@ -55021,7 +55021,7 @@
    "ytm": 4.0
   },
   "CB:00103547:6": {
-   "amended": false,
+   "amended": true,
    "amount": 6000000000,
    "board_dt": "2026-11-17",
    "captured_by": "watch",
@@ -55045,15 +55045,15 @@
     "운영": 6000000000
    },
    "rcept_dt": "2026-11-17",
-   "rcept_no": "20261117000259",
+   "rcept_no": "20261117000265",
    "refix_floor": 2500,
    "series": "6",
    "shares": 2194586,
    "source": "DART",
    "stock_code": "018620",
    "type": "CB",
-   "updated": "2026-11-17T18:39+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261117000259",
+   "updated": "2026-11-18T07:44+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261117000265",
    "ytm": 2.0
   },
   "CB:00104120:3": {
@@ -146346,16 +146346,16 @@
    "purposes": {
     "운영": 15000000000
    },
-   "rcept_dt": "2026-10-20",
-   "rcept_no": "20261020000190",
+   "rcept_dt": "2026-11-17",
+   "rcept_no": "20261117000264",
    "refix_floor": 2712,
    "series": "1",
    "shares": 3872966,
    "source": "DART",
    "stock_code": "431190",
    "type": "CB",
-   "updated": "2026-10-25T18:20+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261020000190",
+   "updated": "2026-11-18T07:44+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261117000264",
    "ytm": 6.0
   },
   "CB:01695498:-": {
@@ -317725,33 +317725,34 @@
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261117000231"
   },
   "RIGHTS:00103547:20261117000256": {
-   "amended": false,
-   "amount": 1500000000,
+   "amended": true,
+   "amount": 5500000000,
    "board_dt": "2026-11-17",
    "captured_by": "watch",
    "confirmed": true,
    "corp_cls": "K",
    "corp_code": "00103547",
    "corp_name": "우진비앤지",
-   "dilution": 8.65,
+   "dilution": 31.73,
    "first_seen": "2026-11-17T18:39+09:00",
    "id": "RIGHTS:00103547:20261117000256",
    "method": "제3자배정증자",
-   "new_common": 600000,
+   "new_common": 2200000,
    "new_other": null,
    "offering": "사모·주주배정",
+   "original_rcept": "20261117000256",
    "par_value": 2500,
    "purposes": {
-    "운영": 1500000000
+    "운영": 5500000000
    },
    "rcept_dt": "2026-11-17",
-   "rcept_no": "20261117000256",
+   "rcept_no": "20261117000263",
    "source": "DART",
    "stock_code": "018620",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-11-17T18:39+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261117000256"
+   "updated": "2026-11-18T07:44+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261117000263"
   },
   "RIGHTS:00104069:20240429000280": {
    "amended": false,
