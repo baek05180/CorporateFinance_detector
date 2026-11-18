@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-18T16:50+09:00",
+  "data_updated": "2026-11-18T17:44+09:00",
   "last_daily": "2026-11-17T20:31+09:00"
  },
  "records": {
@@ -351302,6 +351302,36 @@
    "updated": "2026-10-25T18:19+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260805000454"
   },
+  "RIGHTS:01049422:20261118000239": {
+   "amended": false,
+   "amount": 11499999456,
+   "board_dt": "2026-11-18",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "K",
+   "corp_code": "01049422",
+   "corp_name": "썸에이지",
+   "dilution": 111.16,
+   "first_seen": "2026-11-18T17:44+09:00",
+   "id": "RIGHTS:01049422:20261118000239",
+   "method": "제3자배정증자",
+   "new_common": 15477792,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 100,
+   "purposes": {
+    "운영": 10499999456,
+    "채무상환": 1000000000
+   },
+   "rcept_dt": "2026-11-18",
+   "rcept_no": "20261118000239",
+   "source": "DART",
+   "stock_code": "208640",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-11-18T17:44+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261118000239"
+  },
   "RIGHTS:01050738:20231113000759": {
    "amended": false,
    "amount": 15636497650,
@@ -374466,7 +374496,7 @@
   "RIGHTS:02040446:20261007000429": {
    "amended": true,
    "amount": 1999999204,
-   "board_dt": "2026-10-07",
+   "board_dt": "2026-11-18",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "E",
@@ -374479,18 +374509,19 @@
    "new_common": null,
    "new_other": 442282,
    "offering": "사모·주주배정",
+   "original_rcept": "20261007000429",
    "par_value": 100,
    "purposes": {
     "운영": 1999999204
    },
-   "rcept_dt": "2026-10-07",
-   "rcept_no": "20261007000429",
+   "rcept_dt": "2026-11-18",
+   "rcept_no": "20261118000301",
    "source": "DART",
    "stock_code": null,
    "stock_kind": "종류주",
    "type": "RIGHTS",
-   "updated": "2026-10-25T18:20+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261007000429"
+   "updated": "2026-11-18T17:44+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261118000301"
   }
  }
 }
