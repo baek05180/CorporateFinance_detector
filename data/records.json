@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-18T17:44+09:00",
+  "data_updated": "2026-11-18T18:38+09:00",
   "last_daily": "2026-11-17T20:31+09:00"
  },
  "records": {
@@ -127885,6 +127885,42 @@
    "type": "CB",
    "updated": "2026-11-10T14:53+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20210708000240",
+   "ytm": 0.0
+  },
+  "CB:01182408:3": {
+   "amended": false,
+   "amount": 1000000000,
+   "board_dt": "2026-11-18",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "K",
+   "corp_code": "01182408",
+   "corp_name": "소프트캠프",
+   "coupon": 0.0,
+   "dilution": 3.1,
+   "exercise_from": "2027-11-30",
+   "exercise_to": "2029-10-30",
+   "first_seen": "2026-11-18T18:38+09:00",
+   "id": "CB:01182408:3",
+   "lead": null,
+   "maturity": "2029-11-30",
+   "method_raw": "사모",
+   "offering": "사모",
+   "pay_dt": "2026-11-30",
+   "price": 6437,
+   "purposes": {
+    "타법인증권": 1000000000
+   },
+   "rcept_dt": "2026-11-18",
+   "rcept_no": "20261118000336",
+   "refix_floor": null,
+   "series": "3",
+   "shares": 155351,
+   "source": "DART",
+   "stock_code": "258790",
+   "type": "CB",
+   "updated": "2026-11-18T18:38+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261118000336",
    "ytm": 0.0
   },
   "CB:01182444:2": {
