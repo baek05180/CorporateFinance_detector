@@ -14,6 +14,7 @@ from datetime import date, timedelta
 from pptx import Presentation
 from pptx.chart.data import CategoryChartData
 from pptx.oxml.ns import qn
+from pptx.util import Emu
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 D = lambda *p: os.path.join(ROOT, "data", *p)  # noqa: E731
@@ -763,9 +764,13 @@ def build(args):
             mon += timedelta(days=7)
         r_d, r_e = run_rpr(tb.cell(3, 1)), table_rpr(tb, 4)
         evd = defaultdict(list)
+        gband = "AAA" if grade.startswith("AAA") else "AA" if grade.startswith("AA") else "A" if grade.startswith("A") else "BBB"
         for b in C["mats"]:
             g = b["grade"] or "-"
             if b["amt"] < 100:
+                continue
+            # 동사와 같은 등급군만 (AA급 회사면 AA+·AA·AA-) — 칸 넘침 방지
+            if not g.startswith(gband) or (gband in ("AA", "A") and g.startswith(gband + "A")):
                 continue
             d_ = date.fromisoformat(b["mat"])
             while d_.weekday() >= 5 or d_.isoformat() in HOLI:
@@ -779,13 +784,24 @@ def build(args):
                 fill_cell(tb.cell(1 + 2 * w, 1 + k), f"{d_.month}월 {d_.day}일" if d_.month == m else "", r_d)
                 items = evd.get(d_, []) if d_.month == m or w == 0 else []
                 wk_tot += sum(x[1] for x in items)
-                txt = HOLI.get(d_.isoformat()) or "\n".join(f"{nm}({amt:,.0f}/{g})" for nm, amt, g in items[:5]) + (f"\n외 {len(items) - 5}건" if len(items) > 5 else "")
+                items = sorted(items, key=lambda x: -x[1])
+                more = items[3:]
+                txt = HOLI.get(d_.isoformat()) or "\n".join(f"{nm}({amt:,.0f}/{g})" for nm, amt, g in items[:3]) + (f"\n외 {len(more)}건 {sum(x[1] for x in more):,.0f}" if more else "")
                 fill_cell(tb.cell(2 + 2 * w, 1 + k), txt, r_e)
                 set_fill(tb.cell(2 + 2 * w, 1 + k), None)
             set_text(tb.cell(2 + 2 * w, 0), f"{m}월 {w + 1}주 만기도래\n{wk_tot:,.0f}억원")
-        set_text(shape(sl, "텍스트 개체 틀 3"), f"\n‘{y % 100}년 {m}월 만기도래 내역 (공모 회사채)")
+        # 5주차에 이번 달 날짜가 없으면 그 주를 지우고 나머지 칸을 키운다 (각주와 겹침 방지)
+        if not any((mon + timedelta(days=28 + k)).month == m for k in range(5)):
+            extra = tb.rows[9].height + tb.rows[10].height
+            del_rows(tb, [9, 10])
+            for ri in (2, 4, 6, 8):
+                tb.rows[ri].height = Emu(tb.rows[ri].height + extra // 4)
+        fn = shape(sl, "TextBox 5")
+        if fn is not None:
+            fn.top = Emu(7000000)
+        set_text(shape(sl, "텍스트 개체 틀 3"), f"\n‘{y % 100}년 {m}월 만기도래 내역 ({gband}급 공모 회사채)")
         tot = sum(x[1] for d_, v in evd.items() if d_.month == m for x in v)
-        set_text(shape(sl, "TextBox 8"), f"{m}월 공모 회사채 만기도래 약 {tot:,.0f}억원 (100억 이상)")
+        set_text(shape(sl, "TextBox 8"), f"{m}월 {gband}급 공모 회사채 만기도래 약 {tot:,.0f}억원 (100억 이상)")
         set_text(shape(sl, "TextBox 5"), "주) 비영업일 만기 도래분은 직후 영업일로 반영, 등급은 최근 증권신고서 기준\n자료: 기업공시시스템, 금융위원회 채권기본정보")
 
     # p24 최근 분기 AA- 공모사채 발행내역

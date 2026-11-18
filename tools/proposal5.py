@@ -751,7 +751,7 @@ def build_schedule(sl, F, C):
 def build_prev(sl, PR, F):
     prev = F["prev"]
     if not prev or not all(r.get("_dem") for r in prev):
-        return
+        return build_prev_blank(sl, PR, F)
     keep = None
     for sh in list(sl.shapes):
         if sh.has_text_frame and "前발행" in sh.text_frame.text:
@@ -825,6 +825,50 @@ def build_prev(sl, PR, F):
         size=9, fill=PALE, margin=100000, space_after=2)
     source(sl, "자료: 투자설명서(수요예측 결과), 기업공시시스템", y=7090000, w=4500000)
     notes(sl, "[작성 가이드] 직전 회차: 모집→주문→확정, 만기별 경쟁률·가산금리, 기관군별 참여, 시사점.")
+
+
+def build_prev_blank(sl, PR, F):
+    """수요예측 결과가 수집되지 않았을 때: 템플릿(다른 회사) 내용을 지우고 아는 값 + ## 로 다시 그린다."""
+    prev, name = F["prev"], F["name"]
+    keep = None
+    for sh in list(sl.shapes):
+        if sh.has_text_frame and "前발행" in sh.text_frame.text and keep is None:
+            keep = sh
+            continue
+        sh._element.getparent().remove(sh._element)
+    if prev:
+        sn = (prev[0].get("series_raw") or "").split("-")[0]
+        dd = prev[0].get("_demand_dt") or prev[0].get("pay_dt") or ""
+        set_shape_text(keep._element, f"前발행 수요예측 상세결과 ({name} {sn}회, {dd[2:].replace('-', '.')})")
+        tl = [tname(r["_tenor"]) if r.get("_tenor") else "-" for r in prev]
+        fin = sum(r["amount"] for r in prev) / 1e8
+        H(sl, f"## (직전 {sn}회 수요예측 결과 한 줄) — {num(fin)}억원 발행")
+        rows = [["구분", "내용"], ["신용등급", F["grade"]], ["수요예측", f"{dd or '##'}, 모집 ##억원 → 주문 ##억원 (##:1)"],
+                ["발행금액", " / ".join(f"{t} {num(r['amount'] / 1e8)}" for t, r in zip(tl, prev)) + "억원"],
+                ["가산금리", " / ".join(f"{t} {r['_spread']:+d}bp" if r.get("_spread") is not None else f"{t} ##bp" for t, r in zip(tl, prev))],
+                ["확정금리", " / ".join(f"{t} {r['_rate']:.3f}%" if r.get("_rate") else f"{t} ##%" for t, r in zip(tl, prev))],
+                ["대표주관", ", ".join(prev[0].get("underwriters") or []) or prev[0].get("lead") or "##"]]
+        sub = f"{sn}회"
+    else:
+        set_shape_text(keep._element, "前발행 수요예측 상세결과")
+        H(sl, "최근 공모사채 발행 이력 없음 — 동일 등급 사례로 대체 (##)")
+        tl = ["##"]
+        rows = [["구분", "내용"], ["신용등급", F["grade"]], ["수요예측", "##"], ["발행금액", "##"], ["가산금리", "##"], ["확정금리", "##"], ["대표주관", "##"]]
+        sub = "직전 회차"
+    bar(sl, PR, f"{name} {sub} 발행개요", X0, 1800000, CW)
+    table(sl, rows, X0, 2110000, CW, [1.1, 3.6], rowh=[280000] + [360000] * 6, size=9)
+    bar(sl, PR, "만기별 모집금액 vs 주문금액 (억원)", X2, 1800000, CW)
+    table(sl, [["구분"] + tl, ["모집"] + ["##"] * len(tl), ["주문"] + ["##"] * len(tl), ["경쟁률"] + ["##:1"] * len(tl)],
+          X2, 2110000, CW, [1.2] + [1] * len(tl), rowh=360000, size=9, align_cols={i: PP_ALIGN.CENTER for i in range(1, len(tl) + 1)})
+    bar(sl, PR, f"{sub} 수요예측 기관군별 참여 (억원)", X0, 4720000, CW)
+    grp = ["운용사", "증권사", "연기금·은행·보험", "기타·외국", "합계"]
+    table(sl, [["기관군"] + tl + ["합계"]] + [[g] + ["##"] * (len(tl) + 1) for g in grp], X0, 5030000, CW,
+          [1.7] + [0.75] * len(tl) + [0.85], rowh=290000, size=8.5, align_cols={i: PP_ALIGN.CENTER for i in range(1, len(tl) + 2)})
+    bar(sl, PR, "이번 회차 시사점", X2, 4500000, CW)
+    textbox(sl, X2, 4810000, CW, 1950000, [{"text": "**## (수요 우위 만기)**", "color": NAVY}, B("##"),
+                                           {"text": "**## (주요 참여 기관군)**", "color": NAVY}, B("##")], size=9, fill=PALE, margin=100000, space_after=2)
+    source(sl, "자료: 투자설명서(수요예측 결과), 기업공시시스템", y=7090000, w=4500000)
+    notes(sl, "[작성 가이드] 수요예측 결과가 아직 수집되지 않은 회차입니다. KIND/DART 투자설명서 '수요예측 참여 내역'에서 ## 를 채우세요.")
 
 
 def build_story(prs, LAY, PR, F, I):
