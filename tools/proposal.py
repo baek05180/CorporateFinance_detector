@@ -19,6 +19,13 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 D = lambda *p: os.path.join(ROOT, "data", *p)  # noqa: E731
 WD = "월화수목금토일"
 HOLI = {"2026-12-25": "성탄절", "2027-01-01": "신정", "2026-10-03": "개천절", "2026-10-09": "한글날"}
+try:  # 휴일·이벤트는 docs/proposal_spec.md 에서 읽는다 (없으면 위 기본값)
+    from tools.proposal_spec import load_spec as _load_spec
+    _SPEC = _load_spec()
+    HOLI.update({str(k): v for k, v in (_SPEC.get("holidays") or {}).items()})
+    EVENTS = {str(k): v for k, v in (_SPEC.get("events") or {}).items()}
+except Exception:  # noqa: BLE001
+    EVENTS = {"2026-11-26": "韓 금통위", "2026-12-09": "美 FOMC (12/8~9)", "2027-01-14": "韓 금통위"}
 
 
 def J(*p, default=None):
@@ -296,7 +303,9 @@ def build(args):
     tenors = [int(x) for x in args.tenors.split(",")]
     # 만기 물량 제안: 직전 회차 만기별 경쟁률 비율로 최초 물량을 나눔(50억 단위)
     split = {}
-    if prev and all(r.get("_dem") for r in prev):
+    if getattr(args, "split", None):
+        split = {int(k): int(v) for k, v in (x.split(":") for x in args.split.split(","))}
+    elif prev and all(r.get("_dem") for r in prev):
         w = {int(round(r["_tenor"])): r["_dem"]["total"] / (r["_dem"]["ratio"] or 1) for r in prev if r.get("_tenor")}
         tot = sum(w.get(t, 0) for t in tenors) or 1
         for t in tenors:
@@ -316,8 +325,8 @@ def build(args):
     ev[sch["수요예측"]].append("수요예측")
     ev[sch["정정"]].append("정정 증권신고서 제출\n(발행조건 확정)")
     ev[issue].append("발행 및 납입\n투자설명서 공시")
-    for d_, nm in ((date(2026, 11, 26), "韓 금통위"), (date(2026, 12, 9), "美 FOMC (12/8~9)"), (date(2027, 1, 15), "韓 금통위")):
-        ev[d_].append(nm)
+    for d_, nm in EVENTS.items():
+        ev[date.fromisoformat(d_)].append(nm)
     for d_, nm in HOLI.items():
         ev[date.fromisoformat(d_)].append(nm)
 
@@ -808,7 +817,13 @@ def build(args):
     # 수동 장표 제거: 11·12 투자기관 동향, 14·15 배정기관, 21 하우스 금리전망 (+ 예정 발행이 없으면 13)
     drop_slides(prs, [11, 12, 14, 15, 21] + ([] if up else [13]))
     prs.save(args.out)
-    return {"split": split, "sch": {k: v.isoformat() for k, v in sch.items()}, "prev": [r["series_raw"] for r in prev], "up": len(up), "p24": len(rows)}
+    facts = {"name": name, "grade": grade, "today": today, "issue": issue, "sch": sch, "split": split, "tenors": tenors,
+             "base": args.base, "max": args.max, "band": band, "prev": prev, "mine": mine, "avg": avg, "by_t": by_t,
+             "lad": dict(lad), "due12": due12, "capex_h": capex_h, "ocf_h": ocf_h, "period": fi.get("period", ""),
+             "sp_now": sp_now, "dl": dl, "aa3": aa3_, "k3": k3_, "base_r": base_r, "rates": rt, "pubs": C["pubs"],
+             "co": co, "metrics": m_, "up": len(up)}
+    return {"split": split, "sch": {k: v.isoformat() for k, v in sch.items()}, "prev": [r["series_raw"] for r in prev], "up": len(up), "p24": len(rows),
+            "facts": facts}
 
 
 if __name__ == "__main__":
@@ -822,5 +837,8 @@ if __name__ == "__main__":
     ap.add_argument("--grade")
     ap.add_argument("--band")
     ap.add_argument("--today")
+    ap.add_argument("--split", help="만기별 금액 지정 (예: 2:600,3:1500,5:900)")
     ap.add_argument("--out", required=True)
-    print(build(ap.parse_args()))
+    res = build(ap.parse_args())
+    res.pop("facts", None)
+    print(res)

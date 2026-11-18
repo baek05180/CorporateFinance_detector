@@ -11,7 +11,7 @@ from .datagokr import redact
 from .store import dump_json, load_json
 
 ECOS = {  # 817Y002 시장금리(일별)
-    "ktb3": "010200000", "ktb5": "010200001", "ktb10": "010210000", "aa3": "010300000", "bbb3": "010320000",
+    "ktb3": "010200000", "ktb5": "010200001", "ktb10": "010210000", "aa3": "010300000", "bbb3": "010320000", "cp91": "010503000",
 }
 FRED = {"ust2": "DGS2", "ust10": "DGS10", "ffr_hi": "DFEDTARU", "ffr_lo": "DFEDTARL"}
 

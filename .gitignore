@@ -4,3 +4,6 @@ __pycache__/
 .venv/
 public/
 data/probe/
+# 제안서 생성물·템플릿은 공개 저장소에 올리지 않는다
+out/
+*.pptx
