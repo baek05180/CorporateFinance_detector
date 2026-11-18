@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-18T14:33+09:00",
+  "data_updated": "2026-11-18T15:34+09:00",
   "last_daily": "2026-11-17T20:31+09:00"
  },
  "records": {
@@ -366855,6 +366855,35 @@
    "type": "RIGHTS",
    "updated": "2026-11-05T20:28+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261105000528"
+  },
+  "RIGHTS:01406751:20261118000171": {
+   "amended": false,
+   "amount": 2999993500,
+   "board_dt": "2026-11-18",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "E",
+   "corp_code": "01406751",
+   "corp_name": "메를로랩",
+   "dilution": 3.31,
+   "first_seen": "2026-11-18T15:34+09:00",
+   "id": "RIGHTS:01406751:20261118000171",
+   "method": "제3자배정증자",
+   "new_common": 260869,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 500,
+   "purposes": {
+    "운영": 2999993500
+   },
+   "rcept_dt": "2026-11-18",
+   "rcept_no": "20261118000171",
+   "source": "DART",
+   "stock_code": null,
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-11-18T15:34+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261118000171"
   },
   "RIGHTS:01409022:20250616000371": {
    "amended": false,
