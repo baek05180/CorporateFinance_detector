@@ -218,7 +218,7 @@ def draft_story(F, I):
         if len(out.get("points", [])) >= 4 and len(out.get("qa", [])) >= 5:
             return out
     except Exception as e:  # noqa: BLE001
-        print("story draft skipped:", str(e)[:200])
+        print("story draft skipped:", type(e).__name__)  # 내용은 로그에 남기지 않음
     return None
 
 
@@ -1015,7 +1015,7 @@ def run(template, inputs, out, today=None, tighten=True):
             from tools.pptx_tighten import tighten_file
             tighten_file(out, out, pad=(spec.get("layout") or {}).get("pad_emu", 90000))
         except Exception as e:  # noqa: BLE001
-            print("tighten skipped:", str(e)[:200])
+            print("tighten skipped:", type(e).__name__)
     return out
 
 

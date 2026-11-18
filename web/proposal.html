@@ -101,6 +101,11 @@ async function poll(id, t0) {
   const st = $('#st');
   st.hidden = false;
   const r = await fetch(`/api/proposal/${id}`).then(r => r.json()).catch(() => ({ state: 'queued' }));
+  if (r.error && !r.state) {
+    st.innerHTML = `<div class="err">${esc(r.error)}</div>`;
+    $('#go').disabled = false;
+    return;
+  }
   const sec = Math.round((Date.now() - t0) / 1000);
   if (r.state === 'done') {
     st.innerHTML = `<div class="status"><b>완성되었습니다.</b><a class="dl" href="/api/proposal/${id}?download=1">PPT 내려받기</a></div>

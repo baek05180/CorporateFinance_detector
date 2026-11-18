@@ -34,18 +34,36 @@ GitHub → Settings → Developer settings → Fine-grained token
 - Repository access: 이 저장소만
 - Permissions: **Actions: Read and write** (그 외 없음)
 
-### 4. Cloudflare Pages 프로젝트 (`ecm-board`) → Settings
-- Variables and Secrets: `GH_TOKEN`(Secret, 위 토큰), `GH_REPO` = `baek05180/CorporateFinance_detector`, `GH_REF` = `main`
-- Bindings → R2 bucket: 변수명 `PROPOSALS`, 버킷 `ecm-proposals`
-- 설정 후 한 번 재배포 (Actions → collect 수동 실행 또는 site 워크플로)
-
-### 5. Cloudflare Access (제안서 기능만 잠금)
+### 4. Cloudflare Access (제안서 기능만 잠금)
 Zero Trust → Access → Applications → Self-hosted
 - 도메인: 사이트 도메인, 경로 2개 — `/proposal*`, `/api/proposal*`
-- Policy: Allow → Emails (또는 Emails ending in `@회사도메인`)
-- 나머지 사이트는 그대로 공개
+  - `ecm-board.pages.dev` 주소로도 같은 경로 2개를 추가 (기본 주소로 우회하지 못하게)
+- Policy: Allow → Emails → 본인(과 지정한 사람) 이메일
+- 만든 뒤 애플리케이션의 **Application Audience (AUD) Tag** 와, Zero Trust → Settings 의 **팀 도메인**(`xxx.cloudflareaccess.com`)을 메모
 
-API 는 Access 헤더가 없으면 401 로 거절한다(설정 누락 대비). 로컬 개발 때만 `REQUIRE_ACCESS=0`.
+### 5. Cloudflare Pages 프로젝트 (`ecm-board`) → Settings
+- Variables and Secrets
+  | 이름 | 값 |
+  |---|---|
+  | `GH_TOKEN` (Secret) | 3번 토큰 |
+  | `GH_REPO` | `baek05180/CorporateFinance_detector` |
+  | `GH_REF` | `main` |
+  | `ACCESS_TEAM_DOMAIN` | 예: `myteam.cloudflareaccess.com` |
+  | `ACCESS_AUD` | 4번 AUD Tag |
+  | `ALLOWED_EMAILS` | 쓸 수 있는 이메일 (쉼표 구분) — Access 정책과 같은 목록 |
+- Bindings → R2 bucket: 변수명 `PROPOSALS`, 버킷 `ecm-proposals`
+- 설정 후 한 번 재배포 (Actions → site 또는 collect 수동 실행)
+
+## 보안 구조
+| 무엇을 | 어떻게 막나 |
+|---|---|
+| API 키·토큰 | 코드에 없음. GitHub Secret / Cloudflare Secret 에만. GitHub 토큰은 이 저장소 Actions 실행만, R2 토큰은 버킷 하나만 |
+| 제안서 기능 사용 | Cloudflare Access 로그인 + API 가 Access 토큰(JWT) 서명·대상·만료를 직접 검증 + `ALLOWED_EMAILS` 목록. `*.pages.dev`·미리보기 주소로 와도 같은 검증 |
+| 입력값(발행 계획·메모) | 비공개 R2 에만 저장. GitHub 에는 무작위 요청 ID 만 넘기고, 실행 기록에는 성공/실패만 찍음 (오류 상세는 R2 에만) |
+| 템플릿·결과 PPT | 비공개 R2. 요청한 본인만 상태 확인·내려받기, 7일 뒤 삭제 |
+| 코드·명세 md | **저장소가 공개면 누구나 볼 수 있음** (키는 없으므로 남이 내 계정으로 돌릴 수는 없음). 숨기려면 저장소를 비공개로 |
+
+`ANTHROPIC_API_KEY` 를 넣으면 팝업 메모·공시 정보가 Anthropic API 로 전송된다(초안 작성용). 사내 규정상 외부 전송이 어렵다면 넣지 않는다.
 
 ## 로컬에서 만들어 보기
 ```bash
