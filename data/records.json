@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-18T20:42+09:00",
+  "data_updated": "2026-11-19T07:43+09:00",
   "last_daily": "2026-11-18T20:42+09:00"
  },
  "records": {
@@ -356969,6 +356969,35 @@
    "type": "RIGHTS",
    "updated": "2026-10-26T09:25+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260721000167"
+  },
+  "RIGHTS:01170962:20261118000366": {
+   "amended": false,
+   "amount": 42025200000,
+   "board_dt": "2026-11-18",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "K",
+   "corp_code": "01170962",
+   "corp_name": "GRT",
+   "dilution": 16.18,
+   "first_seen": "2026-11-19T07:43+09:00",
+   "id": "RIGHTS:01170962:20261118000366",
+   "method": "제3자배정증자",
+   "new_common": 15009000,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": null,
+   "purposes": {
+    "타법인증권": 42025200000
+   },
+   "rcept_dt": "2026-11-18",
+   "rcept_no": "20261118000366",
+   "source": "DART",
+   "stock_code": "900290",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-11-19T07:43+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261118000366"
   },
   "RIGHTS:01174223:20231109000122": {
    "amended": true,
