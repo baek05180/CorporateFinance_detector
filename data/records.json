@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-18T15:34+09:00",
+  "data_updated": "2026-11-18T16:50+09:00",
   "last_daily": "2026-11-17T20:31+09:00"
  },
  "records": {
@@ -325598,6 +325598,35 @@
    "updated": "2026-10-26T09:14+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260122000498"
   },
+  "RIGHTS:00160144:20261118000233": {
+   "amended": false,
+   "amount": 650000000000,
+   "board_dt": "2026-11-18",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "E",
+   "corp_code": "00160144",
+   "corp_name": "한국투자증권",
+   "dilution": 0.04,
+   "first_seen": "2026-11-18T16:50+09:00",
+   "id": "RIGHTS:00160144:20261118000233",
+   "method": "주주배정증자",
+   "new_common": 13000,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 5000,
+   "purposes": {
+    "운영": 650000000000
+   },
+   "rcept_dt": "2026-11-18",
+   "rcept_no": "20261118000233",
+   "source": "DART",
+   "stock_code": null,
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-11-18T16:50+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261118000233"
+  },
   "RIGHTS:00160375:20260312000261": {
    "amended": true,
    "amount": 13152100000,
@@ -340604,33 +340633,33 @@
   },
   "RIGHTS:00615723:20260724000529": {
    "amended": true,
-   "amount": 1999999014,
-   "board_dt": "2026-11-09",
+   "amount": 1999999575,
+   "board_dt": "2026-11-18",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
    "corp_code": "00615723",
    "corp_name": "MSDI",
-   "dilution": 3.12,
+   "dilution": 3.51,
    "first_seen": "2026-10-26T09:20+09:00",
    "id": "RIGHTS:00615723:20260724000529",
    "method": "제3자배정증자",
-   "new_common": 630318,
+   "new_common": 709975,
    "new_other": null,
    "offering": "사모·주주배정",
    "original_rcept": "20260724000529",
    "par_value": 1000,
    "purposes": {
-    "운영": 1999999014
+    "운영": 1999999575
    },
-   "rcept_dt": "2026-11-09",
-   "rcept_no": "20261109000341",
+   "rcept_dt": "2026-11-18",
+   "rcept_no": "20261118000167",
    "source": "DART",
    "stock_code": "123010",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-11-09T18:44+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261109000341"
+   "updated": "2026-11-18T16:50+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261118000167"
   },
   "RIGHTS:00615723:20261013000136": {
    "amended": true,
@@ -341069,7 +341098,7 @@
   "RIGHTS:00618410:20260922000240": {
    "amended": true,
    "amount": 4999999059,
-   "board_dt": "2026-11-10",
+   "board_dt": "2026-11-18",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
@@ -341088,14 +341117,14 @@
     "운영": 2399999059,
     "채무상환": 2600000000
    },
-   "rcept_dt": "2026-11-10",
-   "rcept_no": "20261110000317",
+   "rcept_dt": "2026-11-18",
+   "rcept_no": "20261118000231",
    "source": "DART",
    "stock_code": "101000",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-11-10T16:37+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261110000317"
+   "updated": "2026-11-18T16:50+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261118000231"
   },
   "RIGHTS:00618410:20261020000377": {
    "amended": true,
@@ -359133,7 +359162,7 @@
   "RIGHTS:01231786:20261022000486": {
    "amended": true,
    "amount": 1999996128,
-   "board_dt": "2026-11-09",
+   "board_dt": "2026-11-18",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
@@ -359149,17 +359178,17 @@
    "original_rcept": "20261022000486",
    "par_value": 500,
    "purposes": {
-    "운영": 999996128,
-    "타법인증권": 1000000000
+    "운영": 999996288,
+    "타법인증권": 999999840
    },
-   "rcept_dt": "2026-11-09",
-   "rcept_no": "20261109000221",
+   "rcept_dt": "2026-11-18",
+   "rcept_no": "20261118000201",
    "source": "DART",
    "stock_code": "317770",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-11-09T16:53+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261109000221"
+   "updated": "2026-11-18T16:50+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261118000201"
   },
   "RIGHTS:01231786:20261030000447": {
    "amended": true,
