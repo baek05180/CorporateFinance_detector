@@ -1179,6 +1179,11 @@ async function viewCompany(key) {
     $$('[data-peer]').forEach(a => { const k = byCode[a.dataset.peer]; if (k) a.href = '#/company/' + encodeURIComponent(k); }); });
 }
 
+// 공모사채 발행 제안서(PPT) — 신용등급이 있는 회사만. 팝업 페이지는 Cloudflare Access 로 보호
+function openProposal(key) {
+  const w = window.open(`/proposal/?corp=${key}`, 'proposal', 'width=720,height=860,scrollbars=yes');
+  if (!w) location.href = `/proposal/?corp=${key}`;
+}
 // ───────────── 조달 제안 보고서 ─────────────
 const OPT_Q = {
   public_bond: ['차환 대상 사채의 만기와 금액', '희망 만기 구조(2·3·5년)와 금리 수준', '신용평가사 등급 전망(Outlook)과 평가 일정'],
@@ -1245,7 +1250,7 @@ async function viewReport(key) {
     ['시장 가치', m.mcap ? `시가총액 ${wonTxt(m.mcap)}${m.per ? ` · PER ${ratio(m.per)}` : ''}${m.pbr ? ` · PBR ${ratio(m.pbr, 2)}` : ''}` : (co.market === 'E' ? '비상장' : '주가 정보 없음'), ''],
   ];
   app.innerHTML = `
-    <div class="noprint" style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap"><a class="btn" href="#/company/${encodeURIComponent(co.key)}">← 회사 화면</a><button class="btn" onclick="print()" style="margin-left:auto">인쇄 / PDF 저장</button></div>
+    <div class="noprint" style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap"><a class="btn" href="#/company/${encodeURIComponent(co.key)}">← 회사 화면</a>${co.rating ? `<button class="btn primary" onclick="openProposal('${encodeURIComponent(co.key)}')" style="margin-left:auto">공모사채 제안서 작성 (PPT)</button>` : ''}<button class="btn" onclick="print()" style="${co.rating ? '' : 'margin-left:auto'}">인쇄 / PDF 저장</button></div>
     <div class="card">
       <div class="note">조달 제안 보고서 · ${todayIso.replace(/-/g, '.')} 작성</div>
       <h1 style="margin-top:4px">${esc(co.name)} <span class="mk" style="font-size:12px">${MKF[co.market] || '비상장'}</span></h1>

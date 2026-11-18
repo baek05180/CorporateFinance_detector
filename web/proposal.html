@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>공모사채 발행 제안서 작성 · __SITE_NAME__</title>
+<style>
+  :root { --navy: #05507D; --sky: #00A5E5; --ink: #1f2328; --ink2: #57606a; --line: #d0d7de; --bg: #f6f8fa; --bad: #cf222e; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 14px/1.5 "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif; color: var(--ink); background: var(--bg); }
+  main { max-width: 640px; margin: 0 auto; padding: 20px; }
+  h1 { font-size: 18px; margin: 0 0 4px; color: var(--navy); }
+  .sub { color: var(--ink2); margin-bottom: 16px; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 16px; margin-bottom: 14px; }
+  label { display: block; font-weight: 600; margin: 12px 0 4px; }
+  label .req { color: var(--bad); margin-left: 2px; }
+  input, textarea { width: 100%; padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px; font: inherit; }
+  textarea { min-height: 72px; resize: vertical; }
+  .help { color: var(--ink2); font-size: 12px; margin-top: 3px; }
+  .row { display: flex; gap: 8px; align-items: center; }
+  button { padding: 10px 16px; border-radius: 6px; border: 1px solid var(--navy); background: var(--navy); color: #fff; font: inherit; font-weight: 600; cursor: pointer; }
+  button[disabled] { opacity: .5; cursor: default; }
+  .err { color: var(--bad); margin-top: 8px; white-space: pre-wrap; }
+  .status { display: flex; gap: 10px; align-items: center; }
+  .spin { width: 16px; height: 16px; border: 2px solid var(--line); border-top-color: var(--navy); border-radius: 50%; animation: s 1s linear infinite; }
+  @keyframes s { to { transform: rotate(360deg); } }
+  a.dl { display: inline-block; padding: 10px 16px; border-radius: 6px; background: var(--sky); color: #fff; text-decoration: none; font-weight: 600; }
+  .note { color: var(--ink2); font-size: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>공모사채 발행 제안서 작성</h1>
+  <div class="sub" id="co">불러오는 중…</div>
+  <form class="card" id="f" autocomplete="off"></form>
+  <div class="card" id="st" hidden></div>
+  <p class="note">입력 항목·이벤트·기본 문구는 저장소의 <code>docs/proposal_spec.md</code>에서 관리합니다. 확정할 수 없는 값은 PPT에 빨간 <b>##</b>로 남습니다.</p>
+</main>
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const corp = new URLSearchParams(location.search).get('corp') || '';
+let co = null;
+
+async function init() {
+  if (!/^[0-9A-Za-z]{1,20}$/.test(corp)) { $('#co').textContent = '회사 정보가 없습니다. 회사 화면에서 다시 열어 주세요.'; return; }
+  const [spec, c] = await Promise.all([
+    fetch('/data/proposal_spec.json').then(r => r.json()),
+    fetch(`/data/co/${corp}.json`).then(r => r.ok ? r.json() : null),
+  ]);
+  co = c;
+  if (!co) { $('#co').textContent = '회사 데이터를 찾지 못했습니다.'; return; }
+  $('#co').innerHTML = `<b>${esc(co.name)}</b> · 신용등급 ${esc(co.rating || '없음')}`;
+  if (!co.rating) { $('#f').innerHTML = '<div class="err">신용등급이 확인된 회사만 제안서를 만들 수 있습니다.</div>'; return; }
+  const saved = JSON.parse(sessionStorageGet(`proposal:${corp}`) || '{}');
+  $('#f').innerHTML = spec.fields.map(f => {
+    const v = saved[f.key] ?? f.default ?? '';
+    const req = f.required ? ' required' : '';
+    const input = f.type === 'textarea'
+      ? `<textarea name="${esc(f.key)}"${req}>${esc(v)}</textarea>`
+      : `<input name="${esc(f.key)}" type="${f.type === 'number' ? 'number' : f.type === 'date' ? 'date' : 'text'}" value="${esc(v)}"${req}>`;
+    return `<label>${esc(f.label)}${f.required ? '<span class="req">*</span>' : ''}</label>${input}${f.help ? `<div class="help">${esc(f.help)}</div>` : ''}`;
+  }).join('') + `<div class="row" style="margin-top:16px"><button id="go" type="submit">제안서 만들기</button><span class="note">생성에 3~5분 걸립니다.</span></div><div class="err" id="err"></div>`;
+  $('#f').addEventListener('submit', submit);
+}
+
+function sessionStorageGet(k) { try { return sessionStorage.getItem(k); } catch { return null; } }
+function sessionStorageSet(k, v) { try { sessionStorage.setItem(k, v); } catch { /* 저장 안 돼도 무시 */ } }
+
+function check(d) {
+  const parts = String(d.split || '').split(',').map(s => s.trim()).filter(Boolean);
+  if (!parts.length || parts.some(p => !/^\d{1,2}:\d+$/.test(p))) return '만기별 금액은 "2:600,3:1500" 형식으로 입력해 주세요.';
+  const sum = parts.reduce((a, p) => a + Number(p.split(':')[1]), 0);
+  if (d.base && Number(d.base) !== sum) return `만기별 금액 합계(${sum.toLocaleString()}억)가 발행금액(${Number(d.base).toLocaleString()}억)과 다릅니다.`;
+  if (d.max && Number(d.max) < Number(d.base)) return '최대 증액은 발행금액 이상이어야 합니다.';
+  if (d.issue && d.issue <= new Date().toISOString().slice(0, 10)) return '발행일은 오늘 이후여야 합니다.';
+  return '';
+}
+
+async function submit(e) {
+  e.preventDefault();
+  const d = Object.fromEntries(new FormData($('#f')).entries());
+  const msg = check(d);
+  $('#err').textContent = msg;
+  if (msg) return;
+  sessionStorageSet(`proposal:${corp}`, JSON.stringify(d));
+  $('#go').disabled = true;
+  try {
+    const r = await fetch('/api/proposal', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ corp, ...d }) });
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok) throw new Error(j.error || `요청 실패 (${r.status})`);
+    poll(j.id, Date.now());
+  } catch (err) {
+    $('#err').textContent = err.message;
+    $('#go').disabled = false;
+  }
+}
+
+async function poll(id, t0) {
+  const st = $('#st');
+  st.hidden = false;
+  const r = await fetch(`/api/proposal/${id}`).then(r => r.json()).catch(() => ({ state: 'queued' }));
+  const sec = Math.round((Date.now() - t0) / 1000);
+  if (r.state === 'done') {
+    st.innerHTML = `<div class="status"><b>완성되었습니다.</b><a class="dl" href="/api/proposal/${id}?download=1">PPT 내려받기</a></div>
+      <p class="note">빨간 ## 표시는 최종 확정 시 직접 입력할 값입니다. 파일은 7일 뒤 삭제됩니다.</p>`;
+    $('#go').disabled = false;
+    return;
+  }
+  if (r.state === 'error') {
+    st.innerHTML = `<div class="err">생성에 실패했습니다: ${esc(r.error || '알 수 없는 오류')}</div>`;
+    $('#go').disabled = false;
+    return;
+  }
+  if (sec > 900) {
+    st.innerHTML = '<div class="err">15분이 지나도 끝나지 않았습니다. GitHub Actions 의 proposal 실행 기록을 확인해 주세요.</div>';
+    $('#go').disabled = false;
+    return;
+  }
+  const lab = { queued: '대기 중', running: '작성 중' }[r.state] || '대기 중';
+  st.innerHTML = `<div class="status"><div class="spin"></div><span>${lab}… (${Math.floor(sec / 60)}분 ${sec % 60}초)</span></div>`;
+  setTimeout(() => poll(id, t0), 8000);
+}
+
+init().catch(e => { $('#co').textContent = '불러오기 실패: ' + e.message; });
+</script>
+</body>
+</html>

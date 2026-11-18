@@ -334,6 +334,15 @@ def main():
     with open(os.path.join(HERE, "template.html"), encoding="utf-8") as f:
         html = f.read().replace("__SITE_NAME__", SITE_NAME)
     write(os.path.join(config.PUBLIC_DIR, "index.html"), html)
+    # 공모사채 제안서 팝업: 입력 항목은 docs/proposal_spec.md 의 '설정' 블록에서 매번 다시 읽는다
+    try:
+        from tools.proposal_spec import load_spec
+        spec = load_spec()
+        write(os.path.join(out_dir, "proposal_spec.json"), jdump({"fields": spec.get("fields") or [], "slides": spec.get("slides") or {}}))
+        with open(os.path.join(HERE, "proposal.html"), encoding="utf-8") as f:
+            write(os.path.join(config.PUBLIC_DIR, "proposal", "index.html"), f.read().replace("__SITE_NAME__", SITE_NAME))
+    except Exception as e:  # noqa: BLE001 — 제안서 설정이 깨져도 사이트 생성은 계속
+        print("proposal page skipped:", e)
     # Cloudflare Pages: 데이터는 자주 바뀌므로 캐시를 짧게
     write(os.path.join(config.PUBLIC_DIR, "_headers"), "/data/*\n  Cache-Control: public, max-age=300\n")
     print(f"deals={len(rows)} companies={len(index)} (프로필 {sum(1 for k in keys if os.path.exists(os.path.join(config.DATA_DIR, 'co', k + '.json')))})")
