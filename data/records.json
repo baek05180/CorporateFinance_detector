@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-19T16:50+09:00",
+  "data_updated": "2026-11-19T17:46+09:00",
   "last_daily": "2026-11-18T20:42+09:00"
  },
  "records": {
@@ -346034,6 +346034,35 @@
    "type": "RIGHTS",
    "updated": "2026-10-26T09:21+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251215000451"
+  },
+  "RIGHTS:00867973:20261119000342": {
+   "amended": false,
+   "amount": 2999999775,
+   "board_dt": "2026-11-19",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "K",
+   "corp_code": "00867973",
+   "corp_name": "서남",
+   "dilution": 7.01,
+   "first_seen": "2026-11-19T17:46+09:00",
+   "id": "RIGHTS:00867973:20261119000342",
+   "method": "일반공모증자",
+   "new_common": 1857585,
+   "new_other": null,
+   "offering": "공모",
+   "par_value": 500,
+   "purposes": {
+    "운영": 2999999775
+   },
+   "rcept_dt": "2026-11-19",
+   "rcept_no": "20261119000342",
+   "source": "DART",
+   "stock_code": "294630",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-11-19T17:46+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261119000342"
   },
   "RIGHTS:00874937:20260730000414": {
    "amended": true,
