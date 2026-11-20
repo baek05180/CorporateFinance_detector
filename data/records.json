@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-20T16:44+09:00",
+  "data_updated": "2026-11-20T17:43+09:00",
   "last_daily": "2026-11-19T20:41+09:00"
  },
  "records": {
@@ -116150,7 +116150,7 @@
   },
   "CB:01022902:12": {
    "amended": true,
-   "amount": 1000000000,
+   "amount": 1490000000,
    "board_dt": "2026-10-29",
    "captured_by": "watch",
    "confirmed": true,
@@ -116158,30 +116158,30 @@
    "corp_code": "01022902",
    "corp_name": "애드바이오텍",
    "coupon": 6.0,
-   "dilution": 3.11,
-   "exercise_from": "2027-11-20",
-   "exercise_to": "2029-10-20",
+   "dilution": 6.65,
+   "exercise_from": "2027-11-30",
+   "exercise_to": "2029-10-30",
    "first_seen": "2026-10-30T07:29+09:00",
    "id": "CB:01022902:12",
    "lead": null,
-   "maturity": "2029-11-20",
+   "maturity": "2029-11-30",
    "method_raw": "사모",
    "offering": "사모",
-   "pay_dt": "2026-11-20",
-   "price": 1000,
+   "pay_dt": "2026-11-30",
+   "price": 672,
    "purposes": {
-    "타법인증권": 1000000000
+    "타법인증권": 1490000000
    },
-   "rcept_dt": "2026-11-12",
-   "rcept_no": "20261112000003",
-   "refix_floor": 700,
+   "rcept_dt": "2026-11-20",
+   "rcept_no": "20261120000576",
+   "refix_floor": 500,
    "series": "12",
-   "shares": 1000000,
+   "shares": 2217261,
    "source": "DART",
    "stock_code": "179530",
    "type": "CB",
-   "updated": "2026-11-12T08:33+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261112000003",
+   "updated": "2026-11-20T17:43+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261120000576",
    "ytm": 6.0
   },
   "CB:01022902:5": {
@@ -325189,6 +325189,35 @@
    "type": "RIGHTS",
    "updated": "2026-10-26T09:13+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260402003918"
+  },
+  "RIGHTS:00152385:20261120000562": {
+   "amended": false,
+   "amount": 1999999400,
+   "board_dt": "2026-11-20",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "Y",
+   "corp_code": "00152385",
+   "corp_name": "에이프로젠",
+   "dilution": 5.57,
+   "first_seen": "2026-11-20T17:43+09:00",
+   "id": "RIGHTS:00152385:20261120000562",
+   "method": "일반공모증자",
+   "new_common": 1428571,
+   "new_other": null,
+   "offering": "공모",
+   "par_value": 500,
+   "purposes": {
+    "운영": 1999999400
+   },
+   "rcept_dt": "2026-11-20",
+   "rcept_no": "20261120000562",
+   "source": "DART",
+   "stock_code": "007460",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-11-20T17:43+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261120000562"
   },
   "RIGHTS:00152932:20231026000462": {
    "amended": false,
