@@ -1,7 +1,7 @@
 {
  "meta": {
-  "data_updated": "2026-11-20T18:38+09:00",
-  "last_daily": "2026-11-19T20:41+09:00"
+  "data_updated": "2026-11-20T20:41+09:00",
+  "last_daily": "2026-11-20T20:41+09:00"
  },
  "records": {
   "BOND:00100814:63-1": {
@@ -40790,12 +40790,18 @@
    "amended": false,
    "amount": 45000000000,
    "captured_by": "watch",
-   "confirmed": false,
+   "confirmed": true,
    "corp_cls": "E",
    "corp_code": "01134395",
    "corp_name": "뉴스테이허브제1호위탁관리부동산투자회사",
    "coupon": null,
    "coupon_raw": "-",
+   "filings": [
+    [
+     "20261120000529",
+     "증권신고서(채무증권)"
+    ]
+   ],
    "first_seen": "2026-11-20T16:44+09:00",
    "guarantor": null,
    "id": "BOND:01134395:3",
@@ -40804,6 +40810,7 @@
    "method_raw": "공모",
    "name": "무보증사채",
    "offering": "공모",
+   "original_rcept": "20261120000529",
    "pay_dt": "2026-12-02",
    "rating": "-",
    "rcept_dt": "2026-11-20",
@@ -41052,12 +41059,18 @@
    "amended": false,
    "amount": 115000000000,
    "captured_by": "watch",
-   "confirmed": false,
+   "confirmed": true,
    "corp_cls": "E",
    "corp_code": "01195624",
    "corp_name": "뉴스테이허브제2호위탁관리부동산투자회사",
    "coupon": null,
    "coupon_raw": "-",
+   "filings": [
+    [
+     "20261120000534",
+     "증권신고서(채무증권)"
+    ]
+   ],
    "first_seen": "2026-11-20T16:44+09:00",
    "guarantor": null,
    "id": "BOND:01195624:2",
@@ -41066,6 +41079,7 @@
    "method_raw": "공모",
    "name": "무보증사채",
    "offering": "공모",
+   "original_rcept": "20261120000534",
    "pay_dt": "2026-12-02",
    "rating": "-",
    "rcept_dt": "2026-11-20",
@@ -41998,12 +42012,18 @@
    "amended": false,
    "amount": 60000000000,
    "captured_by": "watch",
-   "confirmed": false,
+   "confirmed": true,
    "corp_cls": "E",
    "corp_code": "01310463",
    "corp_name": "민간임대허브제5호위탁관리부동산투자회사",
    "coupon": null,
    "coupon_raw": "-",
+   "filings": [
+    [
+     "20261120000542",
+     "증권신고서(채무증권)"
+    ]
+   ],
    "first_seen": "2026-11-20T16:44+09:00",
    "guarantor": null,
    "id": "BOND:01310463:1",
@@ -42012,6 +42032,7 @@
    "method_raw": "공모",
    "name": "무보증사채",
    "offering": "공모",
+   "original_rcept": "20261120000542",
    "pay_dt": "2026-12-02",
    "rating": "-",
    "rcept_dt": "2026-11-20",
@@ -42070,12 +42091,18 @@
    "amended": false,
    "amount": 30000000000,
    "captured_by": "watch",
-   "confirmed": false,
+   "confirmed": true,
    "corp_cls": "E",
    "corp_code": "01310515",
    "corp_name": "민간임대허브제4호위탁관리부동산투자회사",
    "coupon": null,
    "coupon_raw": "-",
+   "filings": [
+    [
+     "20261120000544",
+     "증권신고서(채무증권)"
+    ]
+   ],
    "first_seen": "2026-11-20T16:44+09:00",
    "guarantor": null,
    "id": "BOND:01310515:2",
@@ -42084,6 +42111,7 @@
    "method_raw": "공모",
    "name": "무보증사채",
    "offering": "공모",
+   "original_rcept": "20261120000544",
    "pay_dt": "2026-12-02",
    "rating": "-",
    "rcept_dt": "2026-11-20",
@@ -284109,7 +284137,7 @@
    "first_seen": "2026-10-26T09:33+09:00",
    "guarantee": "무보증",
    "id": "PBOND:KR6423271F38",
-   "industry": "제조업",
+   "industry": "전시, 컨벤션 및 행사 대행업",
    "isin": "KR6423271F38",
    "issue_dt": "2025-03-27",
    "kind": "일반회사채",
@@ -284125,7 +284153,7 @@
    "source": "공공데이터포털",
    "type": "BOND",
    "underwriter": null,
-   "updated": "2026-10-26T09:33+09:00",
+   "updated": "2026-11-20T20:30+09:00",
    "url": null,
    "usage": ""
   },
@@ -325195,7 +325223,7 @@
    "amount": 1999999400,
    "board_dt": "2026-11-20",
    "captured_by": "watch",
-   "confirmed": false,
+   "confirmed": true,
    "corp_cls": "Y",
    "corp_code": "00152385",
    "corp_name": "에이프로젠",
@@ -329249,7 +329277,7 @@
    "amount": 2999998540,
    "board_dt": "2026-11-20",
    "captured_by": "watch",
-   "confirmed": false,
+   "confirmed": true,
    "corp_cls": "K",
    "corp_code": "00258102",
    "corp_name": "지엔코",
@@ -341189,7 +341217,7 @@
   "RIGHTS:00615723:20261013000136": {
    "amended": true,
    "amount": 1999999575,
-   "board_dt": "2026-11-18",
+   "board_dt": "2026-11-20",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
@@ -341207,14 +341235,14 @@
    "purposes": {
     "운영": 1999999575
    },
-   "rcept_dt": "2026-11-18",
-   "rcept_no": "20261118000167",
+   "rcept_dt": "2026-11-20",
+   "rcept_no": "20261120000590",
    "source": "DART",
    "stock_code": "123010",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-11-18T20:29+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261118000167"
+   "updated": "2026-11-20T20:28+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261120000590"
   },
   "RIGHTS:00615723:20261026000212": {
    "amended": true,
@@ -341716,7 +341744,7 @@
   "RIGHTS:00618410:20261030000683": {
    "amended": true,
    "amount": 4999999059,
-   "board_dt": "2026-11-10",
+   "board_dt": "2026-11-18",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
@@ -341735,14 +341763,14 @@
     "운영": 2399999059,
     "채무상환": 2600000000
    },
-   "rcept_dt": "2026-11-10",
-   "rcept_no": "20261110000317",
+   "rcept_dt": "2026-11-18",
+   "rcept_no": "20261118000231",
    "source": "DART",
    "stock_code": "101000",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-11-12T20:28+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261110000317"
+   "updated": "2026-11-20T20:28+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261118000231"
   },
   "RIGHTS:00618410:20261102000212": {
    "amended": true,
@@ -344370,33 +344398,33 @@
   },
   "RIGHTS:00781202:20261103000360": {
    "amended": true,
-   "amount": 1999999070,
-   "board_dt": "2026-11-13",
+   "amount": 9999999090,
+   "board_dt": "2026-11-19",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
    "corp_code": "00781202",
    "corp_name": "파이온엑스",
-   "dilution": 36.24,
+   "dilution": 178.47,
    "first_seen": "2026-11-04T20:34+09:00",
    "id": "RIGHTS:00781202:20261103000360",
-   "method": "일반공모증자",
-   "new_common": 1912045,
+   "method": "제3자배정증자",
+   "new_common": 9416195,
    "new_other": null,
-   "offering": "공모",
+   "offering": "사모·주주배정",
    "original_rcept": "20261103000360",
-   "par_value": 205,
+   "par_value": 206,
    "purposes": {
-    "운영": 1999999070
+    "운영": 9999999090
    },
-   "rcept_dt": "2026-11-13",
-   "rcept_no": "20261113001053",
+   "rcept_dt": "2026-11-19",
+   "rcept_no": "20261119000263",
    "source": "DART",
    "stock_code": "900100",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-11-16T20:50+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261113001053"
+   "updated": "2026-11-20T20:28+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261119000263"
   },
   "RIGHTS:00781202:20261113001053": {
    "amended": true,
@@ -359956,7 +359984,7 @@
   "RIGHTS:01231786:20261109000221": {
    "amended": true,
    "amount": 1999996128,
-   "board_dt": "2026-11-09",
+   "board_dt": "2026-11-18",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
@@ -359969,19 +359997,20 @@
    "new_common": 1048216,
    "new_other": null,
    "offering": "사모·주주배정",
+   "original_rcept": "20261109000221",
    "par_value": 500,
    "purposes": {
-    "운영": 999996128,
-    "타법인증권": 1000000000
+    "운영": 999996288,
+    "타법인증권": 999999840
    },
-   "rcept_dt": "2026-11-09",
-   "rcept_no": "20261109000221",
+   "rcept_dt": "2026-11-18",
+   "rcept_no": "20261118000201",
    "source": "DART",
    "stock_code": "317770",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-11-10T21:00+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261109000221"
+   "updated": "2026-11-20T20:28+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261118000201"
   },
   "RIGHTS:01235296:20240730000061": {
    "amended": true,
@@ -364772,6 +364801,35 @@
    "updated": "2026-11-19T20:28+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261119000228"
   },
+  "RIGHTS:01344336:20261119000228": {
+   "amended": true,
+   "amount": 1999998918,
+   "board_dt": "2026-11-19",
+   "captured_by": "daily",
+   "confirmed": true,
+   "corp_cls": "K",
+   "corp_code": "01344336",
+   "corp_name": "신테카바이오",
+   "dilution": 6.66,
+   "first_seen": "2026-11-20T20:28+09:00",
+   "id": "RIGHTS:01344336:20261119000228",
+   "method": "제3자배정증자",
+   "new_common": 1616814,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 500,
+   "purposes": {
+    "운영": 1999998918
+   },
+   "rcept_dt": "2026-11-19",
+   "rcept_no": "20261119000228",
+   "source": "DART",
+   "stock_code": "226330",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-11-20T20:28+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261119000228"
+  },
   "RIGHTS:01344831:20251204000242": {
    "amended": true,
    "amount": 19720255940,
@@ -366375,6 +366433,35 @@
    "stock_kind": "보통주",
    "type": "RIGHTS",
    "updated": "2026-11-19T20:28+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261118000025"
+  },
+  "RIGHTS:01381984:20261118000025": {
+   "amended": true,
+   "amount": 999999005,
+   "board_dt": "2026-11-18",
+   "captured_by": "daily",
+   "confirmed": true,
+   "corp_cls": "K",
+   "corp_code": "01381984",
+   "corp_name": "SKAI",
+   "dilution": 1.15,
+   "first_seen": "2026-11-20T20:28+09:00",
+   "id": "RIGHTS:01381984:20261118000025",
+   "method": "제3자배정증자",
+   "new_common": 638977,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 500,
+   "purposes": {
+    "운영": 999999005
+   },
+   "rcept_dt": "2026-11-18",
+   "rcept_no": "20261118000025",
+   "source": "DART",
+   "stock_code": "357880",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-11-20T20:28+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261118000025"
   },
   "RIGHTS:01384477:20231117000334": {
