@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-19T20:41+09:00",
+  "data_updated": "2026-11-20T14:21+09:00",
   "last_daily": "2026-11-19T20:41+09:00"
  },
  "records": {
@@ -133038,7 +133038,7 @@
    "ytm": 5.0
   },
   "CB:01274310:7": {
-   "amended": false,
+   "amended": true,
    "amount": 10000000000,
    "board_dt": "2026-10-15",
    "captured_by": "daily",
@@ -133048,29 +133048,29 @@
    "corp_name": "이오플로우",
    "coupon": 0.0,
    "dilution": 6.6,
-   "exercise_from": "2027-11-20",
-   "exercise_to": "2056-08-19",
+   "exercise_from": "2027-12-10",
+   "exercise_to": "2056-09-09",
    "first_seen": "2026-10-25T18:20+09:00",
    "id": "CB:01274310:7",
    "lead": null,
-   "maturity": "2056-11-19",
+   "maturity": "2056-12-09",
    "method_raw": "사모",
    "offering": "사모",
-   "pay_dt": "2026-11-20",
+   "pay_dt": "2026-12-10",
    "price": 3000,
    "purposes": {
     "운영": 10000000000
    },
-   "rcept_dt": "2026-10-15",
-   "rcept_no": "20261015000232",
+   "rcept_dt": "2026-11-20",
+   "rcept_no": "20261120000306",
    "refix_floor": null,
    "series": "7",
    "shares": 3333333,
    "source": "DART",
    "stock_code": "294090",
    "type": "CB",
-   "updated": "2026-10-25T18:20+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261015000232",
+   "updated": "2026-11-20T14:21+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261120000306",
    "ytm": 5.0
   },
   "CB:01274329:3": {
