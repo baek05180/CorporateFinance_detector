@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-20T14:21+09:00",
+  "data_updated": "2026-11-20T16:44+09:00",
   "last_daily": "2026-11-19T20:41+09:00"
  },
  "records": {
@@ -40786,6 +40786,42 @@
     "운영자금": 45000000000
    }
   },
+  "BOND:01134395:3": {
+   "amended": false,
+   "amount": 45000000000,
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "E",
+   "corp_code": "01134395",
+   "corp_name": "뉴스테이허브제1호위탁관리부동산투자회사",
+   "coupon": null,
+   "coupon_raw": "-",
+   "first_seen": "2026-11-20T16:44+09:00",
+   "guarantor": null,
+   "id": "BOND:01134395:3",
+   "lead": "케이비증권",
+   "maturity": "2029-11-30",
+   "method_raw": "공모",
+   "name": "무보증사채",
+   "offering": "공모",
+   "pay_dt": "2026-12-02",
+   "rating": "-",
+   "rcept_dt": "2026-11-20",
+   "rcept_no": "20261120000529",
+   "series": "3",
+   "series_raw": "3",
+   "source": "DART",
+   "stock_code": null,
+   "sub_dt": "2026-12-02",
+   "type": "BOND",
+   "underwriters": [],
+   "updated": "2026-11-20T16:44+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261120000529",
+   "uses": {
+    "발행제비용": 59561600,
+    "채무상환자금": 45000000000
+   }
+  },
   "BOND:01160363:6-1": {
    "amended": true,
    "amount": 62000000000,
@@ -41010,6 +41046,42 @@
    "uses": {
     "발행제비용": 101455000,
     "운영자금": 115000000000
+   }
+  },
+  "BOND:01195624:2": {
+   "amended": false,
+   "amount": 115000000000,
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "E",
+   "corp_code": "01195624",
+   "corp_name": "뉴스테이허브제2호위탁관리부동산투자회사",
+   "coupon": null,
+   "coupon_raw": "-",
+   "first_seen": "2026-11-20T16:44+09:00",
+   "guarantor": null,
+   "id": "BOND:01195624:2",
+   "lead": "케이비증권",
+   "maturity": "2029-11-30",
+   "method_raw": "공모",
+   "name": "무보증사채",
+   "offering": "공모",
+   "pay_dt": "2026-12-02",
+   "rating": "-",
+   "rcept_dt": "2026-11-20",
+   "rcept_no": "20261120000534",
+   "series": "2",
+   "series_raw": "2",
+   "source": "DART",
+   "stock_code": null,
+   "sub_dt": "2026-12-02",
+   "type": "BOND",
+   "underwriters": [],
+   "updated": "2026-11-20T16:44+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261120000534",
+   "uses": {
+    "발행제비용": 136811600,
+    "채무상환자금": 115000000000
    }
   },
   "BOND:01205842:13-1": {
@@ -41922,6 +41994,42 @@
     "운영자금": 53000000000
    }
   },
+  "BOND:01310463:1": {
+   "amended": false,
+   "amount": 60000000000,
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "E",
+   "corp_code": "01310463",
+   "corp_name": "민간임대허브제5호위탁관리부동산투자회사",
+   "coupon": null,
+   "coupon_raw": "-",
+   "first_seen": "2026-11-20T16:44+09:00",
+   "guarantor": null,
+   "id": "BOND:01310463:1",
+   "lead": "케이비증권",
+   "maturity": "2028-12-01",
+   "method_raw": "공모",
+   "name": "무보증사채",
+   "offering": "공모",
+   "pay_dt": "2026-12-02",
+   "rating": "-",
+   "rcept_dt": "2026-11-20",
+   "rcept_no": "20261120000542",
+   "series": "1",
+   "series_raw": "1",
+   "source": "DART",
+   "stock_code": null,
+   "sub_dt": "2026-12-02",
+   "type": "BOND",
+   "underwriters": [],
+   "updated": "2026-11-20T16:44+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261120000542",
+   "uses": {
+    "발행제비용": 70111600,
+    "타법인증권취득자금": 60000000000
+   }
+  },
   "BOND:01310515:1": {
    "amended": true,
    "amount": 60000000000,
@@ -41956,6 +42064,42 @@
    "uses": {
     "발행제비용": 63342000,
     "운영자금": 60000000000
+   }
+  },
+  "BOND:01310515:2": {
+   "amended": false,
+   "amount": 30000000000,
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "E",
+   "corp_code": "01310515",
+   "corp_name": "민간임대허브제4호위탁관리부동산투자회사",
+   "coupon": null,
+   "coupon_raw": "-",
+   "first_seen": "2026-11-20T16:44+09:00",
+   "guarantor": null,
+   "id": "BOND:01310515:2",
+   "lead": "케이비증권",
+   "maturity": "2028-12-01",
+   "method_raw": "공모",
+   "name": "무보증사채",
+   "offering": "공모",
+   "pay_dt": "2026-12-02",
+   "rating": "-",
+   "rcept_dt": "2026-11-20",
+   "rcept_no": "20261120000544",
+   "series": "2",
+   "series_raw": "2",
+   "source": "DART",
+   "stock_code": null,
+   "sub_dt": "2026-12-02",
+   "type": "BOND",
+   "underwriters": [],
+   "updated": "2026-11-20T16:44+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261120000544",
+   "uses": {
+    "발행제비용": 39811600,
+    "타법인증권취득자금": 30000000000
    }
   },
   "BOND:01316227:1-1": {
@@ -329070,6 +329214,35 @@
    "type": "RIGHTS",
    "updated": "2026-11-05T20:28+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261105000436"
+  },
+  "RIGHTS:00258102:20261120000499": {
+   "amended": false,
+   "amount": 2999998540,
+   "board_dt": "2026-11-20",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "K",
+   "corp_code": "00258102",
+   "corp_name": "지엔코",
+   "dilution": 15.64,
+   "first_seen": "2026-11-20T16:44+09:00",
+   "id": "RIGHTS:00258102:20261120000499",
+   "method": "제3자배정증자",
+   "new_common": 1113172,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 2500,
+   "purposes": {
+    "채무상환": 2999998540
+   },
+   "rcept_dt": "2026-11-20",
+   "rcept_no": "20261120000499",
+   "source": "DART",
+   "stock_code": "065060",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-11-20T16:44+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261120000499"
   },
   "RIGHTS:00258360:20231204000329": {
    "amended": false,
