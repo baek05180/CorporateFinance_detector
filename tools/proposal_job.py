@@ -1,7 +1,7 @@
 """GitHub Actions(proposal.yml)에서 호출: 입력 JSON 파일 → out/proposal.pptx + out/status.json
 
 공개 저장소의 Actions 기록은 누구나 볼 수 있으므로, 입력값·회사명·오류 상세를 로그에 찍지 않는다.
-오류 상세는 비공개 R2 의 status.json 에만 남긴다.
+오류 상세는 결과물(status.json, 비공개 저장소 7일 보관)에만 남긴다.
 """
 import contextlib
 import io

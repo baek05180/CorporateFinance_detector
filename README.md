@@ -69,7 +69,8 @@ collector/   수집기 (config.py 에서 키워드·기간 조정)
 web/         template.html + build.py → public/index.html
              proposal.html → public/proposal/ (공모사채 제안서 팝업)
 tools/       proposal5.py 공모사채 발행 제안서(PPT) 생성 — 설정은 docs/proposal_spec.md
-functions/   Cloudflare Pages Functions (/api/proposal) — 설정법 docs/PROPOSAL_SETUP.md
+functions/   Cloudflare Pages Functions (/api/proposal, /api/auth) — 설정법 docs/PROPOSAL_SETUP.md
+vault/       비공개 저장소 proposal-vault 에 넣는 워크플로 원본
 data/        수집 결과 (Actions가 커밋)
 public/      배포되는 사이트
 tests/       가짜 응답으로 전체 흐름 점검: python -m tests.test_pipeline

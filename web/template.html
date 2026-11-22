@@ -1179,7 +1179,7 @@ async function viewCompany(key) {
     $$('[data-peer]').forEach(a => { const k = byCode[a.dataset.peer]; if (k) a.href = '#/company/' + encodeURIComponent(k); }); });
 }
 
-// 공모사채 발행 제안서(PPT) — 신용등급이 있는 회사만. 팝업 페이지는 Cloudflare Access 로 보호
+// 공모사채 발행 제안서(PPT) — 신용등급이 있는 회사만. 팝업은 GitHub 로그인(허용된 아이디만)으로 보호
 function openProposal(key) {
   const w = window.open(`/proposal/?corp=${key}`, 'proposal', 'width=720,height=860,scrollbars=yes');
   if (!w) location.href = `/proposal/?corp=${key}`;

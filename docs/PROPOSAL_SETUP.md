@@ -1,69 +1,63 @@
-# 공모사채 발행 제안서 — 사이트 연결 설정
+# 공모사채 발행 제안서 — 사이트 연결 설정 (결제 없는 구성)
 
 신용등급이 있는 회사의 **조달 제안 보고서** 화면에 `공모사채 제안서 작성 (PPT)` 버튼이 생긴다.
-버튼 → 팝업(`/proposal/?corp=…`)에서 일정·금액·만기 등을 입력 → GitHub Actions 가 PPT 를 만들어 → 팝업에서 내려받는다.
+버튼 → 팝업에서 GitHub 로 로그인(허용된 아이디만) → 일정·금액·만기 입력 → 비공개 저장소의 GitHub Actions 가 PPT 생성 → 팝업에서 내려받기.
 
 ```
-팝업 /proposal ──POST──▶ Pages Function /api/proposal ──workflow_dispatch──▶ Actions proposal.yml
-     ▲                         │ R2: proposals/{id}/status.json                │ R2 에서 템플릿 받기
-     └──GET /api/proposal/{id}─┘◀──────────── R2: proposal.pptx, status.json ◀──┘ tools.proposal_job
+팝업 /proposal ──POST /api/proposal──▶ Pages Function ──workflow_dispatch──▶ 비공개 저장소 proposal-vault
+  │ GitHub 로그인 (/api/auth/*)            │ (입력값은 비공개 실행 입력으로만 전달)     │ 공개 저장소 최신 main 의 코드·데이터·명세
+  └──GET /api/proposal/{id}────────────────┴──────── 실행 결과물(7일 보관) 조회·내려받기 ◀──┘ + 비공개 템플릿으로 생성
 ```
+
+쓰는 서비스는 GitHub(무료 계정)와 지금 사이트가 쓰는 Cloudflare Pages(무료)뿐이다. 결제수단 등록이 필요 없다.
+- 비공개 저장소의 Actions: 무료 계정 기준 월 2,000분 · 저장 500MB 포함. 제안서 1건 5~6분 → 월 300건 안팎. 결제수단이 없으면 한도를 넘어도 과금되지 않고 실행만 멈춘다.
+- 데이터 수집(collect)은 공개 저장소라 이 한도와 무관.
 
 입력 항목·기본 문구·한미 이벤트·휴일·장표 켜기/끄기는 **`docs/proposal_spec.md` 의 `## 설정` 블록**에서 읽는다.
-이 파일을 main 에 고치면 `site.yml` 이 사이트를 다시 배포하고(팝업 항목 반영), 다음 제안서부터 바로 적용된다.
+main 에 고치면 `site.yml` 이 사이트를 다시 배포하고(팝업 항목), 다음 생성부터 바로 적용된다(생성할 때마다 최신 main 을 받음).
 
 ## 1회 설정
 
-### 1. R2 버킷 (비공개)
-1. Cloudflare 대시보드 → R2 → 버킷 만들기: `ecm-proposals` (다른 이름이면 GitHub 변수 `R2_BUCKET` 에 입력)
-2. 원본 템플릿 업로드: `templates/proposal_template.pptx` — 저장소가 공개이므로 **템플릿은 절대 커밋하지 않는다**
-3. 버킷 → 설정 → Object lifecycle rules: 접두사 `proposals/`, 7일 후 삭제
-4. R2 → API 토큰 관리 → 이 버킷 한정 **Object Read & Write** 토큰 생성 → Access Key ID / Secret 메모
+### 1. 비공개 저장소 `proposal-vault`
+1. GitHub → New repository → 이름 `proposal-vault`, **Private**
+2. 내용: 이 저장소의 `vault/` 폴더 그대로 (`.github/workflows/proposal.yml`, `README.md`) + `template/proposal_template.pptx`(원본 템플릿)
+3. (선택) Settings → Secrets and variables → Actions → `ANTHROPIC_API_KEY` — 있으면 크레딧 스토리·예상 Q&A 초안을 Claude 가 작성, 없으면 ##
 
-### 2. GitHub (저장소 Settings → Secrets and variables → Actions)
-| 종류 | 이름 | 값 |
+### 2. GitHub 토큰 (사이트가 비공개 저장소 실행·결과 조회에 사용)
+GitHub → Settings → Developer settings → Personal access tokens → **Fine-grained tokens** → Generate
+- Repository access: **Only select repositories → `proposal-vault`**
+- Permissions → Repository → **Actions: Read and write** (그 외 없음)
+- 만료일: 원하는 기간 (만료되면 새로 만들어 Pages 의 `GH_TOKEN` 만 바꾸면 됨)
+
+### 3. GitHub OAuth 앱 (팝업 로그인용)
+GitHub → Settings → Developer settings → **OAuth Apps** → New OAuth App
+- Application name: `ECM 제안서` (자유)
+- Homepage URL: 사이트 주소 (예: `https://ecm-board.pages.dev`)
+- Authorization callback URL: `https://사이트주소/api/auth/callback`
+- 만든 뒤 **Client ID** 메모, **Generate a new client secret** → 메모
+
+### 4. Cloudflare Pages 프로젝트 (`ecm-board`) → Settings → Variables and Secrets
+| 이름 | 종류 | 값 |
 |---|---|---|
-| Secret | `R2_ACCESS_KEY_ID` | 위 R2 토큰의 Access Key ID |
-| Secret | `R2_SECRET_ACCESS_KEY` | 위 R2 토큰의 Secret |
-| Secret | `CLOUDFLARE_ACCOUNT_ID` | (이미 있음) |
-| Secret (선택) | `ANTHROPIC_API_KEY` | 있으면 크레딧 스토리·예상 Q&A 초안을 Claude 가 작성, 없으면 ## |
-| Variable (선택) | `R2_BUCKET` | 버킷 이름이 `ecm-proposals` 가 아닐 때 |
+| `GITHUB_CLIENT_ID` | 텍스트 | 3번 Client ID |
+| `GITHUB_CLIENT_SECRET` | **Secret** | 3번 Client secret |
+| `SESSION_SECRET` | **Secret** | 임의의 긴 문자열 32자 이상 (비밀번호 생성기로) |
+| `ALLOWED_GITHUB_USERS` | 텍스트 | 쓸 수 있는 GitHub 아이디, 쉼표 구분 (예: `baek05180`) |
+| `GH_TOKEN` | **Secret** | 2번 토큰 |
+| `VAULT_REPO` | 텍스트 | `baek05180/proposal-vault` |
 
-### 3. GitHub 토큰 (Pages Function → Actions 실행용)
-GitHub → Settings → Developer settings → Fine-grained token
-- Repository access: 이 저장소만
-- Permissions: **Actions: Read and write** (그 외 없음)
-
-### 4. Cloudflare Access (제안서 기능만 잠금)
-Zero Trust → Access → Applications → Self-hosted
-- 도메인: 사이트 도메인, 경로 2개 — `/proposal*`, `/api/proposal*`
-  - `ecm-board.pages.dev` 주소로도 같은 경로 2개를 추가 (기본 주소로 우회하지 못하게)
-- Policy: Allow → Emails → 본인(과 지정한 사람) 이메일
-- 만든 뒤 애플리케이션의 **Application Audience (AUD) Tag** 와, Zero Trust → Settings 의 **팀 도메인**(`xxx.cloudflareaccess.com`)을 메모
-
-### 5. Cloudflare Pages 프로젝트 (`ecm-board`) → Settings
-- Variables and Secrets
-  | 이름 | 값 |
-  |---|---|
-  | `GH_TOKEN` (Secret) | 3번 토큰 |
-  | `GH_REPO` | `baek05180/CorporateFinance_detector` |
-  | `GH_REF` | `main` |
-  | `ACCESS_TEAM_DOMAIN` | 예: `myteam.cloudflareaccess.com` |
-  | `ACCESS_AUD` | 4번 AUD Tag |
-  | `ALLOWED_EMAILS` | 쓸 수 있는 이메일 (쉼표 구분) — Access 정책과 같은 목록 |
-- Bindings → R2 bucket: 변수명 `PROPOSALS`, 버킷 `ecm-proposals`
-- 설정 후 한 번 재배포 (Actions → site 또는 collect 수동 실행)
+설정 후 재배포(공개 저장소 Actions → site 또는 collect 수동 실행, 또는 PR 머지).
 
 ## 보안 구조
 | 무엇을 | 어떻게 막나 |
 |---|---|
-| API 키·토큰 | 코드에 없음. GitHub Secret / Cloudflare Secret 에만. GitHub 토큰은 이 저장소 Actions 실행만, R2 토큰은 버킷 하나만 |
-| 제안서 기능 사용 | Cloudflare Access 로그인 + API 가 Access 토큰(JWT) 서명·대상·만료를 직접 검증 + `ALLOWED_EMAILS` 목록. `*.pages.dev`·미리보기 주소로 와도 같은 검증 |
-| 입력값(발행 계획·메모) | 비공개 R2 에만 저장. GitHub 에는 무작위 요청 ID 만 넘기고, 실행 기록에는 성공/실패만 찍음 (오류 상세는 R2 에만) |
-| 템플릿·결과 PPT | 비공개 R2. 요청한 본인만 상태 확인·내려받기, 7일 뒤 삭제 |
-| 코드·명세 md | **저장소가 공개면 누구나 볼 수 있음** (키는 없으므로 남이 내 계정으로 돌릴 수는 없음). 숨기려면 저장소를 비공개로 |
+| API 키·토큰 | 코드에 없음. Cloudflare Secret / GitHub Secret 에만. GitHub 토큰은 `proposal-vault` 의 Actions 만 다룰 수 있음 |
+| 제안서 기능 사용 | GitHub 로그인(2단계 인증 그대로) + `ALLOWED_GITHUB_USERS` 목록. 로그인 쿠키는 서버 비밀값으로 서명, 12시간 유효. 다른 사이트에서 보낸 요청은 차단 |
+| 입력값(발행 계획·메모) | 비공개 저장소의 실행 입력으로만 전달 — 저장소 관리자만 볼 수 있음. 공개 저장소에는 남지 않음 |
+| 템플릿·결과 PPT | 비공개 저장소. 결과는 요청한 본인만 상태 확인·내려받기, 7일 뒤 자동 삭제 |
+| 코드·명세 md | 공개 저장소 — 누구나 볼 수 있음(키는 없으므로 남이 내 계정으로 돌릴 수 없음). md 에 고객사 정보·기밀 문구는 넣지 않는다 |
 
-`ANTHROPIC_API_KEY` 를 넣으면 팝업 메모·공시 정보가 Anthropic API 로 전송된다(초안 작성용). 사내 규정상 외부 전송이 어렵다면 넣지 않는다.
+`ANTHROPIC_API_KEY` 를 넣으면 팝업 메모·공시 정보가 Anthropic API 로 전송된다(초안 작성용, 유료 API). 사내 규정상 외부 전송이 어렵다면 넣지 않는다.
 
 ## 로컬에서 만들어 보기
 ```bash

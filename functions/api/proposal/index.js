@@ -1,5 +1,6 @@
-// POST /api/proposal — 입력값 검사 → R2 에 상태 기록 → GitHub Actions(proposal.yml) 실행
-import { json, authorize } from '../../_shared.js';
+// POST /api/proposal — 입력값 검사 → 비공개 저장소(VAULT_REPO)의 proposal.yml 실행
+// 입력값은 비공개 저장소의 실행 입력으로만 전달된다 (저장소 관리자만 볼 수 있음).
+import { authorize, gh, json } from '../../_shared.js';
 
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
 const TEXT_MAX = 1500;
@@ -24,30 +25,19 @@ function clean(body) {
 }
 
 export async function onRequestPost({ request, env }) {
-  const who = await authorize(request, env);
+  const who = await authorize(request, env, { write: true });
   if (who instanceof Response) return who;
-  if (!env.GH_TOKEN || !env.GH_REPO || !env.PROPOSALS) return json({ error: '서버 설정이 끝나지 않았습니다 (GH_TOKEN·GH_REPO·R2 바인딩).' }, 500);
+  if (!env.GH_TOKEN || !env.VAULT_REPO) return json({ error: '서버 설정이 끝나지 않았습니다 (GH_TOKEN·VAULT_REPO).' }, 500);
   let body;
   try { body = await request.json(); } catch { return json({ error: '잘못된 요청입니다.' }, 400); }
   const [inp, err] = clean(body);
   if (err) return json({ error: err }, 400);
 
   const id = crypto.randomUUID();
-  // 입력값은 비공개 R2 에만 둔다. GitHub(공개 저장소의 실행 기록)에는 무작위 ID 만 넘긴다.
-  const put = (k, v) => env.PROPOSALS.put(`proposals/${id}/${k}`, JSON.stringify(v), { httpMetadata: { contentType: 'application/json' } });
-  await put('input.json', inp);
-  await put('owner.json', { email: who.email, at: new Date().toISOString() });
-  await put('status.json', { state: 'queued' });
-
-  const r = await fetch(`https://api.github.com/repos/${env.GH_REPO}/actions/workflows/proposal.yml/dispatches`, {
+  const r = await gh(env, `/repos/${env.VAULT_REPO}/actions/workflows/proposal.yml/dispatches`, {
     method: 'POST',
-    headers: { authorization: `Bearer ${env.GH_TOKEN}`, accept: 'application/vnd.github+json', 'user-agent': 'ecm-board-proposal', 'x-github-api-version': '2022-11-28' },
-    body: JSON.stringify({ ref: env.GH_REF || 'main', inputs: { request_id: id } }),
+    body: JSON.stringify({ ref: env.VAULT_REF || 'main', inputs: { request_id: id, owner: who.login, payload: JSON.stringify(inp) } }),
   });
-  if (!r.ok) {
-    const msg = `GitHub 실행 요청 실패 (${r.status})`;
-    await put('status.json', { state: 'error', error: msg });
-    return json({ error: msg }, 502);
-  }
+  if (!r.ok) return json({ error: `GitHub 실행 요청 실패 (${r.status})` }, 502);
   return json({ id });
 }

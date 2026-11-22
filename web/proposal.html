@@ -53,6 +53,12 @@ async function init() {
   if (!co) { $('#co').textContent = '회사 데이터를 찾지 못했습니다.'; return; }
   $('#co').innerHTML = `<b>${esc(co.name)}</b> · 신용등급 ${esc(co.rating || '없음')}`;
   if (!co.rating) { $('#f').innerHTML = '<div class="err">신용등급이 확인된 회사만 제안서를 만들 수 있습니다.</div>'; return; }
+  // 로그인 확인 (GitHub 계정, 허용된 아이디만)
+  const me = await fetch('/api/auth/me', { credentials: 'same-origin' }).then(async r => ({ status: r.status, ...(await r.json().catch(() => ({}))) }));
+  if (me.status === 401) { showLogin(); return; }
+  if (me.status !== 200) { $('#f').innerHTML = `<div class="err">${esc(me.error || '로그인 확인 실패')}</div>`; return; }
+  $('#co').innerHTML += ` <span class="note" style="float:right">${esc(me.login)} · <a href="#" id="out">로그아웃</a></span>`;
+  $('#out').onclick = async e => { e.preventDefault(); await fetch('/api/auth/me', { method: 'POST' }); location.reload(); };
   const saved = JSON.parse(sessionStorageGet(`proposal:${corp}`) || '{}');
   $('#f').innerHTML = spec.fields.map(f => {
     const v = saved[f.key] ?? f.default ?? '';
@@ -61,8 +67,14 @@ async function init() {
       ? `<textarea name="${esc(f.key)}"${req}>${esc(v)}</textarea>`
       : `<input name="${esc(f.key)}" type="${f.type === 'number' ? 'number' : f.type === 'date' ? 'date' : 'text'}" value="${esc(v)}"${req}>`;
     return `<label>${esc(f.label)}${f.required ? '<span class="req">*</span>' : ''}</label>${input}${f.help ? `<div class="help">${esc(f.help)}</div>` : ''}`;
-  }).join('') + `<div class="row" style="margin-top:16px"><button id="go" type="submit">제안서 만들기</button><span class="note">생성에 3~5분 걸립니다.</span></div><div class="err" id="err"></div>`;
+  }).join('') + `<div class="row" style="margin-top:16px"><button id="go" type="submit">제안서 만들기</button><span class="note">생성에 5분 안팎 걸립니다.</span></div><div class="err" id="err"></div>`;
   $('#f').addEventListener('submit', submit);
+}
+
+function showLogin() {
+  const ret = encodeURIComponent(location.pathname + location.search);
+  $('#f').innerHTML = `<p>제안서 기능은 지정된 GitHub 계정으로만 쓸 수 있습니다.</p>
+    <a class="dl" style="background:var(--navy)" href="/api/auth/login?return=${ret}">GitHub로 로그인</a>`;
 }
 
 function sessionStorageGet(k) { try { return sessionStorage.getItem(k); } catch { return null; } }
@@ -89,6 +101,7 @@ async function submit(e) {
   try {
     const r = await fetch('/api/proposal', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ corp, ...d }) });
     const j = await r.json().catch(() => ({}));
+    if (r.status === 401) { showLogin(); return; }
     if (!r.ok) throw new Error(j.error || `요청 실패 (${r.status})`);
     poll(j.id, Date.now());
   } catch (err) {
@@ -100,7 +113,8 @@ async function submit(e) {
 async function poll(id, t0) {
   const st = $('#st');
   st.hidden = false;
-  const r = await fetch(`/api/proposal/${id}`).then(r => r.json()).catch(() => ({ state: 'queued' }));
+  const r = await fetch(`/api/proposal/${id}`).then(r => r.json()).catch(() => ({ state: 'queued' }));  // 401 이면 {login:true}
+  if (r.login) { showLogin(); return; }
   if (r.error && !r.state) {
     st.innerHTML = `<div class="err">${esc(r.error)}</div>`;
     $('#go').disabled = false;
@@ -109,7 +123,7 @@ async function poll(id, t0) {
   const sec = Math.round((Date.now() - t0) / 1000);
   if (r.state === 'done') {
     st.innerHTML = `<div class="status"><b>완성되었습니다.</b><a class="dl" href="/api/proposal/${id}?download=1">PPT 내려받기</a></div>
-      <p class="note">빨간 ## 표시는 최종 확정 시 직접 입력할 값입니다. 파일은 7일 뒤 삭제됩니다.</p>`;
+      <p class="note">빨간 ## 표시는 최종 확정 시 직접 입력할 값입니다. 파일은 7일 동안 다시 받을 수 있습니다.</p>`;
     $('#go').disabled = false;
     return;
   }

@@ -1,0 +1,79 @@
+name: proposal
+run-name: proposal ${{ inputs.request_id }} by ${{ inputs.owner }}
+
+# 비공개 저장소(proposal-vault) 전용. 사이트(/api/proposal)가 실행한다.
+# 입력값·실행 기록·결과물은 이 비공개 저장소 안에만 남고, 결과물은 7일 뒤 자동 삭제된다.
+# 코드와 명세(docs/proposal_spec.md)는 공개 저장소의 최신 main 을 그때그때 받아 쓴다.
+on:
+  workflow_dispatch:
+    inputs:
+      request_id:
+        description: "요청 ID (UUID)"
+        required: true
+      owner:
+        description: "요청한 GitHub 아이디"
+        required: true
+      payload:
+        description: "팝업 입력값 JSON"
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      REQ_ID: ${{ inputs.request_id }}
+      PAYLOAD: ${{ inputs.payload }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    steps:
+      - name: 요청 ID 확인
+        run: |
+          if ! [[ "$REQ_ID" =~ ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$ ]]; then echo "::error::bad request id"; exit 1; fi
+
+      - name: 템플릿 (이 저장소)
+        uses: actions/checkout@v4
+        with:
+          path: vault
+
+      - name: 코드·데이터·명세 (공개 저장소 최신 main)
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ vars.SOURCE_REPO || 'baek05180/CorporateFinance_detector' }}
+          ref: main
+          path: src
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: src/requirements*.txt
+
+      - name: 패키지 설치
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends libreoffice-impress poppler-utils fonts-noto-cjk >/dev/null
+          pip install -q -r src/requirements.txt -r src/requirements-proposal.txt
+
+      - name: 회사 데이터 생성
+        working-directory: src
+        run: python -m web.build > /dev/null
+
+      - name: 제안서 생성
+        working-directory: src
+        continue-on-error: true
+        run: |
+          python -c "import os, json; json.dump(json.loads(os.environ['PAYLOAD']), open('../in.json', 'w', encoding='utf-8'), ensure_ascii=False)"
+          python -m tools.proposal_job ../vault/template/proposal_template.pptx ../in.json ../out
+
+      - name: 결과 보관 (7일)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: proposal-${{ inputs.request_id }}
+          path: out/
+          retention-days: 7
+          compression-level: 0
+          if-no-files-found: error
