@@ -18,7 +18,7 @@
    }
   ]
  },
- "checked": "2026-11-16T02:13+09:00",
+ "checked": "2026-11-23T02:18+09:00",
  "corp_code": "00540571",
  "fs_annual": {
   "amort": 116695000.0,
@@ -51,12 +51,12 @@
   "st_deposits": 3430470000
  },
  "fs_interim": {
-  "assets": 22879870854,
-  "capex": 56418118,
+  "assets": 21004208520,
+  "capex": 556787574,
   "capital": 4173999500,
-  "cash": 8177844070,
-  "cur_assets": 18285296033,
-  "cur_liab": 1590662514,
+  "cash": 9336078790,
+  "cur_assets": 15738346052,
+  "cur_liab": 1727524368,
   "debt": 27161671,
   "debt_hist": [
    null,
@@ -66,25 +66,37 @@
   "debt_items": [
    "리스부채"
   ],
-  "equity": 20898457192,
-  "fin_cost": 1742335,
+  "equity": 18886527469,
+  "fin_cost": 2600387,
   "fs": "OFS",
-  "liab": 1981413662,
-  "ni": 732236686,
-  "ocf": -300506331,
-  "op": 434296542,
-  "period": "2026 반기",
-  "revenue": 5528318602,
-  "st_deposits": 3462450000
+  "liab": 2117681051,
+  "ni": 138017888,
+  "ocf": -14405462,
+  "op": 111389353,
+  "period": "2026 3Q",
+  "revenue": 7087202688,
+  "st_deposits": 407520000
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "(주)티에스이",
-    "pct": 43.78,
+    "pct": 46.11,
     "relation": "최대주주",
     "shares": 3654540
+   },
+   {
+    "name": "김정준",
+    "pct": 0.22,
+    "relation": "등기임원",
+    "shares": 17194
+   },
+   {
+    "name": "장남철",
+    "pct": 0.06,
+    "relation": "등기임원",
+    "shares": 4900
    },
    {
     "name": "정재천",
@@ -93,10 +105,10 @@
     "shares": 0
    }
   ],
-  "total_pct": 44.78
+  "total_pct": 46.39
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814001804",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116000934",
  "pv": 4,
- "treasury_shares": 40000
+ "treasury_shares": null
 }

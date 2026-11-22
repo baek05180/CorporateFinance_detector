@@ -37,7 +37,7 @@
    }
   ]
  },
- "checked": "2026-11-16T02:12+09:00",
+ "checked": "2026-11-23T02:17+09:00",
  "corp_code": "00172185",
  "fs_annual": {
   "amort": 9909830.0,
@@ -70,76 +70,76 @@
   "revenue": 77541223156
  },
  "fs_interim": {
-  "assets": 276675928235,
-  "capex": 103921798,
-  "capital": 18106080000,
-  "cash": 8283498172,
-  "cur_assets": 90672344921,
-  "cur_liab": 135353643979,
-  "debt": 96379947515,
+  "assets": 264364194658,
+  "capex": 381823685,
+  "capital": 22800640000,
+  "cash": 3807119195,
+  "cur_assets": 78282201565,
+  "cur_liab": 119211972014,
+  "debt": 81585347577,
   "debt_hist": [
    null,
    91797093618,
-   96379947515
+   81585347577
   ],
   "debt_items": [
    "차입금"
   ],
-  "equity": 107821129720,
-  "fin_cost": 8687050710,
+  "equity": 111239179759,
+  "fin_cost": 13375068515,
   "fs": "CFS",
-  "interest_paid": 3893818881,
-  "liab": 168854798515,
-  "ni": 7460816859,
-  "ocf": -2829335830,
-  "op": 4437368473,
-  "period": "2026 반기",
-  "revenue": 40106960063
+  "interest_paid": 5601208884,
+  "liab": 153125014899,
+  "ni": 4313760789,
+  "ocf": 919634977,
+  "op": 5508738912,
+  "period": "2026 3Q",
+  "revenue": 61084034772
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "윤성호",
-    "pct": 13.34,
+    "pct": 13.77,
     "relation": "본인(이사)",
-    "shares": 483002
+    "shares": 627902
    },
    {
     "name": "윤종호",
-    "pct": 13.06,
+    "pct": 13.48,
     "relation": "친인척(이사)",
-    "shares": 472925
+    "shares": 614802
    },
    {
     "name": "윤남철",
-    "pct": 4.42,
+    "pct": 4.56,
     "relation": "친인척(이사)",
-    "shares": 160000
+    "shares": 208000
    },
    {
     "name": "윤정은",
-    "pct": 2.33,
+    "pct": 2.41,
     "relation": "친인척",
-    "shares": 84405
+    "shares": 109726
    },
    {
     "name": "윤지은",
-    "pct": 2.33,
+    "pct": 2.41,
     "relation": "친인척",
-    "shares": 84405
+    "shares": 109726
    },
    {
     "name": "오미경",
-    "pct": 0.75,
+    "pct": 0.77,
     "relation": "친인척",
-    "shares": 27000
+    "shares": 35100
    }
   ],
-  "total_pct": 37.72
+  "total_pct": 38.94
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260813001653",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116001166",
  "pv": 4,
- "treasury_shares": 491509
+ "treasury_shares": 4889673
 }

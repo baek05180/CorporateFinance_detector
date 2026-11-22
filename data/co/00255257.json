@@ -18,12 +18,12 @@
    }
   ]
  },
- "checked": "2026-11-16T02:15+09:00",
+ "checked": "2026-11-23T02:22+09:00",
  "corp_code": "00255257",
  "fs_annual": {},
  "fs_interim": {},
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "현대엘리베이터",
@@ -64,8 +64,8 @@
   ],
   "total_pct": 86.74
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814003300",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116001391",
  "pv": 4,
  "treasury_shares": 191008
 }

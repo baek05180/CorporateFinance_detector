@@ -1,5 +1,8 @@
 {
- "checked": "2026-11-16T02:14+09:00",
+ "annual_name": "감사보고서 (2025.12)",
+ "annual_rcept": "20260609000508",
+ "audit_only": true,
+ "checked": "2026-11-23T02:21+09:00",
  "corp_code": "01207761",
  "fs_interim": {
   "assets": 44803549383,
@@ -46,6 +49,7 @@
  },
  "latest_name": "분기보고서 (2025.03)",
  "latest_rcept": "20250515003010",
+ "no_periodic": true,
  "pv": 4,
  "treasury_shares": null
 }

@@ -25,7 +25,7 @@
    }
   ]
  },
- "checked": "2026-11-16T02:15+09:00",
+ "checked": "2026-11-23T02:24+09:00",
  "corp_code": "01251489",
  "fs_annual": {
   "amort": 2748550234.0,
@@ -63,17 +63,17 @@
   "st_deposits": 1200000000
  },
  "fs_interim": {
-  "assets": 161509494143,
-  "capex": 54864949,
-  "capital": 24835933000,
-  "cash": 25914462212,
-  "cur_assets": 71491221218,
-  "cur_liab": 92442958611,
-  "debt": 35418025258,
+  "assets": 142522212772,
+  "capex": 61468499,
+  "capital": 24835932500,
+  "cash": 19153691978,
+  "cur_assets": 53065816714,
+  "cur_liab": 47415819233,
+  "debt": 40484286988,
   "debt_hist": [
    null,
    51870402912,
-   35418025258
+   40484286988
   ],
   "debt_items": [
    "단기차입금",
@@ -83,62 +83,62 @@
    "유동전환사채",
    "장기차입금"
   ],
-  "equity": 58048742705,
-  "fin_cost": 2280960334,
+  "equity": 57106803033,
+  "fin_cost": 3126501915,
   "fs": "CFS",
-  "interest_paid": 557463321,
-  "liab": 103460751438,
-  "ni": -3356436953,
-  "ocf": -10834519910,
-  "op": -3187619879,
-  "period": "2026 반기",
-  "revenue": 103955802716,
-  "st_deposits": 300000000
+  "interest_paid": 682671274,
+  "liab": 85415409739,
+  "ni": -4320046458,
+  "ocf": -20913739140,
+  "op": -3358197751,
+  "period": "2026 3Q",
+  "revenue": 133315649195,
+  "st_deposits": 0
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "이석중",
     "pct": 28.49,
     "relation": "최대주주 본인",
-    "shares": 14104748
+    "shares": 2820949
    },
    {
     "name": "노소라",
     "pct": 2.83,
     "relation": "최대주주 배우자",
-    "shares": 1400000
+    "shares": 280000
    },
    {
     "name": "윤기욱",
     "pct": 0.26,
     "relation": "임원",
-    "shares": 129448
+    "shares": 25889
    },
    {
     "name": "이지아",
     "pct": 0.06,
     "relation": "최대주주 자녀",
-    "shares": 31650
+    "shares": 6330
    },
    {
     "name": "정은정",
     "pct": 0.06,
     "relation": "임원",
-    "shares": 31000
+    "shares": 6200
    },
    {
     "name": "이지원",
     "pct": 0.06,
     "relation": "최대주주 자녀",
-    "shares": 30000
+    "shares": 6000
    }
   ],
   "total_pct": 31.78
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814002571",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116001871",
  "pv": 4,
- "treasury_shares": 3959
+ "treasury_shares": null
 }

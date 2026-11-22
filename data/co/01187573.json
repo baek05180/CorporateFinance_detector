@@ -22,7 +22,7 @@
    }
   ]
  },
- "checked": "2026-11-16T00:19+09:00",
+ "checked": "2026-11-23T02:17+09:00",
  "corp_code": "01187573",
  "fs_annual": {
   "amort": 53331000.0,
@@ -56,12 +56,12 @@
   "st_deposits": 100000000
  },
  "fs_interim": {
-  "assets": 12919908822,
-  "capex": 34597015,
+  "assets": 12871189124,
+  "capex": 71572248,
   "capital": 1738895000,
-  "cash": 2485059641,
-  "cur_assets": 10744535761,
-  "cur_liab": 15271497339,
+  "cash": 3562142823,
+  "cur_assets": 10825522069,
+  "cur_liab": 14701704438,
   "debt": 2600000000,
   "debt_hist": [
    null,
@@ -71,44 +71,32 @@
   "debt_items": [
    "단기차입금"
   ],
-  "equity": -3121714363,
-  "fin_cost": 134194753,
+  "equity": -2683015607,
+  "fin_cost": 180914925,
   "fs": "OFS",
-  "interest_paid": 86442465,
-  "liab": 16041623185,
-  "ni": -2005481132,
-  "ocf": -635613631,
-  "op": -1953706317,
-  "period": "2026 반기",
-  "revenue": 9280963867,
-  "st_deposits": 100000000
+  "interest_paid": 132032150,
+  "liab": 15554204731,
+  "ni": -1551941840,
+  "ocf": 613873057,
+  "op": -1515010557,
+  "period": "2026 3Q",
+  "revenue": 14741060577,
+  "st_deposits": 101903500
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
-    "name": "지준환",
-    "pct": 25.5,
-    "relation": "본인",
-    "shares": 920000
-   },
-   {
-    "name": "최유진",
-    "pct": 13.6,
-    "relation": "등기임원",
-    "shares": 490000
-   },
-   {
-    "name": "주완석",
-    "pct": 5.5,
-    "relation": "등기임원",
-    "shares": 200000
+    "name": "-",
+    "pct": 0.0,
+    "relation": "-",
+    "shares": null
    }
   ],
-  "total_pct": 44.6
+  "total_pct": 0.0
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814003035",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116000439",
  "pv": 4,
  "treasury_shares": null
 }

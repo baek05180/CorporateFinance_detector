@@ -18,7 +18,7 @@
    }
   ]
  },
- "checked": "2026-11-16T00:18+09:00",
+ "checked": "2026-11-23T02:15+09:00",
  "corp_code": "00112378",
  "fs_annual": {
   "assets": 94195951474,
@@ -57,17 +57,17 @@
   "st_deposits": 8266239447
  },
  "fs_interim": {
-  "assets": 169778897488,
-  "capex": 507766364,
-  "capital": 43187592000,
-  "cash": 7999587984,
-  "cur_assets": 40756973866,
-  "cur_liab": 55233136844,
-  "debt": 67292550444,
+  "assets": 160595713532,
+  "capex": 1051957364,
+  "capital": 49187590000,
+  "cash": 1821737757,
+  "cur_assets": 33228333550,
+  "cur_liab": 43247554018,
+  "debt": 60544749549,
   "debt_hist": [
    null,
    34317277696,
-   67292550444
+   60544749549
   ],
   "debt_items": [
    "리스부채(비유동)",
@@ -78,38 +78,38 @@
    "장기차입금(사채포함),총액",
    "전환사채"
   ],
-  "equity": 72533469490,
-  "fin_cost": 4701306847,
+  "equity": 74510608583,
+  "fin_cost": 7135390233,
   "fs": "CFS",
-  "interest_paid": 550317171,
-  "liab": 97245427998,
-  "ni": 28877176875,
-  "ocf": -1989910860,
-  "op": -234349093,
-  "period": "2026 반기",
-  "revenue": 28903553267,
-  "st_deposits": 1584577587
+  "interest_paid": 2565640784,
+  "liab": 86085104949,
+  "ni": 26581166488,
+  "ocf": -1972309913,
+  "op": -1192346340,
+  "period": "2026 3Q",
+  "revenue": 53828002018,
+  "st_deposits": 1479627587
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "LVMC\nHOLDINGS",
-    "pct": 50.65,
+    "pct": 44.5,
     "relation": "최대주주",
-    "shares": 43749657
+    "shares": 8749931
    },
    {
     "name": "오세영",
-    "pct": 12.51,
+    "pct": 11.0,
     "relation": "특수관계인",
-    "shares": 10806096
+    "shares": 2161219
    }
   ],
-  "total_pct": 63.16
+  "total_pct": 55.5
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260813001073",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116001866",
  "pv": 4,
- "treasury_shares": null
+ "treasury_shares": 7060
 }

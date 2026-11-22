@@ -28,7 +28,7 @@
    }
   ]
  },
- "checked": "2026-11-16T02:13+09:00",
+ "checked": "2026-11-23T02:18+09:00",
  "corp_code": "01504211",
  "fs_annual": {
   "amort": 22144000.0,
@@ -66,17 +66,17 @@
   "st_deposits": 3300000000
  },
  "fs_interim": {
-  "assets": 19808662601,
-  "capex": 119812735,
+  "assets": 17738623864,
+  "capex": 405206342,
   "capital": 4401482500,
-  "cash": 3753382426,
-  "cur_assets": 11365602737,
-  "cur_liab": 11324415970,
-  "debt": 7565881395,
+  "cash": 1488118037,
+  "cur_assets": 9372356386,
+  "cur_liab": 11444159520,
+  "debt": 7711295263,
   "debt_hist": [
    null,
    7304402476,
-   7565881395
+   7711295263
   ],
   "debt_items": [
    "비유동리스부채",
@@ -85,56 +85,32 @@
    "유동성전환사채",
    "차입금"
   ],
-  "equity": 4903622614,
-  "fin_cost": 938512770,
+  "equity": 2674227038,
+  "fin_cost": 1197219445,
   "fs": "OFS",
-  "interest_paid": 85307679,
-  "liab": 14905039987,
-  "ni": -3724784814,
-  "ocf": -4272978856,
-  "op": -4453126660,
-  "period": "2026 반기",
-  "revenue": 1949613976,
+  "interest_paid": 128086048,
+  "liab": 15064396826,
+  "ni": -5954180390,
+  "ocf": -6370304208,
+  "op": -6389103920,
+  "period": "2026 3Q",
+  "revenue": 2478857784,
   "st_deposits": 0
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
-    "name": "최종석",
-    "pct": 24.82,
-    "relation": "본인",
-    "shares": 2185000
-   },
-   {
-    "name": "장창욱",
-    "pct": 2.03,
-    "relation": "특수관계인",
-    "shares": 179100
-   },
-   {
-    "name": "박병철",
-    "pct": 2.01,
-    "relation": "특수관계인",
-    "shares": 176700
-   },
-   {
-    "name": "정봉균",
-    "pct": 0.63,
-    "relation": "특수관계인",
-    "shares": 55230
-   },
-   {
-    "name": "백광열",
-    "pct": 0.02,
-    "relation": "특수관계인",
-    "shares": 1500
+    "name": "-",
+    "pct": 0.0,
+    "relation": "-",
+    "shares": null
    }
   ],
-  "total_pct": 29.51
+  "total_pct": 0.0
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814002945",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116002020",
  "pv": 4,
  "treasury_shares": null
 }

@@ -24,12 +24,12 @@
    }
   ]
  },
- "checked": "2026-11-16T02:13+09:00",
+ "checked": "2026-11-23T02:18+09:00",
  "corp_code": "00494616",
  "fs_annual": {},
  "fs_interim": {},
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "정좌락",
@@ -68,10 +68,10 @@
     "shares": 163000
    }
   ],
-  "total_pct": 31.69
+  "total_pct": 31.1
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814001419",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116000331",
  "pv": 4,
  "treasury_shares": 852299
 }

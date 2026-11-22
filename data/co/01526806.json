@@ -3,7 +3,7 @@
  "annual_rcept": "20260323001139",
  "biz_retry": true,
  "business": {},
- "checked": "2026-11-16T02:14+09:00",
+ "checked": "2026-11-23T02:20+09:00",
  "corp_code": "01526806",
  "fs_annual": {
   "assets": 288112815623,
@@ -38,16 +38,16 @@
   "st_deposits": 71745000
  },
  "fs_interim": {
-  "assets": 330245295202,
-  "capex": 4678571355,
-  "cash": 15197596757,
-  "cur_assets": 117145752611,
-  "cur_liab": 147418049251,
-  "debt": 162120894906,
+  "assets": 318338701035,
+  "capex": 17466560379,
+  "cash": 14984557425,
+  "cur_assets": 114817410845,
+  "cur_liab": 160439174966,
+  "debt": 166900669908,
   "debt_hist": [
    null,
    140961138773,
-   162120894906
+   166900669908
   ],
   "debt_items": [
    "단기차입금및유동성장기부채",
@@ -56,31 +56,31 @@
    "장기차입금",
    "전환사채"
   ],
-  "equity": 102033898503,
-  "fin_cost": 6671089717,
+  "equity": 89798251776,
+  "fin_cost": 14791028038,
   "fs": "CFS",
-  "interest_paid": 3591349023,
-  "liab": 228211396699,
-  "ni": 5182502916,
-  "op": 4948521394,
-  "period": "2026 반기",
-  "revenue": 113252442100,
-  "st_deposits": 1641588550
+  "interest_paid": 5256253009,
+  "liab": 228540449259,
+  "ni": 668747854,
+  "op": 7668307280,
+  "period": "2026 3Q",
+  "revenue": 175849056161,
+  "st_deposits": 1632268125
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
-    "name": "(주)삼기",
-    "pct": 51.34,
-    "relation": "최대주주",
-    "shares": 29364820
+    "name": "-",
+    "pct": 0.0,
+    "relation": "-",
+    "shares": null
    }
   ],
-  "total_pct": 51.34
+  "total_pct": 0.0
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260813000643",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116000252",
  "pv": 4,
  "treasury_shares": null
 }

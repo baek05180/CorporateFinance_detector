@@ -19,7 +19,7 @@
    }
   ]
  },
- "checked": "2026-11-16T02:13+09:00",
+ "checked": "2026-11-23T02:17+09:00",
  "corp_code": "00858124",
  "fs_annual": {
   "amort": 74164000.0,
@@ -44,61 +44,37 @@
   "st_deposits": 600000000
  },
  "fs_interim": {
-  "assets": 87478533097,
-  "capex": 1112407000,
+  "assets": 81335867630,
+  "capex": 2766691307,
   "capital": 6419920000,
-  "cash": 10628307707,
-  "cur_assets": 65218595887,
-  "cur_liab": 28918873942,
-  "equity": 55855582626,
-  "fin_cost": 338220103,
+  "cash": 6296041485,
+  "cur_assets": 58543601202,
+  "cur_liab": 24191067059,
+  "equity": 54547607452,
+  "fin_cost": 459518849,
   "fs": "CFS",
-  "interest_paid": 292049070,
-  "liab": 31622950471,
-  "ni": -1740605869,
-  "ocf": -5234838645,
-  "op": -2569333735,
-  "period": "2026 반기",
-  "revenue": 34926753601
+  "interest_paid": 416257088,
+  "liab": 26788260178,
+  "ni": -3042551093,
+  "ocf": -8471766753,
+  "op": -3585780650,
+  "period": "2026 3Q",
+  "revenue": 51734444869
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
-    "name": "강덕현",
-    "pct": 20.6,
-    "relation": "본인",
-    "shares": 2645373
-   },
-   {
-    "name": "알에스오토메이션(주)",
-    "pct": 0.7,
-    "relation": "자기주식",
-    "shares": 88738
-   },
-   {
-    "name": "노주원",
-    "pct": 0.1,
-    "relation": "배우자",
-    "shares": 10719
-   },
-   {
-    "name": "김형린",
+    "name": "-",
     "pct": 0.0,
-    "relation": "등기임원",
-    "shares": 3000
-   },
-   {
-    "name": "이범희",
-    "pct": 0.0,
-    "relation": "등기임원",
-    "shares": 3000
+    "relation": "-",
+    "shares": null
    }
   ],
-  "total_pct": 21.4
+  "total_pct": 0.0
  },
- "latest_name": "[첨부정정]반기보고서 (2026.06)",
- "latest_rcept": "20260929000169",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116001642",
  "pv": 4,
- "treasury_shares": 88738
+ "treasury_shares": 64656
 }

@@ -17,7 +17,7 @@
    }
   ]
  },
- "checked": "2026-11-16T02:15+09:00",
+ "checked": "2026-11-23T02:24+09:00",
  "corp_code": "00353230",
  "fs_annual": {
   "assets": 1478495400,
@@ -48,69 +48,45 @@
   "revenue": 1248000000
  },
  "fs_interim": {
-  "assets": 1316668240,
+  "assets": 1094214547,
   "capital": 886798000,
-  "cash": 9513333,
-  "cur_assets": 1011589560,
-  "cur_liab": 662044997,
-  "debt": 456936944,
+  "cash": 12536216,
+  "cur_assets": 842462154,
+  "cur_liab": 610898433,
+  "debt": 403598515,
   "debt_hist": [
    null,
    562469003,
-   456936944
+   403598515
   ],
   "debt_items": [
    "리스부채",
    "장기리스부채"
   ],
-  "equity": 177727233,
-  "fin_cost": 9013395,
+  "equity": 61664906,
+  "fin_cost": 12947710,
   "fs": "OFS",
-  "liab": 1138941007,
-  "ni": -81268094,
-  "ocf": 79154460,
-  "op": -89031767,
-  "period": "2026 반기",
-  "revenue": 546000000
+  "liab": 1032549641,
+  "ni": -197330421,
+  "ocf": -60549902,
+  "op": -215267672,
+  "period": "2026 3Q",
+  "revenue": 756000000
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
-    "name": "(주)갤럭시",
-    "pct": 90.21,
-    "relation": "최대주주",
-    "shares": 1600000
-   },
-   {
-    "name": "(주)오리엔트",
-    "pct": 4.23,
-    "relation": "계열회사",
-    "shares": 75000
-   },
-   {
-    "name": "(주)오리엔트바이오",
-    "pct": 4.06,
-    "relation": "계열회사",
-    "shares": 72000
-   },
-   {
-    "name": "(주)오리엔트시계",
-    "pct": 1.16,
-    "relation": "계열회사",
-    "shares": 20595
-   },
-   {
-    "name": "(주)오리엔트제니아",
-    "pct": 0.09,
-    "relation": "계열회사",
-    "shares": 1539
+    "name": "-",
+    "pct": 0.0,
+    "relation": "-",
+    "shares": null
    }
   ],
-  "total_pct": 99.75
+  "total_pct": 0.0
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814001480",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116001888",
  "pv": 4,
  "treasury_shares": null
 }

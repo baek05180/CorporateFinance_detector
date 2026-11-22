@@ -18,7 +18,7 @@
    }
   ]
  },
- "checked": "2026-11-16T02:14+09:00",
+ "checked": "2026-11-23T02:21+09:00",
  "corp_code": "00965318",
  "fs_annual": {
   "amort": 57264000.0,
@@ -42,31 +42,31 @@
   "st_deposits": 190484670
  },
  "fs_interim": {
-  "assets": 55487967126,
+  "assets": 54539071142,
   "capital": 4543246500,
-  "cash": 2683690892,
-  "cur_assets": 12961161603,
-  "cur_liab": 23802429549,
-  "equity": 28678383272,
-  "fin_cost": 386296250,
+  "cash": 1241218518,
+  "cur_assets": 12247030366,
+  "cur_liab": 24031376025,
+  "equity": 27666051060,
+  "fin_cost": 570840933,
   "fs": "OFS",
-  "interest_paid": 374998896,
-  "liab": 26809583854,
-  "ni": -1486799962,
-  "ocf": -5149550359,
-  "op": -1304077595,
-  "period": "2026 반기",
-  "revenue": 4609568596,
-  "st_deposits": 2190484670
+  "interest_paid": 552635734,
+  "liab": 26873020082,
+  "ni": -2499132174,
+  "ocf": -8468858626,
+  "op": -2180681346,
+  "period": "2026 3Q",
+  "revenue": 6931836676,
+  "st_deposits": 186000000
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "조준희",
-    "pct": 17.22,
+    "pct": 17.37,
     "relation": "최대주주",
-    "shares": 1564620
+    "shares": 1578307
    },
    {
     "name": "이운성",
@@ -88,9 +88,9 @@
    },
    {
     "name": "이지선",
-    "pct": 0.3,
+    "pct": 0.33,
     "relation": "임원",
-    "shares": 27684
+    "shares": 30032
    },
    {
     "name": "김시정",
@@ -99,10 +99,10 @@
     "shares": 10760
    }
   ],
-  "total_pct": 23.64
+  "total_pct": 23.93
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814003512",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116001585",
  "pv": 4,
  "treasury_shares": null
 }

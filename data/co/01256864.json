@@ -18,7 +18,7 @@
    }
   ]
  },
- "checked": "2026-11-16T00:19+09:00",
+ "checked": "2026-11-23T02:16+09:00",
  "corp_code": "01256864",
  "fs_annual": {
   "amort": 127866000.0,
@@ -51,11 +51,11 @@
   "st_deposits": 0
  },
  "fs_interim": {
-  "assets": 273723661388,
+  "assets": 230391753471,
   "capital": 27993731500,
-  "cash": 164984478351,
-  "cur_assets": 169870014078,
-  "cur_liab": 99019083154,
+  "cash": 122565014719,
+  "cur_assets": 127831125667,
+  "cur_liab": 84624475719,
   "debt": 55000000000,
   "debt_hist": [
    null,
@@ -65,19 +65,19 @@
   "debt_items": [
    "차입금"
   ],
-  "equity": 173941175539,
-  "fin_cost": 2495646726,
+  "equity": 145071433664,
+  "fin_cost": 6881315813,
   "fs": "CFS",
-  "interest_paid": 846421365,
-  "liab": 99782485849,
-  "ni": -29663431002,
-  "ocf": 9427179064,
-  "op": -34035124157,
-  "period": "2026 반기",
-  "revenue": 32840000000
+  "interest_paid": 1295028486,
+  "liab": 85320319807,
+  "ni": -54287830638,
+  "ocf": -17890370472,
+  "op": -53944199651,
+  "period": "2026 3Q",
+  "revenue": 41597333333
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "이상훈",
@@ -99,27 +99,27 @@
    },
    {
     "name": "유주희",
-    "pct": 0.04,
+    "pct": 0.05,
     "relation": "친인척",
     "shares": 25000
+   },
+   {
+    "name": "이승신",
+    "pct": 0.04,
+    "relation": "친인척",
+    "shares": 20828
    },
    {
     "name": "송지민",
     "pct": 0.03,
     "relation": "친인척",
     "shares": 18000
-   },
-   {
-    "name": "정영목",
-    "pct": 0.03,
-    "relation": "친인척",
-    "shares": 17179
    }
   ],
-  "total_pct": 24.52
+  "total_pct": 24.54
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260811000637",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116001483",
  "pv": 4,
  "treasury_shares": null
 }

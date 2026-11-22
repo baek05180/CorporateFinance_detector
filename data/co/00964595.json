@@ -43,7 +43,7 @@
    }
   ]
  },
- "checked": "2026-11-16T02:15+09:00",
+ "checked": "2026-11-23T02:22+09:00",
  "corp_code": "00964595",
  "fs_annual": {
   "amort": 91557000.0,
@@ -83,17 +83,17 @@
   "st_deposits": 2505000000
  },
  "fs_interim": {
-  "assets": 91272984508,
-  "capex": 9681054415,
+  "assets": 92048407256,
+  "capex": 13098991389,
   "capital": 4420947500,
-  "cash": 7844010004,
-  "cur_assets": 18711920859,
-  "cur_liab": 26486228480,
-  "debt": 33416794576,
+  "cash": 2757863538,
+  "cur_assets": 16016833516,
+  "cur_liab": 27368744319,
+  "debt": 35539690948,
   "debt_hist": [
    null,
    26502177339,
-   33416794576
+   35539690948
   ],
   "debt_items": [
    "단기차입금",
@@ -103,62 +103,62 @@
    "장기차입금",
    "전환사채"
   ],
-  "equity": 44329161172,
-  "fin_cost": 865762537,
+  "equity": 43006729000,
+  "fin_cost": 1306956702,
   "fs": "CFS",
-  "interest_paid": 278000667,
-  "liab": 46943823336,
-  "ni": 208860616,
-  "ocf": -1208931856,
-  "op": -1446690806,
-  "period": "2026 반기",
-  "revenue": 9698514069,
-  "st_deposits": 1735000000
+  "interest_paid": 458848207,
+  "liab": 49041678256,
+  "ni": -1301404497,
+  "ocf": -2399029845,
+  "op": -2577882142,
+  "period": "2026 3Q",
+  "revenue": 13836794849,
+  "st_deposits": 3239768488
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "한정철",
-    "pct": 23.59,
-    "relation": "본인\n (대표이사)",
+    "pct": 23.58,
+    "relation": "최대주주",
     "shares": 2085333
    },
    {
     "name": "박성은",
     "pct": 2.57,
-    "relation": "배우자 / 임원",
+    "relation": "특수관계인(배우자/임원)",
     "shares": 227500
    },
    {
     "name": "박정민",
     "pct": 0.43,
-    "relation": "인척 / -",
+    "relation": "특수관계인(인척)",
     "shares": 37850
    },
    {
     "name": "YOON HEY-YONG KRISTY",
     "pct": 0.42,
-    "relation": "인척 / -",
+    "relation": "특수관계인(인척)",
     "shares": 37000
    },
    {
     "name": "이병준",
     "pct": 0.17,
-    "relation": "- / 임원",
+    "relation": "특수관계인(임원)",
     "shares": 15000
    },
    {
     "name": "한정석",
-    "pct": 0.11,
-    "relation": "동생 / -",
-    "shares": 10000
+    "pct": 0.08,
+    "relation": "특수관계인(동생)",
+    "shares": 7000
    }
   ],
-  "total_pct": 27.3
+  "total_pct": 27.27
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814003705",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116000527",
  "pv": 4,
  "treasury_shares": null
 }

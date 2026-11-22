@@ -52,7 +52,7 @@
    }
   ]
  },
- "checked": "2026-11-16T02:14+09:00",
+ "checked": "2026-11-23T02:21+09:00",
  "corp_code": "01586455",
  "fs_annual": {
   "amort": 2570400063.0,
@@ -143,6 +143,12 @@
     "shares": 1172958
    },
    {
+    "name": "박주혁",
+    "pct": 0.05,
+    "relation": "최대주주의 자녀",
+    "shares": 6700
+   },
+   {
     "name": "이은석",
     "pct": 0.0,
     "relation": "동서",
@@ -153,18 +159,12 @@
     "pct": 0.0,
     "relation": "조카",
     "shares": 0
-   },
-   {
-    "name": "이현우",
-    "pct": 0.0,
-    "relation": "조카",
-    "shares": 0
    }
   ],
-  "total_pct": 35.78
+  "total_pct": 35.82
  },
- "latest_name": "분기보고서 (2026.09)",
- "latest_rcept": "20261113001439",
+ "latest_name": "[기재정정]분기보고서 (2026.09)",
+ "latest_rcept": "20261116002250",
  "pv": 4,
  "treasury_shares": 184326
 }
