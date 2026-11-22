@@ -4,7 +4,7 @@
  "biz_raw": {},
  "biz_retry": true,
  "business": {},
- "checked": "2026-11-16T02:16+09:00",
+ "checked": "2026-11-23T04:26+09:00",
  "corp_code": "01109937",
  "fs_annual": {
   "assets": 92713948686,
@@ -39,16 +39,16 @@
   "st_deposits": 100000000
  },
  "fs_interim": {
-  "assets": 92754320480,
+  "assets": 92005963168,
   "capital": 23832252000,
-  "cash": 6028636221,
-  "cur_assets": 17896085440,
-  "cur_liab": 54042622334,
-  "debt": 30325819500,
+  "cash": 5671204191,
+  "cur_assets": 18147442755,
+  "cur_liab": 54718790680,
+  "debt": 30957134146,
   "debt_hist": [
    null,
    22485781546,
-   30325819500
+   30957134146
   ],
   "debt_items": [
    "리스부채",
@@ -56,32 +56,38 @@
    "장기차입금",
    "전환사채"
   ],
-  "equity": 21203887564,
-  "fin_cost": 7267992765,
+  "equity": 19811352637,
+  "fin_cost": 8465655904,
   "fs": "CFS",
-  "interest_paid": 671935456,
-  "liab": 71550432916,
-  "ni": -5443589300,
-  "ocf": -693904747,
-  "op": -1859341610,
-  "period": "2026 반기",
-  "revenue": 18256566625,
-  "st_deposits": 100000000
+  "interest_paid": 835725951,
+  "liab": 72194610531,
+  "ni": -6961782627,
+  "ocf": 536827535,
+  "op": -1722892118,
+  "period": "2026 3Q",
+  "revenue": 27149735595,
+  "st_deposits": 200000000
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "윤원수",
-    "pct": 10.74,
+    "pct": 8.78,
     "relation": "본인",
-    "shares": 5120786
+    "shares": 4184018
    },
    {
     "name": "심진형",
     "pct": 3.55,
     "relation": "등기임원",
     "shares": 1691900
+   },
+   {
+    "name": "(주)티앤알엠씨",
+    "pct": 1.97,
+    "relation": "기타특수관계회사",
+    "shares": 936768
    },
    {
     "name": "진송완",
@@ -96,10 +102,10 @@
     "shares": 0
    }
   ],
-  "total_pct": 14.92
+  "total_pct": 14.93
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260831001010",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261117000022",
  "pv": 4,
  "treasury_shares": 4248
 }

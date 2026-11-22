@@ -37,12 +37,12 @@
    }
   ]
  },
- "checked": "2026-11-16T02:16+09:00",
+ "checked": "2026-11-23T04:25+09:00",
  "corp_code": "00573676",
  "fs_annual": {},
  "fs_interim": {},
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "박광범",
@@ -72,7 +72,7 @@
     "name": "㈜엠지뉴턴",
     "pct": 0.09,
     "relation": "특수관계인",
-    "shares": 10354
+    "shares": 10454
    },
    {
     "name": "도건엽",
@@ -81,10 +81,10 @@
     "shares": 9000
    }
   ],
-  "total_pct": 32.34
+  "total_pct": 32.33
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814003924",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116002037",
  "pv": 4,
  "treasury_shares": 60000
 }

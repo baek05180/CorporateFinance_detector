@@ -18,12 +18,12 @@
    }
   ]
  },
- "checked": "2026-11-16T04:20+09:00",
+ "checked": "2026-11-23T04:27+09:00",
  "corp_code": "00112004",
  "fs_annual": {},
  "fs_interim": {},
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "(주)바이오스타줄기세포기술연구원",
@@ -44,7 +44,7 @@
     "shares": 1984538
    },
    {
-    "name": "(주)JASC",
+    "name": "(주)American Angel Stem",
     "pct": 0.37,
     "relation": "특수관계인",
     "shares": 500000
@@ -62,10 +62,10 @@
     "shares": 252900
    }
   ],
-  "total_pct": 21.76
+  "total_pct": 21.71
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814003940",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116002027",
  "pv": 4,
  "treasury_shares": null
 }
