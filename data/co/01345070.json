@@ -27,12 +27,12 @@
    }
   ]
  },
- "checked": "2026-11-16T00:17+09:00",
+ "checked": "2026-11-23T01:29+09:00",
  "corp_code": "01345070",
  "fs_annual": {},
  "fs_interim": {},
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "심재현 ",
@@ -43,8 +43,8 @@
   ],
   "total_pct": 41.7
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814003516",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116002224",
  "pv": 4,
  "treasury_shares": null
 }

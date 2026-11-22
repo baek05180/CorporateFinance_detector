@@ -4685,5 +4685,53 @@
    }
   },
   "v": 6
+ },
+ "20261120000529": {
+  "demand_dt": "2026-11-23",
+  "rating": "AAA",
+  "series": {
+   "3": {
+    "band": "국고채 +10~+70bp",
+    "rate": null,
+    "spread": null
+   }
+  },
+  "v": 6
+ },
+ "20261120000534": {
+  "demand_dt": "2026-11-23",
+  "rating": "AAA",
+  "series": {
+   "2": {
+    "band": "국고채 +10~+70bp",
+    "rate": null,
+    "spread": null
+   }
+  },
+  "v": 6
+ },
+ "20261120000542": {
+  "demand_dt": "2026-11-23",
+  "rating": "AAA",
+  "series": {
+   "1": {
+    "band": "국고채 +10~+70bp",
+    "rate": null,
+    "spread": null
+   }
+  },
+  "v": 6
+ },
+ "20261120000544": {
+  "demand_dt": "2026-11-23",
+  "rating": "AAA",
+  "series": {
+   "2": {
+    "band": "국고채 +10~+70bp",
+    "rate": null,
+    "spread": null
+   }
+  },
+  "v": 6
  }
 }

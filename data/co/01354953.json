@@ -16,7 +16,7 @@
    }
   ]
  },
- "checked": "2026-11-16T00:16+09:00",
+ "checked": "2026-11-23T01:28+09:00",
  "corp_code": "01354953",
  "fs_annual": {
   "amort": 19089000.0,
@@ -38,65 +38,37 @@
   "revenue": 10652157248
  },
  "fs_interim": {
-  "assets": 18241475171,
-  "capex": 731646591,
+  "assets": 19242278096,
+  "capex": 1123510631,
   "capital": 3057750000,
-  "cash": 1033920419,
-  "equity": 6717836021,
-  "fin_cost": 208146113,
+  "cash": 847050485,
+  "cur_assets": 5888907863,
+  "cur_liab": 11131245056,
+  "equity": 5906705369,
+  "fin_cost": 327089809,
   "fs": "CFS",
-  "interest_paid": 271097209,
-  "liab": 11523639150,
-  "ni": -108427292,
-  "ocf": 254538334,
-  "op": -73925881,
-  "period": "2026 반기",
-  "revenue": 5111914123
+  "interest_paid": 313269254,
+  "liab": 13335572727,
+  "ni": -571066104,
+  "ocf": 107493576,
+  "op": -436814626,
+  "period": "2026 3Q",
+  "revenue": 7655207377
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
-    "name": "신현순",
-    "pct": 53.25,
-    "relation": "대표이사",
-    "shares": 3256434
-   },
-   {
-    "name": "더스퀘어헬스케어투자조합1,2호",
-    "pct": 4.91,
-    "relation": "타인",
-    "shares": 300000
-   },
-   {
-    "name": "KB증권",
-    "pct": 4.02,
-    "relation": "타인",
-    "shares": 245700
-   },
-   {
-    "name": "신누리",
-    "pct": 2.73,
-    "relation": "대표이사",
-    "shares": 167000
-   },
-   {
-    "name": "신정훈",
-    "pct": 1.7,
-    "relation": "자녀",
-    "shares": 104200
-   },
-   {
-    "name": "진태원",
-    "pct": 1.64,
-    "relation": "타인",
-    "shares": 100000
+    "name": "-",
+    "pct": 0.0,
+    "relation": "-",
+    "shares": null
    }
   ],
-  "total_pct": 68.24
+  "total_pct": 0.0
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260904000544",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261117000062",
  "pv": 4,
  "treasury_shares": null
 }

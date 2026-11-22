@@ -33,7 +33,7 @@
    }
   ]
  },
- "checked": "2026-11-16T00:16+09:00",
+ "checked": "2026-11-23T01:28+09:00",
  "corp_code": "00125974",
  "fs_annual": {
   "amort": 199200000.0,
@@ -66,46 +66,48 @@
   "st_deposits": 3000000000
  },
  "fs_interim": {
-  "assets": 214096602680,
-  "capex": 1391454,
-  "capital": 229681824000,
-  "cash": 53240952101,
-  "debt": 2758023769,
+  "assets": 173852074165,
+  "capex": 2292885,
+  "capital": 39139903000,
+  "cash": 21997043412,
+  "cur_assets": 52828314980,
+  "cur_liab": 81682210384,
+  "debt": 4268621969,
   "debt_hist": [
    null,
    61480564434,
-   2758023769
+   4268621969
   ],
   "debt_items": [
    "리스부채",
    "차입금"
   ],
-  "equity": 76002739004,
-  "fin_cost": 1675100010,
+  "equity": 72682162234,
+  "fin_cost": 1866751229,
   "fs": "CFS",
-  "interest_paid": 0,
-  "liab": 138093863676,
-  "ni": 174404066073,
-  "ocf": -1696844473,
-  "op": -8094106692,
-  "period": "2026 반기",
-  "revenue": 37727716563,
+  "interest_paid": 1311321898,
+  "liab": 101169911931,
+  "ni": 171857676195,
+  "ocf": -5605918182,
+  "op": -10097623185,
+  "period": "2026 3Q",
+  "revenue": 57136184479,
   "st_deposits": 3000000000
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
-    "name": "(주)디와이디",
-    "pct": 3.39,
-    "relation": "본인",
-    "shares": 7778498
+    "name": "-",
+    "pct": 0.0,
+    "relation": "-",
+    "shares": null
    }
   ],
-  "total_pct": 3.39
+  "total_pct": 0.0
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814004299",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116001988",
  "pv": 4,
  "treasury_shares": null
 }

@@ -21,12 +21,12 @@
    }
   ]
  },
- "checked": "2026-11-16T00:14+09:00",
+ "checked": "2026-11-23T01:25+09:00",
  "corp_code": "00149813",
  "fs_annual": {},
  "fs_interim": {},
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "중앙홀딩스(주)",
@@ -39,6 +39,12 @@
     "pct": 15.63,
     "relation": "특수관계인",
     "shares": 968336
+   },
+   {
+    "name": "중앙화동재단",
+    "pct": 8.77,
+    "relation": "특수관계인",
+    "shares": 543193
    },
    {
     "name": "홍석준",
@@ -57,18 +63,12 @@
     "pct": 0.12,
     "relation": "특수관계인",
     "shares": 7692
-   },
-   {
-    "name": "홍라영",
-    "pct": 0.03,
-    "relation": "특수관계인",
-    "shares": 1913
    }
   ],
-  "total_pct": 80.75
+  "total_pct": 89.52
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814004265",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116002155",
  "pv": 4,
  "treasury_shares": null
 }

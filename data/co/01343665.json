@@ -33,7 +33,7 @@
    }
   ]
  },
- "checked": "2026-11-16T00:17+09:00",
+ "checked": "2026-11-23T01:30+09:00",
  "corp_code": "01343665",
  "fs_annual": {
   "amort": 412012000.0,
@@ -73,17 +73,17 @@
   "st_deposits": 17164533854
  },
  "fs_interim": {
-  "assets": 166930734051,
-  "capex": 3782374123,
-  "capital": 4497567500,
-  "cash": 3740330892,
-  "cur_assets": 106031149053,
-  "cur_liab": 31835612337,
-  "debt": 13700725869,
+  "assets": 169203966415,
+  "capex": 14387785233,
+  "capital": 8994419500,
+  "cash": 6321094510,
+  "cur_assets": 100573742759,
+  "cur_liab": 30543475117,
+  "debt": 13232634907,
   "debt_hist": [
    null,
    15368543275,
-   13700725869
+   13232634907
   ],
   "debt_items": [
    "단기리스부채",
@@ -94,62 +94,62 @@
    "장기차입금",
    "전환사채"
   ],
-  "equity": 125133559018,
-  "fin_cost": 271858083,
+  "equity": 129180973460,
+  "fin_cost": 1320445336,
   "fs": "CFS",
-  "interest_paid": 143383406,
-  "liab": 41797175033,
-  "ni": 8615183862,
-  "ocf": 230795383,
-  "op": 8485958583,
-  "period": "2026 반기",
-  "revenue": 45083321510,
-  "st_deposits": 56679635413
+  "interest_paid": 149154066,
+  "liab": 40022992955,
+  "ni": 12668393820,
+  "ocf": 1541692742,
+  "op": 13357168417,
+  "period": "2026 3Q",
+  "revenue": 69837396208,
+  "st_deposits": 46004828516
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "알에프에이치아이씨㈜",
-    "pct": 41.54,
+    "pct": 41.55,
     "relation": "최대주주",
-    "shares": 3736749
+    "shares": 7473498
    },
    {
     "name": "한기우",
-    "pct": 4.25,
-    "relation": "관계사 미등기임원",
-    "shares": 382388
+    "pct": 3.75,
+    "relation": "미등기임원",
+    "shares": 674776
    },
    {
     "name": "남동우",
     "pct": 0.52,
-    "relation": "관계사 등기임원",
-    "shares": 46600
+    "relation": "등기임원",
+    "shares": 93200
    },
    {
     "name": "김시남",
-    "pct": 0.29,
-    "relation": "관계사 미등기임원",
-    "shares": 26309
+    "pct": 0.24,
+    "relation": "미등기임원",
+    "shares": 42618
    },
    {
     "name": "김종기",
     "pct": 0.07,
-    "relation": "관계사 미등기임원",
-    "shares": 6000
+    "relation": "미등기임원",
+    "shares": 12000
    },
    {
     "name": "김주현",
     "pct": 0.05,
-    "relation": "미등기임원 및\n관계사 등기임원",
-    "shares": 4776
+    "relation": "등기임원",
+    "shares": 9552
    }
   ],
-  "total_pct": 46.75
+  "total_pct": 46.2
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814001631",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116000166",
  "pv": 4,
- "treasury_shares": 1431
+ "treasury_shares": 0
 }

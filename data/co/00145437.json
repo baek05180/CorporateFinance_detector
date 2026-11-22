@@ -18,7 +18,7 @@
    }
   ]
  },
- "checked": "2026-11-16T00:15+09:00",
+ "checked": "2026-11-23T01:27+09:00",
  "corp_code": "00145437",
  "fs_annual": {
   "amort": 27472000.0,
@@ -49,10 +49,12 @@
   "revenue": 5921928326
  },
  "fs_interim": {
-  "assets": 21879452681,
-  "capex": 1890000,
-  "capital": 10125097000,
-  "cash": 11697785780,
+  "assets": 34144022862,
+  "capex": 0,
+  "capital": 18241802500,
+  "cash": 4668357606,
+  "cur_assets": 13603012297,
+  "cur_liab": 3380008064,
   "debt": 160700000,
   "debt_hist": [
    null,
@@ -62,31 +64,37 @@
   "debt_items": [
    "단기차입금"
   ],
-  "equity": 18901609872,
-  "fin_cost": 370026290,
+  "equity": 30618692014,
+  "fin_cost": 385626059,
   "fs": "CFS",
-  "interest_paid": 0,
-  "liab": 2977842809,
-  "ni": -801633621,
-  "ocf": -2553643801,
-  "op": -901007800,
-  "period": "2026 반기",
-  "revenue": 2305397690
+  "interest_paid": 17501325,
+  "liab": 3525330848,
+  "ni": -2069868974,
+  "ocf": -5061768215,
+  "op": -2087663488,
+  "period": "2026 3Q",
+  "revenue": 6208871275
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
-    "name": "키위제1호조합",
-    "pct": 46.3,
+    "name": "경남제약(주)",
+    "pct": 44.5,
     "relation": "본인",
-    "shares": 9376451
+    "shares": 3246683
+   },
+   {
+    "name": "키위제1호조합",
+    "pct": 25.7,
+    "relation": "특수관계인",
+    "shares": 1875290
    }
   ],
-  "total_pct": 46.3
+  "total_pct": 70.2
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814001030",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116002060",
  "pv": 4,
- "treasury_shares": 6428
+ "treasury_shares": 5143
 }

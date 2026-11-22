@@ -19,7 +19,7 @@
    }
   ]
  },
- "checked": "2026-11-16T00:15+09:00",
+ "checked": "2026-11-23T01:26+09:00",
  "corp_code": "01494118",
  "fs_annual": {
   "amort": 213501000.0,
@@ -53,65 +53,67 @@
   "st_deposits": 15500000000
  },
  "fs_interim": {
-  "assets": 25941458025,
-  "capex": 104175146,
-  "capital": 25645661500,
-  "cash": 4514915476,
-  "debt": 3864075351,
+  "assets": 18714972372,
+  "capex": 150001834,
+  "capital": 25645660000,
+  "cash": 1629652278,
+  "cur_assets": 12505366512,
+  "cur_liab": 3411486753,
+  "debt": 2880222080,
   "debt_hist": [
    null,
    7121291238,
-   3864075351
+   2880222080
   ],
   "debt_items": [
    "단기차입금",
    "비유동리스부채",
    "유동리스부채"
   ],
-  "equity": 16435704407,
-  "fin_cost": 98933160,
+  "equity": 11337057226,
+  "fin_cost": 427824618,
   "fs": "CFS",
-  "interest_paid": 81864067,
-  "liab": 9505753618,
-  "ni": -9349423335,
-  "ocf": -8933533793,
-  "op": -9655415708,
-  "period": "2026 반기",
-  "revenue": 1330368335,
+  "interest_paid": 122198242,
+  "liab": 7377915146,
+  "ni": -14427467020,
+  "ocf": -14153418762,
+  "op": -14171944717,
+  "period": "2026 3Q",
+  "revenue": 1842097982,
   "st_deposits": 0
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "MSEED, INC",
-    "pct": 5.72,
+    "pct": 3.77,
     "relation": "최대주주",
-    "shares": 2935007
+    "shares": 387001
    },
    {
     "name": "임찬양",
     "pct": 2.92,
     "relation": "특수관계인",
-    "shares": 1498810
+    "shares": 299762
    },
    {
     "name": "김경환",
     "pct": 2.92,
     "relation": "특수관계인",
-    "shares": 1498810
+    "shares": 299762
    },
    {
     "name": "안정권",
     "pct": 0.58,
     "relation": "특수관계인",
-    "shares": 298832
+    "shares": 59766
    }
   ],
-  "total_pct": 12.14
+  "total_pct": 10.2
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260812000889",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116001911",
  "pv": 4,
  "treasury_shares": null
 }

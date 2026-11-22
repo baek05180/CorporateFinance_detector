@@ -43,7 +43,7 @@
    }
   ]
  },
- "checked": "2026-11-16T00:16+09:00",
+ "checked": "2026-11-23T01:29+09:00",
  "corp_code": "01095704",
  "fs_annual": {
   "amort": 4897655,
@@ -76,16 +76,18 @@
   "st_deposits": 0
  },
  "fs_interim": {
-  "amort": 2748894,
-  "assets": 47712635065,
-  "capex": 1225770120,
-  "capital": 2788705000,
-  "cash": 138395692,
-  "debt": 18670000000,
+  "amort": 4161576,
+  "assets": 48131248206,
+  "capex": 1509751524,
+  "capital": 3242837500,
+  "cash": 337515888,
+  "cur_assets": 4713933475,
+  "cur_liab": 16054924705,
+  "debt": 18970000000,
   "debt_hist": [
    null,
    15800000000,
-   18670000000
+   18970000000
   ],
   "debt_items": [
    "비유동성금융기관차입금(사채제외)",
@@ -93,38 +95,50 @@
    "유동성금융기관차입금(사채제외)",
    "유동성기타차입금(사채제외)"
   ],
-  "dep": 420654513,
-  "equity": 26670093136,
-  "fin_cost": 331925960,
+  "dep": 602197112,
+  "equity": 26664907108,
+  "fin_cost": 532750162,
   "fs": "OFS",
-  "interest_paid": 331752091,
-  "liab": 21042541929,
-  "ni": -1590849625,
-  "op": -1244134483,
-  "period": "2026 반기",
-  "revenue": 8304766115,
+  "interest_paid": 522522011,
+  "liab": 21466341098,
+  "ni": -2295737630,
+  "op": -1697985313,
+  "period": "2026 3Q",
+  "revenue": 12332786816,
   "st_deposits": 0
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "강일모",
-    "pct": 37.89,
+    "pct": 33.25,
     "relation": "본인",
-    "shares": 2113063
+    "shares": 2156706
    },
    {
     "name": "백승원\n(BAIK BRIAN \nSEUNG WON)",
-    "pct": 1.68,
+    "pct": 15.45,
     "relation": "특수관계인",
-    "shares": 93484
+    "shares": 1001749
+   },
+   {
+    "name": "황민영",
+    "pct": 0.95,
+    "relation": "특수관계인",
+    "shares": 61752
+   },
+   {
+    "name": "임영애",
+    "pct": 0.01,
+    "relation": "특수관계인",
+    "shares": 787
    }
   ],
-  "total_pct": 39.57
+  "total_pct": 49.66
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814001718",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116002013",
  "pv": 4,
- "treasury_shares": 2343
+ "treasury_shares": 174240
 }

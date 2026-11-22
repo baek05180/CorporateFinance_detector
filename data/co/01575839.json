@@ -24,7 +24,7 @@
    }
   ]
  },
- "checked": "2026-11-16T00:16+09:00",
+ "checked": "2026-11-23T01:29+09:00",
  "corp_code": "01575839",
  "fs_annual": {
   "amort": 126601525.0,
@@ -60,15 +60,17 @@
   "revenue": 8482954613
  },
  "fs_interim": {
-  "assets": 19234639330,
-  "capex": 96970039,
-  "capital": 1919222000,
-  "cash": 2520322783,
-  "debt": 12992365591,
+  "assets": 20843178122,
+  "capex": 1127069432,
+  "capital": 2686766000,
+  "cash": 3064355292,
+  "cur_assets": 12590371360,
+  "cur_liab": 12866717888,
+  "debt": 10581609743,
   "debt_hist": [
    null,
    9387824068,
-   12992365591
+   10581609743
   ],
   "debt_items": [
    "단기차입금",
@@ -78,61 +80,61 @@
    "장기차입금(사채포함),총액",
    "전환사채(유동)"
   ],
-  "equity": 1310764026,
-  "fin_cost": 812238160,
+  "equity": 5930087991,
+  "fin_cost": 1394028181,
   "fs": "CFS",
-  "interest_paid": 76753296,
-  "liab": 17923875304,
-  "ni": -4639093458,
-  "ocf": -4406458772,
-  "op": -4435698383,
-  "period": "2026 반기",
-  "revenue": 5665332633
+  "interest_paid": 89855449,
+  "liab": 14913090131,
+  "ni": -7482086375,
+  "ocf": -6580298242,
+  "op": -6512750476,
+  "period": "2026 3Q",
+  "revenue": 7304042010
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "(주)드림텍",
-    "pct": 27.68,
+    "pct": 48.34,
     "relation": "최대주주",
-    "shares": 1062499
+    "shares": 2597587
    },
    {
     "name": "(주)나무가",
-    "pct": 8.32,
+    "pct": 9.78,
     "relation": "최대주주의 특수관계인",
-    "shares": 319315
+    "shares": 525332
    },
    {
     "name": "LIM ALEXANDRA",
-    "pct": 6.22,
+    "pct": 4.44,
     "relation": "최대주주의 특수관계인",
     "shares": 238737
    },
    {
     "name": "LIM CHARLES CHANGWAN",
-    "pct": 3.7,
+    "pct": 2.64,
     "relation": "최대주주의 특수관계인",
     "shares": 141983
    },
    {
     "name": "㈜플라즈맵",
-    "pct": 0.56,
+    "pct": 0.4,
     "relation": "자기주식",
     "shares": 21436
    },
    {
     "name": "김형민",
-    "pct": 0.53,
+    "pct": 0.38,
     "relation": "최대주주의 특수관계인",
     "shares": 20524
    }
   ],
-  "total_pct": 48.8
+  "total_pct": 67.26
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814002269",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116001155",
  "pv": 4,
- "treasury_shares": 21436
+ "treasury_shares": 1436
 }

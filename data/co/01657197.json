@@ -37,7 +37,7 @@
    }
   ]
  },
- "checked": "2026-11-16T00:16+09:00",
+ "checked": "2026-11-23T01:28+09:00",
  "corp_code": "01657197",
  "fs_annual": {
   "amort": 28598252,
@@ -71,38 +71,38 @@
   "revenue": 28490907891
  },
  "fs_interim": {
-  "amort": 16776092,
-  "capex": 103536400,
-  "dep": 371797161,
-  "fin_cost": 8632497,
+  "amort": 25436492,
+  "capex": 107336400,
+  "dep": 562214025,
+  "fin_cost": 163711041,
   "fs": "CFS",
-  "interest_paid": 0,
-  "ni": 5432361079,
-  "ocf": 7005840893,
-  "op": 5295393996,
-  "period": "2026 반기",
-  "revenue": 17890264980
+  "interest_paid": 12667905,
+  "ni": 5372123856,
+  "ocf": -4774399752,
+  "op": 7793774846,
+  "period": "2026 3Q",
+  "revenue": 31338003900
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "(주)청담글로벌",
-    "pct": 50.85,
+    "pct": 51.85,
     "relation": "최대주주\n(지배기업)",
     "shares": 7650000
    },
    {
     "name": "남호걸",
-    "pct": 1.99,
-    "relation": "특수관계인\n\n(등기임원)",
-    "shares": 300000
+    "pct": 0.0,
+    "relation": "특수관계인\n(등기임원)",
+    "shares": 0
    }
   ],
-  "total_pct": 52.84
+  "total_pct": 51.85
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260812000672",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116000187",
  "pv": 4,
- "treasury_shares": 291143
+ "treasury_shares": 0
 }

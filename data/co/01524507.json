@@ -32,7 +32,7 @@
    }
   ]
  },
- "checked": "2026-11-16T00:16+09:00",
+ "checked": "2026-11-23T01:27+09:00",
  "corp_code": "01524507",
  "fs_annual": {
   "amort": 5682769,
@@ -64,11 +64,13 @@
   "st_deposits": 0
  },
  "fs_interim": {
-  "amort": 2861995,
-  "assets": 17604337077,
+  "amort": 4382940,
+  "assets": 20441811738,
   "capex": 8595455,
-  "capital": 5684356000,
-  "cash": 2142412279,
+  "capital": 7012965000,
+  "cash": 1625418445,
+  "cur_assets": 10086040332,
+  "cur_liab": 1647997503,
   "debt": 416660000,
   "debt_hist": [
    null,
@@ -79,51 +81,51 @@
    "유동성장기차입금",
    "장기차입금"
   ],
-  "dep": 167086918,
-  "equity": 15840397981,
-  "fin_cost": 291541142,
+  "dep": 229781310,
+  "equity": 18367306224,
+  "fin_cost": 295218429,
   "fs": "OFS",
-  "interest_paid": 6149756,
-  "liab": 1763939096,
-  "ni": -1364619566,
-  "ocf": -1231482268,
-  "op": -1146862007,
-  "period": "2026 반기",
-  "revenue": 4385586026,
-  "st_deposits": 4475401027
+  "interest_paid": 9045371,
+  "liab": 2074505514,
+  "ni": -1796582905,
+  "ocf": -1793295967,
+  "op": -1590864591,
+  "period": "2026 3Q",
+  "revenue": 5802414283,
+  "st_deposits": 7462377738
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "김동기",
-    "pct": 31.22,
+    "pct": 26.04,
     "relation": "최대주주",
-    "shares": 3549000
+    "shares": 3651975
    },
    {
     "name": "정영훈",
-    "pct": 13.19,
+    "pct": 10.0,
     "relation": "등기임원",
-    "shares": 1500000
+    "shares": 1402975
    },
    {
     "name": "김지연",
-    "pct": 1.77,
+    "pct": 1.44,
     "relation": "배우자",
     "shares": 201500
    },
    {
     "name": "황유동",
-    "pct": 0.14,
+    "pct": 0.11,
     "relation": "등기임원",
     "shares": 15700
    }
   ],
-  "total_pct": 46.32
+  "total_pct": 37.59
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260812000620",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116000257",
  "pv": 4,
  "treasury_shares": null
 }

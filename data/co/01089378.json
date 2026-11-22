@@ -25,7 +25,7 @@
    }
   ]
  },
- "checked": "2026-11-16T00:16+09:00",
+ "checked": "2026-11-23T01:28+09:00",
  "corp_code": "01089378",
  "fs_annual": {
   "assets": 29944164009,
@@ -60,15 +60,17 @@
   "st_deposits": 27227239
  },
  "fs_interim": {
-  "assets": 38591890043,
-  "capex": 231914709,
-  "capital": 3867325600,
-  "cash": 1286632516,
-  "debt": 9707386282,
+  "assets": 42606929024,
+  "capex": 309584720,
+  "capital": 4137921900,
+  "cash": 991364973,
+  "cur_assets": 33185217724,
+  "cur_liab": 19535995457,
+  "debt": 7720677201,
   "debt_hist": [
    null,
    10123393233,
-   9707386282
+   7720677201
   ],
   "debt_items": [
    "리스부채",
@@ -76,38 +78,38 @@
    "신주인수권부사채",
    "전환사채"
   ],
-  "equity": 17852920980,
-  "fin_cost": 1767382778,
+  "equity": 22116359249,
+  "fin_cost": 2724141091,
   "fs": "OFS",
-  "interest_paid": 276598250,
-  "liab": 20738969063,
-  "ni": 106902536,
-  "ocf": -4506809430,
-  "op": 1299036999,
-  "period": "2026 반기",
-  "revenue": 29463813208,
-  "st_deposits": 31434614
+  "interest_paid": 387449201,
+  "liab": 20490569775,
+  "ni": 1041807643,
+  "ocf": -5380733728,
+  "op": 3165433166,
+  "period": "2026 3Q",
+  "revenue": 46936385535,
+  "st_deposits": 33529488
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "OULANGE TRADE LIMITED",
-    "pct": 20.14,
+    "pct": 25.36,
     "relation": "본인",
-    "shares": 7787769
+    "shares": 10493723
    },
    {
     "name": "㈜레그테크",
-    "pct": 11.16,
+    "pct": 10.43,
     "relation": "특수관계자",
     "shares": 4317785
    }
   ],
-  "total_pct": 31.3
+  "total_pct": 35.79
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814002365",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116000117",
  "pv": 4,
  "treasury_shares": 18605
 }

@@ -28,7 +28,7 @@
    }
   ]
  },
- "checked": "2026-11-16T00:16+09:00",
+ "checked": "2026-11-23T01:28+09:00",
  "corp_code": "00106395",
  "fs_annual": {
   "amort": 40447000.0,
@@ -63,15 +63,17 @@
   "revenue": 44337718233
  },
  "fs_interim": {
-  "assets": 28169868403,
-  "capex": 367959054,
-  "capital": 30940041500,
-  "cash": 4502405775,
-  "debt": 5507464138,
+  "assets": 49226734272,
+  "capex": 379827924,
+  "capital": 31566497500,
+  "cash": 15775222622,
+  "cur_assets": 39701628076,
+  "cur_liab": 22111609337,
+  "debt": 13720580860,
   "debt_hist": [
    null,
    6532865620,
-   5507464138
+   13720580860
   ],
   "debt_items": [
    "비유동리스부채",
@@ -79,61 +81,61 @@
    "유동성전환사채",
    "유동차입금(사채포함)"
   ],
-  "equity": 12643277912,
-  "fin_cost": 321356658,
+  "equity": 23643801167,
+  "fin_cost": 489735444,
   "fs": "CFS",
-  "interest_paid": 79651459,
-  "liab": 15526590491,
-  "ni": 1922976626,
-  "ocf": -4713250282,
-  "op": -986018595,
-  "period": "2026 반기",
-  "revenue": 18687443966
+  "interest_paid": 128123933,
+  "liab": 25582933105,
+  "ni": 2566570347,
+  "ocf": -4887369932,
+  "op": -1423594239,
+  "period": "2026 3Q",
+  "revenue": 26856507990
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "CNJ, Inc.",
-    "pct": 11.66,
-    "relation": "특수관계인",
-    "shares": 7215007
-   },
-   {
-    "name": "정규용",
-    "pct": 8.14,
-    "relation": "특수관계인",
-    "shares": 5034364
-   },
-   {
-    "name": "(주)신주피이SHINJUPE CO.,ltd",
-    "pct": 3.03,
-    "relation": "특수관계인",
-    "shares": 1875160
-   },
-   {
-    "name": "화이트웨일투자조합제2호",
-    "pct": 2.33,
+    "pct": 11.43,
     "relation": "특수관계인",
     "shares": 1443001
    },
    {
+    "name": "정규용",
+    "pct": 7.97,
+    "relation": "특수관계인",
+    "shares": 1006872
+   },
+   {
+    "name": "(주)신주피이SHINJUPE CO.,ltd",
+    "pct": 2.97,
+    "relation": "특수관계인",
+    "shares": 375032
+   },
+   {
+    "name": "화이트웨일투자조합제2호",
+    "pct": 2.29,
+    "relation": "특수관계인",
+    "shares": 288600
+   },
+   {
     "name": "(주)신주홀딩스",
-    "pct": 2.3,
+    "pct": 2.25,
     "relation": "본인",
-    "shares": 1422023
+    "shares": 284404
    },
    {
     "name": "정헌욱",
-    "pct": 1.94,
+    "pct": 0.93,
     "relation": "특수관계인",
-    "shares": 1201356
+    "shares": 117271
    }
   ],
-  "total_pct": 32.6
+  "total_pct": 29.04
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814001009",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116001489",
  "pv": 4,
- "treasury_shares": 865884
+ "treasury_shares": 183822
 }

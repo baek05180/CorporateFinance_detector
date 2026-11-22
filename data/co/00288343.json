@@ -52,7 +52,7 @@
    }
   ]
  },
- "checked": "2026-11-16T00:15+09:00",
+ "checked": "2026-11-23T01:25+09:00",
  "corp_code": "00288343",
  "fs_annual": {
   "amort": 635797000.0,
@@ -86,62 +86,48 @@
   "revenue": 33261463483
  },
  "fs_interim": {
-  "assets": 41355581374,
+  "assets": 50576988097,
+  "capex": 0,
   "capital": 8046919000,
-  "cash": 568341619,
-  "debt": 10292387864,
+  "cash": 2357800969,
+  "cur_assets": 47103279682,
+  "cur_liab": 35384471023,
+  "debt": 10273823913,
   "debt_hist": [
    null,
    10323769672,
-   10292387864
+   10273823913
   ],
   "debt_items": [
    "단기차입금",
    "유동성리스부채",
    "유동성전환사채"
   ],
-  "equity": 14458904129,
-  "fin_cost": 301367054,
+  "equity": 15165785387,
+  "fin_cost": 659063050,
   "fs": "OFS",
-  "liab": 26896677245,
-  "ni": -3649095475,
-  "ocf": -414009721,
-  "op": 546902722,
-  "period": "2026 반기",
-  "revenue": 11203863264
+  "interest_paid": 0,
+  "liab": 35411202710,
+  "ni": -2942214217,
+  "ocf": 1452376825,
+  "op": 1619019939,
+  "period": "2026 3Q",
+  "revenue": 19218202003
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
-    "name": "황   원",
-    "pct": 16.93,
-    "relation": "본인",
-    "shares": 2724163
-   },
-   {
-    "name": "노은아",
-    "pct": 1.92,
-    "relation": "처",
-    "shares": 309662
-   },
-   {
-    "name": "황혜경",
-    "pct": 0.68,
-    "relation": "자녀",
-    "shares": 109603
-   },
-   {
-    "name": "황재우",
-    "pct": 0.01,
-    "relation": "자녀",
-    "shares": 2000
+    "name": "-",
+    "pct": 0.0,
+    "relation": "-",
+    "shares": null
    }
   ],
-  "total_pct": 19.54
+  "total_pct": 0.0
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814004129",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116000170",
  "pv": 4,
  "treasury_shares": null
 }

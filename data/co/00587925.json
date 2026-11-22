@@ -30,7 +30,7 @@
    }
   ]
  },
- "checked": "2026-11-16T00:14+09:00",
+ "checked": "2026-11-23T01:25+09:00",
  "corp_code": "00587925",
  "fs_annual": {
   "amort": 33698000.0,
@@ -61,50 +61,52 @@
   "revenue": 11216210534
  },
  "fs_interim": {
-  "assets": 32471168031,
-  "capex": 283521818,
+  "assets": 28910540440,
+  "capex": 300878818,
   "capital": 21083490000,
-  "cash": 623246149,
-  "debt": 5444968762,
+  "cash": 54824462,
+  "cur_assets": 16621994468,
+  "cur_liab": 5722905248,
+  "debt": 3289539089,
   "debt_hist": [
    null,
    5850939500,
-   5444968762
+   3289539089
   ],
   "debt_items": [
    "차입금및사채"
   ],
-  "equity": 24185592863,
-  "fin_cost": 5039729251,
+  "equity": 22621349823,
+  "fin_cost": 5594948505,
   "fs": "CFS",
-  "interest_paid": 150663241,
-  "liab": 8285575168,
-  "ni": -9014763030,
-  "ocf": -2124686626,
-  "op": -2591245401,
-  "period": "2026 반기",
-  "revenue": 4667215303
+  "interest_paid": 200098524,
+  "liab": 6289190617,
+  "ni": -8520486788,
+  "ocf": -2232013929,
+  "op": -3875405208,
+  "period": "2026 3Q",
+  "revenue": 5813503154
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "(주)모아데이타",
     "pct": 17.18,
     "relation": "최대주주",
-    "shares": 7244268
+    "shares": 3622134
    },
    {
     "name": "윤상호",
     "pct": 0.71,
     "relation": "특수관계인",
-    "shares": 300000
+    "shares": 150000
    }
   ],
   "total_pct": 17.89
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814002812",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116001938",
  "pv": 4,
- "treasury_shares": null
+ "treasury_shares": 2332
 }

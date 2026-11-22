@@ -37,7 +37,7 @@
    }
   ]
  },
- "checked": "2026-11-16T00:18+09:00",
+ "checked": "2026-11-23T01:32+09:00",
  "corp_code": "01318933",
  "fs_annual": {
   "amort": 396784000.0,
@@ -72,38 +72,36 @@
   "revenue": 36380023074
  },
  "fs_interim": {
-  "assets": 27157393403,
-  "capex": 8800000,
+  "assets": 30394668969,
+  "capex": 9700000,
   "capital": 4578738100,
-  "cash": 1782355230,
-  "cur_assets": 22755893084,
-  "cur_liab": 13111662455,
-  "debt": 4590727976,
+  "cash": 1015572407,
+  "cur_assets": 26075897829,
+  "cur_liab": 16784071077,
+  "debt": 4578226636,
   "debt_hist": [
    null,
    4583655846,
-   4590727976
+   4578226636
   ],
   "debt_items": [
-   "비유동리스부채",
-   "유동리스부채",
-   "유동차입금(사채포함)",
-   "전환사채,총액"
+   "리스부채(비유동)",
+   "리스부채(유동)",
+   "유동차입금"
   ],
-  "equity": 13414881814,
-  "fin_cost": 71442393,
-  "fs": "OFS",
-  "interest_paid": 64215319,
-  "liab": 13742511589,
-  "ni": -1859125494,
-  "ocf": -2783292607,
-  "op": -1870239025,
-  "period": "2026 반기",
-  "revenue": 17619029734,
-  "st_deposits": 0
+  "equity": 12343080772,
+  "fin_cost": 111440196,
+  "fs": "CFS",
+  "interest_paid": 103220359,
+  "liab": 18051588197,
+  "ni": -2952997020,
+  "ocf": -7350510632,
+  "op": -3515677255,
+  "period": "2026 3Q",
+  "revenue": 28417125072
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "HALO MICROELECTRONICS INTERNATIONAL CORPORATION",
@@ -112,22 +110,22 @@
     "shares": 4135966
    },
    {
+    "name": "유한회사 헤일로전자",
+    "pct": 1.94,
+    "relation": "최대주주의 특수관계인",
+    "shares": 177765
+   },
+   {
     "name": "Halo Microelectronics\n(Hong Kong) Co., Ltd.",
     "pct": 1.35,
     "relation": "최대주주의 특수관계인",
     "shares": 124501
-   },
-   {
-    "name": "유한회사 헤일로전자",
-    "pct": 1.09,
-    "relation": "최대주주의 특수관계인",
-    "shares": 100089
    }
   ],
-  "total_pct": 47.6
+  "total_pct": 48.45
  },
- "latest_name": "[기재정정]반기보고서 (2026.06)",
- "latest_rcept": "20261022000242",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116000885",
  "pv": 4,
- "treasury_shares": 4305
+ "treasury_shares": null
 }

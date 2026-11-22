@@ -1,15 +1,73 @@
 {
- "crash": "Traceback (most recent call last):\n  File \"/home/runner/work/CorporateFinance_detector/CorporateFinance_detector/collector/profiles.py\", line 550, in run\n    fin = refresh_multi(dart, listed_cc, fin, today)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/CorporateFinance_detector/CorporateFinance_detector/collector/profiles.py\", line 91, in refresh_multi\n    fin[\"annual\"].update(parse_multi(dart.multi_accounts(chunk, annual, \"11011\")))\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/CorporateFinance_detector/CorporateFinance_detector/collector/dart.py\", line 179, in multi_accounts\n    data = self._get(\"fnlttMultiAcnt\", corp_code=\",\".join(corp_codes), bsns_year=str(year), reprt_code=reprt_code)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/CorporateFinance_detector/CorporateFinance_detector/collector/dart.py\", line 71, in _get\n    raise DartError(f\"{endpoint} 호출 실패: {_redact(last_err)}\")\ncollector.dart.DartError: fnlttMultiAcnt 호출 실패: Expecting value: line 1 column 1 (char 0)\n",
- "dart_calls": 30,
- "listed_error": "403 Client Error: Forbidden for url: https://kind.krx.co.kr/corpgeneral/corpList.do",
- "price_hist_days": 121,
+ "bond_docs": {
+  "found_demand": 278,
+  "found_rating": 281,
+  "sec": 18,
+  "todo": 4,
+  "with_band": 277,
+  "with_rate": 0
+ },
+ "budget_exhausted": true,
+ "crno_matched": 0,
+ "dart_calls": 4000,
+ "listed": 2769,
+ "mezz_docs": {
+  "sec": 2,
+  "todo": 2,
+  "total": 1268,
+  "with_call": 519,
+  "with_inv": 1218,
+  "with_prem": 703
+ },
+ "mezz_events": {
+  "cands": 28,
+  "live_corps": 961,
+  "parsed": 9,
+  "pending": 0,
+  "sec": 19,
+  "todo": 9,
+  "total": 2232
+ },
+ "mezz_miss": [
+  {
+   "got": {
+    "call_m": null,
+    "call_pct": null,
+    "premium": null,
+    "put_m": null
+   },
+   "n_inv": 1,
+   "rcept": "20261120000306",
+   "기준주가": " 사채 발행 시 전환가액 또는 행사가액으로 하며, 위 산식에서 \"시가\"라 함은 발행가액 산정의 기준이 되는 기준주가 또는 권리락주가(유상증자 이외의 경우에는 조정사유 발생 전일을 기산일로 하여 계산한 기준주가)로 한다. \n (3) 합병, 자본의 감소, 주식분할 및 병합 등에 의하여 전환가액의 조정이 필요한 경우에는 당해 합병 또는 자본의 감소 등의 직전에 전액 전환되어 주식으로 발행되었더라면 사채권자가 가질 수 있었던 주식수에 따른 가치에 상응하도록 전환가액을 ",
+   "대상자": "을 이유로 발행회사에 상환을 청구할 수 없습니다. \n \n\n \n\n \n\n \n \n \n\n \n\n \n 【특정인에 대한 대상자별 사채발행내역】 \n \n \n \n\n \n\n \n \n \n \n \n \n \n \n\n \n\n \n 발행 대상자명 \n 회사 또는최대주주와의관계 \n 선정경위 \n 발행결정 전후6월이내거래내역 및계획 \n 발행권면(전자등록)총액(원) \n 비고 \n \n \n\n \n\n \n (주)인문고전 \n 타인 \n 회사 경영상 필요자금을 조달하기 위해투자자의 납입능력 및 시기 등을 고려하여 선정 \n - \n 10,000,000,000 \n - \n \n \n \n \n (주) 발행 대상자명은 향후 투자조합설립 이후 변경될 수 있습니다. \n\n \n\n \n\n \n\n \n\n \n \n \n\n \n\n \n 【조달자금의 구체적 사용 목적】 \n \n \n \n\n \n \n\n \n\n \n \n \n\n \n\n \n 【운영자금ㆍ기타자금의 경우】 \n \n \n \n\n \n\n \n \n \n \n\n \n\n \n \n (단위 : 백만원) \n \n \n \n\n \n\n \n \n \n \n \n \n \n \n\n \n\n \n 자금용도 \n 세부내역* \n 연도별 사용 예정 금액 \n \n\n \n '26년 \n '27년 \n '28년 이후 \n 합계 \n \n\n \n",
+   "매도청구권": "",
+   "할증": ""
+  }
+ ],
+ "price_hist_days": 120,
  "price_hist_fetched": 1,
  "prices": 2878,
+ "profiles_done": 1565,
+ "profiles_fresh": 2,
+ "profiles_left": 2099,
+ "profiles_sec": 493,
  "px_fetched": 1,
- "run": "2026-11-22T22:29+09:00",
+ "rights_docs": {
+  "discount": 843,
+  "issue_px": 1133,
+  "list_dt": 999,
+  "pay_dt": 1265,
+  "record_dt": 183,
+  "sec": 1,
+  "sub_from": 241,
+  "todo": 3,
+  "total": 1366
+ },
+ "run": "2026-11-23T00:15+09:00",
  "short_lnb": {
   "lnb_fetched": 1,
   "lnb_sample": null,
   "short_fetched": 0
- }
+ },
+ "targets": 3666
 }

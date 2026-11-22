@@ -37,7 +37,7 @@
    }
   ]
  },
- "checked": "2026-11-16T00:17+09:00",
+ "checked": "2026-11-23T01:30+09:00",
  "corp_code": "01505186",
  "fs_annual": {
   "assets": 12560942983,
@@ -68,78 +68,79 @@
   "revenue": 1766991674
  },
  "fs_interim": {
-  "assets": 13352281135,
+  "assets": 10674342099,
   "capex": 16720000,
   "capital": 3681455000,
-  "cash": 3503486849,
-  "cur_assets": 7031020658,
-  "cur_liab": 10036577414,
-  "debt": 9122394742,
+  "cash": 1226071636,
+  "cur_assets": 4738400235,
+  "cur_liab": 10252891099,
+  "debt": 9297982826,
   "debt_hist": [
    null,
    597789647,
-   9122394742
+   9297982826
   ],
   "debt_items": [
    "리스부채",
    "유동성리스부채",
    "유동성전환사채"
   ],
-  "equity": 2536163157,
-  "fin_cost": 1124711615,
+  "equity": -458117583,
+  "fin_cost": 1495858906,
   "fs": "OFS",
-  "interest_paid": 52365912,
-  "liab": 10816117978,
-  "ni": -6788867756,
-  "ocf": -4571033676,
-  "op": -5750704316,
-  "period": "2026 반기",
-  "revenue": 46976780
+  "interest_paid": 55875407,
+  "liab": 11132459682,
+  "ni": -9934543726,
+  "ocf": -6889125019,
+  "op": -8853950302,
+  "period": "2026 3Q",
+  "revenue": 46976780,
+  "st_deposits": 60000000
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "고범규",
-    "pct": 36.33,
+    "pct": 36.76,
     "relation": "최대주주",
-    "shares": 13374012
+    "shares": 6766792
    },
    {
     "name": "최소연",
     "pct": 5.91,
     "relation": "친인척",
-    "shares": 2174790
+    "shares": 1087395
    },
    {
     "name": "고서영",
     "pct": 2.05,
     "relation": "친인척",
-    "shares": 754729
+    "shares": 377364
    },
    {
     "name": "고서진",
     "pct": 2.05,
     "relation": "친인척",
-    "shares": 754729
+    "shares": 377364
    },
    {
     "name": "고태훈",
     "pct": 1.7,
     "relation": "친인척",
-    "shares": 626118
+    "shares": 313059
    },
    {
     "name": "조영호",
     "pct": 0.83,
     "relation": "등기임원",
-    "shares": 305322
+    "shares": 152661
    }
   ],
-  "total_pct": 49.78
+  "total_pct": 50.22
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814003540",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116002062",
  "pv": 4,
  "treasury_shares": 33328
 }

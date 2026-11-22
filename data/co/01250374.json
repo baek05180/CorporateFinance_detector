@@ -45,7 +45,7 @@
    }
   ]
  },
- "checked": "2026-11-16T00:16+09:00",
+ "checked": "2026-11-23T01:28+09:00",
  "corp_code": "01250374",
  "fs_annual": {
   "amort": 111534137,
@@ -76,47 +76,40 @@
   "st_deposits": 14000000000
  },
  "fs_interim": {
-  "amort": 31581328,
-  "assets": 23812944906,
-  "capex": 101225898,
+  "amort": 47371992,
+  "assets": 23589201146,
+  "capex": 940617318,
   "capital": 3008994500,
-  "cash": 1900968781,
-  "debt": 0,
-  "debt_hist": [
-   null,
-   81000000,
-   0
-  ],
-  "debt_items": [
-   "단기차입금"
-  ],
-  "dep": 175580267,
-  "equity": 21735222861,
-  "fin_cost": 23344163,
+  "cash": 1467486260,
+  "cur_assets": 12932326106,
+  "cur_liab": 2044836730,
+  "dep": 252743315,
+  "equity": 21184694392,
+  "fin_cost": 39925554,
   "fs": "OFS",
-  "interest_paid": 22331006,
-  "liab": 2077722045,
-  "ni": -1513008500,
-  "ocf": -1852520170,
-  "op": -1879412486,
-  "period": "2026 반기",
-  "revenue": 4067581952,
-  "st_deposits": 11000000000
+  "interest_paid": 1400707,
+  "liab": 2404506754,
+  "ni": -1736524354,
+  "ocf": -1978396162,
+  "op": -2265485886,
+  "period": "2026 3Q",
+  "revenue": 6717151579,
+  "st_deposits": 2000000000
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
-    "name": "(주)지란지교시큐리티",
-    "pct": 47.4,
+    "name": "주)지란지교시큐리티",
+    "pct": 49.79,
     "relation": "최대주주",
-    "shares": 2490356
+    "shares": 2615830
    }
   ],
-  "total_pct": 47.4
+  "total_pct": 49.79
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814002270",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261113000969",
  "pv": 4,
- "treasury_shares": 375655
+ "treasury_shares": 0
 }

@@ -29,7 +29,7 @@
    }
   ]
  },
- "checked": "2026-11-16T00:18+09:00",
+ "checked": "2026-11-23T01:31+09:00",
  "corp_code": "00808022",
  "fs_annual": {
   "assets": 98024514218,
@@ -60,62 +60,61 @@
   "revenue": 7909500393
  },
  "fs_interim": {
-  "assets": 125248549511,
-  "capex": 7499764,
-  "capital": 15302997000,
-  "cash": 40308187935,
-  "cur_assets": 58067770017,
-  "cur_liab": 85127837938,
-  "debt": 15583293086,
+  "assets": 110396694999,
+  "capex": 7395646,
+  "capital": 15438115000,
+  "cash": 31334357794,
+  "cur_assets": 47021466008,
+  "cur_liab": 62409228013,
+  "debt": 11457867613,
   "debt_hist": [
    null,
    9909505862,
-   15583293086
+   11457867613
   ],
   "debt_items": [
    "전환사채"
   ],
-  "equity": 39044364893,
-  "fin_cost": 6579182926,
+  "equity": 47000072634,
+  "fin_cost": 10047924740,
   "fs": "CFS",
-  "interest_paid": 169665124,
-  "liab": 86204184618,
-  "ni": 2377906266,
-  "ocf": -10820216052,
-  "op": -9103465341,
-  "period": "2026 반기",
-  "revenue": 4216340402
+  "interest_paid": 248024226,
+  "liab": 63396622365,
+  "ni": -5068520771,
+  "op": -13312411724,
+  "period": "2026 3Q",
+  "revenue": 6635226555
  },
  "holders": {
-  "as_of": "2026-06-30",
+  "as_of": "2026-09-30",
   "top": [
    {
     "name": "CCE Investment",
-    "pct": 9.52,
+    "pct": 9.43,
     "relation": "특수관계인",
     "shares": 2913093
    },
    {
     "name": "Kayne Holdings L.P",
-    "pct": 6.53,
+    "pct": 6.47,
     "relation": "특수관계인",
     "shares": 1997787
    },
    {
     "name": "박동현",
-    "pct": 6.04,
+    "pct": 6.01,
     "relation": "본인",
-    "shares": 1849961
+    "shares": 1854723
    },
    {
     "name": "김혜수",
-    "pct": 2.68,
+    "pct": 2.65,
     "relation": "특수관계인",
     "shares": 819533
    },
    {
     "name": "Glamour Box Limited",
-    "pct": 1.74,
+    "pct": 1.72,
     "relation": "특수관계인",
     "shares": 532148
    },
@@ -126,10 +125,10 @@
     "shares": 30000
    }
   ],
-  "total_pct": 26.85
+  "total_pct": 26.63
  },
- "latest_name": "반기보고서 (2026.06)",
- "latest_rcept": "20260814003105",
+ "latest_name": "분기보고서 (2026.09)",
+ "latest_rcept": "20261116000781",
  "pv": 4,
  "treasury_shares": null
 }
