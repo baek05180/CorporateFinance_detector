@@ -1180,10 +1180,11 @@ async function viewCompany(key) {
 }
 
 // 공모사채 발행 제안서(PPT) — 신용등급이 있는 회사만. 팝업은 GitHub 로그인(허용된 아이디만)으로 보호
-function openProposal(key) {
+// 페이지 스크립트가 즉시실행 함수 안에 있으므로 버튼(onclick)에서 부를 수 있게 window 에 붙인다
+window.openProposal = key => {
   const w = window.open(`/proposal/?corp=${key}`, 'proposal', 'width=720,height=860,scrollbars=yes');
   if (!w) location.href = `/proposal/?corp=${key}`;
-}
+};
 // ───────────── 조달 제안 보고서 ─────────────
 const OPT_Q = {
   public_bond: ['차환 대상 사채의 만기와 금액', '희망 만기 구조(2·3·5년)와 금리 수준', '신용평가사 등급 전망(Outlook)과 평가 일정'],
