@@ -129,3 +129,120 @@ def mezz_events_step(dart, store, today, diag, back_days=400, max_docs=600):
     dump_json("ref/mezz_events.json", db, indent=None)
     diag["mezz_events"] = {"live_corps": len(live), "cands": len(cands), "todo": len(todo), "parsed": n_ok,
                            "total": len(db["filings"]), "pending": len(db["pending"]), "sec": round(time.time() - t0)}
+
+
+# ───────── 금융투자협회 채권정보센터 (KOFIA BIS) ─────────
+KOFIA_URL = "https://www.kofiabond.or.kr/proframeWeb/XMLSERVICES/"
+KOFIA_GRADES = {"1010000": "KTB", "7010110": "AAA", "7010121": "AA+", "7010122": "AA", "7010123": "AA-", "7010131": "A+",
+                "7010132": "A", "7010133": "A-", "7010211": "BBB+", "7010212": "BBB", "7010213": "BBB-"}
+KOFIA_TENOR_IDX = [4, 5, 6, 7, 8, 9, 10, 11, 12]  # 1, 1.5, 2, 2.5, 3, 4, 5, 7, 10년
+
+
+def _kofia(svc, fn, dto, fields):
+    import xml.etree.ElementTree as ET
+    body = ("<?xml version=\"1.0\" encoding=\"utf-8\"?><message><proframeHeader><pfmAppName>BIS-KOFIABOND</pfmAppName>"
+            f"<pfmSvcName>{svc}</pfmSvcName><pfmFnName>{fn}</pfmFnName></proframeHeader><systemHeader></systemHeader>"
+            f"<{dto}>" + "".join(f"<{k}>{v}</{k}>" for k, v in fields.items()) + f"</{dto}></message>")
+    r = requests.post(KOFIA_URL, data=body.encode("utf-8"), timeout=60,
+                      headers={"Content-Type": "application/xml; charset=utf-8", "User-Agent": "Mozilla/5.0 (ecm-board)"})
+    r.raise_for_status()
+    return ET.fromstring(r.content)
+
+
+def _kofia_curve(day):
+    """하루치 등급·만기별 시가평가 수익률(평가사 평균). 비영업일이면 None."""
+    root = _kofia("BISBndSrtPrcSrchSO", "selectDay", "BISBndSrtPrcDayDTO",
+                  {"standardDt": day.strftime("%Y%m%d"), "reportCompCd": "A20000", "applyGbCd": "C00",
+                   "val1": "A10002", "val2": "A10003", "val3": "A10004", "val4": "A10005", "val5": ""})
+    out = {}
+    for n in root.iter("BISBndSrtPrcDayDTO"):
+        g = KOFIA_GRADES.get((n.findtext("sigaBrnCd") or "").strip())
+        if g:
+            out[g] = [float(v) if (v := (n.findtext(f"val{i}") or "").strip()) else None for i in KOFIA_TENOR_IDX]
+    return out or None
+
+
+def _kofia_trades(day):
+    """하루치 장외 회사채 체결 (종목·잔존·등급·수익률·거래대금)."""
+    root = _kofia("BISCurTrdDescSrchSO", "listDay", "BISComDspDatDTO",
+                  {"val1": day.strftime("%Y%m%d"), "val2": "", "val3": "", "val4": "", "val5": "", "val6": "", "val8": "", "val9": "", "val10": "B"})
+    rows = []
+    for n in root.iter("BISComDspDatDTO"):
+        if (n.findtext("val2") or "").strip() != "회사채":
+            continue
+        try:
+            rem, y, amt = (n.findtext("val4") or "").strip(), float(n.findtext("val6")), int((n.findtext("val12") or "0").replace(",", ""))
+            yrs = int(rem[:2]) + int(rem[2:4]) / 12 + int(rem[4:6]) / 365
+        except (TypeError, ValueError):
+            continue
+        if amt < 10000:  # 1억원 미만 소액 체결 제외 (단위: 만원)
+            continue
+        rows.append([day.isoformat(), (n.findtext("val3") or "").strip(), round(yrs, 3), (n.findtext("val5") or "").strip(),
+                     y, round(amt / 1e4, 2), (n.findtext("val20") or "").strip()])
+    return rows
+
+
+def kofia_step(today, diag, back_days=400, max_curve_days=45, trade_days=25):
+    """등급별 민평 곡선(매일 누적, 처음엔 조금씩 과거로 채움)과 최근 장외 회사채 체결."""
+    t0 = time.time()
+    info = {}
+    cv = load_json("ref/mkt/curves.json", {})
+    cv.setdefault("tenors", [1, 1.5, 2, 2.5, 3, 4, 5, 7, 10])
+    cv.setdefault("grades", list(KOFIA_GRADES.values()))
+    data = cv.setdefault("data", {})
+    tried = set(cv.get("empty", []))
+    need, d = [], today
+    while d >= today - timedelta(days=back_days) and len(need) < max_curve_days:
+        if d.weekday() < 5 and d.isoformat() not in data and d.isoformat() not in tried:
+            need.append(d)
+        d -= timedelta(days=1)
+    got = 0
+    for d in need:
+        try:
+            c = _kofia_curve(d)
+        except Exception as e:  # noqa: BLE001
+            info["curve_error"] = str(e)[:120]
+            break
+        if c:
+            data[d.isoformat()] = c
+            got += 1
+        elif d < today - timedelta(days=3):  # 휴일 — 다시 묻지 않음 (최근 3일은 공시 전일 수 있어 재시도)
+            tried.add(d.isoformat())
+        time.sleep(0.3)
+    cut = (today - timedelta(days=365 * 3)).isoformat()
+    cv["data"] = dict(sorted((k, v) for k, v in data.items() if k >= cut))
+    cv["empty"] = sorted(x for x in tried if x >= cut)
+    cv["source"] = "금융투자협회 채권정보센터 채권시가평가수익률(평가사 평균, 회사채 공모 무보증·국고채)"
+    if cv["data"]:
+        cv["updated"] = max(cv["data"])
+    dump_json("ref/mkt/curves.json", cv, indent=None)
+    info["curve_new"] = got
+    info["curve_days"] = len(cv["data"])
+
+    tr = load_json("ref/mkt/trades.json", {})
+    rows, done = tr.get("rows", []), set(tr.get("days", []))
+    n, d, new = 0, today, 0
+    while n < trade_days and d > today - timedelta(days=60):
+        if d.weekday() < 5:
+            n += 1
+            if d.isoformat() not in done or d >= today - timedelta(days=1):
+                try:
+                    rs = _kofia_trades(d)
+                except Exception as e:  # noqa: BLE001
+                    info["trade_error"] = str(e)[:120]
+                    break
+                rows = [r for r in rows if r[0] != d.isoformat()] + rs
+                new += len(rs)
+                if rs:
+                    done.add(d.isoformat())
+                time.sleep(0.3)
+        d -= timedelta(days=1)
+    keep = (today - timedelta(days=60)).isoformat()
+    tr = {"source": "금융투자협회 채권정보센터 실시간 체결정보(일자별 장외거래, 회사채, 거래대금 1억원 이상)",
+          "updated": today.isoformat(), "days": sorted(x for x in done if x >= keep),
+          "rows": sorted((r for r in rows if r[0] >= keep), key=lambda r: (r[0], r[1]))}
+    dump_json("ref/mkt/trades.json", tr, indent=None)
+    info["trades_new"] = new
+    info["trades"] = len(tr["rows"])
+    info["sec"] = round(time.time() - t0)
+    diag["kofia"] = info

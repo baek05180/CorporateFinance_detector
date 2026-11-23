@@ -62,7 +62,12 @@ jobs:
           KRX_PW: ${{ secrets.KRX_PW || secrets.PW }}
           ECOS_KEY: ${{ secrets.ECOS_KEY || secrets.ECOS_API_KEY || secrets.BOK_KEY || secrets.ECOS }}
           FRED_KEY: ${{ secrets.FRED_KEY || secrets.FRED_API_KEY || secrets.FRED }}
-        run: python -m collector.run --mode ${{ steps.mode.outputs.mode }} --days ${{ steps.mode.outputs.days }}
+        run: |
+          python -m collector.run --mode ${{ steps.mode.outputs.mode }} --days ${{ steps.mode.outputs.days }}
+          # 정기 갱신(평일 저녁) 때 제안서용 시장 데이터도 갱신: 금리(ECOS·FRED), 등급별 민평·장외 체결(금융투자협회), 수요예측 결과
+          if [ "${{ steps.mode.outputs.mode }}" = "daily" ]; then
+            python -m collector.run --mode market --days 200 || echo "::warning::시장 데이터 갱신 실패 (기존 데이터 유지)"
+          fi
 
       - name: 변경분 커밋
         id: commit

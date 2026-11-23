@@ -32,6 +32,10 @@ from tools.pptx_kit import (  # noqa: E402
     bar, etree, fill_tf, headline, headline_font, notes, rect, replace_in_slide, set_shape_text, source, table, textbox,
     title)
 from tools.proposal_spec import load_spec  # noqa: E402
+from tools import proposal_mkt as M  # noqa: E402
+from tools.proposal_text import (  # noqa: E402
+    adj_line, context, credit_story, demand_line, fresh_view, kr_lines, spread_line, term_premium, us_lines)
+from tools.proposal_mkt import ymd  # noqa: E402
 
 CW = 4770000
 X2 = X0 + CW + 250000
@@ -272,98 +276,40 @@ def transform(v3_path, F, I, spec, out_path):
         add_app_item(d_, hl)
 
     # ── Executive Summary ──
-    summ = None
-    if on.get("exec_summary", True):
-        summ = new_slide(prs, LAY_SUM)
-        title(summ, PR, "권고안 요약")
-        H(summ, f"{month_word} {'·'.join(str(t) for t in tenors)}년 {num(F['base'])}억 발행 권고 — 수요예측 {md(sch['수요예측'])}, 납입 {md(issue)}")
-        bar(summ, PR, "권고안", X0, 1800000, CW)
-        table(summ, [
-            ["항목", "제안"],
-            ["발행금액", f"{num(F['base'])}억원 (증액 시 최대 {num(F['max'])}억원)"],
-            ["만기 구성", f"{tenor_txt} — 증액 시 {C.pri}년 우선"],
-            ["금리밴드", f"{band}" + (f" ({band_note})" if band_note else "")],
-            ["예상 발행금리", " / ".join(f"{t}년 ##%" for t in tenors)],
-            ["일정", f"{md(sch['신고'])} 신고 → {md(sch['수요예측'])} 수요예측 → {md(issue)} 납입"],
-            ["신용등급", f"{grade}"],
-            ["인수·수수료", f"{num(F['base'])}억 {dflt.get('underwrite', '총액인수 확약')} / {fee}"],
-        ], X0, 2110000, CW, [1.1, 3.6], rowh=300000, size=9.5)
-        bar(summ, PR, "권고 근거", X2, 1800000, CW)
-        reasons = []
-        if F["prev"]:
-            tot = sum(r["_dem"]["total"] for r in F["prev"] if r.get("_dem"))
-            init = sum(r["_dem"]["total"] / r["_dem"]["ratio"] for r in F["prev"] if r.get("_dem") and r["_dem"].get("ratio"))
-            sp = [r["_spread"] for r in F["prev"] if r.get("_spread") is not None]
-            reasons.append(("수요", f"직전 회차 {num(init)}억 모집에 {num(tot)}억 주문({tot / init:.1f}:1)" + (f", 가산금리 {min(sp):+d}~{max(sp):+d}bp" if sp else "")))
-        else:
-            reasons.append(("수요", "AA급 최근 6개월 경쟁률 " + " / ".join(f"{C.mkt[t][2]} {C.mkt[t][0]:.1f}:1" for t in tenors if C.mkt[t][0])))
-        dl, aa_now = rates_now(rt, "aa3")
-        if dl:
-            hi_d, hi_v = max(((d, v) for d, v in rt["aa3"] if d >= (date.fromisoformat(dl) - timedelta(days=92)).isoformat()), key=lambda x: x[1])
-            reasons.append(("금리", f"AA- 3년 {aa_now:.3f}%({dl[5:].replace('-', '/')}) — 3개월 고점({hi_v:.3f}%) 대비 {(hi_v - aa_now) * 100:.0f}bp " + ("하락" if hi_v > aa_now else "")))
-        ev_txt = "·".join(f"{nm.split(' (')[0]}({date.fromisoformat(d).month}/{date.fromisoformat(d).day})" for d, nm in C.evs if d > sch["수요예측"].isoformat())[:60]
-        reasons.append(("이벤트", f"{ev_txt} 전 금리 확정" if ev_txt else f"{md(sch['정정'])} 정정신고로 금리 확정"))
-        for i, (k, v) in enumerate(reasons[:3]):
-            y = 2110000 + i * 680000
-            rect(summ, X2, y, CW, 600000, fill=PALE)
-            rect(summ, X2 + 90000, y + 120000, 360000, 360000, fill=NAVY, shape=2)
-            textbox(summ, X2 + 90000, y + 120000, 360000, 360000, [{"text": str(i + 1), "align": PP_ALIGN.CENTER, "bold": True}],
-                    size=12, color="FFFFFF", anchor=MSO_ANCHOR.MIDDLE, margin=0)
-            textbox(summ, X2 + 560000, y + 40000, CW - 620000, 520000,
-                    [{"text": k, "bold": True, "color": NAVY, "size": 10.5}, {"text": v}], size=9.5, anchor=MSO_ANCHOR.MIDDLE, margin=0)
-        bar(summ, PR, "리스크 및 대응", X0, 4720000, CW)
-        _, sp_now = None, F.get("sp_now")
-        risks = [[f"AA- 스프레드 {sp_now:.0f}bp 수준" if sp_now else "스프레드 변동", "당일 가산금리 컷 기준 사전 합의"]]
-        if F["prev"] and (issue - date.fromisoformat(F["prev"][0]["pay_dt"])).days < 120:
-            risks.append(["직전 회차 투자자 한도 소진", "한도 잔여 점검 + 신규 기관 발굴"])
-        else:
-            risks.append(["동일 시기 차환 발행 경합", "수요예측 일정 선점"])
-        risks.append(["한·미 정책 이벤트 전후 금리 변동", "이벤트 전 금리 확정, 결과 반영 후 재점검(##)"])
-        table(summ, [["리스크", "대응"]] + risks, X0, 5030000, CW, [1.7, 2.6], rowh=400000, size=9.5)
-        bar(summ, PR, "개별민평 및 국고채 금리 추이 (최근 6개월)", X2, 4140000, CW)
-        a3, k3 = rt.get("aa3") or [], dict(map(tuple, rt.get("ktb3") or []))
-        if a3:
-            st = (date.fromisoformat(a3[-1][0]) - timedelta(days=183)).isoformat()
-            pts = [(d, v) for d, v in a3 if d >= st and d in k3][::3]
-            if pts and pts[-1][0] != a3[-1][0] and a3[-1][0] in k3:
-                pts.append((a3[-1][0], a3[-1][1]))
-            cd0 = CategoryChartData()
-            cd0.categories = [d[5:].replace("-", "/") for d, _ in pts]
-            cd0.add_series("AA- 3년 등급민평", [v for _, v in pts])
-            cd0.add_series("국고 3년", [k3[d] for d, _ in pts])
-            c0 = summ.shapes.add_chart(XL_CHART_TYPE.LINE, Emu(X2), Emu(4440000), Emu(CW), Emu(2050000), cd0).chart
-            style_line(c0, [NAVY, SKY])
-        textbox(summ, X2, 6500000, CW, 230000, ["주) ## 동사 개별민평 시계열 추가 (차트 → 데이터 편집), 자료: 한국은행 ECOS"], size=8, color="7F7F7F", margin=0)
-        notes(summ, "[작성 가이드] 권고안(숫자) / 근거 3개 / 리스크·대응 / 개별민평·국고채 추이. ## 는 최종 확정 시 입력.")
+    X = context(F, I, spec)
+    summ = build_summary(prs, LAY_SUM, PR, F, I, X, C, spec, band, band_note, fee) if on.get("exec_summary", True) else None
 
     # ── 발행조건 ──
-    build_cond(cond, F, I, C, spec, band, band_note, fee)
+    build_cond(cond, F, I, C, spec, band, band_note, fee, X)
 
     # ── 예상 발행금리·프라이싱 ──
-    rate = build_pricing(prs, LAY_I, PR, F, C) if on.get("pricing", True) else None
+    rate = build_pricing(prs, LAY_I, PR, F, C, X) if on.get("pricing", True) else None
     # ── 만기구조 ──
     funds = build_maturity(prs, LAY_I, PR, F, C) if on.get("maturity", True) else None
     # ── 트랜치 ──
-    build_tranche(tranche, PR, F, C)
+    build_tranche(tranche, PR, F, C, X)
     # ── 옵션 ──
-    opt = build_options(prs, LAY_I, PR, F, C) if on.get("options", True) else None
+    opt = build_options(prs, LAY_I, PR, F, C, X) if on.get("options", True) else None
     # ── 일정 ──
-    build_schedule(sched, F, C)
+    build_schedule(sched, F, C, X)
     # ── 직전 회차 ──
     build_prev(prev_s, PR, F)
     # ── 크레딧 스토리 ──
-    story = build_story(prs, LAY_II, PR, F, I) if on.get("story", True) else None
+    story = build_story(prs, LAY_II, PR, F, I, X) if on.get("story", True) else None
     # ── 시장: 대시보드·전망·우측 패널 ──
-    dash = build_dashboard(prs, LAY_III, PR, F) if on.get("dashboard", True) else None
-    outlook = build_outlook(prs, LAY_III, PR, F) if on.get("outlook", True) else None
+    dash = build_dashboard(prs, LAY_III, PR, F, X) if on.get("dashboard", True) else None
+    outlook = build_outlook(prs, LAY_III, PR, F, X) if on.get("outlook", True) else None
     relayout(mpc, LAY_III)
     relayout(fed, LAY_III)
     R(fed, "Wiliams", "Williams")
     R(fed, "Washburm", "Washburn")
     R(mpc, "대응와", "대응과")
-    panel_credit(credit, PR, F)
-    panel_kr(kr, PR, F)
-    panel_us(us, PR, F, spec)
+    rewrite_credit(credit, PR, F, X, spec)
+    rewrite_kr(kr, F, X, spec)
+    rewrite_us(us, F, X, spec)
+    panel_credit(credit, PR, F, X)
+    panel_kr(kr, PR, F, X)
+    panel_us(us, PR, F, spec, X)
     strip_invisible_outlines(prs)
 
     order = [cover, disc, summ, divI, cond, rate, funds, tranche, opt, sched, divII, prev_s, story, divIII, dash, outlook,
@@ -390,6 +336,10 @@ def style_line(c, cols):
         s_.marker.style = XL_MARKER_STYLE.NONE
     c.value_axis.tick_labels.font.size = Pt(8)
     c.category_axis.tick_labels.font.size = Pt(8)
+    vals = [v for sr in c.plots[0].series for v in sr.values if v is not None]
+    if vals:
+        c.value_axis.minimum_scale = round(int(min(vals) * 4) / 4 - 0.25, 2)
+        c.value_axis.maximum_scale = round(int(max(vals) * 4) / 4 + 0.5, 2)
     c.value_axis.tick_labels.number_format = "0.0"
     c.value_axis.tick_labels.number_format_is_linked = False
     c.value_axis.major_gridlines.format.line.color.rgb = RGBColor.from_string("D9D9D9")
@@ -449,108 +399,6 @@ def strip_invisible_outlines(prs):
 B = lambda t: {"text": t, "lvl": 0}  # noqa: E731
 
 
-def build_cond(cond, F, I, C, spec, band, band_note, fee):
-    old = [sh for sh in cond.shapes if sh.has_table][0]
-    tx, ty, tw = old.left, old.top, old.width
-    old._element.getparent().remove(old._element)
-    name, issue, sch = F["name"], F["issue"], F["sch"]
-    tenors, split = C.tenors, F["split"]
-    amt = []
-    if F["due12"]:
-        amt.append(B(f"**[만기도래 사채]** 향후 12개월 내 공모사채 만기 {num(F['due12'] / 1e8)}억원 — 차환 재원 선제 확보 필요"))
-    if (I.get("issues_note") or "").strip():
-        amt.append(B("**[자금 수요]** " + I["issues_note"].strip().splitlines()[0][:110]))
-    elif F["capex_h"]:
-        amt.append(B(f"**[자금 수요]** {F['period']} 설비투자 {num(F['capex_h'])}억원 vs 영업현금흐름 {num(F['ocf_h'])}억원 — 외부조달 수요 상존"))
-    else:
-        amt.append(B("**[자금 수요]** ##"))
-    if F["prev"]:
-        tot = sum(r["_dem"]["total"] for r in F["prev"] if r.get("_dem"))
-        amt.append(B(f"**[시장 수급]** 직전 회차 주문 {num(tot)}억원 — {num(F['base'])}억원 신고·최대 {num(F['max'])}억원 증액은 소화 가능한 규모"))
-    else:
-        amt.append(B(f"**[시장 수급]** 최근 6개월 AA급 수요예측 참여 " + " / ".join(f"{C.mkt[t][2]} {C.mkt[t][1] / 1e4:.2f}조" for t in tenors if C.mkt[t][1])))
-    mat = []
-    pf = C.pri
-    if F.get("sp_now"):
-        mat.append(B(f"**[금리]** AA- 3년 스프레드 {F['sp_now']:.0f}bp — 증액 시 {pf}년물 우선 배정으로 금리·만기 균형"))
-    dem_bits = [f"{t}년 {C.pdm[t]['_dem']['ratio']:.1f}:1" for t in tenors if t in C.pdm and C.pdm[t].get("_dem")]
-    mk_bits = [f"{C.mkt[t][2]} {C.mkt[t][0]:.1f}:1" for t in tenors if C.mkt[t][0]]
-    mat.append(B("**[수요]** " + (("직전 회차 " + " / ".join(dem_bits)) if dem_bits else "AA급 6개월 " + " / ".join(mk_bits)) + " — 만기별 물량 소화 충분"))
-    mat.append(B("**[만기 분산]** " + " / ".join(f"'{(issue.year + t) % 100}년 기존 {num(C.lad.get(issue.year + t, 0))}억" for t in tenors) + " — 신규 만기 분산"))
-    agencies = ""
-    trig = (F.get("co") or {}).get("triggers") or {}
-    if trig.get("agencies"):
-        agencies = "·".join(a.get("agency", "") for a in trig["agencies"])
-    ev_bits = [f"{nm}({date.fromisoformat(d).month}/{date.fromisoformat(d).day})" for d, nm in C.evs if d >= sch["신고"].isoformat()][:4]
-    rows = [
-        ["구분", "조건", "상세 내용"],
-        ["발행금액", f"{num(F['base'])}억원\n(최대 {num(F['max'])}억원)", amt],
-        ["인수", f"{num(F['base'])}억원\n{(spec.get('defaults') or {}).get('underwrite', '총액인수 확약')}", [B("수요예측 결과와 무관하게 신고금액 전액 인수 — 조달 확실성 확보")]],
-        ["발행 만기", " / ".join(f"{t}년 {num(split[t])}억" for t in tenors), mat],
-        ["금리밴드", band, [B(band_note or "희망 금리밴드")]],
-        ["예상 발행금리", " / ".join(f"{t}년 ##%" for t in tenors), [B("개별민평 확인 후 입력 — 직전 회차 확정 가산금리 기준 참고 범위는 다음 장")]],
-        ["신용등급", F["grade"], [B((f"{agencies} 기준 유효등급" if agencies else "평가사 ## 기준 유효등급") + " (본평가일 ##)")]],
-        ["주요 일정", f"수요예측 {md(sch['수요예측'])}\n발행 {md(issue)}", [
-            B(f"{md(sch['신고'])} 증권신고서 → {md(sch['수요예측'])} 수요예측 → {md(sch['정정'])} 정정신고서(금리 확정) → {md(issue)} 납입"),
-            B(("·".join(ev_bits) + " 등 일정 고려") if ev_bits else "주요 이벤트 ##")]],
-        ["인수수수료", fee, [B((spec.get("defaults") or {}).get("fee_note", "직전 회차와 동일"))]],
-    ]
-    table(cond, rows, tx, ty, tw, [1.0, 1.75, 7.0], rowh=[300000, 1020000, 340000, 1020000, 400000, 400000, 340000, 760000, 340000],
-          size=9, align_cols={1: PP_ALIGN.CENTER}, name="ConditionTable")
-    for sh in cond.shapes:
-        if sh.has_text_frame and sh.text_frame.text.startswith("주) 상기 조건은"):
-            sh.top = Emu(7060000)
-    notes(cond, "[작성 가이드] 발행금액=만기도래 사채·자금 수요·시장 수급 / 만기=금리·수요·만기분산 / 금리밴드·수수료=직전 회차와 동일 / 신용등급=평가사별 유효등급. ## 는 최종 확정 시 입력.")
-
-
-def build_pricing(prs, LAY, PR, F, C):
-    s = new_slide(prs, LAY)
-    title(s, PR, "예상 발행금리 및 프라이싱 전략")
-    tenors = C.tenors
-    sp = {t: C.pdm[t].get("_spread") for t in tenors if t in C.pdm}
-    H(s, "직전 회차 확정 가산금리 기준 목표 설정 — 예상 확정금리 ##%대")
-    bar(s, PR, "만기별 예상 확정금리 (개별민평 기준)", X0, 1800000, CW)
-    rows = [["구분"] + [f"{t}년" for t in tenors],
-            ["기준 민평"] + ["개별민평 ##%" for _ in tenors],
-            ["밴드 하단"] + ["##%" for _ in tenors],
-            ["직전 회차 수준"] + [(f"{sp[t]:+d}bp → ##%" if sp.get(t) is not None else "##%") for t in tenors],
-            ["밴드 상단"] + ["##%" for _ in tenors]]
-    dl, aa = rates_now(F["rates"], "aa3")
-    if dl:
-        rows.append([f"참고 ({dl[5:].replace('-', '/')})"] + [f"AA- 3년 {aa:.3f}%" if t == 3 else "-" for t in tenors])
-    table(s, rows, X0, 2110000, CW, [1.4] + [1.1] * len(tenors), rowh=340000, size=9.5,
-          align_cols={i: PP_ALIGN.CENTER for i in range(1, len(tenors) + 1)}, fills={(3, c): PALEBLUE for c in range(1, len(tenors) + 1)})
-    # 동일·인접 등급 최근 사례
-    g = F["grade"]
-    since = (F["today"] - timedelta(days=150)).isoformat()
-    cand = [r for r in F["pubs"] if r.get("_spread") is not None and (r.get("pay_dt") or "") >= since and same_band(r.get("_grade"), g)]
-    cand.sort(key=lambda r: (r.get("pay_dt") or ""), reverse=True)
-    mine = [r for r in F["prev"]]
-    pick = mine + [r for r in cand if r not in mine][: max(0, 7 - len(mine))]
-    bar(s, PR, "최근 우량물 공모채 프라이싱 사례", X2, 1800000, CW)
-    prow = [["발행사 (발행일)", "만기", "경쟁률", "가산금리", "확정금리"]]
-    for r in pick[:7]:
-        d = r.get("_dem") or {}
-        prow.append([f"{r['corp_name']}{r.get('series_raw', '')} ({(r.get('pay_dt') or '')[5:].replace('-', '/')})", tname(r["_tenor"]) if r.get("_tenor") else "-",
-                     f"{d['ratio']:.1f}:1" if d.get("ratio") else "-", f"{r['_spread']:+d}bp", f"{r['_rate']:.3f}%" if r.get("_rate") else "##%"])
-    table(s, prow, X2, 2110000, CW, [2.3, 0.6, 0.8, 0.85, 0.85], rowh=300000, size=8.5,
-          align_cols={i: PP_ALIGN.CENTER for i in range(1, 5)}, fills={(i, c): PALEBLUE for i in range(1, len(mine) + 1) for c in range(5)})
-    bar(s, PR, "프라이싱 시사점", X0, 4520000, W)
-    csp = sorted(r["_spread"] for r in cand)
-    med = csp[len(csp) // 2] if csp else None
-    tgt = {t: (min(sp[t], -5) if sp.get(t) is not None else -5) for t in tenors}
-    pc = [("동일 등급 시장 수준", f"최근 5개월 {g} 내외 {len(cand)}건 확정 가산금리 중앙값 {med:+d}bp" if med is not None else "동일 등급 최근 사례 ##"),
-          ("동사 직전 프라이싱", (" / ".join(f"{t}년 {sp[t]:+d}bp" for t in tenors if sp.get(t) is not None) + " 확정") if sp else "직전 회차 사례 없음"),
-          ("이번 목표 가산금리", " / ".join(f"{t}년 {tgt[t]:+d}bp 이내" for t in tenors) + " — 경쟁률 5:1 이상 시 추가 하향")]
-    for i, (k, v) in enumerate(pc):
-        x = X0 + i * (CW3 + 200000)
-        textbox(s, x, 4840000, CW3, 1100000, [{"text": k, "bold": True, "color": NAVY, "size": 11}, {"text": v}],
-                size=10, fill=PALEBLUE if i == 2 else PALE, margin=110000, anchor=MSO_ANCHOR.MIDDLE, space_after=4)
-    source(s, "자료: 기업공시시스템, 한국은행 ECOS / 확정금리 미반영 건은 ##")
-    notes(s, "[작성 가이드] 좌=만기별 예상 확정금리(개별민평 기준) / 우=동사 직전 회차 + 동일·인접 등급 최근 사례 / 하단=목표 가산금리.")
-    return s
-
-
 GR = ["AAA", "AA+", "AA", "AA-", "A+", "A", "A-", "BBB+", "BBB", "BBB-"]
 
 
@@ -607,145 +455,13 @@ def build_maturity(prs, LAY, PR, F, C):
     lo = min((y for y in years if y > y0), key=lambda y: C.lad.get(y, 0))
     textbox(s, X2, 2110000 + 300000 + 330000 * len(years) + 200000, CW, 1500000, [
         {"text": "시사점", "bold": True, "color": NAVY, "size": 11},
-        {"text": f"'{years[mx] % 100}년 발행 후 만기 {num(after[mx])}억원으로 최대 — 연간 만기 상한(##억원) 내 관리", "lvl": 0},
+        {"text": f"'{years[mx] % 100}년 발행 후 만기 {num(after[mx])}억원으로 최대 — 차환 계획을 가장 먼저 세울 해", "lvl": 0},
         {"text": f"'{lo % 100}년 기존 만기 {num(C.lad.get(lo, 0))}억원으로 여유 — 증액분 배정 후보", "lvl": 0},
         {"text": f"향후 12개월 공모사채 만기 {num((F['due12'] or 0) / 1e8)}억원 차환 계획과 연계", "lvl": 0}],
         size=10, fill=PALE, margin=120000, space_after=4)
     source(s, "주) 공모사채 잔액 기준(채권기본정보·공시), 이번 발행은 기본 금액 기준 / 자료: 기업공시시스템, 금융위원회", w=9000000)
     notes(s, "[작성 가이드] 동사 공모사채 만기 사다리 + 이번 발행 반영 후 변화.")
     return s
-
-
-def build_tranche(sl, PR, F, C):
-    for sh in list(sl.shapes):
-        if sh.has_table or (sh.has_text_frame and sh.name.startswith("TextBox") and sh.top > 4500000 and sh.left > 5000000):
-            sh._element.getparent().remove(sh._element)
-    for sh in sl.shapes:
-        if sh.has_text_frame and sh.text_frame.text.startswith("등급·만기별 수요와"):
-            set_shape_text(sh._element, "만기별 제안 근거 요약")
-        if sh.name == "모서리가 둥근 직사각형 8":
-            for r_ in sh._element.iter(qn("a:rPr")):
-                r_.set("sz", "1200")
-    for sh in sl.shapes:
-        if sh.name == "TextBox 10" or (sh.has_text_frame and sh.top < 1700000 and sh.top > 1200000 and sh.width > 8000000):
-            set_shape_text(sh._element, f"{C.pri}년물 중심 증액 권고 — 직전 회차 수요와 연간 만기 분산을 함께 반영")
-            break
-    issue = F["issue"]
-    rows = [["구분", "발행 금액", "제안 근거"]]
-    for t in C.tenors:
-        y = issue.year + t
-        r = C.pdm.get(t)
-        bits = []
-        if r and r.get("_dem"):
-            bits.append(f"직전 회차 {t}년물에 {num(r['_dem']['total'])}억원({r['_dem']['ratio']:.1f}:1)이 몰렸고" + (f" 가산금리 {r['_spread']:+d}bp로 확정되었습니다." if r.get("_spread") is not None else "."))
-        elif C.mkt[t][0]:
-            bits.append(f"최근 6개월 AA급 {C.mkt[t][2]}물 평균 경쟁률은 {C.mkt[t][0]:.1f}:1입니다.")
-        bits.append(f"만기('{y % 100}년)에는 기존 {num(C.lad.get(y, 0))}억원이 있어 {num(F['split'][t])}억원을 더하면 {num(C.lad.get(y, 0) + F['split'][t])}억원입니다.")
-        if t == C.pri:
-            bits.append("금리 인상 국면에서 고정금리를 확보하는 핵심 트랜치로, 증액 시 우선 배정을 권고합니다.")
-        elif t == C.tenors[0]:
-            bits.append("단기물 수요를 흡수해 낮은 가산금리를 먼저 확정하는 역할을 합니다.")
-        rows.append([f"{t}년", f"{num(F['split'][t])}억원", " ".join(bits)])
-    rh = max(450000, min(900000, 2300000 // len(C.tenors)))
-    table(sl, rows, 451083, 1838003, 9790601, [0.7, 1.0, 8.1], rowh=[280000] + [rh] * len(C.tenors), size=9.5,
-          align_cols={1: PP_ALIGN.CENTER}, fills={(1 + C.tenors.index(C.pri), c): PALEBLUE for c in (1, 2)})
-    rr = [["항목"] + [f"{t}년 ({num(F['split'][t])}억)" for t in C.tenors],
-          ["직전 회차 수요"] + [(f"{C.pdm[t]['_dem']['ratio']:.1f}:1" if t in C.pdm and C.pdm[t].get("_dem") else "-") for t in C.tenors],
-          ["직전 가산금리"] + [(f"{C.pdm[t]['_spread']:+d}bp" if t in C.pdm and C.pdm[t].get("_spread") is not None else "-") for t in C.tenors],
-          ["만기 연도"] + [f"'{(issue.year + t) % 100} (기존 {num(C.lad.get(issue.year + t, 0))})" for t in C.tenors],
-          ["시장 수요(AA급 6M)"] + [(f"{C.mkt[t][1] / 1e4:.2f}조" if C.mkt[t][1] else "-") for t in C.tenors]]
-    table(sl, rr, 5489407, 4716722, 4752279, [1.3] + [1.2] * len(C.tenors), rowh=[280000] + [400000] * 4, size=8.5,
-          align_cols={i: PP_ALIGN.CENTER for i in range(1, len(C.tenors) + 1)})
-    notes(sl, "[작성 가이드] 상단=만기별 '그래서 무엇을 우선하라는가' / 하단 우측=근거 요약 / 하단 좌측=만기별 시장 수요 차트.")
-
-
-def build_options(prs, LAY, PR, F, C):
-    s = new_slide(prs, LAY)
-    title(s, PR, "만기 전략 옵션 비교")
-    t0, tp = C.tenors[0], C.pri
-    y = F["issue"].year
-
-    def mat_line(sp):
-        return " / ".join(f"'{(y + t) % 100} {num(C.lad.get(y + t, 0) + sp[t])}" for t in C.tenors)
-    a_lab = f"옵션 A  ·  {tp}년 우선 증액 (권고)"
-    b_lab = f"옵션 B  ·  {t0}년 우선 증액"
-    H(s, f"옵션 A({tp}년 우선 증액) 권고 — 금리 고정과 만기 분산, 직전 회차 수요를 함께 반영")
-    da, db = C.pdm.get(tp), C.pdm.get(t0)
-    cards = [
-        (a_lab, NAVY, PALEBLUE, [["최대 구성", " / ".join(f"{t}년 {num(C.a_max[t])}" for t in C.tenors) + "억"], ["만기 (억원)", mat_line(C.a_max)]],
-         [f"{tp}년 고정금리 확보 — 인상 국면에서 차환 금리 노출 축소",
-          (f"직전 회차 {tp}년물 {da['_dem']['ratio']:.1f}:1 수요 확인" if da and da.get("_dem") else f"{C.mkt[tp][2]} 시장 수요 활용"),
-          "신규 만기를 뒤로 분산"],
-         ["단기물 대비 기간 프리미엄(##bp)만큼 평균 금리 상승", f"'{(y + tp) % 100}년 만기 {num(C.lad.get(y + tp, 0) + C.a_max[tp])}억원으로 증가"],
-         "만기 장기화와 금리 고정이 조달비용보다 우선일 때"),
-        (b_lab, DGREY, PALE, [["최대 구성", " / ".join(f"{t}년 {num(C.b_max[t])}" for t in C.tenors) + "억"], ["만기 (억원)", mat_line(C.b_max)]],
-         ["단기물 비중이 높아 평균 조달금리 최저",
-          (f"직전 회차 {t0}년물 {db['_dem']['ratio']:.1f}:1 수요" if db and db.get("_dem") else "증권사·운용사 단기물 수요 흡수"),
-          "기간 프리미엄 절감"],
-         [f"'{(y + t0) % 100}년 만기 {num(C.lad.get(y + t0, 0) + C.b_max[t0])}억원으로 증가", "차환 시점 금리 재노출"],
-         "금리 고점을 인식하고 단기 조달비용 최소화가 우선일 때"),
-    ]
-    for i, (hd, col, bg, kv, pros, cons, fit) in enumerate(cards):
-        x = X0 if i == 0 else X2
-        rect(s, x, 1800000, CW, 420000, fill=col)
-        textbox(s, x, 1800000, CW, 420000, [{"text": hd, "align": PP_ALIGN.CENTER, "bold": True}], size=12, color="FFFFFF",
-                anchor=MSO_ANCHOR.MIDDLE, margin=0)
-        table(s, kv, x, 2290000, CW, [1.0, 2.6], rowh=330000, size=9.5, header_rows=0, align_cols={1: PP_ALIGN.CENTER},
-              bold_cells={(0, 1), (1, 1)})
-        textbox(s, x, 3060000, CW, 1350000, [{"text": "장점", "bold": True, "color": NAVY, "size": 10.5}] + [B(t) for t in pros],
-                size=10.5, fill=bg, margin=110000, space_after=4)
-        textbox(s, x, 4490000, CW, 1150000, [{"text": "단점", "bold": True, "color": RED, "size": 10.5}] + [B(t) for t in cons],
-                size=10.5, fill="FBEAEA", margin=110000, space_after=4)
-        textbox(s, x, 5720000, CW, 500000, [{"text": "**적합한 상황**  " + fit}], size=10, margin=60000, anchor=MSO_ANCHOR.MIDDLE)
-    textbox(s, X0, 6330000, W, 420000, [{"text": f"**신한 의견: 옵션 A** — {tp}년물 경쟁률 3:1 미만 시 옵션 B로 전환, 연간 만기 상한 ##억원 이내", "align": PP_ALIGN.CENTER}],
-            size=10.5, color=NAVY, fill=PALEBLUE, margin=60000, anchor=MSO_ANCHOR.MIDDLE)
-    notes(s, "[작성 가이드] 옵션별 카드: 구성·만기 영향 → 장점 → 단점 → 적합한 상황 → 하단 의견·전환 조건.")
-    return s
-
-
-def build_schedule(sl, F, C):
-    sch, issue = F["sch"], F["issue"]
-    R(sl, re.sub(r".*", "", ""), "")
-    for sh in sl.shapes:
-        if sh.has_text_frame and "발행일정 제안" in sh.text_frame.text:
-            set_shape_text(sh._element, f"한·미 주요 이벤트를 고려하여 {md(issue)} 발행일정 제안")
-    tb = next((sh for sh in sl.shapes if sh.name == "TextBox 5"), None)
-    before = [f"{nm}({date.fromisoformat(d).month}/{date.fromisoformat(d).day})" for d, nm in C.evs if sch["정정"].isoformat() < d]
-    after_due = (F.get("due12") or 0) / 1e8
-    lines = [{"text": f"**{md(sch['수요예측'])} 수요예측 — 이벤트 전 금리 확정**", "lvl": 0}]
-    if before:
-        lines.append({"text": "·".join(before[:4]) + f" 이전, {md(sch['정정'])} 정정신고서로 발행금리 확정", "lvl": 1})
-    if F["prev"]:
-        p0 = F["prev"][0]
-        tot = sum(r["_dem"]["total"] for r in F["prev"] if r.get("_dem"))
-        lines.append({"text": f"직전 회차({(p0.get('_demand_dt') or p0.get('pay_dt') or '')[:10]}) 주문 {num(tot)}억원 — 같은 투자자군 재공략", "lvl": 1})
-    lines.append({"text": "**시장 여건 점검**", "lvl": 0})
-    lines.append({"text": "결과 반영 후 일정·밴드 최종 점검 (##)", "lvl": 1})
-    lines.append({"text": f"**→ {md(sch['신고'])} 신고 · {md(sch['수요예측'])} 수요예측 · {md(issue)} 납입" + (f" — 향후 12개월 만기 {num(after_due)}억원 차환 재원" if after_due else "") + "**", "lvl": 0})
-    if tb is not None:
-        fill_tf(tb.text_frame, lines, size=9.5, space_after=3)
-    st = next((sh for sh in sl.shapes if sh.has_table), None)
-    if st is None:
-        return
-    t = st.table
-    for r in range(1, len(t.rows), 2):
-        for c in range(1, len(t.columns)):
-            cell = t.cell(r + 1, c) if r + 1 < len(t.rows) else None
-            if cell is None:
-                continue
-            txt = cell.text_frame.text
-            col = None
-            if "정정" in txt:
-                fill_tf(cell.text_frame, [{"text": "발행금리 확정", "align": PP_ALIGN.CENTER, "bold": True}, {"text": "(정정신고서 제출)", "align": PP_ALIGN.CENTER, "bold": True}],
-                        size=9, color="C55A11", space_after=0)
-                col = "FCE4D6"
-            elif "발행 및 납입" in txt:
-                fill_tf(cell.text_frame, [{"text": x, "align": PP_ALIGN.CENTER, "bold": True} for x in txt.split("\n")], size=9, color="FFFFFF", space_after=0)
-                col = NAVY
-            if col:
-                cell.fill.solid()
-                cell.fill.fore_color.rgb = RGBColor.from_string(col)
-    notes(sl, "[작성 가이드] 달력형 일정표. 신고서·수요예측·금리 확정(정정신고)·납입을 색으로 구분, 한·미 이벤트는 docs/proposal_spec.md 의 events.")
 
 
 def build_prev(sl, PR, F):
@@ -871,77 +587,7 @@ def build_prev_blank(sl, PR, F):
     notes(sl, "[작성 가이드] 수요예측 결과가 아직 수집되지 않은 회차입니다. KIND/DART 투자설명서 '수요예측 참여 내역'에서 ## 를 채우세요.")
 
 
-def build_story(prs, LAY, PR, F, I):
-    s = new_slide(prs, LAY)
-    title(s, PR, "크레딧 스토리 및 투자자 예상 질문")
-    H(s, "수요예측 메시지: ## (회사 핵심 강점 한 줄)")
-    dr = draft_story(F, I)
-    co = F.get("co") or {}
-    if dr:
-        pts = [tuple(x[:2]) for x in dr["points"][:4]]
-        qa = [tuple(x[:2]) for x in dr["qa"][:5]]
-    else:
-        notes_ = [x.strip() for x in ((I.get("credit_note") or "") + "\n" + (I.get("issues_note") or "")).splitlines() if x.strip()]
-        pts = [("사업 경쟁력", notes_[0] if notes_ else "##"), ("그룹 내 위상·재무 지원", notes_[1] if len(notes_) > 1 else "##"),
-               ("최근 이슈", notes_[2] if len(notes_) > 2 else "##"),
-               ("시장 수용성", f"신용등급 {F['grade']}" + (f", 직전 회차 {sum(r['_dem']['total'] for r in F['prev'] if r.get('_dem')):,.0f}억원 주문" if F["prev"] else ""))]
-        qa = [("실적 변동 요인은?", "##"), ("차입 부담은?", "##"), ("투자 계획은?", "##"), ("등급 전망은?", "##"), ("추가 발행 계획은?", "##")]
-    bar(s, PR, "투자 포인트 (크레딧 스토리)", X0, 1800000, CW)
-    for i, (k, v) in enumerate(pts):
-        y = 2110000 + i * 900000
-        rect(s, X0, y, CW, 800000, fill=PALE)
-        rect(s, X0 + 100000, y + 200000, 400000, 400000, fill=NAVY, shape=2)
-        textbox(s, X0 + 100000, y + 200000, 400000, 400000, [{"text": str(i + 1), "align": PP_ALIGN.CENTER, "bold": True}],
-                size=13, color="FFFFFF", anchor=MSO_ANCHOR.MIDDLE, margin=0)
-        textbox(s, X0 + 620000, y + 60000, CW - 700000, 680000, [{"text": k, "bold": True, "color": NAVY, "size": 10.5}, {"text": v}],
-                size=9.5, anchor=MSO_ANCHOR.MIDDLE, margin=0)
-    bar(s, PR, "투자자 예상 질문 및 답변 방향", X2, 1800000, CW)
-    table(s, [["예상 질문", "답변 방향"]] + [list(x) for x in qa], X2, 2110000, CW, [1.45, 2.75], rowh=[300000] + [600000] * 5, size=9)
-    textbox(s, X2, 5500000, CW, 800000, [{"text": "투자자 배포 자료 원칙", "bold": True, "color": RED},
-                                          {"text": "신용지표 원수치 대신 일시적 요인과 대응 논리 중심으로 기재"}],
-            size=9.5, fill="FBEAEA", margin=110000, anchor=MSO_ANCHOR.MIDDLE)
-    source(s, "자료: 공시, 신용평가사, 팝업 메모" + (", Claude 초안(검토 필요)" if dr else ""))
-    notes(s, "[작성 가이드] 크레딧 스토리 4개 + 예상 Q&A 5개는 항상 채워서 제출." + (" 이 장은 Claude가 초안을 작성했으니 사실관계를 확인할 것." if dr else ""))
-    return s
-
-
-def build_dashboard(prs, LAY, PR, F):
-    s = new_slide(prs, LAY)
-    title(s, PR, "시장 한눈에 보기 (Market Dashboard)")
-    rt = F["rates"]
-    H(s, "금리 레벨·스프레드·이벤트 점검 — 발행 영향 요약")
-
-    def row(lab, key, unit="%", scale=1, dec=3):
-        s_ = rt.get(key) or []
-        if not s_:
-            return [lab, "##", "##", "##", "##"]
-        d_now, v = s_[-1]
-        dn = date.fromisoformat(d_now)
-        m1 = series_at(s_, (dn - timedelta(days=31)).isoformat())
-        y1 = series_at(s_, (dn - timedelta(days=365)).isoformat())
-        f = lambda x: f"{x * scale:.{dec}f}{unit}" if x is not None else "-"  # noqa: E731
-        ch = f"{(v - m1) * 100:+.0f}bp" if m1 is not None and unit == "%" else (f"{(v - m1) * scale:+.1f}bp" if m1 is not None else "-")
-        return [lab, f(v), f(m1), f(y1), ch]
-    sp = []
-    a3, k3 = rt.get("aa3") or [], dict(map(tuple, rt.get("ktb3") or []))
-    sp_series = [[d, (v - k3[d])] for d, v in a3 if d in k3]
-    rows = [["지표", "현재", "1개월 전", "1년 전", "1개월 변화"],
-            row("한은 기준금리", "base", dec=2), row("국고 3년", "ktb3"), row("국고 10년", "ktb10"), row("AA- 3년", "aa3")]
-    rt["_sp"] = sp_series
-    rows.append(row("AA- 스프레드", "_sp", unit="bp", scale=100, dec=1))
-    rows += [row("CP 91일", "cp91", dec=2), row("美 FF 상단", "ffr_hi", dec=2), row("美 국채 2년", "ust2", dec=2), row("美 국채 10년", "ust10", dec=2)]
-    rt.pop("_sp", None)
-    del sp
-    table(s, rows, X0, 1800000, W, [2.4, 1.5, 1.5, 1.5, 1.5], rowh=360000, size=10,
-          align_cols={i: PP_ALIGN.CENTER for i in range(1, 5)}, bold_cells={(r, 1) for r in range(1, len(rows))})
-    textbox(s, X0, 5700000, W, 700000, [{"text": "발행 영향: ## (금리 레벨·스프레드·이벤트 종합 판단 한 줄)"}], size=10, fill=PALEBLUE,
-            margin=110000, anchor=MSO_ANCHOR.MIDDLE)
-    source(s, "자료: 한국은행 ECOS, FRED / 기준일은 각 지표 최신 수집일", w=9000000)
-    notes(s, "[작성 가이드] 모든 수치는 data/ref/mkt/rates.json 자동. FedWatch 확률은 미국 장표에서 수기 입력.")
-    return s
-
-
-def build_outlook(prs, LAY, PR, F):
+def build_outlook(prs, LAY, PR, F, X=None):
     s = new_slide(prs, LAY)
     title(s, PR, "향후 전망 시나리오 (3·6개월)")
     H(s, "향후 3·6개월 금리 전망: ##")
@@ -949,7 +595,7 @@ def build_outlook(prs, LAY, PR, F):
     cur = lambda k, d=2: (f"{rt[k][-1][1]:.{d}f}%" if rt.get(k) else "##")  # noqa: E731
     table(s, [["지표", "현재", "3개월 후 기본", "3개월 후 낙관", "3개월 후 비관", "6개월 후 기본"],
               ["한은 기준금리", cur("base"), "##", "##", "##", "##"], ["국고 3년", cur("ktb3"), "##", "##", "##", "##"],
-              ["AA- 3년", cur("aa3"), "##", "##", "##", "##"], ["AA- 스프레드", f"{F['sp_now']:.0f}bp" if F.get("sp_now") else "##", "##", "##", "##", "##"],
+              [f"{X.grade} 3년", f"{X.cv.y(X.grade, 3):.2f}%" if X and X.cv else "##", "##", "##", "##", "##"], [f"{X.grade} 스프레드", f"{X.cv.sp(X.grade, 3):.0f}bp" if X and X.cv else "##", "##", "##", "##", "##"],
               ["美 FF 상단", cur("ffr_hi"), "##", "##", "##", "##"]], X0, 1800000, W, [1.4, 1.2, 1.4, 1.4, 1.4, 1.4], rowh=430000, size=10,
           align_cols={i: PP_ALIGN.CENTER for i in range(1, 6)}, fills={**{(r, 2): PALEBLUE for r in range(1, 6)}, **{(0, 3): SKY, (0, 4): RED}})
     for i, (k, col) in enumerate((("기본", NAVY), ("낙관", SKY), ("비관", RED))):
@@ -963,41 +609,552 @@ def build_outlook(prs, LAY, PR, F):
     return s
 
 
+
+def build_summary(prs, LAY, PR, F, I, X, C, spec, band, band_note, fee):
+    name, issue, sch, tenors, split = F["name"], F["issue"], F["sch"], C.tenors, F["split"]
+    dflt = spec.get("defaults") or {}
+    s = new_slide(prs, LAY)
+    title(s, PR, "권고안 요약")
+    exp_txt = " / ".join(f"{t}년 {X.exp[t]:.2f}%" if X.exp[t] is not None else f"{t}년 ##%" for t in tenors)
+    H(s, f"{issue.month}월 {'·'.join(str(t) for t in tenors)}년 {num(F['base'])}억 발행 권고 — 예상 금리 {exp_txt}")
+    ag = (X.co.get("triggers") or {}).get("agencies") or []
+    rating = " · ".join(f"{a.get('agency')} {a.get('rating', '')}" + (f"({a['outlook']})" if a.get("outlook") else "") for a in ag) or X.grade
+    bar(s, PR, "권고안", X0, 1800000, CW)
+    table(s, [
+        ["항목", "제안"],
+        ["발행금액", f"{num(F['base'])}억원 (증액 시 최대 {num(F['max'])}억원)"],
+        ["만기 구성", " / ".join(f"{t}년 {num(split[t])}억" for t in tenors) + f" — 증액 시 {C.pri}년 우선"],
+        ["금리밴드", f"{band}" + (f" ({band_note})" if band_note else "")],
+        ["예상 발행금리", exp_txt + f" ({X.base[tenors[0]][1]} 기준)"],
+        ["일정", f"{md(sch['신고'])} 신고 → {md(sch['수요예측'])} 수요예측 → {md(issue)} 납입"],
+        ["신용등급", rating],
+        ["인수·수수료", f"{num(F['base'])}억 {dflt.get('underwrite', '총액인수 확약')} / {fee}"],
+    ], X0, 2110000, CW, [1.1, 3.6], rowh=300000, size=9)
+    bar(s, PR, "권고 근거", X2, 1800000, CW)
+    reasons = []
+    if F["prev"] and all(r.get("_dem") for r in F["prev"]):
+        tot = sum(r["_dem"]["total"] for r in F["prev"])
+        init = sum(r["_dem"]["total"] / r["_dem"]["ratio"] for r in F["prev"] if r["_dem"].get("ratio"))
+        sp = [r["_spread"] for r in F["prev"] if r.get("_spread") is not None]
+        reasons.append(("수요", f"직전 회차 {num(init)}억 모집에 {num(tot)}억 주문({tot / init:.1f}:1)" + (f", 확정 가산금리 {min(sp):+d}~{max(sp):+d}bp" if sp and min(sp) != max(sp) else f", 확정 가산금리 {sp[0]:+d}bp" if sp else "")))
+    else:
+        b = X.dem.get("3년") or next(iter(X.dem.values()), None)
+        if b:
+            reasons.append(("수요", f"최근 6개월 {X.band}급 공모채 {sum(v['n'] for v in X.dem.values())}건, 주문 {M.eok(sum(v['orders'] for v in X.dem.values()))}원"
+                            + (f", 3년물 평균 경쟁률 {b['avg_ratio']:.1f}:1" if b.get("avg_ratio") else "")))
+    sl = spread_line_short(X)
+    if sl:
+        reasons.append(("금리", sl))
+    aj = X.adj
+    if aj:
+        reasons.append(("동사 신용", f"장외 거래가 {X.grade} 등급민평 대비 {aj['bp']:+d}bp({aj['n']}건) — 등급민평보다 {'낮은' if aj['bp'] < 0 else '높은'} 금리 근거"))
+    ev_txt = "·".join(f"{nm.split(' (')[0]}({date.fromisoformat(d).month}/{date.fromisoformat(d).day})" for d, nm in C.evs if d > sch["정정"].isoformat())[:60]
+    reasons.append(("일정", (f"{ev_txt} 전 {md(sch['정정'])} 금리 확정" if ev_txt else f"{md(sch['정정'])} 정정신고로 금리 확정")
+                    + (f", 발행 전후 2주 {X.band}급 만기 {num(X.wall)}억 재투자 수요" if X.wall else "")))
+    for i, (k, v) in enumerate(reasons[:3]):
+        y = 2110000 + i * 680000
+        rect(s, X2, y, CW, 600000, fill=PALE)
+        rect(s, X2 + 90000, y + 120000, 360000, 360000, fill=NAVY, shape=2)
+        textbox(s, X2 + 90000, y + 120000, 360000, 360000, [{"text": str(i + 1), "align": PP_ALIGN.CENTER, "bold": True}],
+                size=12, color="FFFFFF", anchor=MSO_ANCHOR.MIDDLE, margin=0)
+        textbox(s, X2 + 560000, y + 30000, CW - 620000, 540000,
+                [{"text": k, "bold": True, "color": NAVY, "size": 10.5}, {"text": v}], size=9, anchor=MSO_ANCHOR.MIDDLE, margin=0)
+    bar(s, PR, "리스크 및 대응", X0, 4720000, CW)
+    risks = []
+    p = X.cv.pct_rank(X.grade, 3) if X.cv else None
+    if p is not None and p >= X.rules["spread_high_pct"]:
+        risks.append([f"{X.grade} 스프레드 1년 상단({p}%) — 추가 확대 시 금리 상승", "밴드 상단 이내 확정, 증액은 하단 주문 범위만"])
+    else:
+        risks.append([f"{X.grade} 스프레드 재확대 가능성", "수요예측 전 기관 사전 수요(IOI) 확인 후 밴드 확정"])
+    under = sum(v.get("under", 0) for v in X.dem.values())
+    if under:
+        risks.append([f"최근 6개월 {X.band}급 미매각 {under}건", "만기별 최초 물량 보수적 배분, 인수단 확약"])
+    elif X.pipe:
+        risks.append([f"같은 주 {X.band}급 경합 {len(X.pipe)}건", "수요예측일 조정 또는 주문 선점 마케팅"])
+    else:
+        risks.append(["직전 회차 투자자 한도 소진", "한도 잔여 점검 + 신규 기관 발굴"])
+    risks.append(["한·미 정책 이벤트 전후 금리 변동", "이벤트 전 금리 확정(정정신고)"])
+    table(s, [["리스크", "대응"]] + risks, X0, 5030000, CW, [1.9, 2.4], rowh=400000, size=9)
+    lab = X.base[tenors[0]][1]
+    bar(s, PR, f"{X.grade} 3년 등급민평·국고 3년 추이 (최근 6개월)", X2, 4140000, CW)
+    if X.cv:
+        st = (date.fromisoformat(X.cv.last) - timedelta(days=183)).isoformat()
+        ds = [d for d in X.cv.dates if d >= st]
+        cd0 = CategoryChartData()
+        cd0.categories = [d[5:].replace("-", "/") for d in ds]
+        cd0.add_series(f"{X.grade} 3년 등급민평", [round(X.cv.y(X.grade, 3, d), 3) for d in ds])
+        cols = [NAVY]
+        if X.adj and not X.indiv:
+            cd0.add_series(f"동사 추정 개별민평({X.adj['bp']:+d}bp)", [round(X.cv.y(X.grade, 3, d) + X.adj["bp"] / 100, 3) for d in ds])
+            cols.append(RED)
+        cd0.add_series("국고 3년", [round(X.cv.y("KTB", 3, d), 3) for d in ds])
+        cols.append(SKY)
+        c0 = s.shapes.add_chart(XL_CHART_TYPE.LINE, Emu(X2), Emu(4440000), Emu(CW), Emu(2050000), cd0).chart
+        style_line(c0, cols)
+    textbox(s, X2, 6500000, CW, 230000, [f"자료: 금융투자협회 채권시가평가수익률(평가사 평균), {X.cv.last if X.cv else ''} 기준 · 예상 금리 = {lab} + 목표 가산금리"],
+            size=8, color="7F7F7F", margin=0)
+    notes(s, "[작성 가이드] 권고안(숫자) / 근거 3개 / 리스크·대응 / 등급민평·국고채 추이. 예상 금리는 기준 민평 + 목표 가산금리(동사 직전 확정값과 같은 등급군 중앙값의 평균).")
+    return s
+
+
+def spread_line_short(X):
+    cv = X.cv
+    if not cv:
+        return None
+    g = X.grade
+    sp, p, c1 = cv.sp(g, 3), cv.pct_rank(g, 3), cv.change(g, 3, 30, spread=True)
+    lv = "1년 중 높은 편" if p is not None and p >= X.rules["spread_high_pct"] else "1년 중 낮은 편" if p is not None and p <= X.rules["spread_low_pct"] else "1년 중간 수준"
+    return f"{g} 3년 {cv.y(g, 3):.3f}%, 국고 대비 {sp:.0f}bp({lv}, 1개월 {c1:+.0f}bp)" if c1 is not None else f"{g} 3년 국고 대비 {sp:.0f}bp({lv})"
+
+
+def build_cond(cond, F, I, C, spec, band, band_note, fee, X):
+    old = [sh for sh in cond.shapes if sh.has_table][0]
+    tx, ty, tw = old.left, old.top, old.width
+    old._element.getparent().remove(old._element)
+    issue, sch = F["issue"], F["sch"]
+    tenors, split = C.tenors, F["split"]
+    dflt = spec.get("defaults") or {}
+    amt = []
+    if F["due12"]:
+        amt.append(B(f"**[만기도래 사채]** 향후 12개월 공모사채 만기 {num(F['due12'] / 1e8)}억원 — 차환 재원 선제 확보"))
+    if (I.get("issues_note") or "").strip():
+        amt.append(B("**[자금 수요]** " + I["issues_note"].strip().splitlines()[0][:110]))
+    elif F["capex_h"]:
+        amt.append(B(f"**[자금 수요]** {F['period']} 설비투자 {num(F['capex_h'])}억원 vs 영업현금흐름 {num(F['ocf_h'])}억원"
+                     + (" — 외부조달 필요" if F["capex_h"] > F["ocf_h"] else " — 투자 재원 보완")))
+    tot6 = sum(v["orders"] for v in X.dem.values())
+    if F["prev"] and all(r.get("_dem") for r in F["prev"]):
+        tot = sum(r["_dem"]["total"] for r in F["prev"])
+        amt.append(B(f"**[시장 수급]** 직전 회차 주문 {num(tot)}억원, 최근 6개월 {X.band}급 주문 {M.eok(tot6)}원 — {num(F['base'])}억 신고·최대 {num(F['max'])}억 증액 소화 가능"))
+    elif tot6:
+        amt.append(B(f"**[시장 수급]** 최근 6개월 {X.band}급 공모채 주문 {M.eok(tot6)}원 — {num(F['base'])}억 신고·최대 {num(F['max'])}억 증액 소화 가능"))
+    mat = []
+    sps = [f"{t}년 {X.cv.sp(X.grade, t):.0f}bp" for t in tenors] if X.cv else []
+    if sps:
+        tp = term_premium(X, tenors[0], tenors[-1])
+        mat.append(B(f"**[금리]** {X.grade} 국고 대비 " + " / ".join(sps) + (f" — {tenors[0]}→{tenors[-1]}년 기간 프리미엄 {tp:.0f}bp" if tp is not None else "")))
+    dem_bits = [f"{t}년 {C.pdm[t]['_dem']['ratio']:.1f}:1" for t in tenors if t in C.pdm and C.pdm[t].get("_dem")]
+    mk_bits = [f"{M.tbucket(t)} {X.dem[M.tbucket(t)]['avg_ratio']:.1f}:1" for t in tenors if (X.dem.get(M.tbucket(t)) or {}).get("avg_ratio")]
+    if dem_bits or mk_bits:
+        mat.append(B("**[수요]** " + ("직전 회차 " + " / ".join(dem_bits) + "; " if dem_bits else "") + (f"{X.band}급 6개월 평균 " + " / ".join(dict.fromkeys(mk_bits)) if mk_bits else "")))
+    mat.append(B("**[만기 분산]** " + " / ".join(f"'{(issue.year + t) % 100}년 기존 {num(C.lad.get(issue.year + t, 0))}억" for t in tenors) + f" — 증액 시 {C.pri}년 우선"))
+    ag = (X.co.get("triggers") or {}).get("agencies") or []
+    rating_detail = (" · ".join(f"{a.get('agency')} {a.get('rating', '')}" + (f"({a['outlook']}, {a['eval_date'][2:].replace('-', '.')})" if a.get("outlook") and a.get("eval_date") else f"({a['outlook']})" if a.get("outlook") else "") for a in ag)
+                     or f"유효등급 {X.grade}")
+    lo, hi = X.band_bp
+    band_y = " / ".join(f"{t}년 {X.base[t][0] + lo / 100:.2f}~{X.base[t][0] + hi / 100:.2f}%" for t in tenors if X.base[t][0] is not None)
+    exp_y = " / ".join(f"{t}년 {X.exp[t]:.2f}%" if X.exp[t] is not None else f"{t}년 ##%" for t in tenors)
+    exp_d = " / ".join(f"{t}년 {X.base[t][0]:.3f}% {X.tgt[t]:+d}bp" for t in tenors if X.base[t][0] is not None)
+    ev_bits = [f"{nm}({date.fromisoformat(d).month}/{date.fromisoformat(d).day})" for d, nm in C.evs if d >= sch["신고"].isoformat()][:4]
+    rows = [
+        ["구분", "조건", "상세 내용"],
+        ["발행금액", f"{num(F['base'])}억원\n(최대 {num(F['max'])}억원)", amt],
+        ["인수", f"{num(F['base'])}억원\n{dflt.get('underwrite', '총액인수 확약')}", [B("수요예측 결과와 무관하게 신고금액 전액 인수 — 조달 확실성 확보")]],
+        ["발행 만기", " / ".join(f"{t}년 {num(split[t])}억" for t in tenors), mat],
+        ["금리밴드", band, [B((band_note + " — " if band_note else "") + (f"금리 환산 {band_y}" if band_y else ""))]],
+        ["예상 발행금리", exp_y, [B(f"{X.base[tenors[0]][1]} + 목표 가산금리: {exp_d}" if exp_d else "개별민평 확인 후 입력 ##")]],
+        ["신용등급", X.grade, [B(rating_detail)]],
+        ["주요 일정", f"수요예측 {md(sch['수요예측'])}\n발행 {md(issue)}", [
+            B(f"{md(sch['신고'])} 증권신고서 → {md(sch['수요예측'])} 수요예측 → {md(sch['정정'])} 정정신고서(금리 확정) → {md(issue)} 납입"),
+            B(("·".join(ev_bits) + " 일정 고려") if ev_bits else "주요 이벤트 없음")]],
+        ["인수수수료", fee, [B(dflt.get("fee_note", "직전 회차와 동일"))]],
+    ]
+    table(cond, rows, tx, ty, tw, [1.0, 1.75, 7.0], rowh=[300000, 1020000, 340000, 1020000, 400000, 400000, 340000, 760000, 340000],
+          size=9, align_cols={1: PP_ALIGN.CENTER}, name="ConditionTable")
+    for sh in cond.shapes:
+        if sh.has_text_frame and sh.text_frame.text.startswith("주) 상기 조건은"):
+            sh.top = Emu(7060000)
+    notes(cond, "[작성 가이드] 발행금액=만기도래 사채·자금 수요·시장 수급 / 만기=금리(등급민평 스프레드·기간 프리미엄)·수요·만기분산 / 예상 금리=기준 민평+목표 가산금리.")
+
+
+def build_pricing(prs, LAY, PR, F, C, X):
+    s = new_slide(prs, LAY)
+    title(s, PR, "예상 발행금리 및 프라이싱 전략")
+    tenors = C.tenors
+    lo, hi = X.band_bp
+    lab = X.base[tenors[0]][1]
+    H(s, f"{lab} 기준 예상 확정금리 " + " / ".join(f"{t}년 {X.exp[t]:.2f}%" for t in tenors if X.exp[t] is not None))
+    bar(s, PR, f"만기별 예상 확정금리 ({lab} 기준)", X0, 1800000, CW)
+    rows = [["구분"] + [f"{t}년" for t in tenors],
+            [f"{X.grade} 등급민평"] + [f"{X.cv.y(X.grade, t):.3f}%" if X.cv else "##" for t in tenors]]
+    if lab != "등급민평":
+        rows.append([lab] + [f"{X.base[t][0]:.3f}%" if X.base[t][0] is not None else "##" for t in tenors])
+    rows += [[f"밴드 하단({lo:+d}bp)"] + [f"{X.base[t][0] + lo / 100:.3f}%" if X.base[t][0] is not None else "##" for t in tenors],
+             ["목표(예상 확정)"] + [f"{X.tgt[t]:+d}bp → {X.exp[t]:.3f}%" if X.exp[t] is not None else "##" for t in tenors],
+             [f"밴드 상단({hi:+d}bp)"] + [f"{X.base[t][0] + hi / 100:.3f}%" if X.base[t][0] is not None else "##" for t in tenors],
+             ["국고 대비"] + [f"{(X.exp[t] - X.cv.y('KTB', t)) * 100:.0f}bp" if X.exp[t] is not None and X.cv else "-" for t in tenors]]
+    ti = [r[0] for r in rows].index("목표(예상 확정)")
+    table(s, rows, X0, 2110000, CW, [1.4] + [1.1] * len(tenors), rowh=320000, size=9.5,
+          align_cols={i: PP_ALIGN.CENTER for i in range(1, len(tenors) + 1)}, fills={(ti, c): PALEBLUE for c in range(len(tenors) + 1)},
+          bold_cells={(ti, c) for c in range(1, len(tenors) + 1)})
+    mine = list(F["prev"])
+    pick = mine + [r for r in X.comps if r not in mine][: max(0, 8 - len(mine))]
+    bar(s, PR, f"최근 {X.grade} 내외 공모채 프라이싱 사례", X2, 1800000, CW)
+    prow = [["발행사 (납입일)", "등급", "만기", "경쟁률", "가산금리", "확정금리"]]
+    for r in pick[:8]:
+        d = r.get("_dem") or {}
+        prow.append([f"{r['corp_name']}{r.get('series_raw', '')} ({(r.get('pay_dt') or '')[5:].replace('-', '/')})", M.gkey(r.get("_grade")) or "-",
+                     tname(r["_tenor"]) if r.get("_tenor") else "-", f"{d['ratio']:.1f}:1" if d.get("ratio") else "-",
+                     f"{r['_spread']:+d}bp" if r.get("_spread") is not None else "-", f"{r['_rate']:.3f}%" if r.get("_rate") else "-"])
+    table(s, prow, X2, 2110000, CW, [2.1, 0.55, 0.55, 0.75, 0.8, 0.8], rowh=290000, size=8,
+          align_cols={i: PP_ALIGN.CENTER for i in range(1, 6)}, fills={(i, c): PALEBLUE for i in range(1, len(mine) + 1) for c in range(6)})
+    bar(s, PR, "프라이싱 근거", X0, 4720000, W)
+    meds = [f"{k} {v['sp_med']:+d}bp" for k, v in sorted(X.dem.items()) if v.get("sp_med") is not None]
+    pc = [("같은 등급군 시장 수준", (f"최근 6개월 {X.band}급 확정 가산금리 중앙값 " + " / ".join(meds)) if meds else f"최근 {X.band}급 확정 사례 부족"),
+          ("동사 평가", adj_line(X, F["name"]) or ("직전 회차 확정 " + " / ".join(f"{t}년 {C.pdm[t]['_spread']:+d}bp" for t in tenors if t in C.pdm and C.pdm[t].get("_spread") is not None)) or "직전 회차·장외거래 자료 없음 — 등급민평 기준"),
+          ("목표 가산금리", " / ".join(f"{t}년 {X.tgt[t]:+d}bp" for t in tenors) + " — 동사 직전 확정값과 같은 등급군 중앙값의 평균, 밴드 안에서")]
+    for i, (k, v) in enumerate(pc):
+        x = X0 + i * (CW3 + 200000)
+        textbox(s, x, 5030000, CW3, 1350000, [{"text": k, "bold": True, "color": NAVY, "size": 10.5}, {"text": v}],
+                size=9, fill=PALEBLUE if i == 2 else PALE, margin=100000, anchor=MSO_ANCHOR.MIDDLE, space_after=4)
+    source(s, f"자료: 금융투자협회(채권시가평가수익률 {X.cv.last if X.cv else ''}·장외 체결), 기업공시시스템", w=9000000)
+    notes(s, "[작성 가이드] 기준 민평 우선순위: 팝업 입력 개별민평 > 장외거래 추정 개별민평 > 등급민평. 확정 전 최신 개별민평으로 갱신.")
+    return s
+
+
+def build_tranche(sl, PR, F, C, X):
+    for sh in list(sl.shapes):
+        if sh.has_table or (sh.has_text_frame and sh.name.startswith("TextBox") and sh.top > 4500000 and sh.left > 5000000):
+            sh._element.getparent().remove(sh._element)
+    for sh in sl.shapes:
+        if sh.has_text_frame and sh.text_frame.text.startswith(("등급·만기별 수요와", "만기별 제안 근거")):
+            set_shape_text(sh._element, "만기별 금리·수급 근거")
+        if sh.name == "모서리가 둥근 직사각형 8":
+            for r_ in sh._element.iter(qn("a:rPr")):
+                r_.set("sz", "1200")
+    for sh in sl.shapes:
+        if sh.name == "TextBox 10" or (sh.has_text_frame and 1200000 < sh.top < 1700000 and sh.width > 8000000):
+            set_shape_text(sh._element, f"{C.pri}년물 중심 증액 권고 — {X.grade} 등급민평 기간 프리미엄·같은 등급군 수요·만기 분산 반영")
+            break
+    issue = F["issue"]
+    rows = [["구분", "발행 금액", "제안 근거"]]
+    for i, t in enumerate(C.tenors):
+        y = issue.year + t
+        bits = []
+        if X.cv:
+            g_y, sp = X.cv.y(X.grade, t), X.cv.sp(X.grade, t)
+            s1 = f"[금리] {X.grade} {t}년 등급민평 {g_y:.3f}%(국고 대비 {sp:.0f}bp)"
+            if i > 0:
+                tp = term_premium(X, C.tenors[i - 1], t)
+                if tp is not None:
+                    s1 += f", {C.tenors[i - 1]}년 대비 +{tp:.0f}bp"
+            c1 = X.cv.change(X.grade, t, 30, spread=True)
+            if c1 is not None:
+                s1 += f", 스프레드 1개월 {c1:+.0f}bp"
+            bits.append(s1 + ".")
+        dl = demand_line(X, t)
+        if dl:
+            bits.append(f"[수급] {dl}.")
+        r = C.pdm.get(t)
+        if r and r.get("_dem"):
+            bits.append(f"[동사] 직전 {t}년물 {num(r['_dem']['total'])}억 주문({r['_dem']['ratio']:.1f}:1)" + (f", 확정 {r['_spread']:+d}bp." if r.get("_spread") is not None else "."))
+        bits.append(f"[만기] '{y % 100}년 기존 {num(C.lad.get(y, 0))}억 + {num(F['split'][t])}억 = {num(C.lad.get(y, 0) + F['split'][t])}억.")
+        if t == C.pri:
+            bits.append("→ 증액 우선 배정 권고.")
+        rows.append([f"{t}년", f"{num(F['split'][t])}억원", " ".join(bits)])
+    bottom = min((sh.top for sh in sl.shapes if sh.top > 3000000 and (getattr(sh, "has_chart", False) and sh.has_chart or sh.name == "모서리가 둥근 직사각형 8")), default=4000000)
+    rh = max(420000, (bottom - 1838003 - 260000 - 60000) // len(C.tenors))
+    table(sl, rows, 451083, 1838003, 9790601, [0.6, 0.9, 8.3], rowh=[260000] + [rh] * len(C.tenors), size=8,
+          align_cols={1: PP_ALIGN.CENTER}, fills={(1 + C.tenors.index(C.pri), c): PALEBLUE for c in (1, 2)})
+    rr = [["항목"] + [f"{t}년 ({num(F['split'][t])}억)" for t in C.tenors],
+          [f"{X.grade} 등급민평"] + [f"{X.cv.y(X.grade, t):.3f}%" if X.cv else "-" for t in C.tenors],
+          ["국고 대비"] + [f"{X.cv.sp(X.grade, t):.0f}bp" if X.cv else "-" for t in C.tenors],
+          [f"{X.band}급 평균 경쟁률"] + [(f"{X.dem[M.tbucket(t)]['avg_ratio']:.1f}:1" if (X.dem.get(M.tbucket(t)) or {}).get("avg_ratio") else "-") for t in C.tenors],
+          [f"{X.band}급 확정 가산(중앙)"] + [(f"{X.dem[M.tbucket(t)]['sp_med']:+d}bp" if (X.dem.get(M.tbucket(t)) or {}).get("sp_med") is not None else "-") for t in C.tenors],
+          ["직전 회차 경쟁률"] + [(f"{C.pdm[t]['_dem']['ratio']:.1f}:1" if t in C.pdm and C.pdm[t].get("_dem") else "-") for t in C.tenors],
+          ["만기 연도 기존"] + [f"'{(issue.year + t) % 100} {num(C.lad.get(issue.year + t, 0))}억" for t in C.tenors]]
+    table(sl, rr, 5489407, 4716722, 4752279, [1.4] + [1.15] * len(C.tenors), rowh=[260000] + [300000] * 6, size=8,
+          align_cols={i: PP_ALIGN.CENTER for i in range(1, len(C.tenors) + 1)})
+    notes(sl, f"[작성 가이드] 만기별: 금리({X.grade} 등급민평·국고 대비 스프레드·기간 프리미엄) / 수급({X.band}급 6개월 수요) / 동사 직전 회차 / 만기 분산.")
+
+
+def build_options(prs, LAY, PR, F, C, X):
+    s = new_slide(prs, LAY)
+    title(s, PR, "만기 전략 옵션 비교")
+    t0, tp = C.tenors[0], C.pri
+    y = F["issue"].year
+    prem = term_premium(X, t0, tp) if tp != t0 else None
+    exp_a = sum(X.exp[t] * C.a_max[t] for t in C.tenors if X.exp[t] is not None) / max(1, sum(C.a_max.values()))
+    exp_b = sum(X.exp[t] * C.b_max[t] for t in C.tenors if X.exp[t] is not None) / max(1, sum(C.b_max.values()))
+
+    def mat_line(sp):
+        return " / ".join(f"'{(y + t) % 100} {num(C.lad.get(y + t, 0) + sp[t])}" for t in C.tenors)
+    H(s, f"옵션 A({tp}년 우선 증액) 권고 — 평균 예상금리 {exp_a:.2f}%(옵션 B 대비 {(exp_a - exp_b) * 100:+.0f}bp)로 {tp}년 고정금리 확보")
+    da, db = C.pdm.get(tp), C.pdm.get(t0)
+    cards = [
+        (f"옵션 A  ·  {tp}년 우선 증액 (권고)", NAVY, PALEBLUE,
+         [["최대 구성", " / ".join(f"{t}년 {num(C.a_max[t])}" for t in C.tenors) + "억"], ["평균 예상금리", f"{exp_a:.2f}%"], ["만기 (억원)", mat_line(C.a_max)]],
+         [f"{tp}년 고정금리 확보 — 차환 주기 분산",
+          (f"직전 회차 {tp}년물 {da['_dem']['ratio']:.1f}:1 수요 확인" if da and da.get("_dem") else demand_line(X, tp) or "같은 등급군 수요 활용"),
+          "신규 만기를 뒤로 분산"],
+         [f"{t0}년 대비 기간 프리미엄 {prem:.0f}bp" if prem is not None else "기간 프리미엄만큼 금리 상승",
+          f"'{(y + tp) % 100}년 만기 {num(C.lad.get(y + tp, 0) + C.a_max[tp])}억원으로 증가"],
+         "만기 장기화와 금리 고정이 조달비용보다 우선일 때"),
+        (f"옵션 B  ·  {t0}년 우선 증액", DGREY, PALE,
+         [["최대 구성", " / ".join(f"{t}년 {num(C.b_max[t])}" for t in C.tenors) + "억"], ["평균 예상금리", f"{exp_b:.2f}%"], ["만기 (억원)", mat_line(C.b_max)]],
+         ["단기물 비중이 높아 평균 조달금리 최저",
+          (f"직전 회차 {t0}년물 {db['_dem']['ratio']:.1f}:1 수요" if db and db.get("_dem") else demand_line(X, t0) or "단기물 수요 흡수"),
+          f"기간 프리미엄 {prem:.0f}bp 절감" if prem is not None else "기간 프리미엄 절감"],
+         [f"'{(y + t0) % 100}년 만기 {num(C.lad.get(y + t0, 0) + C.b_max[t0])}억원으로 증가", "차환 시점 금리 재노출"],
+         "단기 조달비용 최소화가 우선일 때"),
+    ]
+    for i, (hd, col, bg, kv, pros, cons, fit) in enumerate(cards):
+        x = X0 if i == 0 else X2
+        rect(s, x, 1800000, CW, 420000, fill=col)
+        textbox(s, x, 1800000, CW, 420000, [{"text": hd, "align": PP_ALIGN.CENTER, "bold": True}], size=12, color="FFFFFF",
+                anchor=MSO_ANCHOR.MIDDLE, margin=0)
+        table(s, kv, x, 2290000, CW, [1.0, 2.6], rowh=300000, size=9.5, header_rows=0, align_cols={1: PP_ALIGN.CENTER},
+              bold_cells={(0, 1), (1, 1), (2, 1)})
+        textbox(s, x, 3270000, CW, 1250000, [{"text": "장점", "bold": True, "color": NAVY, "size": 10.5}] + [B(t) for t in pros],
+                size=10, fill=bg, margin=110000, space_after=4)
+        textbox(s, x, 4600000, CW, 1050000, [{"text": "단점", "bold": True, "color": RED, "size": 10.5}] + [B(t) for t in cons],
+                size=10, fill="FBEAEA", margin=110000, space_after=4)
+        textbox(s, x, 5720000, CW, 500000, [{"text": "**적합한 상황**  " + fit}], size=10, margin=60000, anchor=MSO_ANCHOR.MIDDLE)
+    cut = 3.0
+    textbox(s, X0, 6330000, W, 420000, [{"text": f"**신한 의견: 옵션 A** — {tp}년물 경쟁률 {cut:.0f}:1 미만이면 옵션 B로 전환", "align": PP_ALIGN.CENTER}],
+            size=10.5, color=NAVY, fill=PALEBLUE, margin=60000, anchor=MSO_ANCHOR.MIDDLE)
+    notes(s, "[작성 가이드] 평균 예상금리 = 만기별 예상 확정금리를 최대 구성 금액으로 가중평균.")
+    return s
+
+
+def build_schedule(sl, F, C, X):
+    sch, issue = F["sch"], F["issue"]
+    for sh in sl.shapes:
+        if sh.has_text_frame and "발행일정 제안" in sh.text_frame.text:
+            set_shape_text(sh._element, f"이벤트·같은 등급군 수급을 고려하여 {md(issue)} 발행일정 제안")
+    tb = next((sh for sh in sl.shapes if sh.name == "TextBox 5"), None)
+    before = [f"{nm.split(' (')[0]}({date.fromisoformat(d).month}/{date.fromisoformat(d).day})" for d, nm in C.evs if sch["정정"].isoformat() < d]
+    pre = [f"{nm.split(' (')[0]}({date.fromisoformat(d).month}/{date.fromisoformat(d).day})" for d, nm in C.evs if F["today"].isoformat() <= d <= sch["정정"].isoformat()]
+    lines = [{"text": f"**{md(sch['수요예측'])} 수요예측 → {md(sch['정정'])} 금리 확정 — 이벤트 리스크 차단**", "lvl": 0}]
+    if before:
+        lines.append({"text": "·".join(before[:4]) + " 이전 발행금리 확정", "lvl": 1})
+    if pre:
+        lines.append({"text": "수요예측 전 " + "·".join(pre[:3]) + " 결과를 밴드에 반영", "lvl": 1})
+    lines.append({"text": f"**수급: {X.band}급 만기·발행 일정**", "lvl": 0})
+    if X.month_wall:
+        lines.append({"text": f"{issue.month}월 {X.band}급 공모채 만기 {num(X.month_wall)}억원" + (f"(수요예측~납입 전후 2주 {num(X.wall)}억)" if X.wall and abs(X.wall - X.month_wall) > 1 else "") + " — 상환 자금의 재투자 수요", "lvl": 1})
+    if X.pipe:
+        lines.append({"text": f"수요예측 ±1주 {X.band}급 경합 {len(X.pipe)}건(" + ", ".join(f"{n} {ymd(d)}" for n, d, _ in X.pipe[:3]) + ") — 주문 분산 가능성", "lvl": 1})
+    else:
+        lines.append({"text": f"수요예측 ±1주 현재 공시된 {X.band}급 경합 발행 없음 (신고서 제출 전 재확인)", "lvl": 1})
+    n_, a_, r_ = X.ly
+    if n_:
+        lines.append({"text": f"작년 {issue.month}월 {X.band}급 {n_}건·{num(a_)}억 발행" + (f", 평균 경쟁률 {r_:.1f}:1" if r_ else ""), "lvl": 1})
+    sl_ = spread_line_short(X)
+    if sl_:
+        lines.append({"text": f"**금리: {sl_}**", "lvl": 0})
+    lines.append({"text": f"**→ {md(sch['신고'])} 신고 · {md(sch['수요예측'])} 수요예측 · {md(issue)} 납입**", "lvl": 0})
+    if tb is not None:
+        fill_tf(tb.text_frame, lines, size=9, space_after=2)
+    st = next((sh for sh in sl.shapes if sh.has_table), None)
+    if st is None:
+        return
+    t = st.table
+    for r in range(1, len(t.rows), 2):
+        for c in range(1, len(t.columns)):
+            cell = t.cell(r + 1, c) if r + 1 < len(t.rows) else None
+            if cell is None:
+                continue
+            txt = cell.text_frame.text
+            col = None
+            if "정정" in txt:
+                fill_tf(cell.text_frame, [{"text": "발행금리 확정", "align": PP_ALIGN.CENTER, "bold": True}, {"text": "(정정신고서 제출)", "align": PP_ALIGN.CENTER, "bold": True}],
+                        size=9, color="C55A11", space_after=0)
+                col = "FCE4D6"
+            elif "발행 및 납입" in txt:
+                fill_tf(cell.text_frame, [{"text": x, "align": PP_ALIGN.CENTER, "bold": True} for x in txt.split("\n")], size=9, color="FFFFFF", space_after=0)
+                col = NAVY
+            if col:
+                cell.fill.solid()
+                cell.fill.fore_color.rgb = RGBColor.from_string(col)
+    notes(sl, "[작성 가이드] 달력형 일정표. 이벤트는 docs/proposal_spec.md 의 events, 수급은 같은 등급군 만기·발행 예정 자동 집계.")
+
+
+def build_story(prs, LAY, PR, F, I, X):
+    s = new_slide(prs, LAY)
+    title(s, PR, "크레딧 스토리 및 투자자 예상 질문")
+    pts, qa, msg = credit_story(F, X, I)
+    dr = draft_story(F, I)
+    if dr:
+        pts = [tuple(x[:2]) for x in dr["points"][:4]]
+        qa = [tuple(x[:2]) for x in dr["qa"][:5]]
+    H(s, f"수요예측 메시지: {msg}")
+    bar(s, PR, "투자 포인트 (크레딧 스토리)", X0, 1800000, CW)
+    for i, (k, v) in enumerate(pts):
+        y = 2110000 + i * 900000
+        rect(s, X0, y, CW, 800000, fill=PALE)
+        rect(s, X0 + 100000, y + 200000, 400000, 400000, fill=NAVY, shape=2)
+        textbox(s, X0 + 100000, y + 200000, 400000, 400000, [{"text": str(i + 1), "align": PP_ALIGN.CENTER, "bold": True}],
+                size=13, color="FFFFFF", anchor=MSO_ANCHOR.MIDDLE, margin=0)
+        textbox(s, X0 + 620000, y + 40000, CW - 700000, 720000, [{"text": k, "bold": True, "color": NAVY, "size": 10.5}, {"text": v}],
+                size=9, anchor=MSO_ANCHOR.MIDDLE, margin=0)
+    bar(s, PR, "투자자 예상 질문 및 답변 방향", X2, 1800000, CW)
+    table(s, [["예상 질문", "답변 방향"]] + [list(x) for x in qa], X2, 2110000, CW, [1.5, 2.7], rowh=[300000] + [640000] * 5, size=8.5)
+    textbox(s, X2, 5700000, CW, 650000, [{"text": "투자자 배포 자료 원칙", "bold": True, "color": RED},
+                                          {"text": "숫자는 공시 기준 — 일시적 요인은 대응 논리와 함께 설명"}],
+            size=9, fill="FBEAEA", margin=110000, anchor=MSO_ANCHOR.MIDDLE)
+    src = "자료: 사업보고서·분기보고서(DART), 신용평가사, 금융투자협회 장외 체결" + (", 팝업 메모" if (I.get("credit_note") or I.get("issues_note")) else "")
+    source(s, src + (" · Claude 초안(검토 필요)" if dr else ""), w=9000000)
+    notes(s, "[작성 가이드] 크레딧 스토리 4개(사업·실적·재무·신용도) + 예상 Q&A 5개는 공시 수치로 자동 작성. 팝업 '크레딧 포인트' 메모가 있으면 맨 앞에 반영.")
+    return s
+
+
+def build_dashboard(prs, LAY, PR, F, X):
+    s = new_slide(prs, LAY)
+    title(s, PR, "시장 한눈에 보기 (Market Dashboard)")
+    rt = F["rates"]
+    cv = X.cv
+
+    def row(lab, key, unit="%", scale=1, dec=3):
+        s_ = rt.get(key) or []
+        if not s_:
+            return [lab, "-", "-", "-", "-"]
+        d_now, v = s_[-1]
+        dn = date.fromisoformat(d_now)
+        m1 = series_at(s_, (dn - timedelta(days=31)).isoformat())
+        y1 = series_at(s_, (dn - timedelta(days=365)).isoformat())
+        f = lambda x: f"{x * scale:.{dec}f}{unit}" if x is not None else "-"  # noqa: E731
+        return [lab, f(v), f(m1), f(y1), f"{(v - m1) * 100:+.0f}bp" if m1 is not None else "-"]
+
+    def crow(lab, g, t, spread=False):
+        if not cv:
+            return [lab, "-", "-", "-", "-"]
+        d1 = cv.last
+        dm = cv.asof((date.fromisoformat(d1) - timedelta(days=31)).isoformat())
+        dy = cv.asof((date.fromisoformat(d1) - timedelta(days=365)).isoformat())
+        f = (lambda d: cv.sp(g, t, d)) if spread else (lambda d: cv.y(g, t, d))
+        fm = (lambda v: f"{v:.0f}bp") if spread else (lambda v: f"{v:.3f}%")
+        a, b, c = f(d1), f(dm) if dm else None, f(dy) if dy else None
+        ch = (a - b) if spread else (a - b) * 100 if a is not None and b is not None else None
+        return [lab, fm(a) if a is not None else "-", fm(b) if b is not None else "-", fm(c) if c is not None else "-", f"{ch:+.0f}bp" if ch is not None else "-"]
+    H(s, (spread_line_short(X) or "") if cv else "금리 레벨·스프레드 점검")
+    rows = [["지표", "현재", "1개월 전", "1년 전", "1개월 변화"],
+            row("한은 기준금리", "base", dec=2), crow("국고 3년", "KTB", 3), crow("국고 10년", "KTB", 10),
+            crow(f"{X.grade} 3년 (동사 등급)", X.grade, 3), crow(f"{X.grade} 3년 스프레드", X.grade, 3, spread=True)]
+    if X.grade != "AA-":
+        rows.append(crow("AA- 3년 스프레드 (참고)", "AA-", 3, spread=True))
+    rows += [row("CP 91일", "cp91", dec=2), row("美 FF 상단", "ffr_hi", dec=2), row("美 국채 2년", "ust2", dec=2), row("美 국채 10년", "ust10", dec=2)]
+    table(s, rows, X0, 1800000, W, [2.4, 1.5, 1.5, 1.5, 1.5], rowh=330000, size=10,
+          align_cols={i: PP_ALIGN.CENTER for i in range(1, 5)}, bold_cells={(r, 1) for r in range(1, len(rows))},
+          fills={(r, c): PALEBLUE for r in (4, 5) for c in range(5)})
+    imp = []
+    if cv:
+        p = cv.pct_rank(X.grade, 3)
+        c1 = cv.change(X.grade, 3, 30, spread=True)
+        k1 = cv.change("KTB", 3, 30)
+        imp.append(f"{X.grade} 스프레드 1년 분위 {p}%" + (f", 1개월 {c1:+.0f}bp" if c1 is not None else "") + (f" / 국고 3년 1개월 {k1:+.0f}bp" if k1 is not None else ""))
+        if c1 is not None and k1 is not None:
+            imp.append("금리·스프레드 동반 하락 — 발행 여건 우호" if c1 <= 0 and k1 <= 0 else
+                       "국고 상승을 스프레드 축소가 일부 상쇄" if c1 < 0 < k1 else
+                       "스프레드 확대 — 밴드 상단 관리 필요" if c1 > 0 >= k1 else "금리·스프레드 동반 상승 — 조기 확정 유리")
+    textbox(s, X0, 5850000, W, 600000, [{"text": "발행 영향: " + " — ".join(imp) if imp else "발행 영향: ##"}], size=10, fill=PALEBLUE,
+            margin=110000, anchor=MSO_ANCHOR.MIDDLE)
+    source(s, f"자료: 금융투자협회 채권시가평가수익률({cv.last if cv else ''}), 한국은행 ECOS, FRED", w=9000000)
+    notes(s, "[작성 가이드] 국고·회사채는 금융투자협회 시가평가(평가사 평균), 기준금리·CP는 ECOS, 미국은 FRED. 모두 자동.")
+    return s
+
+
+def rewrite_credit(sl, PR, F, X, spec):
+    cv = X.cv
+    if not cv:
+        return
+    one = (date.fromisoformat(cv.last) - timedelta(days=365)).isoformat()
+    ds = [d for d in cv.dates if d >= one]
+    ch = next((sh for sh in sl.shapes if getattr(sh, "has_chart", False) and sh.has_chart), None)
+    if ch is not None:
+        cd = CategoryChartData()
+        cd.categories = [date.fromisoformat(d) for d in ds]
+        cd.add_series("SP", [round(cv.sp(X.grade, 3, d), 1) for d in ds])
+        cd.add_series("국고 3년", [round(cv.y("KTB", 3, d), 3) for d in ds])
+        cd.add_series(f"{X.grade} 3년", [round(cv.y(X.grade, 3, d), 3) for d in ds])
+        try:
+            ch.chart.replace_data(cd)
+        except Exception:  # noqa: BLE001
+            pass
+    for sh in sl.shapes:
+        if sh.name == "모서리가 둥근 직사각형 8" and "추이" in (sh.text_frame.text if sh.has_text_frame else ""):
+            set_shape_text(sh._element, f"최근 1년 금리 및 스프레드 추이 ({X.grade} 3년)")
+        if sh.has_text_frame and sh.text_frame.text.startswith("자료: 한국은행"):
+            set_shape_text(sh._element, "자료: 금융투자협회 채권시가평가수익률(평가사 평균)")
+    rng = cv.range(X.grade, 3)
+    c3 = cv.change(X.grade, 3, 91, spread=True)
+    L = [f"{X.grade} 3년 스프레드 {cv.sp(X.grade, 3):.0f}bp — 1년 범위 {rng[0][1]:.0f}bp({rng[0][0][2:7].replace('-', '.')})~{rng[1][1]:.0f}bp({rng[1][0][2:7].replace('-', '.')}) 중 {cv.pct_rank(X.grade, 3)}% 위치"]
+    sub = []
+    if c3 is not None:
+        sub.append(f"3개월 {c3:+.0f}bp")
+    if X.grade != "AA-":
+        d_now = cv.sp(X.grade, 3) - cv.sp("AA-", 3)
+        d_old = cv.sp(X.grade, 3, ds[0]) - cv.sp("AA-", 3, ds[0])
+        sub.append(f"AA- 대비 {d_now:+.0f}bp(1년 전 {d_old:+.0f}bp) — 등급 간 차별화 {'확대' if d_now > d_old else '축소'}")
+    if sub:
+        L.append("- " + ", ".join(sub))
+    tot = sum(v["n"] for v in X.dem.values())
+    if tot:
+        under = sum(v.get("under", 0) for v in X.dem.values())
+        L.append(f"최근 6개월 {X.band}급 공모채 {tot}건, 주문 {M.eok(sum(v['orders'] for v in X.dem.values()))}원" + (f", 미매각 {under}건" if under else ", 미매각 없음"))
+        L.append("- " + " / ".join(f"{k} 평균 {v['avg_ratio']:.1f}:1" for k, v in sorted(X.dem.items()) if v.get("avg_ratio")))
+    aj = adj_line(X, F["name"])
+    if aj:
+        L.append(f"동사: {aj}")
+    L = (L[:5] + fresh_view(spec, "credit", F["today"], X.rules))[:7]
+    tb = next((sh for sh in sl.shapes if sh.name == "TextBox 17"), None)
+    if tb is not None:
+        P3.set_bul(tb, L)
+
+
+def rewrite_kr(sl, F, X, spec):
+    L, _ = kr_lines(F["rates"])
+    L = (L + fresh_view(spec, "kr", F["today"], X.rules))[:6]
+    tb = next((sh for sh in sl.shapes if sh.name == "TextBox 25"), None)
+    if tb is not None and L:
+        P3.set_bul(tb, L)
+
+
+def rewrite_us(sl, F, X, spec):
+    L, _ = us_lines(F["rates"])
+    L = (L + fresh_view(spec, "us", F["today"], X.rules))[:6]
+    tb = next((sh for sh in sl.shapes if sh.name == "TextBox 17"), None)
+    if tb is not None and L:
+        P3.set_bul(tb, L)
+
+
 def _chart_top(slide):
     bars = [sh for sh in slide.shapes if sh.name == "모서리가 둥근 직사각형 8"]
     return min(b.top for b in bars) if bars else 3440000
 
 
-def panel_credit(sl, PR, F):
-    rt = F["rates"]
-    a3, k3 = rt.get("aa3") or [], dict(map(tuple, rt.get("ktb3") or []))
-    if not a3:
+def panel_credit(sl, PR, F, X):
+    cv = X.cv
+    if not cv:
         return
-    end = a3[-1][0]
+    end = cv.last
     st = (date.fromisoformat(end) - timedelta(days=365)).isoformat()
     ev = []
-    bs = rt.get("base") or []
+    bs = F["rates"].get("base") or []
     for (d0, v0), (d1, v1) in zip(bs, bs[1:]):
         if v1 != v0 and d1 >= st:
             ev.append((d1, f"한은 {'인상' if v1 > v0 else '인하'} {v0:.2f}→{v1:.2f}%"))
-    hi = max(((d, v) for d, v in a3 if d >= st), key=lambda x: x[1])
-    ev.append((hi[0], "AA- 3년 1년 내 고점"))
+    rng = cv.range(X.grade, 3)
+    if rng:
+        ev.append((rng[1][0], f"{X.grade} 스프레드 1년 고점"))
+        ev.append((rng[0][0], f"{X.grade} 스프레드 1년 저점"))
     ev.append((end, "현재"))
     ev = sorted(set(ev))[-6:]
-    rows = [["일자", "이벤트", "AA- 3년", "스프레드"]]
+    rows = [["일자", "이벤트", f"{X.grade} 3년", "스프레드"]]
     for d, nm in ev:
-        v = series_at(a3, d)
-        kv = series_at(sorted(k3.items()), d)
-        rows.append([f"'{d[2:4]}.{int(d[5:7])}/{int(d[8:])}", nm, f"{v:.3f}%", f"{(v - kv) * 100:.1f}bp" if kv else "-"])
+        rows.append([f"'{d[2:4]}.{int(d[5:7])}/{int(d[8:])}", nm, f"{cv.y(X.grade, 3, d):.3f}%", f"{cv.sp(X.grade, 3, d):.0f}bp"])
     y0 = _chart_top(sl)
-    bar(sl, PR, "주요 이벤트와 AA- 3년 금리", RX, y0, RW, h=276999, size=12)
+    bar(sl, PR, f"주요 이벤트와 {X.grade} 3년 금리", RX, y0, RW, h=276999, size=12)
     table(sl, rows, RX, y0 + 330000, RW, [0.9, 2.1, 0.9, 0.9], rowh=300000, size=9,
           align_cols={2: PP_ALIGN.CENTER, 3: PP_ALIGN.CENTER}, fills={(len(rows) - 1, c): PALEBLUE for c in range(4)})
+    p = cv.pct_rank(X.grade, 3)
+    msg = ("스프레드가 1년 상단 — 금리 확정 시점 앞당김 유리" if p is not None and p >= X.rules["spread_high_pct"] else
+           "스프레드가 1년 하단 — 우호적 발행 구간" if p is not None and p <= X.rules["spread_low_pct"] else "스프레드 1년 중간 — 수요예측 흥행 시 밴드 하단 확정 여지")
     textbox(sl, RX, y0 + 330000 + len(rows) * 300000 + 150000, RW, 800000,
-            [{"text": "발행 시사점", "bold": True, "color": NAVY}, {"text": "## (스프레드·금리 레벨 판단 한 줄)"}], size=9.5, fill=PALEBLUE, margin=100000)
+            [{"text": "발행 시사점", "bold": True, "color": NAVY}, {"text": msg}], size=9.5, fill=PALEBLUE, margin=100000)
 
 
-def panel_kr(sl, PR, F):
+def panel_kr(sl, PR, F, X):
     rt = F["rates"]
     bs = rt.get("base") or []
     k3, k10 = rt.get("ktb3") or [], rt.get("ktb10") or []
@@ -1013,28 +1170,36 @@ def panel_kr(sl, PR, F):
     bar(sl, PR, "기준금리 사이클과 국고채 금리", RX, y0, RW, h=276999, size=12)
     table(sl, rows, RX, y0 + 330000, RW, [0.9, 1.5, 1.0, 1.0], rowh=290000, size=9,
           align_cols={2: PP_ALIGN.CENTER, 3: PP_ALIGN.CENTER}, fills={(len(rows) - 1, c): PALEBLUE for c in range(4)})
+    L, gap = kr_lines(rt)
+    msg = (f"국고 3년-기준금리 {gap:+.0f}bp — " + ("추가 인상이 상당 부분 반영돼 수요예측 이후 금리 상승 여지 제한" if gap >= 40 else
+                                               "동결 중심 반영 — 이벤트 결과에 따라 변동" if gap > -15 else "인하 기대 반영 — 발행 지연 시 금리 하락 가능")) if gap is not None else "##"
     textbox(sl, RX, y0 + 330000 + len(rows) * 290000 + 120000, RW, 700000,
-            [{"text": "발행 시사점", "bold": True, "color": NAVY}, {"text": f"국고 3년-기준금리 {(k3[-1][1] - bs[-1][1]) * 100:.0f}bp — ## (선반영 판단)"}],
-            size=9.5, fill=PALEBLUE, margin=100000)
+            [{"text": "발행 시사점", "bold": True, "color": NAVY}, {"text": msg}], size=9.5, fill=PALEBLUE, margin=100000)
 
 
-def panel_us(sl, PR, F, spec):
+def panel_us(sl, PR, F, spec, X):
     rt = F["rates"]
     lo = (rt.get("ffr_lo") or [[None, None]])[-1][1]
     hi = (rt.get("ffr_hi") or [[None, None]])[-1][1]
     fomc = [d for d, nm in sorted(spec["events"].items()) if "FOMC" in nm and d >= F["today"].isoformat()][:5]
     if lo is None or not fomc:
         return
-    rngs = [(lo + 0.25 * k, hi + 0.25 * k) for k in range(0, 5)]
+    fw = spec.get("fedwatch") or {}
+    rngs = [(lo + 0.25 * k, hi + 0.25 * k) for k in range(-1, 4)]
     rows = [["FOMC"] + [f"{a:.2f}~{b:.2f}" for a, b in rngs]]
     for d in fomc:
-        rows.append([f"'{d[2:4]}.{int(d[5:7])}/{int(d[8:])}"] + ["##"] * len(rngs))
+        vals = (fw.get("probs") or {}).get(d) or {}
+        rows.append([f"'{d[2:4]}.{int(d[5:7])}/{int(d[8:])}"] + [f"{vals[f'{a:.2f}']:.1f}" if f"{a:.2f}" in vals else "##" for a, _ in rngs])
     y0 = _chart_top(sl)
     bar(sl, PR, "CME FedWatch 정책금리 확률 (%)", RX, y0, RW, h=276999, size=12)
     table(sl, rows, RX, y0 + 330000, RW, [1.0] + [1] * len(rngs), rowh=300000, size=9, align_cols={i: PP_ALIGN.CENTER for i in range(1, len(rngs) + 1)})
+    L, gap = us_lines(rt)
+    msg = (f"美 2년물-정책금리 중간값 {gap:+.0f}bp — " + ("추가 인상 반영, 국내 장기물 금리에 상방 압력" if gap >= 25 else
+                                                  "동결 중심 반영" if gap > -25 else "인하 기대 반영, 국내 금리 하방 요인")) if gap is not None else "##"
+    asof = fw.get("asof") or "##"
     textbox(sl, RX, y0 + 330000 + len(rows) * 300000 + 120000, RW, 1050000, [
-        {"text": "발행 시사점", "bold": True, "color": NAVY}, {"text": "## (회의별 최빈 구간과 발행 일정의 관계)"},
-        {"text": f"현재 목표금리 {lo:.2f}~{hi:.2f}% / 기준일 ## (CME FedWatch → Probabilities)", "size": 8, "color": SUB}],
+        {"text": "발행 시사점", "bold": True, "color": NAVY}, {"text": msg},
+        {"text": f"현재 목표금리 {lo:.2f}~{hi:.2f}% / FedWatch 기준일 {asof} (설정 fedwatch 에 입력)", "size": 8, "color": SUB}],
         size=9.5, fill=PALEBLUE, margin=100000, space_after=3)
 
 
