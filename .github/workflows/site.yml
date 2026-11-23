@@ -1,0 +1,37 @@
+name: site
+
+# 화면·제안서 설정(docs/proposal_spec.md)·API 코드가 main 에 바뀌면 데이터 수집 없이 사이트만 다시 배포한다.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/proposal_spec.md"
+      - "web/**"
+      - "functions/**"
+      - "tools/proposal_spec.py"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m web.build
+      - name: Cloudflare Pages 배포
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy public --project-name=${{ vars.CF_PAGES_PROJECT || 'ecm-board' }} --branch=main --commit-dirty=true
