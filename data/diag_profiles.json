@@ -8,7 +8,7 @@
   "with_rate": 0
  },
  "crno_matched": 0,
- "dart_calls": 268,
+ "dart_calls": 275,
  "listed": 2769,
  "mezz_docs": {
   "sec": 0,
@@ -19,38 +19,47 @@
   "with_prem": 703
  },
  "mezz_events": {
-  "cands": 9,
+  "cands": 18,
   "live_corps": 961,
   "parsed": 0,
   "pending": 0,
-  "sec": 4,
+  "sec": 3,
   "todo": 0,
-  "total": 2232
+  "total": 2241
  },
- "price_hist_days": 120,
- "price_hist_fetched": 1,
+ "price_hist_days": 121,
+ "price_hist_fetched": 0,
  "prices": 2878,
  "profiles_done": 115,
  "profiles_fresh": 3551,
  "profiles_left": 0,
- "profiles_sec": 20,
- "px_fetched": 1,
+ "profiles_sec": 17,
+ "px_fetched": 0,
  "rights_docs": {
-  "discount": 843,
-  "issue_px": 1133,
-  "list_dt": 999,
-  "pay_dt": 1265,
-  "record_dt": 183,
-  "sec": 0,
-  "sub_from": 241,
-  "todo": 0,
-  "total": 1366
+  "discount": 847,
+  "issue_px": 1138,
+  "list_dt": 1004,
+  "pay_dt": 1270,
+  "record_dt": 184,
+  "sec": 1,
+  "sub_from": 242,
+  "todo": 5,
+  "total": 1371
  },
- "run": "2026-11-23T06:15+09:00",
+ "run": "2026-11-23T22:53+09:00",
  "short_lnb": {
-  "lnb_fetched": 1,
-  "lnb_sample": null,
-  "short_fetched": 0
+  "lnb_fetched": 2,
+  "lnb_sample": {
+   "balnStckAmt": "587161440000",
+   "balnStckCnt": "2038755",
+   "basDt": "20261120",
+   "cclStckCnt": "4724",
+   "mrktClsfNm": "코스닥",
+   "rdptStckCnt": "11152",
+   "stckItmsCd": "039030",
+   "stckItmsNm": "이오테크닉스"
+  },
+  "short_fetched": 1
  },
  "targets": 3666
 }
