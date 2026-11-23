@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-23T17:16+09:00",
+  "data_updated": "2026-11-23T18:38+09:00",
   "last_daily": "2026-11-20T20:41+09:00"
  },
  "records": {
@@ -367336,33 +367336,34 @@
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261110000233"
   },
   "RIGHTS:01397903:20261110000237": {
-   "amended": false,
-   "amount": 6000000000,
-   "board_dt": "2026-11-10",
+   "amended": true,
+   "amount": 2000000000,
+   "board_dt": "2026-11-23",
    "captured_by": "watch",
    "confirmed": true,
    "corp_cls": "K",
    "corp_code": "01397903",
    "corp_name": "엔젠바이오",
-   "dilution": 37.3,
+   "dilution": 12.43,
    "first_seen": "2026-11-10T15:31+09:00",
    "id": "RIGHTS:01397903:20261110000237",
    "method": "제3자배정증자",
-   "new_common": 6000000,
+   "new_common": 2000000,
    "new_other": null,
    "offering": "사모·주주배정",
+   "original_rcept": "20261110000237",
    "par_value": 1000,
    "purposes": {
-    "운영": 6000000000
+    "채무상환": 2000000000
    },
-   "rcept_dt": "2026-11-10",
-   "rcept_no": "20261110000237",
+   "rcept_dt": "2026-11-23",
+   "rcept_no": "20261123000390",
    "source": "DART",
    "stock_code": "354200",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-11-10T15:31+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261110000237"
+   "updated": "2026-11-23T18:38+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261123000390"
   },
   "RIGHTS:01399992:20251212000557": {
    "amended": false,
