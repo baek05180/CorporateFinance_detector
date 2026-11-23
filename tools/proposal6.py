@@ -30,7 +30,7 @@ from tools import proposal_mkt as M  # noqa: E402
 from tools.proposal_spec import load_spec  # noqa: E402
 from tools.proposal_text import context, credit_story, kr_lines, ro, us_lines  # noqa: E402
 from tools.proposal6_kit import (  # noqa: E402
-    CW, DEEP, GAP, GREY, L, NAVY, PP_ALIGN, R, SUB, Y_BOT, MSO_ANCHOR, Page, box, chart, hline, rect, replace_tokens, tbl)
+    CW, DEEP, GAP, GREY, L, NAVY, PP_ALIGN, R, SUB, Y_BOT, MSO_ANCHOR, Page, Page5, box, chart, hline, rect, replace_tokens, tbl)
 
 WD = "월화수목금토일"
 SECS = [("Ⅰ", "예시 조건과 발행 윈도우"), ("Ⅱ", "기업 분석과 크레딧"), ("Ⅲ", "투자자 수요와 IR"), ("Ⅳ", "금리 전망과 Market Update")]
@@ -171,7 +171,7 @@ def calc(F, I, X, spec):
     if not D.fedwatch:
         D.check.append("FedWatch 확률: 명세 fedwatch 에 입력하면 美 통화정책 페이지에 표시")
     if not str(I.get("fee_bp") or "").strip():
-        D.check.append("인수수수료: '협의'로 표기됨")
+        D.check.append("인수수수료 미입력 — 팝업에 입력 (v6 형식은 '협의'로 표기)")
     return D
 
 
@@ -494,7 +494,7 @@ def p_summary(dk, D, I, X):
          (ek(D.mat_year), f"{D.issue.year}년 공모·사모 사채 만기\n(사채 잔액 {ek(D.out_total)})"),
          (f"{li['nd_ebitda']:.1f}배" if li.get("nd_ebitda") else "-", f"순차입금/EBITDA\n({F_.pi}, LTM 근사)")]
     ins_h = 650000 + 230000 * 3
-    y = y + max(0, (Y_BOT - ins_h - y - 820000) // 2)
+    y = y + max(0, (p.ybot - ins_h - y - 820000) // 2)
     y = p.kpis(y, k, h=820000) + 200000
     # 금리 여건
     O = D.outlook
@@ -518,7 +518,6 @@ def p_summary(dk, D, I, X):
     p.foot("조건과 일정은 예시. 기준 금리는 " + ("입력한 개별민평" if D.indiv_given else "등급민평에 최근 30일 동사 장외 체결 스프레드를 더한 추정치")
            + ", 목표 스프레드는 동사 직전 확정값과 같은 등급군 6개월 중앙값의 평균. 순차입금/EBITDA는 LTM 근사(당사 산출).",
            "금융투자협회 채권정보센터, 전자공시시스템, 신용평가 3사, 신한투자증권 리서치센터, 신한투자증권.")
-    p.s.notes_slide.notes_text_frame.text = "[확인 목록]\n" + "\n".join(f"- {c}" for c in D.check)
     return p
 
 
@@ -577,7 +576,7 @@ def p_terms(dk, D, I, X):
     for h, txt in items:
         ps.append({"text": h, "size": 10.5, "bold": True, "color": NAVY, "after": 1})
         ps.append({"text": txt, "size": 9.5, "after": 9})
-    box(p.s, x2, y2, w2, Y_BOT - y2, ps, margin=40000)
+    box(p.s, x2, y2, w2, p.ybot - y2, ps, margin=40000)
     p.foot("조건은 직전 회차 증권신고서를 참고한 예시이며, 규모·트랜치·밴드는 발행사 자금 계획과 시장 상황에 따라 조정 가능.",
            "전자공시시스템, 금융투자협회 채권정보센터, 신한투자증권.")
 
@@ -650,7 +649,11 @@ def p_season(dk, D, I, X):
     y = p.panel(L, p.y, lw, f"{S.year}년 월별 {D.band}급 공모채 발행", "(단위: 억원)")
     ks = list(range(1, 13))
     vals = [round(S.mon.get(k, {}).get("amt", 0)) or None for k in ks]
-    c = chart(p.s, "col", L, y, lw, 2500000, [f"{k}월" for k in ks], [("발행", vals)], legend=False)
+    dd_n = len([d for d in D.deals if d.get("dt")][-4:])
+    reserve = (310000 + 215000 * (dd_n + 1) + 120000) if dd_n else 0
+    ch_h = max(1300000, min(2500000, p.ybot - y - reserve))
+    c = chart(p.s, "col", L, y, lw, ch_h, [f"{k}월" for k in ks], [("발행", vals)], legend=False)
+    c_gf = p.s.shapes[-1]
     try:
         pt = c.plots[0].series[0].points[m - 1]
         pt.format.fill.solid()
@@ -679,9 +682,12 @@ def p_season(dk, D, I, X):
             sp_ = " / ".join(bp(r.get("_spread")) for r in d["tr"] if r.get("_spread") is not None) or "-"
             rows.append([f"{d['series']}회", d["dt"][2:].replace("-", "."), f"{d['amt']:,.0f}",
                          f"{d['orders'] / d['offer']:.1f}배" if d.get("orders") and d.get("offer") else "-", sp_])
-        yy = max(y2, y + 2500000 + 120000)
-        y3 = p.panel(L, yy, CW, f"{D.name} 최근 회차: 시기별 결과", "(단위: 억원, bp)")
-        tbl(p.s, rows, L, y3, CW, [0.8, 1, 1, 0.8, 2], rowh=215000, size=8.5)
+        yy = max(y2, y + ch_h + 120000)
+        if yy + 310000 + 215000 * len(rows) <= p.ybot:
+            y3 = p.panel(L, yy, CW, f"{D.name} 최근 회차: 시기별 결과", "(단위: 억원, bp)")
+            tbl(p.s, rows, L, y3, CW, [0.8, 1, 1, 0.8, 2], rowh=215000, size=8.5)
+        else:
+            c_gf.height = Emu(p.ybot - y - 50000)
     p.foot("발행은 증권신고서 기준 공모 회사채(같은 등급군, 수요예측일 기준 월). 스프레드는 ECOS 회사채 AA- 3년 - 국고 3년. "
            "협회 집계는 명세(market_stats)에 입력한 언론 보도 인용치.",
            "전자공시시스템, 한국은행 ECOS, 금융투자협회(언론 보도), 신한투자증권.")
@@ -793,7 +799,7 @@ def p_sched(dk, D, I, X):
         rows += [dr, er]
         wk += timedelta(days=7)
     n = (len(rows) - 1) // 2
-    avail = Y_BOT - 650000 - y
+    avail = p.ybot - 650000 - y
     rh = [230000] + [200000, max(300000, (avail - 230000 - 200000 * n) // n)] * n
     for i in range(1, len(rows), 2):
         fills.update({(i, c): "F2F2F2" for c in range(6)})
@@ -985,7 +991,7 @@ def p_headroom(dk, D, I, X):
     if dh:
         cw2 = 3800000
         yc = p.panel(L, y, cw2, "총차입금 추이 (리스 포함)", "(단위: 억원)")
-        chart(p.s, "col", L, yc, cw2, Y_BOT - yc - 50000, [k for k, _ in dh], [("총차입금", [round(v / 1e8) for _, v in dh])], legend=False)
+        chart(p.s, "col", L, yc, cw2, p.ybot - yc - 50000, [k for k, _ in dh], [("총차입금", [round(v / 1e8) for _, v in dh])], legend=False)
         if items:
             p.insight("등급변동요인 (정성)", items, y=y, x=L + cw2 + 200000, w=CW - cw2 - 200000)
     elif items:
@@ -1150,7 +1156,7 @@ def p_policy(dk, D, I, X, F, spec):
         vk.append(v)
     if cats:
         lo_ = min(v for v in vb + vk if v is not None)
-        chart(p.s, "line", L, ys, CW, Y_BOT - ys - 100000, cats, [("기준금리", vb), ("국고 3년", vk)], fmt="0.00", ymin=int(lo_ * 2) / 2 - 0.5)
+        chart(p.s, "line", L, ys, CW, p.ybot - ys - 100000, cats, [("기준금리", vb), ("국고 3년", vk)], fmt="0.00", ymin=int(lo_ * 2) / 2 - 0.5)
     p.foot("금리는 일별 종가(국고 3년은 5영업일 간격 표시). 위원 성향은 명세(members)에 정리한 공개 발언·의결 기준.",
            "한국은행, 미 연준, 금융투자협회, CME FedWatch(명세 입력), 신한투자증권.")
 
@@ -1188,7 +1194,7 @@ def p_outlook(dk, D, I, X):
     if gp and k3:
         y = p.panel(L, y, CW, f"{D.grade} 3년 스프레드 전망 (등급 금리 - 국고)", "(단위: bp)")
         sp = [round((a - b) * 100) if a is not None and b is not None else None for a, b in zip(gp[:len(cols)], k3[:len(cols)])]
-        chart(p.s, "col", L, y, CW, max(900000, Y_BOT - y - 100000), [lab for lab, _ in cols], [("스프레드", sp)], legend=False)
+        chart(p.s, "col", L, y, CW, max(900000, p.ybot - y - 100000), [lab for lab, _ in cols], [("스프레드", sp)], legend=False)
     p.foot(f"신한투자증권 리서치센터 금리전망({O['vintage']}, 시트 {O.get('sheet')}). {D.grade} 경로는 {how}.",
            "신한투자증권 리서치센터.")
 
@@ -1249,7 +1255,7 @@ def p_credit_mkt(dk, D, I, X, F):
             mat_n[int(m["mat"][5:7])] += m["amt"]
     if mat_n:
         y2 = p.panel(x2, y2, w2, f"{D.issue.year}년 {D.band}급 월별 만기", "(단위: 억원)")
-        chart(p.s, "col", x2, y2, w2, max(900000, Y_BOT - y2 - 50000), [f"{k}월" for k in range(1, 13)],
+        chart(p.s, "col", x2, y2, w2, max(900000, p.ybot - y2 - 50000), [f"{k}월" for k in range(1, 13)],
               [("만기", [round(mat_n.get(k, 0)) or None for k in range(1, 13)])], legend=False, label_size=7)
     p.foot("신용스프레드 = 등급별 시가평가 수익률(평가사 평균) - 국고. 수요예측은 같은 등급군 공모 회사채.",
            "금융투자협회 채권정보센터, 전자공시시스템, 신한투자증권.")
@@ -1321,7 +1327,7 @@ def p_cost(dk, D, I, X):
         if gp:
             y = p.panel(L, y, CW, f"발행 시점별 {D.grade} 3년 금리 (리서치 전망 기준)", "(단위: %)")
             cols = D.outlook["cols"][:6]
-            chart(p.s, "col", L, y, CW, max(900000, Y_BOT - y - 600000), [lab for lab, _ in cols], [(f"{D.grade} 3년", [round(v, 2) if v else None for v in gp[:6]])],
+            chart(p.s, "col", L, y, CW, max(900000, p.ybot - y - 600000), [lab for lab, _ in cols], [(f"{D.grade} 3년", [round(v, 2) if v else None for v in gp[:6]])],
                   fmt="0.00", legend=False, ymin=min(v for v in gp[:6] if v) - 0.3)
     p.foot("연 이자는 표면금리 기준(인수수수료·발행 비용 제외). 예상 금리 = 기준 금리 + 목표 스프레드(동사 직전 확정값과 같은 등급군 중앙값의 평균, 밴드 안).",
            "금융투자협회 채권정보센터, 신한투자증권 리서치센터, 신한투자증권.")
@@ -1351,6 +1357,58 @@ def divider(prs, lay, i, pages):
     ps = [{"text": f"{k + 1}. {t}", "size": 13, "color": NAVY, "after": 8} for k, t in enumerate([t for _, _, sec, t in pages if sec == i])]
     box(s, 4100000, 2300000, 5800000, 4000000, ps, margin=0)
     return s
+
+
+# ───────────────────────── 원래 제안서(v5) 디자인에 넣기 ─────────────────────────
+LAY5 = {"summary": "SUM", "season": "I", "supply": "I", "windows": "I", "mat": "I", "terms": "I", "sched": "I",
+        "results": "II", "credit": "II", "prev": "II", "investors": "II", "ir": "II",
+        "indiv": "III", "cost": "III", "policy": "III", "outlook": "III", "credit_mkt": "III"}
+TITLE5 = {"summary": "권고안 요약", "credit": "재무 레버리지와 등급 Headroom", "prev": "前발행 수요예측 복기"}
+MIX = [("summary", p_summary), ("season", p_season), ("supply", p_supply), ("windows", p_windows),
+       ("results", p_results), ("credit", p_headroom), ("prev", p_prev), ("investors", p_investors),
+       ("indiv", p_indiv), ("cost", p_cost)]
+
+
+class Deck5(Deck):
+    def __init__(self, prs, PR, lays):
+        super().__init__(prs, None)
+        self.PR, self.lays = PR, lays
+
+    def page(self, key, title, headline=None, bullets=None):
+        sl = P5.new_slide(self.prs, self.lays[LAY5.get(key, "I")])
+        p = Page5(sl, self.PR, TITLE5.get(key, title), headline, bullets, key)
+        self.pages.append((sl, key, self.sec, title))
+        return p
+
+
+def extra_pages(prs, PR, lays, F, I, X, spec):
+    """v6 의 내용 장들을 원래 제안서 디자인으로 만든다 → ({key: slide}, D)."""
+    D = calc(F, I, X, spec)
+    I2 = dict(I, _mv={"credit": P5.fresh_view(spec, "credit", D.today, X.rules)})
+    dk = Deck5(prs, PR, lays)
+    on = (spec.get("deck_v6") or {}).get("pages") or {}
+    for key, fn in MIX:
+        if on.get(key, True) is False:
+            continue
+        try:
+            fn(dk, D, I2, X)
+        except Exception as e:  # noqa: BLE001
+            import traceback
+            print(f"page {key} skipped: {type(e).__name__}: {e}")
+            traceback.print_exc()
+            D.check.append(f"{key} 장 생성 실패 — 데이터 확인 필요")
+    return {key: sl for sl, key, _, _ in dk.pages}, D
+
+
+def finish_checks(prs, D, first):
+    for i, s_ in enumerate(prs.slides):
+        if any(sh.has_text_frame and "##" in sh.text_frame.text for sh in s_.shapes) or \
+                any(sh.has_table and any("##" in c.text for r in sh.table.rows for c in r.cells) for sh in s_.shapes):
+            D.check.append(f"p.{i + 1}: '##' 표시 항목은 회사 확인 후 채움")
+    if first is not None:
+        nt = first.notes_slide.notes_text_frame
+        nt.text = "[확인 목록]\n" + "\n".join(f"- {c}" for c in D.check) + (("\n\n" + nt.text) if nt.text else "")
+    return D.check
 
 
 def build(template, F, I, X, spec, out_path):

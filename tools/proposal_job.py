@@ -22,11 +22,12 @@ def main(template, inp_path, outdir):
         with open(inp_path, encoding="utf-8") as f:
             inp = json.load(f)
         out = os.path.join(outdir, "proposal.pptx")
-        deck = str((load_spec().get("deck") or "v6")).lower()
+        deck = str((load_spec().get("deck") or "v5")).lower()
         checks = []
         with contextlib.redirect_stdout(buf), contextlib.redirect_stderr(buf):
-            if deck == "v5":
-                proposal5.run(template, inp, out)
+            if deck in ("v5", "v5_basic"):
+                proposal5.run(template, inp, out, mix=(deck == "v5"))
+                checks = list(proposal5.LAST_CHECKS)
             else:
                 _, checks = proposal6.run(template, inp, out)
         co = {}
@@ -35,7 +36,7 @@ def main(template, inp_path, outdir):
             with open(p, encoding="utf-8") as f:
                 co = json.load(f)
         name = (co.get("name") or inp["corp"]).replace("/", "_")
-        kind = "공모사채_발행제안서" if deck == "v5" else "회사채_발행검토자료"
+        kind = "회사채_발행검토자료" if deck == "v6" else "공모사채_발행제안서"
         st = {"state": "done", "file": f"{name}_{kind}_{inp['issue']}.pptx", "checks": checks}
     except Exception as e:  # noqa: BLE001
         st = {"state": "error", "error": f"{type(e).__name__}: {str(e)[:300]}", "trace": traceback.format_exc()[-3000:]}

@@ -92,6 +92,7 @@ class Page:
 
     def __init__(self, slide, section, title, headline=None, bullets=None, key=None):
         self.s, self.key = slide, key
+        self.ybot = Y_BOT
         box(slide, L, 200000, 6000000, 230000, [{"text": section, "size": 9, "color": GREY}], margin=0)
         box(slide, R - 2400000, 200000, 2400000, 230000, [{"text": "Strictly Confidential", "size": 9, "color": GREY,
                                                             "align": PP_ALIGN.RIGHT}], margin=0)
@@ -135,9 +136,10 @@ class Page:
                 anchor=MSO_ANCHOR.MIDDLE)
         return y + 300000
 
-    def insight(self, title, items, y=None, x=None, w=None, size=9, max_bottom=Y_BOT):
+    def insight(self, title, items, y=None, x=None, w=None, size=9, max_bottom=None):
         x = L if x is None else x
         w = CW if w is None else w
+        max_bottom = max_bottom or self.ybot
         ps = [{"text": title, "size": 10, "bold": True, "color": NAVY, "after": 2}]
         for it in items:
             if not it:
@@ -263,3 +265,95 @@ def replace_tokens(prs, mapping):
         for t in s._element.iter(qn("a:t")):
             if t.text and "{p:" in t.text:
                 t.text = pat.sub(lambda m: str(mapping.get(m.group(1), "")), t.text).replace("(p.)", "")
+
+
+class Page5(Page):
+    """원래 제안서(v5 원본 템플릿) 디자인으로 같은 내용을 그린다.
+
+    제목은 템플릿 제목 틀, 핵심 메시지는 가운데 한 줄 헤드라인, 패널 제목은 템플릿 둥근 띠,
+    요점·시사점은 회색 상자, 각주는 슬라이드 노트로, 하단엔 '자료:' 한 줄.
+    """
+    YB = 6820000
+
+    def __init__(self, slide, proto, title, headline=None, bullets=None, key=None):
+        from tools.pptx_kit import HEAD_FONT, bar as _bar, headline as _hl, title as _title  # noqa: F401
+        self.s, self.key, self.PR = slide, key, proto
+        self.ybot = self.YB
+        _title(slide, proto, title)
+        self.y = 1330000
+        if headline:
+            size = 15
+            for sz in (15, 14, 13, 12):
+                size = sz
+                if lines_needed(headline, CW, sz) <= 1:
+                    break
+            n = lines_needed(headline, CW, size)
+            h = int(size * 1.35 * 12700 * n) + 60000
+            tb = _hl(slide, headline, y=self.y, size=size, h=h)
+            for p in tb.text_frame.paragraphs:
+                for r in p.runs:
+                    rPr = r._r.get_or_add_rPr()
+                    for t in ("a:latin", "a:ea"):
+                        rPr.find(qn(t)).set("typeface", HEAD_FONT)
+            self.y += h + 130000
+        else:
+            self.y = 1800000
+        if bullets:
+            self.bullets(bullets)
+
+    def bullets(self, items, x=None, w=None, size=9.5, y=None):
+        x = L if x is None else x
+        w = CW if w is None else w
+        y0 = self.y if y is None else y
+        ps = []
+        for it in items:
+            if not it:
+                continue
+            t = f"**{it[0]}:** {it[1]}" if isinstance(it, (tuple, list)) else it
+            ps.append({"text": t, "size": size, "bul": "•", "after": 3})
+        h = text_h(ps, w - 160000, size) + 60000
+        box(self.s, x, y0, w, h, ps, fill=PALE, margin=90000, anchor=MSO_ANCHOR.MIDDLE)
+        if y is None:
+            self.y = y0 + h + 140000
+        return y0 + h
+
+    def panel(self, x, y, w, title, unit=None):
+        from tools.pptx_kit import bar as _bar
+        _bar(self.s, self.PR, f"{title} {unit}" if unit else title, x, y, w, h=270000, size=11)
+        return y + 310000
+
+    def insight(self, title, items, y=None, x=None, w=None, size=9, max_bottom=None):
+        x = L if x is None else x
+        w = CW if w is None else w
+        max_bottom = max_bottom or self.ybot
+        ps = []
+        for it in items:
+            if not it:
+                continue
+            t = f"**{it[0]}:** {it[1]}" if isinstance(it, (tuple, list)) else it
+            ps.append({"text": t, "size": size, "bul": "•", "after": 2})
+        h = text_h(ps, w - 200000, size, 2) + 80000
+        y0 = (max_bottom - h - 310000) if y is None else y
+        yb = self.panel(x, y0, w, title)
+        box(self.s, x, yb, w, h, ps, fill=PALE, margin=90000, anchor=MSO_ANCHOR.MIDDLE)
+        return y0, yb + h
+
+    def kpis(self, y, items, h=720000):
+        n = len(items)
+        gw = (CW - (n - 1) * 120000) // n
+        for i, (big, lab) in enumerate(items):
+            x = L + i * (gw + 120000)
+            rect(self.s, x, y, gw, h, fill=PALEBLUE)
+            box(self.s, x, y + 60000, gw, 340000, [{"text": big, "size": 17, "bold": True, "color": NAVY,
+                                                    "align": PP_ALIGN.CENTER}], margin=20000)
+            box(self.s, x, y + 400000, gw, h - 420000, [{"text": lab, "size": 8, "color": SUB,
+                                                         "align": PP_ALIGN.CENTER}], margin=30000)
+        return y + h
+
+    def foot(self, note=None, source=None):
+        from tools.pptx_kit import source as _src
+        if source:
+            _src(self.s, "자료: " + source.rstrip("."), w=9000000)
+        if note:
+            nt = self.s.notes_slide.notes_text_frame
+            nt.text = ((nt.text + "\n") if nt.text else "") + "[Note] " + note

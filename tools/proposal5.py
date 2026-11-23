@@ -173,8 +173,9 @@ def compute(F, I, spec):
     inc = max(F["max"] - F["base"], 0)
     a_max = dict(F["split"])
     a_max[pri] += inc
+    alt = tenors[0] if pri != tenors[0] else tenors[-1]   # 대안 옵션: 우선 만기와 반대쪽 끝
     b_max = dict(F["split"])
-    b_max[tenors[0]] += inc
+    b_max[alt] += inc
     # 시장 수요
     by_t, avg = F["by_t"], F["avg"]
     mkt = {}
@@ -184,7 +185,7 @@ def compute(F, I, spec):
     # 이벤트 (오늘 ~ 납입 후 30일)
     lo, hi = F["today"].isoformat(), (issue + timedelta(days=31)).isoformat()
     evs = [(d, nm) for d, nm in sorted(spec["events"].items()) if lo <= d <= hi]
-    return SimpleNamespace(tenors=tenors, lad=lad, add=add, pdm=pdm, pri=pri, inc=inc, a_max=a_max, b_max=b_max, mkt=mkt, evs=evs)
+    return SimpleNamespace(tenors=tenors, lad=lad, add=add, pdm=pdm, pri=pri, alt=alt, inc=inc, a_max=a_max, b_max=b_max, mkt=mkt, evs=evs)
 
 
 def rates_now(rt, key, d=None):
@@ -227,7 +228,10 @@ def draft_story(F, I):
 
 
 # ───────────────────────── 변환 ─────────────────────────
-def transform(v3_path, F, I, spec, out_path):
+LAST_CHECKS = []
+
+
+def transform(v3_path, F, I, spec, out_path, mix=False):
     prs = Presentation(v3_path)
     PR = Proto(prs)
     L = {l.name: l for l in prs.slide_layouts}
@@ -312,14 +316,32 @@ def transform(v3_path, F, I, spec, out_path):
     panel_us(us, PR, F, spec, X)
     strip_invisible_outlines(prs)
 
-    order = [cover, disc, summ, divI, cond, rate, funds, tranche, opt, sched, divII, prev_s, story, divIII, dash, outlook,
-             credit, kr, mpc, us, fed, mat_next, divA] + months + [aa, up, end]
+    ex, D6 = {}, None
+    if mix:
+        from tools import proposal6 as P6
+        ex, D6 = P6.extra_pages(prs, PR, {"SUM": LAY_SUM, "I": LAY_I, "II": LAY_II, "III": LAY_III}, F, I, X, spec)
+    g = ex.get
+    order = [cover, disc, g("summary") or summ, divI, cond, rate, funds, tranche, opt, g("season"), g("supply"), sched, g("windows"),
+             divII, g("prev") or prev_s, g("investors"), story, g("results"), g("credit"),
+             divIII, dash, outlook, credit, kr, mpc, us, fed, g("indiv"), g("cost"), mat_next, divA] + months + [aa, up, end]
     order = [s for s in order if s is not None]
     keep = {id(s) for s in order}
     for s in list(prs.slides):
         if id(s) not in keep:
             remove_slide(prs, s)
     reorder(prs, order)
+    global LAST_CHECKS
+    LAST_CHECKS = []
+    if mix:
+        from tools import proposal6 as P6
+        from tools.proposal6_kit import replace_tokens
+        sl = list(prs.slides)
+        nums = {k: sl.index(v) + 1 for k, v in ex.items()}
+        for k, v in (("terms", cond), ("mat", funds), ("sched", sched), ("outlook", outlook), ("ir", story), ("prev", g("prev") or prev_s)):
+            if v is not None and v in sl:
+                nums.setdefault(k, sl.index(v) + 1)
+        replace_tokens(prs, nums)
+        LAST_CHECKS = P6.finish_checks(prs, D6, g("summary"))
     prs.save(out_path)
     return out_path
 
@@ -967,33 +989,36 @@ def build_tranche(sl, PR, F, C, X):
 def build_options(prs, LAY, PR, F, C, X):
     s = new_slide(prs, LAY)
     title(s, PR, "만기 전략 옵션 비교")
-    t0, tp = C.tenors[0], C.pri
+    ta, tp = C.alt, C.pri
     y = F["issue"].year
-    prem = term_premium(X, t0, tp) if tp != t0 else None
+    lo_t, hi_t = min(ta, tp), max(ta, tp)
+    prem = term_premium(X, lo_t, hi_t) if ta != tp else None
     exp_a = sum(X.exp[t] * C.a_max[t] for t in C.tenors if X.exp[t] is not None) / max(1, sum(C.a_max.values()))
     exp_b = sum(X.exp[t] * C.b_max[t] for t in C.tenors if X.exp[t] is not None) / max(1, sum(C.b_max.values()))
 
     def mat_line(sp):
         return " / ".join(f"'{(y + t) % 100} {num(C.lad.get(y + t, 0) + sp[t])}" for t in C.tenors)
-    H(s, f"옵션 A({tp}년 우선 증액) 권고 — 평균 예상금리 {exp_a:.2f}%(옵션 B 대비 {(exp_a - exp_b) * 100:+.0f}bp)로 {tp}년 고정금리 확보")
-    da, db = C.pdm.get(tp), C.pdm.get(t0)
-    cards = [
-        (f"옵션 A  ·  {tp}년 우선 증액 (권고)", NAVY, PALEBLUE,
-         [["최대 구성", " / ".join(f"{t}년 {num(C.a_max[t])}" for t in C.tenors) + "억"], ["평균 예상금리", f"{exp_a:.2f}%"], ["만기 (억원)", mat_line(C.a_max)]],
-         [f"{tp}년 고정금리 확보 — 차환 주기 분산",
-          (f"직전 회차 {tp}년물 {da['_dem']['ratio']:.1f}:1 수요 확인" if da and da.get("_dem") else demand_line(X, tp) or "같은 등급군 수요 활용"),
-          "신규 만기를 뒤로 분산"],
-         [f"{t0}년 대비 기간 프리미엄 {prem:.0f}bp" if prem is not None else "기간 프리미엄만큼 금리 상승",
-          f"'{(y + tp) % 100}년 만기 {num(C.lad.get(y + tp, 0) + C.a_max[tp])}억원으로 증가"],
-         "만기 장기화와 금리 고정이 조달비용보다 우선일 때"),
-        (f"옵션 B  ·  {t0}년 우선 증액", DGREY, PALE,
-         [["최대 구성", " / ".join(f"{t}년 {num(C.b_max[t])}" for t in C.tenors) + "억"], ["평균 예상금리", f"{exp_b:.2f}%"], ["만기 (억원)", mat_line(C.b_max)]],
-         ["단기물 비중이 높아 평균 조달금리 최저",
-          (f"직전 회차 {t0}년물 {db['_dem']['ratio']:.1f}:1 수요" if db and db.get("_dem") else demand_line(X, t0) or "단기물 수요 흡수"),
-          f"기간 프리미엄 {prem:.0f}bp 절감" if prem is not None else "기간 프리미엄 절감"],
-         [f"'{(y + t0) % 100}년 만기 {num(C.lad.get(y + t0, 0) + C.b_max[t0])}억원으로 증가", "차환 시점 금리 재노출"],
-         "단기 조달비용 최소화가 우선일 때"),
-    ]
+
+    def card(t, sp, rec):
+        d = C.pdm.get(t)
+        short = t < (ta if t == tp else tp)
+        dem = f"직전 회차 {t}년물 {d['_dem']['ratio']:.1f}:1 수요 확인" if d and d.get("_dem") else (demand_line(X, t) or "같은 등급군 수요 활용")
+        if short:
+            pros = ["단기물 비중이 높아 평균 조달금리가 낮음", dem, f"기간 프리미엄 {prem:.0f}bp 절감" if prem is not None else "기간 프리미엄 절감"]
+            cons = [f"'{(y + t) % 100}년 만기 {num(C.lad.get(y + t, 0) + sp[t])}억원으로 증가", "차환 시점이 빨라 금리 재노출"]
+            fit = "단기 조달비용 최소화가 우선일 때"
+        else:
+            pros = [f"{t}년 고정금리 확보 — 차환 주기 분산", dem, "신규 만기를 뒤로 분산"]
+            cons = [f"{lo_t}년 대비 기간 프리미엄 {prem:.0f}bp" if prem is not None else "기간 프리미엄만큼 금리 상승",
+                    f"'{(y + t) % 100}년 만기 {num(C.lad.get(y + t, 0) + sp[t])}억원으로 증가"]
+            fit = "만기 장기화와 금리 고정이 조달비용보다 우선일 때"
+        avg = exp_a if rec else exp_b
+        return ((f"옵션 A  ·  {t}년 우선 증액 (권고)" if rec else f"옵션 B  ·  {t}년 우선 증액"), NAVY if rec else DGREY, PALEBLUE if rec else PALE,
+                [["최대 구성", " / ".join(f"{x}년 {num(sp[x])}" for x in C.tenors) + "억"], ["평균 예상금리", f"{avg:.2f}%"], ["만기 (억원)", mat_line(sp)]],
+                pros, cons, fit)
+    why = "조달비용 절감" if tp < ta else f"{tp}년 고정금리 확보"
+    H(s, f"옵션 A({tp}년 우선 증액) 권고 — 평균 예상금리 {exp_a:.2f}%(옵션 B 대비 {(exp_a - exp_b) * 100:+.0f}bp)로 {why}")
+    cards = [card(tp, C.a_max, True), card(ta, C.b_max, False)]
     for i, (hd, col, bg, kv, pros, cons, fit) in enumerate(cards):
         x = X0 if i == 0 else X2
         rect(s, x, 1800000, CW, 420000, fill=col)
@@ -1341,7 +1366,7 @@ def auto_split(I, spec, today=None):
     return res
 
 
-def run(template, inputs, out, today=None, tighten=True):
+def run(template, inputs, out, today=None, tighten=True, mix=None):
     spec = load_spec()
     I = dict(inputs)
     if str(I.get("split_auto") or "").lower() in ("1", "true", "on", "yes"):
@@ -1357,7 +1382,9 @@ def run(template, inputs, out, today=None, tighten=True):
         F = res["facts"]
         if I.get("demand"):
             F["sch"]["수요예측"] = date.fromisoformat(I["demand"])
-        transform(args.out, F, I, spec, out)
+        if mix is None:
+            mix = str(spec.get("deck") or "v5").lower() == "v5"
+        transform(args.out, F, I, spec, out, mix=mix)
     if tighten and (spec.get("layout") or {}).get("tighten", True):
         try:
             from tools.pptx_tighten import tighten_file
