@@ -48,13 +48,16 @@ GitHub → Settings → Developer settings → **OAuth Apps** → New OAuth App
 
 설정 후 재배포(공개 저장소 Actions → site 또는 collect 수동 실행, 또는 PR 머지).
 
+## 리서치 금리 전망 올리기 (정기)
+새 전망 엑셀을 받으면 GitHub → `proposal-vault` → `research` 폴더 → **Add file → Upload files** 로 올린다. 다음 제안서부터 바로 반영된다 (전망일이 가장 최근인 파일 사용). 자세한 규칙은 `docs/proposal_spec.md` 4절.
+
 ## 보안 구조
 | 무엇을 | 어떻게 막나 |
 |---|---|
 | API 키·토큰 | 코드에 없음. Cloudflare Secret / GitHub Secret 에만. GitHub 토큰은 `proposal-vault` 의 Actions 만 다룰 수 있음 |
 | 제안서 기능 사용 | GitHub 로그인(2단계 인증 그대로) + `ALLOWED_GITHUB_USERS` 목록. 로그인 쿠키는 서버 비밀값으로 서명, 12시간 유효. 다른 사이트에서 보낸 요청은 차단 |
 | 입력값(발행 계획·메모) | 비공개 저장소의 실행 입력으로만 전달 — 저장소 관리자만 볼 수 있음. 공개 저장소에는 남지 않음 |
-| 템플릿·결과 PPT | 비공개 저장소. 결과는 요청한 본인만 상태 확인·내려받기, 7일 뒤 자동 삭제 |
+| 템플릿·리서치 전망·결과 PPT | 비공개 저장소. 결과는 요청한 본인만 상태 확인·내려받기, 7일 뒤 자동 삭제 |
 | 코드·명세 md | 공개 저장소 — 누구나 볼 수 있음(키는 없으므로 남이 내 계정으로 돌릴 수 없음). md 에 고객사 정보·기밀 문구는 넣지 않는다 |
 
 `ANTHROPIC_API_KEY` 를 넣으면 팝업 메모·공시 정보가 Anthropic API 로 전송된다(초안 작성용, 유료 API). 사내 규정상 외부 전송이 어렵다면 넣지 않는다.

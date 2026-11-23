@@ -2,3 +2,4 @@ python-pptx>=1.0
 pyyaml>=6.0
 Pillow>=10
 anthropic>=0.40
+openpyxl>=3.1

@@ -588,6 +588,92 @@ def build_prev_blank(sl, PR, F):
 
 
 def build_outlook(prs, LAY, PR, F, X=None):
+    O = getattr(X, "outlook", None) if X else None
+    if not O:
+        return build_outlook_blank(prs, LAY, PR, F, X)
+    from tools import proposal_outlook as OL
+    s = new_slide(prs, LAY)
+    title(s, PR, "향후 금리 전망 (리서치센터)")
+    today, issue, cv, g = F["today"], F["issue"], X.cv, X.grade
+    cols = [(k, c) for k, c in enumerate(O["cols"]) if c[1] >= today][:7]
+    vd = O["vintage"]
+    g3, gsrc = OL.grade_path(O, g, 3, cv)
+    k3 = OL.ktb_path(O, 3)
+    lab_i, v_i = OL.at(O, g3, issue)
+    lab_e, v_e = OL.at(O, g3, date(issue.year, 12, 31))
+    now = cv.y(g, 3) if cv else None
+    if v_i is not None and now is not None:
+        d1 = (v_i - now) * 100
+        trend = "상승 전망: 금리 확정을 앞당기는 편이 유리" if d1 > 5 else "하락 전망: 발행 시점 분산 여지" if d1 < -5 else "보합 전망"
+        H(s, f"리서치({vd.month}/{vd.day}): {g} 3년 현재 {now:.2f}% → {lab_i} {v_i:.2f}%" + (f" → {lab_e} {v_e:.2f}%" if v_e is not None and lab_e != lab_i else "") + f" — {trend}")
+    else:
+        H(s, f"리서치({vd.month}/{vd.day}) 금리 전망")
+
+    def cur(key):
+        if key == "base":
+            v = (F["rates"].get("base") or [[None, None]])[-1][1]
+            return f"{v:.2f}%" if v is not None else "-"
+        if key == "ffr":
+            v = (F["rates"].get("ffr_hi") or [[None, None]])[-1][1]
+            return f"{v:.2f}%" if v is not None else "-"
+        if key == "ust10":
+            v = (F["rates"].get("ust10") or [[None, None]])[-1][1]
+            return f"{v:.2f}%" if v is not None else "-"
+        if key == "cp":
+            v = (F["rates"].get("cp91") or [[None, None]])[-1][1]
+            return f"{v:.2f}%" if v is not None else "-"
+        return "-"
+    f2 = lambda v: f"{v:.2f}%" if v is not None else "-"  # noqa: E731
+    rows = [["지표", "현재"] + [c[1][0] for c in cols]]
+    pick = lambda path: [f2(path[k]) if path else "-" for k, _ in cols]  # noqa: E731
+    rows.append(["한은 기준금리", cur("base")] + pick(OL.series(O, "KR", "base")))
+    rows.append(["국고 3년", f2(cv.y("KTB", 3)) if cv else "-"] + pick(k3))
+    rows.append(["국고 10년", f2(cv.y("KTB", 10)) if cv else "-"] + pick(OL.ktb_path(O, 10)))
+    hl = []
+    for t in X.tenors[:3]:
+        gp, _ = OL.grade_path(O, g, t, cv)
+        hl.append(len(rows))
+        rows.append([f"{g} {t}년", f2(cv.y(g, t)) if cv else "-"] + pick(gp))
+    if g3 and k3:
+        hl.append(len(rows))
+        rows.append([f"{g} 3년 스프레드", f"{cv.sp(g, 3):.0f}bp" if cv else "-"] + [f"{(g3[k] - k3[k]) * 100:.0f}bp" if g3[k] is not None and k3[k] is not None else "-" for k, _ in cols])
+    rows.append(["美 기준금리(상단)", cur("ffr")] + pick(OL.series(O, "US", "base")))
+    rows.append(["美 국채 10년", cur("ust10")] + pick(OL.series(O, "US", "UST", 10)))
+    if OL.series(O, "CP", 91):
+        rows.append(["CP 91일", cur("cp")] + pick(OL.series(O, "CP", 91)))
+    ic = next((n for n, (k, c) in enumerate(cols) if c[1] >= issue), None)
+    fills = {(r, c): PALEBLUE for r in hl for c in range(len(rows[0]))}
+    if ic is not None:
+        fills.update({(r, 2 + ic): "FCE4D6" for r in range(1, len(rows))})
+    table(s, rows, X0, 1800000, W, [1.8, 1.0] + [1.0] * len(cols), rowh=270000, size=9,
+          align_cols={c: PP_ALIGN.CENTER for c in range(1, len(rows[0]))}, fills=fills)
+    y2 = 1800000 + 270000 * len(rows) + 150000
+    bar(s, PR, f"{g} 3년·국고 3년 전망 경로", X0, y2, CW)
+    if g3 and k3 and cv:
+        cd = CategoryChartData()
+        cd.categories = ["현재"] + [c[1][0] for c in cols]
+        cd.add_series(f"{g} 3년", [round(cv.y(g, 3), 3)] + [round(g3[k], 3) if g3[k] is not None else None for k, _ in cols])
+        cd.add_series("국고 3년", [round(cv.y("KTB", 3), 3)] + [round(k3[k], 3) if k3[k] is not None else None for k, _ in cols])
+        ch = s.shapes.add_chart(XL_CHART_TYPE.LINE, Emu(X0), Emu(y2 + 300000), Emu(CW), Emu(6700000 - y2 - 300000), cd).chart
+        style_line(ch, [NAVY, SKY])
+    bar(s, PR, "리서치 코멘트 (요약)", X2, y2, CW)
+    cm = O.get("comments") or {}
+    paras = []
+    for k, lab in (("credit", "크레딧"), ("kr", "국내 금리"), ("us", "미국")):
+        if cm.get(k):
+            paras.append({"text": lab, "bold": True, "color": NAVY, "size": 9})
+            paras.append({"text": OL.first_sentences(cm[k], 120), "size": 8.5})
+    if lab_i:
+        paras.append({"text": f"발행 시사점: 납입({md(issue)})이 속한 {lab_i} {g} 3년 전망 {v_i:.2f}% ({(v_i - now) * 100:+.0f}bp vs 현재)" if now is not None else "", "bold": True, "color": RED, "size": 9})
+    textbox(s, X2, y2 + 300000, CW, 6700000 - y2 - 300000, paras, size=8.5, fill=PALE, margin=90000, space_after=2)
+    age = (today - vd).days
+    source(s, f"자료: 신한투자증권 리서치센터 금리 전망({vd:%Y.%m.%d}, 시트 '{O['sheet']}'){' — 전망일 ' + str(age) + '일 경과, 갱신 필요' if age > 45 else ''} · "
+              f"{g} 경로: {gsrc} · 현재값: 금융투자협회·ECOS·FRED", w=9600000)
+    notes(s, "[작성 가이드] proposal-vault 의 research/ 폴더에 최신 전망 엑셀을 올리면 자동 반영(가장 앞 시트 = 최신). 납입 시점이 속한 열을 강조.")
+    return s
+
+
+def build_outlook_blank(prs, LAY, PR, F, X=None):
     s = new_slide(prs, LAY)
     title(s, PR, "향후 전망 시나리오 (3·6개월)")
     H(s, "향후 3·6개월 금리 전망: ##")
@@ -943,6 +1029,14 @@ def build_schedule(sl, F, C, X):
     sl_ = spread_line_short(X)
     if sl_:
         lines.append({"text": f"**금리: {sl_}**", "lvl": 0})
+    if getattr(X, "outlook", None) and X.cv:
+        from tools import proposal_outlook as OL
+        g3, _ = OL.grade_path(X.outlook, X.grade, 3, X.cv)
+        lab_i, v_i = OL.at(X.outlook, g3, issue)
+        lab_n, v_n = OL.at(X.outlook, g3, date(issue.year, 6, 30) if issue.month <= 3 else issue + timedelta(days=120))
+        if v_i is not None:
+            lines.append({"text": f"리서치 전망: {X.grade} 3년 {lab_i} {v_i:.2f}%" + (f" → {lab_n} {v_n:.2f}%" if v_n is not None and lab_n != lab_i else "")
+                          + f" (현재 {X.cv.y(X.grade, 3):.2f}%)", "lvl": 1})
     lines.append({"text": f"**→ {md(sch['신고'])} 신고 · {md(sch['수요예측'])} 수요예측 · {md(issue)} 납입**", "lvl": 0})
     if tb is not None:
         fill_tf(tb.text_frame, lines, size=9, space_after=2)

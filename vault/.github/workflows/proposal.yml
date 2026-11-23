@@ -64,6 +64,8 @@ jobs:
       - name: 제안서 생성
         working-directory: src
         continue-on-error: true
+        env:
+          RESEARCH_DIR: ${{ github.workspace }}/vault/research   # 리서치 금리 전망 엑셀 (가장 최근 파일)
         run: |
           python -c "import os, json; json.dump(json.loads(os.environ['PAYLOAD']), open('../in.json', 'w', encoding='utf-8'), ensure_ascii=False)"
           python -m tools.proposal_job ../vault/template/proposal_template.pptx ../in.json ../out

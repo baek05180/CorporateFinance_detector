@@ -3,6 +3,7 @@
 모든 문장은 데이터에서 나온 숫자만 쓴다. 데이터가 없으면 그 문장을 빼거나 ## 로 남긴다.
 문구 기준(임계값·우선순위)은 docs/proposal_spec.md 의 '설정 > rules' 에서 바꿀 수 있다.
 """
+import os
 from datetime import date, timedelta
 from types import SimpleNamespace
 
@@ -98,9 +99,16 @@ def context(F, I, spec):
     pipe = M.pipeline(F["pubs"], grade, d0 - timedelta(days=7), d0 + timedelta(days=7), exclude=F.get("corp"))
     ly = M.last_year_same_month(F["pubs"], grade, issue.month, issue.year - 1)
     asof = cv.last if cv else None
+    outlook = None
+    try:
+        from tools import proposal_outlook as OL
+        outlook = OL.load_latest(os.environ.get("RESEARCH_DIR") or (spec.get("research") or {}).get("dir"), today)
+    except Exception as e:  # noqa: BLE001 — 전망 파일 문제로 제안서 전체가 멈추지 않게
+        print("outlook skipped:", type(e).__name__)
     return SimpleNamespace(rules=rules, co=co, grade=grade, band=M.band(grade), cv=cv, asof=asof, tenors=tenors, adj=adj,
                            indiv=indiv, base=base, band_bp=band_bp, dem=dem, dem_rows=dem_rows, dem_x=dem_x, comps=cps,
-                           pdm=pdm, tgt=tgt, exp=exp, wall=wall, wall_n=wall_n, month_wall=month_wall, pipe=pipe, ly=ly)
+                           pdm=pdm, tgt=tgt, exp=exp, wall=wall, wall_n=wall_n, month_wall=month_wall, pipe=pipe, ly=ly,
+                           outlook=outlook)
 
 
 # ───────── 등급·스프레드 문장 ─────────
