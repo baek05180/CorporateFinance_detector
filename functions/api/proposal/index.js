@@ -10,6 +10,7 @@ function clean(body) {
   const out = {
     corp: s(body.corp), issue: s(body.issue), demand: s(body.demand), base: s(body.base), max: s(body.max),
     split: s(body.split).replace(/\s/g, ''), priority: s(body.priority), band: s(body.band).slice(0, 80), fee_bp: s(body.fee_bp).slice(0, 10),
+    indiv: s(body.indiv).replace(/\s/g, '').slice(0, 80),
     issues_note: s(body.issues_note).slice(0, TEXT_MAX), credit_note: s(body.credit_note).slice(0, TEXT_MAX),
   };
   if (!/^[0-9A-Za-z]{1,20}$/.test(out.corp)) return [null, '회사 코드가 올바르지 않습니다.'];
@@ -18,6 +19,7 @@ function clean(body) {
   if (!/^\d{1,2}:\d{1,6}(,\d{1,2}:\d{1,6}){0,4}$/.test(out.split)) return [null, '만기별 금액 형식이 올바르지 않습니다 (예: 2:600,3:1500).'];
   for (const k of ['base', 'max', 'priority']) if (out[k] && !/^\d{1,6}$/.test(out[k])) return [null, `${k} 값이 올바르지 않습니다.`];
   if (out.fee_bp && !/^\d{1,3}(\.\d{1,2})?$/.test(out.fee_bp)) return [null, '인수수수료는 숫자(bp)로 입력해 주세요.'];
+  if (out.indiv && !/^\d{1,2}:\d{1,2}(\.\d{1,4})?(,\d{1,2}:\d{1,2}(\.\d{1,4})?){0,4}$/.test(out.indiv)) return [null, '개별민평은 "2:4.21,3:4.35" 형식으로 입력해 주세요.'];
   const sum = out.split.split(',').reduce((a, p) => a + Number(p.split(':')[1]), 0);
   if (!out.base) out.base = String(sum);
   if (Number(out.base) !== sum) return [null, '만기별 금액 합계가 발행금액과 다릅니다.'];

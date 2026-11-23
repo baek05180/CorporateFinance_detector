@@ -449,7 +449,9 @@ def build(args):
     tb = shape(s6, "표 13").table
     pubs = C["pubs"]
     since = (today - timedelta(days=183)).isoformat()
-    aa = [r for r in pubs if r.get("_dem") and (r.get("_grade") or "").startswith("AA") and (r.get("pay_dt") or "") >= since]
+    from tools.proposal_mkt import band as _band, gkey as _gkey
+    gb = _band(grade) or "AA"
+    aa = [r for r in pubs if r.get("_dem") and _band(r.get("_grade")) == gb and (r.get("pay_dt") or "") >= since]
     by_t = defaultdict(lambda: defaultdict(float))
     rat_t = defaultdict(list)
     for r in aa:
@@ -492,7 +494,7 @@ def build(args):
         drop(s6, x)
     for nm in ("타원 21", "타원 22", "타원 26", "타원 27", "타원 28"):
         drop(s6, shape(s6, nm))
-    set_text(shape(s6, "모서리가 둥근 직사각형 8"), "AA급 공모사채 만기별 수요예측 참여금액 (최근 6개월)")
+    set_text(shape(s6, "모서리가 둥근 직사각형 8"), f"{gb}급 공모사채 만기별 수요예측 참여금액 (최근 6개월)")
     set_text(shape(s6, "TextBox 29"), f"자료: 기업공시시스템 ({today.month}/{today.day} 수요예측 완료 건 기준, 단위: 억원)")
     drop(s6, shape(s6, "차트 1"), shape(s6, "표 2"), shape(s6, "TextBox 3"))
     h2 = shape(s6, "모서리가 둥근 직사각형 8", 1)
@@ -514,11 +516,8 @@ def build(args):
     # p7·8 금통위·연준 위원 (11월 업데이트)
     s7 = S(7)
     tb = [x for x in s7.shapes if x.has_table][0].table
-    upd7 = {
-        "신현송": ("매파", "7·8월 연속 인상(2.50→3.00%) 주도. 10월 동결 후에도 추가 인상의 시기·속도를 결정하겠다는 입장"),
-        "황건일": ("중도", "8/27 인상 때 '동결' 소수의견 — 인상 속도에 신중(총재는 '전술적 차이'라고 설명)"),
-        "김진일": ("중도~매파", "5월 취임. 금융위기 예방을 중시하며 스스로 '중간값보다 반 클릭 위'라고 평가"),
-    }
+    MB = (_SPEC.get("members") or {}) if "_SPEC" in globals() else {}
+    upd7 = {k: tuple(v) for k, v in ((MB.get("mpc") or {}).get("updates") or {}).items()}
     for r in list(tb.rows)[1:]:
         nm = r.cells[0].text.strip()
         if nm in upd7:
@@ -526,24 +525,29 @@ def build(args):
             set_text(r.cells[5], upd7[nm][1])
         if nm == "김진일":
             set_text(r.cells[1], "금통위원")
-    set_text(shape(s7, "TextBox 4"), "7·8월 연속 인상으로 기준금리 3.00%, 10월 만장일치 동결\n물가 3% 내외 지속 속 '추가 인상 시기·속도' 언급 — 매파적 동결")
-    set_text(shape(s7, "Text 17"), "10/22 결정문: 물가가 3% 내외의 높은 오름세를 이어가는 가운데 두 차례 인상의 파급효과를 점검하며 추가 인상의 시기와 속도를 결정. 8월 점도표(6개월 후)는 3.25%가 최다(21개 중 10개)")
+    if (MB.get("mpc") or {}).get("summary"):
+        set_text(shape(s7, "TextBox 4"), MB["mpc"]["summary"])
+    if (MB.get("mpc") or {}).get("note"):
+        set_text(shape(s7, "Text 17"), MB["mpc"]["note"])
     s8 = S(8)
     tb = [x for x in s8.shapes if x.has_table][0].table
     for r in list(tb.rows)[1:]:
         nm = r.cells[0].text.strip()
         c5 = r.cells[5].text
         c5 = re.sub(r"\s*4월 FOMC[^.]*$", "", c5.strip())
-        if nm.startswith("Lisa"):
-            set_text(r.cells[4], "매파")
-            set_text(r.cells[5], "인플레이션 리스크를 우려해 10월 FOMC에서 25bp 인상 주장(소수의견)")
-        elif nm.startswith("Kevin"):
-            set_text(r.cells[5], "9월 25bp 인상(2023년 7월 이후 첫 인상) 주도. 포워드 가이던스는 지양")
-        else:
+        fu = (MB.get("fed") or {}).get("updates") or {}
+        hit = next((v for k, v in fu.items() if nm.startswith(k)), None)
+        if hit:
+            if hit[0]:
+                set_text(r.cells[4], hit[0])
+            set_text(r.cells[5], hit[1])
+        elif (MB.get("fed") or {}).get("default_suffix"):
             c5 = re.split(r"(?<=[.다])\s", c5)[0]
-            set_text(r.cells[5], (c5 + " " if c5 else "") + "9월 인상·10월 동결 찬성")
-    set_text(shape(s8, "TextBox 5"), "9월 25bp 인상 후 10월 3.75~4.00% 동결(10:2, 인상 소수의견 2명)\n9월 CPI 3.7%로 재가속 — 12월 추가 인상 확률이 높게 반영")
-    set_text(shape(s8, "Text 17"), "10/28 FOMC: Cook 이사·Hammack 총재가 25bp 인상을 주장하며 반대. 성명서는 경제활동을 'solid'→'strong'으로 상향, 9월 인상이 물가 목표 복귀를 돕는다는 문구 삭제")
+            set_text(r.cells[5], (c5 + " " if c5 else "") + MB["fed"]["default_suffix"])
+    if (MB.get("fed") or {}).get("summary"):
+        set_text(shape(s8, "TextBox 5"), MB["fed"]["summary"])
+    if (MB.get("fed") or {}).get("note"):
+        set_text(shape(s8, "Text 17"), MB["fed"]["note"])
 
     # p10 직전 발행 수요예측 결과
     s10 = S(10)
@@ -808,7 +812,8 @@ def build(args):
     s24 = S(24)
     tb = shape(s24, "표 2").table
     qs_ = date(today.year, 3 * ((today.month - 1) // 3) + 1, 1)
-    rows = sorted([r for r in pubs if (r.get("_grade") or "") == grade and qs_.isoformat() <= (r.get("pay_dt") or "") <= today.isoformat()],
+    from tools.proposal_mkt import gkey as _gk
+    rows = sorted([r for r in pubs if _gk(r.get("_grade")) == _gk(grade) and qs_.isoformat() <= (r.get("pay_dt") or "") <= today.isoformat()],
                   key=lambda r: (r["pay_dt"], r["corp_name"], r.get("series_raw") or ""), reverse=True)
     nrow = len(tb.rows) - 1
     rows = rows[:nrow]
@@ -837,7 +842,7 @@ def build(args):
              "base": args.base, "max": args.max, "band": band, "prev": prev, "mine": mine, "avg": avg, "by_t": by_t,
              "lad": dict(lad), "due12": due12, "capex_h": capex_h, "ocf_h": ocf_h, "period": fi.get("period", ""),
              "sp_now": sp_now, "dl": dl, "aa3": aa3_, "k3": k3_, "base_r": base_r, "rates": rt, "pubs": C["pubs"],
-             "co": co, "metrics": m_, "up": len(up)}
+             "co": co, "metrics": m_, "up": len(up), "mats": C["mats"], "corp": args.corp}
     return {"split": split, "sch": {k: v.isoformat() for k, v in sch.items()}, "prev": [r["series_raw"] for r in prev], "up": len(up), "p24": len(rows),
             "facts": facts}
 

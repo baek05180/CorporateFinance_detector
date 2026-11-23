@@ -258,10 +258,14 @@ def main(argv=None):
         dump_json("diag_fsfix.json", diag)
         return 0
     if args.mode == "market":
-        from .market import demand_step, mezz_events_step, rates_step
+        from .market import demand_step, kofia_step, mezz_events_step, rates_step
         diag = {}
         try:
             rates_step(today, diag)
+            try:
+                kofia_step(today, diag)
+            except Exception as e:  # noqa: BLE001 — 협회 사이트 장애가 수집 전체를 멈추지 않게
+                diag["kofia"] = {"error": str(e)[:160]}
             demand_step(dart, store, today, diag)
             mezz_events_step(dart, store, today, diag, max_docs=args.days or 600)
         finally:
