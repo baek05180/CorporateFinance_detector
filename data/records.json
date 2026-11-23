@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-23T15:54+09:00",
+  "data_updated": "2026-11-23T17:16+09:00",
   "last_daily": "2026-11-20T20:41+09:00"
  },
  "records": {
@@ -351406,8 +351406,8 @@
   },
   "RIGHTS:01042650:20261016000096": {
    "amended": true,
-   "amount": 105790000000,
-   "board_dt": "2026-10-16",
+   "amount": 70574000000,
+   "board_dt": "2026-11-23",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
@@ -351420,18 +351420,19 @@
    "new_common": 7100000,
    "new_other": null,
    "offering": "공모",
+   "original_rcept": "20261016000096",
    "par_value": 500,
    "purposes": {
-    "운영": 105790000000
+    "운영": 70574000000
    },
-   "rcept_dt": "2026-10-16",
-   "rcept_no": "20261016000096",
+   "rcept_dt": "2026-11-23",
+   "rcept_no": "20261123000278",
    "source": "DART",
    "stock_code": "115180",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-10-25T18:19+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261016000096"
+   "updated": "2026-11-23T17:16+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261123000278"
   },
   "RIGHTS:01042711:20240701000402": {
    "amended": false,
@@ -360101,33 +360102,33 @@
   },
   "RIGHTS:01235296:20260922000158": {
    "amended": true,
-   "amount": 9999999855,
-   "board_dt": "2026-11-04",
+   "amount": 9999998382,
+   "board_dt": "2026-11-23",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
    "corp_code": "01235296",
    "corp_name": "셀리드",
-   "dilution": 16.26,
+   "dilution": 19.5,
    "first_seen": "2026-10-25T18:20+09:00",
    "id": "RIGHTS:01235296:20260922000158",
    "method": "제3자배정증자",
-   "new_common": 4796163,
+   "new_common": 5753739,
    "new_other": null,
    "offering": "사모·주주배정",
    "original_rcept": "20260922000158",
    "par_value": 500,
    "purposes": {
-    "운영": 9999999855
+    "운영": 9999998382
    },
-   "rcept_dt": "2026-11-04",
-   "rcept_no": "20261104000135",
+   "rcept_dt": "2026-11-23",
+   "rcept_no": "20261123000258",
    "source": "DART",
    "stock_code": "299660",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-11-04T14:36+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261104000135"
+   "updated": "2026-11-23T17:16+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261123000258"
   },
   "RIGHTS:01235296:20261014000414": {
    "amended": true,
@@ -369048,6 +369049,35 @@
    "type": "RIGHTS",
    "updated": "2026-11-11T20:25+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261110000371"
+  },
+  "RIGHTS:01453944:20261123000342": {
+   "amended": false,
+   "amount": 999999740,
+   "board_dt": "2026-11-23",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "K",
+   "corp_code": "01453944",
+   "corp_name": "벡트로보틱스",
+   "dilution": 5.33,
+   "first_seen": "2026-11-23T17:16+09:00",
+   "id": "RIGHTS:01453944:20261123000342",
+   "method": "제3자배정증자",
+   "new_common": 730460,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 100,
+   "purposes": {
+    "운영": 999999740
+   },
+   "rcept_dt": "2026-11-23",
+   "rcept_no": "20261123000342",
+   "source": "DART",
+   "stock_code": "457600",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-11-23T17:16+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261123000342"
   },
   "RIGHTS:01466832:20240509000236": {
    "amended": false,
