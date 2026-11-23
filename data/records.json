@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-20T20:41+09:00",
+  "data_updated": "2026-11-23T15:54+09:00",
   "last_daily": "2026-11-20T20:41+09:00"
  },
  "records": {
@@ -353972,6 +353972,35 @@
    "type": "RIGHTS",
    "updated": "2026-10-26T09:24+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250421000125"
+  },
+  "RIGHTS:01085442:20261123000187": {
+   "amended": false,
+   "amount": 1800000150,
+   "board_dt": "2026-11-23",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "N",
+   "corp_code": "01085442",
+   "corp_name": "오건에코텍",
+   "dilution": 23.4,
+   "first_seen": "2026-11-23T15:54+09:00",
+   "id": "RIGHTS:01085442:20261123000187",
+   "method": "제3자배정증자",
+   "new_common": 2769231,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 500,
+   "purposes": {
+    "채무상환": 1800000150
+   },
+   "rcept_dt": "2026-11-23",
+   "rcept_no": "20261123000187",
+   "source": "DART",
+   "stock_code": "212310",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-11-23T15:54+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261123000187"
   },
   "RIGHTS:01089378:20250108000489": {
    "amended": true,
