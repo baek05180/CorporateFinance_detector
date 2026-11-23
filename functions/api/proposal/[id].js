@@ -16,7 +16,10 @@ async function artifactZip(env, run, id) {
   const a = await gh(env, `/repos/${env.VAULT_REPO}/actions/runs/${run.id}/artifacts?name=proposal-${id}`).then(r => r.json());
   const art = (a.artifacts || [])[0];
   if (!art || art.expired) return null;
-  const z = await gh(env, `/repos/${env.VAULT_REPO}/actions/artifacts/${art.id}/zip`);
+  // GitHub 은 임시 저장소 주소로 넘겨준다. GitHub 토큰이 그쪽으로 따라가지 않도록 직접 따라간다.
+  const r = await gh(env, `/repos/${env.VAULT_REPO}/actions/artifacts/${art.id}/zip`, { redirect: 'manual' });
+  const loc = r.headers.get('location');
+  const z = loc ? await fetch(loc) : r;
   if (!z.ok) throw new Error(`artifact ${z.status}`);
   return z.arrayBuffer();
 }

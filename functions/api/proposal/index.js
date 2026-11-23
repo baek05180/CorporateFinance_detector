@@ -38,6 +38,15 @@ export async function onRequestPost({ request, env }) {
     method: 'POST',
     body: JSON.stringify({ ref: env.VAULT_REF || 'main', inputs: { request_id: id, owner: who.login, payload: JSON.stringify(inp) } }),
   });
-  if (!r.ok) return json({ error: `GitHub 실행 요청 실패 (${r.status})` }, 502);
+  if (!r.ok) {
+    // 원인별 안내 (토큰 값은 응답에 넣지 않음)
+    const hint = {
+      401: 'GH_TOKEN 값이 틀렸거나 만료됨 — 새 토큰을 Pages 변수 GH_TOKEN 에 다시 넣고 재배포',
+      403: 'GH_TOKEN 권한 부족 — Actions: Read and write 인지 확인',
+      404: 'GH_TOKEN 이 proposal-vault 에 접근 못 함 또는 VAULT_REPO 값 오류 (baek05180/proposal-vault)',
+      422: '워크플로 입력값·브랜치 불일치 — proposal-vault 의 proposal.yml 확인',
+    }[r.status] || '';
+    return json({ error: `GitHub 실행 요청 실패 (${r.status})${hint ? ' — ' + hint : ''}` }, 502);
+  }
   return json({ id });
 }
