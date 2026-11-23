@@ -709,7 +709,7 @@ def build_summary(prs, LAY, PR, F, I, X, C, spec, band, band_note, fee):
     table(s, [
         ["항목", "제안"],
         ["발행금액", f"{num(F['base'])}억원 (증액 시 최대 {num(F['max'])}억원)"],
-        ["만기 구성", " / ".join(f"{t}년 {num(split[t])}억" for t in tenors) + f" — 증액 시 {C.pri}년 우선"],
+        ["만기 구성", " / ".join(f"{t}년 {num(split[t])}억" for t in tenors) + f" — 증액 시 {C.pri}년 우선" + (" (자동 배분)" if X.alloc else "")],
         ["금리밴드", f"{band}" + (f" ({band_note})" if band_note else "")],
         ["예상 발행금리", exp_txt + f" ({X.base[tenors[0]][1]} 기준)"],
         ["일정", f"{md(sch['신고'])} 신고 → {md(sch['수요예측'])} 수요예측 → {md(issue)} 납입"],
@@ -910,7 +910,8 @@ def build_tranche(sl, PR, F, C, X):
                 r_.set("sz", "1200")
     for sh in sl.shapes:
         if sh.name == "TextBox 10" or (sh.has_text_frame and 1200000 < sh.top < 1700000 and sh.width > 8000000):
-            set_shape_text(sh._element, f"{C.pri}년물 중심 증액 권고 — {X.grade} 등급민평 기간 프리미엄·같은 등급군 수요·만기 분산 반영")
+            set_shape_text(sh._element, (f"만기별 금액 자동 배분(수요·비용·만기 분산·전망 균형) — {C.pri}년물 증액 우선" if X.alloc else
+                                         f"{C.pri}년물 중심 증액 권고 — {X.grade} 등급민평 기간 프리미엄·같은 등급군 수요·만기 분산 반영"))
             break
     issue = F["issue"]
     rows = [["구분", "발행 금액", "제안 근거"]]
@@ -935,6 +936,13 @@ def build_tranche(sl, PR, F, C, X):
         if r and r.get("_dem"):
             bits.append(f"[동사] 직전 {t}년물 {num(r['_dem']['total'])}억 주문({r['_dem']['ratio']:.1f}:1)" + (f", 확정 {r['_spread']:+d}bp." if r.get("_spread") is not None else "."))
         bits.append(f"[만기] '{y % 100}년 기존 {num(C.lad.get(y, 0))}억 + {num(F['split'][t])}억 = {num(C.lad.get(y, 0) + F['split'][t])}억.")
+        al = (X.alloc or {}).get("detail", {}).get(t) if X.alloc else None
+        if al:
+            tr = f"{X.alloc['target_ratio']:.0f}:1"
+            if F['split'][t] > al['cap']:
+                bits.append(f"[배분] 예상 주문 {num(al['orders'])}억 — 경쟁률 {tr} 기준 적정 {num(al['cap'])}억을 상회하므로 사전 수요 확보 필요, 배분 비중 {al['score'] * 100:.0f}%.")
+            else:
+                bits.append(f"[배분] 예상 주문 {num(al['orders'])}억 → 경쟁률 {tr} 기준 적정 {num(al['cap'])}억 이내, 배분 비중 {al['score'] * 100:.0f}%.")
         if t == C.pri:
             bits.append("→ 증액 우선 배정 권고.")
         rows.append([f"{t}년", f"{num(F['split'][t])}억원", " ".join(bits)])
@@ -951,7 +959,9 @@ def build_tranche(sl, PR, F, C, X):
           ["만기 연도 기존"] + [f"'{(issue.year + t) % 100} {num(C.lad.get(issue.year + t, 0))}억" for t in C.tenors]]
     table(sl, rr, 5489407, 4716722, 4752279, [1.4] + [1.15] * len(C.tenors), rowh=[260000] + [300000] * 6, size=8,
           align_cols={i: PP_ALIGN.CENTER for i in range(1, len(C.tenors) + 1)})
-    notes(sl, f"[작성 가이드] 만기별: 금리({X.grade} 등급민평·국고 대비 스프레드·기간 프리미엄) / 수급({X.band}급 6개월 수요) / 동사 직전 회차 / 만기 분산.")
+    w = (X.alloc or {}).get("weights") or {}
+    notes(sl, f"[작성 가이드] 만기별: 금리({X.grade} 등급민평·국고 대비 스프레드·기간 프리미엄) / 수급({X.band}급 6개월 수요) / 동사 직전 회차 / 만기 분산."
+          + (f" 자동 배분 비중 — 수요 {w.get('demand')}, 비용 {w.get('cost')}, 만기 분산 {w.get('maturity')}, 전망 {w.get('outlook')} (명세 rules.alloc)." if X.alloc else ""))
 
 
 def build_options(prs, LAY, PR, F, C, X):
@@ -1298,9 +1308,44 @@ def panel_us(sl, PR, F, spec, X):
 
 
 # ───────────────────────── 실행 ─────────────────────────
+def auto_split(I, spec, today=None):
+    """'미정' 체크: 만기만 받아 균형 배분 → I['split']·I['priority']·I['_alloc'] 채움."""
+    from collections import defaultdict
+    from tools import proposal_alloc as AL
+    from tools import proposal_outlook as OL
+    td = date.fromisoformat(today) if today else date.today()
+    issue = date.fromisoformat(I["issue"])
+    tenors = [int(x.split(":")[0]) for x in str(I["split"]).replace(" ", "").split(",") if x]
+    base = int(I.get("base") or 0)
+    C = P3.load_ctx(I["corp"], td)
+    co, mine = C["co"], C["mine"]
+    grade = M.gkey(I.get("grade")) or (M.gkey(mine[-1]["_grade"]) if mine and mine[-1].get("_grade") else "") or M.gkey(co.get("rating"))
+    last = [r for r in mine if r.get("_dem")]
+    lk = last[-1].get("original_rcept") if last else None
+    prev = [r for r in mine if r.get("original_rcept") == lk] if lk else []
+    lad = defaultdict(float)
+    for x in (co.get("bonds") or {}).get("ladder") or []:
+        lad[int(x["year"])] += (x.get("공모") or 0) / 1e8
+    cv = M.Curves() if grade else M.Curves({})
+    isins = [b.get("isin") for b in ((co.get("bonds") or {}).get("list") or []) if b.get("isin")]
+    adj = M.issuer_spread(co.get("name") or "", grade, cv, isins) if cv else None
+    try:
+        ol = OL.load_latest(os.environ.get("RESEARCH_DIR"), td)
+    except Exception:  # noqa: BLE001
+        ol = None
+    rules = (spec.get("rules") or {}).get("alloc") or {}
+    res = AL.allocate(tenors, base, grade, C["pubs"], prev, lad, issue, td, cv, ol, adj, rules)
+    I["split"] = AL.split_str(res["split"])
+    I["priority"] = res["priority"]
+    I["_alloc"] = res
+    return res
+
+
 def run(template, inputs, out, today=None, tighten=True):
     spec = load_spec()
     I = dict(inputs)
+    if str(I.get("split_auto") or "").lower() in ("1", "true", "on", "yes"):
+        auto_split(I, spec, today)
     tenors = [int(x.split(":")[0]) for x in I["split"].split(",")]
     base = int(I.get("base") or sum(int(x.split(":")[1]) for x in I["split"].split(",")))
     args = SimpleNamespace(template=template, corp=I["corp"], issue=I["issue"], base=base, max=int(I.get("max") or base),

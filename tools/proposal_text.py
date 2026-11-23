@@ -108,7 +108,7 @@ def context(F, I, spec):
     return SimpleNamespace(rules=rules, co=co, grade=grade, band=M.band(grade), cv=cv, asof=asof, tenors=tenors, adj=adj,
                            indiv=indiv, base=base, band_bp=band_bp, dem=dem, dem_rows=dem_rows, dem_x=dem_x, comps=cps,
                            pdm=pdm, tgt=tgt, exp=exp, wall=wall, wall_n=wall_n, month_wall=month_wall, pipe=pipe, ly=ly,
-                           outlook=outlook)
+                           outlook=outlook, alloc=I.get("_alloc"))
 
 
 # ───────── 등급·스프레드 문장 ─────────

@@ -15,6 +15,9 @@
   .card { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 16px; margin-bottom: 14px; }
   label { display: block; font-weight: 600; margin: 12px 0 4px; }
   label .req { color: var(--bad); margin-left: 2px; }
+  label.auto { display: inline; font-weight: 400; margin-left: 10px; color: var(--navy); }
+  label.auto input { width: auto; margin: 0 2px 0 0; vertical-align: -1px; }
+  input:disabled { background: #eee; }
   input, textarea { width: 100%; padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px; font: inherit; }
   textarea { min-height: 72px; resize: vertical; }
   .help { color: var(--ink2); font-size: 12px; margin-top: 3px; }
@@ -66,9 +69,25 @@ async function init() {
     const input = f.type === 'textarea'
       ? `<textarea name="${esc(f.key)}"${req}>${esc(v)}</textarea>`
       : `<input name="${esc(f.key)}" type="${f.type === 'number' ? 'number' : f.type === 'date' ? 'date' : 'text'}" value="${esc(v)}"${req}>`;
-    return `<label>${esc(f.label)}${f.required ? '<span class="req">*</span>' : ''}</label>${input}${f.help ? `<div class="help">${esc(f.help)}</div>` : ''}`;
+    const auto = f.auto
+      ? ` <label class="auto"><input type="checkbox" name="${esc(f.key)}_auto" value="1" data-for="${esc(f.key)}"${saved[f.key + '_auto'] ? ' checked' : ''}> ${esc(f.auto_label || '미정')}</label>`
+      : '';
+    return `<label>${esc(f.label)}${f.required ? '<span class="req">*</span>' : ''}${auto}</label>${input}`
+      + `<div class="help" id="help_${esc(f.key)}" data-help="${esc(f.help || '')}" data-auto-help="${esc(f.auto_help || '')}">${esc(f.help || '')}</div>`;
   }).join('') + `<div class="row" style="margin-top:16px"><button id="go" type="submit">제안서 만들기</button><span class="note">생성에 5분 안팎 걸립니다.</span></div><div class="err" id="err"></div>`;
   $('#f').addEventListener('submit', submit);
+  // '미정' 체크: 만기만 입력받고 금액·증액 우선 만기는 자동
+  document.querySelectorAll('input[data-for]').forEach(cb => {
+    const apply = () => {
+      const k = cb.dataset.for, inp = $(`[name="${k}"]`), h = $(`#help_${k}`), pr = $('[name="priority"]');
+      h.textContent = cb.checked ? (h.dataset.autoHelp || h.dataset.help) : h.dataset.help;
+      inp.placeholder = cb.checked ? '2,3,5' : '';
+      if (cb.checked && /:/.test(inp.value)) inp.value = inp.value.split(',').map(x => x.split(':')[0].trim()).filter(Boolean).join(',');
+      if (pr) { pr.disabled = cb.checked; if (cb.checked) pr.value = ''; }
+    };
+    cb.addEventListener('change', apply);
+    apply();
+  });
 }
 
 function showLogin() {
@@ -82,9 +101,15 @@ function sessionStorageSet(k, v) { try { sessionStorage.setItem(k, v); } catch {
 
 function check(d) {
   const parts = String(d.split || '').split(',').map(s => s.trim()).filter(Boolean);
-  if (!parts.length || parts.some(p => !/^\d{1,2}:\d+$/.test(p))) return '만기별 금액은 "2:600,3:1500" 형식으로 입력해 주세요.';
-  const sum = parts.reduce((a, p) => a + Number(p.split(':')[1]), 0);
-  if (d.base && Number(d.base) !== sum) return `만기별 금액 합계(${sum.toLocaleString()}억)가 발행금액(${Number(d.base).toLocaleString()}억)과 다릅니다.`;
+  if (d.split_auto) {
+    if (!parts.length || parts.length > 5 || parts.some(p => !/^\d{1,2}$/.test(p))) return '만기를 "2,3,5"처럼 입력해 주세요 (최대 5개).';
+    if (new Set(parts).size !== parts.length) return '같은 만기를 두 번 넣었습니다.';
+    if (!d.base) return '자동 배분에는 발행금액이 필요합니다.';
+  } else {
+    if (!parts.length || parts.some(p => !/^\d{1,2}:\d+$/.test(p))) return '만기별 금액은 "2:600,3:1500" 형식으로 입력해 주세요. 금액을 정하지 않았다면 \'미정\'을 체크하세요.';
+    const sum = parts.reduce((a, p) => a + Number(p.split(':')[1]), 0);
+    if (d.base && Number(d.base) !== sum) return `만기별 금액 합계(${sum.toLocaleString()}억)가 발행금액(${Number(d.base).toLocaleString()}억)과 다릅니다.`;
+  }
   if (d.max && Number(d.max) < Number(d.base)) return '최대 증액은 발행금액 이상이어야 합니다.';
   if (d.issue && d.issue <= new Date().toISOString().slice(0, 10)) return '발행일은 오늘 이후여야 합니다.';
   return '';
