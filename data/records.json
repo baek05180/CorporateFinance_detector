@@ -1,7 +1,7 @@
 {
  "meta": {
-  "data_updated": "2026-11-23T18:38+09:00",
-  "last_daily": "2026-11-20T20:41+09:00"
+  "data_updated": "2026-11-23T20:44+09:00",
+  "last_daily": "2026-11-23T20:44+09:00"
  },
  "records": {
   "BOND:00100814:63-1": {
@@ -40822,7 +40822,7 @@
    "sub_dt": "2026-12-02",
    "type": "BOND",
    "underwriters": [],
-   "updated": "2026-11-20T16:44+09:00",
+   "updated": "2026-11-23T20:31+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261120000529",
    "uses": {
     "발행제비용": 59561600,
@@ -41091,7 +41091,7 @@
    "sub_dt": "2026-12-02",
    "type": "BOND",
    "underwriters": [],
-   "updated": "2026-11-20T16:44+09:00",
+   "updated": "2026-11-23T20:31+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261120000534",
    "uses": {
     "발행제비용": 136811600,
@@ -42044,7 +42044,7 @@
    "sub_dt": "2026-12-02",
    "type": "BOND",
    "underwriters": [],
-   "updated": "2026-11-20T16:44+09:00",
+   "updated": "2026-11-23T20:31+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261120000542",
    "uses": {
     "발행제비용": 70111600,
@@ -42123,7 +42123,7 @@
    "sub_dt": "2026-12-02",
    "type": "BOND",
    "underwriters": [],
-   "updated": "2026-11-20T16:44+09:00",
+   "updated": "2026-11-23T20:31+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261120000544",
    "uses": {
     "발행제비용": 39811600,
@@ -160944,6 +160944,36 @@
    "type": "BOND",
    "underwriter": null,
    "updated": "2026-11-02T20:38+09:00",
+   "url": null,
+   "usage": ""
+  },
+  "PBOND:KR6002391GB6": {
+   "amount": 10000000000,
+   "captured_by": "daily",
+   "confirmed": true,
+   "corp_name": "한독",
+   "coupon": 6.1,
+   "crno": "1101110037005",
+   "first_seen": "2026-11-23T20:33+09:00",
+   "guarantee": "무보증",
+   "id": "PBOND:KR6002391GB6",
+   "industry": "의료용 물질 및 의약품 제조업",
+   "isin": "KR6002391GB6",
+   "issue_dt": "2026-11-19",
+   "kind": "일반회사채",
+   "lead": null,
+   "maturity": "2028-11-19",
+   "name": "한독48(사모)",
+   "offering": "사모",
+   "option": "옵션해당사항없음",
+   "pcbo": false,
+   "rank": "선순위",
+   "rate_type": "고정-이표",
+   "rcept_dt": "2026-11-19",
+   "source": "공공데이터포털",
+   "type": "BOND",
+   "underwriter": null,
+   "updated": "2026-11-23T20:33+09:00",
    "url": null,
    "usage": ""
   },
@@ -341247,7 +341277,7 @@
   "RIGHTS:00615723:20261026000212": {
    "amended": true,
    "amount": 1999999575,
-   "board_dt": "2026-11-18",
+   "board_dt": "2026-11-20",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
@@ -341265,14 +341295,14 @@
    "purposes": {
     "운영": 1999999575
    },
-   "rcept_dt": "2026-11-18",
-   "rcept_no": "20261118000167",
+   "rcept_dt": "2026-11-20",
+   "rcept_no": "20261120000590",
    "source": "DART",
    "stock_code": "123010",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-11-19T20:28+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261118000167"
+   "updated": "2026-11-23T20:30+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261120000590"
   },
   "RIGHTS:00615723:20261028000300": {
    "amended": true,
@@ -341775,7 +341805,7 @@
   "RIGHTS:00618410:20261102000212": {
    "amended": true,
    "amount": 4999999059,
-   "board_dt": "2026-11-10",
+   "board_dt": "2026-11-18",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
@@ -341794,14 +341824,14 @@
     "운영": 2399999059,
     "채무상환": 2600000000
    },
-   "rcept_dt": "2026-11-10",
-   "rcept_no": "20261110000317",
+   "rcept_dt": "2026-11-18",
+   "rcept_no": "20261118000231",
    "source": "DART",
    "stock_code": "101000",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-11-13T20:30+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261110000317"
+   "updated": "2026-11-23T20:30+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261118000231"
   },
   "RIGHTS:00618410:20261104000158": {
    "amended": true,
@@ -344428,32 +344458,33 @@
   },
   "RIGHTS:00781202:20261113001053": {
    "amended": true,
-   "amount": 1999999070,
-   "board_dt": "2026-11-13",
+   "amount": 9999999090,
+   "board_dt": "2026-11-19",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
    "corp_code": "00781202",
    "corp_name": "파이온엑스",
-   "dilution": 36.24,
+   "dilution": 178.47,
    "first_seen": "2026-11-17T20:24+09:00",
    "id": "RIGHTS:00781202:20261113001053",
-   "method": "일반공모증자",
-   "new_common": 1912045,
+   "method": "제3자배정증자",
+   "new_common": 9416195,
    "new_other": null,
-   "offering": "공모",
-   "par_value": 205,
+   "offering": "사모·주주배정",
+   "original_rcept": "20261113001053",
+   "par_value": 206,
    "purposes": {
-    "운영": 1999999070
+    "운영": 9999999090
    },
-   "rcept_dt": "2026-11-13",
-   "rcept_no": "20261113001053",
+   "rcept_dt": "2026-11-19",
+   "rcept_no": "20261119000263",
    "source": "DART",
    "stock_code": "900100",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-11-17T20:24+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261113001053"
+   "updated": "2026-11-23T20:31+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261119000263"
   },
   "RIGHTS:00787057:20261014000405": {
    "amended": true,
@@ -351434,6 +351465,35 @@
    "updated": "2026-11-23T17:16+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261123000278"
   },
+  "RIGHTS:01042650:20261123000278": {
+   "amended": true,
+   "amount": 70574000000,
+   "board_dt": "2026-11-23",
+   "captured_by": "daily",
+   "confirmed": true,
+   "corp_cls": "K",
+   "corp_code": "01042650",
+   "corp_name": "큐리언트",
+   "dilution": 18.68,
+   "first_seen": "2026-11-23T20:31+09:00",
+   "id": "RIGHTS:01042650:20261123000278",
+   "method": "주주배정후 실권주 일반공모",
+   "new_common": 7100000,
+   "new_other": null,
+   "offering": "공모",
+   "par_value": 500,
+   "purposes": {
+    "운영": 70574000000
+   },
+   "rcept_dt": "2026-11-23",
+   "rcept_no": "20261123000278",
+   "source": "DART",
+   "stock_code": "115180",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-11-23T20:31+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261123000278"
+  },
   "RIGHTS:01042711:20240701000402": {
    "amended": false,
    "amount": 9999997075,
@@ -353979,7 +354039,7 @@
    "amount": 1800000150,
    "board_dt": "2026-11-23",
    "captured_by": "watch",
-   "confirmed": false,
+   "confirmed": true,
    "corp_cls": "N",
    "corp_code": "01085442",
    "corp_name": "오건에코텍",
@@ -360042,6 +360102,36 @@
    "updated": "2026-11-20T20:28+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261118000201"
   },
+  "RIGHTS:01231786:20261118000201": {
+   "amended": true,
+   "amount": 1999996128,
+   "board_dt": "2026-11-18",
+   "captured_by": "daily",
+   "confirmed": true,
+   "corp_cls": "K",
+   "corp_code": "01231786",
+   "corp_name": "엑스페릭스",
+   "dilution": 2.83,
+   "first_seen": "2026-11-23T20:31+09:00",
+   "id": "RIGHTS:01231786:20261118000201",
+   "method": "제3자배정증자",
+   "new_common": 1048216,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 500,
+   "purposes": {
+    "운영": 999996288,
+    "타법인증권": 999999840
+   },
+   "rcept_dt": "2026-11-18",
+   "rcept_no": "20261118000201",
+   "source": "DART",
+   "stock_code": "317770",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-11-23T20:31+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261118000201"
+  },
   "RIGHTS:01235296:20240730000061": {
    "amended": true,
    "amount": 23175000000,
@@ -360132,33 +360222,33 @@
   },
   "RIGHTS:01235296:20261014000414": {
    "amended": true,
-   "amount": 9999999855,
-   "board_dt": "2026-11-04",
+   "amount": 9999998382,
+   "board_dt": "2026-11-23",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
    "corp_code": "01235296",
    "corp_name": "셀리드",
-   "dilution": 16.26,
+   "dilution": 19.5,
    "first_seen": "2026-10-26T09:25+09:00",
    "id": "RIGHTS:01235296:20261014000414",
    "method": "제3자배정증자",
-   "new_common": 4796163,
+   "new_common": 5753739,
    "new_other": null,
    "offering": "사모·주주배정",
    "original_rcept": "20261014000414",
    "par_value": 500,
    "purposes": {
-    "운영": 9999999855
+    "운영": 9999998382
    },
-   "rcept_dt": "2026-11-04",
-   "rcept_no": "20261104000135",
+   "rcept_dt": "2026-11-23",
+   "rcept_no": "20261123000258",
    "source": "DART",
    "stock_code": "299660",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-11-04T20:35+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261104000135"
+   "updated": "2026-11-23T20:31+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261123000258"
   },
   "RIGHTS:01235296:20261029000334": {
    "amended": true,
@@ -367307,9 +367397,9 @@
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260922000105"
   },
   "RIGHTS:01397903:20261110000233": {
-   "amended": false,
+   "amended": true,
    "amount": 2000000000,
-   "board_dt": "2026-11-10",
+   "board_dt": "2026-11-23",
    "captured_by": "watch",
    "confirmed": true,
    "corp_cls": "K",
@@ -367322,18 +367412,19 @@
    "new_common": 2000000,
    "new_other": null,
    "offering": "사모·주주배정",
+   "original_rcept": "20261110000233",
    "par_value": 1000,
    "purposes": {
     "채무상환": 2000000000
    },
-   "rcept_dt": "2026-11-10",
-   "rcept_no": "20261110000233",
+   "rcept_dt": "2026-11-23",
+   "rcept_no": "20261123000390",
    "source": "DART",
    "stock_code": "354200",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-11-10T15:31+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261110000233"
+   "updated": "2026-11-23T20:31+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261123000390"
   },
   "RIGHTS:01397903:20261110000237": {
    "amended": true,
@@ -369056,7 +369147,7 @@
    "amount": 999999740,
    "board_dt": "2026-11-23",
    "captured_by": "watch",
-   "confirmed": false,
+   "confirmed": true,
    "corp_cls": "K",
    "corp_code": "01453944",
    "corp_name": "벡트로보틱스",
