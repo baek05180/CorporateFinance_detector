@@ -38,7 +38,7 @@ export async function onRequestGet({ request, env, params }) {
   const zip = await artifactZip(env, run, id).catch(() => null);
   if (!zip) return json({ state: 'error', error: run.conclusion === 'success' ? '결과 파일이 없습니다 (7일 경과 시 삭제).' : '생성 실패 — 비공개 저장소의 Actions 기록을 확인해 주세요.' });
   const st = JSON.parse(new TextDecoder().decode((await unzipEntry(zip, 'status.json')) || new TextEncoder().encode('{}')));
-  if (!new URL(request.url).searchParams.has('download')) return json({ state: st.state || 'error', error: st.error, file: st.file });
+  if (!new URL(request.url).searchParams.has('download')) return json({ state: st.state || 'error', error: st.error, file: st.file, checks: Array.isArray(st.checks) ? st.checks.slice(0, 20) : [] });
   const pptx = st.state === 'done' ? await unzipEntry(zip, 'proposal.pptx') : null;
   if (!pptx) return json({ error: '아직 완성되지 않았거나 파일이 없습니다.' }, 409);
   return new Response(pptx, {

@@ -11,7 +11,8 @@ import sys
 import traceback
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from tools import proposal5  # noqa: E402
+from tools import proposal5, proposal6  # noqa: E402
+from tools.proposal_spec import load_spec  # noqa: E402
 
 
 def main(template, inp_path, outdir):
@@ -21,15 +22,21 @@ def main(template, inp_path, outdir):
         with open(inp_path, encoding="utf-8") as f:
             inp = json.load(f)
         out = os.path.join(outdir, "proposal.pptx")
+        deck = str((load_spec().get("deck") or "v6")).lower()
+        checks = []
         with contextlib.redirect_stdout(buf), contextlib.redirect_stderr(buf):
-            proposal5.run(template, inp, out)
+            if deck == "v5":
+                proposal5.run(template, inp, out)
+            else:
+                _, checks = proposal6.run(template, inp, out)
         co = {}
         p = os.path.join("public", "data", "co", f"{inp['corp']}.json")
         if os.path.exists(p):
             with open(p, encoding="utf-8") as f:
                 co = json.load(f)
         name = (co.get("name") or inp["corp"]).replace("/", "_")
-        st = {"state": "done", "file": f"{name}_공모사채_발행제안서_{inp['issue']}.pptx"}
+        kind = "공모사채_발행제안서" if deck == "v5" else "회사채_발행검토자료"
+        st = {"state": "done", "file": f"{name}_{kind}_{inp['issue']}.pptx", "checks": checks}
     except Exception as e:  # noqa: BLE001
         st = {"state": "error", "error": f"{type(e).__name__}: {str(e)[:300]}", "trace": traceback.format_exc()[-3000:]}
     with open(os.path.join(outdir, "status.json"), "w", encoding="utf-8") as f:
