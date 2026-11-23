@@ -16,13 +16,20 @@ function clean(body) {
   if (!/^[0-9A-Za-z]{1,20}$/.test(out.corp)) return [null, '회사 코드가 올바르지 않습니다.'];
   if (!DATE.test(out.issue)) return [null, '발행일을 입력해 주세요.'];
   if (out.demand && !DATE.test(out.demand)) return [null, '수요예측일 형식이 올바르지 않습니다.'];
-  if (!/^\d{1,2}:\d{1,6}(,\d{1,2}:\d{1,6}){0,4}$/.test(out.split)) return [null, '만기별 금액 형식이 올바르지 않습니다 (예: 2:600,3:1500).'];
+  out.split_auto = ['1', 'true', 'on'].includes(s(body.split_auto).toLowerCase()) ? '1' : '';
+  if (out.split_auto) {
+    if (!/^\d{1,2}(,\d{1,2}){0,4}$/.test(out.split)) return [null, '만기를 "2,3,5"처럼 입력해 주세요.'];
+    if (!/^\d{1,6}$/.test(out.base)) return [null, '자동 배분에는 발행금액이 필요합니다.'];
+    out.priority = '';
+  } else if (!/^\d{1,2}:\d{1,6}(,\d{1,2}:\d{1,6}){0,4}$/.test(out.split)) return [null, '만기별 금액 형식이 올바르지 않습니다 (예: 2:600,3:1500).'];
   for (const k of ['base', 'max', 'priority']) if (out[k] && !/^\d{1,6}$/.test(out[k])) return [null, `${k} 값이 올바르지 않습니다.`];
   if (out.fee_bp && !/^\d{1,3}(\.\d{1,2})?$/.test(out.fee_bp)) return [null, '인수수수료는 숫자(bp)로 입력해 주세요.'];
   if (out.indiv && !/^\d{1,2}:\d{1,2}(\.\d{1,4})?(,\d{1,2}:\d{1,2}(\.\d{1,4})?){0,4}$/.test(out.indiv)) return [null, '개별민평은 "2:4.21,3:4.35" 형식으로 입력해 주세요.'];
-  const sum = out.split.split(',').reduce((a, p) => a + Number(p.split(':')[1]), 0);
-  if (!out.base) out.base = String(sum);
-  if (Number(out.base) !== sum) return [null, '만기별 금액 합계가 발행금액과 다릅니다.'];
+  if (!out.split_auto) {
+    const sum = out.split.split(',').reduce((a, p) => a + Number(p.split(':')[1]), 0);
+    if (!out.base) out.base = String(sum);
+    if (Number(out.base) !== sum) return [null, '만기별 금액 합계가 발행금액과 다릅니다.'];
+  }
   return [out, null];
 }
 
