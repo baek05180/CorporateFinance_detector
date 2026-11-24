@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-24T15:27+09:00",
+  "data_updated": "2026-11-24T19:23+09:00",
   "last_daily": "2026-11-23T20:44+09:00"
  },
  "records": {
@@ -58601,7 +58601,7 @@
    "ytm": 4.0
   },
   "CB:00116426:25": {
-   "amended": false,
+   "amended": true,
    "amount": 2499000000,
    "board_dt": "2026-08-07",
    "captured_by": "daily",
@@ -58624,16 +58624,16 @@
    "purposes": {
     "타법인증권": 2499000000
    },
-   "rcept_dt": "2026-08-07",
-   "rcept_no": "20260807000388",
+   "rcept_dt": "2026-11-24",
+   "rcept_no": "20261124000442",
    "refix_floor": 1491,
    "series": "25",
    "shares": 1173239,
    "source": "DART",
    "stock_code": "009730",
    "type": "CB",
-   "updated": "2026-10-25T18:18+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260807000388",
+   "updated": "2026-11-24T19:23+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261124000442",
    "ytm": 4.0
   },
   "CB:00117027:53": {
@@ -347994,6 +347994,35 @@
    "type": "RIGHTS",
    "updated": "2026-11-03T20:59+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261102000323"
+  },
+  "RIGHTS:00963000:20261124000463": {
+   "amended": false,
+   "amount": 499951540,
+   "board_dt": "2026-11-24",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "N",
+   "corp_code": "00963000",
+   "corp_name": "썬테크",
+   "dilution": 3.24,
+   "first_seen": "2026-11-24T19:23+09:00",
+   "id": "RIGHTS:00963000:20261124000463",
+   "method": "제3자배정증자",
+   "new_common": 37690,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 500,
+   "purposes": {
+    "타법인증권": 499951540
+   },
+   "rcept_dt": "2026-11-24",
+   "rcept_no": "20261124000463",
+   "source": "DART",
+   "stock_code": "217320",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-11-24T19:23+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261124000463"
   },
   "RIGHTS:00963976:20240614000107": {
    "amended": true,
