@@ -8,58 +8,49 @@
   "with_rate": 0
  },
  "crno_matched": 0,
- "dart_calls": 272,
- "listed": 2770,
+ "dart_calls": 274,
+ "listed_error": "403 Client Error: Forbidden for url: https://kind.krx.co.kr/corpgeneral/corpList.do",
  "mezz_docs": {
-  "sec": 0,
-  "todo": 0,
-  "total": 1268,
-  "with_call": 519,
-  "with_inv": 1218,
-  "with_prem": 703
+  "sec": 1,
+  "todo": 1,
+  "total": 1269,
+  "with_call": 520,
+  "with_inv": 1219,
+  "with_prem": 704
  },
  "mezz_events": {
-  "cands": 18,
-  "live_corps": 961,
-  "parsed": 1,
+  "cands": 13,
+  "live_corps": 960,
+  "parsed": 0,
   "pending": 0,
-  "sec": 7,
-  "todo": 1,
-  "total": 2242
+  "sec": 2,
+  "todo": 0,
+  "total": 2246
  },
- "price_hist_days": 121,
- "price_hist_fetched": 0,
+ "price_hist_days": 120,
+ "price_hist_fetched": 1,
  "prices": 2878,
  "profiles_done": 116,
  "profiles_fresh": 3550,
  "profiles_left": 0,
- "profiles_sec": 18,
- "px_fetched": 0,
+ "profiles_sec": 16,
+ "px_fetched": 1,
  "rights_docs": {
-  "discount": 847,
-  "issue_px": 1138,
-  "list_dt": 1004,
-  "pay_dt": 1270,
+  "discount": 848,
+  "issue_px": 1141,
+  "list_dt": 1007,
+  "pay_dt": 1273,
   "record_dt": 184,
-  "sec": 0,
+  "sec": 1,
   "sub_from": 242,
-  "todo": 0,
-  "total": 1371
+  "todo": 3,
+  "total": 1374
  },
- "run": "2026-11-24T10:48+09:00",
+ "run": "2026-11-25T07:41+09:00",
  "short_lnb": {
-  "lnb_fetched": 2,
-  "lnb_sample": {
-   "balnStckAmt": "3059124120",
-   "balnStckCnt": "653659",
-   "basDt": "20261123",
-   "cclStckCnt": "84",
-   "mrktClsfNm": "코스피",
-   "rdptStckCnt": "84",
-   "stckItmsCd": "000020",
-   "stckItmsNm": "동화약품"
-  },
-  "short_fetched": 1
+  "lnb_fetched": 1,
+  "lnb_sample": null,
+  "short_fetched": 0
  },
  "targets": 3666
 }
