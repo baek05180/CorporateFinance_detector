@@ -1,25 +1,25 @@
 {
  "demand": {
   "parsed": 0,
-  "sec": 1,
-  "todo": 1,
+  "sec": 0,
+  "todo": 0,
   "total": 77
  },
  "kofia": {
-  "curve_days": 114,
-  "curve_new": 40,
-  "sec": 107,
-  "trades": 2129,
-  "trades_new": 2129
+  "curve_days": 156,
+  "curve_new": 42,
+  "sec": 82,
+  "trades": 2186,
+  "trades_new": 117
  },
  "mezz_events": {
-  "cands": 18,
+  "cands": 13,
   "live_corps": 961,
-  "parsed": 8,
+  "parsed": 3,
   "pending": 0,
-  "sec": 4,
-  "todo": 9,
-  "total": 2241
+  "sec": 9,
+  "todo": 4,
+  "total": 2246
  },
  "rates": {
   "aa3": 731,
