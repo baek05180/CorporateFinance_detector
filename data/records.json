@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-23T20:44+09:00",
+  "data_updated": "2026-11-24T15:27+09:00",
   "last_daily": "2026-11-23T20:44+09:00"
  },
  "records": {
@@ -356208,7 +356208,7 @@
   "RIGHTS:01141599:20260723000448": {
    "amended": true,
    "amount": 17999997056,
-   "board_dt": "2026-09-16",
+   "board_dt": "2026-11-24",
    "captured_by": "daily",
    "confirmed": true,
    "corp_cls": "K",
@@ -356226,14 +356226,14 @@
    "purposes": {
     "운영": 17999997056
    },
-   "rcept_dt": "2026-09-16",
-   "rcept_no": "20260916000511",
+   "rcept_dt": "2026-11-24",
+   "rcept_no": "20261124000146",
    "source": "DART",
    "stock_code": "261780",
    "stock_kind": "보통주",
    "type": "RIGHTS",
-   "updated": "2026-10-26T09:24+09:00",
-   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260916000511"
+   "updated": "2026-11-24T15:27+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261124000146"
   },
   "RIGHTS:01141599:20260916000511": {
    "amended": true,
@@ -369550,6 +369550,35 @@
    "type": "RIGHTS",
    "updated": "2026-10-26T09:28+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251110000102"
+  },
+  "RIGHTS:01492217:20261124000227": {
+   "amended": true,
+   "amount": 3999997946,
+   "board_dt": "2026-11-24",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "K",
+   "corp_code": "01492217",
+   "corp_name": "엑셀세라퓨틱스",
+   "dilution": 29.02,
+   "first_seen": "2026-11-24T15:27+09:00",
+   "id": "RIGHTS:01492217:20261124000227",
+   "method": "제3자배정증자",
+   "new_common": 5018818,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 500,
+   "purposes": {
+    "운영": 3999997946
+   },
+   "rcept_dt": "2026-11-24",
+   "rcept_no": "20261124000227",
+   "source": "DART",
+   "stock_code": "373110",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-11-24T15:27+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261124000227"
   },
   "RIGHTS:01492651:20260417000574": {
    "amended": false,
