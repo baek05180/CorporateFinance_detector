@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-26T05:41+09:00",
+  "data_updated": "2026-11-26T12:55+09:00",
   "last_daily": "2026-11-26T05:41+09:00"
  },
  "records": {
@@ -370209,6 +370209,36 @@
    "type": "RIGHTS",
    "updated": "2026-10-26T09:28+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260306001046"
+  },
+  "RIGHTS:01498576:20261126000229": {
+   "amended": false,
+   "amount": 2999997488,
+   "board_dt": "2026-11-26",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "K",
+   "corp_code": "01498576",
+   "corp_name": "유디엠텍",
+   "dilution": 12.4,
+   "first_seen": "2026-11-26T12:55+09:00",
+   "id": "RIGHTS:01498576:20261126000229",
+   "method": "제3자배정증자",
+   "new_common": 1031636,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 500,
+   "purposes": {
+    "기타": 899999246,
+    "운영": 2099998242
+   },
+   "rcept_dt": "2026-11-26",
+   "rcept_no": "20261126000229",
+   "source": "DART",
+   "stock_code": "389680",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-11-26T12:55+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261126000229"
   },
   "RIGHTS:01502587:20231107000173": {
    "amended": true,
