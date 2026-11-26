@@ -1,6 +1,6 @@
 {
  "meta": {
-  "data_updated": "2026-11-26T12:55+09:00",
+  "data_updated": "2026-11-27T00:47+09:00",
   "last_daily": "2026-11-26T05:41+09:00"
  },
  "records": {
@@ -342284,6 +342284,35 @@
    "type": "RIGHTS",
    "updated": "2026-11-17T20:24+09:00",
    "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261110000317"
+  },
+  "RIGHTS:00618410:20261126000966": {
+   "amended": false,
+   "amount": 4999999950,
+   "board_dt": "2026-11-26",
+   "captured_by": "watch",
+   "confirmed": false,
+   "corp_cls": "K",
+   "corp_code": "00618410",
+   "corp_name": "KS인더스트리",
+   "dilution": 40.33,
+   "first_seen": "2026-11-27T00:47+09:00",
+   "id": "RIGHTS:00618410:20261126000966",
+   "method": "제3자배정증자",
+   "new_common": 7299270,
+   "new_other": null,
+   "offering": "사모·주주배정",
+   "par_value": 500,
+   "purposes": {
+    "운영": 4999999950
+   },
+   "rcept_dt": "2026-11-26",
+   "rcept_no": "20261126000966",
+   "source": "DART",
+   "stock_code": "101000",
+   "stock_kind": "보통주",
+   "type": "RIGHTS",
+   "updated": "2026-11-27T00:47+09:00",
+   "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261126000966"
   },
   "RIGHTS:00619640:20240709000054": {
    "amended": true,
