@@ -4733,5 +4733,53 @@
    }
   },
   "v": 6
+ },
+ "20261126000726": {
+  "demand_dt": "2026-11-23",
+  "rating": "AAA",
+  "series": {
+   "3": {
+    "band": "국고채 +10~+70bp",
+    "rate": null,
+    "spread": 60
+   }
+  },
+  "v": 6
+ },
+ "20261126000736": {
+  "demand_dt": "2026-11-23",
+  "rating": "AAA",
+  "series": {
+   "2": {
+    "band": "국고채 +10~+70bp",
+    "rate": null,
+    "spread": 65
+   }
+  },
+  "v": 6
+ },
+ "20261126000752": {
+  "demand_dt": "2026-11-23",
+  "rating": "AAA",
+  "series": {
+   "2": {
+    "band": "+57~+68bp",
+    "rate": null,
+    "spread": 61
+   }
+  },
+  "v": 6
+ },
+ "20261126000766": {
+  "demand_dt": "2026-11-23",
+  "rating": "AAA",
+  "series": {
+   "1": {
+    "band": "+57~+65bp",
+    "rate": null,
+    "spread": 61
+   }
+  },
+  "v": 6
  }
 }

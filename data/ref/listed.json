@@ -3222,6 +3222,17 @@
   "products": "EMS Business(의료용기기제조외)",
   "region": "경기도"
  },
+ "0061P0": {
+  "ceo": "신명식",
+  "fiscal_month": "12월",
+  "homepage": "http://hsteel.net",
+  "industry": "기타 금속 가공제품 제조업",
+  "listed": "2026-11-27",
+  "market": "N",
+  "name": "에이치스틸",
+  "products": "컬러강판",
+  "region": "충청북도"
+ },
  "006200": {
   "ceo": "박 명 덕",
   "fiscal_month": "12월",
@@ -5104,7 +5115,7 @@
   "region": "경기도"
  },
  "012330": {
-  "ceo": "정의선, 이규석",
+  "ceo": "정의선, 성낙섭",
   "fiscal_month": "12월",
   "homepage": "http://www.mobis.com",
   "industry": "자동차 신품 부품 제조업",
@@ -13629,7 +13640,7 @@
   "region": "경기도"
  },
  "077360": {
-  "ceo": "이수훈, 김태수 (공동대표이사)",
+  "ceo": "이수훈, 김태수(각자대표이사)",
   "fiscal_month": "12월",
   "homepage": "http://www.dshm.co.kr",
   "industry": "반도체 제조업",
@@ -22717,7 +22728,7 @@
  "261780": {
   "ceo": "정재준",
   "fiscal_month": "12월",
-  "homepage": "http://www.chavaccine.com",
+  "homepage": "http://lab.aribiogroup.com",
   "industry": "자연과학 및 공학 연구개발업",
   "listed": "2021-10-22",
   "market": "K",
@@ -24558,7 +24569,7 @@
   "industry": "기타 생활용품 소매업",
   "listed": "2018-12-20",
   "market": "K",
-  "name": "조이웍스앤코",
+  "name": "온길 넥스트",
   "products": "기업인수합병",
   "region": "서울특별시"
  },
@@ -29357,17 +29368,6 @@
   "name": "링크솔루션",
   "products": "3D 프린터 및 3D 프린팅 서비스",
   "region": "경기도"
- },
- "474930": {
-  "ceo": "배성환",
-  "fiscal_month": "12월",
-  "homepage": "",
-  "industry": "금융 지원 서비스업",
-  "listed": "2024-04-22",
-  "market": "K",
-  "name": "신한제13호스팩",
-  "products": "기타금융서비스(기업합병)",
-  "region": "서울특별시"
  },
  "475040": {
   "ceo": "김준환",
