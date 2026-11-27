@@ -1,29 +1,31 @@
 {
  "demand": {
-  "parsed": 4,
-  "sec": 2,
-  "todo": 4,
+  "parsed": 0,
+  "sec": 0,
+  "todo": 0,
   "total": 81
  },
  "kofia": {
   "curve_days": 236,
-  "curve_new": 38,
-  "sec": 63,
+  "curve_error": "HTTPSConnectionPool(host='www.kofiabond.or.kr', port=443): Max retries exceeded with url: /proframeWeb/XMLSERVICES/ (Cau",
+  "curve_new": 0,
+  "sec": 121,
+  "trade_error": "HTTPSConnectionPool(host='www.kofiabond.or.kr', port=443): Max retries exceeded with url: /proframeWeb/XMLSERVICES/ (Cau",
   "trades": 2425,
-  "trades_new": 167
+  "trades_new": 0
  },
  "mezz_events": {
-  "cands": 23,
+  "cands": 20,
   "live_corps": 959,
-  "parsed": 8,
+  "parsed": 3,
   "pending": 0,
-  "sec": 5,
-  "todo": 8,
-  "total": 2256
+  "sec": 16,
+  "todo": 5,
+  "total": 2261
  },
  "rates": {
   "aa3": 732,
-  "base": 1095,
+  "base": 1094,
   "bbb3": 732,
   "cp91": 732,
   "ffr_hi": 1095,
@@ -31,7 +33,7 @@
   "ktb10": 732,
   "ktb3": 732,
   "ktb5": 732,
-  "ust10": 747,
-  "ust2": 747
+  "ust10": 746,
+  "ust2": 746
  }
 }
